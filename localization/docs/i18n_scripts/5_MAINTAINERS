@@ -1,0 +1,75 @@
+
+INTERNATIONALIZATION AND LOCALIZATION OF SHELL SCRIPTS
+
+5. Practical recommendations for developers and maintainers
+------------------------------------------------------------
+
+Many English words are polysemous: their meaning can only be determined
+from the context of their usage. As a practical consequence, the more
+context you provide, the more accurate the translation can be.
+
+Example: recently, while downloading a software I saw something like this:
+31min gauche
+Go figure? After a while I realized that "left" had been translated
+"gauche" (as in "left hand").
+
+Also, the order of words in a sentence vary upon the languages,
+furthermore not all languages are written left to right.
+
+So I suggest to mark entire paragraphs, or at least entire sentences, not
+lines, let alone isolated words but in special cases.
+
+For instance, if text paragraphs were split in lines displayed by 'echo'
+commands, replace all consecutive 'echo' commands by a single 'gettext'
+or 'eval_gettext' command.
+
+Do not fear to include the variable substitutions in the sentences, the PO
+editor will check that they be present as is in the translations.
+
+
+*** Recommendations for 'dialog' program.
+
+The 'dialog' program provides an UI taking the form of dialog boxes.
+
+There are other programs with similar feature, to which I guess (only a
+guess), these recommendations are also applicable.
+
+Bear in mind following considerations, when making or reviewing the design
+choices for dialog's boxes.
+- Messages translated in other languages will often be significantly
+  longer than the original (usually in English) ones.
+- In situations where only VGA drivers are available (e.g. in text
+  installers) screen display is generally restricted to 25 rows of 80
+  columns with most widely used fonts, but in practice word wrapping 
+  occurs if line's length is more than 74 characters.
+  As a consequence, for static layouts text lines' length should be
+  at most 74 characters -- as in this document :-)
+- Vertical scrolling of text is widely accepted as frequently used to
+  display web pages, and sometimes unavoidable. On the contrary,
+  horizontal scrolling should be avoided as much as possible.
+
+Therefore I suggest to:
+- renounce to tightly adjust the dimensions of the boxes to the size of
+  the English text as the translation will probably break your carefully
+  crafted layout, unless you impose unreasonable (IMO) constraints to the
+  translators,
+- in particular, not narrow boxes' width to what is strictly needed for
+  displaying English texts, especially in tabular layouts where the text
+  can't flow on next lines,
+- favor a fluid layout of the displayed text over a fixed one to avoid too
+  long lines in translations, whose complete display would then
+  necessitate horizontal scrolling (which, moreover, is not always
+  possible).
+
+In particular, I recommend to favor options which take as first argument
+a text string instead of a file, to allow line wrapping. It is still
+possible to preserve the intended layout using white spaces for
+indentation.
+
+For instance,
+dialog <common-options> --textbox <file> <height> <width>
+can be replaced with
+dialog --no-collapse <common-opt> --msgbox "`cat <file>`" <height> <width>
+
+
+Didier Spaier
