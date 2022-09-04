@@ -54,7 +54,7 @@ To display your translation of the HandBook in a web browser you can do this, as
 * Download your translation, like for instance pt_PT.HandBook.po, and store in the same directory the file https://raw.githubusercontent.com/DidierSpaier/slint-translations/main/source/HandBook.adoc[HandBook.adoc]
 * Convert your translation from the PO to the asciidoc format typing from this directory::
 
-po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p fr_FR.HandBook.po -l new.HandBook.adoc
+po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p pt_PT.HandBook.po -l pt_PT.HandBook.adoc
 ====
 
 Here is the list of files to translate and their content at time of writing:
