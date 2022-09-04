@@ -1,5 +1,0 @@
-= Slint Documentation
-
-The files in this folder are used to build the documentation for the https://slint.fr[Slint] distribution.
-
-The files whose name has the .adoc suffix are in https://asciidoctor.org[Asciidoctor] format.
