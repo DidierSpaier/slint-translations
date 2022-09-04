@@ -45,6 +45,16 @@ The sources files are in English:
 * HandBook.adoc is in asciidoc format. It is converted to html using https://asciidoctor.org/[Asciidoctor] to provide the https://slint.fr/doc/HandBook.html[Slint HandBook] +
 * All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read https://slint.fr/internationalization_and_localization_of_shell_scripts[Internationalization and localization of shell scripts]
 
+[NOTE]
+----
+To display your translation of the HandBook in a web browser you can do this, assuling that the packages gettext, gettext-tools and po4a are installed:
+
+* Download your translation, like for instance pt_PT.HandBook.po, and store in the same directory the file  +
+* Convert it to the asciidoc format typing from the:
++
+po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p fr_FR.HandBook.po -l new.HandBook.adoc
+
+
 Here is the list of files to translate and their content at time of writing:
 
 [[auto]]auto::
