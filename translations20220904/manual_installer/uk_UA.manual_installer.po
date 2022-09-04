@@ -1,0 +1,2094 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2022-02-01 20:32\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk_UA\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: /manual_installer/manual_installer.po\n"
+"X-Crowdin-File-ID: 28\n"
+
+# File: INCISO, line: 18
+msgid "An ISO image of Slint's install DVD was found.\n"
+"Do you want me to mount the ISO image and use this as the package source?"
+msgstr "Виявлено образ ISO інсталяційного DVD-диска Slint.\n"
+"Бажаєте змонтувати образ ISO і використовувати його як джерело пакунків?"
+
+# File: INCISO, line: 20
+msgid "USE ISO IMAGE"
+msgstr "ВИКОРИСТОВУЙТЕ ОБРАЗ ISO"
+
+# File: INSCD, line: 19
+msgid "SCANNING FOR CD or DVD DRIVE"
+msgstr "ПЕРЕВІРКА НАЯВНОСТІ CD ЧИ DVD-диска"
+
+# File: INSCD, line: 20
+msgid "Make sure the Slint disc is in your CD/DVD drive, and then press ENTER to begin the scanning process. Or, if you'd rather specify the device name manually (experts only), choose that option below."
+msgstr "Переконайтеся, що у Вашому пристрої CD/DVD є диск зі Slint. Потім натисніть ENTER, щоб розпочати процес перевірки. Якщо ви бажаєте вказати назву пристрою вручну (лише для експертів), оберіть цю опцію нижче."
+
+# File: INSCD, line: 25
+msgid "Scan for the CD or DVD drive (recommended)"
+msgstr "Перевірити наявність диска CD чи DVD (рекомендується)"
+
+# File: INSCD, line: 26
+msgid "Manually specify CD or DVD by device name"
+msgstr "Вкажіть назву пристрою CD чи DVD вручну"
+
+# File: INSCD, line: 35
+msgid "MANUAL CD/DVD DEVICE SELECTION"
+msgstr "ВИБІР ПРИСТРОЮ CD/DVD"
+
+# File: INSCD, line: 36
+msgid "Please select your CD/DVD device from the list below.  If you don't see your device listed, choose 'custom'.  This will let you type in any device name. (and if necessary, will create the device)"
+msgstr "Будь ласка, оберіть пристрій CD/DVD з переліку нижче. У разі його відсутності в переліку, оберіть \"спеціальний\". Це дозволить вам ввести будь-яке ім'я пристрою (і, якщо необхідно, створить пристрій)"
+
+# File: INSCD, line: 41
+msgid "Type in the CD or DVD device to use"
+msgstr "Вкажіть пристрій CD або DVD для використання"
+
+# File: INSCD, line: 42
+msgid "First CD/DVD drive"
+msgstr "Перший пристрій CD/DVD"
+
+# File: INSCD, line: 43
+msgid "Second CD/DVD drive"
+msgstr "Другий пристрій CD/DVD"
+
+# File: INSCD, line: 44
+msgid "Third CD/DVD drive"
+msgstr "Третій пристрій CD/DVD"
+
+# File: INSCD, line: 45
+msgid "Fourth CD/DVD drive"
+msgstr "Четвертий пристрій CD/DVD"
+
+# File: INSCD, line: 46
+msgid "CD/DVD slave on first IDE bus"
+msgstr "Вторинний CD/DVD на першій шині IDE"
+
+# File: INSCD, line: 47
+msgid "CD/DVD master on first IDE bus (unlikely)"
+msgstr "Головний CD/DVD на першій шині IDE (малоймовірно)"
+
+# File: INSCD, line: 48
+msgid "CD/DVD master on second IDE bus"
+msgstr "Головний CD/DVD на вторинній шині IDE"
+
+# File: INSCD, line: 49
+msgid "CD/DVD slave on second IDE bus"
+msgstr "Вторинний CD/DVD на вторинній шині IDE"
+
+# File: INSCD, line: 50
+msgid "CD/DVD master on third IDE bus"
+msgstr "Головний CD/DVD на третій шині IDE"
+
+# File: INSCD, line: 51
+msgid "CD/DVD slave on third IDE bus"
+msgstr "Вторинний CD/DVD на третій шині IDE"
+
+# File: INSCD, line: 52
+msgid "CD/DVD master on fourth IDE bus"
+msgstr "Головний CD/DVD на четвертій шині IDE"
+
+# File: INSCD, line: 53
+msgid "CD/DVD slave on fourth IDE bus"
+msgstr "Вторинний CD/DVD на четвертій шині IDE"
+
+# File: INSCD, line: 54
+msgid "First parallel port ATAPI CD"
+msgstr "Перший паралельний порт ATAPI CD"
+
+# File: INSCD, line: 55
+msgid "Second parallel port ATAPI CD"
+msgstr "Другий паралельний порт ATAPI CD"
+
+# File: INSCD, line: 56
+msgid "Third parallel port ATAPI CD"
+msgstr "Третій паралельний порт ATAPI CD"
+
+# File: INSCD, line: 57
+msgid "Fourth parallel port ATAPI CD"
+msgstr "Четвертий паралельний порт ATAPI CD"
+
+# File: INSCD, line: 58
+msgid "Non-IDE Aztech CD/DVD"
+msgstr "Не IDE Aztech CD/DVD"
+
+# File: INSCD, line: 59
+msgid "Sony CDU-535 CD/DVD"
+msgstr "Sony CDU-535 CD/DVD"
+
+# File: INSCD, line: 60
+msgid "Non-IDE GoldStar CD/DVD"
+msgstr "Не IDE GoldStar CD/DVD"
+
+# File: INSCD, line: 61
+msgid "Sony CDU-31a CD/DVD"
+msgstr "Sony CDU-31a CD/DVD"
+
+# File: INSCD, line: 62
+msgid "Optics Storage CD/DVD"
+msgstr "Оптичний пристрій зберігання CD/DVD"
+
+# File: INSCD, line: 63
+msgid "Sanyo non-IDE CD/DVD"
+msgstr "Sanyo не IDE CD/DVD"
+
+# File: INSCD, line: 64
+msgid "Non-IDE Mitsumi drive 1"
+msgstr "Не IDE Mitsumi пристрій 1"
+
+# File: INSCD, line: 65
+msgid "Non-IDE Mitsumi drive 2"
+msgstr "Не IDE Mitsumi пристрій 2"
+
+# File: INSCD, line: 66
+msgid "Old non-IDE SoundBlaster CD/DVD"
+msgstr "Застарілий не IDE SoundBlaster CD/DVD"
+
+# File: INSCD, line: 67
+msgid "Philips LMS CM-205 CD/DVD"
+msgstr "Philips LMS CM-205 CD/DVD"
+
+# File: INSCD, line: 68
+msgid "Philips LMS CM-206 CD/DVD"
+msgstr "Philips LMS CM-206 CD/DVD"
+
+# File: INSCD, line: 69
+msgid "Old non-IDE Mitsumi CD/DVD"
+msgstr "Застарілий не IDE Mitsumi CD/DVD"
+
+# File: INSCD, line: 78
+msgid "ENTER CD/DVD DEVICE MANUALLY"
+msgstr "ВКАЖІТЬ ПРИСТРІЙ CD/DVD ВРУЧНУ"
+
+# File: INSCD, line: 79
+msgid "Please enter the name of the CD/DVD device (such as /dev/hdc) that you wish to use to mount the Slint CD/DVD:"
+msgstr "Будь ласка, введіть ім'я пристрою CD/DVD (таке як /dev/hdc), який Ви бажаєте використовувати для монтування CD/DVD зі Slint:"
+
+# File: INSCD, line: 90
+msgid "MKNOD CD/DVD DEVICE"
+msgstr "MKNOD ПРИСТРОЮ CD/DVD"
+
+# File: INSCD, line: 91
+#, sh-format
+msgid "There doesn't seem to be a device by the name of $DRIVE_FOUND in the /dev directory, so we will have to create it using the major and minor numbers for the device.  If you're using a bootdisk with a custom CD/DVD driver on it, you should be able to find these numbers in the documentation.  Also, see the 'devices.txt' file that comes with the Linux kernel source.  If you don't know the numbers, you'll have to hit Esc to abort. Enter the major and minor numbers for the new device, separated by one space:"
+msgstr "Схоже - пристрою з іменем $DRIVE_FOUND немає у директорії /dev, тому ми повинні створити його, використовуючи головні та другорядні номери для пристрою. Якщо Ви використовуєте завантажувальний диск з нетиповим CD/DVD драйвером на ньому, то маєте знайти ці числа у документації. Також, перегляньте файл \"devices.txt\", який постачається разом із джерельним кодом ядра Linux. Якщо ж Ви не знаєте чисел - натисніть Esc для скасування. Уведіть головні та другорядні числа для нового пристрою, розділені одним пробілом:"
+
+# File: INSCD, line: 106
+msgid "MAKING DEVICE IN /dev"
+msgstr "СТВОРЕННЯ ПРИСТРОЮ У /dev"
+
+# File: INSCD, line: 111
+msgid "MKNOD FAILED"
+msgstr "MKNOD ЗАЗНАВ НЕВДАЧІ"
+
+# File: INSCD, line: 112
+msgid "Sorry, but the mknod command failed to make the device.  You'll need to go back and try selecting your source media again.  Press ENTER to abort the source media selection process."
+msgstr "Вибачте, але mknod зазнав невдачі при спробі створити пристрій. Вам потрібно повернутися назад та спробувати обрати пристрій-джерело знову. Натисніть ENTER для скасування процесу вибору пристрою-джерела."
+
+# File: INSCD, line: 126
+# File: INSCD, line: 143
+# File: INSCD, line: 163
+# File: INSCD, line: 183
+msgid "SCANNING"
+msgstr "ПОШУК ПРИСТРОЮ"
+
+# File: INSCD, line: 126
+msgid "Scanning for a CD/DVD drive containing a Slint disc..."
+msgstr "Пошук пристрою CD/DVD, що містить диск зі Slint..."
+
+# File: INSCD, line: 143
+msgid "Scanning for an IDE CD/DVD drive containing a Slint disc..."
+msgstr "Пошук пристрою IDE CD/DVD, що містить диск зі Slint..."
+
+# File: INSCD, line: 163
+msgid "Scanning for a parallel port ATAPI CD/DVD drive containing a Slint disc..."
+msgstr "Пошук ATAPI CD/DVD на паралельному порті, що містить диск зі Slint..."
+
+# File: INSCD, line: 183
+msgid "No IDE/SCSI drive, so we will try scanning for CD drives on old proprietary interfaces, such as SoundBlaster pre-IDE CD drives, Sony CDU-31a, Sony 535, old Mitsumi pre-IDE, old Optics, etc.  For this scan to work at all, you'll need to be using a bootdisk that supports your CD drive.\n\n"
+"Please press ENTER to begin this last-chance scan for old, obsolete hardware."
+msgstr "Пристроїв IDE/SCSI не знайдено, тому ми спробуємо перевірити застарілі пропрієтарні інтерфейси на наявність пристроїв CD, таких як пристрої до IDE CD від SoundBlaster, Sony CDU-31a, Sony 535, застарілих до IDE Mitsumi, застарілих Optics, і тому подібні. Щоб це спрацювало, використовуйте завантажувальний диск, який підтримує Ваш CD пристрій.\n\n"
+"Будь ласка, натисніть ENTER, щоб розпочати пошук цього старезного обладнання."
+
+# File: INSCD, line: 206
+msgid "CD/DVD DRIVE NOT FOUND"
+msgstr "ПРИСТРІЙ CD/DVD НЕ ЗНАЙДЕНО"
+
+# File: INSCD, line: 207
+msgid "A CD/DVD drive could not be found on any of the devices that were scanned.  Possible reasons include using a bootdisk or kernel that doesn't support your drive, failing to pass parameters needed by some drives to the kernel, not having the Slint disc in your CD/DVD drive, or using a drive connected to a Plug and Play soundcard (in this case, connecting the drive directly to the IDE interface often helps). Please make sure you are using the correct bootdisk for your hardware, consult the BOOTING file for possible information on forcing the detection of your drive, and then reattempt installation.  If all else fails, see FAQ.TXT for information about copying parts of this CD to your DOS partition and installing it from there.\n\n"
+"You will now be returned to the main menu.  If you want to try looking for the CD again, you may skip directly to the SOURCE menu selection."
+msgstr "Неможливо знайти CD/DVD на всіх просканованих пристроях. Імовірні причини: використовується завантажувальний диск чи ядро, які не підтримують ваш пристрій, невдала передача параметрів ядра, яких потребують деякі пристрої, відсутність диска зі Slint у пристрої CD/DVD, чи використання пристрою, під'єднаного до звукової карти Plug and Play (у цьому випадку часто допомагає під’єднання пристрою напряму до IDE інтерфейсу). Будь ласка, переконайтеся, що використовується завантажувальний диск, який підходить до вашого обладнання, перегляньте файл BOOTING і дізнайтесь, як примусово запустити процес виявлення вашого пристрою, й потім повторіть спробу встановлення. Якщо все інше не працюватиме, перегляньте інформацію в FAQ.TXT про копіювання частин CD на ваш DOS розділ та встановлення звідти.\n\n"
+"Зараз ви будете перенаправлені до головного меню. Якщо бажаєте спробувати знайти CD знову, можете відразу переходити до меню вибору ДЖЕРЕЛА."
+
+# File: INSCD, line: 229
+#. mounted successfully
+msgid "CD/DVD DRIVE FOUND"
+msgstr "ЗНАЙДЕНО ПРИСТРІЙ CD/DVD"
+
+# File: INSCD, line: 230
+#, sh-format
+msgid "A Slint disc was found in device $DRIVE_FOUND."
+msgstr "Диск зі Slint знайдено у пристрої $DRIVE_FOUND."
+
+# File: INSCD, line: 233
+# File: INShd, line: 92
+# File: pkgtool, line: 398
+#. failed to mount
+msgid "MOUNT ERROR"
+msgstr "ПОМИЛКА МОНТУВАННЯ"
+
+# File: INSCD, line: 233
+#, sh-format
+msgid "There was an error attempting to mount the CD/DVD on $DRIVE_FOUND.  Maybe the device name is incorrect, the disc is not in the drive, or the kernel you are using does not support the device. (possibly an incorrect bootdisk) What would you like to do now?"
+msgstr "Сталася помилка при спробі змонтувати CD/DVD на $DRIVE_FOUND.\n"
+"Можливо ім'я пристрою неправильне, відсутній диск у пристрої чи ядро яке ви використовуєте не підтримує пристрій (можливо невірний завантажувальний диск).\n"
+"Що ви хочете зробити?"
+
+# File: INSCD, line: 240
+msgid "Abort CD installation"
+msgstr "Скасувати встановлення з CD"
+
+# File: INSCD, line: 241
+msgid "Attempt to mount the CD/DVD device again"
+msgstr "Спробувати знову змонтувати CD/DVD пристрій"
+
+# File: INSCD, line: 242
+# File: INShd, line: 94
+msgid "Ignore the error and continue"
+msgstr "Проігнорувати помилку та продовжити"
+
+# File: INSCD, line: 254
+#, sh-format
+msgid "ATTEMPTING TO MOUNT CD/DVD on $DRIVE_FOUND"
+msgstr "СПРОБА ЗМОНТУВАТИ CD/DVD на $DRIVE_FOUND"
+
+# File: INSCD, line: 255
+#, sh-format
+msgid "Attempting to mount your CD/DVD again with the following command:\n"
+"$ArG"
+msgstr "Намагаємося змонтувати ваш CD/DVD знову, використовуючи таку команду:\n"
+"$ArG"
+
+# File: INSNFS, line: 28
+msgid "Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install.  First, we need\n"
+"the IP address of the machine where the Slint sources are\n"
+"stored."
+msgstr "Добре! Ми все підготували, але для продовження ми повинні знати,\n"
+"де шукати пакунки з програмами для встановлення. Спочатку, нам потрібно\n"
+"визначити IP-адресу комп'ютера, на якому розміщено дзеркало пакунків\n"
+"Slint."
+
+# File: INSNFS, line: 35
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish."
+msgstr "Оскільки мережа вже працює, ви повинні бути в змозі,\n"
+"якщо бажаєте, користуватися ім'ям хосту замість IP адреси."
+
+# File: INSNFS, line: 40
+msgid "What is the IP address of your NFS server?"
+msgstr "Яка IP-адреса вашого NFS-сервера?"
+
+# File: INSNFS, line: 42
+msgid "ENTER IP ADDRESS OF NFS SERVER"
+msgstr "ВВЕДІТЬ IP-АДРЕСУ NFS-СЕРВЕРА"
+
+# File: INSNFS, line: 50
+# File: INSSMB, line: 50
+msgid "\n"
+"There must be a directory on the server with the Slint packages and files arranged in a tree like the FTP site.\n\n"
+"The installation script needs to know the name of the directory on your server that contains the packages. For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What is the Slint source directory?\n"
+msgstr "\n"
+"На сервері повинна знаходитися директорія з пакунками для Slint, і файли мають розташовуватися у дереві, подібному до сервера FTP.\n\n"
+"Встановлювальний скрипт повинен знати назву директорії на вашому сервері, що містить пакунки. Наприклад, якщо розташування директорії з пакунками /stuff/slint, відповідь повинна бути такою: /stuff/slint\n\n"
+"Яка директорія для Slint?\n"
+
+# File: INSNFS, line: 61
+# File: INSSMB, line: 61
+# File: INShd, line: 58
+# File: pkgtool, line: 355
+msgid "SELECT SOURCE DIRECTORY"
+msgstr "ОБЕРІТЬ КАТАЛОГ-ДЖЕРЕЛО"
+
+# File: INSNFS, line: 69
+msgid "\n"
+"In the next screen you should watch for NFS mount errors. If you see errors and you don't see your NFS server listed, then try setting up NFS again.\n"
+msgstr "\n"
+"На наступному екрані ви повинні спостерігати за появою помилок монтування NFS. Якщо ви бачите помилки та не бачите вашого NFS-сервера у списку, тоді спробуйте налаштувати NFS знову.\n"
+
+# File: INSNFS, line: 73
+msgid "NFS MOUNT INFORMATION"
+msgstr "ІНФОРМАЦІЯ ПРО МОНТУВАННЯ NFS"
+
+# File: INSNFS, line: 82
+#, sh-format
+msgid "Mounting $REMOTE_PATH:"
+msgstr "Монтування $REMOTE_PATH:"
+
+# File: INSNFS, line: 87
+msgid "Didn't work."
+msgstr "Не працює."
+
+# File: INSNFS, line: 89
+msgid "Maybe you should check that the directory name is correct?"
+msgstr "Можливо, Вам варто перевірити правильність імені каталоґу?"
+
+# File: INSNFS, line: 96
+msgid "Current NFS mounts:"
+msgstr "Поточний змонтований NFS:"
+
+# File: INSNFS, line: 100
+msgid "Do you need to try setting up NFS again?"
+msgstr "Вам знову потрібно спробувати налаштувати NFS?"
+
+# File: INSNFS, line: 103
+# File: INSNFS, line: 107
+msgid "NFS MOUNT RESULT"
+msgstr "РЕЗУЛЬТАТ МОНТУВАННЯ NFS"
+
+# File: INSSMB, line: 27
+msgid "\n"
+"Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install. First, we need\n"
+"the share address of the Samba server where the Slint sources\n"
+"are stored.\n"
+"Example share address: //192.168.0.1/public\n"
+msgstr "\n"
+"Добре! Все готове до встановлення, але нам потрібно знати\n"
+"де шукати пакунки програм для встановлення. Для початку, нам потрібна\n"
+"публічна адреса Samba сервера де розміщено Slint пакунки\n"
+"для встановлення.\n"
+"Наприклад, публічна адреса: //192.168.0.1/public\n"
+
+# File: INSSMB, line: 36
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish.\n"
+msgstr "Оскільки мережа вже працює, ви повинні бути в змозі,\n"
+"якщо бажаєте, користуватися іменем хосту замість IP адреси.\n"
+
+# File: INSSMB, line: 40
+msgid "\n"
+"What is the share address of your Samba server? "
+msgstr "\n"
+"Яка публічна адреса вашого Samba сервера? "
+
+# File: INSSMB, line: 42
+msgid "ENTER SHARE ADDRESS OF SAMBA SERVER"
+msgstr "ВКАЖІТЬ ПУБЛІЧНУ АДРЕСУ SAMBA-СЕРВЕРА"
+
+# File: INSSMB, line: 70
+msgid "You should see no mount errors:"
+msgstr "У вас не повинно бути ніяких помилок монтування:"
+
+# File: INSSMB, line: 72
+#, sh-format
+msgid "Mounting $REMOTE_SHARE ..."
+msgstr "Монтування $REMOTE_SHARE..."
+
+# File: INSSMB, line: 78
+msgid "Mount failed."
+msgstr "Спроба монтування зазнала невдачі."
+
+# File: INSSMB, line: 83
+msgid "Mounted Samba share(s):"
+msgstr "Монтування Samba директорії(й)"
+
+# File: INSSMB, line: 89
+msgid "A Slint package tree was found! Ready to continue."
+msgstr "Було знайдено дерево пакунків Slint! Готовий продовжувати."
+
+# File: INSSMB, line: 93
+msgid "No Slint package tree found at the indicated path!"
+msgstr "За вказаним шляхом не знайдено дерева пакунків Slint!"
+
+# File: INSSMB, line: 99
+msgid "Do you want to try setting up Samba again?"
+msgstr "Бажаєте знову спробувати налаштувати Samba?"
+
+# File: INSSMB, line: 103
+# File: INSSMB, line: 107
+msgid "MOUNT RESULT"
+msgstr "РЕЗУЛЬТАТ МОНТУВАННЯ"
+
+# File: INSUSB, line: 18
+msgid "SCANNING FOR USB STICK"
+msgstr "ПОШУК НОСІЯ USB"
+
+# File: INSUSB, line: 19
+msgid "Make sure the USB stick containing the Slint package directory is inserted into a USB port, and then press ENTER to begin the scanning process."
+msgstr "Переконайтеся, що носій USB з каталогом пакунків Slint вставлений у порт USB, потім натисніть ENTER для початку пошуку."
+
+# File: INSUSB, line: 41
+msgid "NO REMOVABLE USB DEVICES FOUND"
+msgstr "ЗМІННИХ ПРИСТРОЇВ USB НЕ ВИЯВЛЕНО"
+
+# File: INSUSB, line: 42
+msgid "Sorry, but no removable USB devices could be found.  Exiting back to the top menu."
+msgstr "Змінних пристроїв USB не виявлено. Повертаємося у меню."
+
+# File: INSUSB, line: 93
+msgid "NO SLINT DIRECTORY FOUND"
+msgstr "КАТАЛОГ SLINT НЕ ВИЯВЛЕНО"
+
+# File: INSUSB, line: 94
+msgid "Sorry, but a Slint directory could not be found on any USB devices. Exiting back to the top menu."
+msgstr "Каталог пакунків Slint на пристроях USB не виявлено. Повертаємося у меню."
+
+# File: INSUSB, line: 103
+#. Success!  Report back to the console:
+msgid "USB PACKAGE SOURCE FOUND"
+msgstr "ВИЯВЛЕНО ДЖЕРЕЛО ПАКУНКІВ НА USB"
+
+# File: INSUSB, line: 104
+#, sh-format
+msgid "A Slint package directory was found on device $DRIVE_FOUND."
+msgstr "Каталог пакунків Slint виявлено на пристрої $DRIVE_FOUND."
+
+# File: INSdir, line: 23
+# File: INShd, line: 22
+# File: setup, line: 100
+# File: setup.orig, line: 92
+msgid "Can't umount /var/log/mount.  Reboot machine and run setup again."
+msgstr "Неможливо демонтувати /var/log/mount. Перезавантажте комп'ютер, і запустіть встановлення ще раз."
+
+# File: INSdir, line: 31
+# File: setup, line: 108
+# File: setup.orig, line: 100
+msgid "Mount table corrupt.  Reboot machine and run setup again."
+msgstr "Таблицю монтування пошкоджено.  Перезавантажте комп'ютер і запустіть setup ще раз."
+
+# File: INSdir, line: 35
+msgid "\n"
+"OK, we will install from a directory within the current filesystem. If you have mounted this directory yourself, you should not use /mnt or /var/log/mount as mount points, since Setup might need to use these directories.  You may install from any part of the current directory structure, no matter what the media is (including NFS). You will need to type in the name of the directory containing the  subdirectories for each source disk.\n\n"
+"Which directory would you like to install from?\n"
+msgstr "\n"
+"OK, будемо встановлювати з каталогу поточної файлової системи. якщо монтуєте каталог вручну, не використовуйте у якості точок монтування /mnt або /var/log/mount, оскільки вони можуть знадобитися встановлювачу. Можна встановлювати з будь-якої частини поточної структури каталогів, незалежно від носія (включаючи NFS). Потрібно буде вказати ім’я каталогу, що містить підкаталоги для кожного набору пакунків.\n\n"
+"Вкажіть каталог, що містить файли Slint\n"
+
+# File: INSdir, line: 47
+msgid "INSTALL FROM THE CURRENT FILESYSTEM"
+msgstr "ВСТАНОВЛЕННЯ З ПОТОЧНОЇ ФАЙЛОВОЇ СИСТЕМИ"
+
+# File: INSdir, line: 68
+#, sh-format
+msgid "\n"
+"Sorry - the directory you specified is not valid. Please check the directory and try again.\n\n"
+"(Directory given: $SOURCEDIR)\n"
+msgstr "\n"
+"Вибачте - вказаний вами каталог не дійсний. Будь ласка, перевірте каталог та спробуйте знову.\n\n"
+"(Вказаний каталог: $SOURCEDIR)\n"
+
+# File: INSdir, line: 74
+msgid "INVALID DIRECTORY ENTERED"
+msgstr "ВКАЗАНИЙ КАТАЛОГ НЕДІЙСНИЙ"
+
+# File: INShd, line: 30
+msgid "Mount table corrupt.  Reboot machine and run setup again"
+msgstr "Пошкоджена таблиця монтувань. Перезавантажте комп'ютер, і запустіть встановлення ще раз"
+
+# File: INShd, line: 35
+#, sh-format
+msgid "In order to install directly from the hard disk you must have a partition (such as /dev/sda1, /dev/sdb5, etc) with the Slint distribution's slint/ directory like you'd find it on the FTP site.\n\n"
+"Please enter the partition (such as /dev/sda1) where the Slint sources can be found, or [enter] to see a partition list\n"
+msgstr "Для встановлення безпосередньо з жорсткого диска, ви повинні мати розділ (/dev/sda1, /dev/sdb5, тощо) з дистрибутивом Slint, в директорією slint/ подібно до тієї, яку ви знайдете на сервері FTP.\n\n"
+"Будь ласка, вкажіть розділ (такий як /dev/sda1), який містить Slint, або натисніть [enter], щоб переглянути список розділів\n"
+
+# File: INShd, line: 43
+msgid "INSTALLING FROM HARD DISK"
+msgstr "ВСТАНОВЛЕННЯ З ЖОРСТКОГО ДИСКА"
+
+# File: INShd, line: 53
+msgid "PARTITION LIST"
+msgstr "СПИСОК РОЗДІЛІВ"
+
+# File: INShd, line: 59
+msgid "Now we need to know the full path on this partition to the slint/ directory where the packages to be installed are kept.\n\n"
+"For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What directory are the Slint sources in?\n"
+msgstr "Тепер - нам потрібно знати повне розташування директорії slint/ на цьому розділі, у якій зберігаються пакунки для встановлення.\n\n"
+"Наприклад, якщо розташування директорії /stuff/slint, ваша відповідь повинна бути такою: /stuff/slint\n\n"
+"У якій директорії знаходяться пакунки для Slint?\n"
+
+# File: INShd, line: 91
+#. there was a mount error
+msgid "There was a problem mounting your partition. Would you like to:"
+msgstr "Виникла проблема при спробі змонтувати ваш розділ. Хотіли б ви:"
+
+# File: INShd, line: 93
+msgid "Start over"
+msgstr "Почати знову"
+
+# File: INShd, line: 121
+#, sh-format
+msgid "\n"
+"Sorry, but the directory $SLACK_SOURCE_LOCATION does not exist on partition $SLACK_DEVICE.\n\n"
+"Would you like to try again?\n"
+msgstr "\n"
+"Вибачте, але каталогу $SLACK_SOURCE_LOCATION не існує на розділі $SLACK_DEVICE.\n\n"
+"Бажаєте спробувати ще раз?\n"
+
+# File: INShd, line: 127
+msgid "SOURCE DIRECTORY NOT FOUND"
+msgstr "КАТАЛОҐ-ДЖЕРЕЛО НЕ ЗНАЙДЕНО"
+
+# File: SeTDOS, line: 34
+#, sh-format
+msgid "Setting permissions on NTFS partition $DOS_PART"
+msgstr "Встановлення прав доступу для NTFS розділу $DOS_PART"
+
+# File: SeTDOS, line: 35
+#, sh-format
+msgid "SET SECURITY FOR NTFS PARTITION $DOS_PART"
+msgstr "ВСТАНОВЛЕННЯ РІВНЯ БЕЗПЕКИ ДЛЯ РОЗДІЛУ NTFS $DOS_PART"
+
+# File: SeTDOS, line: 37
+# File: SeTDOS, line: 60
+#, sh-format
+msgid "Because users could go snooping through (or destroy, depending on the settings) your Windows partition, you should choose how much access would you like your non-root users to have to partition $DOS_PART.  The access level can range from no access at all, to read-only for everyone, to read-write access for every user on the machine.  A reasonable default (read-write for root only) is chosen, but you may set this any way that you like."
+msgstr "Оскільки користувачі можуть читати (або пошкодити, у залежності від налаштувань) розділ Windows, потрібно вибрати, настільки широкий доступ надавати не-root користувачам до розділу $DOS_PART. Можливі варіанти від повної відсутності доступу, доступу усім на читання або на читання та запис будь-якому користувачу машини. Вибрано розумні типові налаштування (читання та запис лише для root), але можете вказати, що забажаєте."
+
+# File: SeTDOS, line: 44
+msgid "Root has read/write access, users have no access (ntfs-3g)"
+msgstr "Root - читання/запис, користувачі - немає доступу (ntfs-3g)"
+
+# File: SeTDOS, line: 45
+msgid "Everyone has read only access (built-in kernel ntfs driver)"
+msgstr "Усі - лише читання (драйвер ntfs, вбудований у ядро)"
+
+# File: SeTDOS, line: 46
+msgid "Everyone has read access, but only root can write (ntfs-3g)"
+msgstr "Усі - лише читання, root - читання/запис (ntfs-3g)"
+
+# File: SeTDOS, line: 47
+msgid "All users can read/write to any file (ntfs-3g)"
+msgstr "Усі - читання/запис будь-яких файлів (ntfs-3g)"
+
+# File: SeTDOS, line: 57
+#, sh-format
+msgid "Setting permissions on FAT partition $DOS_PART"
+msgstr "Встановлення дозволів для розділу FAT $DOS_PART"
+
+# File: SeTDOS, line: 58
+#, sh-format
+msgid "SET SECURITY FOR FAT PARTITION $DOS_PART"
+msgstr "ВСТАНОВЛЕННЯ РІВНЯ БЕЗПЕКИ ДЛЯ РОЗДІЛУ FAT $DOS_PART"
+
+# File: SeTDOS, line: 67
+msgid "Root has read/write access, users have no access"
+msgstr "root - читання/запис, користувачі - немає доступу"
+
+# File: SeTDOS, line: 68
+msgid "Everyone has read only access"
+msgstr "Усі - лише читання"
+
+# File: SeTDOS, line: 69
+msgid "Everyone has read access, but only root can write"
+msgstr "Усі - лише читання, root - читання/запис"
+
+# File: SeTDOS, line: 70
+msgid "All users can read/write to any file"
+msgstr "Усі - читання/запис будь-яких файлів"
+
+# File: SeTDOS, line: 108
+msgid "Setting up non-Linux partitions."
+msgstr "Налаштування не-Linux розділів."
+
+# File: SeTDOS, line: 109
+msgid "FAT or NTFS PARTITIONS DETECTED"
+msgstr "ВИЯВЛЕНО РОЗДІЛИ FAT/NTFS"
+
+# File: SeTDOS, line: 110
+msgid "Partitions of type FAT or NTFS (commonly used by DOS and Windows) have been found on your system.  Would you like to add these partitions to your /etc/fstab so that these partitions are visible from Linux?"
+msgstr "У системі виявлено розділи FAT або NTFS (зазвичай використовуються DOS або Windows). Бажаєте додати ці розділи у /etc/fstab, щоб вони були доступні з Linux?"
+
+# File: SeTDOS, line: 122
+msgid "Selecting non-Linux partitions."
+msgstr "Вибір не-Linux розділів."
+
+# File: SeTDOS, line: 124
+msgid "SELECT PARTITION TO ADD TO /etc/fstab"
+msgstr "ВИБІР РОЗДІЛУ ДЛЯ ДОДАВАННЯ У /etc/fstab"
+
+# File: SeTDOS, line: 126
+# File: SeTpartitions, line: 348
+# File: SeTpartitions, line: 439
+msgid "Select"
+msgstr "Вибір"
+
+# File: SeTDOS, line: 128
+# File: SeTpartitions, line: 350
+# File: SeTpartitions, line: 441
+# File: setup.80.make-bootdisk, line: 233
+msgid "Continue"
+msgstr "Продовжити"
+
+# File: SeTDOS, line: 130
+msgid "In order to make these partitions visible from Linux, we  need to add them to your /etc/fstab.  Please pick a partition to  add to /etc/fstab, or select '---' to continue with the installation  process."
+msgstr "Щоб зробити ці розділи доступними з Linux, потрібно додати їх у /etc/fstab. Виберіть розділ для додавання у /etc/fstab або виберіть \"---\" для продовження встановлення."
+
+# File: SeTDOS, line: 144
+# File: SeTDOS, line: 170
+# File: SeTpartitions, line: 222
+# File: SeTpartitions, line: 468
+msgid "IN USE"
+msgstr "ВИКОРИСТОВУЄТЬСЯ"
+
+# File: SeTDOS, line: 144
+# File: SeTpartitions, line: 215
+msgid "on"
+msgstr "на"
+
+# File: SeTDOS, line: 152
+# File: SeTDOS, line: 153
+# File: SeTDOS, line: 154
+# File: SeTDOS, line: 155
+# File: SeTDOS, line: 156
+msgid "done, continue with setup"
+msgstr "завершено, продовжити встановлення"
+
+# File: SeTDOS, line: 193
+#, sh-format
+msgid "Selecting a location to mount $DOS_PART."
+msgstr "Вибір точки монтування $DOS_PART."
+
+# File: SeTDOS, line: 194
+#, sh-format
+msgid "PICK MOUNT POINT FOR $DOS_PART"
+msgstr "ВИБІР ТОЧКИ МОНТУВАННЯ ДЛЯ $DOS_PART"
+
+# File: SeTDOS, line: 195
+#, sh-format
+msgid "Now this partition must be mounted somewhere in your  directory tree.  Please enter the directory under which  you would like to put it.  For instance, you might want to  enter /fat-c or /fat-d or something similar.   NOTE: This partition will not actually be mounted until you reboot.   Where would you like to mount $DOS_PART?"
+msgstr "Тепер цей розділ потрібно змонтувати кудись у дереві каталогів. Вкажіть каталог, до якого під’єднати розділ. Наприклад, можна вказати /fat-c, /fat-d або щось подібне. ПРИМІТКА: Цей розділ не буде змонтовано до перезавантаження. Вкажіть каталог для монтування $DOS_PART"
+
+# File: SeTDOS, line: 224
+# File: SeTEFI, line: 82
+# File: SeTEFI.orig, line: 73
+# File: SeTpartitions, line: 562
+#. next partition loop
+#. more than one Linux partition
+#. Done, report to the user:
+#, sh-format
+msgid "\n"
+"Adding this information to your /etc/fstab:\n\n"
+msgstr "\n"
+"Додавання наступної інформації у /etc/fstab:\n\n"
+
+# File: SeTDOS, line: 229
+msgid "Finished setting up non-Linux partitions."
+msgstr "Закінчено налаштування не-Linux розділів."
+
+# File: SeTDOS, line: 230
+msgid "DONE ADDING FAT or NTFS PARTITIONS"
+msgstr "ЗАКІНЧЕНО ДОДАВАННЯ РОЗДІЛІВ FAT/NTFS"
+
+# File: SeTEFI, line: 53
+# File: SeTEFI.orig, line: 44
+#. It didn't mount, so it must not be formatted:
+#, sh-format
+msgid "FORMAT EFI PARTITION ${PREFERRED_EFI_PARTITION}?"
+msgstr "ФОРМАТУВАТИ РОЗДІЛ EFI ${PREFERRED_EFI_PARTITION}?"
+
+# File: SeTEFI, line: 54
+# File: SeTEFI.orig, line: 45
+#, sh-format
+msgid "An EFI System Partition was found on ${PREFERRED_EFI_PARTITION}, but it has not yet been formatted.  Would you like to format this partition?"
+msgstr "Виявлено системний розділ EFI ${PREFERRED_EFI_PARTITION}, але він не відформатований. Форматувати цей розділ?"
+
+# File: SeTEFI, line: 62
+# File: SeTEFI.orig, line: 53
+#. Format the partition with FAT32, 2 sectors per cluster (needed for the
+#. minimum supported EFI partition size of 100MB):
+#, sh-format
+msgid "FORMATTING EFI PARTITION ${PREFERRED_EFI_PARTITION}"
+msgstr "ФОРМАТУВАННЯ РОЗДІЛУ EFI ${PREFERRED_EFI_PARTITION}"
+
+# File: SeTEFI, line: 63
+# File: SeTEFI.orig, line: 54
+#, sh-format
+msgid "Formatting EFI System Partition ${PREFERRED_EFI_PARTITION} as FAT32."
+msgstr "Форматується системний розділ EFI ${PREFERRED_EFI_PARTITION} у FAT32."
+
+# File: SeTEFI, line: 87
+# File: SeTEFI.orig, line: 78
+msgid "Finished setting up EFI System Partition."
+msgstr "Налаштування системного розділу EFI закінчено."
+
+# File: SeTEFI, line: 88
+# File: SeTEFI.orig, line: 79
+msgid "EFI SYSTEM PARTITION RECOGNIZED"
+msgstr "СИСТЕМНИЙ РОЗДІЛ EFI ВИЯВЛЕНО"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "CONFIGURE THE SYSTEM"
+msgstr "НАЛАШТУВАННЯ СИСТЕМИ"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "Now we can configure your Linux system.  If this is a new installation, you MUST configure it now or it will not boot correctly.  However, if you are just adding software to an existing system, you can back out to the main menu and skip this step.  However (important exception) if you've installed a new kernel image, it's important to reconfigure your system so that you can install LILO (the Linux loader) or create a bootdisk using the new kernel.  You want to CONFIGURE your system, right?"
+msgstr "Зараз ми можемо налаштувати вашу Linux систему. Якщо це нове встановлення, то ви ПОВИННІ налаштувати її зараз інакше вона не зможе коректно завантажитися. Проте, якщо ви просто додаєте програмне забезпечення до вже існуючої системи, ви можете повернутися назад до головного меню і пропустити цей крок. Однак (важливий виняток), якщо ви встановили новий образ ядра, дуже важливо переналаштувати систему для того щоб ви могли встановити LILO (завантажувач Linux) або створити завантажувальний диск використовуючи нове ядро. Ви хочете НАЛАШТУВАТИ вашу систему, так?"
+
+# File: SeTconfig, line: 83
+# File: SeTconfig.prev, line: 83
+msgid "DONE INSTALLING PACKAGES"
+msgstr "ВСТАНОВЛЕННЯ ПАКУНКІВ ЗАКІНЧЕНО"
+
+# File: SeTconfig, line: 84
+# File: SeTconfig.prev, line: 84
+msgid "Preparing to configure your new Linux system..."
+msgstr "Підготовка до налаштування вашої нової Linux системи..."
+
+# File: SeTfull, line: 20
+msgid "ERROR: TARGET PARTITION FULL"
+msgstr "ПОМИЛКА: ЦІЛЬОВИЙ РОЗДІЛ ЗАПОВНЕНИЙ"
+
+# File: SeTfull, line: 20
+msgid "Setup has detected that one or more of your target partitions has become full.  I'm sorry, but you will have to try installing again onto a partition or partitions with more free space.  You could also try selecting fewer packages to install.  Since there is no longer any space for setup to make its temporary files, this is an unrecoverable error.  Press control-alt-delete to reboot and try again.  Before doing that, you might want to switch to another console (Alt-F2) and use df (disk free utility) to see if you can get an idea of how to avoid this the next time around."
+msgstr "Встановлювач виявив, що один або більше цільових розділів заповнені. Мені шкода, але ви маєте спробувати запустити встановлення знову. Цього разу на розділ(и) з більшою кількістю вільного місця. Ви також можете спробувати обрати меншу кількість пакетів для встановлення. Оскільки для встановлювача більше не залишилося вільного місця для створення тимчасових файлів, це невиправна помилка. Натисніть Ctrl-Alt-Delete для перезавантаження. Перед тим як це зробити, ви можете перемкнутися на іншу консоль (Alt+F2)  і запустити df (утиліта для визначення вільного місця) для того щоб отримати уявлення про те як уникнути цієї проблеми наступного разу."
+
+# File: SeTkernel, line: 33
+msgid "REINSERT KERNEL DISC"
+msgstr "ВСТАВТЕ ЗАНОВО ДИСК З ЯДРОМ"
+
+# File: SeTkernel, line: 34
+msgid "Please reinsert the Slint disc containing the collection of Linux kernels.  Usually this is disc number one (the disc that you boot from).  Once you've inserted the disc, hit ENTER to continue."
+msgstr "Будь ласка вставте заново диск зі Slint який містить набір ядер Linux. Зазвичай це диск номер один (диск з якого ви завантажилися). Як тільки ви вставили диск натисніть ENTER для продовження."
+
+# File: SeTkernel, line: 92
+msgid "ERROR ATTEMPTING TO INSTALL KERNEL"
+msgstr "ПОМИЛКА ПРИ СПРОБІ ВСТАНОВЛЕННЯ ЯДРА"
+
+# File: SeTkernel, line: 92
+#, sh-format
+msgid "Sorry, but the directory $PLINK/kernels was not found.  You may need to install the requested kernel $SLACK_KERNEL manually and then install LILO before your system will be able to boot correctly."
+msgstr "Вибачте, але каталог $PLINK/kernels не знайдено. Вам може знадобитися встановити запитане ядро $SLACK_KERNEL вручну, і потім встановити LILO перед тим як ваша система буде здатна звантажитися коректно."
+
+# File: SeTkeymap, line: 24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "ВИБІР РОЗКЛАДКИ КЛАВІАТУРИ"
+
+# File: SeTkeymap, line: 24
+#, sh-format
+msgid "You may select one of the following keyboard maps.  If you do not select a keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr "Ви можете обрати одну з наступних розкладок для клавіатури. Якщо ви не виберете розкладку клавіатури, то $DefaultKeyMap - поточний вибір. Користуйтесь клавішами зі стрілками ВГОРУ/ВНИЗ і PageUp/PageDown для прокрутки всього списку можливих варіантів."
+
+# File: SeTkeymap, line: 214
+msgid "\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr "\n"
+"    OK, нову розкладку встановлено. Можете зробити її тест,\n"
+"    надрукувавши щось. Для завершення тесту введіть у\n"
+"    рядку 1, щоб прийняти розкладку та продовжити, або 2, щоб\n"
+"    відмовитися від поточної розкладки та вибрати іншу."
+
+# File: SeTmedia, line: 13
+# File: SeTpxemedia, line: 37
+msgid "Select Slint installation source."
+msgstr "Вибрати джерело встановлення Slint."
+
+# File: SeTmedia, line: 14
+# File: SeTpxemedia, line: 38
+msgid "SOURCE MEDIA SELECTION"
+msgstr "ВИБРАТИ НОСІЙ-ДЖЕРЕЛО"
+
+# File: SeTmedia, line: 15
+msgid "Please select the media from which to install Slint Linux:"
+msgstr "Виберіть носій, з якого встановлювати Slint Linux:"
+
+# File: SeTmedia, line: 17
+msgid "Install from a Slint USB stick"
+msgstr "Встановити Slint з USB-носія"
+
+# File: SeTmedia, line: 18
+msgid "Install from a Slint CD or DVD"
+msgstr "Встановити Slint з CD/DVD"
+
+# File: SeTmedia, line: 19
+msgid "Install from a pre-mounted directory"
+msgstr "Встановити з попередньо змонтованого каталогу"
+
+# File: SeTmedia, line: 20
+msgid "Install from a hard drive partition"
+msgstr "Встановити з розділу на жорсткому диску"
+
+# File: SeTmedia, line: 21
+msgid "Install from NFS (Network File System)"
+msgstr "Встановити з NFS (мережева файлова система)"
+
+# File: SeTmedia, line: 22
+msgid "Install from Samba share"
+msgstr "Встановити з загального ресурсу Samba"
+
+# File: SeTnet, line: 109
+msgid "\n"
+"You will now get a chance to probe your network interfaces.\n"
+msgstr "\n"
+"Ви знову отримаєте шанс визначити ваші мережеві інтерфейси.\n"
+
+# File: SeTnet, line: 112
+# File: SeTnet, line: 125
+msgid "PROBING NETWORK DEVICES"
+msgstr "ДОСЛІДЖЕННЯ МЕРЕЖЕВИХ ПРИСТРОЇВ"
+
+# File: SeTnet, line: 119
+msgid "\n"
+"Are you OK with the network interface which was detected? If not, select 'No' to get back to the network probe program. You can try to load another driver explicitly, by using 'P <driver_name>'.\n\n"
+"If you are satisfied, select 'Yes' to continue with network configuration."
+msgstr "\n"
+"Налаштувати цей виявлений мережевий інтерфейс? Якщо ні, виберіть 'No' для повернення до дослідження мережевих пристроїв. Можете спробувати завантажити інший драйвер за допомогою 'P <ім’я_драйвера>'.\n\n"
+"Якщо все влаштовує, виберіть 'Yes' для налаштування мережі."
+
+# File: SeTnet, line: 141
+# File: SeTnet, line: 297
+#. hope that 3 seconds is enough for dhcpcd;
+#. if not then you had better specify the INTERFACE in the nic= parameter...
+#. end ask approval for ip config
+#. echo "Configuring ethernet card..."
+msgid "INITIALIZING NETWORK"
+msgstr "ІНІЦІАЛІЗАЦІЯ МЕРЕЖІ"
+
+# File: SeTnet, line: 142
+msgid "\n"
+"Waiting a few seconds for DHCP polling to settle ..."
+msgstr "\n"
+"Зачекайте декілька секунд, поки DHCP налаштує мережу..."
+
+# File: SeTnet, line: 165
+msgid "You're running off the hard drive filesystem. Is this machine currently running on the network you plan to install from? If so, we won't try to reconfigure your ethernet card.\n\n"
+"Are you up-and-running on the network?"
+msgstr "Ви працюєте без файлової системи на жорсткому диску. Цей комп'ютер на даний момент працює по мережі, ви плануєте встановлення по ній? Якщо так, ми не будемо переналаштовувати вашу Ethernet-картку. Є ваша мережа працюючою?"
+
+# File: SeTnet, line: 170
+# File: SeTnet, line: 290
+msgid "NETWORK CONFIGURATION"
+msgstr "НАЛАШТУВАННЯ МЕРЕЖІ"
+
+# File: SeTnet, line: 179
+#. Offer to install using DHCP:
+#, sh-format
+msgid "\n"
+"I can configure your network interface $ENET_DEVICE fully automatically using DHCP. If you want this, please select 'yes'.\n\n"
+"If you select 'no' instead, then you will be able to assign the IP address, netmask and gateway manually.\n"
+msgstr "\n"
+"Можливе автоматичне налаштування мережевого інтерфейсу $ENET_DEVICE за допомогою DHCP. Для його виконання виберіть 'yes'.\n\n"
+"Для призначення вручну адреси IP, мережевої маски та шлюзу, виберіть 'no'.\n"
+
+# File: SeTnet, line: 186
+msgid "DHCP CONFIGURATION"
+msgstr "НАЛАШТУВАННЯ DHCP"
+
+# File: SeTnet, line: 211
+msgid "\n"
+"You will need to enter the IP address you wish to assign to this machine. Example: 111.112.113.114\n\n"
+"What is your IP address?"
+msgstr "\n"
+"Вам потрібно буде ввести IP адресу, яку ви бажаєте призначити для цього комп'ютера. Приклад: 111.112.113.114\n\n"
+"Яка Ваша IP адреса?"
+
+# File: SeTnet, line: 219
+msgid "ASSIGN IP ADDRESS"
+msgstr "ВКАЗАТИ АДРЕСУ IP"
+
+# File: SeTnet, line: 228
+msgid "\n"
+"Now we need to know your netmask. Typically this will be 255.255.255.0 but this can be different depending on your local setup.\n\n"
+"What is your netmask?"
+msgstr "\n"
+"Потрібно вказати маску мережі. Зазвичай це 255.255.255.0, але у залежності від налаштувань мережі може бути іншою.\n\n"
+"Вкажіть маску мережі"
+
+# File: SeTnet, line: 237
+msgid "ASSIGN NETMASK"
+msgstr "ВКАЗАТИ МАСКУ МЕРЕЖІ"
+
+# File: SeTnet, line: 246
+msgid "Do you have a gateway?"
+msgstr "У вас є шлюз?"
+
+# File: SeTnet, line: 257
+msgid "ASSIGN GATEWAY ADDRESS"
+msgstr "ВКАЗАТИ АДРЕСУ ШЛЮЗУ"
+
+# File: SeTnet, line: 258
+msgid "\n"
+"What is the IP address for your gateway?"
+msgstr "\n"
+"Вкажіть адресу IP шлюзу"
+
+# File: SeTnet, line: 278
+#, sh-format
+msgid "\n"
+"This is the proposed network configuration for $ENET_DEVICE - If this is OK, then select 'Yes'.\n"
+"If this is not OK and you want to configure again, select 'No'.\n\n"
+"* IP Address: $LOCAL_IPADDR\n"
+"* Netmask:    $LOCAL_NETMASK"
+msgstr "\n"
+"Пропоноване налаштування мережі для $ENET_DEVICE - якщо все правильно, виберіть 'Yes'.\n"
+"Якщо ні та бажаєте повторити налаштування, виберіть 'No'.\n\n"
+"* Адреса IP: $LOCAL_IPADDR\n"
+"* Маска:    $LOCAL_NETMASK"
+
+# File: SeTnet, line: 298
+#, sh-format
+msgid "\n"
+"Configuring your network interface $ENET_DEVICE ..."
+msgstr "\n"
+"Налаштовується мережевий інтерфейс $ENET_DEVICE ..."
+
+# File: SeTnet, line: 335
+msgid "FETCHING CONFIGURATION"
+msgstr "ОТРИМАННЯ НАЛАШТУВАНЬ"
+
+# File: SeTnet, line: 336
+#, sh-format
+msgid "\n"
+"Attempting to fetch a remote configuration file using $PROTO ..."
+msgstr "\n"
+"Спроба отримання віддаленого файлу налаштування використовуючи $PROTO ..."
+
+# File: SeTpartitions, line: 49
+# File: SeTpartitions, line: 70
+# File: SeTpartitions, line: 95
+# File: SeTpartitions, line: 120
+# File: SeTpartitions, line: 145
+# File: SeTpartitions, line: 168
+# File: SeTpartitions, line: 187
+#. output a nice status message
+msgid "FORMATTING"
+msgstr "ФОРМАТУВАННЯ"
+
+# File: SeTpartitions, line: 50
+#, sh-format
+msgid "Formatting $ArG1 with filesystem btrfs."
+msgstr "Форматування $ArG1 у файлову систему btrfs."
+
+# File: SeTpartitions, line: 51
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE \n"
+"Filesystem type: btrfs"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE \n"
+"Тип файлової системи: btrfs"
+
+# File: SeTpartitions, line: 71
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext2."
+msgstr "Форматування $ArG1 у файлову систему ext2."
+
+# File: SeTpartitions, line: 72
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext2"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE \n"
+"Тип файлової системи: ext2"
+
+# File: SeTpartitions, line: 96
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext3."
+msgstr "Форматування $ArG1 у файлову систему ext3."
+
+# File: SeTpartitions, line: 97
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext3"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE \n"
+"Тип файлової системи: ext3"
+
+# File: SeTpartitions, line: 121
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext4."
+msgstr "Форматування $ArG1 у файлову систему ext4."
+
+# File: SeTpartitions, line: 122
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext4"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE\n"
+"Тип файлової системи: ext4"
+
+# File: SeTpartitions, line: 146
+#, sh-format
+msgid "Formatting $ArG1 with filesystem jfs."
+msgstr "Форматування $ArG1 у файлову систему jfs."
+
+# File: SeTpartitions, line: 147
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: jfs"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE\n"
+"Тип файлової системи: jfs"
+
+# File: SeTpartitions, line: 169
+#, sh-format
+msgid "Formatting $ArG1 with filesystem reiserfs."
+msgstr "Форматування $ArG1 у файлову систему reiserfs."
+
+# File: SeTpartitions, line: 170
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: reiserfs"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE\n"
+"Тип файлової системи: reiserfs"
+
+# File: SeTpartitions, line: 188
+#, sh-format
+msgid "Formatting $ArG1 with filesystem xfs."
+msgstr "Форматування $ArG1 у файлову систему xfs."
+
+# File: SeTpartitions, line: 189
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: xfs"
+msgstr "Форматування $ArG1\n"
+"Розмір у 1Kb блоках: $SIZE\n"
+"Тип файлової системи: xfs"
+
+# File: SeTpartitions, line: 225
+# File: SeTpartitions, line: 226
+# File: SeTpartitions, line: 227
+# File: SeTpartitions, line: 228
+# File: SeTpartitions, line: 229
+msgid "done adding partitions, continue with setup"
+msgstr "додавання розділів закінчено, продовжити встановлення"
+
+# File: SeTpartitions, line: 236
+#, sh-format
+msgid "Do you want to format Linux partition ${ArG1}?"
+msgstr "Бажаєте відформатувати розділ Linux ${ArG1}?"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "FORMAT PARTITION $ArG1"
+msgstr "ФОРМАТУВАННЯ РОЗДІЛУ $ArG1"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "If this partition has not been formatted, you should format it.  NOTE: This will erase all data on it.  Would you like to format this partition?"
+msgstr "Якщо розділ невідформатований, форматування потрібне. УВАГА: При цьому усі дані на розділі буде вилучено. Форматувати цей розділ?"
+
+# File: SeTpartitions, line: 241
+#, sh-format
+msgid "Quick format with no bad block checking"
+msgstr "Швидке форматування без перевірки на биті блоки"
+
+# File: SeTpartitions, line: 242
+#, sh-format
+msgid "Slow format that checks for bad blocks"
+msgstr "Повільне форматування з перевіркою на биті блоки"
+
+# File: SeTpartitions, line: 243
+#, sh-format
+msgid "No, do not format this partition"
+msgstr "Ні, не форматувати цей розділ"
+
+# File: SeTpartitions, line: 256
+msgid "Ext2 is the traditional Linux file system and is fast and stable."
+msgstr "Ext2 - традиційна файлова система Linux, швидка та стабільна."
+
+# File: SeTpartitions, line: 259
+msgid "Ext3 is the journaling version of the Ext2 filesystem."
+msgstr "Ext3 - журнальована версія файлової системи Ext2."
+
+# File: SeTpartitions, line: 263
+msgid "Ext4 is the successor to the ext3 filesystem. "
+msgstr "Ext4 - файлова система, що прийшла на заміну Ext3. "
+
+# File: SeTpartitions, line: 267
+msgid "ReiserFS is a journaling filesystem that stores all files and filenames in a balanced tree structure."
+msgstr "ReiserFS - журнальована файлова система, що зберігає дані та імена файлів у збалансованому дереві."
+
+# File: SeTpartitions, line: 270
+msgid "Btrfs is a B-tree copy-on-write filesystem."
+msgstr "Btrfs - файлова система, що використовує B-дерева й копіювання-при-запису."
+
+# File: SeTpartitions, line: 275
+msgid "JFS is IBM's Journaled Filesystem, currently used in IBM enterprise servers."
+msgstr "JFS - журнальована файлова система від IBM, що використовується у промислових серверах."
+
+# File: SeTpartitions, line: 278
+msgid "XFS is SGI's journaling filesystem that originated on IRIX."
+msgstr "XFS - журнальована файлова система від SGI, початково з IRIX."
+
+# File: SeTpartitions, line: 281
+#, sh-format
+msgid "SELECT FILESYSTEM FOR $ArG1 "
+msgstr "ВИБІР ФАЙЛОВОЇ СИСТЕМИ ДЛЯ $ArG1"
+
+# File: SeTpartitions, line: 283
+#, sh-format
+msgid "Partition $ArG1 will be formatted."
+msgstr "Розділ $ArG1 буде відформатовано."
+
+# File: SeTpartitions, line: 287
+msgid "Please select the type of filesystem to use for the specified device.  Here are descriptions of the available filesystems:"
+msgstr "Виберіть тип файлової системи для використання на вказаному пристрої. Ось опис доступних файлових систем:"
+
+# File: SeTpartitions, line: 292
+msgid "Standard Linux Ext2 Filesystem"
+msgstr "Ext2 - стандартна журнальована ФС"
+
+# File: SeTpartitions, line: 295
+msgid "Ext3 Journaling Filesystem"
+msgstr "Ext3 - журнальована ФС"
+
+# File: SeTpartitions, line: 298
+msgid "Ext4 Journaling Filesystem"
+msgstr "Ext4 - журнальована ФС"
+
+# File: SeTpartitions, line: 301
+msgid "IBM's Journaled Filesystem"
+msgstr "Jfs - журнальована ФС від IBM"
+
+# File: SeTpartitions, line: 304
+msgid "ReiserFS Journaling Filesystem"
+msgstr "ReiserFS - журнальована ФС"
+
+# File: SeTpartitions, line: 307
+msgid "Btrfs Copy-on-Write B-tree Filesystem"
+msgstr "Btrfs - ФС з копіюванням-при-запису та Б-деревами"
+
+# File: SeTpartitions, line: 310
+msgid "Flash-Friendly File System"
+msgstr "Файлова система, що підходить для флеш-носіїв"
+
+# File: SeTpartitions, line: 313
+msgid "SGI's Journaling Filesystem"
+msgstr "Xfs - журнальована ФС від SGI"
+
+# File: SeTpartitions, line: 344
+msgid "Setting up root Linux partition."
+msgstr "Налаштування кореневого розділу Linux."
+
+# File: SeTpartitions, line: 346
+msgid "Select Linux installation partition:"
+msgstr "Виберіть розділ для встановлення Linux:"
+
+# File: SeTpartitions, line: 352
+msgid "Please select a partition from the following list to use for your root (/) Linux partition."
+msgstr "Виберіть зі списку розділ для кореневого розділу (/) Linux."
+
+# File: SeTpartitions, line: 435
+msgid "Setting up other Linux partitions."
+msgstr "Налаштування інших розділів Linux."
+
+# File: SeTpartitions, line: 437
+msgid "Select other Linux partitions for /etc/fstab"
+msgstr "Виберіть інші розділи Linux для /etc/fstab"
+
+# File: SeTpartitions, line: 443
+#, sh-format
+msgid "You seem to have more than one partition tagged as type Linux.  You may use these to distribute your Linux system across more than one partition.  Currently, you have $ROOT_DEVICE mounted as your / partition.  You might want to mount directories such as /home or /usr/local on separate partitions.  You should not try to mount /etc, /sbin, or /bin on their own partitions since they contain utilities needed to bring the system up and mount partitions.  Also, do not reuse a partition that you've already entered before.  Please select one of the Linux partitions listed below, or if you're done, hit <Continue>."
+msgstr "Схоже, наявні більше одного розділу Linux. Можна використовувати їх для розташування системи на декількох розділах. Зараз $ROOT_DEVICE змонтований як кореневий розділ /. Можливо, забажаєте помістити окремі каталоги, наприклад, /home або /usr/local, на власні розділи. Не намагайтеся розташовувати на окремих розділах каталоги /etc, /sbin або /bin, що містять утиліти, що потрібні для підйому системи та монтування розділів. Крім того, не використовуйте розділи, вже вибрані раніше. Виберіть зі списку нижче один з розділів Linux, по закінченні виберіть <Продовжити>."
+
+# File: SeTpartitions, line: 478
+#, sh-format
+msgid "Partition $NEXT_PARTITION will not be reformatted."
+msgstr "Розділ $NEXT_PARTITION не буде відформатовано."
+
+# File: SeTpartitions, line: 483
+#, sh-format
+msgid "Partition $NEXT_PARTITION will be formatted with $NEXT_SYS_TYPE."
+msgstr "Розділ $NEXT_PARTITION буде відформатовано у $NEXT_SYS_TYPE."
+
+# File: SeTpartitions, line: 522
+#. DOFORMAT?
+#. Now ask the user where to mount this new filesystem:
+#, sh-format
+msgid "SELECT MOUNT POINT FOR $NEXT_PARTITION"
+msgstr "ВИБІР ТОЧКИ МОНТУВАННЯ ДЛЯ $NEXT_PARTITION"
+
+# File: SeTpartitions, line: 523
+#, sh-format
+msgid "OK, now you need to specify where you want the new partition mounted.  For example, if you want to put it under /usr/local, then respond:  /usr/local\n"
+"Where would you like to mount $NEXT_PARTITION?"
+msgstr "OK, тепер потрібно вказати, де змонтувати новий розділ. Наприклад, якщо бажаєте помістити його у /usr/local, вкажіть:  /usr/local\n"
+"Вкажіть каталог, куди змонтувати $NEXT_PARTITION"
+
+# File: SeTpartitions, line: 567
+msgid "Finished setting up Linux partitions."
+msgstr "Закінчено налаштування розділів Linux."
+
+# File: SeTpartitions, line: 568
+msgid "DONE ADDING LINUX PARTITIONS TO /etc/fstab"
+msgstr "ЗАКІНЧЕНО ДОДАВАННЯ РОЗДІЛІВ LINUX У /etc/fstab"
+
+# File: SeTpartitions, line: 569
+msgid "OK"
+msgstr "OK"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+#. There is no root password
+msgid "WARNING: NO ROOT PASSWORD DETECTED"
+msgstr "ПОПЕРЕДЖЕННЯ: НЕ ВИЯВЛЕНО ПАРОЛЮ ROOT"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+msgid "There is currently no password set on the system administrator account (root).  It is recommended that you set one now so that it is active the first time the machine is rebooted.  This is especially important if you're using a network enabled kernel and the machine is on an Internet connected LAN.  Would you like to set a root password?"
+msgstr "На даний час обліковий запис системного адміністратора (root) не має паролю. Рекомендується вказати його зараз, щоб він був активним при першому перезавантаженні комп’ютера. Це особливо важливо, якщо використовується ядро з підтримкою мережі й комп’ютер під’єднано до Інтернету. Вказати пароль для root?"
+
+# File: SeTswap, line: 31
+msgid "NO SWAP SPACE DETECTED"
+msgstr "РОЗДІЛ РЕЗЕРВНОЇ ПАМ'ЯТІ НЕ ВИЯВЛЕНО"
+
+# File: SeTswap, line: 31
+msgid "You have not created a swap partition with Linux fdisk.  Do you want to continue installing without one? "
+msgstr "Не створено розділ резервної пам'яті, за допомогою fdisk з Linux. Продовжити встановлення без нього? "
+
+# File: SeTswap, line: 35
+msgid "ABORTING INSTALLATION"
+msgstr "ПЕРЕРИВАННЯ ВСТАНОВЛЕННЯ"
+
+# File: SeTswap, line: 35
+msgid "Create a swap partition with Linux fdisk, and then try this again."
+msgstr "Створіть розділ резервної пам'яті, за допомогою fdisk з Linux, і спробуйте знову."
+
+# File: SeTswap, line: 44
+# File: SeTswap, line: 84
+msgid "Setting up swap partitions."
+msgstr "Налаштування розділів резервної пам'яті."
+
+# File: SeTswap, line: 46
+msgid "SWAP SPACE DETECTED"
+msgstr "ВИЯВЛЕНО РОЗДІЛ РЕЗЕРВНОЇ ПАМ'ЯТІ"
+
+# File: SeTswap, line: 48
+msgid "Slint Setup has detected one or more swap partitions on your system.  These partitions have been preselected to be set up as swap space.  If there are any swap partitions that you do not wish to use with this installation, please unselect them with the up and down arrows and spacebar.  If you wish to use all of them (this is recommended), simply hit the ENTER key."
+msgstr "Встановлювач Slint виявив один або декілька розділів резервної пам'яті. Вони відмічені для налаштування у якості ділянки резервної пам'яті. Якщо є розділи резервної пам'яті, не призначені для використання у встановлюваній системі, зніміть з них прапорець за допомогою стрілок та пробілу. Для використання їх усіх (рекомендується), просто натисніть ENTER."
+
+# File: SeTswap, line: 61
+#, sh-format
+msgid "Linux swap partition, ${PARTSIZE}"
+msgstr "Розділ резервної пам'яті Linux, ${PARTSIZE}"
+
+# File: SeTswap, line: 85
+msgid "CHECK SWAP PARTITIONS FOR BAD BLOCKS?"
+msgstr "ПЕРЕВІРИТИ РОЗДІЛ ПІДКАЧКИ НА ПОГАНІ БЛОКИ?"
+
+# File: SeTswap, line: 86
+msgid "Slint Setup will now prepare your system's swap space.  When formatting swap partitions with mkswap you may also check them for bad blocks.  This is not the default since nearly all modern hard drives check themselves for bad blocks anyway.  Would you like to check for bad blocks while running mkswap?"
+msgstr "Встановлювач Slint підготує ділянку резервної пам'яті для системи. При форматуванні розділів резервної пам'яті з mkswap ви можете перевірити їх на наявність збійних блоків. Типово перевірка не виконується, оскільки практично усі сучасні жорсткі диски самостійно виконують таку перевірку. Перевіряти на збійні сектори при виконанні mkswap?"
+
+# File: SeTswap, line: 106
+#, sh-format
+msgid "Activating swap partition ${swappartition}:"
+msgstr "Активація розділу резервної пам'яті ${swappartition}:"
+
+# File: SeTswap, line: 122
+msgid "Your swapspace has been configured. This information   will be added to your /etc/fstab:"
+msgstr "Налаштування ділянки резервної пам'яті закінчено. У /etc/fstab буде додано наступну інформацію:"
+
+# File: SeTswap, line: 127
+msgid "SWAP SPACE CONFIGURED"
+msgstr "ДІЛЯНКУ РЕЗЕРВНОЇ ПАМ'ЯТІ НАЛАШТОВАНО"
+
+# File: blurbs, line: 4
+#. This file allows localizing content of
+#. displayed by 'pkgtool' in a dialog box for each installation script
+#. when the user wants to run some of these scripts again.
+msgid "Run mkfontdir and mkfontscale in font directories."
+msgstr "Запуск mkfontdir та mkfontscale у директорії зі шрифтами."
+
+# File: blurbs, line: 5
+msgid "Run fc-cache to locate new fonts for Xft"
+msgstr "Запуск fc-cache визначить розміщення нових шрифтів для Xft"
+
+# File: blurbs, line: 6
+msgid "Run update-desktop-database."
+msgstr "Запуск update-desktop-database."
+
+# File: blurbs, line: 7
+msgid "Run update-mime-database."
+msgstr "Запуск update-mime-database."
+
+# File: blurbs, line: 8
+msgid "Run gtk-update-icon-cache for hicolor theme."
+msgstr "Запуск gtk-update-icon-cache для hicolor theme."
+
+# File: blurbs, line: 9
+msgid "Rebuild SSL certificate database."
+msgstr "Перебудова бази даних сертифікатів SSL."
+
+# File: blurbs, line: 10
+msgid "Install a Linux kernel from a bootdisk"
+msgstr "Встановлення ядра Linux з завантажувального пристрою"
+
+# File: blurbs, line: 11
+msgid "Create a USB Linux boot stick"
+msgstr "Створення завантажувальної USB-флешки з ОС Linux"
+
+# File: blurbs, line: 12
+msgid "Set a default browser link."
+msgstr "Встановлення типового посилання на браузер."
+
+# File: blurbs, line: 13
+msgid "Set up LILO to boot Linux (and other OSes) from your hard drive"
+msgstr "Налаштування LILO для завантаження Linux (та інших ОС) з жорсткого диску вашого комп'ютера"
+
+# File: blurbs, line: 14
+msgid "Configure the console mouse support (GPM)."
+msgstr "Налаштування підтримки миші у консолі (GPM)."
+
+# File: blurbs, line: 15
+msgid "Configure basic network settings"
+msgstr "Встановлення базових налаштувань мережі"
+
+# File: blurbs, line: 16
+msgid "Select/deselect system daemons (services)"
+msgstr "Активація/деактивація системних демонів (сервісів)"
+
+# File: blurbs, line: 17
+msgid "Select a font for the console"
+msgstr "Виберіть шрифт для консолі"
+
+# File: blurbs, line: 18
+msgid "Select your timezone"
+msgstr "Виберіть ваш часовий пояс"
+
+# File: blurbs, line: 19
+msgid "Choose a default window manager for X"
+msgstr "Виберіть типовий менеджер вікон для X"
+
+# File: blurbs, line: 20
+msgid "Set up ELILO (EFI LILO) to boot Linux from your hard drive"
+msgstr "Налаштування ELILO (EFI LILO) для завантаження Linux з жорсткого диска"
+
+# File: blurbs, line: 21
+msgid "Set up GRUB to boot Linux (and other OSes) from your hard drive"
+msgstr "Налаштування GRUB для завантаження Linux (та інших ОС) з жорсткого диска"
+
+# File: network, line: 21
+msgid "Network support for NFS install, 2006-09-20 volkerdi@slackware.com\n"
+"Network support for FTP/HTTP install, 26-Jan-2008 alien@slackware.com"
+msgstr "Підтримка мережі для встановлення з NFS, 20.09.2006 volkerdi@slackware.com\n"
+"Підтримка мережі для встановлення з FTP/HTTP, 26.01.2008 alien@slackware.com"
+
+# File: network, line: 43
+# File: pcmcia, line: 32
+msgid "The next step in your installation may be partitioning your hard drive\n"
+"(if you're installing to a Linux partition) with 'fdisk' or 'cfdisk'\n"
+"(the menu-driven version of fdisk).  If you already have a partition\n"
+"prepared for Linux, run 'setup' to start the installer program."
+msgstr "Наступним кроком встановлення може бути розмітка жорсткого диску (якщо\n"
+"встановлюєте на розділ Linux) програмами 'fdisk' або 'cfdisk'\n"
+"(версія fdisk з екранними меню). Якщо розділи для Linux вже були\n"
+"підготовані, виконайте 'setup' для запуску програми інсталяції."
+
+# File: network.sh, line: 17
+msgid "******* Welcome to the network supplemental disk! *******"
+msgstr "******* Вас вітає мережевий додатковий диск! *******"
+
+# File: network.sh, line: 24
+msgid "-- Press [enter] to automatically probe for all network cards, or switch\n"
+"   to a different console and use 'modprobe' to load the modules manually.\n"
+"-- To skip probing some modules (in case of hangs), enter them after an S:\n"
+"   S eepro100 ne2k-pci\n"
+"-- To probe only certain modules, enter them after a P like this:\n"
+"   P 3c503 3c505 3c507\n"
+"-- To get a list of network modules, enter an L.\n"
+"-- To skip the automatic probe entirely, enter a Q now."
+msgstr "-- Натисніть ENTER для автоматичного виявлення усіх мережевих карток, або\n"
+"   перемкніться у іншу консоль та використовуйте 'modprobe' для завантаження\n"
+"   модулів вручну.\n"
+"-- Для пропуску окремих модулів (на випадок зависання), введіть їх після S:\n"
+"   S eepro100 ne2k-pci\n"
+"-- Для перевірки лише явно вказаних модулів, введіть їх після P:\n"
+"   P 3c503 3c505 3c507\n"
+"-- Для отримання списку мережевих модулів, введіть L.\n"
+"-- Для відмови від автоматичного виявлення введіть Q."
+
+# File: network.sh, line: 37
+msgid "network> "
+msgstr "мережа> "
+
+# File: network.sh, line: 43
+msgid "Available network modules:"
+msgstr "Доступні мережеві модулі:"
+
+# File: network.sh, line: 60
+msgid "Probing for PCI/EISA network cards:"
+msgstr "Виявлення мережевих карток PCI/EISA:"
+
+# File: network.sh, line: 75
+# File: network.sh, line: 116
+# File: network.sh, line: 152
+#, sh-format
+msgid "Probing for card using the $card module..."
+msgstr "Виявлення карток, що використовують модуль $card..."
+
+# File: network.sh, line: 81
+# File: network.sh, line: 122
+# File: network.sh, line: 158
+#, sh-format
+msgid "SUCCESS: found card using $card protocol -- modules loaded."
+msgstr "УСПІХ: картку що використовує протокол $card виявлено, модулі завантажено."
+
+# File: network.sh, line: 90
+# File: network.sh, line: 131
+#, sh-format
+msgid "Skipping module $card..."
+msgstr "Пропуск модулю $card..."
+
+# File: network.sh, line: 97
+#. Don't probe for com20020... it loads on any machine with or without the
+#. card.
+msgid "Probing for MCA, ISA, and other PCI network cards:"
+msgstr "Виявлення мережевих карток MCA, ISA та інших PCI:"
+
+# File: network.sh, line: 138
+msgid "Sorry, but no network card was detected.  Some cards (like non-PCI\n"
+"NE2000s) must be supplied with the I/O address to use.  If you have\n"
+"an NE2000, you can switch to another console (Alt-F2), log in, and\n"
+"load it with a command like this:\n\n"
+"  modprobe ne io=0x360"
+msgstr "Мережевих карток не виявлено. Для деяких карток (наприклад, не-PCI\n"
+"NE2000) має бути явно вказано адресу вводу/виводу. Для NE2000\n"
+"можете перемкнутися у іншу консоль (Alt-F2), зареєструватися\n"
+"та завантажити модуль командою, подібною до цієї:\n\n"
+"  modprobe ne io=0x360"
+
+# File: network.sh, line: 149
+msgid "Probing for a custom list of modules:"
+msgstr "Виявлення по списку модулів:"
+
+# File: network.sh, line: 169
+msgid "Skipping automatic module probe."
+msgstr "Пропуск автоматичного виявлення."
+
+# File: pcmcia, line: 13
+msgid "PCMCIA/Cardbus support script, 2003-02-18 volkerdi@slackware.com\n"
+"                               2007-05-09 alien@slackware.com"
+msgstr "Сценарій підтримки PCMCIA/Cardbus, 2003-02-18 volkerdi@slackware.com\n"
+"                                   2007-05-09 alien@slackware.com"
+
+# File: pcmcia, line: 23
+msgid "The PCMCIA/Cardbus subsystem is now installed.  Please make sure that\n"
+"all of the cards you'll need for the installation are in the machine.\n"
+"If you still need to insert any PCMCIA/Cardbus cards, do that now.  Once\n"
+"the drive stops (indicating that all needed modules have been\n"
+"loaded), then press [enter] to continue."
+msgstr "Підсистема PCMCIA/Cardbus встановлена. Переконайтеся, що усі потрібні\n"
+"для встановлення картки PCMCIA/Cardbus вже у машині. Якщо потрібно вставити ще\n"
+"картки, зробіть це зараз. Коли диск зупиниться (показуючи, що були\n"
+"завантажені усі модулі), натисніть ENTER для продовження."
+
+# File: pxesetup, line: 63
+# File: setup, line: 130
+# File: setup.orig, line: 122
+msgid "Select source media"
+msgstr "Вибір носія-джерела"
+
+# File: rc.S, line: 158
+msgid "We will now probe your sound cards.\n"
+"Please wait until you hear an alarm sound, then press Enter.\n"
+msgstr "Зараз ми перевіримо ваші звукові карти.\n"
+"Зачекайте, доки не почуєте звуковий сигнал, а потім - натисніть Enter.\n"
+
+# File: rc.S, line: 177
+msgid "No working sound card found. Maybe the sound is muted?\n"
+msgstr "Працездатних звукових карт не знайдено. Можливо - звук вимкнено?\n"
+
+# File: rc.S, line: 188
+msgid "This installer has speech and Braille device support in order\n"
+"to be accessible to visually impaired users. To have speech turned on\n"
+"during installation type S, then press [Enter]. Else, just press Enter.\n"
+msgstr "Цей встановлювач надає підтримку мовлення і дисплеїв Брайля, щоб бути доступним для незрячих користувачів. Щоб увімкнути мовлення під час встановлення - натисніть S, а потім натисніть [Enter]. Інакше - просто натисніть Enter.\n"
+
+# File: rc.S, line: 204
+msgid "To display keyboard shortcuts for reviewing the screen with speech\n"
+"press R, then press [Enter],\n"
+"Else, just press [Enter]: "
+msgstr "Щоб відобразити комбінації клавіш для огляду екрана,\n"
+"які діють при увімкненому мовленні,\n"
+"натисніть R, а потім [Enter],\n"
+"Інакше - просто натисніть [Enter]: "
+
+# File: rc.S, line: 215
+msgid "\n"
+"Note: espeakup, used for speech, lacks a voice in Ukrainian."
+msgstr "\n"
+"Note: espeakup, used for speech, lacks a voice in Ukrainian."
+
+# File: rc.S, line: 219
+msgid "LANGUAGE TO USE DURING INSTALLATION"
+msgstr "МОВА, ЩО ВИКОРИСТОВУВАТИМЕТЬСЯ ПІД ЧАС ВСТАНОВЛЕННЯ"
+
+# File: rc.S, line: 220
+#, sh-format
+msgid "Please select the language to use for installation.$NOTE"
+msgstr "Будь ласка, оберіть мову, яка використовуватиметься під час встановлення.$NOTE"
+
+# File: rc.S, line: 221
+msgid "English (USA)"
+msgstr "Англійська (США)"
+
+# File: rc.S, line: 222
+msgid "Dutch"
+msgstr "Голландська"
+
+# File: rc.S, line: 223
+msgid "French"
+msgstr "Французька"
+
+# File: rc.S, line: 224
+msgid "German"
+msgstr "Німецька"
+
+# File: rc.S, line: 225
+msgid "Greek"
+msgstr "Грецька"
+
+# File: rc.S, line: 226
+msgid "Italian"
+msgstr "Італійська"
+
+# File: rc.S, line: 227
+msgid "Norwegian"
+msgstr "Норвезька"
+
+# File: rc.S, line: 228
+msgid "Polish"
+msgstr "Польська"
+
+# File: rc.S, line: 229
+msgid "Portuguese (Brazil)"
+msgstr "Португальська (Бразилія)"
+
+# File: rc.S, line: 230
+msgid "Portuguese (Portugal)"
+msgstr "Португальська (Португалія)"
+
+# File: rc.S, line: 231
+msgid "Russian"
+msgstr "Російська"
+
+# File: rc.S, line: 232
+msgid "Spanish (Latin America)"
+msgstr "Іспанська (Латинська Америка)"
+
+# File: rc.S, line: 233
+msgid "Swedish"
+msgstr "Шведська"
+
+# File: rc.S, line: 234
+msgid "Turkish"
+msgstr "Турецька"
+
+# File: rc.S, line: 235
+msgid "Ukrainian"
+msgstr "Українська"
+
+# File: rc.S, line: 251
+# File: rc.S.orig, line: 160
+#, sh-format
+msgid "<OPTION TO LOAD SUPPORT FOR ANOTHER KEYBOARD>\n\n"
+"If you are not using a \"$kbd\" keyboard map, you may load another one now.\n"
+"To select a different keyboard map, please enter 1 now.\n"
+"To continue using the \"$kbd\" keyboard map, just hit [Enter]."
+msgstr "<ЗМІНА РОЗКЛАДКИ КЛАВІАТУРИ>\n\n"
+"Якщо ви не використовуєте розкладку клавіатури \"$kbd\", зараз у вас є можливість обрати іншу.\n"
+"Щоб обрати іншу розкладку клавіатури, будь ласка, введіть 1.\n"
+"Щоб продовжити використання розкладки клавіатури \"$kbd\", просто натисніть [Enter]."
+
+# File: rc.S, line: 258
+# File: rc.S.orig, line: 167
+msgid "Enter 1 to select a keyboard map: "
+msgstr "Введіть 1 для вибору розкладки клавіатури: "
+
+# File: rc.S, line: 267
+#, sh-format
+msgid "\n"
+"To partition your device(s), you can use 'cfdisk' or 'fdisk' and also,\n"
+"only for a GPT layout, 'cgdisk' or 'gdisk'. 'parted' is also available.\n"
+"TIP: to enhance accessibility of cgdisk, use its -a option.\n\n"
+"If you partition a new device, we recommend that you set up a gpt (GUID\n"
+"partition label) for it, for more flexibility.\n\n"
+"You can also let the installer auto-partition a device, if and only if:\n"
+"1. Its size is of least ${GCOUNT}G.\n"
+"2. You agree that this device will be dedicated to Slint.\n"
+"3. You agree that all data currently stored on it will be erased.\n"
+"4. None of the partitions it could include is mounted.\n"
+"WARNING: if it has already been used, make a back-up first!\n\n"
+"After having used the auto-partitioning feature, you will be allowed to\n"
+"make changes, like adding another partition to the drive.\n\n"
+"For an auto-partitioning type now 'auto'.\n\n"
+"To start the main installation (after partitioning), type 'setup'.\n"
+msgstr "\n"
+"Для розмітки диска, використовуйте \"cfdisk\" або \"fdisk\", а також, лише для таблиці розділів GPT, \"cgdisk\" або \"gdisk\". Також наявний \"parted\".\n"
+"ПІДКАЗКА: щоб покращити доступність cgdisk, використовуйте параметр -a.\n\n"
+"Для розмітки нового пристрою, рекомендуємо використовувати таблицю розділів gpt (GUID\n"
+"partition label).\n\n"
+"Ви можете дозволити встановлювачу автоматично розмітити диск, лише в наступних випадках:\n"
+"1. Його розмір не менший ніж ${GCOUNT}G.\n"
+"2. Ви погоджуєтеся з тим, що диск буде призначено для Slint.\n"
+"3. Ви погоджуєтеся з тим що всі дані збережені на диску, буде видалено.\n"
+"4. Жоден розділ, в тому числі й на цьому диску, не змонтований.\n"
+"УВАГА: якщо диск вже використовувався, спочатку зробіть резервну копію його вмісту!\n\n"
+"Після використання функції автоматичної розмітки, ви зможете вносити зміни. Наприклад - додати ще один розділ.\n\n"
+"Щоб автоматично розмітити диск, введіть \"auto\".\n\n"
+"Щоб розпочати встановлення (після розмітки диска), введіть \"setup\".\n"
+
+# File: rc.S, line: 302
+#, sh-format
+msgid "Welcome to the Slint Linux installation media! (version ${Version})\n\n"
+"######  IMPORTANT!  READ THE INFORMATION BELOW CAREFULLY.  ######\n\n"
+"On the device where Slint will be installed you will need:\n"
+"- at least one partition of type 'Linux', of size at least ${GCOUNTMIN}G,\n"
+"  for the system itself (not counting the user files).\n"
+"- if the device has a GPT layout, a small (4M) partition of type ef02\n"
+"  (BIOS Boot partition) to install GRUB on this drive in Legacy mode.\n"
+"- an EFI System partition, of type ef01, to install GRUB in EFI mode,\n"
+"  of size at least 100M, unless you want to use an existing one.\n\n"
+"It is recommended that you have a swap partition (type 'Linux swap')\n"
+"prior installation, but you can also set up a swap file afterwards.\n\n"
+"On the next screen we will present the tools you can use to partition\n"
+"the device.\n\n"
+"You may now login as 'root'.\n\n"
+"Slint login: "
+msgstr "Вас вітає встановлювальний носій Slint Linux! (version ${Version})\n\n"
+"######  ВАЖЛИВО!  УВАЖНО ПРОЧИТАЙТЕ НИЖЧЕ НАВЕДЕНУ ІНФОРМАЦІЮ.  ######\n\n"
+"на диску, що призначено для встановлення Slint, потрібно мати:\n"
+"- принаймні один розділ типу \"Linux\", розміром не менш ніж ${GCOUNTMIN}G\n"
+"  для самої системи (не враховуючи файлів користувача).\n"
+"- Якщо пристрій має таблицю розділів GPT, маленький (4М)розділ типу ef02\n"
+"  (Розділ BIOS Bootn) для встановлення GRUB на цей диск у режимі Legacy.\n"
+"- Системний розділ EFI типу ef01, для встановлення GRUB у режимі EFI,\n"
+"  розміром принаймні 100М, якщо не хочете використовувати існуючий.\n\n"
+"Перед встановленням - рекомендуємо створити розділ резервної пам'яті (типу \"Linux swap\"), але також це можна зробити пізніше.\n\n"
+"На наступному екрані,ми надамо засоби для роботи з диском.\n\n"
+"Тепер ви можете увійти як \"root\".\n\n"
+"Увійдіть до Slint: "
+
+# File: setup, line: 55
+msgid "Slint Linux Setup"
+msgstr "Встановлення Slint Linux"
+
+# File: setup, line: 55
+msgid "\\n\n"
+"Scanning your system for partition information...\\n\n"
+"\\n"
+msgstr "\\n\n"
+"Отримання інформації про розділи у вашій системі...\\n\n"
+"\\n"
+
+# File: setup, line: 66
+# File: setup.orig, line: 65
+msgid "NO LINUX PARTITIONS DETECTED"
+msgstr "РОЗДІЛІВ LINUX НЕ ВИЯВЛЕНО"
+
+# File: setup, line: 67
+# File: setup.orig, line: 66
+msgid "There don't seem to be any partitions on this machine of type Linux.  You'll need to make at least one of these to install Linux. To do this, you'll need to leave 'setup', and make the partitions using 'cfdisk' (MBR partitions) or 'cgdisk' (GPT partitions). For more information, read the 'setup' help file from the next menu."
+msgstr "Схоже - на цьому комп'ютері немає розділів типу Linux.  Вам потрібно створити принаймні один із таких, щоб встановити Linux. для цього - необхідно вийти з \"setup\" і створити розділи, використовуючи \"cfdisk\" (для розділів MBR), або \"cgdisk\" (для розділів GPT). Щоб дізнатися більше, перегляньте файл довідки \"setup\" у наступному меню."
+
+# File: setup, line: 76
+# File: setup.orig, line: 75
+msgid "NO EFI SYSTEM PARTITION DETECTED"
+msgstr "СИСТЕМНОГО РОЗДІЛУ EFI НЕ ВИЯВЛЕНО"
+
+# File: setup, line: 77
+# File: setup.orig, line: 76
+msgid "This machine appears to be using EFI/UEFI, but no EFI System Partition was found.  You'll need to make an EFI System Partition in order to boot from the hard drive.  To do this, leave 'setup', and use 'cgdisk' to make a 100MB partition of type EF00.  For more information, read the 'setup' help file from the next menu."
+msgstr "Схоже - цей комп'ютер використовує EFI/UEFI, але Системний Розділ EFI не знайдено.  Необхідно створити Системний Розділ EFI, щоб уможливити завантаження з жорсткого диска.  Для цього - вийдіть із \"setup\", і створіть розділ типу EF00 розміром 100МБ, використовуючи \"cgdisk\".  Щоб дізнатися більше, перегляньте файл довідки \"setup\" у наступному меню."
+
+# File: setup, line: 121
+# File: setup.orig, line: 113
+#, sh-format
+msgid "Slint Linux Setup (version ${Version})"
+msgstr "Встановлювач Slint Linux (версія ${Version})"
+
+# File: setup, line: 123
+# File: setup.orig, line: 115
+msgid "Welcome to Slint Linux Setup.\n"
+"Select an option below using the UP/DOWN keys and SPACE or ENTER.\n"
+"Alternate keys may also be used: '+', '-', and TAB."
+msgstr "Вас вітає Встановлювач Slint Linux.\n"
+"Виберіть опцію з наведених нижче, використовуючи курсорні клавіші ВГОРУ та ВНИЗ, а також ПРОБІЛ або ЕНТЕР.\n"
+"Можливе використання альтернативних клавіш: \"+\", \"-\", а також ТАБ."
+
+# File: setup, line: 126
+# File: setup.orig, line: 118
+msgid "Read the Slint Setup HELP file"
+msgstr "Переглянути ДОВІДКУ з використання Встановлювача Slint"
+
+# File: setup, line: 127
+# File: setup.orig, line: 119
+#, sh-format
+msgid "Remap your keyboard  (other than $DefaultKeyMap)"
+msgstr "Змінити розкладку клавіатури  (використовується $DefaultKeyMap)"
+
+# File: setup, line: 128
+# File: setup.orig, line: 120
+msgid "Set up your swap partition(s)"
+msgstr "Налаштувати розділ(и) резервної пам'яті"
+
+# File: setup, line: 129
+# File: setup.orig, line: 121
+msgid "Set up your target partitions"
+msgstr "Налаштувати призначення розділів"
+
+# File: setup, line: 131
+# File: setup.orig, line: 123
+msgid "Install selected software"
+msgstr "Встановити вибране програмне забезпечення"
+
+# File: setup, line: 132
+# File: setup.orig, line: 124
+msgid "Reconfigure your Linux system"
+msgstr "Налаштувати систему Linux"
+
+# File: setup, line: 133
+# File: setup.orig, line: 125
+msgid "Exit Slint Linux Setup"
+msgstr "Вийти зі Встановлювача Slint Linux"
+
+# File: setup, line: 167
+msgid "TARGET PARTITIONS ALREADY CONFIGURED"
+msgstr "ПРИЗНАЧЕННЯ РОЗДІЛІВ ВЖЕ НАЛАШТОВАНО"
+
+# File: setup, line: 167
+msgid "\n"
+"You have already configured the target partitions, where the system will be installed.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Ви вже налаштували призначення розділів для встановлення системи.\n\n"
+"Натисніть ENTER, щоб повернутися до головного меню."
+
+# File: setup, line: 187
+msgid "SOURCE OF PACKAGES ALREADY CHOSEN"
+msgstr "ДЖЕРЕЛО ПАКУНКІВ ВЖЕ ВИБРАНО"
+
+# File: setup, line: 187
+msgid "\n"
+"You have already chosen the source of packages.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Ви вже вибрали джерело пакунків.\n\n"
+"Натисніть ENTER, щоб повернутися до головного меню."
+
+# File: setup, line: 201
+# File: setup.orig, line: 179
+msgid "SOURCE PACKAGES INAPPROPRIATE"
+msgstr "НЕПРИЙНЯТНЕ ДЖЕРЕЛО ПАКУНКІВ"
+
+# File: setup, line: 202
+# File: setup.orig, line: 180
+#, sh-format
+msgid "Either the source packages are inappropriate for the target system:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"or the file $INSTALL_PATH/slint/DONOTREMOVEME.TXT is missing.\n"
+"Please try again to set the source of packages"
+msgstr "Джерело пакунків не відповідає поточній системі:\n"
+"Slint версія $SLINTVERSION (${SFX}-bit),\n"
+"або файл $INSTALL_PATH/slint/DONOTREMOVEME.TXT відсутній.\n"
+"Будь ласка, спробуйте вибрати носій-джерело пакунків ще раз"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "CANNOT INSTALL SOFTWARE YET"
+msgstr "НАРАЗІ НЕ МОЖЛИВО ВСТАНОВИТИ ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "\n"
+"Before you can install software, complete the following tasks:\n\n"
+"1. Select your source media.\n"
+"2. Set up your target Linux partition(s).\n\n"
+"You may also optionally remap your keyboard and set up your swap partition(s).\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Перш ніж встановлювати програмне забезпечення, необхідно виконати такі завдання:\n\n"
+"1. Вибрати джерело-носій пакунків.\n"
+"2. Налаштувати призначення розділу(ів) Linux.\n\n"
+"У разі потреби, ви можете змінити розкладку клавіатури, а також створити розділ(и) резервної пам'яті.\n\n"
+"Натисніть ENTER, щоб повернутися до головного меню."
+
+# File: setup, line: 227
+# File: setup.orig, line: 185
+msgid "READY TO INSTALL THE PACKAGES?"
+msgstr "ГОТОВІ ДО ВСТАНОВЛЕННЯ ПАКУНКІВ?"
+
+# File: setup, line: 228
+# File: setup.orig, line: 186
+msgid "Please confirm that you want to install the packages."
+msgstr "Будь ласка, підтвердьте, що бажаєте встановити пакунки."
+
+# File: setup, line: 231
+# File: setup.orig, line: 189
+msgid "INSTALL KDE PACKAGES?"
+msgstr "ВСТАНОВИТИ ПАКУНКИ KDE?"
+
+# File: setup, line: 232
+# File: setup.orig, line: 190
+msgid "Do you want to install the KDE packages?"
+msgstr "Бажаєте встановити пакунки KDE?"
+
+# File: setup, line: 248
+# File: setup.orig, line: 217
+msgid "A one-line description will be displayed as each package is installed."
+msgstr "Показано однорядковий опис кожного встановлюваного пакунку."
+
+# File: setup, line: 284
+# File: setup.orig, line: 246
+msgid "SYSTEM NOT YET INSTALLED"
+msgstr "СИСТЕМУ ЩЕ НЕ ВСТАНОВЛЕНО"
+
+# File: setup, line: 285
+# File: setup.orig, line: 247
+msgid "You need to install the packages before configuring the system.\n\n"
+"Please press ENTER to return to the main menu."
+msgstr "Перш ніж налаштовувати систему, необхідно встановити пакунки.\n\n"
+"Будь ласка, натисніть ENTER, щоб повернутися до головного меню."
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "REPLACE /etc/fstab?"
+msgstr "ЗАМІНИТИ /etc/fstab?"
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "You already have an /etc/fstab on your install partition.  If you were just adding software, you should probably keep your old /etc/fstab.  If you've changed your partitioning scheme, you should use the new /etc/fstab.  Do you want to replace your old /etc/fstab with the new one?"
+msgstr "Ви вже маєте /etc/fstab на вашому розділі для встановлення.  Якщо ви просто додали програмне забезпечення, тоді, ймовірно, варто залишити ваш старий /etc/fstab.  Якщо ви змінили схему розділів, використовуйте новий /etc/fstab.  Бажаєте замінити ваш старий /etc/fstab на новий?"
+
+# File: setup, line: 358
+# File: setup.orig, line: 302
+msgid "Installing translations..."
+msgstr "Встановлення перекладів..."
+
+# File: setup, line: 428
+# File: setup, line: 435
+# File: setup.orig, line: 372
+# File: setup.orig, line: 379
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+msgid "Slint Linux Setup is complete"
+msgstr "Встановлення Slint Linux завершено"
+
+# File: setup, line: 429
+# File: setup.orig, line: 373
+msgid "\n"
+" Please remove the installation disc.\n"
+" "
+msgstr "\n"
+" Будь ласка, вийміть встановлювальний диск.\n"
+" "
+
+# File: setup, line: 437
+# File: setup.orig, line: 381
+msgid "\n"
+"Would you like to reboot your system?\n\n"
+"If you choose No, you will be dropped to a shell.\n"
+msgstr "\n"
+"Бажаєте перезавантажити систему?\n\n"
+"Якщо ви оберете No, то потрапите до оболонки shell.\n"
+
+# File: setup, line: 446
+# File: setup.orig, line: 390
+msgid "You may now reboot your system once you are ready.\n"
+"You can issue the 'reboot' command; or if your system has\n"
+"a keyboard attached, you can use the key combination: control+alt+delete\n"
+msgstr "Коли будете готові - можете перезавантажити систему.\n"
+"Ви можете ввести команду \"reboot\"; або якщо у вашій системі підключена клавіатура, скористайтеся сполученням клавіш: control+alt+delete\n"
+
+# File: setup, line: 471
+# File: setup.orig, line: 415
+msgid "** Starting reboot **"
+msgstr "** Початок перезавантаження **"
+
+# File: setup.mouse, line: 25
+msgid "MOUSE CONFIGURATION"
+msgstr "НАЛАШТУВАННЯ МИШІ"
+
+# File: setup.mouse, line: 26
+msgid "This part of the configuration process will create a /dev/mouse link pointing to your default mouse device.  You can change the /dev/mouse link later if the mouse doesn't work, or if you switch to a different type of pointing device.  We will also use the information about the mouse to set the correct protocol for gpm, the Linux mouse server.  Please select a mouse type from the list below:"
+msgstr "Ця частина процесу налаштування створює посилання /dev/mouse, що вказує на типовий пристрій миші. Можливо змінити посилання пізніше, якщо миша не запрацює або якщо перейдете на використання іншого типу вказівного пристрою. Ми також будемо використовувати інформацію про мишу для встановлення правильного протоколу для gpm, сервера миші для Linux. Виберіть тип миші зі списку нижче:"
+
+# File: setup.mouse, line: 33
+msgid "PS/2 port mouse (most desktops and laptops)"
+msgstr "Миша для PS/2 порту (більшість настільних та мобільних)"
+
+# File: setup.mouse, line: 34
+msgid "USB connected mouse"
+msgstr "Миша для порту USB"
+
+# File: setup.mouse, line: 35
+msgid "Microsoft PS/2 Intellimouse"
+msgstr "Microsoft PS/2 Intellimouse"
+
+# File: setup.mouse, line: 36
+msgid "Intellimouse Explorer PS/2"
+msgstr "Intellimouse Explorer PS/2"
+
+# File: setup.mouse, line: 37
+msgid "2 button Microsoft compatible serial mouse"
+msgstr "2 кнопкова миша Microsoft для посл. порту"
+
+# File: setup.mouse, line: 38
+msgid "3 button Microsoft compatible serial mouse"
+msgstr "3 кнопкова миша Microsoft для посл. порту"
+
+# File: setup.mouse, line: 39
+msgid "Logitech serial MouseMan and similar devices"
+msgstr "Logitech посл. MouseMan та подібні пристрої"
+
+# File: setup.mouse, line: 40
+msgid "MouseSystems serial (most 3 button serial mice)"
+msgstr "MouseSystems посл. (більшість 3 кнопкових миш)"
+
+# File: setup.mouse, line: 41
+msgid "Plug and Play (serial mice that do not work with ms)"
+msgstr "Увімкни-та-працюй (посл. миші, що не працюють з ms)"
+
+# File: setup.mouse, line: 42
+msgid "Microsoft serial Intellimouse"
+msgstr "Microsoft посл. Intellimouse"
+
+# File: setup.mouse, line: 43
+msgid "Genius Netmouse on PS/2 port"
+msgstr "Genius Netmouse на порту PS/2"
+
+# File: setup.mouse, line: 44
+msgid "Some serial Logitech devices"
+msgstr "Деякі посл. пристрої Logitech"
+
+# File: setup.mouse, line: 45
+msgid "Make serial Logitech behave like msc"
+msgstr "Посл. Logitech, що працює як msc"
+
+# File: setup.mouse, line: 46
+msgid "ATI XL busmouse (mouse card)"
+msgstr "Шинна миша ATI XL (картка миші)"
+
+# File: setup.mouse, line: 47
+msgid "Microsoft busmouse (mouse card)"
+msgstr "Шинна миша Microsoft (картка миші)"
+
+# File: setup.mouse, line: 48
+msgid "Logitech busmouse (mouse card)"
+msgstr "Шинна миша Logitech (картка миші)"
+
+# File: setup.mouse, line: 49
+msgid "A pointing pen (NCR3125) on some laptops"
+msgstr "Вказуюче перо (NCR3125) на деяких ноутбуках"
+
+# File: setup.mouse, line: 50
+msgid "Twiddler keyboard, by HandyKey Corp"
+msgstr "Клавіатура Twiddler від HandyKey Corp"
+
+# File: setup.mouse, line: 51
+msgid "Genitizer tablet (relative mode)"
+msgstr "Планшет Genitizer (відносний режим)"
+
+# File: setup.mouse, line: 52
+msgid "Use a joystick as a mouse"
+msgstr "Використовувати джойстик як мишу"
+
+# File: setup.mouse, line: 53
+msgid "Wacom serial graphics tablet"
+msgstr "Wacom посл. графічний планшет"
+
+# File: setup.mouse, line: 71
+msgid "SELECT SERIAL PORT"
+msgstr "ВИБІР ПОСЛІДОВНОГО ПОРТУ"
+
+# File: setup.mouse, line: 71
+msgid "Your mouse requires a serial port.  Which one would you like to use?"
+msgstr "Вибрана миша потребує послідовний порт. Який використовувати?"
+
+# File: setup.mouse, line: 73
+msgid "(COM1: under DOS)"
+msgstr "(COM1: в DOS)"
+
+# File: setup.mouse, line: 74
+msgid "(COM2: under DOS)"
+msgstr "(COM2: в DOS)"
+
+# File: setup.mouse, line: 75
+msgid "(COM3: under DOS)"
+msgstr "(COM3: в DOS)"
+
+# File: setup.mouse, line: 76
+msgid "(COM4: under DOS)"
+msgstr "(COM4: в DOS)"
+
+# File: setup.mouse, line: 125
+msgid "Stopping gpm..."
+msgstr "Зупинка gpm..."
+
+# File: setup.mouse, line: 129
+msgid "Restarting gpm..."
+msgstr "Перезапуск gpm..."
+
+# File: setup.mouse, line: 135
+#. assume \$1 = start:
+msgid "Starting gpm:"
+msgstr "Запуск gpm:"
+
+# File: setup.mouse, line: 157
+#. Now ask if this should be the new rc.gpm:
+msgid "GPM CONFIGURATION"
+msgstr "НАЛАШТУВАННЯ GPM"
+
+# File: setup.mouse, line: 158
+#, sh-format
+msgid "The gpm program allows you to cut and paste text on the virtual consoles using a mouse.  If you choose to run it at boot time, this line will be added to your /etc/rc.d/rc.gpm:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Shall we load the gpm program at boot time?"
+msgstr "Програма gpm дозволяє копіювати та вставляти текст на віртуальних консолях мишею.  Якщо вкажете стартувати її під час завантаження, цей рядок буде додано у /etc/rc.d/rc.gpm:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Запускати gpm під час завантаження?"
+
+# File: startupmode, line: 14
+msgid "Select the default startup mode"
+msgstr "Вибір режиму запуску за замовчуванням"
+
+# File: startupmode, line: 15
+msgid "Please choose the default startup mode: Console or Graphical.\n\n"
+"In Console mode, you log in and type your first command in a console.\n"
+"In this mode you can type \"startx\" to start the default desktop or windows manager, that you can also change typing \"xwmconfig\".\n\n"
+"In Graphical mode, you choose the desktop or windows manager, that will be started as soon as you are identified.\n"
+msgstr "Будь ласка, виберіть режим запуску за замовчуванням: Консольний, або Графічний.\n\n"
+"У Консольному режимі, ви заходите в систему, і вводите свою першу команду в консолі.\n"
+"У цьому режимі можна ввести \"startx\" для запуску графічного середовища чи менеджера вікон за замовчуванням, які також можна змінити, ввівши \"xwmconfig\".\n\n"
+"У Графічному режимі, ви обираєте графічне середовище чи менеджер вікон, які запускатимуться після того як система вас ідентифікує.\n"
+
+# File: startupmode, line: 24
+msgid "Start Linux in Console mode"
+msgstr "Запускати Linux у Консольному режимі"
+
+# File: startupmode, line: 25
+msgid "Start Linux in Graphical mode"
+msgstr "Запускати Linux у Графічному режимі"
+

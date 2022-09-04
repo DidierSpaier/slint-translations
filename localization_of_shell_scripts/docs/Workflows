@@ -1,0 +1,94 @@
+
+Work-flows
+==========
+
+This document graphically presents the context of tool's usage.
+
+It is derived from DIAGRAMS, our tools replacing and completing gettext
+commands. For that reason we suggest that you first read DIAGRAMS (under
+the Documentation entry menu).
+
+(1) Internationalization 
+
+   Set of shell scripts ───> Preparation ───> Marked shell scripts ─>─╮
+                                                                      │
+            ╭──────  check_xtract ─<── software.pot <─── make_POT <───┤
+            │                                                         │
+            ├──(if errors) ──> shell scripts edition  ──────────────>─╯  
+            │
+            ├────> (2) Localization
+            │
+            ╰────> (4) Maintenance
+
+
+(2) Localization (example for French and Dutch languages).
+
+       ╭──────────────<── software.pot <── (1) Internationalization
+       │
+       │
+ fr_FR ├─> init_PO ─> fr_FR.po ──> PO editor ──> fr_FR.po ──> check_PO ──╮
+       │                                                                 │
+       │ ╭── install. <── fr_FR.mo <── format_PO <─┬─ fr_FR.po checked <─╯
+       │ │                                         │
+       │ │                                         ╰────> (4) Maintenance
+       │ │
+       │ ╰──> /usr/share/locale/fr_FR/LC_MESSAGES/software.mo ─> (3) Usage
+       │
+ nl_NL ╰─> init_PO ─> nl_NL.po ──> PO editor ──> nl_NL.po ──> check_PO ──╮
+                                                                         │
+      ╭── install. <── nl_NL.mo <── format_PO <──┬── nl_NL.po checked <──╯
+      │                                          │
+      │                                          ╰────> (4) Maintenance
+      │
+      ╰───> /usr/share/locale/nl_NL/LC_MESSAGES/software.mo ───> (3) Usage
+
+(3) Usage
+
+   Let's assume that one of the scripts, "myscript.sh" include following
+   command:
+
+   gettext "Good morning"
+
+   and that "Good morning" is translated as follows in the message catalogs:
+   /usr/share/locale/fr/LC_MESSAGES/PACKAGE.mo ─> "Bonjour"
+   /usr/share/locale/nl/LC_MESSAGES/PACKAGE.mo ─> "Goedemorgen"
+
+           ╭──────────────<── (2) Localization
+           │
+   LANG=fr ├───> sh myscript.sh or ./myscript.sh ───> "Bonjour"
+           │
+   LANG=nl ╰───> sh myscript.sh or ./myscript.sh ───> "Goedemorgen"
+           
+
+
+(4) Maintenance
+
+   The maintenance process can be triggered by a script's creation,
+   modification or deletion. In the diagram below, the part of the process
+   beginning with the msmerge command should be repeated for each available
+   PO file. It is therefore advisable to keep an up to date list of
+   available translations, especially if there are many.
+
+       Shell scripts updated and marked ───> make_POT ───> software.pot ─╮
+                                                                         │                                                                        
+                                 (1) Localization ──> <locale>.po ───>┬<─╯
+                                                                      │
+ ╭─ check_PO <─ <locale>.po <─ PO editor <─ <locale>.po <─ merge_PO <─╯
+ │
+ ╰─> <locale>.po checked ─> format_PO ─> software.mo ─> installation ───╮
+                                                                        │
+                 /usr/share/locale/<locale>/LC_MESSAGES/software.mo <───╯
+                     
+                            
+   The maintenance process can be triggered as well by a modification of a
+   language catalog for a specific language (to correct an error for
+   instance). This variant of the process is shorter:
+   
+ ╭─ check_PO <── <locale>.po <── PO editor <─ <locale>.po <─ Update needed
+ │
+ ╰─> <locale>.po checked ─> format_PO ─> software.mo ──> installation ──╮
+                                                                        │
+                 /usr/share/locale/<locale>/LC_MESSAGES/software.mo <───╯
+
+
+Didier Spaier

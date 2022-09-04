@@ -1,0 +1,760 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2022-09-04 13:23\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /pkgtools/pkgtools.po\n"
+"X-Crowdin-File-ID: 32\n"
+
+# File: INSCD, line: 233
+# File: INShd, line: 92
+# File: pkgtool, line: 398
+#. failed to mount
+msgid "MOUNT ERROR"
+msgstr "ОШИБКА МОНТИРОВАНИЯ"
+
+# File: INSNFS, line: 61
+# File: INSSMB, line: 61
+# File: INShd, line: 58
+# File: pkgtool, line: 355
+msgid "SELECT SOURCE DIRECTORY"
+msgstr "ВЫБОР КАТАЛОГА ИСТОЧНИКА"
+
+# File: explodepkg, line: 44
+msgid "Usage: explodepkg package_name [package_name2, ...]\n\n"
+"Explodes a Slackware compatible software package\n"
+"(or any tar+{gzip,bzip2,lzma,xz archive) in the current directory.\n"
+"Equivalent to (for each package listed):\n\n"
+"  ( umask 000 ; cat package_name | COMPRESSOR -dc | tar xvf package_name )\n\n"
+"Note: This should only be used for debugging or examining packages, not for \n"
+"installing them.  It doesn't execute installation scripts or update the package\n"
+"indexes in /var/log/packages and /var/log/scripts."
+msgstr "Использование: explodepkg имя_пакета1 [имя_пакета2, ...]\n\n"
+"Распаковывает в текущий каталог совместимый со Slackware программный пакет\n"
+"(или произвольный архив tar+{gzip,bzip2,lzma,xz}).\n"
+"Эквивалентно выполнению (для каждого пакета из списка):\n\n"
+"  ( umask 000 ; cat имя_пакета | COMPRESSOR -dc | tar xv )\n\n"
+"Примечание. Используется только для отладки и изучения пакетов, но не для их\n"
+"установки. Не выполняет установочный сценарий и не обновляет индексы пакетов\n"
+"в /var/log/packages и /var/log/scripts."
+
+# File: explodepkg, line: 61
+#, sh-format
+msgid "Exploding package $PKG in current directory:"
+msgstr "Распаковка пакета $PKG в текущий каталог:"
+
+# File: explodepkg, line: 95
+msgid "An installation script was detected in ./install/doinst.sh, but\n"
+"    was not executed."
+msgstr "Установочный сценарий обнаружен в ./install/doinst.sh, но\n"
+"    не был выполнен."
+
+# File: installpkg, line: 113
+#, sh-format
+msgid "WARNING: pkgtools are unstable with tar > 1.13.\n"
+"You should provide a \"tar-1.13\" in your $PATH"
+msgstr "ВНИМАНИЕ: pkgtools нестабилен с tar > 1.13.\n"
+"Нужно обеспечить наличие \"tar-1.13\" в $PATH"
+
+# File: installpkg, line: 120
+msgid "Usage: installpkg [options] <package_filename>\n\n"
+"Installpkg is used to install a .t{gz,bz,lz,xz} package like this:\n"
+"   installpkg slackware-package-1.0.0-i486-1.tgz (or .tbz, .tlz, .txz)\n\n"
+"options:      --warn (warn if files will be overwritten, but do not install)\n"
+"              --root /mnt (install someplace else, like /mnt)\n"
+"              --infobox (use dialog to draw an info box)\n"
+"              --terse (display a one-line short description for install)\n"
+"              --menu (confirm package installation with a menu)\n"
+"              --md5sum (record the package's md5sum in the metadata file)\n"
+msgstr "Использование: installpkg [параметры] <имя_файла_пакета>\n\n"
+"Устанавливает пакет .t{gz,bz,lz,xz}, например:\n"
+" installpkg slackware-package-1.0.0-i486-1.tgz (или .tbz, .tlz, .txz)\n\n"
+"параметры:\n"
+" --warn      (предупреждать о перезаписи файлов, но не устанавливать)\n"
+" --root /mnt (устанавливать в другое место, например, /mnt)\n"
+" --infobox   (использовать dialog для вывода окон информации)\n"
+" --terse     (выводить однострочное краткое описание пакетов)\n"
+" --menu      (подтверждать установку пакета при помощи меню)\n"
+" --md5sum    (сохранить контрольную md5-сумму пакета в файле метаданных)\n"
+
+# File: installpkg, line: 258
+#, sh-format
+msgid "Cannot install $package:  file not found"
+msgstr "Невозможно установить $package: файл не найден"
+
+# File: installpkg, line: 275
+#, sh-format
+msgid "Cannot install $package:  file does not end in .tgz, .tbz, .tlz, or .txz"
+msgstr "Невозможно установить $package: файл не оканчивается на .tgz, .tbz, .tlz или .txz."
+
+# File: installpkg, line: 304
+#, sh-format
+msgid "Cannot install $package:  external compression utility $packagecompression missing"
+msgstr "Невозможно установить $package: отсутствует внешняя утилита сжатия $packagecompression"
+
+# File: installpkg, line: 327
+#, sh-format
+msgid "Verifying package $package_name."
+msgstr "Проверка пакета $package_name."
+
+# File: installpkg, line: 335
+#, sh-format
+msgid "Unable to install $package:  tar archive is corrupt (tar returned error code $TARERROR)"
+msgstr "Невозможно установить $package: архиватор tar поврежден (tar возвратил код ошибки $TARERROR)"
+
+# File: installpkg, line: 384
+#, sh-format
+msgid "Size: Compressed: ${COMPRESSED}, uncompressed: ${UNCOMPRESSED}."
+msgstr "Размер: сжатый: ${COMPRESSED}, несжатый: ${UNCOMPRESSED}."
+
+# File: installpkg, line: 409
+#, sh-format
+msgid "Installing package $package_name:"
+msgstr "Установка пакета  $package_name:"
+
+# File: installpkg, line: 411
+msgid "PACKAGE DESCRIPTION:"
+msgstr "ОПИСАНИЕ ПАКЕТА:"
+
+# File: installpkg, line: 420
+#. install infobox package
+#, sh-format
+msgid "Installing package $shortname $PMSG"
+msgstr "Установка пакета $shortname $PMSG"
+
+# File: installpkg, line: 422
+#. we must need a full menu:
+#, sh-format
+msgid "Package Name: $shortname $PMSG"
+msgstr "Имя пакета: $shortname $PMSG"
+
+# File: installpkg, line: 423
+#, sh-format
+msgid "Install package $shortname"
+msgstr "Установить пакет $shortname"
+
+# File: installpkg, line: 424
+#, sh-format
+msgid "Do not install package $shortname"
+msgstr "Не устанавливать пакет $shortname"
+
+# File: installpkg, line: 425
+#, sh-format
+msgid "Abort software installation completely"
+msgstr "Прервать установку программ полностью"
+
+# File: installpkg, line: 469
+#. Some dumb bunny built a package with something other than makepkg.  Bad!
+#. Oh well.  Bound to happen.  Par for the course.  Fix it and move on...
+msgid "WARNING:  Package has not been created with 'makepkg'"
+msgstr "ВНИМАНИЕ: Пакет создан не при помощи 'makepkg'"
+
+# File: installpkg, line: 485
+#, sh-format
+msgid "Executing install script for $package_name."
+msgstr "Выполнение установочного сценария для $package_name."
+
+# File: installpkg, line: 514
+#, sh-format
+msgid "Package $package_name installed."
+msgstr "Пакет $package_name установлен."
+
+# File: makepkg, line: 53
+#, sh-format
+msgid "WARNING: pkgtools are unstable with tar > 1.13.\n"
+"         You should provide a \"tar-1.13\" in your $PATH."
+msgstr "ПРЕДУПРЕЖДЕНИЕ: pkgtools нестабилен с tar > 1.13.\n"
+"         Обеспечьте наличие \"tar-1.13\" в $PATH."
+
+# File: makepkg, line: 79
+msgid "Usage: makepkg package_name.tgz\n"
+"       (or: package_name.tbz, package_name.tlz, package_name.txz)\n\n"
+"Makes a Slackware compatible package containing the contents of the current\n"
+"and all subdirectories.  If symbolic links exist, they will be removed and\n"
+"an installation script will be made to recreate them later. This script will\n"
+"be called \"install/doinst.sh\". You may add any of your own ash-compatible\n"
+"shell scripts to this file and rebuild the package if you wish.\n\n"
+"options:  -l, --linkadd y|n (moves symlinks into doinst.sh: recommended)\n"
+"          -p, --prepend (prepend rather than append symlinks to an existing\n"
+"                         doinst.sh.  Useful to link libraries needed by\n"
+"                         programs in the doinst.sh script)\n"
+"          -c, --chown y|n (resets all permissions to root:root 755\n"
+"                           - not generally recommended)\n\n"
+"If these options are not set, makepkg will prompt as appropriate."
+msgstr "Использование: makepkg имя_пакета.tgz\n"
+"               (или: имя_пакета.tbz, имя_пакета.tlz, имя_пакета.txz)\n\n"
+"Изготавливает совместимый со Slackware пакет из содержимого текущего каталога\n"
+"со всеми подкаталогами. Имеющиеся символические ссылки будут удалены, а для их\n"
+"воссоздания будет создан установочный сценарий \"install/doinst.sh\".\n"
+"При желании можете дополнить его собственным сценарием оболочки, совместимым с\n"
+"ash, и перестроить пакет.\n\n"
+"параметры:\n"
+" -l, --linkadd y|n (помещает симв. ссылки в сценарий doinst.sh: рекомендуется)\n"
+" -p, --prepend     (помещает симв. ссылки в начало существующего doinst.sh,\n"
+"                    вместо конца. Полезно для связывания библиотек, требуемых\n"
+"                    программами в сценарии doinst.sh)\n"
+" -c, --chown y|n   (переустанавливает все права доступа на root:root 755\n"
+"                    - обычно не рекомендуется)\n\n"
+"Если эти параметры не были заданы, makepkg запросит необходимые."
+
+# File: makepkg, line: 177
+#, sh-format
+msgid "ERROR:  gzip compression utility not found in $PATH."
+msgstr "ОШИБКА:  gzip (утилита сжатия) не обнаружена в $PATH."
+
+# File: makepkg, line: 184
+#, sh-format
+msgid "ERROR:  bzip2 compression utility not found in $PATH."
+msgstr "ОШИБКА:  bzip2 (утилита сжатия) не обнаружена в $PATH."
+
+# File: makepkg, line: 191
+#, sh-format
+msgid "ERROR:  lzma compression utility not found in $PATH."
+msgstr "ОШИБКА:  lzma (утилита сжатия) не обнаружена в $PATH."
+
+# File: makepkg, line: 198
+#, sh-format
+msgid "ERROR:  xz compression utility not found in $PATH."
+msgstr "ОШИБКА:  xz (утилита сжатия) не обнаружена в $PATH."
+
+# File: makepkg, line: 206
+msgid "Slackware package maker, version 3.141593."
+msgstr "Изготовитель пакетов Slackware, версия 3.141593."
+
+# File: makepkg, line: 209
+msgid "Searching for symbolic links:"
+msgstr "Поиск символьных ссылок:"
+
+# File: makepkg, line: 222
+msgid "Unless your existing installation script already contains the code\n"
+"to create these links, you should append these lines to your existing\n"
+"install script. Now's your chance. :^)\n\n"
+"Would you like to add this stuff to the existing install script and\n"
+"remove the symbolic links"
+msgstr "Если существующий установочный сценарий ещё не содержит кода,\n"
+"создающего указанные ссылки, нужно добавить эти строки в существующий\n"
+"сценарий установки. Не упустите шанс. :^)\n\n"
+"Желаете добавить показанные строки в установочный сценарий пакета\n"
+"и удалить символические ссылки?"
+
+# File: makepkg, line: 230
+msgid "It is recommended that you make these lines your new installation script.\n\n"
+"Would you like to make this stuff the install script for this package\n"
+"and remove the symbolic links"
+msgstr "Рекомендуется создать из этих строк новый установочный сценарий.\n\n"
+"Желаете создать из показанных строк установочный сценарий пакета\n"
+"и удалить символические ссылки?"
+
+# File: makepkg, line: 261
+msgid "Removing symbolic links:"
+msgstr "Удаление символических ссылок:"
+
+# File: makepkg, line: 267
+msgid "Updating your ./install/doinst.sh (prepending symlinks)..."
+msgstr "Обновление ./install/doinst.sh (вставка ссылок)..."
+
+# File: makepkg, line: 270
+msgid "Updating your ./install/doinst.sh..."
+msgstr "Обновление ./install/doinst.sh..."
+
+# File: makepkg, line: 274
+msgid "Creating your new ./install/doinst.sh..."
+msgstr "Создание ./install/doinst.sh..."
+
+# File: makepkg, line: 279
+msgid "No symbolic links were found, so we won't make an installation script.\n"
+"You can make your own later in ./install/doinst.sh and rebuild the\n"
+"package if you like."
+msgstr "Символьные ссылки не обнаружены, создание установочного сценария не требуется.\n"
+"Если хотите, можете создать сценарий позже в ./install/doinst.sh и перестроить\n"
+"пакет."
+
+# File: makepkg, line: 286
+msgid "This next step is optional - you can set the directories in your package\n"
+"to some sane permissions. If any of the directories in your package have\n"
+"special permissions, then DO NOT reset them here!\n\n"
+"Would you like to reset all directory permissions to 755 (drwxr-xr-x) and\n"
+"directory ownerships to root.root"
+msgstr "Следующий шаг необязательный - возможно установить каталогам пакета некие\n"
+"разумные разрешения. Если хоть какой-то каталог в пакете имеет специальные\n"
+"разрешения, НЕ переустанавливайте их сейчас!\n\n"
+"Переустановить разрешения каталогов на 755 (drwxr-xr-x) и владельца каталогов\n"
+"на root.root"
+
+# File: makepkg, line: 312
+#, sh-format
+msgid "WARNING: $PWD is chmod $OLDROOTPERMS\n"
+"temporarily changing to chmod 755"
+msgstr "ПРЕДУПРЕЖДЕНИЕ: разрешения $PWD $OLDROOTPERMS,\n"
+"временно изменены на 755"
+
+# File: makepkg, line: 319
+#, sh-format
+msgid "Creating Slackware package:  ${TARGET_NAME}/${TAR_NAME}.${EXTENSION}"
+msgstr "Создание пакета Slackware:  ${TARGET_NAME}/${TAR_NAME}.${EXTENSION}"
+
+# File: makepkg, line: 328
+#, sh-format
+msgid "ERROR:  gzip returned error code $ERRCODE -- makepkg failed."
+msgstr "ОШИБКА: gzip возвратил код ошибки $ERRCODE -- сбой makepkg."
+
+# File: makepkg, line: 336
+#, sh-format
+msgid "ERROR:  bzip2 returned error code $ERRCODE -- makepkg failed."
+msgstr "ОШИБКА: bgzip2 возвратил код ошибки $ERRCODE -- сбой makepkg."
+
+# File: makepkg, line: 344
+#, sh-format
+msgid "ERROR:  lzma returned error code $ERRCODE -- makepkg failed."
+msgstr "ОШИБКА: lzma возвратил код ошибки $ERRCODE -- сбой makepkg."
+
+# File: makepkg, line: 352
+#, sh-format
+msgid "ERROR:  xz returned error code $ERRCODE -- makepkg failed."
+msgstr "ОШИБКА: xz возвратил код ошибки $ERRCODE -- сбой makepkg."
+
+# File: makepkg, line: 360
+#, sh-format
+msgid "WARNING:  zero length file"
+msgstr "ПРЕДУПРЕЖДЕНИЕ:  файл нулевой длины"
+
+# File: makepkg, line: 367
+msgid "WARNING:  gzip test failed on"
+msgstr "ПРЕДУПРЕЖДЕНИЕ:  сбой проверки gzip"
+
+# File: makepkg, line: 378
+msgid "WARNING:  /usr/share/man (with possibly not gzipped man pages) detected"
+msgstr "ПРЕДУПРЕЖДЕНИЕ:  обнаружен /usr/share/man (возможно, без сжатия gzip)"
+
+# File: makepkg, line: 383
+msgid "WARNING:  /usr/share/info (with possibly not gzipped info pages) detected"
+msgstr "ПРЕДУПРЕЖДЕНИЕ:  обнаружен /usr/share/info (возможно, без сжатия gzip)"
+
+# File: makepkg, line: 388
+msgid "WARNING:  site_perl directory detected (this is fine for a local package build)"
+msgstr "ПРЕДУПРЕЖДЕНИЕ:  обнаружен каталог site_perl (обычно для локальной сборки пакета)"
+
+# File: makepkg, line: 395
+#, sh-format
+msgid "Restoring permissions of $PWD to chmod $OLDROOTPERMS"
+msgstr "Разрешения $PWD восстановлены в $OLDROOTPERMS"
+
+# File: makepkg, line: 401
+#, sh-format
+msgid "Slackware package ${TARGET_NAME}/${TAR_NAME}.${EXTENSION} created."
+msgstr "Пакет Slackware ${TARGET_NAME}/${TAR_NAME}.${EXTENSION} создан."
+
+# File: pkgtool, line: 91
+#. bad
+msgid "\n"
+"You can't run pkgtool from the rootdisk until you've mounted your Linux partitions beneath /mnt.  Here are some examples:\n\n"
+"If your root partition is /dev/sda1 you would type:\n"
+"mount /dev/sda1 /mnt\n\n"
+"Now you can find a list of all your partitions in /mnt/etc/fstab.\n\n"
+"Then, supposing your /usr partition is /dev/sda2, you must do this:\n"
+"mount /dev/sda2 /mnt/usr\n\n"
+"Please mount your Linux partitions and then run pkgtool again.\n\n"
+msgstr "\n"
+"Невозможно запустить pkgtool пока в /mnt не будет примонтирован корневой раздел Linux. Вот несколько примеров:\n\n"
+"Если корневой раздел /dev/sda1, наберите:\n"
+"mount /dev/sda1 /mnt\n\n"
+"Теперь список всех используемых разделов доступен в /mnt/etc/fstab.\n\n"
+"Предположим, раздел /usr - /dev/sda2, тогда нужно набрать:\n"
+"mount /dev/sda2 /mnt/usr\n\n"
+"Примонтируйте все разделы Linux, затем снова запустите pkgtool.\n\n"
+
+# File: pkgtool, line: 159
+msgid "PACKAGE REMOVAL IN PROGRESS"
+msgstr "ВЫПОЛНЯЕТСЯ УДАЛЕНИЕ ПАКЕТОВ"
+
+# File: pkgtool, line: 160
+#, sh-format
+msgid "\n"
+"Removing package $pkg_name.\n\n"
+"Since each file must be checked against the contents of every other installed package to avoid wiping out areas of overlap, this process can take quite some time. If you would like to watch the progress, flip over to another virtual console and type: \n\n"
+"tail -f $TMP/PKGTOOL.REMOVED"
+msgstr "\n"
+"Удаление пакета $pkg_name.\n\n"
+"Поскольку во избежание затирания общих файлов необходима проверка вхождения каждого файла в каждый из установленных пакетов, процесс может занять какое-то время. Если желаете наблюдать за ходом выполнения, переключитесь в другую виртуальную консоль и наберите:\n\n"
+"tail -f $TMP/PKGTOOL.REMOVED"
+
+# File: pkgtool, line: 180
+msgid "View information about package"
+msgstr "Просмотр информации о пакете"
+
+# File: pkgtool, line: 193
+msgid "Select\\/Unselect removing package"
+msgstr "Выбрать\\/отменить удаление пакета"
+
+# File: pkgtool, line: 225
+#, sh-format
+msgid "Slint Package Tool (pkgtool version ${Version})"
+msgstr "Менеджер пакетов Slint (pkgtool, версия ${Version})"
+
+# File: pkgtool, line: 226
+msgid "\n"
+"Welcome to the Slint package tool\n\n"
+"Which option would you like?"
+msgstr "\n"
+"Добро пожаловать в менеджер пакетов Slint\n\n"
+"Выберите желаемое действие:"
+
+# File: pkgtool, line: 230
+msgid "Install packages from the current directory"
+msgstr "Установка пакетов из текущего каталога"
+
+# File: pkgtool, line: 231
+msgid "Install packages from some other directory"
+msgstr "Установка пакетов из другого каталога"
+
+# File: pkgtool, line: 232
+msgid "Remove packages that are currently installed"
+msgstr "Удаление установленных пакетов"
+
+# File: pkgtool, line: 233
+msgid "View the list of files contained in a package"
+msgstr "Просмотр списка файлов пакета"
+
+# File: pkgtool, line: 234
+msgid "Choose Slint installation scripts to run again"
+msgstr "Выбор сценария установки для повторного выполнения"
+
+# File: pkgtool, line: 235
+msgid "Exit Pkgtool"
+msgstr "Выход из Pkgtool"
+
+# File: pkgtool, line: 249
+msgid "SELECT SYSTEM SETUP SCRIPTS"
+msgstr "ВЫБОР СЦЕНАРИЕВ УСТАНОВКИ СИСТЕМЫ"
+
+# File: pkgtool, line: 251
+msgid "Please use the spacebar to select the setup scripts to run.  Hit enter when you are done selecting to run the scripts."
+msgstr "Отметьте ПРОБЕЛом сценарии установки для их выполнения. По завершении выбора сценариев нажмите ENTER."
+
+# File: pkgtool, line: 259
+#, sh-format
+msgid "$BLURB"
+msgstr ""
+
+# File: pkgtool, line: 292
+msgid "Please select the package you wish to view."
+msgstr "Выберите пакет для просмотра."
+
+# File: pkgtool, line: 302
+#, sh-format
+msgid "CONTENTS OF PACKAGE: $PkG"
+msgstr "СОДЕРЖИМОЕ ПАКЕТА: $PkG"
+
+# File: pkgtool, line: 322
+msgid "SELECT PACKAGES TO REMOVE"
+msgstr "ВЫБОР ПАКЕТОВ ДЛЯ УДАЛЕНИЯ"
+
+# File: pkgtool, line: 323
+msgid "Please select the packages you wish to Remove. Use the spacebar to select packages to delete, and the UP/DOWN arrow keys to scroll up and down through the entire list."
+msgstr "Выберите пакеты для удаления. Используйте клавишу ПРОБЕЛ для выбора удаляемых пакетов, клавиши ВВЕРХ/ВНИЗ для перемещения по списку."
+
+# File: pkgtool, line: 342
+msgid "NO PACKAGES REMOVED"
+msgstr "ПАКЕТЫ НЕ УДАЛЕНЫ"
+
+# File: pkgtool, line: 343
+msgid "Hit OK to return to the main menu."
+msgstr "Нажмите OK для возврата в главное меню."
+
+# File: pkgtool, line: 345
+msgid "PACKAGE REMOVAL COMPLETE"
+msgstr "УДАЛЕНИЕ ПАКЕТОВ ЗАВЕРШЕНО"
+
+# File: pkgtool, line: 346
+#, sh-format
+msgid "The packages have been removed. A complete log of the files that were removed has been created in $TMP/PKGTOOL.REMOVED."
+msgstr "Пакеты были удалены. Подробный журнал удалённых файлов создан в $TMP/PKGTOOL.REMOVED."
+
+# File: pkgtool, line: 355
+msgid "Please enter the name of the directory that you wish to install packages from:"
+msgstr "Задайте имя каталога с пакетами для установки:"
+
+# File: pkgtool, line: 369
+msgid "DIRECTORY NOT FOUND"
+msgstr "КАТАЛОГ НЕ НАЙДЕН"
+
+# File: pkgtool, line: 369
+#, sh-format
+msgid "The directory you want to install from ($SOURCE_DIR) does not seem to exist. Please check the directory and then try again."
+msgstr "Каталог с пакетами для установки ($SOURCE_DIR) не существует. Проверьте каталог и повторите попытку."
+
+# File: pkgtool, line: 393
+#. The source should already be mounted, so we test it
+#. the directory is missing
+#, sh-format
+msgid "Your source device cannot be accessed properly.\n\n"
+"Please be sure that it is mounted on $SOURCE_DIR, and that the Slint disks are found in subdirectories of $SOURCE_DIR like specified."
+msgstr "Отсутствует доступ к исходному устройству.\n\n"
+"Удостоверьтесь, что оно смонтировано к $SOURCE_DIR и диски Slint находятся в подкаталогах $SOURCE_DIR, как было указано."
+
+# File: pkgtool, line: 405
+msgid "INSERT DISK"
+msgstr "ВСТАВКА ДИСКА"
+
+# File: pkgtool, line: 405
+#, sh-format
+msgid "Please insert disk $NumDisk and press ENTER to continue."
+msgstr "Вставьте диск $NumDisk и нажмите ENTER для продолжения."
+
+# File: pkgtool, line: 408
+msgid "Continue with the installation"
+msgstr "Продолжить установку"
+
+# File: pkgtool, line: 409
+msgid "Skip the current disk series"
+msgstr "Пропустить серию текущего диска"
+
+# File: pkgtool, line: 410
+msgid "Abort the installation process"
+msgstr "Прервать установку"
+
+# File: pkgtool, line: 421
+msgid "ABORTING"
+msgstr "ПРЕКРАЩЕНИЕ"
+
+# File: pkgtool, line: 421
+msgid "Aborting software installation."
+msgstr "Прекращение установки программ."
+
+# File: pkgtool, line: 437
+msgid "MOUNT PROBLEM "
+msgstr "ПРОБЛЕМА МОНТИРОВАНИЯ "
+
+# File: pkgtool, line: 437
+msgid "Media was not successfully mounted! Do you want to retry, or quit?"
+msgstr "Сбой при монтировании носителя! Повторить или выйти?"
+
+# File: pkgtool, line: 440
+msgid "Try to mount the disk again"
+msgstr "Снова попробовать смонтировать диск"
+
+# File: pkgtool, line: 441
+msgid "No, abort."
+msgstr "Нет, прервать."
+
+# File: removepkg, line: 178
+#, sh-format
+msgid "  --> $ROOT/$FILE was found in another package. Skipping."
+msgstr "  --> $ROOT/$FILE есть в другом пакете. Пропуск."
+
+# File: removepkg, line: 183
+#, sh-format
+msgid "WARNING: Nonexistent $ROOT/$FILE was found in another package. Skipping."
+msgstr "ВНИМАНИЕ: Несуществующий $ROOT/$FILE есть в другом пакете. Пропуск."
+
+# File: removepkg, line: 196
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) was found in another package. Skipping."
+msgstr "  --> $ROOT/$LINK (симв. ссылка) есть в другом пакете. Пропуск."
+
+# File: removepkg, line: 199
+#, sh-format
+msgid "WARNING: Nonexistent $ROOT/$LINK (symlink) was found in another package. Skipping."
+msgstr "ВНИМАНИЕ: Несуществующий $ROOT/$LINK (симв. ссылка) есть в другом пакете. Пропуск."
+
+# File: removepkg, line: 210
+#, sh-format
+msgid "WARNING: $ROOT/$FILE changed after package installation."
+msgstr "ВНИМАНИЕ: $ROOT/$FILE изменён после установки пакета."
+
+# File: removepkg, line: 214
+#, sh-format
+msgid "  --> Deleting $ROOT/$FILE"
+msgstr "  --> Удаление $ROOT/$FILE"
+
+# File: removepkg, line: 218
+#, sh-format
+msgid "  --> $ROOT/$FILE would be deleted"
+msgstr "  --> $ROOT/$FILE к удалению"
+
+# File: removepkg, line: 223
+#, sh-format
+msgid "  --> $ROOT/$FILE no longer exists. Skipping."
+msgstr "  --> $ROOT/$FILE больше не существует. Пропуск."
+
+# File: removepkg, line: 236
+#, sh-format
+msgid "  --> Deleting symlink $ROOT/$LINK"
+msgstr "  --> Удаление симв. ссылки $ROOT/$LINK"
+
+# File: removepkg, line: 240
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) would be deleted"
+msgstr "  --> $ROOT/$LINK (симв. ссылка) к удалению"
+
+# File: removepkg, line: 244
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) no longer exists. Skipping."
+msgstr "  --> $ROOT/$LINK (симв. ссылка) больше не существует. Пропуск."
+
+# File: removepkg, line: 256
+#, sh-format
+msgid "  --> Deleting empty directory $ROOT/$DIR"
+msgstr "  --> Удаление пустого каталога $ROOT/$DIR"
+
+# File: removepkg, line: 260
+#, sh-format
+msgid "WARNING: Unique directory $ROOT/$DIR contains new files"
+msgstr "ВНИМАНИЕ: Каталог $ROOT/$DIR содержит новые файлы"
+
+# File: removepkg, line: 264
+#, sh-format
+msgid "  --> $ROOT/$DIR (dir) would be deleted if empty"
+msgstr "  --> $ROOT/$DIR (каталог) к удалению, если пуст"
+
+# File: removepkg, line: 276
+#, sh-format
+msgid "  --> Deleting $ROOT/$FILE (fmt man page)"
+msgstr "  --> Удаление $ROOT/$FILE (форм. стр. man)"
+
+# File: removepkg, line: 280
+#, sh-format
+msgid "  --> $ROOT/$FILE (fmt man page) would be deleted"
+msgstr "  --> $ROOT/$FILE (форм. стр. man) к удалению"
+
+# File: removepkg, line: 330
+#, sh-format
+msgid "Removing package $ADM_DIR/packages/$PKGNAME..."
+msgstr "Удаление пакета $ADM_DIR/packages/$PKGNAME..."
+
+# File: removepkg, line: 339
+msgid "Removing files:"
+msgstr "Удаление файлов:"
+
+# File: removepkg, line: 387
+#, sh-format
+msgid "No such package: $ADM_DIR/packages/$PKGNAME. Can't remove."
+msgstr "Нет такого пакета: $ADM_DIR/packages/$PKGNAME. Удаление невозможно."
+
+# File: removepkg, line: 394
+# File: removepkg, line: 405
+msgid "Usage:"
+msgstr "Вызов:"
+
+# File: removepkg, line: 395
+# File: removepkg, line: 405
+msgid "packagename"
+msgstr "имя_пакета"
+
+# File: removepkg, line: 411
+msgid "Only warning... not actually removing any files."
+msgstr "Только предупреждения... удаление не выполняется."
+
+# File: removepkg, line: 414
+# File: removepkg, line: 423
+#, sh-format
+msgid "Package contents is copied to $PRES_DIR."
+msgstr "Содержимое пакета скопировано в $PRES_DIR."
+
+# File: removepkg, line: 417
+msgid "Here's what would be removed (and left behind) if you removed the package(s):"
+msgstr "Перечень удаляемого (и оставшегося) в результате удаления пакетов:"
+
+# File: startupmode, line: 14
+msgid "Select the default startup mode"
+msgstr "Выбор режима запуска по умолчанию"
+
+# File: startupmode, line: 15
+msgid "Please choose the default startup mode: Console or Graphical.\n\n"
+"In Console mode, you log in and type your first command in a console.\n"
+"In this mode you can type \"startx\" to start the default desktop or windows manager, that you can also change typing \"xwmconfig\".\n\n"
+"In Graphical mode, you choose the desktop or windows manager, that will be started as soon as you are identified.\n"
+msgstr "Выберите режим запуска по умолчанию: консольный или графический.\n\n"
+"В консольном режиме входи и ввод первой команды происходит в консоли.\n"
+"В этом режиме можно набрать \"startx\" для запуска среды рабочего стола или оконного менеджера, для смены которых можно использовать \"xwmconfig\".\n\n"
+"В графическом режиме выбранный рабочий стол или оконный менеджер будут запускаться сразу после входа в систему.\n"
+
+# File: startupmode, line: 24
+msgid "Start Linux in Console mode"
+msgstr "Запускать Linux в консольном режиме"
+
+# File: startupmode, line: 25
+msgid "Start Linux in Graphical mode"
+msgstr "Запускать Linux в графическом режиме"
+
+# File: upgradepkg, line: 56
+msgid "Usage: upgradepkg newpackage [newpackage2 ... ]\n"
+"       upgradepkg oldpackage%newpackage [oldpackage2%newpackage2 ... ]\n"
+"       \n"
+"Upgradepkg upgrades a Slint package (.tgz, .tbz, .tlz, .txz) from an\n"
+"older version to a newer one.  It does this by INSTALLING the new package\n"
+"onto the system, and then REMOVING any files from the old package that\n"
+"aren't in the new package.  If the old and new packages have the same\n"
+"name, a single argument is all that is required.  If the packages have\n"
+"different names, supply the name of the old package followed by a percent\n"
+"symbol (%), then the name of the new package.  Do not add any extra\n"
+"whitespace between pairs of old/new package names.\n\n"
+"Before upgrading a package, save any configuration files (such as in /etc)\n"
+"that you wish to keep.  Sometimes these will be preserved, but it depends\n"
+"on the package.  If you want to force new versions of the config files\n"
+"to be installed, remove the old ones manually prior to running upgradepkg.\n\n"
+"To upgrade in a directory other than / (such as /mnt):  \n\n"
+"   ROOT=/mnt upgradepkg package.tgz (or .tbz, .tlz, .txz)"
+msgstr "Использование: upgradepkg нов_пакет [нов_пакет2 ... ]\n"
+"               upgradepkg стар_пакет%нов_пакет [стар_пакет2%нов_пакет2 ... ]\n\n"
+"Выполняет обновление пакета Slint (.tgz, .tbz, .tlz, .txz) со старой\n"
+"версии на новую путём УСТАНОВКИ нового пакета в систему и последующего\n"
+"УДАЛЕНИЯ файлов из старого пакета, отсутствующих в новом. Если старый и новый\n"
+"пакеты имеют одинаковое родовое имя (от начала до третьего справа дефиса), то\n"
+"достаточно одного аргумента. Если имена пакетов отличаются, укажите перед\n"
+"именем нового пакета имя старого пакета и символ процента (%). Не добавляйте\n"
+"дополнительных пробелов между старым и новым именами.\n\n"
+"Перед обновлением пакета сделайте копии тех файлов настроек (например, из\n"
+"/etc), которые хотите сохранить. Обычно они не перезаписываются, но это\n"
+"зависит от пакета. Если хотите форсировать установку новых версий файлов\n"
+"настроек, удалите вручную их старые версии перед выполнением upgradepkg.\n\n"
+"Для обновления в каталоге, отличном от / (например, /mnt):\n\n"
+"   ROOT=/mnt upgradepkg пакет.tgz (или .tbz, .tlz, .txz)"
+
+# File: upgradepkg, line: 227
+#, sh-format
+msgid "Installing new package $INCOMINGDIR/$NNAME"
+msgstr "Установка нового пакета $INCOMINGDIR/$NNAME"
+
+# File: upgradepkg, line: 253
+#, sh-format
+msgid "$NEW would be skipped (already installed)."
+msgstr "$NEW будет пропущен (уже установлен)."
+
+# File: upgradepkg, line: 258
+#, sh-format
+msgid "Skipping package $NEW (already installed)"
+msgstr "Пропуск пакета $NEW (уже установлен)"
+
+# File: upgradepkg, line: 300
+#, sh-format
+msgid "Upgrading $OLD package using $INCOMINGDIR/$NNAME"
+msgstr "Обновление пакета $OLD используя $INCOMINGDIR/$NNAME"
+
+# File: upgradepkg, line: 316
+#, sh-format
+msgid "ERROR:  Package $INCOMINGDIR/$NNAME did not install\n"
+"correctly.  You may need to reinstall your old package\n"
+"to avoid problems.  Make sure the new package is not\n"
+"corrupted."
+msgstr "ОШИБКА:  Пакет $INCOMINGDIR/$NNAME не был установлен\n"
+"правильно. Во избежание проблем может потребоваться\n"
+"переустановить старый пакет. Удостоверьтесь, что новый\n"
+"пакет не повреждён."
+
+# File: upgradepkg, line: 343
+#, sh-format
+msgid "Package $OLD upgraded with new package $INCOMINGDIR/$NNAME."
+msgstr "Пакет $OLD обновлён новым пакетом $INCOMINGDIR/$NNAME."
+

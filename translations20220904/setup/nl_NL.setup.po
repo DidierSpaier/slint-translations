@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-21 22:45+0100\n"
+"PO-Revision-Date: 2022-09-04 13:22\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /setup/setup.pot\n"
+"X-Crowdin-File-ID: 18\n"
+
+# File: setup, line: 55
+msgid "Slint Linux Setup"
+msgstr "Slint Linux Setup"
+
+# File: setup, line: 55
+msgid "\\n\n"
+"Scanning your system for partition information...\\n\n"
+"\\n"
+msgstr "\\n\n"
+"Systeem doorzoeken op partitie informatie...\\n\n"
+"\\n"
+
+# File: setup, line: 70
+msgid "NO LINUX PARTITIONS DETECTED"
+msgstr "GEEN LINUX-PARTITIES GEDETECTEERD"
+
+# File: setup, line: 71
+msgid "There don't seem to be any partitions on this machine of type Linux.  You'll need to make at least one of these to install Linux. To do this, you'll need to leave 'setup', and make the partitions using 'cfdisk' (MBR partitions) or 'cgdisk' (GPT partitions). For more information, read the 'setup' help file from the next menu."
+msgstr "Er lijken geen Linux-partities op deze machine aanwezig te zijn. Je moet er minstens één maken om Linux te kunnen installeren. Hiervoor moet je 'setup' verlaten en de partities maken met 'cfdisk' (MBR-partities) of 'cgdisk' (GPT-partities). Lees voor meer informatie het 'setup' help-bestand uit het volgende menu."
+
+# File: setup, line: 79
+msgid "NO EFI SYSTEM PARTITION DETECTED"
+msgstr "GEEN EFI SYSTEEMPARTITIE GEDETECTEERD"
+
+# File: setup, line: 80
+msgid "This machine appears to be using EFI/UEFI, but no EFI System Partition was found.  You'll need to make an EFI System Partition in order to boot from the hard drive.  To do this, leave 'setup', and use 'cgdisk' to make a 100MB partition of type EF00.  For more information, read the 'setup' help file from the next menu."
+msgstr "Deze machine lijkt EFI/UEFI te gebruiken maar er werd geen EFI systeempartitie gevonden. Je moet een EFI systeempartitie maken om van de harde schijf te kunnen opstarten. Verlaat hiervoor 'setup' en maak met 'cgdisk' een 100MB partitie van type EF00.\n"
+"Lees voor meer informatie het 'setup' help-bestand uit het volgende menu."
+
+# File: setup, line: 88
+msgid "NO BIOS BOOT PARTITION DETECTED"
+msgstr "GEEN BIOS BOOT PARTITIE DETECTEERD"
+
+# File: setup, line: 89
+msgid "This machine booted in Legacy or BIOS mode, but no BIOS boot partition was found. You will need to make one in order to boot from the hard drive. To do this, leave 'setup' and use 'gdisk' or 'cgdisk' to make a  partition of type BIOS boot and size 2MB."
+msgstr "Deze machine is opgestart in Legacy of BIOS-modus maar er is geen BIOS-opstartpartitie gevonden. U moet er een maken om op te kunnen starten vanaf de harde schijf. Verlaat hiervoor 'setup' en gebruik 'gdisk' of 'cgdisk' om een partitie van het type BIOS boot met een grootte van 2MB te maken."
+
+# File: setup, line: 108
+msgid "Can't umount /var/log/mount.  Reboot machine and run setup again."
+msgstr "Kan /var/log/mount niet afkoppelen. Herstart de machine en start 'setup' opnieuw."
+
+# File: setup, line: 116
+msgid "Mount table corrupt.  Reboot machine and run setup again."
+msgstr "Aankoppeltabel is beschadigd. Herstart de machine en start 'setup' opnieuw."
+
+# File: setup, line: 129
+#, sh-format
+msgid "Slint Linux Setup (version ${Version})"
+msgstr "Slint Linux Setup (versie ${Version})"
+
+# File: setup, line: 131
+msgid "Welcome to Slint Linux Setup.\n"
+"Select an option below using the UP/DOWN keys and SPACE or ENTER.\n"
+"Alternate keys may also be used: '+', '-', and TAB."
+msgstr "Welkom bij Slint Linux Setup.\n"
+"Kies een optie hieronder met de OP/NEER toetsen, spatiebalk of ENTER.\n"
+"Alternatieve toetsen werken ook: '+', '-' en TAB."
+
+# File: setup, line: 134
+msgid "Read the Slint Setup HELP file"
+msgstr "Lees het Slint Setup HELP-bestand"
+
+# File: setup, line: 135
+#, sh-format
+msgid "Remap your keyboard  (other than $DefaultKeyMap)"
+msgstr "Verander je toetsenbordindeling (anders dan $DefaultKeyMap)"
+
+# File: setup, line: 136
+msgid "Set up your swap partition(s)"
+msgstr "Stel wisselgeheugenpartitie(s) in"
+
+# File: setup, line: 137
+msgid "Set up your target partitions"
+msgstr "Stel je doelpartities in"
+
+# File: setup, line: 138
+msgid "Select source media"
+msgstr "Selecteer bronmedium"
+
+# File: setup, line: 139
+msgid "Install selected software"
+msgstr "Installeer de geselecteerde software"
+
+# File: setup, line: 140
+msgid "Reconfigure your Linux system"
+msgstr "Opnieuw configureren van je Linux-systeem"
+
+# File: setup, line: 141
+msgid "Exit Slint Linux Setup"
+msgstr "Verlaat Slint Linux Setup"
+
+# File: setup, line: 175
+msgid "TARGET PARTITIONS ALREADY CONFIGURED"
+msgstr "DOELPARTITIES ZIJN AL GECONFIGUREERD"
+
+# File: setup, line: 175
+msgid "\n"
+"You have already configured the target partitions, where the system will be installed.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Je hebt de doelpartities waarin het systeem geïnstalleerd zal worden al geconfigureerd,.\n\n"
+"Toets Enter om naar het hoofdmenu terug te keren."
+
+# File: setup, line: 195
+msgid "SOURCE OF PACKAGES ALREADY CHOSEN"
+msgstr "INSTALLATIEBRON AL GEKOZEN"
+
+# File: setup, line: 195
+msgid "\n"
+"You have already chosen the source of packages.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Je hebt de installatiebron al gekozen.\n\n"
+"Toets Enter om naar het hoofdmenu terug te keren."
+
+# File: setup, line: 209
+msgid "SOURCE PACKAGES INAPPROPRIATE"
+msgstr "INSTALLATIEBRON ONGESCHIKT"
+
+# File: setup, line: 210
+#, sh-format
+msgid "Either the source packages are inappropriate for the target system:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"or the file $INSTALL_PATH/slint/DONOTREMOVEME.TXT is missing.\n"
+"Please try again to set the source of packages"
+msgstr "Ofwel de installatiebron is niet geschikt voor het doelsysteem:\n"
+"Slint versie $SLINTVERSION (${SFX}-bit)\n"
+"of het bestand $INSTALL_PATH/slint/DONOTREMOVEME.TXT bestaat niet.\n"
+"Voer opnieuw de installatiebron in"
+
+# File: setup, line: 223
+msgid "CANNOT INSTALL SOFTWARE YET"
+msgstr "KAN SOFTWARE NOG NIET INSTALLEREN"
+
+# File: setup, line: 223
+msgid "\n"
+"Before you can install software, complete the following tasks:\n\n"
+"1. Select your source media.\n"
+"2. Set up your target Linux partition(s).\n\n"
+"You may also optionally remap your keyboard and set up your swap partition(s).\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Voer te volgende taken uit voor je de software kunt installeren:\n\n"
+"1. Kies je installatiebron.\n"
+"2. Stel je Linux doelpartitie(s) in.\n\n"
+"Je kunt ook je toetsenbordindeling wijzigen en je wisselbestandspartitie(s) instellen.\n\n"
+"Druk Enter om terug te keren naar het hoofdmenu."
+
+# File: setup, line: 235
+msgid "READY TO INSTALL THE PACKAGES?"
+msgstr "KLAAR OM DE PAKKETTEN TE INSTALLEREN?"
+
+# File: setup, line: 236
+msgid "Please confirm that you want to install the packages."
+msgstr "Bevestig dat je de pakketten wilt installeren."
+
+# File: setup, line: 239
+msgid "INSTALL KDE PACKAGES?"
+msgstr "KDE-PAKKETTEN INSTALLEREN?"
+
+# File: setup, line: 240
+msgid "Do you want to install the KDE packages?"
+msgstr "Wil je de KDE pakketten installeren?"
+
+# File: setup, line: 256
+msgid "A one-line description will be displayed as each package is installed."
+msgstr "Je ziet een korte beschrijving bij elk geïnstalleerd pakket."
+
+# File: setup, line: 292
+msgid "SYSTEM NOT YET INSTALLED"
+msgstr "SYSTEEM IS NOG NIET GEÏNSTALLEERD"
+
+# File: setup, line: 293
+msgid "You need to install the packages before configuring the system.\n\n"
+"Please press ENTER to return to the main menu."
+msgstr "Je moet de pakketten installeren alvorens het systeem te configureren.\n\n"
+"Druk op Enter om naar het hoofdmenu terug te keren."
+
+# File: setup, line: 303
+msgid "REPLACE /etc/fstab?"
+msgstr "/etc/fstab VERVANGEN?"
+
+# File: setup, line: 303
+msgid "You already have an /etc/fstab on your install partition.  If you were just adding software, you should probably keep your old /etc/fstab.  If you've changed your partitioning scheme, you should use the new /etc/fstab.  Do you want to replace your old /etc/fstab with the new one?"
+msgstr "Je hebt al een /etc/fstab op je installatiepartitie. Als je alleen software hebt toegevoegd wil je waarschijnlijk je oude /etc/fstab behouden. Als je je partitie-indeling hebt veranderd gebruik dan de nieuwe /etc/fstab. Wil je je oude /etc/fstab vervangen door de nieuwe?"
+
+# File: setup, line: 366
+msgid "Installing translations..."
+msgstr "Vertalingen installeren..."
+
+# File: setup, line: 436
+# File: setup, line: 443
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+msgid "Slint Linux Setup is complete"
+msgstr "Installatie van Slint Linux is nu voltooid."
+
+# File: setup, line: 437
+msgid "\n"
+" Please remove the installation disc.\n"
+" "
+msgstr "\n"
+"Verwijder nu het installatiemedium. "
+
+# File: setup, line: 445
+msgid "\n"
+"Would you like to reboot your system?\n\n"
+"If you choose No, you will be dropped to a shell.\n"
+msgstr "\n"
+"Wil je je systeem nu opnieuw opstarten?\n\n"
+"Indien je Nee kiest kom je in een shell terecht.\n"
+
+# File: setup, line: 454
+msgid "You may now reboot your system once you are ready.\n"
+"You can issue the 'reboot' command; or if your system has\n"
+"a keyboard attached, you can use the key combination: control+alt+delete\n"
+msgstr "Je kunt je systeem nu herstarten als je zover bent.\n"
+"Je kunt hiervoor de 'reboot' opdracht gebruiken; of als op het systeem\n"
+"een toetsenbord is aangesloten, kun je ook de toetscombinatie control+alt+delete gebruiken\n"
+
+# File: setup, line: 479
+msgid "** Starting reboot **"
+msgstr "** Opnieuw opstarten **"
+

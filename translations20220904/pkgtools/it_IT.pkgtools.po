@@ -1,0 +1,761 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2022-09-04 13:22\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: it\n"
+"X-Crowdin-File: /pkgtools/pkgtools.po\n"
+"X-Crowdin-File-ID: 32\n"
+
+# File: INSCD, line: 233
+# File: INShd, line: 92
+# File: pkgtool, line: 398
+#. failed to mount
+msgid "MOUNT ERROR"
+msgstr "ERRORE DI MOUNT"
+
+# File: INSNFS, line: 61
+# File: INSSMB, line: 61
+# File: INShd, line: 58
+# File: pkgtool, line: 355
+msgid "SELECT SOURCE DIRECTORY"
+msgstr "SCEGLI CARTELLA SORGENTE"
+
+# File: explodepkg, line: 44
+msgid "Usage: explodepkg package_name [package_name2, ...]\n\n"
+"Explodes a Slackware compatible software package\n"
+"(or any tar+{gzip,bzip2,lzma,xz archive) in the current directory.\n"
+"Equivalent to (for each package listed):\n\n"
+"  ( umask 000 ; cat package_name | COMPRESSOR -dc | tar xvf package_name )\n\n"
+"Note: This should only be used for debugging or examining packages, not for \n"
+"installing them.  It doesn't execute installation scripts or update the package\n"
+"indexes in /var/log/packages and /var/log/scripts."
+msgstr "Uso: explodepkg nome_pacchetto [nome_pacchett2, ...]\n\n"
+"Esplode un pacchetto software compatibile Slackware\n"
+"(o qualsiasi tar+{gzip,bzip2,lzma,xz archive) nella cartella corrente.\n"
+"Equivalente a (per ciascun pacchetto elencato):\n\n"
+"  ( umask 000 ; cat nome_pacchetto | COMPRESSOR -dc | tar xvf nome_pacchetto )\n\n"
+"Nota: Questo dovrebbe essere usato esclusivamente per eseguire il debug\n"
+"o esaminare i pacchetti, non per installarli.  Non esegue gli script di\n"
+"installazione o aggiorna le informazioni del pacchetto in /var/log/packages\n"
+"e /var/log/scripts."
+
+# File: explodepkg, line: 61
+#, sh-format
+msgid "Exploding package $PKG in current directory:"
+msgstr "Sto esplodendo il pacchetto $PKG nella cartella corrente:"
+
+# File: explodepkg, line: 95
+msgid "An installation script was detected in ./install/doinst.sh, but\n"
+"    was not executed."
+msgstr "È stato rilevato uno script di installazione in ./install/doinst.sh, ma\n"
+"non è stato eseguito."
+
+# File: installpkg, line: 113
+#, sh-format
+msgid "WARNING: pkgtools are unstable with tar > 1.13.\n"
+"You should provide a \"tar-1.13\" in your $PATH"
+msgstr "ATTENZIONE: i pkgtool non sono stabili con tar > 1.13.\n"
+"Dovresti fornire un \"tar-1.13\" nel tuo $PATH"
+
+# File: installpkg, line: 120
+msgid "Usage: installpkg [options] <package_filename>\n\n"
+"Installpkg is used to install a .t{gz,bz,lz,xz} package like this:\n"
+"   installpkg slackware-package-1.0.0-i486-1.tgz (or .tbz, .tlz, .txz)\n\n"
+"options:      --warn (warn if files will be overwritten, but do not install)\n"
+"              --root /mnt (install someplace else, like /mnt)\n"
+"              --infobox (use dialog to draw an info box)\n"
+"              --terse (display a one-line short description for install)\n"
+"              --menu (confirm package installation with a menu)\n"
+"              --md5sum (record the package's md5sum in the metadata file)\n"
+msgstr "Uso: installpkg [opzioni] <nome_file_del_pacchetto>\n\n"
+"Installpkg viene usato per installare un pacchetto .t{gz,bz,lz,xz} in questo modo:\n"
+"   installpkg slackware-package-1.0.0-i486-1.tgz (o .tbz, .tlz, .txz)\n\n"
+"opzioni: --warn (avvisa se i files saranno sovrascritti, ma non installa)\n"
+"         --root /mnt (installa in qualche altro percorso, come /mnt)\n"
+"         --infobox (usa dialog per disegnare un riquadro con informazioni)\n"
+"         --terse (mostra una descrizione breve di una riga durante l'installazione)\n"
+"         --menu (conferma l'installazione di un pacchetto con un menù)\n"
+"         --md5sum (registra il checksum del pacchetto nel file dei metadati)\n\n"
+
+# File: installpkg, line: 258
+#, sh-format
+msgid "Cannot install $package:  file not found"
+msgstr "Installazione di $package fallita: file non trovato"
+
+# File: installpkg, line: 275
+#, sh-format
+msgid "Cannot install $package:  file does not end in .tgz, .tbz, .tlz, or .txz"
+msgstr "Installazione di $package fallita: il nome del file non finisce per .tgz, .tbz, .tlz, o .txz"
+
+# File: installpkg, line: 304
+#, sh-format
+msgid "Cannot install $package:  external compression utility $packagecompression missing"
+msgstr "Installazione di $package fallita: il comando esterno di compressione $packagecompression è mancante"
+
+# File: installpkg, line: 327
+#, sh-format
+msgid "Verifying package $package_name."
+msgstr "Verifica del pacchetto $package_name."
+
+# File: installpkg, line: 335
+#, sh-format
+msgid "Unable to install $package:  tar archive is corrupt (tar returned error code $TARERROR)"
+msgstr "Installazione di $package fallita: l'archivio tar è corrotto (tar restituisce l'errore $TARERROR))"
+
+# File: installpkg, line: 384
+#, sh-format
+msgid "Size: Compressed: ${COMPRESSED}, uncompressed: ${UNCOMPRESSED}."
+msgstr "Dimensione: Compresso: ${COMPRESSED}, non compresso ${UNCOMPRESSED}."
+
+# File: installpkg, line: 409
+#, sh-format
+msgid "Installing package $package_name:"
+msgstr "Installazione del pacchetto $package_name:"
+
+# File: installpkg, line: 411
+msgid "PACKAGE DESCRIPTION:"
+msgstr "DESCRIZIONE PACCHETTO:"
+
+# File: installpkg, line: 420
+#. install infobox package
+#, sh-format
+msgid "Installing package $shortname $PMSG"
+msgstr "Installazione del pacchetto $shortname $PMSG"
+
+# File: installpkg, line: 422
+#. we must need a full menu:
+#, sh-format
+msgid "Package Name: $shortname $PMSG"
+msgstr "Nome del pacchetto: $shortname $PMSG"
+
+# File: installpkg, line: 423
+#, sh-format
+msgid "Install package $shortname"
+msgstr "Installare il pacchetto $shortname"
+
+# File: installpkg, line: 424
+#, sh-format
+msgid "Do not install package $shortname"
+msgstr "Non installare il pacchetto $shortname"
+
+# File: installpkg, line: 425
+#, sh-format
+msgid "Abort software installation completely"
+msgstr "Abbandona completamente la installazione del software"
+
+# File: installpkg, line: 469
+#. Some dumb bunny built a package with something other than makepkg.  Bad!
+#. Oh well.  Bound to happen.  Par for the course.  Fix it and move on...
+msgid "WARNING:  Package has not been created with 'makepkg'"
+msgstr "ATTENZIONE: Il pacchetto non è stato creato con  'makepkg'"
+
+# File: installpkg, line: 485
+#, sh-format
+msgid "Executing install script for $package_name."
+msgstr "Sto eseguendo lo script di installazione per $package_name."
+
+# File: installpkg, line: 514
+#, sh-format
+msgid "Package $package_name installed."
+msgstr "Il pacchetto $package_name è installato."
+
+# File: makepkg, line: 53
+#, sh-format
+msgid "WARNING: pkgtools are unstable with tar > 1.13.\n"
+"         You should provide a \"tar-1.13\" in your $PATH."
+msgstr "ATTENZIONE: i pkgtool non sono stabili con tar > 1.13.\n"
+"         Dovresti fornire un \"tar-1.13\" nel tuo $PATH"
+
+# File: makepkg, line: 79
+msgid "Usage: makepkg package_name.tgz\n"
+"       (or: package_name.tbz, package_name.tlz, package_name.txz)\n\n"
+"Makes a Slackware compatible package containing the contents of the current\n"
+"and all subdirectories.  If symbolic links exist, they will be removed and\n"
+"an installation script will be made to recreate them later. This script will\n"
+"be called \"install/doinst.sh\". You may add any of your own ash-compatible\n"
+"shell scripts to this file and rebuild the package if you wish.\n\n"
+"options:  -l, --linkadd y|n (moves symlinks into doinst.sh: recommended)\n"
+"          -p, --prepend (prepend rather than append symlinks to an existing\n"
+"                         doinst.sh.  Useful to link libraries needed by\n"
+"                         programs in the doinst.sh script)\n"
+"          -c, --chown y|n (resets all permissions to root:root 755\n"
+"                           - not generally recommended)\n\n"
+"If these options are not set, makepkg will prompt as appropriate."
+msgstr "Uso: makepkg nome_del_pacchetto.tgz\n"
+"       (oppure: nome_del_pacchetto.tbz, nome_del_pacchettoe.tlz, nome_del_pacchetto.txz)\n\n"
+"Crea un pacchetto compatibile con Slackware contenente i contenuti della cartella corrente e di tutte le sottocartelle.  Se esistono dei legami simbolici, questi saranno rimossi e sarà creato uno script di installazione per ricrearli in seguito. Lo script sarà denominato \"install/doinst.sh\". Puoi aggiungere  qualsiasi tuo script di shell compatibile con ash a questo file e ricostruire il pacchetto che vuoi.  \n\n"
+"optioni:  -l, --linkadd y|n (muove i legami simbolici a doinst.sh:\n"
+"                             raccomandato)\n"
+"          -p, --prepend (premette invece di appendere i legami simbolici a\n"
+"                         un file doinst.sh esistente.  Utile per legare\n"
+"                         librerie di cui necessitano i programmi nello\n"
+"                         script doinst.sh)\n"
+"          -c, --chown y|n (reimposta tutti i permessi a  root:root 755\n"
+"                           - non è raccomandato in generale)\n\n"
+"Se non si impostano queste opzioni, makepkg suggerirà le appropriate."
+
+# File: makepkg, line: 177
+#, sh-format
+msgid "ERROR:  gzip compression utility not found in $PATH."
+msgstr "ERRORE:  l'applicazione di compressione gzip non si trova in $PATH."
+
+# File: makepkg, line: 184
+#, sh-format
+msgid "ERROR:  bzip2 compression utility not found in $PATH."
+msgstr "ERRORE:  l'applicazione di compressione bzip2 non si trova in $PATH."
+
+# File: makepkg, line: 191
+#, sh-format
+msgid "ERROR:  lzma compression utility not found in $PATH."
+msgstr "ERRORE:  l'applicazione di compressione lzma non si trova in $PATH."
+
+# File: makepkg, line: 198
+#, sh-format
+msgid "ERROR:  xz compression utility not found in $PATH."
+msgstr "ERRORE:  l'applicazione di compressione xz non si trova in $PATH."
+
+# File: makepkg, line: 206
+msgid "Slackware package maker, version 3.141593."
+msgstr "Creatore di pacchetti per Slackware, versione 3.141593."
+
+# File: makepkg, line: 209
+msgid "Searching for symbolic links:"
+msgstr "Si stanno cercando legami simbolici:"
+
+# File: makepkg, line: 222
+msgid "Unless your existing installation script already contains the code\n"
+"to create these links, you should append these lines to your existing\n"
+"install script. Now's your chance. :^)\n\n"
+"Would you like to add this stuff to the existing install script and\n"
+"remove the symbolic links"
+msgstr "A meno che il tuoscript di installazione già contenga il codice\n"
+"per creare questi legami, dovrai aggiungere queste linee al tuo\n"
+"script di installazione. Ecco la tua possibilità. :^)\n\n"
+"Ti piacerebbe aggiungere questa roba allo script iniziale e\n"
+"rimuovere i legami simbolici"
+
+# File: makepkg, line: 230
+msgid "It is recommended that you make these lines your new installation script.\n\n"
+"Would you like to make this stuff the install script for this package\n"
+"and remove the symbolic links"
+msgstr "È raccomandabile che renda queste linee il tuo nuovo script di installazione.\n\n"
+"Vuoi rendere questa roba lo script di installazione per questo pacchetto\n"
+"e rimuovere i legami simbolici"
+
+# File: makepkg, line: 261
+msgid "Removing symbolic links:"
+msgstr "Si stanno rimuovendo legami simbolici:"
+
+# File: makepkg, line: 267
+msgid "Updating your ./install/doinst.sh (prepending symlinks)..."
+msgstr "Sto aggiornando il tuo ./install/doinst.sh (anteponendo i symlinks)..."
+
+# File: makepkg, line: 270
+msgid "Updating your ./install/doinst.sh..."
+msgstr "Aggiornamento di ./install/doinst.sh in corso..."
+
+# File: makepkg, line: 274
+msgid "Creating your new ./install/doinst.sh..."
+msgstr "Creazione del nuovo ./install/doinst.sh in corso..."
+
+# File: makepkg, line: 279
+msgid "No symbolic links were found, so we won't make an installation script.\n"
+"You can make your own later in ./install/doinst.sh and rebuild the\n"
+"package if you like."
+msgstr "Non si è trovato alcun legame simbolico o simlink, così non verrà creato uno script\n"
+"di installazione. Potrai crearne uno più tardi in ./install/doinst.sh \n"
+"e ricostruire il pacchetto se ti parrà."
+
+# File: makepkg, line: 286
+msgid "This next step is optional - you can set the directories in your package\n"
+"to some sane permissions. If any of the directories in your package have\n"
+"special permissions, then DO NOT reset them here!\n\n"
+"Would you like to reset all directory permissions to 755 (drwxr-xr-x) and\n"
+"directory ownerships to root.root"
+msgstr "Questo passo è opzionale -potete configurare le directory del tuo pacchetto\n"
+"con qualche permesso sensato. Se qualche directory nel tuo pacchetto ha\n"
+"permessi speciali, NON RIAZZERARLI qui\n\n"
+"Vuoi riazzerare tutti i permessi delle cartelle a  755 (drwxr-xr-x) e porre\n"
+"le proprietà delle cartelle a root.root"
+
+# File: makepkg, line: 312
+#, sh-format
+msgid "WARNING: $PWD is chmod $OLDROOTPERMS\n"
+"temporarily changing to chmod 755"
+msgstr "ATTENZIONE: $PWD ha i permessi $OLDROOTPERMS\n"
+"li cambio temporaneamente a 755"
+
+# File: makepkg, line: 319
+#, sh-format
+msgid "Creating Slackware package:  ${TARGET_NAME}/${TAR_NAME}.${EXTENSION}"
+msgstr "Sto creando il pacchetto Slackware: ${TARGET_NAME}/${TAR_NAME}.${EXTENSION}"
+
+# File: makepkg, line: 328
+#, sh-format
+msgid "ERROR:  gzip returned error code $ERRCODE -- makepkg failed."
+msgstr "ERRORE:  gzip ritornava il codice di errore $ERRCODE -- makepkg falliva"
+
+# File: makepkg, line: 336
+#, sh-format
+msgid "ERROR:  bzip2 returned error code $ERRCODE -- makepkg failed."
+msgstr "ERRORE:  bzip2 ritornava il codice di errore $ERRCODE -- makepkg falliva"
+
+# File: makepkg, line: 344
+#, sh-format
+msgid "ERROR:  lzma returned error code $ERRCODE -- makepkg failed."
+msgstr "ERRORE:  lzma ritornava il codice di errore $ERRCODE -- makepkg falliva"
+
+# File: makepkg, line: 352
+#, sh-format
+msgid "ERROR:  xz returned error code $ERRCODE -- makepkg failed."
+msgstr "ERRORE:  xz ritornava il codice di errore $ERRCODE -- makepkg falliva"
+
+# File: makepkg, line: 360
+#, sh-format
+msgid "WARNING:  zero length file"
+msgstr "ATTENZIONE: file di dimensione nulla"
+
+# File: makepkg, line: 367
+msgid "WARNING:  gzip test failed on"
+msgstr "ATTENZIONE: è fallito il test di gzip"
+
+# File: makepkg, line: 378
+msgid "WARNING:  /usr/share/man (with possibly not gzipped man pages) detected"
+msgstr "ATTENZIONE:  rilevato /usr/share/man (con probabili pagine man non compresse con gzip)"
+
+# File: makepkg, line: 383
+msgid "WARNING:  /usr/share/info (with possibly not gzipped info pages) detected"
+msgstr "ATTENZIONE:  rilevato /usr/share/info (con probabili pagine info non compresse con gzip)"
+
+# File: makepkg, line: 388
+msgid "WARNING:  site_perl directory detected (this is fine for a local package build)"
+msgstr "ATTENZIONE:  rilevata cartella site_perl (questo va bene per compilazioni locali di pacchetti)"
+
+# File: makepkg, line: 395
+#, sh-format
+msgid "Restoring permissions of $PWD to chmod $OLDROOTPERMS"
+msgstr "Reimposto i permessi di $PWD a $OLDROOTPERMS"
+
+# File: makepkg, line: 401
+#, sh-format
+msgid "Slackware package ${TARGET_NAME}/${TAR_NAME}.${EXTENSION} created."
+msgstr "È stato creato pacchetto Slackware ${TARGET_NAME}/${TAR_NAME}.${EXTENSION}."
+
+# File: pkgtool, line: 91
+#. bad
+msgid "\n"
+"You can't run pkgtool from the rootdisk until you've mounted your Linux partitions beneath /mnt.  Here are some examples:\n\n"
+"If your root partition is /dev/sda1 you would type:\n"
+"mount /dev/sda1 /mnt\n\n"
+"Now you can find a list of all your partitions in /mnt/etc/fstab.\n\n"
+"Then, supposing your /usr partition is /dev/sda2, you must do this:\n"
+"mount /dev/sda2 /mnt/usr\n\n"
+"Please mount your Linux partitions and then run pkgtool again.\n\n"
+msgstr "\n"
+"Non puoi eseguire pkgtool dal disco di root fino a quando non avrai montato le tue partizioni Linux sotto /mnt.  Ecco alcuni esempi :\n\n"
+"Se la tua partizione iniziale di root è /dev/sda1 dovresti scrivere:\n"
+"mount /dev/sda1 /mnt\n\n"
+"Fatto ciò potrai trovare un elenco di tutte le tue partizioni in /mnt/etc/fstab.\n\n"
+"Poi, supponendo che la tua partizione per /usr sia /dev/sda2, dovrai fare questo:\n"
+"mount /dev/sda2 /mnt/usr\n\n"
+"Per favore, monta le tue partizioni Linux e poi esegui pkgtool di nuovo.\n\n"
+
+# File: pkgtool, line: 159
+msgid "PACKAGE REMOVAL IN PROGRESS"
+msgstr "RIMOZIONE DEL PACCHETTO IN CORSO"
+
+# File: pkgtool, line: 160
+#, sh-format
+msgid "\n"
+"Removing package $pkg_name.\n\n"
+"Since each file must be checked against the contents of every other installed package to avoid wiping out areas of overlap, this process can take quite some time. If you would like to watch the progress, flip over to another virtual console and type: \n\n"
+"tail -f $TMP/PKGTOOL.REMOVED"
+msgstr "\n"
+"Sto rimuovendo il pacchetto $pkg_name.\n\n"
+"Poiché ciascun pacchetto deve essere verificato rispetto ai contenuti di qualunque altro pacchetto installato, per evitare di cancellare aree di sovrapposizione, questo processo potrebbe richiedere un po' di tempo.  Se vuoi osservarne il progresso passa ad un'altra console e scrivi: \n\n"
+"tail -f $TMP/PKGTOOL.REMOVED"
+
+# File: pkgtool, line: 180
+msgid "View information about package"
+msgstr "Visualizza informazioni sul pacchetto"
+
+# File: pkgtool, line: 193
+msgid "Select\\/Unselect removing package"
+msgstr "Seleziona\\/Deseleziona il pacchetto da rimuovere"
+
+# File: pkgtool, line: 225
+#, sh-format
+msgid "Slint Package Tool (pkgtool version ${Version})"
+msgstr "Slint Package Tool (pkgtool versione ${Version})"
+
+# File: pkgtool, line: 226
+msgid "\n"
+"Welcome to the Slint package tool\n\n"
+"Which option would you like?"
+msgstr "\n"
+"Benvenuti allo strumento per i pacchetti di Slint\n\n"
+"Quale opzione preferisci?"
+
+# File: pkgtool, line: 230
+msgid "Install packages from the current directory"
+msgstr "Installa i pacchetti dalla cartella corrente"
+
+# File: pkgtool, line: 231
+msgid "Install packages from some other directory"
+msgstr "Installa i pacchetti da qualche altra cartella"
+
+# File: pkgtool, line: 232
+msgid "Remove packages that are currently installed"
+msgstr "Rimuovi i pacchetti attualmente installati"
+
+# File: pkgtool, line: 233
+msgid "View the list of files contained in a package"
+msgstr "Vedi l'elenco dei files contenuti in un pacchetto"
+
+# File: pkgtool, line: 234
+msgid "Choose Slint installation scripts to run again"
+msgstr "Scegli gli script per l'installazione di Slint da eseguire nuovamente"
+
+# File: pkgtool, line: 235
+msgid "Exit Pkgtool"
+msgstr "Esci da Pkgtool"
+
+# File: pkgtool, line: 249
+msgid "SELECT SYSTEM SETUP SCRIPTS"
+msgstr "SELEZIONA GLI SCRIPT DI CONFIGURAZIONE DEL SISTEMA"
+
+# File: pkgtool, line: 251
+msgid "Please use the spacebar to select the setup scripts to run.  Hit enter when you are done selecting to run the scripts."
+msgstr "Per favore usa la barra spaziatrice per selezionare gli script di configurazione da eseguire. Premi invio quando hai fatto per eseguirli."
+
+# File: pkgtool, line: 259
+#, sh-format
+msgid "$BLURB"
+msgstr "$BLURB"
+
+# File: pkgtool, line: 292
+msgid "Please select the package you wish to view."
+msgstr "Per favore scegli il pacchetto che vuoi visionare."
+
+# File: pkgtool, line: 302
+#, sh-format
+msgid "CONTENTS OF PACKAGE: $PkG"
+msgstr "CONTENUTI DEL PACCHETTO: $PkG"
+
+# File: pkgtool, line: 322
+msgid "SELECT PACKAGES TO REMOVE"
+msgstr "SELEZIONARE I PACCHETTI DA RIMUOVERE"
+
+# File: pkgtool, line: 323
+msgid "Please select the packages you wish to Remove. Use the spacebar to select packages to delete, and the UP/DOWN arrow keys to scroll up and down through the entire list."
+msgstr "Per favore scegli i pacchetti che vuoi rimuovere. Usa la barra spaziatrice per selezionare i pacchetti da cancellare e le frecce SU/GIÙ per scorrere su e giù lungo la lista."
+
+# File: pkgtool, line: 342
+msgid "NO PACKAGES REMOVED"
+msgstr "NON È STATO RIMOSSO ALCUN PACCHETTO"
+
+# File: pkgtool, line: 343
+msgid "Hit OK to return to the main menu."
+msgstr "Premere OK per tornare al menù principale."
+
+# File: pkgtool, line: 345
+msgid "PACKAGE REMOVAL COMPLETE"
+msgstr "RIMOZIONE DEL PACCHETTO COMPLETATA"
+
+# File: pkgtool, line: 346
+#, sh-format
+msgid "The packages have been removed. A complete log of the files that were removed has been created in $TMP/PKGTOOL.REMOVED."
+msgstr "I pacchetti sono stati rimossi. Un log completo dei file che sono stati rimossi è stato creato in $TMP/PKGTOOL.REMOVED."
+
+# File: pkgtool, line: 355
+msgid "Please enter the name of the directory that you wish to install packages from:"
+msgstr "Per favore, inserite il nome della directory da cui volete installare i pacchetti:"
+
+# File: pkgtool, line: 369
+msgid "DIRECTORY NOT FOUND"
+msgstr "CARTELLA NON TROVATA"
+
+# File: pkgtool, line: 369
+#, sh-format
+msgid "The directory you want to install from ($SOURCE_DIR) does not seem to exist. Please check the directory and then try again."
+msgstr "Sembra che la cartella da cui vuoi installare ($SOURCE_DIR) non esista.\n"
+"Per favore verifica la cartella e riprova."
+
+# File: pkgtool, line: 393
+#. The source should already be mounted, so we test it
+#. the directory is missing
+#, sh-format
+msgid "Your source device cannot be accessed properly.\n\n"
+"Please be sure that it is mounted on $SOURCE_DIR, and that the Slint disks are found in subdirectories of $SOURCE_DIR like specified."
+msgstr "Non si può accedere appropriatamente al tuo dispositivo sorgente\n\n"
+"Per favore, assicurati che sia montato in $SOURCE_DIR, e che i dischi di Slint si trovino nelle sottocartelle di $SOURCE_DIR come specificato."
+
+# File: pkgtool, line: 405
+msgid "INSERT DISK"
+msgstr "INSERISCI IL DISCO"
+
+# File: pkgtool, line: 405
+#, sh-format
+msgid "Please insert disk $NumDisk and press ENTER to continue."
+msgstr "Per favore inserisci il disco $NumDisk e premi INVIO per continuare."
+
+# File: pkgtool, line: 408
+msgid "Continue with the installation"
+msgstr "Proseguire con l'installazione"
+
+# File: pkgtool, line: 409
+msgid "Skip the current disk series"
+msgstr "Saltare le serie di dischi correnti"
+
+# File: pkgtool, line: 410
+msgid "Abort the installation process"
+msgstr "Interrompere il processo di installazione"
+
+# File: pkgtool, line: 421
+msgid "ABORTING"
+msgstr "STO INTERROMPENDO"
+
+# File: pkgtool, line: 421
+msgid "Aborting software installation."
+msgstr "Sto interrompendo l'installazione del software"
+
+# File: pkgtool, line: 437
+msgid "MOUNT PROBLEM "
+msgstr "PROBLEMA DI MOUNT"
+
+# File: pkgtool, line: 437
+msgid "Media was not successfully mounted! Do you want to retry, or quit?"
+msgstr "Il dispositivo non è stato montato correttamente! Vuoi riprovare o lasciar perdere?"
+
+# File: pkgtool, line: 440
+msgid "Try to mount the disk again"
+msgstr "Provare a rimontare il disco"
+
+# File: pkgtool, line: 441
+msgid "No, abort."
+msgstr "No, interrompere."
+
+# File: removepkg, line: 178
+#, sh-format
+msgid "  --> $ROOT/$FILE was found in another package. Skipping."
+msgstr "--> $ROOT/$FILE è stato trovato in un altro pacchetto.  Lo salto."
+
+# File: removepkg, line: 183
+#, sh-format
+msgid "WARNING: Nonexistent $ROOT/$FILE was found in another package. Skipping."
+msgstr "ATTENZIONE: Il file inesistente $ROOT/$FILE è stato trovato in un altro pacchetto.  Lo salto."
+
+# File: removepkg, line: 196
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) was found in another package. Skipping."
+msgstr "--> $ROOT/$LINK (collegamento simbolico) è stato trovato in un altro pacchetto. Lo salto."
+
+# File: removepkg, line: 199
+#, sh-format
+msgid "WARNING: Nonexistent $ROOT/$LINK (symlink) was found in another package. Skipping."
+msgstr "ATTENZIONE: $ROOT/$LINK (collegamento simbolico) inesistente è stato trovato in un altro pacchetto.  Lo salto."
+
+# File: removepkg, line: 210
+#, sh-format
+msgid "WARNING: $ROOT/$FILE changed after package installation."
+msgstr "ATTENZIONE: il file $ROOT/$FILE è cambiato successivamente all'installazione del pacchetto."
+
+# File: removepkg, line: 214
+#, sh-format
+msgid "  --> Deleting $ROOT/$FILE"
+msgstr "--> Sto cancellando $ROOT/$FILE"
+
+# File: removepkg, line: 218
+#, sh-format
+msgid "  --> $ROOT/$FILE would be deleted"
+msgstr "--> $ROOT/$FILE sarà cancellato"
+
+# File: removepkg, line: 223
+#, sh-format
+msgid "  --> $ROOT/$FILE no longer exists. Skipping."
+msgstr "--> $ROOT/$FILE non esiste più.  Lo salto."
+
+# File: removepkg, line: 236
+#, sh-format
+msgid "  --> Deleting symlink $ROOT/$LINK"
+msgstr "--> Sto cancellando il collegamento simbolico $ROOT/$LINK"
+
+# File: removepkg, line: 240
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) would be deleted"
+msgstr "--> $ROOT/$LINK (collegamento simbolico) sarà cancellato"
+
+# File: removepkg, line: 244
+#, sh-format
+msgid "  --> $ROOT/$LINK (symlink) no longer exists. Skipping."
+msgstr "--> $ROOT/$LINK (collegamento simbolico) non esiste più.  Lo salto."
+
+# File: removepkg, line: 256
+#, sh-format
+msgid "  --> Deleting empty directory $ROOT/$DIR"
+msgstr "--> Sto cancellando la cartella vuota $ROOT/$DIR"
+
+# File: removepkg, line: 260
+#, sh-format
+msgid "WARNING: Unique directory $ROOT/$DIR contains new files"
+msgstr "ATTENZIONE: La cartella $ROOT/$DIR contiene file nuovi"
+
+# File: removepkg, line: 264
+#, sh-format
+msgid "  --> $ROOT/$DIR (dir) would be deleted if empty"
+msgstr "--> $ROOT/$DIR (cartella) se vuota sarà cancellata"
+
+# File: removepkg, line: 276
+#, sh-format
+msgid "  --> Deleting $ROOT/$FILE (fmt man page)"
+msgstr "  --> Sto cancellando $ROOT/$FILE (pagina manuale fmt)"
+
+# File: removepkg, line: 280
+#, sh-format
+msgid "  --> $ROOT/$FILE (fmt man page) would be deleted"
+msgstr "--> $ROOT/$FILE (pagina manuale fmt) sarà cancellato"
+
+# File: removepkg, line: 330
+#, sh-format
+msgid "Removing package $ADM_DIR/packages/$PKGNAME..."
+msgstr "Sto rimuovendo il pacchetto $ADM_DIR/packages/$PKGNAME..."
+
+# File: removepkg, line: 339
+msgid "Removing files:"
+msgstr "Sto rimuovendo i files:"
+
+# File: removepkg, line: 387
+#, sh-format
+msgid "No such package: $ADM_DIR/packages/$PKGNAME. Can't remove."
+msgstr "Non c'è nessun pacchetto: $ADM_DIR/packages/$PKGNAME. Non è possibile rimuoverlo."
+
+# File: removepkg, line: 394
+# File: removepkg, line: 405
+msgid "Usage:"
+msgstr "Utilizzo:"
+
+# File: removepkg, line: 395
+# File: removepkg, line: 405
+msgid "packagename"
+msgstr "nome del pacchettio"
+
+# File: removepkg, line: 411
+msgid "Only warning... not actually removing any files."
+msgstr "Solo come avviso... in realtà non si rimuove alcun file."
+
+# File: removepkg, line: 414
+# File: removepkg, line: 423
+#, sh-format
+msgid "Package contents is copied to $PRES_DIR."
+msgstr "Il contenuto del pacchetto viene copiato in $PRES_DIR."
+
+# File: removepkg, line: 417
+msgid "Here's what would be removed (and left behind) if you removed the package(s):"
+msgstr "Ecco quello che dovrebbe essere rimosso (e abbandonato) se rimuovi il pacchetto(i):"
+
+# File: startupmode, line: 14
+msgid "Select the default startup mode"
+msgstr "Scegli la modalità di avvio predefinita"
+
+# File: startupmode, line: 15
+msgid "Please choose the default startup mode: Console or Graphical.\n\n"
+"In Console mode, you log in and type your first command in a console.\n"
+"In this mode you can type \"startx\" to start the default desktop or windows manager, that you can also change typing \"xwmconfig\".\n\n"
+"In Graphical mode, you choose the desktop or windows manager, that will be started as soon as you are identified.\n"
+msgstr "Scegli, per favore, la modalità di avvio predefinita: Console o Grafica.\n\n"
+"In modalità Console, entri nel sistema e immetti il tuo primo conado in una console.\n"
+"In questa modalità puoi digitare \"startx\" per avviare il gestore del desktop o di finestre predefinito, che puoi comunque cambiare digitando \"xwmconfig\".\n\n"
+"In modalità Grafica, scegli il gestore del desktop o di finestre, che sarà avviato appena ti sarai autenticato.\n"
+
+# File: startupmode, line: 24
+msgid "Start Linux in Console mode"
+msgstr "Avvia Linux in modalità Console"
+
+# File: startupmode, line: 25
+msgid "Start Linux in Graphical mode"
+msgstr "Avvia Linux in modalità Grafica"
+
+# File: upgradepkg, line: 56
+msgid "Usage: upgradepkg newpackage [newpackage2 ... ]\n"
+"       upgradepkg oldpackage%newpackage [oldpackage2%newpackage2 ... ]\n"
+"       \n"
+"Upgradepkg upgrades a Slint package (.tgz, .tbz, .tlz, .txz) from an\n"
+"older version to a newer one.  It does this by INSTALLING the new package\n"
+"onto the system, and then REMOVING any files from the old package that\n"
+"aren't in the new package.  If the old and new packages have the same\n"
+"name, a single argument is all that is required.  If the packages have\n"
+"different names, supply the name of the old package followed by a percent\n"
+"symbol (%), then the name of the new package.  Do not add any extra\n"
+"whitespace between pairs of old/new package names.\n\n"
+"Before upgrading a package, save any configuration files (such as in /etc)\n"
+"that you wish to keep.  Sometimes these will be preserved, but it depends\n"
+"on the package.  If you want to force new versions of the config files\n"
+"to be installed, remove the old ones manually prior to running upgradepkg.\n\n"
+"To upgrade in a directory other than / (such as /mnt):  \n\n"
+"   ROOT=/mnt upgradepkg package.tgz (or .tbz, .tlz, .txz)"
+msgstr "Uso: upgradepkg nuovopacchetto [nuovopacchetto2 ... ]\n"
+"       upgradepkg vecchiopacchetto%nuovopacchetto [vecchio2%nuovo2 ... ]\n"
+"       \n"
+"Upgradepkg aggiorna un pacchetto Slint (.tgz, .tbz, .tlz, .txz) da una\n"
+"vecchia versione a una nuova.  Fa ciò INSTALLANDO il nuovo pacchetto nel\n"
+"sistema, e poi RIMUOVENDO i file del vecchio pacchetto che non sono nel\n"
+"nuovo.  Se il vecchio e il nuovo pacchetto hanno lo stesso nome,\n"
+"è sufficiente un singolo argomento.  Se i pacchetti hanno nomi diversi\n"
+"passa il nome del vecchio pacchetto seguito dal simbolo di percento (%),\n"
+"quindi il nome del nuovo pacchetto.  Non aggiungere alcuno spazio vuoto\n"
+"fra il vecchio e il nuovo nome del pacchetto.\n\n"
+"Prima di aggiornare un pacchetto, salva qualunque file di configurazione\n"
+"(per esempio in /etc) che vuoi mantenere.  Talvolta questi saranno\n"
+"preservati, ma dipende dal pacchetto.  Se vuoi forzare nuove versioni dei\n"
+"files di configurazione che devono essere installati, rimuovi manualmente\n"
+"le vecchie prima di eseguire upgradepkg.\n\n"
+"Per aggiornare in una cartella diversa da / (come ad esempio /mnt):\n\n"
+"   ROOT=/mnt upgradepkg package.tgz (o .tbz, .tlz, .txz)"
+
+# File: upgradepkg, line: 227
+#, sh-format
+msgid "Installing new package $INCOMINGDIR/$NNAME"
+msgstr "Sto installando il nuovo pacchetto $INCOMINGDIR/$NNAME"
+
+# File: upgradepkg, line: 253
+#, sh-format
+msgid "$NEW would be skipped (already installed)."
+msgstr "$NEW sarà saltato (già installato)."
+
+# File: upgradepkg, line: 258
+#, sh-format
+msgid "Skipping package $NEW (already installed)"
+msgstr "Sto saltando il pacchetto $NEW (già installato)"
+
+# File: upgradepkg, line: 300
+#, sh-format
+msgid "Upgrading $OLD package using $INCOMINGDIR/$NNAME"
+msgstr "Sto aggiornando il pacchetto $OLD con $INCOMINGDIR/$NNAME"
+
+# File: upgradepkg, line: 316
+#, sh-format
+msgid "ERROR:  Package $INCOMINGDIR/$NNAME did not install\n"
+"correctly.  You may need to reinstall your old package\n"
+"to avoid problems.  Make sure the new package is not\n"
+"corrupted."
+msgstr "ERRORE: Il pacchetto $INCOMINGDIR/$NNAME non è stato\n"
+"installato correttamente.  Dovresti dover reinstallare il tuo\n"
+"pacchetto originale per evitare problemi.  Assicurati che\n"
+"il nuovo pacchetto non sia corrotto."
+
+# File: upgradepkg, line: 343
+#, sh-format
+msgid "Package $OLD upgraded with new package $INCOMINGDIR/$NNAME."
+msgstr "Il pacchetto $OLD è stato aggiornato con il nuovo pacchetto $INCOMINGDIR/$NNAME"
+

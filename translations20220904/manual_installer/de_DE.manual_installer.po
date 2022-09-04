@@ -1,0 +1,2090 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2022-05-18 15:59\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: /manual_installer/manual_installer.po\n"
+"X-Crowdin-File-ID: 28\n"
+
+# File: INCISO, line: 18
+msgid "An ISO image of Slint's install DVD was found.\n"
+"Do you want me to mount the ISO image and use this as the package source?"
+msgstr "Ein ISO-Abbild der Slint-Installations-DVD wurde gefunden.\n"
+"Möchten Sie das ISO-Abbild einbinden und als Paketquelle verwenden?"
+
+# File: INCISO, line: 20
+msgid "USE ISO IMAGE"
+msgstr "BENUTZE ISO-ABBILD"
+
+# File: INSCD, line: 19
+msgid "SCANNING FOR CD or DVD DRIVE"
+msgstr "SUCHE NACH einem CD- oder DVD-LAUFWERK"
+
+# File: INSCD, line: 20
+msgid "Make sure the Slint disc is in your CD/DVD drive, and then press ENTER to begin the scanning process. Or, if you'd rather specify the device name manually (experts only), choose that option below."
+msgstr "Stellen Sie sicher, dass die Slint-Disk im CD/DVD-Laufwerk ist und drücken Sie danach ENTER um den Suchvorgang zu starten. Falls Sie das Laufwerk selber angeben möchten (nur für Experten), wählen Sie die untere Option."
+
+# File: INSCD, line: 25
+msgid "Scan for the CD or DVD drive (recommended)"
+msgstr "CD- oder DVD-Laufwerk automatisch erkennen (empfohlen)"
+
+# File: INSCD, line: 26
+msgid "Manually specify CD or DVD by device name"
+msgstr "CD- oder DVD-Laufwerk manuell per Gerätename festlegen"
+
+# File: INSCD, line: 35
+msgid "MANUAL CD/DVD DEVICE SELECTION"
+msgstr "MANUELLE CD/DVD-LAUFWERKSAUSWAHL"
+
+# File: INSCD, line: 36
+msgid "Please select your CD/DVD device from the list below.  If you don't see your device listed, choose 'custom'.  This will let you type in any device name. (and if necessary, will create the device)"
+msgstr "Bitte wählen Sie Ihr CD/DVD-Laufwerk aus der Liste aus. Falls Ihr Laufwerk nicht aufgeführt wird, wählen Sie 'custom'. Dadurch können Sie einen beliebigen Laufwerksnamen angeben (falls nötig, wird das Laufwerk erstellt)."
+
+# File: INSCD, line: 41
+msgid "Type in the CD or DVD device to use"
+msgstr "Geben Sie das zu verwendende CD- oder DVD-Laufwerk an"
+
+# File: INSCD, line: 42
+msgid "First CD/DVD drive"
+msgstr "Erstes CD/DVD-Laufwerk"
+
+# File: INSCD, line: 43
+msgid "Second CD/DVD drive"
+msgstr "Zweites CD/DVD-Laufwerk"
+
+# File: INSCD, line: 44
+msgid "Third CD/DVD drive"
+msgstr "Drittes CD/DVD-Laufwerk"
+
+# File: INSCD, line: 45
+msgid "Fourth CD/DVD drive"
+msgstr "Viertes CD/DVD-Laufwerk"
+
+# File: INSCD, line: 46
+msgid "CD/DVD slave on first IDE bus"
+msgstr "CD/DVD-Slave am ersten IDE-Bus"
+
+# File: INSCD, line: 47
+msgid "CD/DVD master on first IDE bus (unlikely)"
+msgstr "CD/DVD-Master am ersten IDE-Bus (unwahrscheinlich)"
+
+# File: INSCD, line: 48
+msgid "CD/DVD master on second IDE bus"
+msgstr "CD/DVD-Master am zweiten IDE-Bus"
+
+# File: INSCD, line: 49
+msgid "CD/DVD slave on second IDE bus"
+msgstr "CD/DVD-Slave am zweiten IDE-Bus"
+
+# File: INSCD, line: 50
+msgid "CD/DVD master on third IDE bus"
+msgstr "CD/DVD-Master am dritten IDE-Bus"
+
+# File: INSCD, line: 51
+msgid "CD/DVD slave on third IDE bus"
+msgstr "CD/DVD-Slave am dritten IDE-Bus"
+
+# File: INSCD, line: 52
+msgid "CD/DVD master on fourth IDE bus"
+msgstr "CD/DVD-Master am vierten IDE-Bus"
+
+# File: INSCD, line: 53
+msgid "CD/DVD slave on fourth IDE bus"
+msgstr "CD/DVD-Slave am vierten IDE-Bus"
+
+# File: INSCD, line: 54
+msgid "First parallel port ATAPI CD"
+msgstr "ATAPI-CD am ersten Parallelport"
+
+# File: INSCD, line: 55
+msgid "Second parallel port ATAPI CD"
+msgstr "ATAPI-CD am zweiten Parallelport"
+
+# File: INSCD, line: 56
+msgid "Third parallel port ATAPI CD"
+msgstr "ATAPI-CD am dritten Parallelport"
+
+# File: INSCD, line: 57
+msgid "Fourth parallel port ATAPI CD"
+msgstr "ATAPI-CD am vierten Parallelport"
+
+# File: INSCD, line: 58
+msgid "Non-IDE Aztech CD/DVD"
+msgstr "Nicht-IDE Aztech CD/DVD"
+
+# File: INSCD, line: 59
+msgid "Sony CDU-535 CD/DVD"
+msgstr "Sony CDU-535 CD/DVD"
+
+# File: INSCD, line: 60
+msgid "Non-IDE GoldStar CD/DVD"
+msgstr "Nicht-IDE GoldStar CD/DVD"
+
+# File: INSCD, line: 61
+msgid "Sony CDU-31a CD/DVD"
+msgstr "Sony CDU-31a CD/DVD"
+
+# File: INSCD, line: 62
+msgid "Optics Storage CD/DVD"
+msgstr "Optics Storage CD/DVD"
+
+# File: INSCD, line: 63
+msgid "Sanyo non-IDE CD/DVD"
+msgstr "Nicht-IDE Sanyo CD/DVD"
+
+# File: INSCD, line: 64
+msgid "Non-IDE Mitsumi drive 1"
+msgstr "Nicht-IDE Mitsumi Laufwerk 1"
+
+# File: INSCD, line: 65
+msgid "Non-IDE Mitsumi drive 2"
+msgstr "Nicht-IDE Mitsumi Laufwerk 2"
+
+# File: INSCD, line: 66
+msgid "Old non-IDE SoundBlaster CD/DVD"
+msgstr "Altes nicht-IDE SoundBlaster CD/DVD"
+
+# File: INSCD, line: 67
+msgid "Philips LMS CM-205 CD/DVD"
+msgstr "Philips LMS CM-205 CD/DVD"
+
+# File: INSCD, line: 68
+msgid "Philips LMS CM-206 CD/DVD"
+msgstr "Philips LMS CM-206 CD/DVD"
+
+# File: INSCD, line: 69
+msgid "Old non-IDE Mitsumi CD/DVD"
+msgstr "Altes Nicht-IDE Mitsumi CD/DVD"
+
+# File: INSCD, line: 78
+msgid "ENTER CD/DVD DEVICE MANUALLY"
+msgstr "CD/DVD-LAUFWERK MANUELL ANGEBEN"
+
+# File: INSCD, line: 79
+msgid "Please enter the name of the CD/DVD device (such as /dev/hdc) that you wish to use to mount the Slint CD/DVD:"
+msgstr "Bitte geben Sie den Namen des CD/DVD Laufwerks (z.B. /dev/hdc) an, den Sie zum Einbinden der Slint-CD/DVD verwenden möchten:"
+
+# File: INSCD, line: 90
+msgid "MKNOD CD/DVD DEVICE"
+msgstr "MKNOD CD/DVD-LAUFWERK"
+
+# File: INSCD, line: 91
+#, sh-format
+msgid "There doesn't seem to be a device by the name of $DRIVE_FOUND in the /dev directory, so we will have to create it using the major and minor numbers for the device.  If you're using a bootdisk with a custom CD/DVD driver on it, you should be able to find these numbers in the documentation.  Also, see the 'devices.txt' file that comes with the Linux kernel source.  If you don't know the numbers, you'll have to hit Esc to abort. Enter the major and minor numbers for the new device, separated by one space:"
+msgstr "Es scheint kein Gerät mit dem Namen $DRIVE_FOUND in /dev vorhanden zu sein, deshalb werden wir es mit den Major- und Minor-Nummern erstellen. Falls Sie eine Bootdisk mit benutzerspezifischen Treibern verwenden, sollten Sie diese Nummern in der Dokumentation finden. Überprüfen Sie auch 'devices.txt', welches Sie in den Linux-Kernel-Quellen finden. Falls Sie die Nummern nicht kennen, drücken Sie 'Esc' zum Beenden. Geben Sie die Major- und Minor- Nummern des neuen Geräts, getrennt mit einem Leerzeichen, ein:"
+
+# File: INSCD, line: 106
+msgid "MAKING DEVICE IN /dev"
+msgstr "ERSTELLE LAUFWERK IN /dev"
+
+# File: INSCD, line: 111
+msgid "MKNOD FAILED"
+msgstr "MKNOD IST FEHLGESCHLAGEN"
+
+# File: INSCD, line: 112
+msgid "Sorry, but the mknod command failed to make the device.  You'll need to go back and try selecting your source media again.  Press ENTER to abort the source media selection process."
+msgstr "Entschuldigung, das mknod-Kommando konnte das Laufwerk nicht erstellen. Gehen Sie zurück und versuchen Sie die Medienquelle erneut anzugeben. Drücken Sie ENTER um den Prozess zur Auswahl des Quellmediums abzubrechen."
+
+# File: INSCD, line: 126
+# File: INSCD, line: 143
+# File: INSCD, line: 163
+# File: INSCD, line: 183
+msgid "SCANNING"
+msgstr "SUCHE"
+
+# File: INSCD, line: 126
+msgid "Scanning for a CD/DVD drive containing a Slint disc..."
+msgstr "Suche nach einem CD/DVD-Laufwerk mit der Slint-Disk..."
+
+# File: INSCD, line: 143
+msgid "Scanning for an IDE CD/DVD drive containing a Slint disc..."
+msgstr "Suche nach einem IDE-CD/DVD Laufwerk mit der Slint-Disk..."
+
+# File: INSCD, line: 163
+msgid "Scanning for a parallel port ATAPI CD/DVD drive containing a Slint disc..."
+msgstr "Suche nach einem Parallelport-ATAPI-CD/DVD Laufwerk mit der Slint-Disk..."
+
+# File: INSCD, line: 183
+msgid "No IDE/SCSI drive, so we will try scanning for CD drives on old proprietary interfaces, such as SoundBlaster pre-IDE CD drives, Sony CDU-31a, Sony 535, old Mitsumi pre-IDE, old Optics, etc.  For this scan to work at all, you'll need to be using a bootdisk that supports your CD drive.\n\n"
+"Please press ENTER to begin this last-chance scan for old, obsolete hardware."
+msgstr "Kein IDE/SCSI Laufwerk gefunden. Deshalb versuchen wir ein Laufwerk an alten proprietären Schnittstellen, wie SoundBlaster prä-IDE-CD-Laufwerke, Sony CDU-31a, Sony 535, alte Mitsumi prä-IDE, alte Optics etc. Damit die Suche funktioniert brauchen Sie eine Bootdisk, die Ihr CD-Laufwerk unterstützt.\n\n"
+"Bitte drücken Sie ENTER um die Suche nach alter und obsoleter Hardware zu starten."
+
+# File: INSCD, line: 206
+msgid "CD/DVD DRIVE NOT FOUND"
+msgstr "CD/DVD-LAUFWERK NICHT GEFUNDEN"
+
+# File: INSCD, line: 207
+msgid "A CD/DVD drive could not be found on any of the devices that were scanned.  Possible reasons include using a bootdisk or kernel that doesn't support your drive, failing to pass parameters needed by some drives to the kernel, not having the Slint disc in your CD/DVD drive, or using a drive connected to a Plug and Play soundcard (in this case, connecting the drive directly to the IDE interface often helps). Please make sure you are using the correct bootdisk for your hardware, consult the BOOTING file for possible information on forcing the detection of your drive, and then reattempt installation.  If all else fails, see FAQ.TXT for information about copying parts of this CD to your DOS partition and installing it from there.\n\n"
+"You will now be returned to the main menu.  If you want to try looking for the CD again, you may skip directly to the SOURCE menu selection."
+msgstr "Unter den überprüften Geräten wurde kein CD/DVD-Laufwerk gefunden. Mögliche Gründe dafür sind: Sie verwenden eine Bootdisk oder einen Kernel, der Ihr Laufwerk nicht unterstützt, vom Laufwerk benötigte Parameter wurden nicht an den Kernel weitergegeben, die Slint-Disk ist nicht im CD/DVD-Laufwerk, oder Sie verwenden ein Laufwerk, das an einer Plug-and-Play-Soundkarte angeschlossen ist (in diesem Fall reicht es meistens, das Laufwerk direkt an einer IDE-Schnittstelle anzuschließen). Bitte vergewissern Sie sich, dass Sie die richtige Bootdisk für Ihre Hardware verwenden. Lesen Sie die Datei BOOTING für weitere Informationen über das Erzwingen der Erkennung Ihres Laufwerks und versuchen Sie die Installation erneut. Falls alle Bemühungen fehlschlagen, lesen Sie FAQ.TXT für Informationen über das Kopieren von Teilen der CD in Ihre DOS-Partition und installieren Sie das System von dort.\n\n"
+"Sie werden nun zum Hauptmenü zurückkehren. Falls Sie erneut das CD Laufwerk suchen möchten, können Sie direkt zum Menüpunkt SOURCE springen."
+
+# File: INSCD, line: 229
+#. mounted successfully
+msgid "CD/DVD DRIVE FOUND"
+msgstr "CD/DVD-LAUFWERK GEFUNDEN"
+
+# File: INSCD, line: 230
+#, sh-format
+msgid "A Slint disc was found in device $DRIVE_FOUND."
+msgstr "Eine Slint-Disk wurde im Laufwerk $DRIVE_FOUND gefunden."
+
+# File: INSCD, line: 233
+# File: INShd, line: 92
+# File: pkgtool, line: 398
+#. failed to mount
+msgid "MOUNT ERROR"
+msgstr "EINHÄNGE-FEHLER"
+
+# File: INSCD, line: 233
+#, sh-format
+msgid "There was an error attempting to mount the CD/DVD on $DRIVE_FOUND.  Maybe the device name is incorrect, the disc is not in the drive, or the kernel you are using does not support the device. (possibly an incorrect bootdisk) What would you like to do now?"
+msgstr "Das Einbinden der CD/DVD über $DRIVE_FOUND ist fehlgeschlagen. Möglicherweise ist der Gerätename falsch, die Disk nicht im Laufwerk, oder der Kernel unterstützt das Laufwerk nicht. (Vielleicht eine fehlerhafte Bootdisk.) Was möchten Sie jetzt tun?"
+
+# File: INSCD, line: 240
+msgid "Abort CD installation"
+msgstr "CD-Installation abbrechen"
+
+# File: INSCD, line: 241
+msgid "Attempt to mount the CD/DVD device again"
+msgstr "Versuchen das CD/DVD-Laufwerk erneut einzubinden"
+
+# File: INSCD, line: 242
+# File: INShd, line: 94
+msgid "Ignore the error and continue"
+msgstr "Den Fehler ignorieren und fortfahren"
+
+# File: INSCD, line: 254
+#, sh-format
+msgid "ATTEMPTING TO MOUNT CD/DVD on $DRIVE_FOUND"
+msgstr "VERSUCHE CD/DVD-LAUFWERK an $DRIVE_FOUND EINZUBINDEN"
+
+# File: INSCD, line: 255
+#, sh-format
+msgid "Attempting to mount your CD/DVD again with the following command:\n"
+"$ArG"
+msgstr "Versuche das CD/DVD-Laufwerk mit folgendem Kommando erneut einzubinden:\n"
+"$ArG"
+
+# File: INSNFS, line: 28
+msgid "Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install.  First, we need\n"
+"the IP address of the machine where the Slint sources are\n"
+"stored."
+msgstr "Gut, soweit ist alles bereit! Nun müssen wir wissen wo die\n"
+"Softwarepakete für die Installation gefunden werden können.\n"
+"Zuerst brauchen wir die IP-Adresse des Computers, auf dem\n"
+"die Slint-Quellen gespeichert sind."
+
+# File: INSNFS, line: 35
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish."
+msgstr "Da Sie bereits mit dem Netzwerk verbunden sind, sollte es möglich sein\n"
+"den Hostnamen anstelle der IP-Adresse zu verwenden."
+
+# File: INSNFS, line: 40
+msgid "What is the IP address of your NFS server?"
+msgstr "Wie lautet die IP-Adresse Ihres NFS-Servers?"
+
+# File: INSNFS, line: 42
+msgid "ENTER IP ADDRESS OF NFS SERVER"
+msgstr "GEBEN SIE DIE IP-ADRESSE DES NFS-SERVERS EIN"
+
+# File: INSNFS, line: 50
+# File: INSSMB, line: 50
+msgid "\n"
+"There must be a directory on the server with the Slint packages and files arranged in a tree like the FTP site.\n\n"
+"The installation script needs to know the name of the directory on your server that contains the packages. For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What is the Slint source directory?\n"
+msgstr "\n"
+"Auf dem Server muss ein Verzeichnis mit den Slint-Paketen und -Dateien liegen, welches eine Baumstruktur wie die FTP-Seite hat.\n\n"
+"Das Installationsscript muss den Namen des Verzeichnisses mit den Paketen auf dem Server kennen. Wenn das Paketverzeichnis zum Beispiel /stuff/slint ist, dann wäre die Antwort hier: /stuff/slint\n\n"
+"In welchem Verzeichnis liegen die Slint-Pakete?\n"
+
+# File: INSNFS, line: 61
+# File: INSSMB, line: 61
+# File: INShd, line: 58
+# File: pkgtool, line: 355
+msgid "SELECT SOURCE DIRECTORY"
+msgstr "WÄHLEN SIE DAS QUELLVERZEICHNIS AUS"
+
+# File: INSNFS, line: 69
+msgid "\n"
+"In the next screen you should watch for NFS mount errors. If you see errors and you don't see your NFS server listed, then try setting up NFS again.\n"
+msgstr "\n"
+"In der nächsten Maske sollten Sie nach NFS Fehlern Ausschau halten. Falls Sie Fehler sehen und Ihr NFS-Server nicht in der Liste erscheint, versuchen Sie NFS erneut einzurichten.\n"
+
+# File: INSNFS, line: 73
+msgid "NFS MOUNT INFORMATION"
+msgstr "NFS-MOUNT-INFORMATION"
+
+# File: INSNFS, line: 82
+#, sh-format
+msgid "Mounting $REMOTE_PATH:"
+msgstr "Binde $REMOTE_PATH ein:"
+
+# File: INSNFS, line: 87
+msgid "Didn't work."
+msgstr "Fehlgeschlagen."
+
+# File: INSNFS, line: 89
+msgid "Maybe you should check that the directory name is correct?"
+msgstr "Vielleicht sollten Sie überprüfen, ob der Verzeichnisname korrekt ist."
+
+# File: INSNFS, line: 96
+msgid "Current NFS mounts:"
+msgstr "Aktuelle NFS-Mounts:"
+
+# File: INSNFS, line: 100
+msgid "Do you need to try setting up NFS again?"
+msgstr "Müssen Sie versuchen, NFS erneut zu konfigurieren?"
+
+# File: INSNFS, line: 103
+# File: INSNFS, line: 107
+msgid "NFS MOUNT RESULT"
+msgstr "NFS-MOUNT-ERGEBNIS"
+
+# File: INSSMB, line: 27
+msgid "\n"
+"Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install. First, we need\n"
+"the share address of the Samba server where the Slint sources\n"
+"are stored.\n"
+"Example share address: //192.168.0.1/public\n"
+msgstr "\n"
+"Gut, soweit ist alles bereit! Nun müssen wir wissen wo die\n"
+"Softwarepakete für die Installation gefunden werden können.\n"
+"Zuerst brauchen wir die Freigabeadresse des Samba-Servers,\n"
+"auf dem die Slint-Quellen gespeichert sind.\n"
+"Beispiel Freigabeadresse: //192.168.0.1/public\n"
+
+# File: INSSMB, line: 36
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish.\n"
+msgstr "Da Sie bereits mit dem Netzwerk verbunden sind, sollte es möglich sein, den Hostnamen anstelle der IP-Adresse zu verwenden sofern Sie dies wünschen.\n"
+
+# File: INSSMB, line: 40
+msgid "\n"
+"What is the share address of your Samba server? "
+msgstr "\n"
+"Wie lautet die Freigabeadresse Ihres Samba-Servers? "
+
+# File: INSSMB, line: 42
+msgid "ENTER SHARE ADDRESS OF SAMBA SERVER"
+msgstr "GEBEN SIE DIE FREIGABEADRESSE DES SAMBA-SERVERS AN"
+
+# File: INSSMB, line: 70
+msgid "You should see no mount errors:"
+msgstr "Sie sollten keine Mountfehler sehen:"
+
+# File: INSSMB, line: 72
+#, sh-format
+msgid "Mounting $REMOTE_SHARE ..."
+msgstr "Binde $REMOTE_SHARE ein..."
+
+# File: INSSMB, line: 78
+msgid "Mount failed."
+msgstr "Einbinden ist fehlgeschlagen."
+
+# File: INSSMB, line: 83
+msgid "Mounted Samba share(s):"
+msgstr "Eingebundene Samba-Freigabe(n):"
+
+# File: INSSMB, line: 89
+msgid "A Slint package tree was found! Ready to continue."
+msgstr "Ein Slint-Paketbaum wurde gefunden! Bereit zum Fortfahren."
+
+# File: INSSMB, line: 93
+msgid "No Slint package tree found at the indicated path!"
+msgstr "Kein Slint-Paketbaum im angegebenen Pfad gefunden!"
+
+# File: INSSMB, line: 99
+msgid "Do you want to try setting up Samba again?"
+msgstr "Wollen Sie versuchen, Samba erneut zu konfigurieren?"
+
+# File: INSSMB, line: 103
+# File: INSSMB, line: 107
+msgid "MOUNT RESULT"
+msgstr "MOUNT-ERGEBNIS"
+
+# File: INSUSB, line: 18
+msgid "SCANNING FOR USB STICK"
+msgstr "SUCHE NACH USB-STICK"
+
+# File: INSUSB, line: 19
+msgid "Make sure the USB stick containing the Slint package directory is inserted into a USB port, and then press ENTER to begin the scanning process."
+msgstr "Stellen Sie sicher, dass der USB-Stick mit dem Slint-Paketverzeichnis in einen USB-Anschluss gesteckt ist und drücken Sie ENTER, um den Suchvorgang zu beginnen."
+
+# File: INSUSB, line: 41
+msgid "NO REMOVABLE USB DEVICES FOUND"
+msgstr "KEINE ENTFERNBAREN USB-GERÄTE GEFUNDEN"
+
+# File: INSUSB, line: 42
+msgid "Sorry, but no removable USB devices could be found.  Exiting back to the top menu."
+msgstr "Entschuldigung, aber es wurden keine entfernbaren USB-Geräte gefunden. Kehre zum obersten Menü zurück."
+
+# File: INSUSB, line: 93
+msgid "NO SLINT DIRECTORY FOUND"
+msgstr "KEIN SLINT-VERZEICHNIS GEFUNDEN"
+
+# File: INSUSB, line: 94
+msgid "Sorry, but a Slint directory could not be found on any USB devices. Exiting back to the top menu."
+msgstr "Entschuldigung, aber ein Slint-Verzeichnis konnte auf keinem USB-Gerät gefunden werden. Kehre zum obersten Menü zurück."
+
+# File: INSUSB, line: 103
+#. Success!  Report back to the console:
+msgid "USB PACKAGE SOURCE FOUND"
+msgstr "USB-PAKETQUELLE ENTDECKT"
+
+# File: INSUSB, line: 104
+#, sh-format
+msgid "A Slint package directory was found on device $DRIVE_FOUND."
+msgstr "Ein Slint-Paketverzeichnis wurde auf Gerät $DRIVE_FOUND gefunden."
+
+# File: INSdir, line: 23
+# File: INShd, line: 22
+# File: setup, line: 100
+# File: setup.orig, line: 92
+msgid "Can't umount /var/log/mount.  Reboot machine and run setup again."
+msgstr "Kann /var/log/mount nicht auswerfen. Starten Sie Ihren Computer neu und führen Sie die Installation erneut aus."
+
+# File: INSdir, line: 31
+# File: setup, line: 108
+# File: setup.orig, line: 100
+msgid "Mount table corrupt.  Reboot machine and run setup again."
+msgstr "Die Mount-Tabelle ist korrupt. Starten Sie den Computer neu und führen Sie die Installation erneut aus."
+
+# File: INSdir, line: 35
+msgid "\n"
+"OK, we will install from a directory within the current filesystem. If you have mounted this directory yourself, you should not use /mnt or /var/log/mount as mount points, since Setup might need to use these directories.  You may install from any part of the current directory structure, no matter what the media is (including NFS). You will need to type in the name of the directory containing the  subdirectories for each source disk.\n\n"
+"Which directory would you like to install from?\n"
+msgstr "\n"
+"OK, wir werden aus einem Verzeichnis des aktuellen Dateisystems installieren. Falls Sie das Verzeichnis selber eingebunden haben, sollten Sie nicht /mnt oder /var/log/mount als Mountpoint verwenden, da diese Verzeichnisse während der Installation benötigt werden. Sie können aus irgend einem Verzeichnis der aktuellen Struktur installieren, egal welches Medium (inklusive NFS). Sie müssen den Ordnernamen, der die Unterverzeichnisse jeder Quelldisk enthält, angeben.\n\n"
+"Aus welchem Verzeichnis möchten Sie installieren?\n"
+
+# File: INSdir, line: 47
+msgid "INSTALL FROM THE CURRENT FILESYSTEM"
+msgstr "AUS DEM AKTUELLEN DATEISYSTEM INSTALLIEREN"
+
+# File: INSdir, line: 68
+#, sh-format
+msgid "\n"
+"Sorry - the directory you specified is not valid. Please check the directory and try again.\n\n"
+"(Directory given: $SOURCEDIR)\n"
+msgstr "\n"
+"Entschuldigung - Das angegebene Verzeichnis ist ungültig. Überprüfen Sie das Verzeichnis und versuchen Sie es erneut.\n\n"
+"(Angegebenes Verzeichnis: $SOURCEDIR)\n"
+
+# File: INSdir, line: 74
+msgid "INVALID DIRECTORY ENTERED"
+msgstr "UNGÜLTIGES VERZEICHNIS ANGEGEBEN"
+
+# File: INShd, line: 30
+msgid "Mount table corrupt.  Reboot machine and run setup again"
+msgstr "Die Mount-Tabelle ist korrupt. Starten Sie den Computer neu und führen Sie die Installation erneut aus."
+
+# File: INShd, line: 35
+#, sh-format
+msgid "In order to install directly from the hard disk you must have a partition (such as /dev/sda1, /dev/sdb5, etc) with the Slint distribution's slint/ directory like you'd find it on the FTP site.\n\n"
+"Please enter the partition (such as /dev/sda1) where the Slint sources can be found, or [enter] to see a partition list\n"
+msgstr "Um direkt von der Festplatte zu installieren, müssen Sie eine Partition (wie /dev/sda1, dev/sdb5, etc.) mit dem slint/-Verzeichnis der Slint-Distribution, wie es auf dem FTP-Server zu finden wäre, haben.\n\n"
+"Bitte geben Sie die Partition ein, auf der sich die Slint-Quellen befinden (z.B. /dev/sda1), oder drücken Sie die [Eingabetaste] um eine Liste der Partitionen zu sehen\n"
+
+# File: INShd, line: 43
+msgid "INSTALLING FROM HARD DISK"
+msgstr "VON DER FESTPLATTE INSTALLIEREN"
+
+# File: INShd, line: 53
+msgid "PARTITION LIST"
+msgstr "PARTITIONSLISTE"
+
+# File: INShd, line: 59
+msgid "Now we need to know the full path on this partition to the slint/ directory where the packages to be installed are kept.\n\n"
+"For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What directory are the Slint sources in?\n"
+msgstr "Nun benötigen wir den vollständigen Pfad auf dieser Partition zum Verzeichnis slint/, wo sich die zu installierenden Pakete befinden.\n\n"
+"Wenn das Paket-Verzeichnis z.B. /stuff/slint wäre, müssten Sie eingeben: /stuff/slint\n\n"
+"In welchem Verzeichnis sind die Slint-Quellen?\n"
+
+# File: INShd, line: 91
+#. there was a mount error
+msgid "There was a problem mounting your partition. Would you like to:"
+msgstr "Es gab ein Problem beim Einbinden Ihrer Partition. Möchten Sie:"
+
+# File: INShd, line: 93
+msgid "Start over"
+msgstr "Von vorne beginnen"
+
+# File: INShd, line: 121
+#, sh-format
+msgid "\n"
+"Sorry, but the directory $SLACK_SOURCE_LOCATION does not exist on partition $SLACK_DEVICE.\n\n"
+"Would you like to try again?\n"
+msgstr "\n"
+"Entschuldigung, aber das Verzeichnis $SLACK_SOURCE_LOCATION existiert nicht auf der Partition $SLACK_DEVICE.\n\n"
+"Möchten Sie es erneut versuchen?\n"
+
+# File: INShd, line: 127
+msgid "SOURCE DIRECTORY NOT FOUND"
+msgstr "QUELLENVERZEICHNIS NICHT GEFUNDEN"
+
+# File: SeTDOS, line: 34
+#, sh-format
+msgid "Setting permissions on NTFS partition $DOS_PART"
+msgstr "Konfiguriere Berechtigungen der NTFS-Partition $DOS_PART"
+
+# File: SeTDOS, line: 35
+#, sh-format
+msgid "SET SECURITY FOR NTFS PARTITION $DOS_PART"
+msgstr "KONFIGURIERE SICHERHEIT DER NTFS-PARTITION $DOS_PART"
+
+# File: SeTDOS, line: 37
+# File: SeTDOS, line: 60
+#, sh-format
+msgid "Because users could go snooping through (or destroy, depending on the settings) your Windows partition, you should choose how much access would you like your non-root users to have to partition $DOS_PART.  The access level can range from no access at all, to read-only for everyone, to read-write access for every user on the machine.  A reasonable default (read-write for root only) is chosen, but you may set this any way that you like."
+msgstr "Weil Benutzer in Ihrer Windowspartition herumschnüffeln (oder, je nach Einstellung, Daten löschen) können, sollten Sie die Zugriffsrechte auf die Partition $DOS_PART für Ihre nicht-root-Benutzer festlegen. Der Zugriff kann von keinem Zugriff, über lesenden Zugriff für jedermann, bis Lese-/Schreibzugriff für alle Benutzer auf der Maschine festgelegt werden. Als Standard ist Lese-/Schreibzugriff für den root-Benutzer definiert. Sie können die Einstellung jedoch an Ihre Bedürfnisse anpassen."
+
+# File: SeTDOS, line: 44
+msgid "Root has read/write access, users have no access (ntfs-3g)"
+msgstr "Root hat Lese-/Schreibzugriff, Benutzer haben keinen Zugriff (ntfs-3g)"
+
+# File: SeTDOS, line: 45
+msgid "Everyone has read only access (built-in kernel ntfs driver)"
+msgstr "Jeder hat Lesezugriff (im Kernel eingebauter NTFS-Treiber)"
+
+# File: SeTDOS, line: 46
+msgid "Everyone has read access, but only root can write (ntfs-3g)"
+msgstr "Jeder hat Lesezugriff, aber nur root hat Schreibzugriff (ntfs-3g)"
+
+# File: SeTDOS, line: 47
+msgid "All users can read/write to any file (ntfs-3g)"
+msgstr "Alle Benutzer haben Lese-/Schreibrechte auf alle Dateien (ntfs-3g)"
+
+# File: SeTDOS, line: 57
+#, sh-format
+msgid "Setting permissions on FAT partition $DOS_PART"
+msgstr "Konfiguriere Berechtigungen der FAT-Partition $DOS_PART"
+
+# File: SeTDOS, line: 58
+#, sh-format
+msgid "SET SECURITY FOR FAT PARTITION $DOS_PART"
+msgstr "KONFIGURIERE SICHERHEIT DER FAT-PARTITION $DOS_PART"
+
+# File: SeTDOS, line: 67
+msgid "Root has read/write access, users have no access"
+msgstr "Root hat Lese-/Schreibzugriff, Benutzer haben keinen Zugriff"
+
+# File: SeTDOS, line: 68
+msgid "Everyone has read only access"
+msgstr "Jeder hat Lesezugriff"
+
+# File: SeTDOS, line: 69
+msgid "Everyone has read access, but only root can write"
+msgstr "Jeder hat Lesezugriff, aber nur root hat Schreibzugriff"
+
+# File: SeTDOS, line: 70
+msgid "All users can read/write to any file"
+msgstr "Alle Benutzer haben Lese-/Schreibrechte auf alle Dateien"
+
+# File: SeTDOS, line: 108
+msgid "Setting up non-Linux partitions."
+msgstr "Nicht-Linux Partitionen einrichten."
+
+# File: SeTDOS, line: 109
+msgid "FAT or NTFS PARTITIONS DETECTED"
+msgstr "FAT- oder NTFS-PARTITIONEN ENTDECKT"
+
+# File: SeTDOS, line: 110
+msgid "Partitions of type FAT or NTFS (commonly used by DOS and Windows) have been found on your system.  Would you like to add these partitions to your /etc/fstab so that these partitions are visible from Linux?"
+msgstr "FAT- oder NTFS-Partitionen (üblich von DOS und Windows verwendet) wurden  auf Ihrem System entdeckt. Möchten Sie diese Partitionen zu /etc/fstab hinzufügen, damit diese aus Ihrem Linux-System ersichtlich sind?"
+
+# File: SeTDOS, line: 122
+msgid "Selecting non-Linux partitions."
+msgstr "Wähle nicht-Linux Partitionen aus."
+
+# File: SeTDOS, line: 124
+msgid "SELECT PARTITION TO ADD TO /etc/fstab"
+msgstr "PARTITION AUSWÄHLEN UND ZU /etc/fstab HINZUFÜGEN"
+
+# File: SeTDOS, line: 126
+# File: SeTpartitions, line: 348
+# File: SeTpartitions, line: 439
+msgid "Select"
+msgstr "Auswählen"
+
+# File: SeTDOS, line: 128
+# File: SeTpartitions, line: 350
+# File: SeTpartitions, line: 441
+# File: setup.80.make-bootdisk, line: 233
+msgid "Continue"
+msgstr "Fortfahren"
+
+# File: SeTDOS, line: 130
+msgid "In order to make these partitions visible from Linux, we  need to add them to your /etc/fstab.  Please pick a partition to  add to /etc/fstab, or select '---' to continue with the installation  process."
+msgstr "Um die Partitionen für Linux sichtbar zu machen, müssen wir diese zu /etc/fstab hinzufügen. Bitte wählen Sie eine Partition, die zu /etc/fstab hinzugefügt werden soll, oder wählen Sie '---' um den Installationsvorgang fortzusetzen."
+
+# File: SeTDOS, line: 144
+# File: SeTDOS, line: 170
+# File: SeTpartitions, line: 222
+# File: SeTpartitions, line: 468
+msgid "IN USE"
+msgstr "WIRD VERWENDET"
+
+# File: SeTDOS, line: 144
+# File: SeTpartitions, line: 215
+msgid "on"
+msgstr "an"
+
+# File: SeTDOS, line: 152
+# File: SeTDOS, line: 153
+# File: SeTDOS, line: 154
+# File: SeTDOS, line: 155
+# File: SeTDOS, line: 156
+msgid "done, continue with setup"
+msgstr "fertig, setze den Installationsvorgang fort"
+
+# File: SeTDOS, line: 193
+#, sh-format
+msgid "Selecting a location to mount $DOS_PART."
+msgstr "Ort zum Einbinden von $DOS_PART auswählen."
+
+# File: SeTDOS, line: 194
+#, sh-format
+msgid "PICK MOUNT POINT FOR $DOS_PART"
+msgstr "MOUNTPOINT FÜR $DOS_PART AUSWÄHLEN"
+
+# File: SeTDOS, line: 195
+#, sh-format
+msgid "Now this partition must be mounted somewhere in your  directory tree.  Please enter the directory under which  you would like to put it.  For instance, you might want to  enter /fat-c or /fat-d or something similar.   NOTE: This partition will not actually be mounted until you reboot.   Where would you like to mount $DOS_PART?"
+msgstr "Nun muss diese Partition irgendwo in Ihrem Verzeichnisbaum eingebunden werden. Geben Sie das Verzeichnis an, in welchem Sie die Partition einbinden wollen. Zum Beispiel /fat-c, /fat-d oder etwas ähnliches. ACHTUNG: Diese Partition wird erst beim nächsten Neustart eingebunden. Wo möchten Sie $DOS_PART einbinden?"
+
+# File: SeTDOS, line: 224
+# File: SeTEFI, line: 82
+# File: SeTEFI.orig, line: 73
+# File: SeTpartitions, line: 562
+#. next partition loop
+#. more than one Linux partition
+#. Done, report to the user:
+#, sh-format
+msgid "\n"
+"Adding this information to your /etc/fstab:\n\n"
+msgstr "\n"
+"Diese Informationen zu /etc/fstab hinzufügen:\n\n"
+
+# File: SeTDOS, line: 229
+msgid "Finished setting up non-Linux partitions."
+msgstr "Einrichten der nicht-Linux-Partitionen abgeschlossen."
+
+# File: SeTDOS, line: 230
+msgid "DONE ADDING FAT or NTFS PARTITIONS"
+msgstr "HINZUFÜGEN DER FAT- oder NTFS-PARTITIONEN ABGESCHLOSSEN"
+
+# File: SeTEFI, line: 53
+# File: SeTEFI.orig, line: 44
+#. It didn't mount, so it must not be formatted:
+#, sh-format
+msgid "FORMAT EFI PARTITION ${PREFERRED_EFI_PARTITION}?"
+msgstr "FORMATIEREN VON EFI PARTITION ${PREFERRED_EFI_PARTITION}?"
+
+# File: SeTEFI, line: 54
+# File: SeTEFI.orig, line: 45
+#, sh-format
+msgid "An EFI System Partition was found on ${PREFERRED_EFI_PARTITION}, but it has not yet been formatted.  Would you like to format this partition?"
+msgstr "Eine EFI System Partition wurde auf ${PREFERRED_EFI_PARTITION} gefunden, aber wurde noch nicht formatiert. Möchten Sie diese Partition formatieren?"
+
+# File: SeTEFI, line: 62
+# File: SeTEFI.orig, line: 53
+#. Format the partition with FAT32, 2 sectors per cluster (needed for the
+#. minimum supported EFI partition size of 100MB):
+#, sh-format
+msgid "FORMATTING EFI PARTITION ${PREFERRED_EFI_PARTITION}"
+msgstr "FORMATIERE EFI PARTITION ${PREFERRED_EFI_PARTITION}"
+
+# File: SeTEFI, line: 63
+# File: SeTEFI.orig, line: 54
+#, sh-format
+msgid "Formatting EFI System Partition ${PREFERRED_EFI_PARTITION} as FAT32."
+msgstr "Formatiere EFI System Partition ${PREFERRED_EFI_PARTITION} als FAT32."
+
+# File: SeTEFI, line: 87
+# File: SeTEFI.orig, line: 78
+msgid "Finished setting up EFI System Partition."
+msgstr "Einrichtung der EFI System Partition abgeschlossen."
+
+# File: SeTEFI, line: 88
+# File: SeTEFI.orig, line: 79
+msgid "EFI SYSTEM PARTITION RECOGNIZED"
+msgstr "EFI SYSTEM PARTITION ERKANNT"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "CONFIGURE THE SYSTEM"
+msgstr "KONFIGURIERE DAS SYSTEM"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "Now we can configure your Linux system.  If this is a new installation, you MUST configure it now or it will not boot correctly.  However, if you are just adding software to an existing system, you can back out to the main menu and skip this step.  However (important exception) if you've installed a new kernel image, it's important to reconfigure your system so that you can install LILO (the Linux loader) or create a bootdisk using the new kernel.  You want to CONFIGURE your system, right?"
+msgstr "Nun können wir Ihr Linuxsystem konfigurieren. Falls dies eine Neuinstallation ist, MÜSSEN Sie das System jetzt konfigurieren, oder es wird nicht korrekt starten. Falls Sie lediglich Software zu einem bestehenden System hinzufügen, können Sie zum Hauptmenü zurückkehren und diesen Punkt überspringen. Falls Sie jedoch (wichtige Ausnahme) ein neues Kernelabbild installiert haben, ist es wichtig, das System neu zu konfigurieren, damit Sie LILO (the Linux Loader) ausführen können oder eine Bootdisk mit dem neuen Kernel erstellen können. Möchten Sie Ihr System jetzt konfigurieren?"
+
+# File: SeTconfig, line: 83
+# File: SeTconfig.prev, line: 83
+msgid "DONE INSTALLING PACKAGES"
+msgstr "PAKETINSTALLATION ABGESCHLOSSEN"
+
+# File: SeTconfig, line: 84
+# File: SeTconfig.prev, line: 84
+msgid "Preparing to configure your new Linux system..."
+msgstr "Vorbereiten zur Konfiguration des neuen Linuxsystems..."
+
+# File: SeTfull, line: 20
+msgid "ERROR: TARGET PARTITION FULL"
+msgstr "FEHLER: ZIELPARTITION IST VOLL"
+
+# File: SeTfull, line: 20
+msgid "Setup has detected that one or more of your target partitions has become full.  I'm sorry, but you will have to try installing again onto a partition or partitions with more free space.  You could also try selecting fewer packages to install.  Since there is no longer any space for setup to make its temporary files, this is an unrecoverable error.  Press control-alt-delete to reboot and try again.  Before doing that, you might want to switch to another console (Alt-F2) and use df (disk free utility) to see if you can get an idea of how to avoid this the next time around."
+msgstr "Das Installationsprogramm entdeckte, dass eine oder mehrere Ihrer Zielpartitionen voll ist. Sie müssen die Installation auf eine oder mehrere Partitionen mit freiem Speicherplatz erneut versuchen oder Sie können weniger Pakete zur Installation auswählen. Weil es nicht genügend Speicherplatz für die temporären Dateien hat, ist dies ein unwiderruflicher Fehler. Drücken Sie Strg-Alt-Entfernen um das System neu zu starten. Bevor Sie die Installation neu starten, wechseln Sie zu einer anderen Konsole (Alt-F2) und prüfen Sie den Speicherplatz mit df (disk free utility), um den gleichen Fehler das nächste Mal zu vermeiden."
+
+# File: SeTkernel, line: 33
+msgid "REINSERT KERNEL DISC"
+msgstr "KERNEL-DISK ERNEUT EINLEGEN"
+
+# File: SeTkernel, line: 34
+msgid "Please reinsert the Slint disc containing the collection of Linux kernels.  Usually this is disc number one (the disc that you boot from).  Once you've inserted the disc, hit ENTER to continue."
+msgstr "Bitte legen Sie die Slint-Disk mit den unterschiedlichen Linuxkerneln erneut in Ihr Laufwerk. Normalerweise ist dies Disk-Nummer Eins (die Disk, von der Sie die Installation gestartet haben). Sobald Sie die Disk eingelegt haben, drücken Sie ENTER um fortzufahren."
+
+# File: SeTkernel, line: 92
+msgid "ERROR ATTEMPTING TO INSTALL KERNEL"
+msgstr "FEHLER BEIM VERSUCH DEN KERNEL ZU INSTALLIEREN"
+
+# File: SeTkernel, line: 92
+#, sh-format
+msgid "Sorry, but the directory $PLINK/kernels was not found.  You may need to install the requested kernel $SLACK_KERNEL manually and then install LILO before your system will be able to boot correctly."
+msgstr "Entschuldigung, das Verzeichnis $PLINK/kernel konnte nicht gefunden werden. Sie müssen den Kernel $SLACK_KERNEL manuell installieren. Danach installieren Sie LILO, um Ihr System bootfähig zum machen."
+
+# File: SeTkeymap, line: 24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "AUSWAHL DER TASTATURBELEGUNG "
+
+# File: SeTkeymap, line: 24
+#, sh-format
+msgid "You may select one of the following keyboard maps.  If you do not select a keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr "Sie können eine der folgenden Tastenbelegungen wählen. Wenn Sie keine Tastenbelegung wählen, ist $DefaultKeyMap die aktuelle Belegung. Benutzen Sie die auf-/ ab-Pfeiltasten und PageUp/PageDown, um durch die Auswahlliste zu navigieren."
+
+# File: SeTkeymap, line: 214
+msgid "\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr "\n"
+"    OK, die neue Tastenbelegung ist nun installiert. Sie können diese nun\n"
+"    durch die Eingabe beliebiger Buchstaben testen. Um den Test zu beenden,\n"
+"    geben Sie 1 auf einer einzelnen Zeile ein um die Belegung zu akzeptieren.\n"
+"    Oder geben Sie 2 alleinstehend auf einer Zeile ein, um die momentane\n"
+"    Tastenbelegung abzulehnen und eine neue auszuwählen. "
+
+# File: SeTmedia, line: 13
+# File: SeTpxemedia, line: 37
+msgid "Select Slint installation source."
+msgstr "Quelle für die Slint-Installation auswählen."
+
+# File: SeTmedia, line: 14
+# File: SeTpxemedia, line: 38
+msgid "SOURCE MEDIA SELECTION"
+msgstr "AUSWAHL DES QUELLMEDIUMS"
+
+# File: SeTmedia, line: 15
+msgid "Please select the media from which to install Slint Linux:"
+msgstr "Bitte wählen Sie das Medium, von welchem Slint installiert werden soll:"
+
+# File: SeTmedia, line: 17
+msgid "Install from a Slint USB stick"
+msgstr "Installieren von einem Slint USB-Stick"
+
+# File: SeTmedia, line: 18
+msgid "Install from a Slint CD or DVD"
+msgstr "Von einer Slint-CD oder -DVD installieren"
+
+# File: SeTmedia, line: 19
+msgid "Install from a pre-mounted directory"
+msgstr "Aus einem eingebundenen Verzeichnis installieren"
+
+# File: SeTmedia, line: 20
+msgid "Install from a hard drive partition"
+msgstr "Von einer Festplattenpartition installieren"
+
+# File: SeTmedia, line: 21
+msgid "Install from NFS (Network File System)"
+msgstr "Aus einer NFS (Network File System) Freigabe installieren"
+
+# File: SeTmedia, line: 22
+msgid "Install from Samba share"
+msgstr "Aus einer Samba-Freigabe installieren"
+
+# File: SeTnet, line: 109
+msgid "\n"
+"You will now get a chance to probe your network interfaces.\n"
+msgstr "\n"
+"Sie erhalten nun eine Möglichkeit, nach Ihren Netzwerkschnittstellen zu suchen.\n"
+
+# File: SeTnet, line: 112
+# File: SeTnet, line: 125
+msgid "PROBING NETWORK DEVICES"
+msgstr "PRÜFUNG VON NETZWERKGERÄTEN"
+
+# File: SeTnet, line: 119
+msgid "\n"
+"Are you OK with the network interface which was detected? If not, select 'No' to get back to the network probe program. You can try to load another driver explicitly, by using 'P <driver_name>'.\n\n"
+"If you are satisfied, select 'Yes' to continue with network configuration."
+msgstr "\n"
+"Stimmen Sie der gefundenen Netzwerkschnittstelle zu? Falls nicht, wählen Sie 'Nein' um zurück ins Netzwerkerkennungsprogramm zu gelangen. Sie können versuchen, einen anderen Treiber explizit zu laden. Dies geschieht über 'P <Treiber_Name>'.\n\n"
+"Wenn Sie zufrieden sind, wählen Sie 'Ja' um mit der Netzwerkkonfiguration weiter zu machen."
+
+# File: SeTnet, line: 141
+# File: SeTnet, line: 297
+#. hope that 3 seconds is enough for dhcpcd;
+#. if not then you had better specify the INTERFACE in the nic= parameter...
+#. end ask approval for ip config
+#. echo "Configuring ethernet card..."
+msgid "INITIALIZING NETWORK"
+msgstr "INITIALISIERE DAS NETZWERK"
+
+# File: SeTnet, line: 142
+msgid "\n"
+"Waiting a few seconds for DHCP polling to settle ..."
+msgstr "\n"
+"Warte ein paar Sekunden, bis die DHCP-Abfrage erledigt ist ..."
+
+# File: SeTnet, line: 165
+msgid "You're running off the hard drive filesystem. Is this machine currently running on the network you plan to install from? If so, we won't try to reconfigure your ethernet card.\n\n"
+"Are you up-and-running on the network?"
+msgstr "Sie arbeiten vom Festplattendateisystem aus. Läuft dieser Rechner aktuell in dem Netzwerk, aus dem Sie installieren wollen? Ist dies der Fall, werden wir nicht versuchen, Ihre Netzwerkeinstellungen zu ändern.\n\n"
+"Läuft das Netzwerk einwandfrei?"
+
+# File: SeTnet, line: 170
+# File: SeTnet, line: 290
+msgid "NETWORK CONFIGURATION"
+msgstr "NETZWERKKONFIGURATION"
+
+# File: SeTnet, line: 179
+#. Offer to install using DHCP:
+#, sh-format
+msgid "\n"
+"I can configure your network interface $ENET_DEVICE fully automatically using DHCP. If you want this, please select 'yes'.\n\n"
+"If you select 'no' instead, then you will be able to assign the IP address, netmask and gateway manually.\n"
+msgstr "\n"
+"Ich kann Ihre Netzwerkschnittstelle $ENET_DEVICE vollautomatisch mit DHCP konfigurieren. Wenn Sie dies wünschen, wählen Sie bitte 'Ja'.\n\n"
+"Wenn Sie hingegen 'Nein' wählen, werden Sie IP-Adresse, Netzmaske und Gateway manuell eintragen können.\n"
+
+# File: SeTnet, line: 186
+msgid "DHCP CONFIGURATION"
+msgstr "DHCP KONFIGURIEREN"
+
+# File: SeTnet, line: 211
+msgid "\n"
+"You will need to enter the IP address you wish to assign to this machine. Example: 111.112.113.114\n\n"
+"What is your IP address?"
+msgstr "\n"
+"Sie werden die IP Adresse, die Sie dem Computer zuweisen möchten, eingeben müssen. Beispiel: 111.112.113.114\n\n"
+"Wie lautet Ihre IP Adresse?"
+
+# File: SeTnet, line: 219
+msgid "ASSIGN IP ADDRESS"
+msgstr "IP-ADRESSE ZUWEISEN"
+
+# File: SeTnet, line: 228
+msgid "\n"
+"Now we need to know your netmask. Typically this will be 255.255.255.0 but this can be different depending on your local setup.\n\n"
+"What is your netmask?"
+msgstr "\n"
+"Nun benötigen wir die Netzwerkmaske (normalerweise 255.255.255.0). Je nach Konfiguration Ihres lokalen Netzwerks kann diese abweichend sein.\n\n"
+"Wie lautet Ihre Netzwerkmaske?"
+
+# File: SeTnet, line: 237
+msgid "ASSIGN NETMASK"
+msgstr "NETZWERKMASKE ZUWEISEN"
+
+# File: SeTnet, line: 246
+msgid "Do you have a gateway?"
+msgstr "Haben Sie einen Gateway?"
+
+# File: SeTnet, line: 257
+msgid "ASSIGN GATEWAY ADDRESS"
+msgstr "GATEWAY-ADRESSE ZUWEISEN"
+
+# File: SeTnet, line: 258
+msgid "\n"
+"What is the IP address for your gateway?"
+msgstr "\n"
+"Wie lautet die IP-Adresse Ihres Gateways?"
+
+# File: SeTnet, line: 278
+#, sh-format
+msgid "\n"
+"This is the proposed network configuration for $ENET_DEVICE - If this is OK, then select 'Yes'.\n"
+"If this is not OK and you want to configure again, select 'No'.\n\n"
+"* IP Address: $LOCAL_IPADDR\n"
+"* Netmask:    $LOCAL_NETMASK"
+msgstr "\n"
+"Dies ist die vorgeschlagene Konfiguration für $ENET_DEVICE - falls diese korrekt ist, drücken Sie 'Ja'.\n"
+"Falls nicht, drücken Sie 'Nein' um die Konfiguration erneut vorzunehmen.\n\n"
+"* IP-Adresse: $LOCAL_IPADDR\n"
+"* Netzwerkmaske: $LOCAL_NETMASK"
+
+# File: SeTnet, line: 298
+#, sh-format
+msgid "\n"
+"Configuring your network interface $ENET_DEVICE ..."
+msgstr "\n"
+"Konfiguriere die Netzwerkschnittstelle $ENET_DEVICE ..."
+
+# File: SeTnet, line: 335
+msgid "FETCHING CONFIGURATION"
+msgstr "KONFIGURATION ABRUFEN"
+
+# File: SeTnet, line: 336
+#, sh-format
+msgid "\n"
+"Attempting to fetch a remote configuration file using $PROTO ..."
+msgstr "\n"
+"Versuche eine Remotekonfigurationsdatei mit $PROTO herunterzuladen..."
+
+# File: SeTpartitions, line: 49
+# File: SeTpartitions, line: 70
+# File: SeTpartitions, line: 95
+# File: SeTpartitions, line: 120
+# File: SeTpartitions, line: 145
+# File: SeTpartitions, line: 168
+# File: SeTpartitions, line: 187
+#. output a nice status message
+msgid "FORMATTING"
+msgstr "FORMATIERE"
+
+# File: SeTpartitions, line: 50
+#, sh-format
+msgid "Formatting $ArG1 with filesystem btrfs."
+msgstr "Formatiere $ArG1 mit dem Dateisystem btrfs."
+
+# File: SeTpartitions, line: 51
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE \n"
+"Filesystem type: btrfs"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE \n"
+"Dateisystem-Typ: btrfs"
+
+# File: SeTpartitions, line: 71
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext2."
+msgstr "Formatiere $ArG1 mit dem Dateisystem ext2."
+
+# File: SeTpartitions, line: 72
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext2"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: ext2"
+
+# File: SeTpartitions, line: 96
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext3."
+msgstr "Formatiere $ArG1 mit dem Dateisystem ext3."
+
+# File: SeTpartitions, line: 97
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext3"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: ext3"
+
+# File: SeTpartitions, line: 121
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext4."
+msgstr "Formatiere $ArG1 mit dem Dateisystem ext4."
+
+# File: SeTpartitions, line: 122
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext4"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: ext4"
+
+# File: SeTpartitions, line: 146
+#, sh-format
+msgid "Formatting $ArG1 with filesystem jfs."
+msgstr "Formatiere $ArG1 mit dem Dateisystem jfs."
+
+# File: SeTpartitions, line: 147
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: jfs"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: jfs"
+
+# File: SeTpartitions, line: 169
+#, sh-format
+msgid "Formatting $ArG1 with filesystem reiserfs."
+msgstr "Formatiere $ArG1 mit dem Dateisystem reiserfs."
+
+# File: SeTpartitions, line: 170
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: reiserfs"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: reiserfs"
+
+# File: SeTpartitions, line: 188
+#, sh-format
+msgid "Formatting $ArG1 with filesystem xfs."
+msgstr "Formatiere $ArG1 mit dem Dateisystem xfs."
+
+# File: SeTpartitions, line: 189
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: xfs"
+msgstr "Formatiere $ArG1\n"
+"Größe in 1K-Blöcken: $SIZE\n"
+"Dateisystem-Typ: xfs"
+
+# File: SeTpartitions, line: 225
+# File: SeTpartitions, line: 226
+# File: SeTpartitions, line: 227
+# File: SeTpartitions, line: 228
+# File: SeTpartitions, line: 229
+msgid "done adding partitions, continue with setup"
+msgstr "Keine Partition mehr hinzufügen. Setup fortsetzen..."
+
+# File: SeTpartitions, line: 236
+#, sh-format
+msgid "Do you want to format Linux partition ${ArG1}?"
+msgstr "Wollen Sie die Linux-Partition ${ArG1} formatieren?"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "FORMAT PARTITION $ArG1"
+msgstr "PARTITION $ArG1 FORMATIEREN"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "If this partition has not been formatted, you should format it.  NOTE: This will erase all data on it.  Would you like to format this partition?"
+msgstr "Falls diese Partition noch nicht formatiert wurde, sollten Sie dies nun tun. ACHTUNG: Alle Daten werden gelöscht. Wollen Sie diese Partition formatieren?"
+
+# File: SeTpartitions, line: 241
+#, sh-format
+msgid "Quick format with no bad block checking"
+msgstr "Schnellformatierung ohne Überprüfung auf fehlerhafte Blöcke"
+
+# File: SeTpartitions, line: 242
+#, sh-format
+msgid "Slow format that checks for bad blocks"
+msgstr "Langsame Formatierung, die auf fehlerhafte Blöcke überprüft"
+
+# File: SeTpartitions, line: 243
+#, sh-format
+msgid "No, do not format this partition"
+msgstr "Nein, diese Partition nicht formatieren"
+
+# File: SeTpartitions, line: 256
+msgid "Ext2 is the traditional Linux file system and is fast and stable."
+msgstr "Ext2 ist das traditionelle Linux-Dateisystem und es ist schnell und stabil."
+
+# File: SeTpartitions, line: 259
+msgid "Ext3 is the journaling version of the Ext2 filesystem."
+msgstr "Ext3 ist die Journaling-Version des Ext2 Dateisystems."
+
+# File: SeTpartitions, line: 263
+msgid "Ext4 is the successor to the ext3 filesystem. "
+msgstr "Ext4 ist der Nachfolger des Ext3 Dateisystems."
+
+# File: SeTpartitions, line: 267
+msgid "ReiserFS is a journaling filesystem that stores all files and filenames in a balanced tree structure."
+msgstr "ReiserFS ist ein Journaling-Dateisystem, dass alle Dateien und Dateinamen in einer ausgeglichenen Baumstruktur speichert."
+
+# File: SeTpartitions, line: 270
+msgid "Btrfs is a B-tree copy-on-write filesystem."
+msgstr "Btrfs ist ein B-tree Copy-On-Write-Dateisystem."
+
+# File: SeTpartitions, line: 275
+msgid "JFS is IBM's Journaled Filesystem, currently used in IBM enterprise servers."
+msgstr "JFS ist das Journaling-Dateisystem von IBM, dass zur Zeit in IBM-Enterprise-Servern verwendet wird."
+
+# File: SeTpartitions, line: 278
+msgid "XFS is SGI's journaling filesystem that originated on IRIX."
+msgstr "XFS ist das Journaling-Dateisystem von SGI, dass seinen Ursprung in IRIX hat."
+
+# File: SeTpartitions, line: 281
+#, sh-format
+msgid "SELECT FILESYSTEM FOR $ArG1 "
+msgstr "DATEISYSTEM FÜR $ArG1 WÄHLEN"
+
+# File: SeTpartitions, line: 283
+#, sh-format
+msgid "Partition $ArG1 will be formatted."
+msgstr "Die Partition $ArG1 wird formatiert."
+
+# File: SeTpartitions, line: 287
+msgid "Please select the type of filesystem to use for the specified device.  Here are descriptions of the available filesystems:"
+msgstr "Bitte wählen Sie den Dateisystemtyp für das angegebene Gerät. Nachfolgend eine Beschreibung zu den verfügbaren Dateisystemen:"
+
+# File: SeTpartitions, line: 292
+msgid "Standard Linux Ext2 Filesystem"
+msgstr "Standard-Linux-Dateisystem Ext2"
+
+# File: SeTpartitions, line: 295
+msgid "Ext3 Journaling Filesystem"
+msgstr "Ext3 Journaling-Dateisystem"
+
+# File: SeTpartitions, line: 298
+msgid "Ext4 Journaling Filesystem"
+msgstr "Ext4 Journaling-Dateisystem"
+
+# File: SeTpartitions, line: 301
+msgid "IBM's Journaled Filesystem"
+msgstr "IBMs Journaling-Dateisystem"
+
+# File: SeTpartitions, line: 304
+msgid "ReiserFS Journaling Filesystem"
+msgstr "ReiserFS Journaling-Dateisystem"
+
+# File: SeTpartitions, line: 307
+msgid "Btrfs Copy-on-Write B-tree Filesystem"
+msgstr "Btrfs B-tree Copy-On-Write-Dateisystem"
+
+# File: SeTpartitions, line: 310
+msgid "Flash-Friendly File System"
+msgstr "Flash-freundliches Dateisystem"
+
+# File: SeTpartitions, line: 313
+msgid "SGI's Journaling Filesystem"
+msgstr "SGIs Journaling-Dateisystem"
+
+# File: SeTpartitions, line: 344
+msgid "Setting up root Linux partition."
+msgstr "Hauptpartition für Linux einrichten."
+
+# File: SeTpartitions, line: 346
+msgid "Select Linux installation partition:"
+msgstr "Installationspartition für Linux auswählen:"
+
+# File: SeTpartitions, line: 352
+msgid "Please select a partition from the following list to use for your root (/) Linux partition."
+msgstr "Bitte wählen Sie eine Partition aus der folgenden Liste, die Sie als Hauptpartition (/) verwenden wollen."
+
+# File: SeTpartitions, line: 435
+msgid "Setting up other Linux partitions."
+msgstr "Andere Linux-Partitionen einrichten."
+
+# File: SeTpartitions, line: 437
+msgid "Select other Linux partitions for /etc/fstab"
+msgstr "Andere Partitionen für /etc/fstab auswählen"
+
+# File: SeTpartitions, line: 443
+#, sh-format
+msgid "You seem to have more than one partition tagged as type Linux.  You may use these to distribute your Linux system across more than one partition.  Currently, you have $ROOT_DEVICE mounted as your / partition.  You might want to mount directories such as /home or /usr/local on separate partitions.  You should not try to mount /etc, /sbin, or /bin on their own partitions since they contain utilities needed to bring the system up and mount partitions.  Also, do not reuse a partition that you've already entered before.  Please select one of the Linux partitions listed below, or if you're done, hit <Continue>."
+msgstr "Sie scheinen mehr als eine Partition des Typs Linux deklariert zu haben. Sie können diese nutzen, um Ihr Linuxsystem über mehr als eine Partition zu verteilen.  Aktuell haben Sie $ROOT_DEVICE als Ihre / Partition eingehängt. Sie möchten eventuell Verzeichnisse wie /home oder /usr/local auf separaten Partitionen einhängen. Sie sollten nicht versuchen, /etc, /sbin oder /bin auf eigene Partitionen einzuhängen, da diese Werkzeuge beinhalten, die das System zum Betrieb benötigt und um Partitionen einzuhängen. Weiterhin verwenden Sie bitte keine Partition, die Sie bereits eingegeben haben. Bitte wählen Sie eine der unten genannten Linuxpartitionen oder, wenn Sie fertig sind, <Fortfahren>."
+
+# File: SeTpartitions, line: 478
+#, sh-format
+msgid "Partition $NEXT_PARTITION will not be reformatted."
+msgstr "Partition $NEXT_PARTITION wird nicht formatiert."
+
+# File: SeTpartitions, line: 483
+#, sh-format
+msgid "Partition $NEXT_PARTITION will be formatted with $NEXT_SYS_TYPE."
+msgstr "Partition $NEXT_PARTITION wird mit $NEXT_SYS_TYPE formatiert."
+
+# File: SeTpartitions, line: 522
+#. DOFORMAT?
+#. Now ask the user where to mount this new filesystem:
+#, sh-format
+msgid "SELECT MOUNT POINT FOR $NEXT_PARTITION"
+msgstr "MOUNTPOINT FÜR $NEXT_PARTITION WÄHLEN"
+
+# File: SeTpartitions, line: 523
+#, sh-format
+msgid "OK, now you need to specify where you want the new partition mounted.  For example, if you want to put it under /usr/local, then respond:  /usr/local\n"
+"Where would you like to mount $NEXT_PARTITION?"
+msgstr "OK, nun müssen Sie angeben, wo die Linuxpartition eingebunden werden soll. Falls Sie die Partition unter /usr/local einbinden möchten, antworten Sie mit: /usr/local\n"
+"Wo möchten Sie $NEXT_PARTITION einbinden?"
+
+# File: SeTpartitions, line: 567
+msgid "Finished setting up Linux partitions."
+msgstr "Das Einrichten der Linux-Partitionen ist abgeschlossen."
+
+# File: SeTpartitions, line: 568
+msgid "DONE ADDING LINUX PARTITIONS TO /etc/fstab"
+msgstr "HINZUFÜGEN VON LINUX-PARTITIONEN ZU /etc/fstab ABGESCHLOSSEN"
+
+# File: SeTpartitions, line: 569
+msgid "OK"
+msgstr "OK"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+#. There is no root password
+msgid "WARNING: NO ROOT PASSWORD DETECTED"
+msgstr "WARNUNG: KEIN ROOT-PASSWORT GEFUNDEN"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+msgid "There is currently no password set on the system administrator account (root).  It is recommended that you set one now so that it is active the first time the machine is rebooted.  This is especially important if you're using a network enabled kernel and the machine is on an Internet connected LAN.  Would you like to set a root password?"
+msgstr "Momentan ist kein Passwort für den Systemadministrator (root) gesetzt. Es wird empfohlen, dass Sie nun ein solches setzen, sodass dies beim ersten Neustart des Rechners aktiv ist. Dies ist insbesondere wichtig, wenn Sie einen Kernel mit Netzwerkunterstützung nutzen und der Rechner in einem Internet-verbundenen LAN ist. Möchten Sie ein root-Passwort setzen?"
+
+# File: SeTswap, line: 31
+msgid "NO SWAP SPACE DETECTED"
+msgstr "KEIN SWAP-BEREICH ENTDECKT"
+
+# File: SeTswap, line: 31
+msgid "You have not created a swap partition with Linux fdisk.  Do you want to continue installing without one? "
+msgstr "Sie haben keine swap-Partition mit Linux fdisk erstellt. Möchten Sie die Installation ohne eine solche fortsetzen?"
+
+# File: SeTswap, line: 35
+msgid "ABORTING INSTALLATION"
+msgstr "INSTALLATION ABBRECHEN"
+
+# File: SeTswap, line: 35
+msgid "Create a swap partition with Linux fdisk, and then try this again."
+msgstr "Eine swap-Partition mit Linux fdisk erstellen und erneut versuchen."
+
+# File: SeTswap, line: 44
+# File: SeTswap, line: 84
+msgid "Setting up swap partitions."
+msgstr "Swap-Partitionen einrichten."
+
+# File: SeTswap, line: 46
+msgid "SWAP SPACE DETECTED"
+msgstr "SWAP-BEREICH GEFUNDEN"
+
+# File: SeTswap, line: 48
+msgid "Slint Setup has detected one or more swap partitions on your system.  These partitions have been preselected to be set up as swap space.  If there are any swap partitions that you do not wish to use with this installation, please unselect them with the up and down arrows and spacebar.  If you wish to use all of them (this is recommended), simply hit the ENTER key."
+msgstr "Slint-Setup hat eine oder mehrere Swap-Partitionen in Ihrem System gefunden. Diese Partitionen wurden vorausgewählt, um als Swap-Bereich zu dienen. Wenn es andere Swap-Partitionen gibt, die Sie nicht mit dieser Installation nutzen möchten, wählen Sie diese mit den Pfeiltasten (hoch und runter) und der Leertaste ab. Wenn Sie alle verwenden möchten (dies wird empfohlen), drücken Sie einfach ENTER."
+
+# File: SeTswap, line: 61
+#, sh-format
+msgid "Linux swap partition, ${PARTSIZE}"
+msgstr "Linux swap-Partition, ${PARTSIZE}"
+
+# File: SeTswap, line: 85
+msgid "CHECK SWAP PARTITIONS FOR BAD BLOCKS?"
+msgstr "SWAP-PARTITION AUF FEHLERHAFTE BLÖCKE ÜBERPRÜFEN?"
+
+# File: SeTswap, line: 86
+msgid "Slint Setup will now prepare your system's swap space.  When formatting swap partitions with mkswap you may also check them for bad blocks.  This is not the default since nearly all modern hard drives check themselves for bad blocks anyway.  Would you like to check for bad blocks while running mkswap?"
+msgstr "Slint Setup wird nun den swap-Bereich Ihres Systems vorbereiten. Wenn swap-Partitionen mit mkswap formatiert werden, kann gleichzeitig nach fehlerhaften Blöcken gesucht werden. Dies ist standardmäßig nicht eingestellt, da sich ziemlich alle modernen Festplatten selbst nach fehlerhaften Blöcken untersuchen. Möchten Sie nach fehlerhaften Blöcken suchen, während mkswap läuft?"
+
+# File: SeTswap, line: 106
+#, sh-format
+msgid "Activating swap partition ${swappartition}:"
+msgstr "Aktiviere swap-Partition ${swappartition}:"
+
+# File: SeTswap, line: 122
+msgid "Your swapspace has been configured. This information   will be added to your /etc/fstab:"
+msgstr "Ihr swap-Bereich wurde konfiguriert. Diese Einträge werden in Ihrer /etc/fstab hinzugefügt:"
+
+# File: SeTswap, line: 127
+msgid "SWAP SPACE CONFIGURED"
+msgstr "SWAP-BEREICH KONFIGURIERT"
+
+# File: blurbs, line: 4
+#. This file allows localizing content of
+#. displayed by 'pkgtool' in a dialog box for each installation script
+#. when the user wants to run some of these scripts again.
+msgid "Run mkfontdir and mkfontscale in font directories."
+msgstr "Starten von 'mkfontdir' und 'mkfontscale' in den Schriftarten-Verzeichnissen."
+
+# File: blurbs, line: 5
+msgid "Run fc-cache to locate new fonts for Xft"
+msgstr "Starten von 'fc-cache' zum Auffinden neuer Schriftarten für Xft"
+
+# File: blurbs, line: 6
+msgid "Run update-desktop-database."
+msgstr "Starten von update-desktop-database."
+
+# File: blurbs, line: 7
+msgid "Run update-mime-database."
+msgstr "Starten von update-mime-database."
+
+# File: blurbs, line: 8
+msgid "Run gtk-update-icon-cache for hicolor theme."
+msgstr "Starten von gtk-update-icon-cache für das Hicolor-Theme."
+
+# File: blurbs, line: 9
+msgid "Rebuild SSL certificate database."
+msgstr "Neuerstellung des SSL-Zertifikatsdatenbank."
+
+# File: blurbs, line: 10
+msgid "Install a Linux kernel from a bootdisk"
+msgstr "Installation eines Linuxkernels von einer Bootdisk"
+
+# File: blurbs, line: 11
+msgid "Create a USB Linux boot stick"
+msgstr "Erstellen eines USB-Linux-Bootsticks"
+
+# File: blurbs, line: 12
+msgid "Set a default browser link."
+msgstr "Setzen eines Standard-Browserlinks."
+
+# File: blurbs, line: 13
+msgid "Set up LILO to boot Linux (and other OSes) from your hard drive"
+msgstr "LILO einrichten um Linux (und andere Systeme) von Ihrer Festplatte zu starten"
+
+# File: blurbs, line: 14
+msgid "Configure the console mouse support (GPM)."
+msgstr "Konfiguriere Mausunterstützung in der Konsole (GPM). "
+
+# File: blurbs, line: 15
+msgid "Configure basic network settings"
+msgstr "Konfiguriere grundlegende Netzwerkeinstellungen"
+
+# File: blurbs, line: 16
+msgid "Select/deselect system daemons (services)"
+msgstr "Auswählen/abwählen von System-Daemons (Dienste)"
+
+# File: blurbs, line: 17
+msgid "Select a font for the console"
+msgstr "Wählen Sie eine Schriftart für die Konsole"
+
+# File: blurbs, line: 18
+msgid "Select your timezone"
+msgstr "Wählen Sie Ihre Zeitzone"
+
+# File: blurbs, line: 19
+msgid "Choose a default window manager for X"
+msgstr "Wählen Sie einen Standard-Fenstermanager für X"
+
+# File: blurbs, line: 20
+msgid "Set up ELILO (EFI LILO) to boot Linux from your hard drive"
+msgstr "Einrichten von ELILO (EFI LILO), um Linux von Ihrer Festplatte zu starten"
+
+# File: blurbs, line: 21
+msgid "Set up GRUB to boot Linux (and other OSes) from your hard drive"
+msgstr "GRUB einrichten, um Linux (und andere Betriebssysteme) von Ihrer Festplatte zu booten."
+
+# File: network, line: 21
+msgid "Network support for NFS install, 2006-09-20 volkerdi@slackware.com\n"
+"Network support for FTP/HTTP install, 26-Jan-2008 alien@slackware.com"
+msgstr "Netzwerkunterstützung für NFS-Installation, 2006-09-20 volkerdi@slackware.com\n"
+"Netzwerkunterstützung für FTP/HTTP-Installation, 26-Jan-2008 alien@slackware.com"
+
+# File: network, line: 43
+# File: pcmcia, line: 32
+msgid "The next step in your installation may be partitioning your hard drive\n"
+"(if you're installing to a Linux partition) with 'fdisk' or 'cfdisk'\n"
+"(the menu-driven version of fdisk).  If you already have a partition\n"
+"prepared for Linux, run 'setup' to start the installer program."
+msgstr "Der nächste Schritt in Ihrer Installation kann die Partitionierung Ihrer Festplatte mit 'fdisk' oder 'cfdisk' (die menügesteuerte Version von fdisk) sein (wenn Sie auf eine Linux-Partition installieren). Wenn Sie bereits eine Partition für Linux vorbereitet haben, starten Sie 'setup', um das Installationsprogramm zu starten."
+
+# File: network.sh, line: 17
+msgid "******* Welcome to the network supplemental disk! *******"
+msgstr "******* Willkommen auf der Disk für Netzwerkzusätze! *******"
+
+# File: network.sh, line: 24
+msgid "-- Press [enter] to automatically probe for all network cards, or switch\n"
+"   to a different console and use 'modprobe' to load the modules manually.\n"
+"-- To skip probing some modules (in case of hangs), enter them after an S:\n"
+"   S eepro100 ne2k-pci\n"
+"-- To probe only certain modules, enter them after a P like this:\n"
+"   P 3c503 3c505 3c507\n"
+"-- To get a list of network modules, enter an L.\n"
+"-- To skip the automatic probe entirely, enter a Q now."
+msgstr "-- Drücken Sie [Enter], um automatisch nach allen Netzwerkkarten zu suchen \n"
+"   oder auf eine andere Konsole zu wechseln und 'modprobe' zu nutzen, um \n"
+"   die Module manuell zu laden.\n\n"
+"-- Um die Prüfung nach einigen Modulen (im Falle von Aufhängern) zu \n"
+"   überspringen, geben Sie diese nach einem S ein: S eepro100ne2k-pci \n\n"
+"-- Um nur gewisse Module zu prüfen, geben Sie diese nach einem P wie folgt \n"
+"   ein: P 3c503 3c505 3c507\n\n"
+"-- Um eine Liste von allen Netzwerkmodulen zu erhalten, geben Sie ein L \n"
+"   ein. \n\n"
+"-- Um die automatische Untersuchung insgesamt zu überspringen, geben Sie \n"
+"   nun ein Q ein."
+
+# File: network.sh, line: 37
+msgid "network> "
+msgstr "Netzwerk>"
+
+# File: network.sh, line: 43
+msgid "Available network modules:"
+msgstr "Verfügbare Netzwerkmodule:"
+
+# File: network.sh, line: 60
+msgid "Probing for PCI/EISA network cards:"
+msgstr "Suche nach PCI/EISA-Netzwerkkarten:"
+
+# File: network.sh, line: 75
+# File: network.sh, line: 116
+# File: network.sh, line: 152
+#, sh-format
+msgid "Probing for card using the $card module..."
+msgstr "Prüfe Karte mit dem Modul $card ..."
+
+# File: network.sh, line: 81
+# File: network.sh, line: 122
+# File: network.sh, line: 158
+#, sh-format
+msgid "SUCCESS: found card using $card protocol -- modules loaded."
+msgstr "ERFOLG: Karte mit Hilfe des $card Protokolls gefunden -- Module geladen."
+
+# File: network.sh, line: 90
+# File: network.sh, line: 131
+#, sh-format
+msgid "Skipping module $card..."
+msgstr "Überspringe Modul $card..."
+
+# File: network.sh, line: 97
+#. Don't probe for com20020... it loads on any machine with or without the
+#. card.
+msgid "Probing for MCA, ISA, and other PCI network cards:"
+msgstr "Suche nach MCA-, ISA- und anderen PCI-Netzwerkkarten:"
+
+# File: network.sh, line: 138
+msgid "Sorry, but no network card was detected.  Some cards (like non-PCI\n"
+"NE2000s) must be supplied with the I/O address to use.  If you have\n"
+"an NE2000, you can switch to another console (Alt-F2), log in, and\n"
+"load it with a command like this:\n\n"
+"  modprobe ne io=0x360"
+msgstr "Entschuldigung, aber es wurde keine Netzwerkkarte entdeckt. Einige \n"
+"Karten (wie nicht-PCI NE2000s) müssen mit der zu verwendeten \n"
+"I/O-Adresse angegeben werden. Wenn Sie eine NE2000 haben, können Sie \n"
+"auf eine andere Konsole wechseln (Alt-F2), einloggen und es mit einem \n"
+"Kommando wie folgt laden:\n\n"
+" modprobe ne io=0x360"
+
+# File: network.sh, line: 149
+msgid "Probing for a custom list of modules:"
+msgstr "Suche nach einer eigenen Liste von Modulen:"
+
+# File: network.sh, line: 169
+msgid "Skipping automatic module probe."
+msgstr "Überspringen der automatischen Modulsuche"
+
+# File: pcmcia, line: 13
+msgid "PCMCIA/Cardbus support script, 2003-02-18 volkerdi@slackware.com\n"
+"                               2007-05-09 alien@slackware.com"
+msgstr "PCMCIA/Cardbus Unterstützungsskript, 2003-02-18 volkerdi@slackware.com\n"
+"                                     2007-05-09 alien@slackware.com"
+
+# File: pcmcia, line: 23
+msgid "The PCMCIA/Cardbus subsystem is now installed.  Please make sure that\n"
+"all of the cards you'll need for the installation are in the machine.\n"
+"If you still need to insert any PCMCIA/Cardbus cards, do that now.  Once\n"
+"the drive stops (indicating that all needed modules have been\n"
+"loaded), then press [enter] to continue."
+msgstr "Das PCMCIA/Cardbus-Subsystem ist nun installiert. Bitte vergewissern \n"
+"Sie sich, dass sich alle Karten, die für die Installation benötigt \n"
+"werden im Rechner befinden.\n"
+"Wenn Sie noch PCMCIA/Cardbus-Karten einstecken möchten, können Sie dies \n"
+"jetzt tun.\n"
+"Sobald das Laufwerk stoppt (dies zeigt an, dass alle benötigten Module \n"
+"geladen wurden), drücken Sie [Enter] um fortzufahren."
+
+# File: pxesetup, line: 63
+# File: setup, line: 130
+# File: setup.orig, line: 122
+msgid "Select source media"
+msgstr "Wählen des Quellmediums"
+
+# File: rc.S, line: 158
+msgid "We will now probe your sound cards.\n"
+"Please wait until you hear an alarm sound, then press Enter.\n"
+msgstr "Wir werden nun Ihre Soundkarten auswerten.\n"
+"Bitte warten Sie, bis Sie einen Alarmton hören, und drücken Sie dann die Eingabetaste.\n"
+
+# File: rc.S, line: 177
+msgid "No working sound card found. Maybe the sound is muted?\n"
+msgstr "Keine funktionierende Soundkarte gefunden. Vielleicht ist der Ton stumm geschaltet?\n"
+
+# File: rc.S, line: 188
+msgid "This installer has speech and Braille device support in order\n"
+"to be accessible to visually impaired users. To have speech turned on\n"
+"during installation type S, then press [Enter]. Else, just press Enter.\n"
+msgstr "Dieses Installationsprogramm unterstützt Sprach- und Blindenschriftgeräte, um für sehbehinderte Benutzer zugänglich zu sein. Um die Sprache während der Installation einzuschalten, drücken Sie S und dann [Enter]. Andernfalls drücken Sie einfach die Eingabetaste.\n"
+
+# File: rc.S, line: 204
+msgid "To display keyboard shortcuts for reviewing the screen with speech\n"
+"press R, then press [Enter],\n"
+"Else, just press [Enter]: "
+msgstr "Um Tastaturkürzel für die Anzeige des Bildschirminhaltes mit Sprachausgabe anzuzeigen, drücken Sie R, dann drücken Sie [Enter], ansonsten drücken Sie einfach [Enter]:"
+
+# File: rc.S, line: 215
+msgid "\n"
+"Note: espeakup, used for speech, lacks a voice in Ukrainian."
+msgstr "\n"
+"Hinweis: espeakup, das für die Sprachausgabe verwendet wird, fehlt eine Stimme auf Ukrainisch."
+
+# File: rc.S, line: 219
+msgid "LANGUAGE TO USE DURING INSTALLATION"
+msgstr "SPRACHE, DIE BEI DER INSTALLATION VERWENDET WERDEN SOLL"
+
+# File: rc.S, line: 220
+#, sh-format
+msgid "Please select the language to use for installation.$NOTE"
+msgstr "Bitte wählen Sie die Sprache aus, die Sie bei der Installation verwenden möchten. $NOTE"
+
+# File: rc.S, line: 221
+msgid "English (USA)"
+msgstr "Englisch (USA)"
+
+# File: rc.S, line: 222
+msgid "Dutch"
+msgstr "Niederländisch"
+
+# File: rc.S, line: 223
+msgid "French"
+msgstr "Französisch"
+
+# File: rc.S, line: 224
+msgid "German"
+msgstr "Deutsch"
+
+# File: rc.S, line: 225
+msgid "Greek"
+msgstr "Griechisch"
+
+# File: rc.S, line: 226
+msgid "Italian"
+msgstr "Italienisch"
+
+# File: rc.S, line: 227
+msgid "Norwegian"
+msgstr "Norwegisch"
+
+# File: rc.S, line: 228
+msgid "Polish"
+msgstr "Polnisch"
+
+# File: rc.S, line: 229
+msgid "Portuguese (Brazil)"
+msgstr "Portugiesisch (Brasilien)"
+
+# File: rc.S, line: 230
+msgid "Portuguese (Portugal)"
+msgstr "Portugiesisch (Portugal)"
+
+# File: rc.S, line: 231
+msgid "Russian"
+msgstr "Russisch"
+
+# File: rc.S, line: 232
+msgid "Spanish (Latin America)"
+msgstr "Spanisch (Lateinamerika)"
+
+# File: rc.S, line: 233
+msgid "Swedish"
+msgstr "Schwedisch"
+
+# File: rc.S, line: 234
+msgid "Turkish"
+msgstr "Türkisch"
+
+# File: rc.S, line: 235
+msgid "Ukrainian"
+msgstr "Ukrainisch"
+
+# File: rc.S, line: 251
+# File: rc.S.orig, line: 160
+#, sh-format
+msgid "<OPTION TO LOAD SUPPORT FOR ANOTHER KEYBOARD>\n\n"
+"If you are not using a \"$kbd\" keyboard map, you may load another one now.\n"
+"To select a different keyboard map, please enter 1 now.\n"
+"To continue using the \"$kbd\" keyboard map, just hit [Enter]."
+msgstr "<OPTION, UM UNTERSTÜTZUNG FÜR EINE WEITERE TASTATUR ZU LADEN>\n\n"
+"Wenn Sie keine \"$kbd\" Tastaturmap verwenden, können Sie nun eine andere\n"
+"laden.\n"
+"Um eine andere Tastaturmap zu wählen, geben Sie nun 1 ein.\n"
+"Um mit der \"$kbd\" Tastaturmap fortzufahren, drücken Sie einfach [Enter]."
+
+# File: rc.S, line: 258
+# File: rc.S.orig, line: 167
+msgid "Enter 1 to select a keyboard map: "
+msgstr "Geben Sie 1 ein, um ein Tastaturlayout zu wählen: "
+
+# File: rc.S, line: 267
+#, sh-format
+msgid "\n"
+"To partition your device(s), you can use 'cfdisk' or 'fdisk' and also,\n"
+"only for a GPT layout, 'cgdisk' or 'gdisk'. 'parted' is also available.\n"
+"TIP: to enhance accessibility of cgdisk, use its -a option.\n\n"
+"If you partition a new device, we recommend that you set up a gpt (GUID\n"
+"partition label) for it, for more flexibility.\n\n"
+"You can also let the installer auto-partition a device, if and only if:\n"
+"1. Its size is of least ${GCOUNT}G.\n"
+"2. You agree that this device will be dedicated to Slint.\n"
+"3. You agree that all data currently stored on it will be erased.\n"
+"4. None of the partitions it could include is mounted.\n"
+"WARNING: if it has already been used, make a back-up first!\n\n"
+"After having used the auto-partitioning feature, you will be allowed to\n"
+"make changes, like adding another partition to the drive.\n\n"
+"For an auto-partitioning type now 'auto'.\n\n"
+"To start the main installation (after partitioning), type 'setup'.\n"
+msgstr "\n"
+"Um Ihre Geräte zu partitionieren, können Sie 'cfdisk' oder 'fdisk' verwenden und auch, nur für ein GPT-Layout, 'cgdisk' oder 'gdisk'. \"parted\" ist ebenfalls möglich.\n"
+"TIPP: Um den Zugriff auf cgdisk zu erleichtern, verwenden Sie die Option -a.\n\n"
+"Wenn Sie ein neues Gerät partitionieren, empfehlen wir Ihnen, dieses als GPT einzurichten (GUID Partitionsbezeichnung). Das sorgt für mehr Flexibilität.\n\n"
+"Sie können auch festlegen, dass der Installer ein Gerät automatisch partitioniert, wenn und nur wenn:\n"
+"1. Seine Größe beträgt mindestens ${GCOUNT}G.\n"
+"2. Sie stimmen zu, dass dieses Gerät für Slint bestimmt ist.\n"
+"3. Sie stimmen zu, dass alle derzeit darauf gespeicherten Daten gelöscht werden.\n"
+"4. Keine der Partitionen, die es beinhalten könnte, ist gemountet.\n"
+"WARNUNG: Wenn es bereits verwendet wurde, erstellen Sie zuerst ein Backup!\n\n"
+"Nachdem Sie die Auto-Partitionierungsfunktion genutzt haben, können Sie folgende Änderungen vornehmen, wie z.B. das Hinzufügen einer weiteren Partition zum Laufwerk.\n\n"
+"Für eine automatische Partitionierung geben Sie nun 'auto' ein.\n\n"
+"Um die Grundinstallation (nach der Partitionierung) zu starten, geben Sie 'setup' ein.\n"
+
+# File: rc.S, line: 302
+#, sh-format
+msgid "Welcome to the Slint Linux installation media! (version ${Version})\n\n"
+"######  IMPORTANT!  READ THE INFORMATION BELOW CAREFULLY.  ######\n\n"
+"On the device where Slint will be installed you will need:\n"
+"- at least one partition of type 'Linux', of size at least ${GCOUNTMIN}G,\n"
+"  for the system itself (not counting the user files).\n"
+"- if the device has a GPT layout, a small (4M) partition of type ef02\n"
+"  (BIOS Boot partition) to install GRUB on this drive in Legacy mode.\n"
+"- an EFI System partition, of type ef01, to install GRUB in EFI mode,\n"
+"  of size at least 100M, unless you want to use an existing one.\n\n"
+"It is recommended that you have a swap partition (type 'Linux swap')\n"
+"prior installation, but you can also set up a swap file afterwards.\n\n"
+"On the next screen we will present the tools you can use to partition\n"
+"the device.\n\n"
+"You may now login as 'root'.\n\n"
+"Slint login: "
+msgstr "Willkommen zu den Slint Linux Installationsmedien! (Version ${Version})\n\n"
+"######### WICHTIG! LESEN SIE DIE FOLGENDEN INFORMATIONEN SORGFÄLTIG DURCH. ######\n\n"
+"Auf dem Gerät, auf dem Slint installiert wird, benötigen Sie:\n"
+"- mindestens eine Partition vom Typ 'Linux', mit einer Größe von mindestens ${GCOUNTMIN}G, für das System selbst (ohne die Benutzerdateien zu zählen).\n"
+"- wenn das Gerät ein GPT-Layout hat, eine kleine (4M) Partition vom Typ ef02 (BIOS Boot Partition), um GRUB auf diesem Laufwerk im Legacy-Modus zu installieren.\n"
+"- eine EFI-Systempartition vom Typ ef01, um GRUB im EFI-Modus zu installieren, mit einer Größe von mindestens 100M, es sei denn, Sie möchten eine vorhandene verwenden.\n\n"
+"Es wird empfohlen, vor der Installation eine Auslagerungspartition (\"Linux swap\") zu erstellen, aber Sie können auch danach eine Swap-Datei anlegen.\n\n"
+"Auf dem nächsten Bildschirm werden wir Ihnen die Tools vorstellen, mit denen Sie die Partitionierung durchführen können.\n\n"
+"Sie können sich nun als 'root' anmelden.\n\n"
+"Slint-Anmeldung:"
+
+# File: setup, line: 55
+msgid "Slint Linux Setup"
+msgstr "Slint Linux Einrichtung"
+
+# File: setup, line: 55
+msgid "\\n\n"
+"Scanning your system for partition information...\\n\n"
+"\\n"
+msgstr "\\n\n"
+"Scannen Ihres Systems nach Partitionsinformationen....\\n\n"
+"\\n"
+
+# File: setup, line: 66
+# File: setup.orig, line: 65
+msgid "NO LINUX PARTITIONS DETECTED"
+msgstr "KEINE LINUX-PARTITIONEN ENTDECKT"
+
+# File: setup, line: 67
+# File: setup.orig, line: 66
+msgid "There don't seem to be any partitions on this machine of type Linux.  You'll need to make at least one of these to install Linux. To do this, you'll need to leave 'setup', and make the partitions using 'cfdisk' (MBR partitions) or 'cgdisk' (GPT partitions). For more information, read the 'setup' help file from the next menu."
+msgstr "Es scheint keine Partitionen vom Typ Linux auf diesem Rechner zu geben. Sie werden mindestens eine davon erzeugen müssen, um Linux zu installieren. Um dies zu tun, verlassen Sie 'setup' und erstellen Sie die Partitionen mit 'cfdisk' (MBR Partitionen) oder 'cgdisk' (GPT Partitionen). Für weitere Informationen lesen Sie die 'setup' Hilfedatei aus dem nächsten Menü."
+
+# File: setup, line: 76
+# File: setup.orig, line: 75
+msgid "NO EFI SYSTEM PARTITION DETECTED"
+msgstr "KEINE EFI SYSTEM PARTITION ENTDECKT"
+
+# File: setup, line: 77
+# File: setup.orig, line: 76
+msgid "This machine appears to be using EFI/UEFI, but no EFI System Partition was found.  You'll need to make an EFI System Partition in order to boot from the hard drive.  To do this, leave 'setup', and use 'cgdisk' to make a 100MB partition of type EF00.  For more information, read the 'setup' help file from the next menu."
+msgstr "Dieser Rechner scheint EFI/UEFI zu nutzen, aber es wurde keine EFI Systempartition gefunden. Sie werden eine EFI Systempartition erzeugen müssen, um von der Festplatte starten zu können. Um dies zu tun, verlassen Sie 'setup' und verwenden Sie 'cgdisk', um eine 100MB Partition des Typs EF00 zu erzeugen. Für weitere Informationen lesen Sie die 'setup' Hilfedatei aus dem nächsten Menü."
+
+# File: setup, line: 121
+# File: setup.orig, line: 113
+#, sh-format
+msgid "Slint Linux Setup (version ${Version})"
+msgstr "Slint-Linux-Setup (Version ${Version})"
+
+# File: setup, line: 123
+# File: setup.orig, line: 115
+msgid "Welcome to Slint Linux Setup.\n"
+"Select an option below using the UP/DOWN keys and SPACE or ENTER.\n"
+"Alternate keys may also be used: '+', '-', and TAB."
+msgstr "Willkommen im Slint-Linux-Setup.\n"
+"Wählen Sie eine Option mit den AUF/AB-Tasten und LEERTASTE oder ENTER.\n"
+"Alternative Tasten können auch verwendet werden: '+','-' und TAB."
+
+# File: setup, line: 126
+# File: setup.orig, line: 118
+msgid "Read the Slint Setup HELP file"
+msgstr "Hilfedatei zum Slint-Setup lesen"
+
+# File: setup, line: 127
+# File: setup.orig, line: 119
+#, sh-format
+msgid "Remap your keyboard  (other than $DefaultKeyMap)"
+msgstr "Tastaturlayout ändern (aktuell: $DefaultKeyMap)"
+
+# File: setup, line: 128
+# File: setup.orig, line: 120
+msgid "Set up your swap partition(s)"
+msgstr "Richten Sie Ihre Swap-Partition(en) ein"
+
+# File: setup, line: 129
+# File: setup.orig, line: 121
+msgid "Set up your target partitions"
+msgstr "Richten Sie Ihre Zielpartitionen ein"
+
+# File: setup, line: 131
+# File: setup.orig, line: 123
+msgid "Install selected software"
+msgstr "Installieren der ausgewählten Software"
+
+# File: setup, line: 132
+# File: setup.orig, line: 124
+msgid "Reconfigure your Linux system"
+msgstr "Rekonfiguration Ihres Linuxsystems"
+
+# File: setup, line: 133
+# File: setup.orig, line: 125
+msgid "Exit Slint Linux Setup"
+msgstr "Verlassen des Slint-Linux-Setups"
+
+# File: setup, line: 167
+msgid "TARGET PARTITIONS ALREADY CONFIGURED"
+msgstr "ZIELPARTITIONEN BEREITS KONFIGURIERT"
+
+# File: setup, line: 167
+msgid "\n"
+"You have already configured the target partitions, where the system will be installed.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Sie haben die Zielpartitionen, auf denen das System installiert werden soll, bereits konfiguriert.\n\n"
+"Drücken Sie ENTER, um zum Hauptmenü zurückzukehren."
+
+# File: setup, line: 187
+msgid "SOURCE OF PACKAGES ALREADY CHOSEN"
+msgstr "QUELLE DER BEREITS AUSGEWÄHLTEN PAKETE"
+
+# File: setup, line: 187
+msgid "\n"
+"You have already chosen the source of packages.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Sie haben bereits die Quelle der Pakete ausgewählt.\n\n"
+"Drücken Sie ENTER, um zum Hauptmenü zurückzukehren."
+
+# File: setup, line: 201
+# File: setup.orig, line: 179
+msgid "SOURCE PACKAGES INAPPROPRIATE"
+msgstr "PAKETQUELLEN UNGEEIGNET"
+
+# File: setup, line: 202
+# File: setup.orig, line: 180
+#, sh-format
+msgid "Either the source packages are inappropriate for the target system:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"or the file $INSTALL_PATH/slint/DONOTREMOVEME.TXT is missing.\n"
+"Please try again to set the source of packages"
+msgstr "Entweder sind die Paketquellen ungegeignet für das Zielsystem:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"oder die Datei $INSTALL_PATH/slint/DONOTREMOVEME.TXT fehlt.\n"
+"Bitte geben Sie erneut die Quelle der Pakete ein"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "CANNOT INSTALL SOFTWARE YET"
+msgstr "KANN DIE SOFTWARE NOCH NICHT INSTALLIEREN"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "\n"
+"Before you can install software, complete the following tasks:\n\n"
+"1. Select your source media.\n"
+"2. Set up your target Linux partition(s).\n\n"
+"You may also optionally remap your keyboard and set up your swap partition(s).\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Bevor Sie Software installieren können, vervollständigen Sie die folgenden Aufgaben:\n\n"
+"1. Wählen Sie Ihr Quellmedium.\n"
+"2. Richten Sie die Linux Zielpartition(en) ein.\n\n"
+"Sie können auch optional Ihre Tastaturbelegung umstellen und Ihre Swap-Partition(en) einrichten.\n\n"
+"Drücken Sie ENTER, um zurück ins Hauptmenü zu gelangen."
+
+# File: setup, line: 227
+# File: setup.orig, line: 185
+msgid "READY TO INSTALL THE PACKAGES?"
+msgstr "BEREIT, DIE PAKETE ZU INSTALLIEREN?"
+
+# File: setup, line: 228
+# File: setup.orig, line: 186
+msgid "Please confirm that you want to install the packages."
+msgstr "Bitte bestätge die Installation der Pakete."
+
+# File: setup, line: 231
+# File: setup.orig, line: 189
+msgid "INSTALL KDE PACKAGES?"
+msgstr "KDE-PAKETE INSTALLIEREN?"
+
+# File: setup, line: 232
+# File: setup.orig, line: 190
+msgid "Do you want to install the KDE packages?"
+msgstr "Möchten Sie die KDE-Pakete installieren?"
+
+# File: setup, line: 248
+# File: setup.orig, line: 217
+msgid "A one-line description will be displayed as each package is installed."
+msgstr "Eine einzeilige Paketbeschreibung wird angezeigt, während jedes Paket installiert wird."
+
+# File: setup, line: 284
+# File: setup.orig, line: 246
+msgid "SYSTEM NOT YET INSTALLED"
+msgstr "SYSTEM NOCH NICHT INSTALLIERT"
+
+# File: setup, line: 285
+# File: setup.orig, line: 247
+msgid "You need to install the packages before configuring the system.\n\n"
+"Please press ENTER to return to the main menu."
+msgstr "Sie müssen die Pakete installieren, bevor Sie das System konfigurieren können.\n\n"
+"Bitte drücken Sie ENTER, um zum Hauptmenü zurückzukehren."
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "REPLACE /etc/fstab?"
+msgstr "ERSETZEN VON /etc/fstab?"
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "You already have an /etc/fstab on your install partition.  If you were just adding software, you should probably keep your old /etc/fstab.  If you've changed your partitioning scheme, you should use the new /etc/fstab.  Do you want to replace your old /etc/fstab with the new one?"
+msgstr "Sie haben bereits eine /etc/fstab auf Ihrer Installationspartition. Wenn Sie einfach Software hinzugefügt haben, sollten Sie eventuell Ihre alte /etc/fstab behalten. Wenn Sie Ihr Partitionsschema geändert haben, sollten Sie die neue /etc/fstab verwenden. Möchten Sie Ihre alte /etc/fstab durch die neue ersetzen?"
+
+# File: setup, line: 358
+# File: setup.orig, line: 302
+msgid "Installing translations..."
+msgstr "Installiere die Übersetzungen..."
+
+# File: setup, line: 428
+# File: setup, line: 435
+# File: setup.orig, line: 372
+# File: setup.orig, line: 379
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+msgid "Slint Linux Setup is complete"
+msgstr "Installation von Slint Linux ist vollständig."
+
+# File: setup, line: 429
+# File: setup.orig, line: 373
+msgid "\n"
+" Please remove the installation disc.\n"
+" "
+msgstr "\n"
+" Bitte entfernen Sie die Installationsdisk.\n"
+" "
+
+# File: setup, line: 437
+# File: setup.orig, line: 381
+msgid "\n"
+"Would you like to reboot your system?\n\n"
+"If you choose No, you will be dropped to a shell.\n"
+msgstr "\n"
+"Möchten Sie Ihr System neu starten?\n\n"
+"Wenn Sie Nein wählen, landen Sie in der Shell.\n"
+
+# File: setup, line: 446
+# File: setup.orig, line: 390
+msgid "You may now reboot your system once you are ready.\n"
+"You can issue the 'reboot' command; or if your system has\n"
+"a keyboard attached, you can use the key combination: control+alt+delete\n"
+msgstr "Sobald Sie bereit sind, können Sie Ihr System jetzt neu starten.\n"
+"Sie können den Befehl 'reboot' nutzen; oder, falls an Ihrem System eine\n"
+"Tastatur angeschlossen ist, die Tastenkombination: Strg+Alt+Entfernen\n"
+
+# File: setup, line: 471
+# File: setup.orig, line: 415
+msgid "** Starting reboot **"
+msgstr "** Beginne Neustart **"
+
+# File: setup.mouse, line: 25
+msgid "MOUSE CONFIGURATION"
+msgstr "MAUS KONFIGURATION"
+
+# File: setup.mouse, line: 26
+msgid "This part of the configuration process will create a /dev/mouse link pointing to your default mouse device.  You can change the /dev/mouse link later if the mouse doesn't work, or if you switch to a different type of pointing device.  We will also use the information about the mouse to set the correct protocol for gpm, the Linux mouse server.  Please select a mouse type from the list below:"
+msgstr "Dieser Teil der Konfiguration wird einen Link namens /dev/mouse auf Ihr Standard-Mausgerät setzen. Sie können den /dev/mouse Link später ändern, wenn die Maus nicht arbeitet oder Sie eine andere Art von Zeigegerät verwenden. Wir werden die Informationen über die Maus auch für gpm verwenden. Dies ist der Linux-Maus-Server. Bitte wählen Sie eine Mausart aus der unten stehenden Liste:"
+
+# File: setup.mouse, line: 33
+msgid "PS/2 port mouse (most desktops and laptops)"
+msgstr "PS/2-Anschluss Maus (die meisten Desktops und Laptops)"
+
+# File: setup.mouse, line: 34
+msgid "USB connected mouse"
+msgstr "Über USB verbundene Maus"
+
+# File: setup.mouse, line: 35
+msgid "Microsoft PS/2 Intellimouse"
+msgstr "Microsoft PS/2 Intellimouse"
+
+# File: setup.mouse, line: 36
+msgid "Intellimouse Explorer PS/2"
+msgstr "Intellimouse Explorer PS/2"
+
+# File: setup.mouse, line: 37
+msgid "2 button Microsoft compatible serial mouse"
+msgstr "2-Tasten Microsoft kompatible serielle Maus"
+
+# File: setup.mouse, line: 38
+msgid "3 button Microsoft compatible serial mouse"
+msgstr "3-Tasten Microsoft kompatible serielle Maus"
+
+# File: setup.mouse, line: 39
+msgid "Logitech serial MouseMan and similar devices"
+msgstr "Logitech serieller MouseMan und ähnliche Geräte"
+
+# File: setup.mouse, line: 40
+msgid "MouseSystems serial (most 3 button serial mice)"
+msgstr "MouseSystems seriell (die meisten seriellen Mäuse mit 3-Tasten)"
+
+# File: setup.mouse, line: 41
+msgid "Plug and Play (serial mice that do not work with ms)"
+msgstr "Plug and Play (serielle Mäuse, die nicht mit ms funktionieren)"
+
+# File: setup.mouse, line: 42
+msgid "Microsoft serial Intellimouse"
+msgstr "Microsoft serielle Intellimouse"
+
+# File: setup.mouse, line: 43
+msgid "Genius Netmouse on PS/2 port"
+msgstr "Genius Netmouse am PS/2-Anschluss"
+
+# File: setup.mouse, line: 44
+msgid "Some serial Logitech devices"
+msgstr "Einige serielle Logitech-Geräte"
+
+# File: setup.mouse, line: 45
+msgid "Make serial Logitech behave like msc"
+msgstr "Serielle Logitech wie msc verhalten lassen"
+
+# File: setup.mouse, line: 46
+msgid "ATI XL busmouse (mouse card)"
+msgstr "ATI XL Bus-Maus (Mauskarte)"
+
+# File: setup.mouse, line: 47
+msgid "Microsoft busmouse (mouse card)"
+msgstr "Microsoft Bus-Maus (Mauskarte)"
+
+# File: setup.mouse, line: 48
+msgid "Logitech busmouse (mouse card)"
+msgstr "Logitech Bus-Maus (Mauskarte)"
+
+# File: setup.mouse, line: 49
+msgid "A pointing pen (NCR3125) on some laptops"
+msgstr "Ein Eingabestift (NCR3125) an einigen Laptops"
+
+# File: setup.mouse, line: 50
+msgid "Twiddler keyboard, by HandyKey Corp"
+msgstr "Twiddler Tastatur, von HandyKey Corp"
+
+# File: setup.mouse, line: 51
+msgid "Genitizer tablet (relative mode)"
+msgstr "Genitizer Tablet (relativer Modus)"
+
+# File: setup.mouse, line: 52
+msgid "Use a joystick as a mouse"
+msgstr "Verwende einen Joystick als Maus"
+
+# File: setup.mouse, line: 53
+msgid "Wacom serial graphics tablet"
+msgstr "Wacom serielles Grafik-Tablet"
+
+# File: setup.mouse, line: 71
+msgid "SELECT SERIAL PORT"
+msgstr "WÄHLEN EINER SERIELLEN SCHNITTSTELLE"
+
+# File: setup.mouse, line: 71
+msgid "Your mouse requires a serial port.  Which one would you like to use?"
+msgstr "Ihre Maus benötigt eine serielle Schnittstelle. Welche möchten Sie verwenden?"
+
+# File: setup.mouse, line: 73
+msgid "(COM1: under DOS)"
+msgstr "(COM1: unter DOS)"
+
+# File: setup.mouse, line: 74
+msgid "(COM2: under DOS)"
+msgstr "(COM2: unter DOS)"
+
+# File: setup.mouse, line: 75
+msgid "(COM3: under DOS)"
+msgstr "(COM3: unter DOS)"
+
+# File: setup.mouse, line: 76
+msgid "(COM4: under DOS)"
+msgstr "(COM4: unter DOS)"
+
+# File: setup.mouse, line: 125
+msgid "Stopping gpm..."
+msgstr "Stoppen von gpm..."
+
+# File: setup.mouse, line: 129
+msgid "Restarting gpm..."
+msgstr "Neustarten von gpm..."
+
+# File: setup.mouse, line: 135
+#. assume \$1 = start:
+msgid "Starting gpm:"
+msgstr "Starten von gpm:"
+
+# File: setup.mouse, line: 157
+#. Now ask if this should be the new rc.gpm:
+msgid "GPM CONFIGURATION"
+msgstr "GPM KONFIGURATION"
+
+# File: setup.mouse, line: 158
+#, sh-format
+msgid "The gpm program allows you to cut and paste text on the virtual consoles using a mouse.  If you choose to run it at boot time, this line will be added to your /etc/rc.d/rc.gpm:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Shall we load the gpm program at boot time?"
+msgstr "Das gpm Programm ermöglicht es, Texte auf den virtuellen Konsolen mit einer Maus zu kopieren und einzufügen. Wenn Sie sich entschließen, dies während des Systemstarts zu starten, wird diese Zeile zu Ihrer /etc/rc.d/rc.gpm hinzugefügt:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Sollen wir gpm während des Systemstarts laden?"
+
+# File: startupmode, line: 14
+msgid "Select the default startup mode"
+msgstr "Bitte wählen Sie den Standard-Startmodus"
+
+# File: startupmode, line: 15
+msgid "Please choose the default startup mode: Console or Graphical.\n\n"
+"In Console mode, you log in and type your first command in a console.\n"
+"In this mode you can type \"startx\" to start the default desktop or windows manager, that you can also change typing \"xwmconfig\".\n\n"
+"In Graphical mode, you choose the desktop or windows manager, that will be started as soon as you are identified.\n"
+msgstr "Bitte wählen Sie den Standard-Startmodus: Konsolen- oder grafischer Modus.\n\n"
+"Im Konsolen-Modus loggen Sie sich ein und geben Ihre ersten Befehle auf der Konsole ein. In diesem Modus können Sie \"startx\" eingeben, um die grafische Desktop-Oberfläche zu starten, die als Standard vorgegeben ist. Die Standard-Vorgabe können Sie wiederum mit Aufruf von \"xwmconfig\" ändern.\n\n"
+"Im grafischen Modus können Sie die Desktop-Oberfläche oder den Fenstermanager auswählen, der gestartet wird, sobald Sie sich einloggen.\n"
+
+# File: startupmode, line: 24
+msgid "Start Linux in Console mode"
+msgstr "Starte Linux im Konsolen-Modus"
+
+# File: startupmode, line: 25
+msgid "Start Linux in Graphical mode"
+msgstr "Starte Linux im grafischen Modus"
+

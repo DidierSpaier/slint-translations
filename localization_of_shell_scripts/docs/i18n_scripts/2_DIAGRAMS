@@ -1,0 +1,109 @@
+
+INTERNATIONALIZATION AND LOCALIZATION OF SHELL SCRIPTS
+
+2. Processes diagrams
+---------------------
+
+Let's assume that a given software comprises a set of shell scripts that
+we want to internationalize and localize.
+
+The following diagrams give an overview of each of the involved processes:
+internationalization, localization, usage and maintenance.
+
+These diagrams are hybrid, i.e. they exhibit data as well as actions.
+
+Among these actions are execution of some programs of the gettext suite:
+gettetxt: marks strings to be insternationalized, then displays localized
+          messages during scripts' execution
+xgettext: extracts marked strings from a set of shell scripts to build a
+          POT or a PO file
+msgcmp:   checks a PO file against another PO or a POT file for
+          consistency
+msginit:  write a PO file using a POT file as its input   
+msgfmt:   format a MO file using a POI file as its input
+msgmerge: merge or update PO or POT files
+
+(1) Internationalization 
+
+   Set of shell scripts ───> Preparation ───> Marked shell scripts ───╮
+                                                                      │
+            ╭──────────────<── software.pot <─── xgettext <───────────╯
+            │
+            ├────> (2) Localization
+            │
+            ╰────> (4) Maintenance
+
+
+(2) Localization (example for French and Dutch languages).
+
+       ╭──────────────<── software.pot <── (1) Internationalization
+       │
+       │
+ fr_FR ├──> msginit ──> fr_FR.po ──> PO editor ──> fr_FR.po ──> msgcmp ──╮
+       │                                                                 │
+       │ ╭─ installation <── fr_FR.mo <── msgfmt <─┬─ fr_FR.po checked <─╯
+       │ │                                         │
+       │ │                                         ╰────> (4) Maintenance
+       │ │
+       │ ╰──> /usr/share/locale/fr_FR/LC_MESSAGES/software.mo ─> (3) Usage
+       │
+ nl_NL ╰──> msginit ──> nl_NL.po ──> PO editor ──> nl_NL.po ──> msgcmp ──╮
+                                                                         │
+      ╭─ installation <── nl_NL.mo <── msgfmt <──┬── nl_NL.po checked <──╯
+      │                                          │
+      │                                          ╰────> (4) Maintenance
+      │
+      ╰───> /usr/share/locale/nl_NL/LC_MESSAGES/software.mo ───> (3) Usage
+
+
+
+(3) Usage
+
+   Let's assume that one of the scripts, "myscript.sh" includes following
+   command:
+
+   gettext "Good morning"
+
+   and that "Good morning" is translated as follows in the message catalogs:
+   /usr/share/locale/fr_FR/LC_MESSAGES/PACKAGE.mo ─> "Bonjour"
+   /usr/share/locale/nl_NL/LC_MESSAGES/PACKAGE.mo ─> "Goedemorgen"
+
+           ╭──────────────<── (2) Localization
+           │
+   LANG=fr ├───> sh myscript.sh or ./myscript.sh ───> "Bonjour"
+           │
+   LANG=nl ╰───> sh myscript.sh or ./myscript.sh ───> "Goedemorgen"
+           
+
+
+(4) Maintenance
+
+   The maintenance process can be triggered by a script's creation,
+   modification or deletion. In the diagram below, the part of the process
+   beginning with the msmerge command should be repeated for each available
+   PO file. It is therefore advisable to keep an up to date list of
+   available translations, especially if there are many.
+
+     Shell scripts updated and marked ───> xgettext ───> software.pot ──╮
+                                                                        │
+                                (1) Localization ──> <locale>.po ───>┬<─╯
+                                                                     │
+ ╭─ msgcmp <── <locale>.po <─ PO editor <── <locale>.po <─ msmerge <─╯
+ │
+ ╰──> <locale>.po checked ─> msgfmt ─> <locale>.mo ─> installation  ────╮
+                                                                        │
+                 /usr/share/locale/<locale>/LC_MESSAGES/software.mo <───╯
+                     
+                            
+   The maintenance process can be triggered as well by a modification of
+   a language catalog for a specific language (to correct an error for
+   instance). This variant of the process is shorter:
+   
+ ╭─ msgcmp <── <locale>.po <── PO editor <── <locale>.po <── Update needed
+ │
+ ╰─> <locale>.po checked ──> msgfmt ──> <locale>.mo ──> installation  ──╮
+                                                                        │
+                  /usr/share/locale/<locale>/LC_MESSAGES/software.mo <──╯
+
+
+Didier Spaier
