@@ -30,6 +30,8 @@ It will help, especially the blind translators, to know the https://support.crow
 
 Before you begin, please read <<recommendations,Practical recommendations>> below.
 
+Files to be translated, tools to manage localization of shell scripts and documentation are available the GitHub repository https://github.com/DidierSpaier/slint-translations[slint-translations]
+
 == Communicate with other Slint translators ==
 
 The https://crowdin.com/project/slint/discussions[Discussions] page allows you to open an new topic and answer existing ones. All translators listed in https://crowdin.com/project/slint/members[Members] are notified, but you can specify the language for a new topic, to draw attention of translators into this language.
@@ -43,7 +45,7 @@ If you want to continue a translation, we suggest that you consult with other tr
 The sources files are in English:
 
 * HandBook.adoc is in asciidoc format. It is converted to html using https://asciidoctor.org/[Asciidoctor] to provide the https://slint.fr/doc/HandBook.html[Slint HandBook] +
-* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read https://slint.fr/internationalization_and_localization_of_shell_scripts[Internationalization and localization of shell scripts]
+* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read https://github.com/DidierSpaier/slint-translations/blob/main/doc/internationalization_and_localization_of_shell_scripts.adoc[Internationalization and localization of shell scripts]
 
 [NOTE]
 ====
@@ -54,7 +56,6 @@ To display your translation of the HandBook in a web browser you can do this, as
 
 po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p fr_FR.HandBook.po -l new.HandBook.adoc
 ====
-
 
 Here is the list of files to translate and their content at time of writing:
 
