@@ -1,5 +1,6 @@
-THis applies to all files in this directory but the file rc.S, modified
-from a script presumably written by Patrick Volkerding
+The text below this paragraph applies to all files in this directory but
+the file rc.S, modified from a script presumably written by Patrick
+Volkerding and included in a Slackware installer.
 
 This is free and unencumbered software released into the public domain.
 

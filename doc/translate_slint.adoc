@@ -10,7 +10,7 @@ To provide accurate and well formatted translations, it is preferable that trans
 * understand technical vocabulary associated to installation and administration of a Linux system
 * be able to read and understand simple shell scripts
 
-Running Slint, possibly in a virtual machine, while not mandatory helps understanding the context
+Running Slint, possibly in a virtual machine, while not mandatory helps understanding the context.
 
 == Getting started
 
@@ -54,7 +54,10 @@ To display your translation of the HandBook in a web browser you can do this, as
 * Download your translation, like for instance pt_PT.HandBook.po, and store in the same directory the file https://raw.githubusercontent.com/DidierSpaier/slint-translations/main/source/HandBook.adoc[HandBook.adoc]
 * Convert your translation from the PO to the asciidoc format typing from this directory::
 +
-po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p pt_PT.HandBook.po -l pt_PT.HandBook.adoc
+----
+  po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p pt_PT.HandBook.po -l pt_PT.HandBook.adoc
+----
++
 * Convert the asciidoc file to html typing "asciidoc pt_PT.HandBook.adoc" or "asciidoctor pt_PT.HandBook.adoc"
 * Load the converted file pt_PT.HandBook.html in a web  browser
 ====
@@ -62,10 +65,10 @@ po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -p pt_PT.HandBook.po -l pt_
 Here is the list of files to translate and their content at time of writing:
 
 [[auto]]auto::
-Messages from the *auto* script of the Slint installer, which provides the *Auto* installation mode.
+Messages from the *functions* script of the Slint installer, which superseded the *auto* script used in previous version of the installer. We kept the old name of the POT file to allow a smooth transition
 
 [[rc_S]]rc.S::
-Messages from the init script *rc.S* in the installer.
+Messages from the init script *rc.S* in the installer, modified from the one in the Slackware installer.
 
 [[slint-scripts]]slint-scripts::
 This files gather messages from various shell scripts written for and used in Slint.
@@ -99,7 +102,7 @@ Ukrainian.
 [WARNING]
 ====
 * When working on a machine translated file, the translator acts as a proofreader and as such should *review every translated string*.
-* Pay special attention to commands: if options or arguments of a command have been translated, this command  will most often fail when executed. If toy find a machine translated, please replace the translation by the source in English.
+* Pay special attention to commands: if options or arguments of a command have been translated, this command  will most often fail when executed. If you find a machine translated, please replace the translation by the source in English.
 * If a command expect answers like "y", "n", "yes" or "no", these answers should *not* be translated, else the scripts which expect this answer will fail.
 ====
 

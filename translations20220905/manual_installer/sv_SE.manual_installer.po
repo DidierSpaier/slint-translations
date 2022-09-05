@@ -1,0 +1,2098 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2022-09-05 19:12\n"
+"Last-Translator: \n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: sv-SE\n"
+"X-Crowdin-File: /manual_installer/manual_installer.po\n"
+"X-Crowdin-File-ID: 28\n"
+
+# File: INCISO, line: 18
+msgid "An ISO image of Slint's install DVD was found.\n"
+"Do you want me to mount the ISO image and use this as the package source?"
+msgstr "En ISO-avbild av Slint's s installations DVD hittades.\n"
+"Vill du att jag ska montera ISO-avbilden och använda detta som paketkälla?"
+
+# File: INCISO, line: 20
+msgid "USE ISO IMAGE"
+msgstr "ANVÄND ISO-AVBILD"
+
+# File: INSCD, line: 19
+msgid "SCANNING FOR CD or DVD DRIVE"
+msgstr "SÖKER EFTER CD eller DVD-enhet"
+
+# File: INSCD, line: 20
+msgid "Make sure the Slint disc is in your CD/DVD drive, and then press ENTER to begin the scanning process. Or, if you'd rather specify the device name manually (experts only), choose that option below."
+msgstr "Se till att Slint skivan är i din CD/DVD-enheten, och tryck ENTER för att starta genomsökningen. Eller, om du hellre vill ange enhetens namn manuellt (endast experter), välj det alternativet nedan."
+
+# File: INSCD, line: 25
+msgid "Scan for the CD or DVD drive (recommended)"
+msgstr "Sök efter CD- eller DVD-enheten (rekommenderas)"
+
+# File: INSCD, line: 26
+msgid "Manually specify CD or DVD by device name"
+msgstr "Ange CD eller DVD enhetsnamn manuellt"
+
+# File: INSCD, line: 35
+msgid "MANUAL CD/DVD DEVICE SELECTION"
+msgstr "MANUELL CD/DVD VAL AV ENHET"
+
+# File: INSCD, line: 36
+msgid "Please select your CD/DVD device from the list below.  If you don't see your device listed, choose 'custom'.  This will let you type in any device name. (and if necessary, will create the device)"
+msgstr "Välj din cd/dvd-enhet i listan nedan. Om du inte ser enheten i listan väljer du \"anpassad\". Det låter dig skriva in enhetsnamn. (och om nödvändigt, skapa enheten)"
+
+# File: INSCD, line: 41
+msgid "Type in the CD or DVD device to use"
+msgstr "Skriv in CD- eller DVD-enhet att använda"
+
+# File: INSCD, line: 42
+msgid "First CD/DVD drive"
+msgstr "Första CD/DVD enheten"
+
+# File: INSCD, line: 43
+msgid "Second CD/DVD drive"
+msgstr "Andra CD/DVD enheten"
+
+# File: INSCD, line: 44
+msgid "Third CD/DVD drive"
+msgstr "Tredje CD/DVD enheten"
+
+# File: INSCD, line: 45
+msgid "Fourth CD/DVD drive"
+msgstr "Fjärde CD/DVD enheten"
+
+# File: INSCD, line: 46
+msgid "CD/DVD slave on first IDE bus"
+msgstr "CD/DVD-slav på första IDE-buss"
+
+# File: INSCD, line: 47
+msgid "CD/DVD master on first IDE bus (unlikely)"
+msgstr "CD/DVD-master på första IDE-buss (inte troligt)"
+
+# File: INSCD, line: 48
+msgid "CD/DVD master on second IDE bus"
+msgstr "CD/DVD-master på andra IDE-buss"
+
+# File: INSCD, line: 49
+msgid "CD/DVD slave on second IDE bus"
+msgstr "CD/DVD-slav på andra IDE-buss"
+
+# File: INSCD, line: 50
+msgid "CD/DVD master on third IDE bus"
+msgstr "CD/DVD-master på tredje IDE-buss"
+
+# File: INSCD, line: 51
+msgid "CD/DVD slave on third IDE bus"
+msgstr "CD/DVD-slav på tredje IDE-buss"
+
+# File: INSCD, line: 52
+msgid "CD/DVD master on fourth IDE bus"
+msgstr "CD/DVD-master på fjärde IDE-buss"
+
+# File: INSCD, line: 53
+msgid "CD/DVD slave on fourth IDE bus"
+msgstr "CD/DVD-slav på fjärde IDE-buss"
+
+# File: INSCD, line: 54
+msgid "First parallel port ATAPI CD"
+msgstr "Första parallellport ATAPI CD"
+
+# File: INSCD, line: 55
+msgid "Second parallel port ATAPI CD"
+msgstr "Andra parallellport ATAPI CD"
+
+# File: INSCD, line: 56
+msgid "Third parallel port ATAPI CD"
+msgstr "Tredje parallellport ATAPI CD"
+
+# File: INSCD, line: 57
+msgid "Fourth parallel port ATAPI CD"
+msgstr "Fjärde parallellport ATAPI CD"
+
+# File: INSCD, line: 58
+msgid "Non-IDE Aztech CD/DVD"
+msgstr "Icke-IDE Aztech CD/DVD"
+
+# File: INSCD, line: 59
+msgid "Sony CDU-535 CD/DVD"
+msgstr "Sony CDU-535 CD/DVD"
+
+# File: INSCD, line: 60
+msgid "Non-IDE GoldStar CD/DVD"
+msgstr "Icke-IDE Goldstar CD/DVD"
+
+# File: INSCD, line: 61
+msgid "Sony CDU-31a CD/DVD"
+msgstr "Sony CDU-31a CD/DVD"
+
+# File: INSCD, line: 62
+msgid "Optics Storage CD/DVD"
+msgstr "Optics Storage CD/DVD"
+
+# File: INSCD, line: 63
+msgid "Sanyo non-IDE CD/DVD"
+msgstr "Sanyo icke-IDE CD/DVD"
+
+# File: INSCD, line: 64
+msgid "Non-IDE Mitsumi drive 1"
+msgstr "Icke-IDE Mitsumi enhet 1"
+
+# File: INSCD, line: 65
+msgid "Non-IDE Mitsumi drive 2"
+msgstr "Icke-IDE Mitsumi enhet 2"
+
+# File: INSCD, line: 66
+msgid "Old non-IDE SoundBlaster CD/DVD"
+msgstr "Gammal icke-IDE Soundblaster CD/DVD"
+
+# File: INSCD, line: 67
+msgid "Philips LMS CM-205 CD/DVD"
+msgstr "Philips LMS CM-205 CD/DVD"
+
+# File: INSCD, line: 68
+msgid "Philips LMS CM-206 CD/DVD"
+msgstr "Philips LMS CM-206 CD/DVD"
+
+# File: INSCD, line: 69
+msgid "Old non-IDE Mitsumi CD/DVD"
+msgstr "Gammal icke-IDE Mitsumi CD/DVD"
+
+# File: INSCD, line: 78
+msgid "ENTER CD/DVD DEVICE MANUALLY"
+msgstr "ANGE CD/DVD ENHETEN MANUELLT"
+
+# File: INSCD, line: 79
+msgid "Please enter the name of the CD/DVD device (such as /dev/hdc) that you wish to use to mount the Slint CD/DVD:"
+msgstr "Ange namnet på CD-/DVD-enhet (t.ex. /dev/hdc) som du vill använda för att montera Slint's CD/DVD:"
+
+# File: INSCD, line: 90
+msgid "MKNOD CD/DVD DEVICE"
+msgstr "MKNOD CD/DVD ENHET"
+
+# File: INSCD, line: 91
+#, sh-format
+msgid "There doesn't seem to be a device by the name of $DRIVE_FOUND in the /dev directory, so we will have to create it using the major and minor numbers for the device.  If you're using a bootdisk with a custom CD/DVD driver on it, you should be able to find these numbers in the documentation.  Also, see the 'devices.txt' file that comes with the Linux kernel source.  If you don't know the numbers, you'll have to hit Esc to abort. Enter the major and minor numbers for the new device, separated by one space:"
+msgstr "Det verkar inte finnas en enhet vid namn $DRIVE_FOUND i katalogen /dev, så vi måste skapa den med de större och mindre siffrorna för enheten. Om du använder en bootdisk med en egen CD/DVD-drivrutin på , bör du kunna hitta dessa nummer i dokumentationen. Se även \"devices.txt\" fil som kommer med källkoden till Linux-kärnan. Om du inte vet siffrorna, måste du trycka Esc för att avbryta. Ange de större och mindre siffrorna för den nya enheten, separerade med ett mellanslag:"
+
+# File: INSCD, line: 106
+msgid "MAKING DEVICE IN /dev"
+msgstr "SKAPAR ENHET i /dev"
+
+# File: INSCD, line: 111
+msgid "MKNOD FAILED"
+msgstr "MKNOD MISSLYCKADES"
+
+# File: INSCD, line: 112
+msgid "Sorry, but the mknod command failed to make the device.  You'll need to go back and try selecting your source media again.  Press ENTER to abort the source media selection process."
+msgstr "Tyvärr, men kommandot mknod misslyckades att göra enheten. Du måste gå tillbaka och försök att välja din käll media igen. Tryck på ENTER för att avbryta urvalsprocessen källmedia."
+
+# File: INSCD, line: 126
+# File: INSCD, line: 143
+# File: INSCD, line: 163
+# File: INSCD, line: 183
+msgid "SCANNING"
+msgstr "SÖKER"
+
+# File: INSCD, line: 126
+msgid "Scanning for a CD/DVD drive containing a Slint disc..."
+msgstr "Söker efter en CD/DVD-enhet som innehåller en Slint-skiva ..."
+
+# File: INSCD, line: 143
+msgid "Scanning for an IDE CD/DVD drive containing a Slint disc..."
+msgstr "Söker efter en IDE CD/DVD-enhet som innehåller en Slint-skiva ..."
+
+# File: INSCD, line: 163
+msgid "Scanning for a parallel port ATAPI CD/DVD drive containing a Slint disc..."
+msgstr "Söker efter en parallellport ATAPI CD/DVD-enhet som innehåller en Slint-skiva..."
+
+# File: INSCD, line: 183
+msgid "No IDE/SCSI drive, so we will try scanning for CD drives on old proprietary interfaces, such as SoundBlaster pre-IDE CD drives, Sony CDU-31a, Sony 535, old Mitsumi pre-IDE, old Optics, etc.  For this scan to work at all, you'll need to be using a bootdisk that supports your CD drive.\n\n"
+"Please press ENTER to begin this last-chance scan for old, obsolete hardware."
+msgstr "Ingen IDE/SCSI-enhet, så vi kommer att försöka att söka efter CD-enheter på gamla proprietära gränssnitt, såsom Soundblaster pre-IDE CD-enheter, Sony CDU-31a, Sony 535, gamla Mitsumi pre-IDE, gamla Optics etc. För att denna avsökning skall fungera alls, måste du använda en startdiskett som stöder CD-enheten.\n\n"
+"Vänligen tryck på ENTER för att starta denna sista chansen att söka efter gammal, föråldrad hårdvara."
+
+# File: INSCD, line: 206
+msgid "CD/DVD DRIVE NOT FOUND"
+msgstr "HITTADE INGEN CD/DVD-ENHET"
+
+# File: INSCD, line: 207
+msgid "A CD/DVD drive could not be found on any of the devices that were scanned.  Possible reasons include using a bootdisk or kernel that doesn't support your drive, failing to pass parameters needed by some drives to the kernel, not having the Slint disc in your CD/DVD drive, or using a drive connected to a Plug and Play soundcard (in this case, connecting the drive directly to the IDE interface often helps). Please make sure you are using the correct bootdisk for your hardware, consult the BOOTING file for possible information on forcing the detection of your drive, and then reattempt installation.  If all else fails, see FAQ.TXT for information about copying parts of this CD to your DOS partition and installing it from there.\n\n"
+"You will now be returned to the main menu.  If you want to try looking for the CD again, you may skip directly to the SOURCE menu selection."
+msgstr "En CD/DVD-enhet kunde inte hittas på någon av de enheter som skannats. Möjliga orsaker inkluderar användning av en bootdisk eller en kärna som inte stöder enheten, misslyckas med att skicka parametrar som behövs av vissa enheter till kärnan, har inte Slint skivan i din CD/DVD-enheten, eller med hjälp av en enhet som är ansluten till ett Plug and Play ljudkort (i detta fall, hjälper det ofta att ansluta enheten direkt till IDE-gränssnittet). Se till att du använder rätt bootdisk för din hårdvara, se BOOTING för eventuell information om att tvinga upptäckt av din enhet, och sedan försöka installera igen. Om allt annat misslyckas, se FAQ.TXT för information om kopiering delar av denna CD till din DOS-partition och installera det därifrån.\n\n"
+"Du kommer nu att återvända till huvudmenyn. Om du vill försöka leta efter CD-skivan igen, kan du hoppa direkt till urvals KÄLL-menyn."
+
+# File: INSCD, line: 229
+#. mounted successfully
+msgid "CD/DVD DRIVE FOUND"
+msgstr "CD/DVD-ENHET HITTADES"
+
+# File: INSCD, line: 230
+#, sh-format
+msgid "A Slint disc was found in device $DRIVE_FOUND."
+msgstr "En Slint skiva hittades i enheten $DRIVE_FOUND."
+
+# File: INSCD, line: 233
+# File: INShd, line: 92
+# File: pkgtool, line: 398
+#. failed to mount
+msgid "MOUNT ERROR"
+msgstr "MONTERINGSFEL"
+
+# File: INSCD, line: 233
+#, sh-format
+msgid "There was an error attempting to mount the CD/DVD on $DRIVE_FOUND.  Maybe the device name is incorrect, the disc is not in the drive, or the kernel you are using does not support the device. (possibly an incorrect bootdisk) What would you like to do now?"
+msgstr "Det uppstod ett fel vid försök att montera CD/DVD på $DRIVE_FOUND. Kanske enhetsnamnet är felaktigt, ingen skivan i enheten, eller kärnan som du använder inte stöder enheten. (möjligen en felaktig startdiskett) Vad vill du göra nu?"
+
+# File: INSCD, line: 240
+msgid "Abort CD installation"
+msgstr "Avbryt CD-installationen"
+
+# File: INSCD, line: 241
+msgid "Attempt to mount the CD/DVD device again"
+msgstr "Försök att montera CD/DVD enheten igen"
+
+# File: INSCD, line: 242
+# File: INShd, line: 94
+msgid "Ignore the error and continue"
+msgstr "Ignorera felet och fortsätt"
+
+# File: INSCD, line: 254
+#, sh-format
+msgid "ATTEMPTING TO MOUNT CD/DVD on $DRIVE_FOUND"
+msgstr "Försöker montera CD/DVD på $DRIVE_FOUND"
+
+# File: INSCD, line: 255
+#, sh-format
+msgid "Attempting to mount your CD/DVD again with the following command:\n"
+"$ArG"
+msgstr "Försöker att montera din CD/DVD igen med följande kommando: \n"
+"$ArG"
+
+# File: INSNFS, line: 28
+msgid "Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install.  First, we need\n"
+"the IP address of the machine where the Slint sources are\n"
+"stored."
+msgstr "Bra! Vi är klar på den lokala sidan, men nu behöver vi veta \n"
+"var du hittar de programpaket som skall installeras. Först behöver \n"
+"vi IP-adressen till den dator där Slint källorna är lagrade."
+
+# File: INSNFS, line: 35
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish."
+msgstr "Eftersom du redan kör i nätverket, bör du kunna\n"
+"använda värdnamnet i stället för en IP-adress om du vill."
+
+# File: INSNFS, line: 40
+msgid "What is the IP address of your NFS server?"
+msgstr "Vad är IP-adressen för din NFS-server?"
+
+# File: INSNFS, line: 42
+msgid "ENTER IP ADDRESS OF NFS SERVER"
+msgstr "ANGE IP ADRESS TILL NFS-SERVER"
+
+# File: INSNFS, line: 50
+# File: INSSMB, line: 50
+msgid "\n"
+"There must be a directory on the server with the Slint packages and files arranged in a tree like the FTP site.\n\n"
+"The installation script needs to know the name of the directory on your server that contains the packages. For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What is the Slint source directory?\n"
+msgstr "\n"
+"Det måste finnas en katalog på servern med Slintpaket och filer ordnade i ett träd som FTP-platsen.\n\n"
+"Installations skriptet behöver veta namnet på den katalog på din server som innehåller paketen. Till exempel, om paketkatalogen finns i /stuff/slint, då skall du ange: /stuff/slint\n\n"
+"Var finns Slint källkatalogen?\n"
+
+# File: INSNFS, line: 61
+# File: INSSMB, line: 61
+# File: INShd, line: 58
+# File: pkgtool, line: 355
+msgid "SELECT SOURCE DIRECTORY"
+msgstr "VÄLJ KÄLLKATALOG"
+
+# File: INSNFS, line: 69
+msgid "\n"
+"In the next screen you should watch for NFS mount errors. If you see errors and you don't see your NFS server listed, then try setting up NFS again.\n"
+msgstr "\n"
+"I nästa skärm bör du titta efter NFS monterings fel. Om du ser fel och inte ser din NFS-server listad, försök ställa in NFS igen.\n"
+
+# File: INSNFS, line: 73
+msgid "NFS MOUNT INFORMATION"
+msgstr "NFS MONTERINGS INFORMATION"
+
+# File: INSNFS, line: 82
+#, sh-format
+msgid "Mounting $REMOTE_PATH:"
+msgstr "Monterar $REMOTE_PATH:"
+
+# File: INSNFS, line: 87
+msgid "Didn't work."
+msgstr "Fungerade inte."
+
+# File: INSNFS, line: 89
+msgid "Maybe you should check that the directory name is correct?"
+msgstr "Kanske bör du kontrollera att katalognamnet är korrekt?"
+
+# File: INSNFS, line: 96
+msgid "Current NFS mounts:"
+msgstr "Nuvarande NFS-monteringar:"
+
+# File: INSNFS, line: 100
+msgid "Do you need to try setting up NFS again?"
+msgstr "Behöver du försöka ställa in NFS igen?"
+
+# File: INSNFS, line: 103
+# File: INSNFS, line: 107
+msgid "NFS MOUNT RESULT"
+msgstr "NFS MONTERINGS RESULTAT"
+
+# File: INSSMB, line: 27
+msgid "\n"
+"Good! We're all set on the local end, but now we need to know\n"
+"where to find the software packages to install. First, we need\n"
+"the share address of the Samba server where the Slint sources\n"
+"are stored.\n"
+"Example share address: //192.168.0.1/public\n"
+msgstr "\n"
+"Bra! Vi är klara på den lokala sidan, men nu behöver vi veta\n"
+"var du hittar de programpaket som skall installeras. Först behöver vi\n"
+"utdelnings-adressen till Samba-servern där Slint källorna\n"
+"lagras.\n"
+"Exempel utdelad adress: //192.168.0.1/public\n"
+
+# File: INSSMB, line: 36
+msgid "Since you're already running on the network, you should be able\n"
+"to use the hostname instead of an IP address if you wish.\n"
+msgstr "Eftersom du redan kör i nätverket, bör du kunna\n"
+"använda värdnamnet i stället för en IP-adress om du vill.\n"
+
+# File: INSSMB, line: 40
+msgid "\n"
+"What is the share address of your Samba server? "
+msgstr "\n"
+"Vad är utdelningsadressen till din Samba-server?"
+
+# File: INSSMB, line: 42
+msgid "ENTER SHARE ADDRESS OF SAMBA SERVER"
+msgstr "ANGE UTDELNINGSADRESSEN TILL SAMBA SERVERN"
+
+# File: INSSMB, line: 70
+msgid "You should see no mount errors:"
+msgstr "Du bör inte se några monteringsfel:"
+
+# File: INSSMB, line: 72
+#, sh-format
+msgid "Mounting $REMOTE_SHARE ..."
+msgstr "Monterar $REMOTE_SHARE ..."
+
+# File: INSSMB, line: 78
+msgid "Mount failed."
+msgstr "Monteringen misslyckadess."
+
+# File: INSSMB, line: 83
+msgid "Mounted Samba share(s):"
+msgstr "Monterade Sambautdelning(ar)."
+
+# File: INSSMB, line: 89
+msgid "A Slint package tree was found! Ready to continue."
+msgstr "Ett Slint paket träd hittades! Redo att fortsätta."
+
+# File: INSSMB, line: 93
+msgid "No Slint package tree found at the indicated path!"
+msgstr "Inget Slint paketträd finns på den angivna sökvägen!"
+
+# File: INSSMB, line: 99
+msgid "Do you want to try setting up Samba again?"
+msgstr "Vill du prova att sätta upp Samba igen?"
+
+# File: INSSMB, line: 103
+# File: INSSMB, line: 107
+msgid "MOUNT RESULT"
+msgstr "MONTERINGSRESULTAT"
+
+# File: INSUSB, line: 18
+msgid "SCANNING FOR USB STICK"
+msgstr "SÖKER EFTER USB-MINNE"
+
+# File: INSUSB, line: 19
+msgid "Make sure the USB stick containing the Slint package directory is inserted into a USB port, and then press ENTER to begin the scanning process."
+msgstr "Se till att USB-minnet som innehåller Slint paketkatalog är insatt i en USB-port, och tryck sedan på ENTER för att starta skanningen."
+
+# File: INSUSB, line: 41
+msgid "NO REMOVABLE USB DEVICES FOUND"
+msgstr "INGA FLYTTBARA USB-ENHETER HITTADES"
+
+# File: INSUSB, line: 42
+msgid "Sorry, but no removable USB devices could be found.  Exiting back to the top menu."
+msgstr "Ledsen, men inga flyttbar USB-enheter kunde hittas. Går tillbaka till huvudmenyn."
+
+# File: INSUSB, line: 93
+msgid "NO SLINT DIRECTORY FOUND"
+msgstr "INGEN SLINT KATALOG HITTADES"
+
+# File: INSUSB, line: 94
+msgid "Sorry, but a Slint directory could not be found on any USB devices. Exiting back to the top menu."
+msgstr "Ledsen, men en Slint katalog kunde inte hittas på någon USB-enhet. Går tillbaka till huvudmenyn."
+
+# File: INSUSB, line: 103
+#. Success!  Report back to the console:
+msgid "USB PACKAGE SOURCE FOUND"
+msgstr "USB PAKET KÄLLA HITTADES"
+
+# File: INSUSB, line: 104
+#, sh-format
+msgid "A Slint package directory was found on device $DRIVE_FOUND."
+msgstr "En Slint paketet-katalog hittades på enheten $DRIVE_FOUND."
+
+# File: INSdir, line: 23
+# File: INShd, line: 22
+# File: setup, line: 100
+# File: setup.orig, line: 92
+msgid "Can't umount /var/log/mount.  Reboot machine and run setup again."
+msgstr "Kan inte avmontera /var/log/mount. Starta om maskinen och kör installationsprogrammet igen."
+
+# File: INSdir, line: 31
+# File: setup, line: 108
+# File: setup.orig, line: 100
+msgid "Mount table corrupt.  Reboot machine and run setup again."
+msgstr "Monteringstabellen är korrupt. Starta om maskinen och kör installationsprogrammet igen."
+
+# File: INSdir, line: 35
+msgid "\n"
+"OK, we will install from a directory within the current filesystem. If you have mounted this directory yourself, you should not use /mnt or /var/log/mount as mount points, since Setup might need to use these directories.  You may install from any part of the current directory structure, no matter what the media is (including NFS). You will need to type in the name of the directory containing the  subdirectories for each source disk.\n\n"
+"Which directory would you like to install from?\n"
+msgstr "\n"
+"OK, vi kommer att installera från en katalog i det aktuella filsystemet. Om du har monterat den här katalogen själv, ska du inte använda /mnt eller /var/log/mount som monteringspunkt, eftersom Setup kan behöva använda dessa kataloger. Du får installera från någon del av den aktuella katalogstrukturen, oavsett vad mediet är (inklusive NFS). Du måste skriva in namnet på den katalog som innehåller underkataloger för varje käll disk.\n\n"
+"Vilken katalog vill du installera från?\n"
+
+# File: INSdir, line: 47
+msgid "INSTALL FROM THE CURRENT FILESYSTEM"
+msgstr "INSTALLERA FRÅN NUVARANDE FILSYSTEM"
+
+# File: INSdir, line: 68
+#, sh-format
+msgid "\n"
+"Sorry - the directory you specified is not valid. Please check the directory and try again.\n\n"
+"(Directory given: $SOURCEDIR)\n"
+msgstr "\n"
+"Tyvärr - den katalog du angav är inte giltigt. Kontrollera katalogen och försök igen.\n\n"
+"(Angiven katalog: $SOURCEDIR)\n"
+
+# File: INSdir, line: 74
+msgid "INVALID DIRECTORY ENTERED"
+msgstr "OGILTIG KATALOG ANGIVEN"
+
+# File: INShd, line: 30
+msgid "Mount table corrupt.  Reboot machine and run setup again"
+msgstr "Monteringstabellen är korrupt. Starta om maskinen och kör installationsprogrammet igen"
+
+# File: INShd, line: 35
+#, sh-format
+msgid "In order to install directly from the hard disk you must have a partition (such as /dev/sda1, /dev/sdb5, etc) with the Slint distribution's slint/ directory like you'd find it on the FTP site.\n\n"
+"Please enter the partition (such as /dev/sda1) where the Slint sources can be found, or [enter] to see a partition list\n"
+msgstr "För att installera direkt från hårddisken måste du ha en partition (t.ex. /dev/sda1, /dev/sdb5, etc) med Slint distributionens slint/ katalogen som du skulle hitta den på FTP-platsen\n\n"
+"Ange partitionen (t.ex. /dev/sda1) där Slint källorna kan hittas, eller [Enter] för att se en partitionslista\n"
+
+# File: INShd, line: 43
+msgid "INSTALLING FROM HARD DISK"
+msgstr "INSTALLERAR FRÅN HÅRDDISK"
+
+# File: INShd, line: 53
+msgid "PARTITION LIST"
+msgstr "PARTITIONSLISTA"
+
+# File: INShd, line: 59
+msgid "Now we need to know the full path on this partition to the slint/ directory where the packages to be installed are kept.\n\n"
+"For example, if the packages' directory is /stuff/slint, then you would respond: /stuff/slint\n\n"
+"What directory are the Slint sources in?\n"
+msgstr "Nu behöver vi veta hela sökvägen på denna partition till slint/ katalogen där paketen som skall installeras finns.\n\n"
+"Till exempel, om paket katalogen är /stuff/slint, ange /stuff/slint\n\n"
+"Vilken katalog finns Slint källorna i?\n"
+
+# File: INShd, line: 91
+#. there was a mount error
+msgid "There was a problem mounting your partition. Would you like to:"
+msgstr "Det uppstod ett problem att montera din partition. Skulle du vilja:"
+
+# File: INShd, line: 93
+msgid "Start over"
+msgstr "Börja om"
+
+# File: INShd, line: 121
+#, sh-format
+msgid "\n"
+"Sorry, but the directory $SLACK_SOURCE_LOCATION does not exist on partition $SLACK_DEVICE.\n\n"
+"Would you like to try again?\n"
+msgstr "\n"
+"Tyvärr, men katalogen $SLACK_SOURCE_LOCATION existerar inte på partitionen $SLACK_DEVICE.\n\n"
+"Vill du försöka igen?\n"
+
+# File: INShd, line: 127
+msgid "SOURCE DIRECTORY NOT FOUND"
+msgstr "KÄLLKATALOG HITTADES INTE"
+
+# File: SeTDOS, line: 34
+#, sh-format
+msgid "Setting permissions on NTFS partition $DOS_PART"
+msgstr "Ange behörigheter på NTFS-partitionen $DOS_PART"
+
+# File: SeTDOS, line: 35
+#, sh-format
+msgid "SET SECURITY FOR NTFS PARTITION $DOS_PART"
+msgstr "ANGE SÄKERHET FÖR NTFS-PARTITIONEN $DOS_PART"
+
+# File: SeTDOS, line: 37
+# File: SeTDOS, line: 60
+#, sh-format
+msgid "Because users could go snooping through (or destroy, depending on the settings) your Windows partition, you should choose how much access would you like your non-root users to have to partition $DOS_PART.  The access level can range from no access at all, to read-only for everyone, to read-write access for every user on the machine.  A reasonable default (read-write for root only) is chosen, but you may set this any way that you like."
+msgstr "Eftersom användarna kan snoka igenom (eller förstöra, beroende på inställningarna) din Windows-partition, bör du välja hur mycket åtkomst du vill att dina icke-root-användare skall ha till partitionen $DOS_PART. Åtkomstnivån kan variera från ingen tillgång alls till skrivskyddad för alla, till läs- och skrivbehörighet för alla användare på maskinen. En rimlig standard är att (läs-skriv endast för root) väljs, men du kan ställa in detta på ett sätt som du vill."
+
+# File: SeTDOS, line: 44
+msgid "Root has read/write access, users have no access (ntfs-3g)"
+msgstr "Root har läs/skrivåtkomst, användarna har ingen åtkomst (ntfs-3g)"
+
+# File: SeTDOS, line: 45
+msgid "Everyone has read only access (built-in kernel ntfs driver)"
+msgstr "Alla har skrivskyddad åtkomst (inbyggd kärn ntfs drivrutin)"
+
+# File: SeTDOS, line: 46
+msgid "Everyone has read access, but only root can write (ntfs-3g)"
+msgstr "Alla har läsbehörighet, men bara root kan skriva (ntfs-3g)"
+
+# File: SeTDOS, line: 47
+msgid "All users can read/write to any file (ntfs-3g)"
+msgstr "Alla användare kan läsa/skriva till filer (ntfs-3g)"
+
+# File: SeTDOS, line: 57
+#, sh-format
+msgid "Setting permissions on FAT partition $DOS_PART"
+msgstr "Ställer in behörigheter på FAT-partitionen $DOS_PART"
+
+# File: SeTDOS, line: 58
+#, sh-format
+msgid "SET SECURITY FOR FAT PARTITION $DOS_PART"
+msgstr "ANGE SÄKERHET FÖR FAT-PARTITIONEN $DOS_PART"
+
+# File: SeTDOS, line: 67
+msgid "Root has read/write access, users have no access"
+msgstr "Root har läs/skrivåtkomst, användarna har ingen åtkomst"
+
+# File: SeTDOS, line: 68
+msgid "Everyone has read only access"
+msgstr "Alla har endast läsrättighet"
+
+# File: SeTDOS, line: 69
+msgid "Everyone has read access, but only root can write"
+msgstr "Alla har läsbehörighet, men bara root kan skriva"
+
+# File: SeTDOS, line: 70
+msgid "All users can read/write to any file"
+msgstr "Alla användare kan läsa/skriva till filer"
+
+# File: SeTDOS, line: 108
+msgid "Setting up non-Linux partitions."
+msgstr "Konfigurera icke-Linux-partitioner."
+
+# File: SeTDOS, line: 109
+msgid "FAT or NTFS PARTITIONS DETECTED"
+msgstr "FAT eller NTFS PARTITIONER UPPTÄCKTA"
+
+# File: SeTDOS, line: 110
+msgid "Partitions of type FAT or NTFS (commonly used by DOS and Windows) have been found on your system.  Would you like to add these partitions to your /etc/fstab so that these partitions are visible from Linux?"
+msgstr "Partitioner av typen FAT eller NTFS (som vanligen används av DOS och Windows) har hittats på ditt system. Vill du lägga till dessa partitioner i din /etc/fstab så att dessa partitioner är synliga från Linux?"
+
+# File: SeTDOS, line: 122
+msgid "Selecting non-Linux partitions."
+msgstr "Väljer icke-Linux partitioner."
+
+# File: SeTDOS, line: 124
+msgid "SELECT PARTITION TO ADD TO /etc/fstab"
+msgstr "VÄLJ PARTITON ATT LÄGGA TILL I /etc/fstab"
+
+# File: SeTDOS, line: 126
+# File: SeTpartitions, line: 348
+# File: SeTpartitions, line: 439
+msgid "Select"
+msgstr "Välj"
+
+# File: SeTDOS, line: 128
+# File: SeTpartitions, line: 350
+# File: SeTpartitions, line: 441
+# File: setup.80.make-bootdisk, line: 233
+msgid "Continue"
+msgstr "Fortsätt"
+
+# File: SeTDOS, line: 130
+msgid "In order to make these partitions visible from Linux, we  need to add them to your /etc/fstab.  Please pick a partition to  add to /etc/fstab, or select '---' to continue with the installation  process."
+msgstr "För att göra dessa partitioner synliga från Linux, måste vi lägga till dem i /etc/fstab. Vänligen välj en partition för att lägga till i /etc/fstab, eller välj \"---\" för att fortsätta med installationen."
+
+# File: SeTDOS, line: 144
+# File: SeTDOS, line: 170
+# File: SeTpartitions, line: 222
+# File: SeTpartitions, line: 468
+msgid "IN USE"
+msgstr "ANVÄNDS"
+
+# File: SeTDOS, line: 144
+# File: SeTpartitions, line: 215
+msgid "on"
+msgstr "på"
+
+# File: SeTDOS, line: 152
+# File: SeTDOS, line: 153
+# File: SeTDOS, line: 154
+# File: SeTDOS, line: 155
+# File: SeTDOS, line: 156
+msgid "done, continue with setup"
+msgstr "klar, fortsätt med installationen"
+
+# File: SeTDOS, line: 193
+#, sh-format
+msgid "Selecting a location to mount $DOS_PART."
+msgstr "Välj en plats för att montera $DOS_PART."
+
+# File: SeTDOS, line: 194
+#, sh-format
+msgid "PICK MOUNT POINT FOR $DOS_PART"
+msgstr "VÄLJ MONTERINGSPUNKT FÖR $DOS_PART"
+
+# File: SeTDOS, line: 195
+#, sh-format
+msgid "Now this partition must be mounted somewhere in your  directory tree.  Please enter the directory under which  you would like to put it.  For instance, you might want to  enter /fat-c or /fat-d or something similar.   NOTE: This partition will not actually be mounted until you reboot.   Where would you like to mount $DOS_PART?"
+msgstr "Denna partition ska monteras någonstans i ditt katalogträd. Ange den katalog som du vill placera den i. Till exempel kanske du vill skriva in /fat-c eller /fat-d eller något liknande. OBS! Den här partitionen kommer faktiskt inte monteras förrän du startar om. Var vill du montera $DOS_PART?"
+
+# File: SeTDOS, line: 224
+# File: SeTEFI, line: 82
+# File: SeTEFI.orig, line: 73
+# File: SeTpartitions, line: 562
+#. next partition loop
+#. more than one Linux partition
+#. Done, report to the user:
+#, sh-format
+msgid "\n"
+"Adding this information to your /etc/fstab:\n\n"
+msgstr "\n"
+"Lägger till denna information i din /etc/fstab:\n\n"
+
+# File: SeTDOS, line: 229
+msgid "Finished setting up non-Linux partitions."
+msgstr "Konfiguration av icke-Linux-partitioner slutfört."
+
+# File: SeTDOS, line: 230
+msgid "DONE ADDING FAT or NTFS PARTITIONS"
+msgstr "LAGT TILL FAT eller NTFS-PARTITIONER"
+
+# File: SeTEFI, line: 53
+# File: SeTEFI.orig, line: 44
+#. It didn't mount, so it must not be formatted:
+#, sh-format
+msgid "FORMAT EFI PARTITION ${PREFERRED_EFI_PARTITION}?"
+msgstr "FORMATERA EFI-partitionen ${PREFERRED_EFI_PARTITION}?"
+
+# File: SeTEFI, line: 54
+# File: SeTEFI.orig, line: 45
+#, sh-format
+msgid "An EFI System Partition was found on ${PREFERRED_EFI_PARTITION}, but it has not yet been formatted.  Would you like to format this partition?"
+msgstr "En EFI System Partition hittades på ${PREFERRED_EFI_PARTITION}, men det har ännu inte formaterats. Vill du formatera denna partition?"
+
+# File: SeTEFI, line: 62
+# File: SeTEFI.orig, line: 53
+#. Format the partition with FAT32, 2 sectors per cluster (needed for the
+#. minimum supported EFI partition size of 100MB):
+#, sh-format
+msgid "FORMATTING EFI PARTITION ${PREFERRED_EFI_PARTITION}"
+msgstr "FORMATERAR EFI-partitionen ${PREFERRED_EFI_PARTITION}"
+
+# File: SeTEFI, line: 63
+# File: SeTEFI.orig, line: 54
+#, sh-format
+msgid "Formatting EFI System Partition ${PREFERRED_EFI_PARTITION} as FAT32."
+msgstr "Formaterar EFI System Partition ${PREFERRED_EFI_PARTITION} som FAT32."
+
+# File: SeTEFI, line: 87
+# File: SeTEFI.orig, line: 78
+msgid "Finished setting up EFI System Partition."
+msgstr "Avslutat inställningen av EFI System Partition."
+
+# File: SeTEFI, line: 88
+# File: SeTEFI.orig, line: 79
+msgid "EFI SYSTEM PARTITION RECOGNIZED"
+msgstr "EFI SYSTEMPARTITIONEN IDENTIFIERAT"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "CONFIGURE THE SYSTEM"
+msgstr "KONFIGURERA SYSTEMET"
+
+# File: SeTconfig, line: 71
+# File: SeTconfig.prev, line: 71
+msgid "Now we can configure your Linux system.  If this is a new installation, you MUST configure it now or it will not boot correctly.  However, if you are just adding software to an existing system, you can back out to the main menu and skip this step.  However (important exception) if you've installed a new kernel image, it's important to reconfigure your system so that you can install LILO (the Linux loader) or create a bootdisk using the new kernel.  You want to CONFIGURE your system, right?"
+msgstr "Nu kan vi konfigurera Linux-systemet. Om detta är en ny installation, måste du konfigurera den nu annars kommer den inte att starta upp korrekt. Men om du bara lägger till programvara till ett existerande system, kan du backa ut till huvudmenyn och hoppa över detta steg. Men (viktigt undantag) om du har installerat en ny kärna, är det viktigt att konfigurera om ditt system så att du kan installera LILO (Linux loader) eller skapa en bootdisk med den nya kärnan. Du vill KONFIGURERA ditt system, eller hur?"
+
+# File: SeTconfig, line: 83
+# File: SeTconfig.prev, line: 83
+msgid "DONE INSTALLING PACKAGES"
+msgstr "KLAR MED PAKET INSTALLATIONEN"
+
+# File: SeTconfig, line: 84
+# File: SeTconfig.prev, line: 84
+msgid "Preparing to configure your new Linux system..."
+msgstr "Förbereder för att konfigurera din nya Linux-system..."
+
+# File: SeTfull, line: 20
+msgid "ERROR: TARGET PARTITION FULL"
+msgstr "FEL: MÅLPARTITIONEN FULL"
+
+# File: SeTfull, line: 20
+msgid "Setup has detected that one or more of your target partitions has become full.  I'm sorry, but you will have to try installing again onto a partition or partitions with more free space.  You could also try selecting fewer packages to install.  Since there is no longer any space for setup to make its temporary files, this is an unrecoverable error.  Press control-alt-delete to reboot and try again.  Before doing that, you might want to switch to another console (Alt-F2) and use df (disk free utility) to see if you can get an idea of how to avoid this the next time around."
+msgstr "Installationsprogrammet har upptäckt att en eller flera av dina mål partitioner har blivit full. Jag är ledsen, men du måste göra om installationen på en partition eller partitioner med mer ledigt utrymme. Du kan också prova att välja färre paket att installera. Eftersom det inte längre finns något utrymme för inställning för att göra de temporära filerna, detta är ett allvarligt fel. Tryck Ctrl-Alt-Delete för att starta om och försök igen. Innan du gör det, kanske du vill byta till en annan konsol (Alt-F2) och användning df (disk free utility) för att se om du kan få en uppfattning om hur man kan undvika detta nästa gång."
+
+# File: SeTkernel, line: 33
+msgid "REINSERT KERNEL DISC"
+msgstr "Sätt in KÄRN SKIVAN"
+
+# File: SeTkernel, line: 34
+msgid "Please reinsert the Slint disc containing the collection of Linux kernels.  Usually this is disc number one (the disc that you boot from).  Once you've inserted the disc, hit ENTER to continue."
+msgstr "Vänligen sätt in Slint skivan som innehåller samlingen av Linux-kärnor. Vanligtvis är skivans nummer ett (den skiva som du startar upp från). När du har satt in skivan, tryck ENTER för att fortsätta."
+
+# File: SeTkernel, line: 92
+msgid "ERROR ATTEMPTING TO INSTALL KERNEL"
+msgstr "FEL VID FÖRSÖK ATT INSTALLERA KÄRNAN"
+
+# File: SeTkernel, line: 92
+#, sh-format
+msgid "Sorry, but the directory $PLINK/kernels was not found.  You may need to install the requested kernel $SLACK_KERNEL manually and then install LILO before your system will be able to boot correctly."
+msgstr "Ledsen, men katalogen $PLINK/kernels hittade inte. Du kan behöva installera den begärda kärnan $SLACK_KERNEL manuellt och sedan installera LILO innan ditt system kommer att kunna starta upp korrekt."
+
+# File: SeTkeymap, line: 24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "VAL AV TANGENTBORDSLAYOUT"
+
+# File: SeTkeymap, line: 24
+#, sh-format
+msgid "You may select one of the following keyboard maps.  If you do not select a keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr "Du kan välja ett av följande tangentbordslayouter. Om du inte väljer en tangentbordslayout är $DefaultKeyMap det aktuella värdet. Använd UPP/NER piltangenterna och PageUp/Pagedown för att bläddra igenom hela listan med alternativ."
+
+# File: SeTkeymap, line: 214
+msgid "\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr "\n"
+"    OK, den nya layouten är nu installerad. Nu kan du testa den genom att skriva\n"
+"    vad du vill. För att avsluta testen av tangentbordet, skriv 1 på en\n"
+"    rad för sig för att acceptera layouten och gå vidare, eller 2 på en rad för\n"
+"    sig för att förkasta den aktuella tangentbordslayouten och välja en ny."
+
+# File: SeTmedia, line: 13
+# File: SeTpxemedia, line: 37
+msgid "Select Slint installation source."
+msgstr "Välj Slint installationskälla."
+
+# File: SeTmedia, line: 14
+# File: SeTpxemedia, line: 38
+msgid "SOURCE MEDIA SELECTION"
+msgstr "VAL AV MEDIEKÄLLA"
+
+# File: SeTmedia, line: 15
+msgid "Please select the media from which to install Slint Linux:"
+msgstr "Välj media som du vill installera Slint Linux från:"
+
+# File: SeTmedia, line: 17
+msgid "Install from a Slint USB stick"
+msgstr "Installera från ett Slint USB-minne"
+
+# File: SeTmedia, line: 18
+msgid "Install from a Slint CD or DVD"
+msgstr "Installera från en Slint CD eller DVD"
+
+# File: SeTmedia, line: 19
+msgid "Install from a pre-mounted directory"
+msgstr "Installera från en förmonterad katalog"
+
+# File: SeTmedia, line: 20
+msgid "Install from a hard drive partition"
+msgstr "Installera från en hårddisk partition"
+
+# File: SeTmedia, line: 21
+msgid "Install from NFS (Network File System)"
+msgstr "Installera från NFS (Network File System)"
+
+# File: SeTmedia, line: 22
+msgid "Install from Samba share"
+msgstr "Installera från en Samba-utdelning"
+
+# File: SeTnet, line: 109
+msgid "\n"
+"You will now get a chance to probe your network interfaces.\n"
+msgstr "\n"
+"Du kommer nu att få en chans att undersöka nätverksgränssnittet.\n"
+
+# File: SeTnet, line: 112
+# File: SeTnet, line: 125
+msgid "PROBING NETWORK DEVICES"
+msgstr "SÖKER EFTER NÄTVERKSKORT"
+
+# File: SeTnet, line: 119
+msgid "\n"
+"Are you OK with the network interface which was detected? If not, select 'No' to get back to the network probe program. You can try to load another driver explicitly, by using 'P <driver_name>'.\n\n"
+"If you are satisfied, select 'Yes' to continue with network configuration."
+msgstr "\n"
+"Är det okej med det nätverksgränssnitt som upptäcktes? Om inte, välj \"Nej\" för att komma tillbaka till nätverksprogrammet. Du kan prova att ladda en annan drivrutin explicit, genom att använda 'P <driver_name>'.\n\n"
+"Om du är nöjd, välj \"Ja\" för att fortsätta med nätverkskonfigurationen."
+
+# File: SeTnet, line: 141
+# File: SeTnet, line: 297
+#. hope that 3 seconds is enough for dhcpcd;
+#. if not then you had better specify the INTERFACE in the nic= parameter...
+#. end ask approval for ip config
+#. echo "Configuring ethernet card..."
+msgid "INITIALIZING NETWORK"
+msgstr "INITIERAR NÄTVERKET"
+
+# File: SeTnet, line: 142
+msgid "\n"
+"Waiting a few seconds for DHCP polling to settle ..."
+msgstr "\n"
+"Väntar några sekunder för DHCP förfrågan skall bli klar..."
+
+# File: SeTnet, line: 165
+msgid "You're running off the hard drive filesystem. Is this machine currently running on the network you plan to install from? If so, we won't try to reconfigure your ethernet card.\n\n"
+"Are you up-and-running on the network?"
+msgstr "Du kör från hårddiskens filsystem. Är denna maskin som för närvarande körs i nätverket som du planerar att installera från? I så fall kommer vi inte försöka att konfigurera om Ethernet-kortet.\n\n"
+"Är du uppe och kör i nätverket?"
+
+# File: SeTnet, line: 170
+# File: SeTnet, line: 290
+msgid "NETWORK CONFIGURATION"
+msgstr "NÄTVERKSKONFIGURATION"
+
+# File: SeTnet, line: 179
+#. Offer to install using DHCP:
+#, sh-format
+msgid "\n"
+"I can configure your network interface $ENET_DEVICE fully automatically using DHCP. If you want this, please select 'yes'.\n\n"
+"If you select 'no' instead, then you will be able to assign the IP address, netmask and gateway manually.\n"
+msgstr "\n"
+"Jag kan konfigurera nätverksgränssnitt $ENET_DEVICE helt automatiskt med hjälp av DHCP. Om du vill detta, ska du välja \"ja\".\n\n"
+"Om du väljer \"nej\" i stället, då du kommer du att kunna tilldela IP-adress, nätmask och gateway manuellt.\n"
+
+# File: SeTnet, line: 186
+msgid "DHCP CONFIGURATION"
+msgstr "DHCP KONFIGURATION"
+
+# File: SeTnet, line: 211
+msgid "\n"
+"You will need to enter the IP address you wish to assign to this machine. Example: 111.112.113.114\n\n"
+"What is your IP address?"
+msgstr "\n"
+"Du behöver ange IP-adressen som du vill använda på denna maskin.\n"
+"Exempel: 111.112.113.114\n\n"
+"Vad är din IP-adress?"
+
+# File: SeTnet, line: 219
+msgid "ASSIGN IP ADDRESS"
+msgstr "TILLDELA IP-ADRESS"
+
+# File: SeTnet, line: 228
+msgid "\n"
+"Now we need to know your netmask. Typically this will be 255.255.255.0 but this can be different depending on your local setup.\n\n"
+"What is your netmask?"
+msgstr "\n"
+"Nu behöver vi veta din nätmask. Vanligtvis är detta 255.255.255.0 men det kan vara annorlunda beroende på din lokala inställning.\n\n"
+"Vad är din nätmask?"
+
+# File: SeTnet, line: 237
+msgid "ASSIGN NETMASK"
+msgstr "TILLDELA NÄTMASK"
+
+# File: SeTnet, line: 246
+msgid "Do you have a gateway?"
+msgstr "Har du en gateway?"
+
+# File: SeTnet, line: 257
+msgid "ASSIGN GATEWAY ADDRESS"
+msgstr "TILLDELA GATEWAY-ADRESS"
+
+# File: SeTnet, line: 258
+msgid "\n"
+"What is the IP address for your gateway?"
+msgstr "\n"
+"Vad är IP-adressen för din gateway?"
+
+# File: SeTnet, line: 278
+#, sh-format
+msgid "\n"
+"This is the proposed network configuration for $ENET_DEVICE - If this is OK, then select 'Yes'.\n"
+"If this is not OK and you want to configure again, select 'No'.\n\n"
+"* IP Address: $LOCAL_IPADDR\n"
+"* Netmask:    $LOCAL_NETMASK"
+msgstr "\n"
+"Detta är den föreslagna nätverketskonfigurationen för $ENET_DEVICE - Om detta är OK, välj \"Ja\". \n"
+"Om detta inte är OK och du vill konfigurera igen, välj \"Nej\".\n\n"
+"* IP-adress: $LOCAL_IPADDR \n"
+"* Nätmask:    $LOCAL_NETMASK"
+
+# File: SeTnet, line: 298
+#, sh-format
+msgid "\n"
+"Configuring your network interface $ENET_DEVICE ..."
+msgstr "\n"
+"Konfigurera nätverksgränssnitt $ENET_DEVICE ..."
+
+# File: SeTnet, line: 335
+msgid "FETCHING CONFIGURATION"
+msgstr "HÄMTAR KONFIGURATION"
+
+# File: SeTnet, line: 336
+#, sh-format
+msgid "\n"
+"Attempting to fetch a remote configuration file using $PROTO ..."
+msgstr "\n"
+"Försöker att hämta en fjärr konfigurationsfil med hjälp av $PROTO ..."
+
+# File: SeTpartitions, line: 49
+# File: SeTpartitions, line: 70
+# File: SeTpartitions, line: 95
+# File: SeTpartitions, line: 120
+# File: SeTpartitions, line: 145
+# File: SeTpartitions, line: 168
+# File: SeTpartitions, line: 187
+#. output a nice status message
+msgid "FORMATTING"
+msgstr "FORMATERAR"
+
+# File: SeTpartitions, line: 50
+#, sh-format
+msgid "Formatting $ArG1 with filesystem btrfs."
+msgstr "Formaterar $ArG1 med filsystemet btrfs."
+
+# File: SeTpartitions, line: 51
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE \n"
+"Filesystem type: btrfs"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE \n"
+"Filsystemstyp: btrfs"
+
+# File: SeTpartitions, line: 71
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext2."
+msgstr "Formaterar $ArG1 med filsystemet ext2."
+
+# File: SeTpartitions, line: 72
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext2"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: ext2"
+
+# File: SeTpartitions, line: 96
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext3."
+msgstr "Formaterar $ArG1 med filsystemet ext3."
+
+# File: SeTpartitions, line: 97
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext3"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: ext3"
+
+# File: SeTpartitions, line: 121
+#, sh-format
+msgid "Formatting $ArG1 with filesystem ext4."
+msgstr "Formaterar $ArG1 med filsystemet ext4."
+
+# File: SeTpartitions, line: 122
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: ext4"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: ext4"
+
+# File: SeTpartitions, line: 146
+#, sh-format
+msgid "Formatting $ArG1 with filesystem jfs."
+msgstr "Formaterar $ArG1 med filsystemet jfs."
+
+# File: SeTpartitions, line: 147
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: jfs"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: jfs"
+
+# File: SeTpartitions, line: 169
+#, sh-format
+msgid "Formatting $ArG1 with filesystem reiserfs."
+msgstr "Formaterar $ArG1 med filsystemet reiserfs."
+
+# File: SeTpartitions, line: 170
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: reiserfs"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: reiserfs"
+
+# File: SeTpartitions, line: 188
+#, sh-format
+msgid "Formatting $ArG1 with filesystem xfs."
+msgstr "Formaterar $ArG1 med filsystemet xfs."
+
+# File: SeTpartitions, line: 189
+#, sh-format
+msgid "Formatting $ArG1\n"
+"Size in 1K blocks: $SIZE\n"
+"Filesystem type: xfs"
+msgstr "Formaterar $ArG1\n"
+"Storlek i 1K block: $SIZE\n"
+"Filsystemstyp: xfs"
+
+# File: SeTpartitions, line: 225
+# File: SeTpartitions, line: 226
+# File: SeTpartitions, line: 227
+# File: SeTpartitions, line: 228
+# File: SeTpartitions, line: 229
+msgid "done adding partitions, continue with setup"
+msgstr "lagt till partitioner, fortsätt med installationen"
+
+# File: SeTpartitions, line: 236
+#, sh-format
+msgid "Do you want to format Linux partition ${ArG1}?"
+msgstr "Vill du formatera Linux-partitionen ${ArG1}?"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "FORMAT PARTITION $ArG1"
+msgstr "FORMATERAR PARTITIONEN $ArG1"
+
+# File: SeTpartitions, line: 237
+#, sh-format
+msgid "If this partition has not been formatted, you should format it.  NOTE: This will erase all data on it.  Would you like to format this partition?"
+msgstr "Om partitionen inte har formaterats ska du formatera den. OBS: Detta kommer att radera all data på den. Vill du formatera denna partition?"
+
+# File: SeTpartitions, line: 241
+#, sh-format
+msgid "Quick format with no bad block checking"
+msgstr "Snabbformatering utan block kontroll"
+
+# File: SeTpartitions, line: 242
+#, sh-format
+msgid "Slow format that checks for bad blocks"
+msgstr "Långsam formatering som kontrollerar efter dåliga block"
+
+# File: SeTpartitions, line: 243
+#, sh-format
+msgid "No, do not format this partition"
+msgstr "Nej, formatera inte denna partition"
+
+# File: SeTpartitions, line: 256
+msgid "Ext2 is the traditional Linux file system and is fast and stable."
+msgstr "Ext2 är den traditionella Linux filsystemet och är snabbt och stabilt."
+
+# File: SeTpartitions, line: 259
+msgid "Ext3 is the journaling version of the Ext2 filesystem."
+msgstr "Ext3 är ett journalförande version av ext2 filsystem."
+
+# File: SeTpartitions, line: 263
+msgid "Ext4 is the successor to the ext3 filesystem. "
+msgstr "Ext4 är efterföljaren till ext3 filsystemet."
+
+# File: SeTpartitions, line: 267
+msgid "ReiserFS is a journaling filesystem that stores all files and filenames in a balanced tree structure."
+msgstr "ReiserFS är ett journalförande filsystem som lagrar alla filer och filnamn i ett balanserat trädstruktur."
+
+# File: SeTpartitions, line: 270
+msgid "Btrfs is a B-tree copy-on-write filesystem."
+msgstr "Btrfs är ett B-träd kopiering-vid-skriv filsystem."
+
+# File: SeTpartitions, line: 275
+msgid "JFS is IBM's Journaled Filesystem, currently used in IBM enterprise servers."
+msgstr "JFS är IBMs journalFilsystem, som för närvarande används i IBM företagsservrar."
+
+# File: SeTpartitions, line: 278
+msgid "XFS is SGI's journaling filesystem that originated on IRIX."
+msgstr "XFS är SGI's journalförande filsystem som har sitt ursprung på IRIX."
+
+# File: SeTpartitions, line: 281
+#, sh-format
+msgid "SELECT FILESYSTEM FOR $ArG1 "
+msgstr "VÄLJ FILSYSTEM FÖR $ArG1"
+
+# File: SeTpartitions, line: 283
+#, sh-format
+msgid "Partition $ArG1 will be formatted."
+msgstr "Partitionen $ArG1 kommer att formateras."
+
+# File: SeTpartitions, line: 287
+msgid "Please select the type of filesystem to use for the specified device.  Here are descriptions of the available filesystems:"
+msgstr "Välj vilken typ av filsystem som ska användas för den angivna enheten. Här finns beskrivningar av de tillgängliga filsystem:"
+
+# File: SeTpartitions, line: 292
+msgid "Standard Linux Ext2 Filesystem"
+msgstr "Standard Linux Ext2 filsystem"
+
+# File: SeTpartitions, line: 295
+msgid "Ext3 Journaling Filesystem"
+msgstr "Ext3 journalförande filsystem"
+
+# File: SeTpartitions, line: 298
+msgid "Ext4 Journaling Filesystem"
+msgstr "Ext4 journalförande filsystem"
+
+# File: SeTpartitions, line: 301
+msgid "IBM's Journaled Filesystem"
+msgstr "IBM's journalförande filsystem"
+
+# File: SeTpartitions, line: 304
+msgid "ReiserFS Journaling Filesystem"
+msgstr "ReiserFS journalförande filsystem"
+
+# File: SeTpartitions, line: 307
+msgid "Btrfs Copy-on-Write B-tree Filesystem"
+msgstr "Btrfs kopiera-vid-skriv B-träd filsystem"
+
+# File: SeTpartitions, line: 310
+msgid "Flash-Friendly File System"
+msgstr "Flashminne-vänligt filsystem"
+
+# File: SeTpartitions, line: 313
+msgid "SGI's Journaling Filesystem"
+msgstr "SGI's journalförande filsystem"
+
+# File: SeTpartitions, line: 344
+msgid "Setting up root Linux partition."
+msgstr "Sätter upp Linux root partition."
+
+# File: SeTpartitions, line: 346
+msgid "Select Linux installation partition:"
+msgstr "Välj Linux installations partition:"
+
+# File: SeTpartitions, line: 352
+msgid "Please select a partition from the following list to use for your root (/) Linux partition."
+msgstr "Välj en partition från följande lista som ska användas som Linux root (/)."
+
+# File: SeTpartitions, line: 435
+msgid "Setting up other Linux partitions."
+msgstr "Sätter upp andra Linux-partitioner."
+
+# File: SeTpartitions, line: 437
+msgid "Select other Linux partitions for /etc/fstab"
+msgstr "Välj andra Linux-partitioner för /etc/fstab"
+
+# File: SeTpartitions, line: 443
+#, sh-format
+msgid "You seem to have more than one partition tagged as type Linux.  You may use these to distribute your Linux system across more than one partition.  Currently, you have $ROOT_DEVICE mounted as your / partition.  You might want to mount directories such as /home or /usr/local on separate partitions.  You should not try to mount /etc, /sbin, or /bin on their own partitions since they contain utilities needed to bring the system up and mount partitions.  Also, do not reuse a partition that you've already entered before.  Please select one of the Linux partitions listed below, or if you're done, hit <Continue>."
+msgstr "Du verkar ha mer än en partition märkt som typ Linux. Du kan använda dessa för att distribuera ditt Linux-system i fler än en partition. För närvarande har du $ROOT_DEVICE monterad som din / partition. Du kanske vill montera kataloger som /home eller /usr/local på separata partitioner. Du bör inte försöka montera /etc, /sbin, eller /bin på egna partitioner, eftersom de innehåller verktyg som behövs för att starta upp systemet och montera partitioner. Också, inte återanvända en partition som du redan har angett tidigare. Välj en av de Linux-partitioner som anges nedan, eller om du är klar, tryck <Fortsätt>."
+
+# File: SeTpartitions, line: 478
+#, sh-format
+msgid "Partition $NEXT_PARTITION will not be reformatted."
+msgstr "Partitionen $NEXT_PARTITION kommer inte att formateras."
+
+# File: SeTpartitions, line: 483
+#, sh-format
+msgid "Partition $NEXT_PARTITION will be formatted with $NEXT_SYS_TYPE."
+msgstr "Partitionen $NEXT_PARTITION formateras med $NEXT_SYS_TYPE."
+
+# File: SeTpartitions, line: 522
+#. DOFORMAT?
+#. Now ask the user where to mount this new filesystem:
+#, sh-format
+msgid "SELECT MOUNT POINT FOR $NEXT_PARTITION"
+msgstr "VÄLJ MONTERINGSPUNKT FÖR $NEXT_PARTITION"
+
+# File: SeTpartitions, line: 523
+#, sh-format
+msgid "OK, now you need to specify where you want the new partition mounted.  For example, if you want to put it under /usr/local, then respond:  /usr/local\n"
+"Where would you like to mount $NEXT_PARTITION?"
+msgstr "OK, nu måste du ange var du vill att den nya partitionen monteras. Till exempel, om du vill lägga den under /usr/local, svara: /usr/local\n"
+"Var vill du montera $NEXT_PARTITION?"
+
+# File: SeTpartitions, line: 567
+msgid "Finished setting up Linux partitions."
+msgstr "Klar med inställningen av Linux-partitioner."
+
+# File: SeTpartitions, line: 568
+msgid "DONE ADDING LINUX PARTITIONS TO /etc/fstab"
+msgstr "LAGT TILL LINUX-PARTITIONER TILL /etc/fstab"
+
+# File: SeTpartitions, line: 569
+msgid "OK"
+msgstr "OK"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+#. There is no root password
+msgid "WARNING: NO ROOT PASSWORD DETECTED"
+msgstr "VARNING: INGET ROOTLÖSENORD FUNNET"
+
+# File: SeTpasswd, line: 16
+# File: SeTpasswd.prev, line: 16
+msgid "There is currently no password set on the system administrator account (root).  It is recommended that you set one now so that it is active the first time the machine is rebooted.  This is especially important if you're using a network enabled kernel and the machine is on an Internet connected LAN.  Would you like to set a root password?"
+msgstr "För närvarande finns det inget lösenord inställt på kontot systemadministratör (root). Vi rekommenderar att du anger ett nu så att den är aktiv första gången maskinen startas om. Detta är särskilt viktigt om du använder en nätverks aktiverad kärna och maskinen är ansluten till en Internet-ansluten LAN. Vill du ange ett root-lösenord?"
+
+# File: SeTswap, line: 31
+msgid "NO SWAP SPACE DETECTED"
+msgstr "INGET SWAP-UTRYMME HITTADES"
+
+# File: SeTswap, line: 31
+msgid "You have not created a swap partition with Linux fdisk.  Do you want to continue installing without one? "
+msgstr "Du har inte skapat en swap-partition med Linux fdisk. Vill du fortsätta att installera utan en?"
+
+# File: SeTswap, line: 35
+msgid "ABORTING INSTALLATION"
+msgstr "AVBRYTER INSTALLATIONEN"
+
+# File: SeTswap, line: 35
+msgid "Create a swap partition with Linux fdisk, and then try this again."
+msgstr "Skapa en swap-partition med Linux fdisk, och prova sedan detta igen."
+
+# File: SeTswap, line: 44
+# File: SeTswap, line: 84
+msgid "Setting up swap partitions."
+msgstr "Sätter upp swap-partitioner."
+
+# File: SeTswap, line: 46
+msgid "SWAP SPACE DETECTED"
+msgstr "SWAP-UTRYMME HITTADES"
+
+# File: SeTswap, line: 48
+msgid "Slint Setup has detected one or more swap partitions on your system.  These partitions have been preselected to be set up as swap space.  If there are any swap partitions that you do not wish to use with this installation, please unselect them with the up and down arrows and spacebar.  If you wish to use all of them (this is recommended), simply hit the ENTER key."
+msgstr "Slint Installation har upptäckt en eller flera swap-partitioner på ditt system. Dessa partitioner har förvald att inrättas som swap-partition. Om det finns några swap-partition som du inte vill använda med den här installationen kan du avmarkera dem med upp och ner pilar och mellanslagstangenten. Om du vill använda dem (detta, rekommenderas), tryck helt enkelt på ENTER."
+
+# File: SeTswap, line: 61
+#, sh-format
+msgid "Linux swap partition, ${PARTSIZE}"
+msgstr "Linux swap-partition, ${PARTSIZE}"
+
+# File: SeTswap, line: 85
+msgid "CHECK SWAP PARTITIONS FOR BAD BLOCKS?"
+msgstr "KONTROLLERA SWAP-PARTITIONEN EFTER DÅLIGA BLOCK?"
+
+# File: SeTswap, line: 86
+msgid "Slint Setup will now prepare your system's swap space.  When formatting swap partitions with mkswap you may also check them for bad blocks.  This is not the default since nearly all modern hard drives check themselves for bad blocks anyway.  Would you like to check for bad blocks while running mkswap?"
+msgstr "Slint Setup kommer nu att förbereda systemets swap-utrymme. När du formaterar swap-partitioner med mkswap kan du även kontrollera den för dåliga block. Detta är inte standard eftersom nästan alla moderna hårddiskar kontrollera sig själva för dåliga block ändå. Vill du söka efter dåliga block medan du kör mkswap?"
+
+# File: SeTswap, line: 106
+#, sh-format
+msgid "Activating swap partition ${swappartition}:"
+msgstr "Aktiverar swap-partitionen ${swappartition}:"
+
+# File: SeTswap, line: 122
+msgid "Your swapspace has been configured. This information   will be added to your /etc/fstab:"
+msgstr "Ditt swap-utrymme har konfigurerats. Denna information kommer att läggas till i din /etc/fstab:"
+
+# File: SeTswap, line: 127
+msgid "SWAP SPACE CONFIGURED"
+msgstr "SWAP-UTRYMME KONFIGURERAT"
+
+# File: blurbs, line: 4
+#. This file allows localizing content of
+#. displayed by 'pkgtool' in a dialog box for each installation script
+#. when the user wants to run some of these scripts again.
+msgid "Run mkfontdir and mkfontscale in font directories."
+msgstr "Kör mkfontdir och mkfontscale i typsnittskataloger."
+
+# File: blurbs, line: 5
+msgid "Run fc-cache to locate new fonts for Xft"
+msgstr "Kör fc-cache för att lokalisera nya typsnitt för Xft"
+
+# File: blurbs, line: 6
+msgid "Run update-desktop-database."
+msgstr "Kör update-desktop-databas."
+
+# File: blurbs, line: 7
+msgid "Run update-mime-database."
+msgstr "Kör update-mime-database."
+
+# File: blurbs, line: 8
+msgid "Run gtk-update-icon-cache for hicolor theme."
+msgstr "Kör gtk-update-ikon-cache för hicolor tema."
+
+# File: blurbs, line: 9
+msgid "Rebuild SSL certificate database."
+msgstr "Bygg om SSL-certifikat databas."
+
+# File: blurbs, line: 10
+msgid "Install a Linux kernel from a bootdisk"
+msgstr "Installera en Linux-kärna från en startdiskett"
+
+# File: blurbs, line: 11
+msgid "Create a USB Linux boot stick"
+msgstr "Skapa en USB Linux boot-sticka"
+
+# File: blurbs, line: 12
+msgid "Set a default browser link."
+msgstr "Ange en standardwebbläsar-länk."
+
+# File: blurbs, line: 13
+msgid "Set up LILO to boot Linux (and other OSes) from your hard drive"
+msgstr "Konfigurera LILO att starta upp Linux (och andra OS) från din hårddisk"
+
+# File: blurbs, line: 14
+msgid "Configure the console mouse support (GPM)."
+msgstr "Konfigurera konsolmusstöd (GPM)."
+
+# File: blurbs, line: 15
+msgid "Configure basic network settings"
+msgstr "Konfigurera grundläggande nätverksinställningar"
+
+# File: blurbs, line: 16
+msgid "Select/deselect system daemons (services)"
+msgstr "Välj/avmarkera systemdemoner (tjänster)"
+
+# File: blurbs, line: 17
+msgid "Select a font for the console"
+msgstr "Välj ett teckensnitt för konsolen"
+
+# File: blurbs, line: 18
+msgid "Select your timezone"
+msgstr "Välj din tidszon"
+
+# File: blurbs, line: 19
+msgid "Choose a default window manager for X"
+msgstr "Välj standard fönsterhanterare för X"
+
+# File: blurbs, line: 20
+msgid "Set up ELILO (EFI LILO) to boot Linux from your hard drive"
+msgstr "Ställ in ELILO (EFI LILO) att starta upp Linux från din hårddisk"
+
+# File: blurbs, line: 21
+msgid "Set up GRUB to boot Linux (and other OSes) from your hard drive"
+msgstr "Ställ in GRUB för att starta Linux (och andra operativsystem) från din hårddisk"
+
+# File: network, line: 21
+msgid "Network support for NFS install, 2006-09-20 volkerdi@slackware.com\n"
+"Network support for FTP/HTTP install, 26-Jan-2008 alien@slackware.com"
+msgstr "Nätverksstöd för NFS installation, 2006-09-20 volkerdi@slackware.com\n"
+"Nätverks stöd för FTP/HTTP installation, 26-Jan-2008 alien@slackware.com"
+
+# File: network, line: 43
+# File: pcmcia, line: 32
+msgid "The next step in your installation may be partitioning your hard drive\n"
+"(if you're installing to a Linux partition) with 'fdisk' or 'cfdisk'\n"
+"(the menu-driven version of fdisk).  If you already have a partition\n"
+"prepared for Linux, run 'setup' to start the installer program."
+msgstr "Nästa steg i installationen kan vara uppdelning av din hårddisk\n"
+"(om du installerar på en Linux-partition) med \"fdisk\" eller \"cfdisk\"\n"
+"(den menystyrda versionen av fdisk). Om du redan har en partition\n"
+"förberedd för Linux, för att köra \"installationen\" starta installationsprogrammet."
+
+# File: network.sh, line: 17
+msgid "******* Welcome to the network supplemental disk! *******"
+msgstr "******* Välkommen till nätverks tilläggs diskett! *******"
+
+# File: network.sh, line: 24
+msgid "-- Press [enter] to automatically probe for all network cards, or switch\n"
+"   to a different console and use 'modprobe' to load the modules manually.\n"
+"-- To skip probing some modules (in case of hangs), enter them after an S:\n"
+"   S eepro100 ne2k-pci\n"
+"-- To probe only certain modules, enter them after a P like this:\n"
+"   P 3c503 3c505 3c507\n"
+"-- To get a list of network modules, enter an L.\n"
+"-- To skip the automatic probe entirely, enter a Q now."
+msgstr "-- Tryck [Enter] för att automatiskt söka efter alla nätverkskort eller växla\n"
+"   till en annan konsol och använd \"modprobe\" för att ladda modulerna manuellt.\n"
+"-- Om du vill hoppa över sökning av moduler (vid hängning), skriv in dem efter ett S:\n"
+"   S eepro100 ne2k-pci\n"
+"-- För att undersöka endast vissa moduler, skriv in dem efter ett P så här:\n"
+"   P 3c503 3c505 3c507\n"
+"-- För att få en lista med nätverksmoduler, ange ett L.\n"
+"-- För att hoppa över automatiska sökning helt, ange ett Q nu."
+
+# File: network.sh, line: 37
+msgid "network> "
+msgstr "nätverk>"
+
+# File: network.sh, line: 43
+msgid "Available network modules:"
+msgstr "Tillgängliga nätverksmoduler:"
+
+# File: network.sh, line: 60
+msgid "Probing for PCI/EISA network cards:"
+msgstr "Söker efter PCI/EISA nätverkskort:"
+
+# File: network.sh, line: 75
+# File: network.sh, line: 116
+# File: network.sh, line: 152
+#, sh-format
+msgid "Probing for card using the $card module..."
+msgstr "Söker efter kort som använder $card modul..."
+
+# File: network.sh, line: 81
+# File: network.sh, line: 122
+# File: network.sh, line: 158
+#, sh-format
+msgid "SUCCESS: found card using $card protocol -- modules loaded."
+msgstr "SUCCÉ: hittade kort som använder $card protokoll -- moduler laddade."
+
+# File: network.sh, line: 90
+# File: network.sh, line: 131
+#, sh-format
+msgid "Skipping module $card..."
+msgstr "Hoppar över modulen $card..."
+
+# File: network.sh, line: 97
+#. Don't probe for com20020... it loads on any machine with or without the
+#. card.
+msgid "Probing for MCA, ISA, and other PCI network cards:"
+msgstr "Söker efter MCA, ISA och andra PCI nätverkskort:"
+
+# File: network.sh, line: 138
+msgid "Sorry, but no network card was detected.  Some cards (like non-PCI\n"
+"NE2000s) must be supplied with the I/O address to use.  If you have\n"
+"an NE2000, you can switch to another console (Alt-F2), log in, and\n"
+"load it with a command like this:\n\n"
+"  modprobe ne io=0x360"
+msgstr "Ledsen, men inget nätverkskort hittades. Vissa kort (som icke-PCI\n"
+"NE2000s) måste förses med I/O-adress som ska användas. Om du har\n"
+"ett NE2000 kan du byta till en annan konsol (Alt-F2), logga in, och\n"
+"ladda den med ett kommando som detta,:\n\n"
+"  modprobe ne io=0x360"
+
+# File: network.sh, line: 149
+msgid "Probing for a custom list of modules:"
+msgstr "Söker efter en anpassad lista med moduler:"
+
+# File: network.sh, line: 169
+msgid "Skipping automatic module probe."
+msgstr "Hoppa över automatisk modul sökning."
+
+# File: pcmcia, line: 13
+msgid "PCMCIA/Cardbus support script, 2003-02-18 volkerdi@slackware.com\n"
+"                               2007-05-09 alien@slackware.com"
+msgstr "PCMCIA/Cardbus support skript, 2003-02-18 volkerdi@slackware.com\n"
+"                               2007-05-09 alien@slackware.com"
+
+# File: pcmcia, line: 23
+msgid "The PCMCIA/Cardbus subsystem is now installed.  Please make sure that\n"
+"all of the cards you'll need for the installation are in the machine.\n"
+"If you still need to insert any PCMCIA/Cardbus cards, do that now.  Once\n"
+"the drive stops (indicating that all needed modules have been\n"
+"loaded), then press [enter] to continue."
+msgstr "PCMCIA/Cardbus undersystemet är nu installerat. Se till att\n"
+"alla kort du behöver för installationen finns i maskinen.\n"
+"Om du fortfarande behöver sätta in några PCMCIA/CardBus kort, gör det nu. Så snart\n"
+"enheten stannar (vilket tyder på att alla nödvändiga moduler har\n"
+"laddats), tryck på [Enter] för att fortsätta."
+
+# File: pxesetup, line: 63
+# File: setup, line: 130
+# File: setup.orig, line: 122
+msgid "Select source media"
+msgstr "Välj källmedia"
+
+# File: rc.S, line: 158
+msgid "We will now probe your sound cards.\n"
+"Please wait until you hear an alarm sound, then press Enter.\n"
+msgstr "Vi kommer nu att undersöka dina ljudkort.\n"
+"Vänta tills du hör ett alarmljud och tryck sedan på Enter.\n"
+
+# File: rc.S, line: 177
+msgid "No working sound card found. Maybe the sound is muted?\n"
+msgstr "Inget fungerande ljudkort hittades. Kanske ljudet är avstängt?\n"
+
+# File: rc.S, line: 188
+msgid "This installer has speech and Braille device support in order\n"
+"to be accessible to visually impaired users. To have speech turned on\n"
+"during installation type S, then press [Enter]. Else, just press Enter.\n"
+msgstr "Detta installationsprogram har stöd för tal och punktskrift i ordning\n"
+"att vara tillgänglig för synskadade användare. För att få tal\n"
+"under installation tryck S, tryck sen på [Enter]. Annars, tryck bara på Enter.\n"
+
+# File: rc.S, line: 204
+msgid "To display keyboard shortcuts for reviewing the screen with speech\n"
+"press R, then press [Enter],\n"
+"Else, just press [Enter]: "
+msgstr "Om du vill visa kortkommandon för att granska skärmen med tal\n"
+"tryck på R, tryck sen på [Enter],\n"
+"Annars, tryck bara på [Enter]:"
+
+# File: rc.S, line: 215
+msgid "\n"
+"Note: espeakup, used for speech, lacks a voice in Ukrainian."
+msgstr "\n"
+"Obs! Espeakup, som används för tal, saknar röst på ukrainska."
+
+# File: rc.S, line: 219
+msgid "LANGUAGE TO USE DURING INSTALLATION"
+msgstr "SPRÅK ATT ANVÄNDA UNDER INSTALLATION"
+
+# File: rc.S, line: 220
+#, sh-format
+msgid "Please select the language to use for installation.$NOTE"
+msgstr "Vänligen välj det språk att använda för installationen.$NOTE"
+
+# File: rc.S, line: 221
+msgid "English (USA)"
+msgstr "Engelska (USA)"
+
+# File: rc.S, line: 222
+msgid "Dutch"
+msgstr "Holländska"
+
+# File: rc.S, line: 223
+msgid "French"
+msgstr "Franska"
+
+# File: rc.S, line: 224
+msgid "German"
+msgstr "Tyska"
+
+# File: rc.S, line: 225
+msgid "Greek"
+msgstr "Grekiska"
+
+# File: rc.S, line: 226
+msgid "Italian"
+msgstr "Italienska"
+
+# File: rc.S, line: 227
+msgid "Norwegian"
+msgstr "Norska"
+
+# File: rc.S, line: 228
+msgid "Polish"
+msgstr "Polska"
+
+# File: rc.S, line: 229
+msgid "Portuguese (Brazil)"
+msgstr "Portugisiska (Brasilien)"
+
+# File: rc.S, line: 230
+msgid "Portuguese (Portugal)"
+msgstr "Portugisiska (portugal)"
+
+# File: rc.S, line: 231
+msgid "Russian"
+msgstr "Ryska"
+
+# File: rc.S, line: 232
+msgid "Spanish (Latin America)"
+msgstr "Spanska (latinamerika)"
+
+# File: rc.S, line: 233
+msgid "Swedish"
+msgstr "Svenska"
+
+# File: rc.S, line: 234
+msgid "Turkish"
+msgstr "Turkiska"
+
+# File: rc.S, line: 235
+msgid "Ukrainian"
+msgstr "Ukrainska"
+
+# File: rc.S, line: 251
+# File: rc.S.orig, line: 160
+#, sh-format
+msgid "<OPTION TO LOAD SUPPORT FOR ANOTHER KEYBOARD>\n\n"
+"If you are not using a \"$kbd\" keyboard map, you may load another one now.\n"
+"To select a different keyboard map, please enter 1 now.\n"
+"To continue using the \"$kbd\" keyboard map, just hit [Enter]."
+msgstr "<MÖJLIGHET ATT LADDA STÖD FÖR ETT ANNAT TANGENTBORD>\n\n"
+"Om du inte använder ett \"$kbd\" tangentbordslayout kan du ladda en ny nu.\n"
+"För att välja en annan tangentbordslayout tryck 1 nu.\n"
+"Om du vill fortsätta använda \"$kbd\" tangentbordslayout, tryck bara [Enter]."
+
+# File: rc.S, line: 258
+# File: rc.S.orig, line: 167
+msgid "Enter 1 to select a keyboard map: "
+msgstr "Skriv in 1 för att välja ett tangentbordslayoyt:"
+
+# File: rc.S, line: 267
+#, sh-format
+msgid "\n"
+"To partition your device(s), you can use 'cfdisk' or 'fdisk' and also,\n"
+"only for a GPT layout, 'cgdisk' or 'gdisk'. 'parted' is also available.\n"
+"TIP: to enhance accessibility of cgdisk, use its -a option.\n\n"
+"If you partition a new device, we recommend that you set up a gpt (GUID\n"
+"partition label) for it, for more flexibility.\n\n"
+"You can also let the installer auto-partition a device, if and only if:\n"
+"1. Its size is of least ${GCOUNT}G.\n"
+"2. You agree that this device will be dedicated to Slint.\n"
+"3. You agree that all data currently stored on it will be erased.\n"
+"4. None of the partitions it could include is mounted.\n"
+"WARNING: if it has already been used, make a back-up first!\n\n"
+"After having used the auto-partitioning feature, you will be allowed to\n"
+"make changes, like adding another partition to the drive.\n\n"
+"For an auto-partitioning type now 'auto'.\n\n"
+"To start the main installation (after partitioning), type 'setup'.\n"
+msgstr "\n"
+"För att partitionera din enhet(er) kan du använda 'cfdisk' eller 'fdisk' och också,\n"
+"endast för en GPT-layout, \"cgdisk\" eller \"gdisk\". \"parted\" är också tillgänglig.\n"
+"TIPS: För att förbättra tillgängligheten till cgdisk, använd dess -a alternativ.\n\n"
+"Om du partitionerar en ny enhet rekommenderar vi att du konfigurerar en gpt (GUID\n"
+"partition etikett) för det, för mer flexibilitet.\n\n"
+"Du kan också låta installatören automatiskt partitionera en enhet, om och endast om:\n"
+"1. Dess storlek är minst ${GCOUNT}G.\n"
+"2. Du godkänner att den här enheten kommer att vara avsedd för Slint.\n"
+"3. Du godkänner att alla data som för närvarande lagras på den raderas.\n"
+"4. Ingen av de partitioner som den kan innehålla är monterad.\n"
+"VARNING! Om den redan har använts, gör en säkerhetskopiering först!\n\n"
+"Efter att ha använt auto-partitioneringsfunktionen får du lov att\n"
+"gör ändringar, som att lägga till en annan partition till enheten.\n\n"
+"För en auto-partitionering skriv \"auto\".\n\n"
+"För att starta huvudinstallationen (efter partitionering), skriv 'setup'\n"
+
+# File: rc.S, line: 302
+#, sh-format
+msgid "Welcome to the Slint Linux installation media! (version ${Version})\n\n"
+"######  IMPORTANT!  READ THE INFORMATION BELOW CAREFULLY.  ######\n\n"
+"On the device where Slint will be installed you will need:\n"
+"- at least one partition of type 'Linux', of size at least ${GCOUNTMIN}G,\n"
+"  for the system itself (not counting the user files).\n"
+"- if the device has a GPT layout, a small (4M) partition of type ef02\n"
+"  (BIOS Boot partition) to install GRUB on this drive in Legacy mode.\n"
+"- an EFI System partition, of type ef01, to install GRUB in EFI mode,\n"
+"  of size at least 100M, unless you want to use an existing one.\n\n"
+"It is recommended that you have a swap partition (type 'Linux swap')\n"
+"prior installation, but you can also set up a swap file afterwards.\n\n"
+"On the next screen we will present the tools you can use to partition\n"
+"the device.\n\n"
+"You may now login as 'root'.\n\n"
+"Slint login: "
+msgstr "Välkommen till Slint Linux installationsmedia! (version ${Version})\n\n"
+"###### VIKTIG! LÄS INFORMATIONEN UNDER NOGRANT. ######\n\n"
+"På enheten där Slint kommer att installeras behöver du:\n"
+"- minst en partition av typen \"Linux\", med en storlek på minst ${GCOUNTMIN}G,\n"
+"för systemet självt (inte användarfilerna inräknade).\n"
+"- Om enheten har en GPT-layout, en liten (4M) partition av typen ef02\n"
+"(BIOS Boot partition) för att installera GRUB på den här enheten i Legacy-läge.\n"
+"- en EFI-systempartition, av typen ef01, för att installera GRUB i EFI-läge,\n"
+"av storlek minst 100M, om du inte vill använda en befintlig.\n\n"
+"Det rekommenderas att du har en swap partition (typ 'Linux swap')\n"
+"före installation, men du kan också skapa en swap-fil efteråt.\n\n"
+"På nästa skärm presenterar vi verktygen som du kan använda för att partitionera\n"
+"enheten.\n\n"
+"Du kan nu logga in som \"root\".\n\n"
+"Slint inlogg:"
+
+# File: setup, line: 55
+msgid "Slint Linux Setup"
+msgstr "Slint Linux Setup"
+
+# File: setup, line: 55
+msgid "\\n\n"
+"Scanning your system for partition information...\\n\n"
+"\\n"
+msgstr "\\n\n"
+"Skannar ditt system för partitionsinformation...\\n\n"
+"\\n"
+
+# File: setup, line: 66
+# File: setup.orig, line: 65
+msgid "NO LINUX PARTITIONS DETECTED"
+msgstr "INGA LINUX-PARTITIONER HITTADES"
+
+# File: setup, line: 67
+# File: setup.orig, line: 66
+msgid "There don't seem to be any partitions on this machine of type Linux.  You'll need to make at least one of these to install Linux. To do this, you'll need to leave 'setup', and make the partitions using 'cfdisk' (MBR partitions) or 'cgdisk' (GPT partitions). For more information, read the 'setup' help file from the next menu."
+msgstr "Det verkar inte finnas några partitioner på denna maskin av typen Linux. Du måste skapa minst en av dessa för att installera Linux. För att göra detta måste du lämna \"installation\", och skapa partitionerna med \"cfdisk\" (MBR partitioner) eller \"cgdisk\" (GPT-partitioner). För mer information, läs 'installations' hjälpfilen från nästa meny."
+
+# File: setup, line: 76
+# File: setup.orig, line: 75
+msgid "NO EFI SYSTEM PARTITION DETECTED"
+msgstr "INGEN EFI SYSTEMPARTITION UPPTÄCKT"
+
+# File: setup, line: 77
+# File: setup.orig, line: 76
+msgid "This machine appears to be using EFI/UEFI, but no EFI System Partition was found.  You'll need to make an EFI System Partition in order to boot from the hard drive.  To do this, leave 'setup', and use 'cgdisk' to make a 100MB partition of type EF00.  For more information, read the 'setup' help file from the next menu."
+msgstr "Denna maskin verkar att använda EFI/UEFI, men ingen EFI system partition hittades. Du måste skapa en EFI system partition för att starta upp från hårddisken. För att göra detta, lämna \"installation\", och använd \"cgdisk\" för att göra en 100 MB partition av typen EF00. För mer information, läs \"installations'' hjälpfilen från nästa meny."
+
+# File: setup, line: 121
+# File: setup.orig, line: 113
+#, sh-format
+msgid "Slint Linux Setup (version ${Version})"
+msgstr "Slint Linux Installation (version ${Version})"
+
+# File: setup, line: 123
+# File: setup.orig, line: 115
+msgid "Welcome to Slint Linux Setup.\n"
+"Select an option below using the UP/DOWN keys and SPACE or ENTER.\n"
+"Alternate keys may also be used: '+', '-', and TAB."
+msgstr "Välkommen till Slint Linux Installation.\n"
+"Välj alternativ nedan med hjälp av tangenterna UP/NER och MELLANSLAG eller ENTER.\n"
+"Alternativa tangenter kan också användas: \"+\", \"-\", och TAB."
+
+# File: setup, line: 126
+# File: setup.orig, line: 118
+msgid "Read the Slint Setup HELP file"
+msgstr "Läs Slint Installations HJÄLP-fil"
+
+# File: setup, line: 127
+# File: setup.orig, line: 119
+#, sh-format
+msgid "Remap your keyboard  (other than $DefaultKeyMap)"
+msgstr "Konfigurera om tangentbordet (annat än $DefaultKeyMap)"
+
+# File: setup, line: 128
+# File: setup.orig, line: 120
+msgid "Set up your swap partition(s)"
+msgstr "Ställ in din swap-partition(er)"
+
+# File: setup, line: 129
+# File: setup.orig, line: 121
+msgid "Set up your target partitions"
+msgstr "Sätt upp dina målpartitioner"
+
+# File: setup, line: 131
+# File: setup.orig, line: 123
+msgid "Install selected software"
+msgstr "Installera valda program"
+
+# File: setup, line: 132
+# File: setup.orig, line: 124
+msgid "Reconfigure your Linux system"
+msgstr "Konfigurera om ditt Linux-system"
+
+# File: setup, line: 133
+# File: setup.orig, line: 125
+msgid "Exit Slint Linux Setup"
+msgstr "Avsluta Slint Linux Installation"
+
+# File: setup, line: 167
+msgid "TARGET PARTITIONS ALREADY CONFIGURED"
+msgstr "MÅLPARTITIONER REDAN KONFIGURERADE"
+
+# File: setup, line: 167
+msgid "\n"
+"You have already configured the target partitions, where the system will be installed.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Du har redan konfigurerat målpartitioner, där systemet kommer att installeras.\n\n"
+"Tryck på ENTER för att återgå till huvudmenyn."
+
+# File: setup, line: 187
+msgid "SOURCE OF PACKAGES ALREADY CHOSEN"
+msgstr "KÄLLA FÖR PAKET REDAN VALT"
+
+# File: setup, line: 187
+msgid "\n"
+"You have already chosen the source of packages.\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Du har redan valt paketkällan.\n\n"
+"Tryck på ENTER för att återgå till huvudmenyn."
+
+# File: setup, line: 201
+# File: setup.orig, line: 179
+msgid "SOURCE PACKAGES INAPPROPRIATE"
+msgstr "KÄLLKODSPAKETEN OLÄMPLIGA"
+
+# File: setup, line: 202
+# File: setup.orig, line: 180
+#, sh-format
+msgid "Either the source packages are inappropriate for the target system:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"or the file $INSTALL_PATH/slint/DONOTREMOVEME.TXT is missing.\n"
+"Please try again to set the source of packages"
+msgstr "Antingen är källkodspaketen olämpliga för målsystemet:\n"
+"Slint version $SLINTVERSION (${SFX}-bit)\n"
+"eller så saknas filen $INSTALL_PATH/slint/DONOTREMOVEME.TXT.\n"
+"Försök igen för att ställa in källan till paketen"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "CANNOT INSTALL SOFTWARE YET"
+msgstr "KAN INTE INSTALLERA MJUKVARA ÄNNU"
+
+# File: setup, line: 215
+# File: setup.orig, line: 200
+msgid "\n"
+"Before you can install software, complete the following tasks:\n\n"
+"1. Select your source media.\n"
+"2. Set up your target Linux partition(s).\n\n"
+"You may also optionally remap your keyboard and set up your swap partition(s).\n\n"
+"Press ENTER to return to the main menu."
+msgstr "\n"
+"Innan du kan installera program, utföra följande uppgifter:\n\n"
+"1. Välj källmedia.\n"
+"2. Ställ in mål Linux-partition (er).\n\n"
+"Du kan även eventuellt konfigurera om tangentbordet och ställa in din swap-partition(er).\n\n"
+"Tryck ENTER för att återgå till huvudmenyn."
+
+# File: setup, line: 227
+# File: setup.orig, line: 185
+msgid "READY TO INSTALL THE PACKAGES?"
+msgstr "Redo att installera paketen?"
+
+# File: setup, line: 228
+# File: setup.orig, line: 186
+msgid "Please confirm that you want to install the packages."
+msgstr "Bekräfta att du vill installera paketen."
+
+# File: setup, line: 231
+# File: setup.orig, line: 189
+msgid "INSTALL KDE PACKAGES?"
+msgstr "INSTALLERA KDE PAKET?"
+
+# File: setup, line: 232
+# File: setup.orig, line: 190
+msgid "Do you want to install the KDE packages?"
+msgstr "Vill du installera KDE paketen?"
+
+# File: setup, line: 248
+# File: setup.orig, line: 217
+msgid "A one-line description will be displayed as each package is installed."
+msgstr "En enrads beskrivning kommer att visas när en förpackning installeras."
+
+# File: setup, line: 284
+# File: setup.orig, line: 246
+msgid "SYSTEM NOT YET INSTALLED"
+msgstr "SYSTEMET ÄR INTE INSTALLERAT ÄNNU"
+
+# File: setup, line: 285
+# File: setup.orig, line: 247
+msgid "You need to install the packages before configuring the system.\n\n"
+"Please press ENTER to return to the main menu."
+msgstr "Du måste installera paket innan du konfigurerar systemet.\n\n"
+"Vänligen tryck på ENTER för att återgå till huvudmenyn."
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "REPLACE /etc/fstab?"
+msgstr "ERSÄTTA /etc/fstab?"
+
+# File: setup, line: 295
+# File: setup.orig, line: 257
+msgid "You already have an /etc/fstab on your install partition.  If you were just adding software, you should probably keep your old /etc/fstab.  If you've changed your partitioning scheme, you should use the new /etc/fstab.  Do you want to replace your old /etc/fstab with the new one?"
+msgstr "Du har redan ett /etc/fstab på din installations partition. Om du bara skall lägga till programvara, bör du nog behålla din gamla /etc/fstab. Om du har ändrat din partitionstabell, ska du använda den nya /etc/fstab. Vill du byta ut din gamla /etc/fstab med den nya?"
+
+# File: setup, line: 358
+# File: setup.orig, line: 302
+msgid "Installing translations..."
+msgstr "Installerar översättningar..."
+
+# File: setup, line: 428
+# File: setup, line: 435
+# File: setup.orig, line: 372
+# File: setup.orig, line: 379
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+#. Tell the user to remove the disc, if one had previously been mounted
+#. (it should now be ejected):
+#. Offer to reboot or drop to shell:
+msgid "Slint Linux Setup is complete"
+msgstr "Slint Linux installationen är klar"
+
+# File: setup, line: 429
+# File: setup.orig, line: 373
+msgid "\n"
+" Please remove the installation disc.\n"
+" "
+msgstr "\n"
+"Ta ut installationsskivan."
+
+# File: setup, line: 437
+# File: setup.orig, line: 381
+msgid "\n"
+"Would you like to reboot your system?\n\n"
+"If you choose No, you will be dropped to a shell.\n"
+msgstr "\n"
+"Vill du starta om systemet?\n\n"
+"Om du väljer Nej, kommer du att bli förflyttad till ett skal.\n"
+
+# File: setup, line: 446
+# File: setup.orig, line: 390
+msgid "You may now reboot your system once you are ready.\n"
+"You can issue the 'reboot' command; or if your system has\n"
+"a keyboard attached, you can use the key combination: control+alt+delete\n"
+msgstr "Du kan nu starta om systemet när du är klar.\n"
+"Du kan ange omstartskommandot \"reboot\"; eller om ditt\n"
+"system har ett tangentbord anslutet, kan du använda tangentkombinationen: control+alt+delete\n"
+
+# File: setup, line: 471
+# File: setup.orig, line: 415
+msgid "** Starting reboot **"
+msgstr "** Startar omstart **"
+
+# File: setup.mouse, line: 25
+msgid "MOUSE CONFIGURATION"
+msgstr "MUSKONFIGURATION"
+
+# File: setup.mouse, line: 26
+msgid "This part of the configuration process will create a /dev/mouse link pointing to your default mouse device.  You can change the /dev/mouse link later if the mouse doesn't work, or if you switch to a different type of pointing device.  We will also use the information about the mouse to set the correct protocol for gpm, the Linux mouse server.  Please select a mouse type from the list below:"
+msgstr "Denna del av konfigurationsprocessen kommer att skapa en /dev/mouse länk som pekar på din musenhet. Du kan ändra /dev/mouse länken senare om musen inte fungerar, eller om du byter till en annan typ av pekdon. Vi kommer också att använda information om musen för att ställa in rätt protokoll för gpm, Linux mus-server. Välj en mus typ från listan nedan:"
+
+# File: setup.mouse, line: 33
+msgid "PS/2 port mouse (most desktops and laptops)"
+msgstr "PS/2-portmus (de flesta stationära och bärbara datorer)"
+
+# File: setup.mouse, line: 34
+msgid "USB connected mouse"
+msgstr "USB-ansluten mus"
+
+# File: setup.mouse, line: 35
+msgid "Microsoft PS/2 Intellimouse"
+msgstr "Microsoft PS/2 Intellimouse"
+
+# File: setup.mouse, line: 36
+msgid "Intellimouse Explorer PS/2"
+msgstr "Intellimouse Explorer PS/2"
+
+# File: setup.mouse, line: 37
+msgid "2 button Microsoft compatible serial mouse"
+msgstr "2 knappars Microsoft kompatibel seriell mus"
+
+# File: setup.mouse, line: 38
+msgid "3 button Microsoft compatible serial mouse"
+msgstr "3 knappars Microsoft kompatibel seriell mus"
+
+# File: setup.mouse, line: 39
+msgid "Logitech serial MouseMan and similar devices"
+msgstr "Logitech serie MouseMan och liknande enheter"
+
+# File: setup.mouse, line: 40
+msgid "MouseSystems serial (most 3 button serial mice)"
+msgstr "MouseSystems seriell (de flesta 3 knappars seriella möss)"
+
+# File: setup.mouse, line: 41
+msgid "Plug and Play (serial mice that do not work with ms)"
+msgstr "Plug and Play (seriella möss som inte fungerar med ms)"
+
+# File: setup.mouse, line: 42
+msgid "Microsoft serial Intellimouse"
+msgstr "Microsoft seriell Intellimouse"
+
+# File: setup.mouse, line: 43
+msgid "Genius Netmouse on PS/2 port"
+msgstr "Genius NetMouse på PS/2-port"
+
+# File: setup.mouse, line: 44
+msgid "Some serial Logitech devices"
+msgstr "Vissa seriella Logitech-enheter"
+
+# File: setup.mouse, line: 45
+msgid "Make serial Logitech behave like msc"
+msgstr "Gör seriella Logitech bete sig som msc"
+
+# File: setup.mouse, line: 46
+msgid "ATI XL busmouse (mouse card)"
+msgstr "ATI XL buss-mus (mus-kort)"
+
+# File: setup.mouse, line: 47
+msgid "Microsoft busmouse (mouse card)"
+msgstr "Microsoft busmouse (mus-kort)"
+
+# File: setup.mouse, line: 48
+msgid "Logitech busmouse (mouse card)"
+msgstr "Logitech busmouse (mus kort)"
+
+# File: setup.mouse, line: 49
+msgid "A pointing pen (NCR3125) on some laptops"
+msgstr "En pekpenna (NCR3125) på vissa bärbara datorer"
+
+# File: setup.mouse, line: 50
+msgid "Twiddler keyboard, by HandyKey Corp"
+msgstr "Twiddler tangentbord, av HandyKey Corp"
+
+# File: setup.mouse, line: 51
+msgid "Genitizer tablet (relative mode)"
+msgstr "Genitizer tablett (relativ läge)"
+
+# File: setup.mouse, line: 52
+msgid "Use a joystick as a mouse"
+msgstr "Använd en joystick som en mus"
+
+# File: setup.mouse, line: 53
+msgid "Wacom serial graphics tablet"
+msgstr "Wacom seriell ritplatta"
+
+# File: setup.mouse, line: 71
+msgid "SELECT SERIAL PORT"
+msgstr "VÄLJ SERIAL PORT"
+
+# File: setup.mouse, line: 71
+msgid "Your mouse requires a serial port.  Which one would you like to use?"
+msgstr "Musen kräver en seriell port. Vilken vill du använda?"
+
+# File: setup.mouse, line: 73
+msgid "(COM1: under DOS)"
+msgstr "(COM1: under DOS)"
+
+# File: setup.mouse, line: 74
+msgid "(COM2: under DOS)"
+msgstr "(COM2: under DOS)"
+
+# File: setup.mouse, line: 75
+msgid "(COM3: under DOS)"
+msgstr "(COM3: under DOS)"
+
+# File: setup.mouse, line: 76
+msgid "(COM4: under DOS)"
+msgstr "(COM4: under DOS)"
+
+# File: setup.mouse, line: 125
+msgid "Stopping gpm..."
+msgstr "Stoppar gpm..."
+
+# File: setup.mouse, line: 129
+msgid "Restarting gpm..."
+msgstr "Startar om gpm..."
+
+# File: setup.mouse, line: 135
+#. assume \$1 = start:
+msgid "Starting gpm:"
+msgstr "Startar gpm..."
+
+# File: setup.mouse, line: 157
+#. Now ask if this should be the new rc.gpm:
+msgid "GPM CONFIGURATION"
+msgstr "GPM KONFIGURATION"
+
+# File: setup.mouse, line: 158
+#, sh-format
+msgid "The gpm program allows you to cut and paste text on the virtual consoles using a mouse.  If you choose to run it at boot time, this line will be added to your /etc/rc.d/rc.gpm:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Shall we load the gpm program at boot time?"
+msgstr "Med gpm programmet kan du klippa och klistra in text på de virtuella konsolerna med hjälp av en mus. Om du väljer att köra det vid uppstart, kommer denna rad att läggas till i din /etc/rc.d/rc.gpm:\n\n"
+"  $GPM -m /dev/mouse -t $MTYPE\n\n"
+"Ska vi ladda gpm programmet vid uppstart?"
+
+# File: startupmode, line: 14
+msgid "Select the default startup mode"
+msgstr "Välj standard startläge"
+
+# File: startupmode, line: 15
+msgid "Please choose the default startup mode: Console or Graphical.\n\n"
+"In Console mode, you log in and type your first command in a console.\n"
+"In this mode you can type \"startx\" to start the default desktop or windows manager, that you can also change typing \"xwmconfig\".\n\n"
+"In Graphical mode, you choose the desktop or windows manager, that will be started as soon as you are identified.\n"
+msgstr "Vänligen välj standard startläge: Konsol eller Grafisk.\n\n"
+"I konsoll-läge logar du in och skriver in ditt första kommando i en konsoll.\n"
+"I detta läge kan du skriva in \"startx\" för att starta standard skrivbordsmiljö eller fönsterhanterare, vilket du kan välja med \"xwmconfig\".\n\n"
+"I grafiskt läge väljer du vilken skrivbordsmiljö eller fönsterhanterare som skall startas när du har loggat in.\n"
+
+# File: startupmode, line: 24
+msgid "Start Linux in Console mode"
+msgstr "Starta Linux i konsol-läge"
+
+# File: startupmode, line: 25
+msgid "Start Linux in Graphical mode"
+msgstr "Starta Linux i grafiskt läge"
+

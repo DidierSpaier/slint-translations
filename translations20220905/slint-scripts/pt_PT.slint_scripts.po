@@ -1,0 +1,747 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-26 17:27+0100\n"
+"PO-Revision-Date: 2022-09-05 19:12\n"
+"Last-Translator: Unknown <didier@darkstar.machine.fr>\n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /slint_scripts/slint_scripts.pot\n"
+"X-Crowdin-File-ID: 46\n"
+
+# File: doc, line: 11
+msgid "Installer documentation "
+msgstr "Documentação do instalador "
+
+# File: doc, line: 12
+# File: readSlintDocs.sh, line: 95
+msgid "Navigate in this menu with the up and down arrow keys.\n"
+"Press Enter to read a highlighted document.\n"
+"Press Q to stop reading a document and go back to the menu.\n"
+"Press Escape to quit."
+msgstr "Navegue neste menu com as teclas de seta para cima e para baixo.\n"
+"Prima Enter para ler um documento destacado.\n"
+"Prima Q para parar de ler um documento e voltar ao menu.\n"
+"Prima Esc para sair."
+
+# File: doc, line: 16
+msgid "Presentation of the Slint installer."
+msgstr "Apresentação do instalador Slint."
+
+# File: doc, line: 17
+msgid "How-to use the installer"
+msgstr "Como usar o instalador"
+
+# File: doc, line: 18
+msgid "The automatic installation mode"
+msgstr "O modo de instalação automática"
+
+# File: doc, line: 19
+msgid "Slint in an encrypted drive"
+msgstr "Slint numa unidade criptografada"
+
+# File: doc, line: 20
+msgid "The manual installation mode"
+msgstr "O modo de instalação manual"
+
+# File: doc, line: 21
+msgid "How to make room for Slint on a drive"
+msgstr "Como criar espaço para o Slint numa unidade"
+
+# File: doc, line: 22
+msgid "Glossary of technical terms used in the documentation"
+msgstr "Glossário de termos técnicos utilizados na documentação"
+
+# File: doc, line: 23
+msgid "key bindings for the speakup screen reader"
+msgstr "teclas de atalho para o leitor de voz no ecrã"
+
+# File: doc, line: 24
+msgid "First steps after Slint installation"
+msgstr "Primeiros passos após a instalação do Slint"
+
+# File: doc, line: 46
+#, sh-format
+msgid "Welcome back to the menu of the Slint installer\n\n"
+"Available commands (do not type the quotes):\n\n"
+"'doc' to know the features and usage of the installer.\n"
+"'auto' to start a semi-automatic, guided installation.\n"
+"'setup' to start a manual installation.\n\n"
+"We recommend that you type 'doc' first, especially if you want to use the\n"
+"'Manual' installation mode or want that the installer encrypt the drive where\n"
+"Slint will be installed. When done reading you will go back to this menu."
+msgstr "Bem-vindo(a) de volta ao menu do instalador Slint\n\n"
+"Comandos disponíveis (não escreva os apóstrofos):\n\n"
+"'doc' para conhecer as funcionalidades e a utilização do instalador.\n"
+"'auto' para iniciar uma instalação semi-automática e guiada.\n"
+"'setup' para iniciar uma instalação manual.\n\n"
+"Recomendamos que escreva 'doc' primeiro, especialmente se quiser utilizar o\n"
+"modo de instalação 'Manual' ou quer que o instalador encripte a unidade onde\n"
+"o Slint será instalado. Quando terminar a leitura, regressará a este menu."
+
+# File: hide-kde-apps, line: 5
+# File: speak-with, line: 13
+msgid "Please run this script as root."
+msgstr "Executar este script como root."
+
+# File: hide-kde-apps, line: 9
+# File: show-kde-apps, line: 9
+msgid "KDE is not installed."
+msgstr "O KDE não está instalado."
+
+# File: hide-kde-apps, line: 13
+msgid "This script includes KDE applications in the menus of KDE only,\n"
+"for all users.\n"
+"This can be reverted with the command show-kde-apps."
+msgstr "Este script inclui aplicações KDE apenas nos menus do KDE,\n"
+"para todos os utilizadores.\n"
+"Isto pode ser revertido com o comando: show-kde-apps."
+
+# File: hide-kde-apps, line: 17
+# File: show-kde-apps, line: 17
+msgid "To confirm press Y else press N: "
+msgstr "Para confirmar prima Y caso contrário prima N: "
+
+# File: hide-kde-apps, line: 20
+# File: show-kde-apps, line: 20
+msgid "Nothing done."
+msgstr "Nada feito."
+
+# File: hide-kde-apps, line: 62
+# File: show-kde-apps, line: 59
+msgid "All done."
+msgstr "Tudo feito."
+
+# File: login-chooser, line: 13
+msgid "This script should be run as root."
+msgstr "Este script deve ser executado como root."
+
+# File: login-chooser, line: 28
+msgid "Usage: login-chooser <login manager>"
+msgstr "Utilização: login-chooser <login manager>"
+
+# File: login-chooser, line: 29
+msgid "Available login managers:"
+msgstr "Gestores de acesso disponíveis:"
+
+# File: login-chooser, line: 31
+msgid "Short descriptions:"
+msgstr "Breve descrição:"
+
+# File: login-chooser, line: 33
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "text:    Login in text mode, in a console. From there, you\n"
+"         can type \"startx\" to start a graphical session."
+msgstr "texto:   Iniciar sessão no modo texto, numa consola. A partir daí\n"
+"         pode escrever \"startx\" para iniciar uma sessão gráfica."
+
+# File: login-chooser, line: 36
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "lightdm: Light Display Manager, accessible with speech."
+msgstr "lightdm: Gestor de sessão Light, acessível com voz."
+
+# File: login-chooser, line: 38
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "lxdm:    LXDE Display Manager."
+msgstr "lxdm:    Gestor de sessão LXDE."
+
+# File: login-chooser, line: 40
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "kdm:     KDE Display Manager."
+msgstr "kdm:         Gestor de sessão KDE."
+
+# File: login-chooser, line: 42
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "sddm:    Simple Desktop Display Manager."
+msgstr "sddm:    Gestor de sessão Simple Desktop."
+
+# File: login-chooser, line: 44
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "gdm:     GNOME Display Manager, fully accessible with speech."
+msgstr "gdm:     Gestor de sessão GNOME, totalmente acessível com voz."
+
+# File: login-chooser, line: 46
+#. TRANSLATORS please take care to uese 9 characters before description in order to keep alignment intact
+msgid "xdm:     X Display Manager."
+msgstr "xdm:     Gestor de sessão X."
+
+# File: login-chooser, line: 48
+msgid "Login is currently set to text mode."
+msgstr "O acesso está definido para o modo de texto."
+
+# File: login-chooser, line: 53
+#, sh-format
+msgid "The display manager ${dm} is currently set."
+msgstr "O gestor de sessão ${dm} está atualmente definido."
+
+# File: login-chooser, line: 61
+msgid "To reboot immediatly press R then Enter, else just press Enter."
+msgstr "Para reiniciar imediatamente prima R e depois Enter, caso contrário basta premir Enter."
+
+# File: login-chooser, line: 68
+msgid "If you want speech at login press S then Enter, else just press Enter."
+msgstr "Se pretender voz no início de sessão prima S depois Enter, caso contrário basta premir Enter."
+
+# File: login-chooser, line: 87
+msgid "You will have speech at login."
+msgstr "Terá voz no iniciar sessão."
+
+# File: login-chooser, line: 98
+msgid "You won't have speech at login."
+msgstr "Não terá voz no iniciar sessão."
+
+# File: login-chooser, line: 104
+msgid "\"$1\" is not among the available login managers:"
+msgstr "\"$1\" não está entre os gestores de acesso disponíveis:"
+
+# File: login-chooser, line: 112
+msgid "Login will occur in text mode on next boot."
+msgstr "O iniciar sessão ocorrerá no modo texto no próximo arranque."
+
+# File: login-chooser, line: 113
+msgid "If you need speech type one of these commands before rebooting:"
+msgstr "Se precisar de voz escreva um destes comandos antes de reiniciar:"
+
+# File: login-chooser, line: 132
+# File: login-chooser, line: 146
+# File: login-chooser, line: 159
+# File: login-chooser, line: 172
+# File: login-chooser, line: 185
+# File: login-chooser, line: 199
+#, sh-format
+msgid "The display manager $choice will be in use on next boot."
+msgstr "O gestor da sessão $choice estará em uso no próximo arranque."
+
+# File: login-chooser, line: 203
+msgid "Unknown choice. Check your spelling."
+msgstr "Escolha desconhecida. Verifique a ortografia."
+
+# File: orca-off, line: 5
+# File: switch-off, line: 7
+# File: switch-on, line: 7
+msgid "Please run this script as regular user."
+msgstr "Executar este script como utilizador."
+
+# File: orca-off, line: 26
+#, sh-format
+msgid "Orca has been disabled for user $username."
+msgstr "O Orca foi desativado para o utilizador $username."
+
+# File: orca-off, line: 28
+# File: orca-on, line: 38
+msgid "File ~/.config/autostart/startorca.desktop not found."
+msgstr "Ficheiro ~/.config/autostart/startorca.desktop não encontrado."
+
+# File: orca-on, line: 6
+msgid "Start a graphical environment as root with speech is not advisable.\n"
+"Please run this script as regular user."
+msgstr "Iniciar um ambiente gráfico como root com voz não é aconselhável.\n"
+"Execute este script como utilizador."
+
+# File: orca-on, line: 36
+#, sh-format
+msgid "Orca has been enabled for user $username."
+msgstr "O Orca foi ativado para o utilizador $username."
+
+# File: readSlintDocs.sh, line: 14
+msgid "Slint for the visually impaired"
+msgstr "Slint para os deficientes visuais"
+
+# File: readSlintDocs.sh, line: 15
+# File: readSlintDocs.sh, line: 46
+# File: readSlintDocs.sh, line: 69
+msgid "Navigate in this sub-menu with the up and down arrow keys.\n"
+"Press Enter to read a highlighted document.\n"
+"Press Q to stop reading a document and go back to this sub-menu.\n"
+"Press Escape to return to the main menu."
+msgstr "Navegue neste sub-menu com as teclas de seta para cima e para baixo.\n"
+"Prima Enter para ler um documento destacado.\n"
+"Prima Q para parar de ler um documento e voltar ao sub-menu.\n"
+"Prima Esc para voltar ao menu principal."
+
+# File: readSlintDocs.sh, line: 19
+msgid "Accessibility HowTo"
+msgstr "Tutorial de Acessibilidade"
+
+# File: readSlintDocs.sh, line: 20
+msgid "Brltty HowTo"
+msgstr "Tutorial Brltty"
+
+# File: readSlintDocs.sh, line: 21
+msgid "Key bindings for Compiz "
+msgstr "Combinações de teclas para o Compiz "
+
+# File: readSlintDocs.sh, line: 22
+msgid "Key bindings for Mate"
+msgstr "Combinações de teclas para o Mate"
+
+# File: readSlintDocs.sh, line: 23
+msgid "Espeakup usage"
+msgstr "Utilização do espeakup"
+
+# File: readSlintDocs.sh, line: 24
+msgid "Fenrir usage"
+msgstr "Utilização do Fenrir"
+
+# File: readSlintDocs.sh, line: 25
+msgid "How-to use the MBROLA voices"
+msgstr "Como utilizar as vozes do MBROLA"
+
+# File: readSlintDocs.sh, line: 26
+msgid "SpeechD-El usage"
+msgstr "Utilização do SpeechD-El"
+
+# File: readSlintDocs.sh, line: 27
+msgid "SpeechD-Up usage"
+msgstr "Utilização do SpeechD-Up"
+
+# File: readSlintDocs.sh, line: 28
+msgid "How-to make Slint speak (or not)."
+msgstr "Como fazer o Slint falar (ou não)."
+
+# File: readSlintDocs.sh, line: 29
+msgid "Speakup key bindings with a numeric keypad"
+msgstr "Combinação de teclas do Speakup com um teclado numérico"
+
+# File: readSlintDocs.sh, line: 30
+msgid "Speakup key bindings without numeric keypad"
+msgstr "Combinação de teclas do Speakup sem um teclado numérico"
+
+# File: readSlintDocs.sh, line: 31
+msgid "Voices and TTS in Slint"
+msgstr "Vozes e TTS no Slint"
+
+# File: readSlintDocs.sh, line: 32
+msgid "Speakup guide (kernel documentation)"
+msgstr "Guia do speakup (documentação do kernel)"
+
+# File: readSlintDocs.sh, line: 45
+msgid "How to localize shell scripts"
+msgstr "Como localizar scripts de shell"
+
+# File: readSlintDocs.sh, line: 50
+msgid "General presentation"
+msgstr "Apresentação geral"
+
+# File: readSlintDocs.sh, line: 51
+msgid "Processes diagrams"
+msgstr "Diagrama de processos"
+
+# File: readSlintDocs.sh, line: 52
+msgid "Internationalization process"
+msgstr "Processo de internacionalização"
+
+# File: readSlintDocs.sh, line: 53
+msgid "Localization, usage and maintenance processes"
+msgstr "Localização, utilização e processos de manutenção"
+
+# File: readSlintDocs.sh, line: 54
+msgid "Recommendations for developers and maintainers"
+msgstr "Recomendações para programadores e responsáveis"
+
+# File: readSlintDocs.sh, line: 55
+msgid "Recommendations for translators"
+msgstr "Recomendações para tradutores"
+
+# File: readSlintDocs.sh, line: 68
+msgid " How to display man pages in Persian "
+msgstr " Como mostrar páginas do manual em Persa "
+
+# File: readSlintDocs.sh, line: 73
+msgid "How to in English (Portable Document)"
+msgstr "Tutorial em Inglês (Documento PDF)"
+
+# File: readSlintDocs.sh, line: 74
+msgid "How to in Persian (Portable Document)"
+msgstr "Tutorial em Persa (Documento PDF)"
+
+# File: readSlintDocs.sh, line: 94
+msgid " Slint documentation "
+msgstr " Documentação do Slint "
+
+# File: readSlintDocs.sh, line: 99
+msgid "Presentation of the Slint project"
+msgstr "Apresentação do projeto Slint"
+
+# File: readSlintDocs.sh, line: 100
+msgid ">> Slint for the visually impaired (sub-menu)"
+msgstr ">> Slint para deficientes visuais (sub-menu)"
+
+# File: readSlintDocs.sh, line: 101
+msgid "Announce of Slint64-14.2.1.2"
+msgstr "Anúncio do Slint64-14.2.1.2"
+
+# File: readSlintDocs.sh, line: 102
+msgid "Introduction - Slint documentation"
+msgstr "Introdução - Documentação do Slint"
+
+# File: readSlintDocs.sh, line: 103
+msgid "How to upgrade the kernels provided by Slint"
+msgstr "Como atualizar os kernels fornecidos pelo Slint"
+
+# File: readSlintDocs.sh, line: 104
+msgid ">> How-to localize shell scrips (sub-menu)"
+msgstr ">> Como localizar scripts de shell (submenu)"
+
+# File: readSlintDocs.sh, line: 105
+msgid ">> How-to display man pages in Persian (sub-menu)"
+msgstr ">> Como mostrar páginas do manual em Persa (sub-menu)"
+
+# File: readSlintDocs.sh, line: 106
+msgid "How to manage network connections"
+msgstr "Como gerir ligações de rede"
+
+# File: readSlintDocs.sh, line: 107
+msgid "What's new in Slint64-14.2.1.2"
+msgstr "O que há de novo no Slint64-14.2.1.2"
+
+# File: readSlintDocs.sh, line: 108
+msgid "Presentation of Slint64-14.2.1.2"
+msgstr "Apresentação do Slint64-14.2.1.2"
+
+# File: readSlintDocs.sh, line: 109
+msgid "Create and maintain a portable Slint"
+msgstr "Criar e manter um Slint portátil"
+
+# File: readSlintDocs.sh, line: 110
+msgid "Software Management in Slint"
+msgstr "Gestão de Software no Slint"
+
+# File: readSlintDocs.sh, line: 111
+msgid "Manage the sound in Slint"
+msgstr "Gerir o som no Slint"
+
+# File: readSlintDocs.sh, line: 112
+msgid "Utilities to manage your Slint system"
+msgstr "Utilitários para gerir o sistema Slint"
+
+# File: session-chooser, line: 14
+msgid "Running a graphical session as root is not allowed."
+msgstr "A execução de uma sessão gráfica como root não é permitida."
+
+# File: session-chooser, line: 21
+msgid "Usage: $0 <desktop session>\n"
+"\tAvailable desktop sessions:"
+msgstr "Utilização: $0 <desktop session>\n"
+"\tSessões de ambientes disponíveis:"
+
+# File: session-chooser, line: 24
+#, sh-format
+msgid "The session is currently set for $USER to "
+msgstr "A sessão está atualmente definida para $USER para "
+
+# File: session-chooser, line: 38
+msgid "$1 not found among the available sessions"
+msgstr "$1 não encontrados entre as sessões disponíveis"
+
+# File: session-chooser, line: 40
+msgid "The current session is "
+msgstr "A sessão atual é "
+
+# File: session-chooser, line: 100
+#, sh-format
+msgid "A default session $thissession has been set for ${USER}."
+msgstr "Uma sessão padrão $thissession foi definida para ${USER}."
+
+# File: setsession, line: 13
+#, sh-format
+msgid "Usage: $program_name username."
+msgstr "Utilização: $program_name nome de utilizador."
+
+# File: setsession, line: 14
+msgid "This script should be run as root, for a regular user account that\n"
+"has just been created. To set your default session as regular user,\n"
+"use session-chooser instead.\n"
+"errors go to /tmp/setsession-errors"
+msgstr "Este script deve ser executado como root, para uma conta de utilizador que\n"
+"acabou de ser criada. Para definir a sua sessão padrão como utilizador,\n"
+"use o session-chooser em vez disso.\n"
+"os erros vão para /tmp/setsession-errors"
+
+# File: setsession, line: 26
+msgid "No system wide default session has been set."
+msgstr "Nenhuma sessão padrão do sistema foi definida."
+
+# File: setsession, line: 30
+#, sh-format
+msgid "No home directory for user $user. Does it exist?"
+msgstr "Nenhuma pasta pessoal para o utilizador $user. Ela existe?"
+
+# File: setsession, line: 32
+#, sh-format
+msgid "A default session has already been set for user $user."
+msgstr "Uma sessão padrão já foi definida para o utilizador $user."
+
+# File: setsession, line: 62
+#, sh-format
+msgid "A default session $xsession has been set for user $user."
+msgstr "Uma sessão padrão $xsession foi definida para o utilizador $user."
+
+# File: show-kde-apps, line: 5
+msgid "Only root is allowed to run this program."
+msgstr "Apenas o root pode executar este programa."
+
+# File: show-kde-apps, line: 13
+msgid "This script includes KDE applications in the menus of all graphical\n"
+"environments for all users, but the applications for personal\n"
+"information management, that however stay available from KDE.\n"
+"This can be reverted with the command hide-kde-apps."
+msgstr "Este script inclui aplicações KDE nos menus de todos os ambientes\n"
+"gráficos para todos os utilizadores, mas as aplicações para gestão de informações\n"
+"pessoais, que, no entanto, permanecem disponíveis no KDE.\n"
+"Isto pode ser revertido com o comando: hide-kde-apps."
+
+# File: spd-list, line: 9
+msgid "This script lists languages and synthesizers available for applications\n"
+"relying on Speech Dispatcher, like Orca or speech-up.\n"
+"Each command below answers the question following it.\n"
+"Don't type the quotes surrounding the command."
+msgstr "Este script lista idiomas e sintetizadores disponíveis para aplicações\n"
+"dependendo do Speech Dispatcher, como o Orca ou aspeech-up.\n"
+"Cada comando abaixo responde à pergunta que a segue.\n"
+"Não escreva as aspas ao redor do comando."
+
+# File: spd-list, line: 13
+#, sh-format
+msgid "\"$program_name\" usage?"
+msgstr "Utilização de \"$program_name\"?"
+
+# File: spd-list, line: 14
+#, sh-format
+msgid "\"$program_name -s\" available synthesizers?"
+msgstr "\"$program_name -s\" sintetizadores disponíveis?"
+
+# File: spd-list, line: 15
+#, sh-format
+msgid "\"$program_name -l\" available languages codes?"
+msgstr "\"$program_name -l\" códigos de idiomas disponíveis?"
+
+# File: spd-list, line: 16
+#, sh-format
+msgid "\"$program_name -ls <synthesizer>\" languages available for this synthesizer?"
+msgstr "\"$program_name -ls <synthesizer>\" idiomas disponíveis para este sintetizador?"
+
+# File: spd-list, line: 17
+#, sh-format
+msgid "\"$program_name -sl <language code>\" synthesizers providing voices in this language?"
+msgstr "\"$program_name -sl <language code>\" sintetizadores que fornecem vozes neste idioma?"
+
+# File: spd-list, line: 18
+msgid "The language code has most often two characters, like 'en' 'es' or 'fr'"
+msgstr "O código de idioma tem frequentemente dois caracteres, como 'en' 'es' ou 'fr'"
+
+# File: spd-list, line: 22
+# File: spd-list, line: 56
+# File: spd-list, line: 98
+msgid "\"$program_name $*\" is not a valid command."
+msgstr "\"$program_name $*\" não é um comando válido."
+
+# File: spd-list, line: 33
+msgid "Installed synthesizers:"
+msgstr "Sintetizadores instalados:"
+
+# File: spd-list, line: 49
+msgid "Available languages: "
+msgstr "Idiomas disponíveis: "
+
+# File: spd-list, line: 63
+#, sh-format
+msgid "$parameter2 is not the name of an available synthesizer"
+msgstr "$parameter2 não é o nome de um sintetizador disponível"
+
+# File: spd-list, line: 72
+#, sh-format
+msgid "No information available about languages for $parameter2."
+msgstr "Não há informação disponível sobre idiomas para $parameter2."
+
+# File: spd-list, line: 74
+#, sh-format
+msgid "Available languages codes for $parameter2: "
+msgstr "Códigos de idiomas disponíveis para $parameter2: "
+
+# File: spd-list, line: 91
+#, sh-format
+msgid "No installed synthesizer provides the language $parameter2"
+msgstr "Nenhum sintetizador instalado fornece o idioma $parameter2"
+
+# File: spd-list, line: 93
+#, sh-format
+msgid "The language $parameter2 is provided by: "
+msgstr "O idioma $parameter2 é fornecido por: "
+
+# File: speak-with, line: 18
+msgid "  espeakup (Console screen reader connecting espeak-ng and speakup)\\n"
+msgstr "  espeakup (Leitor de ecrã do terminal a ligar o espeak-ng e o speakup)\\n"
+
+# File: speak-with, line: 22
+msgid "  speechd-up (Console screen reader connecting Speech Dispatcher and speakup)\\n"
+msgstr "  speechd-up (Leitor de ecrã do terminal a ligar o Speech Despaccher e speakup)\\n"
+
+# File: speak-with, line: 26
+msgid "  fenrir (Modular, flexible and fast console screen reader)\\n"
+msgstr "  fenrir (Leitor de ecrã do terminal modular, flexível e rápido)\\n"
+
+# File: speak-with, line: 33
+#, sh-format
+msgid "Usage: $program_name <screen reader> or <hard synthesizer> or none"
+msgstr "Utilização: $program_name <screen reader> ou <hard synthesizer> ou nenhum"
+
+# File: speak-with, line: 35
+msgid "Choose a console screen reader to talk with among:"
+msgstr "Escolha um leitor de ecrã do terminal para falar entre:"
+
+# File: speak-with, line: 38
+msgid "or use one of the supported hard synthesizers:"
+msgstr "ou utilize um dos sintetizadores suportados:"
+
+# File: speak-with, line: 41
+#, sh-format
+msgid "or type  \"$program_name none\" to mute all screen readers."
+msgstr "ou introduza \"$program_name nenhum\" para silenciar todos os leitores de ecrã."
+
+# File: speak-with, line: 55
+#, sh-format
+msgid "$first_argument_name is not a valid argument of this command."
+msgstr "$first_argument_name não é um argumento válido deste comando."
+
+# File: speak-with, line: 86
+msgid "espeakup is not installed."
+msgstr "espeakup não está instalado."
+
+# File: speak-with, line: 91
+#, sh-format
+msgid "$first_argument_name is already started."
+msgstr "$first_argument_name já foi iniciado."
+
+# File: speak-with, line: 101
+msgid "# File written by speak-with. Do not edit."
+msgstr "# Ficheiro escrito pelo speak-with. Não editar."
+
+# File: speak-with, line: 106
+msgid "Should espeakup be also started at next boot? [Y/n] "
+msgstr "O espeakup também deve ser iniciado no próximo arranque? [Y/n] "
+
+# File: speak-with, line: 113
+# File: speak-with, line: 148
+# File: speak-with, line: 187
+# File: speak-with, line: 247
+msgid "Done."
+msgstr "Concluído."
+
+# File: speak-with, line: 122
+msgid "speechd-up is not installed."
+msgstr "speechd-up não está instalado."
+
+# File: speak-with, line: 127
+msgid "speechd-up is already started."
+msgstr "speechd-up já foi iniciado."
+
+# File: speak-with, line: 141
+# File: speak-with, line: 180
+msgid "Should speechd-up be also started at next boot? [Y/n] "
+msgstr "O speechd-up também deve ser iniciado no próximo arranque? [Y/n] "
+
+# File: speak-with, line: 157
+msgid "fenrir is not installed."
+msgstr "fenrir não está instalado."
+
+# File: speak-with, line: 162
+msgid "fenrir is already started."
+msgstr "fenrir já foi iniciado."
+
+# File: speak-with, line: 207
+msgid "Do you also want a mute console at next boot? [Y/n] "
+msgstr "Também quer um terminal mudo na próximo arranque? [Y/n] "
+
+# File: speak-with, line: 216
+msgid "OK"
+msgstr "OK"
+
+# File: speak-with, line: 233
+#, sh-format
+msgid "Unable to switch to the $ARGUMENT synthesizer.\n"
+"Something should be wrong."
+msgstr "Não é possível alternar para o sintetizador $ARGUMENT.\n"
+"Algo deve estar errado."
+
+# File: speak-with, line: 238
+#, sh-format
+msgid "Should $ARGUMENT be also used at next boot? [Y/n] "
+msgstr "$ARGUMENT também deve ser usado no próximo arranque? [Y/n] "
+
+# File: speakup-save, line: 52
+msgid "Current speakup settings have been saved in "
+msgstr "As definições atuais do speakup foram guardadas em "
+
+# File: switch-off, line: 13
+# File: switch-on, line: 13
+msgid "emacspeak (The Complete Audio Desktop, based on emacs)"
+msgstr "emacspeak (o ambiente de áudio completo, baseado em emacs)"
+
+# File: switch-off, line: 14
+# File: switch-on, line: 14
+msgid "speechd-el (Emacs client to speech synthesizers and Braille displays)"
+msgstr "speechd-el (cliente Emacs para sintetizadores de voz e ecrãs Braille)"
+
+# File: switch-off, line: 20
+# File: switch-on, line: 22
+#, sh-format
+msgid "Usage: $program_name <emacspeak> or <speechd-el>"
+msgstr "Utilização: $program_name <emacspeak> ou <speechd-el>"
+
+# File: switch-off, line: 21
+msgid "This script allows to disable:"
+msgstr "Este script permite desativar:"
+
+# File: switch-off, line: 27
+# File: switch-on, line: 29
+msgid "$1 is an unknown feature."
+msgstr "$1 é uma funcionalidade desconhecida."
+
+# File: switch-off, line: 28
+# File: switch-on, line: 30
+msgid "Available features:"
+msgstr "Funcionalidades disponíveis:"
+
+# File: switch-off, line: 35
+# File: switch-on, line: 37
+msgid "$1 is not installed"
+msgstr "%s não está instalado"
+
+# File: switch-off, line: 44
+msgid "emacspeak is disabled."
+msgstr "emacspeak está desativado."
+
+# File: switch-off, line: 48
+# File: switch-on, line: 75
+msgid "$1 is not installed."
+msgstr "%s não está instalado."
+
+# File: switch-off, line: 57
+msgid "speechd-el is disabled."
+msgstr "speechd-el está desativado."
+
+# File: switch-on, line: 23
+msgid "This script allows to enable:"
+msgstr "Este script permite ativar:"
+
+# File: switch-on, line: 55
+msgid "emacspeak is enabled and speechd-el is disabled, as they are mutually exclusive."
+msgstr "emacspeak está ativado e o speechd-el está desativado, uma vez que são ambos exclusivos."
+
+# File: switch-on, line: 61
+msgid "Do you want to use a voxin voice with emacspeak? [Y/n] "
+msgstr "Deseja usar uma voz voxin com o emacspeak? [Y/n] "
+
+# File: switch-on, line: 92
+msgid "speechd-el is enabled and emacspeak is disabled, as they are mutually exclusive."
+msgstr "speechd-el está ativado e o emacspeak está desativado, uma vez que são ambos exclusivos."
+

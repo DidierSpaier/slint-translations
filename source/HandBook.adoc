@@ -1699,7 +1699,10 @@ The application *slapt-src* and its graphical front-end *sourcery* allows you to
 
 We will describe slapt-src in more details.
 
-[NOTE]Pre-built packages for most applications that can be built with slap-src or sourcery are available in the Salix extra repository. Preferably install these pre-built packages using slapt-get or gslapt, unless you need specific build options or a different version than the one provided.
+[NOTE]
+====
+Pre-built packages for most applications that can be built with slap-src or sourcery are available in the Salix extra repository. Preferably install these pre-built packages using slapt-get or gslapt, unless you need specific build options or a different version than the one provided.
+====
 
 [[slapt_src]]
 ===== Usage of slapt-srcrc
