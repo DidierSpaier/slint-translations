@@ -1,5 +1,24 @@
-= Translate Slint
-
+:stylesheet: ../css/slint.css
+:toc: left
+:toclevels: 2
+[.liens]
+****
+link:../en/home.html[Home]
+{nbsp}
+link:../en/HandBook.html[Documentation 15.0]
+{nbsp}
+link:../en/oldHandBook.html[Documentation 14.2.1]
+{nbsp}
+https://slackware.uk/slint/x86_64/slint-15.0/iso/[Download 15.0]
+{nbsp}
+link:../en/support.html[Support]
+{nbsp}
+link:../doc/translate_slint.html[Translate]
+{nbsp}
+link:../old/en/slint.html[Old Versions]
+****
+[.translate]
+== Translate Slint
 So, you want to help translating the Slint project? Welcome on board!
 
 The stuff to be translated mainly consists in shell scripts, that make up Slint's installers and administration tools, and of the Slint HandBook in asciidoc format, converted in html for publication.
@@ -12,9 +31,9 @@ To provide accurate and well formatted translations, it is preferable that trans
 
 Running Slint, possibly in a virtual machine, while not mandatory helps understanding the context.
 
-== Getting started
+=== Getting started
 
-To know what the Slint project is about, please read first if not yet done in this https://slint.fr/doc/HandBook.html#_introduction_to_slint[introduction to Slint] at least https://slint.fr/doc/HandBook.html#_about_slint[About Slint] and https://slint.fr/doc/HandBook.html#_support_and_contributions[Support and contributions]
+To know what the Slint project is about, please read first if not yet done in this https://slint.fr/doc/HandBook.html#_introduction_to_slint[introduction to Slint] at least link:../en/HandBook.html#_about_slint[About Slint] and link:../en/HandBook.html#_support_and_contributions[Support and contributions]
 
 Translations are managed using the The Crowdin platform. The Slint project has an open policy on Crowding, meaning that anyone can join and start contributing to the translation right away.
 
@@ -30,9 +49,9 @@ It will help, especially the blind translators, to know the https://support.crow
 
 Before you begin, please read <<recommendations,Practical recommendations>> below.
 
-Files to be translated, tools to manage localization of shell scripts and documentation are available the GitHub repository https://github.com/DidierSpaier/slint-translations[slint-translations]
+Files to be translated, tools to manage localization of shell scripts and documentation are available in the GitHub repository https://github.com/DidierSpaier/slint-translations[slint-translations]
 
-== Communicate with other Slint translators ==
+=== Communicate with other Slint translators
 
 The https://crowdin.com/project/slint/discussions[Discussions] page allows you to open an new topic and answer existing ones. All translators listed in https://crowdin.com/project/slint/members[Members] are notified, but you can specify the language for a new topic, to draw attention of translators into this language.
 
@@ -40,12 +59,12 @@ Fell free to introduce yourself to your colleagues opening a new topic.
 
 If you want to continue a translation, we suggest that you consult with other translators for the same language. You can find them  going to the https://crowdin.com/project/slint/activity-stream[Activity] page, then selecting in the drop down lists "Translation activity" and the target language. To send a message to a translator, go to https://crowdin.com/project/slint/members[Members], select this person and click Contact.
 
-== Translation scope and content
+=== Translation scope and content
 
 The sources files are in English:
 
-* HandBook.adoc is in asciidoc format. It is converted to html using https://asciidoctor.org/[Asciidoctor] to provide the https://slint.fr/doc/HandBook.html[Slint HandBook] +
-* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read https://github.com/DidierSpaier/slint-translations/blob/main/doc/internationalization_and_localization_of_shell_scripts.adoc[Internationalization and localization of shell scripts]
+* HandBook.adoc is in asciidoc format. It is converted to html using https://asciidoctor.org/[Asciidoctor] to provide the link:../en/HandBook.html[Slint HandBook] +
+* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read link:/doc/slint-translations/blob/main/doc/internationalization_and_localization_of_shell_scripts.adoc[Internationalization and localization of shell scripts]
 
 [NOTE]
 ====
@@ -77,9 +96,9 @@ This files gather messages from various shell scripts written for and used in Sl
 This file is the source in Asciidoc format of the Slint https://slint.fr/doc/HandBook.html[Slint HandBook].
 
 [[recommendations]]
-== Practical recommendations
+=== Practical recommendations
 
-=== Carefully check machine translations
+==== Carefully check machine translations
 
 Several files, like the HandBook, are partially pre-translated through machine translation, using the Crowdin Translate translation engine: the translated messages come from using exiting translation of identical or very similar messages found in other files hosted in the platform. This save time for translators, however there are important caveats.
 
@@ -108,7 +127,7 @@ Ukrainian.
 
 The recommendations about the translation of shell scripts below also apply to commands written in the HandBook.
 
-=== Translation of shell scripts
+==== Translation of shell scripts
 
 * Don't feel obliged to translate verbatim. Not only is this rarely the best way to convey the meaning, but in addition this often leads to sentences too long to fit in allowed space.
 This is especially important if you are translating dialog boxes. In particular, take care not to write too long sentences on one single line if it appears that the text can't flow on next one.

@@ -1,0 +1,23 @@
+// all pages are in folders by language, not in the web site directory
+:stylesheet: ./css/slint.css
+:toc: left
+:toclevels: 2
+:toc-title: Content
+:pdf-themesdir: themes
+:pdf-theme: default
+:sectnums:
+[.liens]
+****
+link:../nl/home.html[Thuis]
+{nbsp}
+link:../nl/HandBook.html[Documentatie 15.0]
+{nbsp}
+link:../nl/oldHandBook.html[Documentatie 14.2.1]
+{nbsp}
+https://slackware.uk/slint/x86_64/slint-15.0/iso/[Download 15.0]
+{nbsp}
+link:../nl/support.html[Ondersteuning]
+{nbsp}
+link:../doc/translate_slint.html[Vertaal]
+{nbsp}
+link:../old/nl/slint.html[Oudere versies]

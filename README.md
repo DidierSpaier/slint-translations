@@ -1,10 +1,14 @@
-# slint-translations
+This repository gathers source and translated files for the Slint distributon,
+version 15.0
 
-This repository gathers to-be-translated and translated files for the Slint project
-
-Content:
-* The folder localization_of_shell_scripts provides stuff used to manage localization of shell scripts.
-* The folder source gathers shell scripts and documents to be localized, in their latest version on the Crowdin platform.
-* The folder PO gathers the PO source files converted from the file in source, in their latest version on the Crowdin platform.
-* The folder doc gathers documents useful for translators and other people involved in the intenationalization and translation processes. 
-* The folder named as translations<YYYYMMDD> contains translations downloaded from Crowdin at a given date.
+Content of the folders:
+source/ internationalized shell scripts, and documents in ascidoc format.
+homepage.pot and auto.pot: POT file gathering to be translated strings
+extracted from source/homepage and source/auto
+HandBook/, rc.S/, homepage/, auto/ contain the translations (PO files)
+rc.S/, SetKeymap/ and HandBook/ contain also the POT files gathering to-be
+translated strings from the files in source bearing the same name.
+the files in rc.S/ are available in Transifex, see rc.S/note
+All other POT and PO files are available in Crowdin.
+tools/ contain all that is needed to manage the internationalizaton of
+shell scripts using gettext tools.

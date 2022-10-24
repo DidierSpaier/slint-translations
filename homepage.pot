@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-10-16 22:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ===
+#: source/homepage.adoc:1
+#, no-wrap
+msgid "About Slint"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:4
+msgid ""
+"Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-"
+"bit computers. Slint is based on Slackware and borrows tools from Salix. "
+"Maintainer: Didier Spaier."
+msgstr ""
+
+#. type: Title ===
+#: source/homepage.adoc:5
+#, no-wrap
+msgid "Features"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:8
+msgid ""
+"Slint is a stable distribution. However, accessibility software is regularly "
+"updated, others may be updated on a case by case basis."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:10
+msgid ""
+"The included software, among which the MATÉ and LXQt desktops, cover most "
+"needs. Many others are available in repositories maintained by Salix and "
+"Slackware that are fully compatible with Slint."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:12
+msgid ""
+"Slint can be used in console and graphical modes and can be switched between "
+"these modes without restarting. It is even possible to launch several "
+"graphical environments and switch between them."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:14
+msgid ""
+"Easy-to-use tools facilitate system administration and software package "
+"management. Updates are fully automatic, under user control."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:16
+msgid ""
+"The Slint dashboard gives direct access to the main tools and useful "
+"information and links."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:18
+msgid ""
+"By default, a compressed swap space in RAM allows doubling the usable memory."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:20
+msgid ""
+"Slint can be installed on any 64-bit machine with at least 2G of memory, and "
+"50G available on any medium including USB keys, without secure boot."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:22
+msgid ""
+"If installed on USB media Slint is portable from one computer to another. "
+"The media can be fully encrypted."
+msgstr ""
+
+#. type: Title ===
+#: source/homepage.adoc:23
+#, no-wrap
+msgid "Installation"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:26
+msgid ""
+"The installation program, in text mode, is fully accessible for blind people "
+"using a screen reader or Braille display, and proceeds by questions and "
+"answers with online help and integrated documentation. Two partitioning "
+"modes are available:"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:28
+msgid ""
+"Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media "
+"can be shared with other systems."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:30
+msgid ""
+"Automatic: The file system is then btrfs and the media dedicated to Slint."
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:32
+msgid ""
+"The btrfs file system is configured with subvolumes instead of separate "
+"partitions. It allows to divide by 2 the space occupied on the media, to "
+"take snapshots and is well adapted to SSD, NVMe and USB sticks."
+msgstr ""
+
+#. type: Title ===
+#: source/homepage.adoc:33
+#, no-wrap
+msgid "Acknowledgements"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:36
+msgid ""
+"Thanks to the translators of Slint and other contributors, to George "
+"Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, "
+"to slackware.uk for hosting our files. You can help fund them: https://www."
+"patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/"
+"volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]"
+msgstr ""
+
+#. type: Title ===
+#: source/homepage.adoc:37
+#, no-wrap
+msgid "Latest news"
+msgstr ""
+
+#. type: Plain text
+#: source/homepage.adoc:39
+msgid "Slint 15.0 is officially released!"
+msgstr ""

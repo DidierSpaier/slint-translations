@@ -1,3 +1,0 @@
-Here is the comand used to generate HandBook.pot from HandBook.adoc:
-
-po4a-updatepo -f asciidoc -m HandBook.adoc  -p HandBook.pot

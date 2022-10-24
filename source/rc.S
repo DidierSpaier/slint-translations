@@ -22,7 +22,7 @@
 # Mount the efivars files system if the system booted in EFI mode. This
 # will allow to include in the GRUB # boot menu a boot entry to go to
 # the firmware setup menu.
-mount -t efivarfs none /sys/firmware/efi/efivars
+[ -d sys/firmware/efi/efivars ] && mount -t efivarfs none /sys/firmware/efi/efivars
 
 if [ -x /sbin/ldconfig ]; then
   /sbin/ldconfig 1> /dev/null
@@ -43,6 +43,24 @@ modprobe loop 1> /dev/null 2> /dev/null
 # Run udev:
 /bin/bash /etc/rc.d/rc.udev start
 
+# Added as in slint64-5.0beta.iso
+
+sleep 8
+# I assume that we can install all packages we need in the initrd now
+# brltty is included in the initrd so that it be started by udev when
+# applicable.
+# We mount the ISO so we can add the ackages we need to this initrd
+mkdir -p /ISO
+mkdir -p /INSTALLER
+. /sbin/functions
+mounttheiso
+sh /etc/rc.d/rc.swapinzram start
+
+echo "installing kernel-firmware. Please wait..."
+spkg -i -qq $ISO/slint/kernel-firmware*txz
+
+#End additions as in slint64-5.0beta.iso
+export TEXTDOMAIN=rc.S
 sleep 1
 
 # Start brltty if it has not yet been started by udev - Didier Spaier
@@ -102,7 +120,7 @@ set_voice () {
 	fi
 	echo $VOICE > /tmp/speech
 }
-sh 	/etc/rc.d/rc.alsa 2>/tmp/error.alsa 1>out.alsa
+sh /etc/rc.d/rc.alsa 2>/tmp/error.alsa 1>out.alsa
 # speakup initialization.
 # If a hard synth is set in the command line (how do I provide this ability
 # with grub?) no need to start espeakup.
@@ -163,19 +181,10 @@ dialog --visit-items --no-tags --no-cancel --nook --title "$TITLE" --default-ite
 en_US.utf8 "$(gettext "English (USA)")" \
 nl_NL.utf8 "$(gettext "Dutch")" \
 fr_FR.utf8 "$(gettext "French")" \
-de_DE.utf8 "$(gettext "German")" \
 el_GR.utf8 "$(gettext "Greek")" \
 it_IT.utf8 "$(gettext "Italian")" \
-nb_NO.utf8 "$(gettext "Norwegian")" \
-pl_PL.utf8 "$(gettext "Polish")" \
-pt_BR.utf8 "$(gettext "Portuguese (Brazil)")" \
 pt_PT.utf8 "$(gettext "Portuguese (Portugal)")" \
-ru_RU.utf8 "$(gettext "Russian")" \
-es_CR.utf8 "$(gettext "Spanish (Latin America)")" \
-sk_SK.utf8 "$(gettext "Slovak")" \
 sv_SE.utf8 "$(gettext "Swedish")" \
-tr_TR.utf8 "$(gettext "Turkish")" \
-uk_UA.utf8 "$(gettext "Ukrainian")" \
  2> /tmp/.SlintInstallationLANG
 if [ $? -ne 0 ]; then
 	echo $INITLANG > /tmp/.SlintInstallationLANG

@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Dik Leenheer <dleenheer@suzerein.nl>, 2019
+# Eric Hameleers <eric.hameleers@gmail.com>, 2019
+# Didier Spaier <didier@slint.fr>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint 20190222\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2019-02-22 12:22+0000\n"
+"Last-Translator: Didier Spaier <didier@slint.fr>, 2019\n"
+"Language-Team: Dutch (https://www.transifex.com/didier_spaier/teams/15333/"
+"nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: SeTkeymap:24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "TOETSENBORD INDELING SELECTEREN"
+
+#: SeTkeymap:24
+#, sh-format
+msgid ""
+"You may select one of the following keyboard maps.  If you do not select a "
+"keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow "
+"keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr ""
+"Je kunt een van de volgende toetsenbord indelingen selecteren. Als je geen "
+"indeling selecteert, wordt $DefaultKeyMap gebruikt. Gebruik de Omhoog/Omlaag "
+"pijltjestoetsen en Pagina Omhoog/Omlaag toetsen om door de volledige lijst "
+"met keuzemogelijkheden te lopen."
+
+#: SeTkeymap:214
+msgid ""
+"\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr ""
+"\n"
+"    OK, de nieuwe indeling is nu geïnstalleerd. Je wilt deze misschien "
+"testen\n"
+"    door een willekeurige tekst te typen. Om de test te eindigen typ je 1 "
+"op\n"
+"    een verder lege regel om de indeling te accepteren, of 2 op een verder\n"
+"    lege regel om het huidige toetsenbord af te keuren en een nieuwe te "
+"kiezen."
