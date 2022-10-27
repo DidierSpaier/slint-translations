@@ -14,10 +14,10 @@ link:../pt/HandBook.html[Documentação 15.0]
 {nbsp}
 link:../pt/oldHandBook.html[Documentação 14.2.1]
 {nbsp}
-https://slackware.uk/slint/x86_64/slint-15.0/iso/[Descarregar 15.0]
+https://slackware.uk/slint/x86_64/slint-15.0/iso/[Transferir 15.0]
 {nbsp}
-link:../pt/support.html[Apoio]
+link:../pt/support.html[Suporte]
 {nbsp}
 link:../doc/translate_slint.html[Traduzir]
 {nbsp}
-link:../old/pt_PT/slint.html[Versões mais antigas]
+link:../old/pt_PT/slint.html[Versões antigas]
