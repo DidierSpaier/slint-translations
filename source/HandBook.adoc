@@ -62,6 +62,7 @@ Other sources of information are available:
 * Beyond the Arch distribution, the ArchWiki provides often helpful article on software also shipped in Slint. For instance searching "arch wiki mate" leads to https://wiki.archlinux.org/index.php/MATE[this page about MATE]. Caveat: the information provided can need to be adapted as Slint and Arch differ on some regards. For instance Arch uses systemd as init system and a given software can be configured differently by default in Slint and Arch.
 * And of course an Internet search engine can often help find answers to questions and solutions to issues.
 // Support
+
 === Support
 
 You can get help through these channels:
@@ -73,7 +74,7 @@ You can get help through these channels:
 * The https://forum.salixos.org/viewforum.php?f=44[Slint forum] kindly hosted by our friends at Salix (another Slackware derivative). Registration needed.
 
 
-To find out more, see the links under Information in the Slint Dashboard, visit our https://slint.fr/wiki/doku.php?id=en/start[wiki] or just type: slint-doc in a terminal after installation.
+To find out more, see the links under Information in the Slint Dashboard or just type: slint-doc in a terminal after installation.
 
 === Translation and other contributions to the Slint project
 
@@ -83,6 +84,7 @@ The translation files are hosted on https://crowdin.com/project/slint[Crowdin].
 
 If you want to contribute to Slint for other tasks, just post in the mailing list or drop a line to: didieratslintdotfr. Of course translators are welcome on the mailing list too!
 // Acknowledgments
+
 === Acknowledgments
 
 The Slint project exists mainly through to the hard work of the Slint translators and other contributors, thanks to all of you!
@@ -240,6 +242,7 @@ partitions.
 Of course you may also create the partitions form another system before
 starting the installer.
 // Installation
+
 === Slint Installation
 <<Start_of_the_installation,Start of the installation>> +
 <<Overview_of_Slint_Installation,Overview of the installation process>> +

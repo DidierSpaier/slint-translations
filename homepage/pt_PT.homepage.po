@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-10-16 22:38+0200\n"
-"PO-Revision-Date: 2022-10-19 21:34\n"
+"PO-Revision-Date: 2022-10-27 09:26\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -25,7 +25,7 @@ msgstr "Acerca do Slint"
 #. type: Plain text
 #: source/homepage.adoc:4
 msgid "Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier."
-msgstr "O Slint é uma distribuição Linux fácil de usar, versátil e acessível a pessoas cegas para computadores de 64 bits. O Slint é baseado no Slackware e usa algumas ferramentas do Salix. Responsável: Didier Spaier."
+msgstr "O Slint é uma distribuição Linux para computadores de 64 bits, que é fácil de usar, versátil e acessível a pessoas cegas. O Slint é baseado no Slackware e usa algumas ferramentas do Salix. Criador e responsável: Didier Spaier."
 
 #. type: Title ===
 #: source/homepage.adoc:5
@@ -56,7 +56,7 @@ msgstr "Ferramentas fáceis de usar facilitam a administração do sistema e a g
 #. type: Plain text
 #: source/homepage.adoc:16
 msgid "The Slint dashboard gives direct access to the main tools and useful information and links."
-msgstr "O painel de controlo do Slint dá acesso direto às principais ferramentas e informações e ligações úteis."
+msgstr "O painel de controlo do Slint dá acesso direto às principais ferramentas, informações e ligações úteis."
 
 #. type: Plain text
 #: source/homepage.adoc:18
@@ -66,7 +66,7 @@ msgstr "Por padrão, um espaço de swap comprimido na memória RAM permite dupli
 #. type: Plain text
 #: source/homepage.adoc:20
 msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
-msgstr "O Slint pode ser instalado em qualquer máquina de 64 bits com pelo menos 2G de memória, e 50G de armazenamento disponível em qualquer tipo de suporte, incluindo Pens USB, sem arranque seguro."
+msgstr "O Slint pode ser instalado em qualquer máquina de 64 bits com pelo menos 2G de memória e 50G de espaço em disco disponível em qualquer tipo de suporte, incluindo Pens USB, sem arranque seguro."
 
 #. type: Plain text
 #: source/homepage.adoc:22
@@ -119,5 +119,5 @@ msgstr "Últimas notícias"
 #. type: Plain text
 #: source/homepage.adoc:39
 msgid "Slint 15.0 is officially released!"
-msgstr "O Slint 15.0 é oficialmente lançado!"
+msgstr "O Slint 15.0 é disponibilizado oficialmente!"
 

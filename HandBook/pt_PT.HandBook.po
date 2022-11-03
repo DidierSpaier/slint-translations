@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-09-25 22:16+0000\n"
-"PO-Revision-Date: 2022-10-19 06:57\n"
+"PO-Revision-Date: 2022-10-27 09:26\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -109,7 +109,7 @@ msgstr "As definições predefinidas das aplicações preferidas são fornecidas
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:42
 #, no-wrap
 msgid "Content, versions and release model."
-msgstr "Conteúdo, versões e modelo de lançamento."
+msgstr "Conteúdo, versões e modelo de lançamento"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:45
@@ -343,7 +343,7 @@ msgstr "O instalador é um sistema 'live', executado na memória: não modificar
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:122
 msgid "For blind users the installer is fully usable with Braille, and speech using the Speakup screen reader."
-msgstr "Para os utilizadores invisuais, o instalador é totalmente utilizável com Braile e voz usando o leitor de ecrã \"Speakup\"."
+msgstr "Para os utilizadores invisuais, o instalador é totalmente utilizável com Braille e voz usando o leitor de ecrã \"Speakup\"."
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:123
@@ -815,7 +815,7 @@ msgstr "O instalador tenta estabelecer uma ligação à Internet, e se tiver suc
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:364
 msgid "You are asked if you will need Braille, then if you prefer to start in a console or in a graphical unless you used speech during installation or need Braille: then you will land in a console after reboot, for safety."
-msgstr "É-lhe perguntado se vai precisar de Braile, depois se prefere começar numa consola ou num gráfico, a menos que tenha usado a voz durante a instalação ou precise de Braile: de seguida será deixado numa consola após reiniciar, por segurança."
+msgstr "É-lhe perguntado se vai precisar de Braille, depois se prefere começar numa consola ou num gráfico, a menos que tenha usado a voz durante a instalação ou precise de Braille: de seguida será deixado numa consola após reiniciar, por segurança."
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:366
@@ -1634,7 +1634,7 @@ msgstr "Para escolher um dos outros ambientes gráficos (BlackBox, Fluxbox, ratp
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:756
 msgid "We will now briefly describe the components of the Mate desktop, which is the default and is also the most accessible with speech and braille."
-msgstr "Iremos agora descrever brevemente os componentes do ambiente de trabalho Mate, que é o predefinido e também o mais acessível com voz e braile."
+msgstr "Iremos agora descrever brevemente os componentes do ambiente de trabalho Mate, que é o predefinido e também o mais acessível com voz e braille."
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:758
@@ -3377,13 +3377,13 @@ msgstr "Ativar um destes softwares desativa o outro."
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1550
 #, no-wrap
 msgid "Manage your system"
-msgstr "Gerir o sistema"
+msgstr "Faça a gestão do sistema"
 
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1553
 #, no-wrap
 msgid "Software management in Slint."
-msgstr "Gestão de software no Slint."
+msgstr "Gestão de software no Slint"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1560

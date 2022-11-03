@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2022-10-16 22:38+0200\n"
+"PO-Revision-Date: 2022-10-27 09:26\n"
+"Last-Translator: \n"
+"Language-Team: Greek\n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: el\n"
+"X-Crowdin-File: homepage.pot\n"
+"X-Crowdin-File-ID: 106\n"
+
+#. type: Title ===
+#: source/homepage.adoc:1
+#, no-wrap
+msgid "About Slint"
+msgstr "Σχετικά με το Slint"
+
+#. type: Plain text
+#: source/homepage.adoc:4
+msgid "Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier."
+msgstr "Το Slint είναι μια εύχρηστη, ευέλικτη, φιλική για χρήστες με προβλήματα όρασης διανομή Linux για υπολογιστές 64-bit. Το Slint βασίζεται σε εργαλεία Slackware και δανεισμένα από το Salix. Συντηρητής: Didier Spaier."
+
+#. type: Title ===
+#: source/homepage.adoc:5
+#, no-wrap
+msgid "Features"
+msgstr "Χαρακτηριστικά"
+
+#. type: Plain text
+#: source/homepage.adoc:8
+msgid "Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis."
+msgstr "Το Slint είναι μια σταθερή διανομή. Ωστόσο, το λογισμικό προσβασιμότητας ενημερώνεται τακτικά, άλλα ενδέχεται να ενημερώνονται κατά περίπτωση."
+
+#. type: Plain text
+#: source/homepage.adoc:10
+msgid "The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
+msgstr "Το συμπεριλαμβανόμενο λογισμικό, μεταξύ των οποίων τα περιβάλλοντα εργασίας MATÉ και LXQt, καλύπτει τις περισσότερες ανάγκες. Περισσότερο λογισμικό είναι διαθέσιμο σε χώρους αποθήκευσης που διατηρούνται από το Salix και το Slackware που είναι πλήρως συμβατά με το Slint."
+
+#. type: Plain text
+#: source/homepage.adoc:12
+msgid "Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them."
+msgstr "Το Slint μπορεί να χρησιμοποιηθεί σε λειτουργίες κονσόλας και γραφικών και μπορεί να γίνει εναλλαγή μεταξύ αυτών των λειτουργιών χωρίς επανεκκίνηση. Είναι ακόμη δυνατό να ξεκινήσει διάφορα γραφικά περιβάλλοντα και να γίνει εναλλαγή μεταξύ τους."
+
+#. type: Plain text
+#: source/homepage.adoc:14
+msgid "Easy-to-use tools facilitate system administration and software package management. Updates are fully automatic, under user control."
+msgstr "Εύχρηστα εργαλεία διευκολύνουν τη διαχείριση του συστήματος και τη διαχείριση πακέτων λογισμικού. Οι ενημερώσεις είναι πλήρως αυτόματες, υπό τον έλεγχο του χρήστη."
+
+#. type: Plain text
+#: source/homepage.adoc:16
+msgid "The Slint dashboard gives direct access to the main tools and useful information and links."
+msgstr "Ο πίνακας ελέγχου Slint δίνει άμεση πρόσβαση στα κύρια εργαλεία και χρήσιμες πληροφορίες και συνδέσμους."
+
+#. type: Plain text
+#: source/homepage.adoc:18
+msgid "By default, a compressed swap space in RAM allows doubling the usable memory."
+msgstr "Από προεπιλογή, ένας συμπιεσμένος χώρος swap στη RAM επιτρέπει τον διπλασιασμό της χρησιμοποιήσιμης μνήμης."
+
+#. type: Plain text
+#: source/homepage.adoc:20
+msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
+msgstr "Slint μπορεί να εγκατασταθεί σε οποιαδήποτε μηχανή 64-bit με τουλάχιστον 2G μνήμης, και 50G διαθέσιμα σε οποιοδήποτε μέσο, συμπεριλαμβανομένων των USB sticks, χωρίς ασφαλή εκκίνηση."
+
+#. type: Plain text
+#: source/homepage.adoc:22
+msgid "If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted."
+msgstr "Εάν εγκατασταθεί σε USB media το Slint είναι φορητό από έναν υπολογιστή σε ένα άλλο. Τα μέσα μπορούν να κρυπτογραφηθούν πλήρως."
+
+#. type: Title ===
+#: source/homepage.adoc:23
+#, no-wrap
+msgid "Installation"
+msgstr "Εγκατάσταση"
+
+#. type: Plain text
+#: source/homepage.adoc:26
+msgid "The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:"
+msgstr "Το πρόγραμμα εγκατάστασης, σε λειτουργία κειμένου, είναι πλήρως προσβάσιμο για τυφλούς που χρησιμοποιούν έναν αναγνώστη οθόνης ή οθόνη Braille, και προχωρά με ερωτήσεις και απαντήσεις με online βοήθεια και ολοκληρωμένη τεκμηρίωση. Δύο τρόποι διαμέρισης είναι διαθέσιμοι:"
+
+#. type: Plain text
+#: source/homepage.adoc:28
+msgid "Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media can be shared with other systems."
+msgstr "Οδηγός: ο χρήστης επιλέγει το σύστημα αρχείων (btrfs, ext4 ή xfs) και τα μέσα μπορούν να διατεθούν για κοινή χρήση με άλλα συστήματα."
+
+#. type: Plain text
+#: source/homepage.adoc:30
+msgid "Automatic: The file system is then btrfs and the media dedicated to Slint."
+msgstr "Αυτόματο: Το σύστημα αρχείων είναι τότε btrfs και ο χώρος είναι αφιερωμένος στο Slint."
+
+#. type: Plain text
+#: source/homepage.adoc:32
+msgid "The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks."
+msgstr "Το σύστημα αρχείων btrfs έχει ρυθμιστεί με υπο-τόμους αντί για ξεχωριστές κατατμήσεις. Επιτρέπει να διαιρέσει με 2 το χώρο που καταλαμβάνεται στο μέσο ενημέρωσης, να λάβει στιγμιότυπα και είναι καλά προσαρμοσμένη σε SSD, NVMe και USB sticks."
+
+#. type: Title ===
+#: source/homepage.adoc:33
+#, no-wrap
+msgid "Acknowledgements"
+msgstr "Ευχαριστίες"
+
+#. type: Plain text
+#: source/homepage.adoc:36
+msgid "Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them: https://www.patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]"
+msgstr "Ευχαριστούμε τους μεταφραστές του Slint και τους λοιπούς συνεισφέροντες, τον Γιώργο Βλαχάβα για τις συμβουλές και τα εργαλεία του, τον Patrick J. Volkerding για το Slackware, το slackware.uk για τη φιλοξενία των αρχείων μας. Μπορείτε να βοηθήσετε στη χρηματοδότησή τους: https://www.patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]"
+
+#. type: Title ===
+#: source/homepage.adoc:37
+#, no-wrap
+msgid "Latest news"
+msgstr "Τελευταία νέα"
+
+#. type: Plain text
+#: source/homepage.adoc:39
+msgid "Slint 15.0 is officially released!"
+msgstr "Το Slint 15.0 κυκλοφόρησε επίσημα!"
+

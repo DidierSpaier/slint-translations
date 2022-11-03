@@ -1,27 +1,31 @@
 :stylesheet: ../css/slint.css
-:toc: left
+:toc: macro
 :toclevels: 2
 [.liens]
-****
-link:../en/home.html[Home]
-{nbsp}
-link:../en/HandBook.html[Documentation 15.0]
-{nbsp}
-link:../en/oldHandBook.html[Documentation 14.2.1]
-{nbsp}
-https://slackware.uk/slint/x86_64/slint-15.0/iso/[Download 15.0]
-{nbsp}
-link:../en/support.html[Support]
-{nbsp}
-link:../doc/translate_slint.html[Translate]
-{nbsp}
-link:../old/en/slint.html[Old Versions]
-****
+--
+[.mainmen]
+* link:../en/home.html[Home]
+* link:../en/HandBook.html[Documentation 15.0]
+* link:../en/oldHandBook.html[Documentation 14.2.1]
+* https://slackware.uk/slint/x86_64/slint-15.0/iso/[Download 15.0]
+* link:../en/support.html[Support]
+* link:../doc/translate_slint.html[Translate]
+* link:../old/en/slint.html[Old Versions]
+--
+
+toc::[]
+
 [.translate]
 == Translate Slint
 So, you want to help translating the Slint project? Welcome on board!
 
-The stuff to be translated mainly consists in shell scripts, that make up Slint's installers and administration tools, and of the Slint HandBook in asciidoc format, converted in html for publication.
+The stuff to be translated mainly consists in shell scripts, that make up Slint's installers and administration tools, and of the Slint HandBook and the home page of this web site in asciidoc format, converted in html for publication.
+
+We appy a policy of "contiuous translation", meaning that new or updated translations are integrated as soon as possible:
+[options="compact"]
+* updating this website (translations of the HandBook in link:../en/HandBook.html[Documentation 15.0]
+* updating the Slint package "slint-docs" that alows to read the HandBook locally
+* providing a new installation ISO when a new translation of one of the files rc.S or auto is available.
 
 To provide accurate and well formatted translations, it is preferable that translators:
 [options="compact"]
@@ -31,9 +35,10 @@ To provide accurate and well formatted translations, it is preferable that trans
 
 Running Slint, possibly in a virtual machine, while not mandatory helps understanding the context.
 
+
 === Getting started
 
-To know what the Slint project is about, please read first if not yet done in this https://slint.fr/doc/HandBook.html#_introduction_to_slint[introduction to Slint] at least link:../en/HandBook.html#_about_slint[About Slint] and link:../en/HandBook.html#_support_and_contributions[Support and contributions]
+To know what the Slint project is about, please read first if not yet done in this link:../en//HandBook.html#_introduction_to_slint[introduction to Slint] at least link:../en/HandBook.html#_about_slint[About Slint] and link:../en/HandBook.html#_support_and_contributions[Support and contributions]
 
 Translations are managed using the The Crowdin platform. The Slint project has an open policy on Crowding, meaning that anyone can join and start contributing to the translation right away.
 
@@ -63,8 +68,8 @@ If you want to continue a translation, we suggest that you consult with other tr
 
 The sources files are in English:
 
-* HandBook.adoc is in asciidoc format. It is converted to html using https://asciidoctor.org/[Asciidoctor] to provide the link:../en/HandBook.html[Slint HandBook] +
-* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read link:/doc/slint-translations/blob/main/doc/internationalization_and_localization_of_shell_scripts.adoc[Internationalization and localization of shell scripts]
+* HandBook.adoc and homepage.adoc are in asciidoc format. They are converted to html using https://asciidoctor.org/[Asciidoctor] to provide the link:../en/HandBook.html[Slint HandBook] and the link:../en/home.html[home page] of this website. +
+* All other files are PO (Portable Objects) files, extracted from shell scripts and converted back and forth using the *gettext* and *po4a* software. To know more read link:../doc/doc/internationalization_and_localization_of_shell_scripts.adoc[Internationalization and localization of shell scripts]
 
 [NOTE]
 ====
@@ -78,7 +83,7 @@ To display your translation of the HandBook in a web browser you can do this, as
 ----
 +
 * Convert the asciidoc file to html typing "asciidoc pt_PT.HandBook.adoc" or "asciidoctor pt_PT.HandBook.adoc"
-* Load the converted file pt_PT.HandBook.html in a web  browser
+* Load the converted file pt_PT.HandBook.html in a web browser
 ====
 
 Here is the list of files to translate and their content at time of writing:
@@ -93,7 +98,10 @@ Messages from the init script *rc.S* in the installer, modified from the one in 
 This files gather messages from various shell scripts written for and used in Slint.
 
 [[HandBook]]HandBook::
-This file is the source in Asciidoc format of the Slint https://slint.fr/doc/HandBook.html[Slint HandBook].
+This file is the source in Asciidoc format of the Slint link:../en/HandBook.html[Slint HandBook (version 15.0)].
+
+[[homepage]]homepage::
+This file is the source in Asciidoc format of the link:../en/home.html[home page] of this website.
 
 [[recommendations]]
 === Practical recommendations
@@ -123,9 +131,10 @@ Ukrainian.
 * When working on a machine translated file, the translator acts as a proofreader and as such should *review every translated string*.
 * Pay special attention to commands: if options or arguments of a command have been translated, this command  will most often fail when executed. If you find a machine translated, please replace the translation by the source in English.
 * If a command expect answers like "y", "n", "yes" or "no", these answers should *not* be translated, else the scripts which expect this answer will fail.
+* When using the Crowdin text editor for a fle in asciidoc format like HandBook and homepage, set HTML tags displaying to "SHOW" and when you find a markup like <<text1,text2>>, translate the text after te comma only (text2 in this example).
 ====
 
-The recommendations about the translation of shell scripts below also apply to commands written in the HandBook.
+The recommendations about the translation of shell scripts below also apply to commands written in the HandBook and the home page
 
 ==== Translation of shell scripts
 

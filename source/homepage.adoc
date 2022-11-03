@@ -33,7 +33,10 @@ The btrfs file system is configured with subvolumes instead of separate partitio
 
 === Acknowledgements
 
-Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them: https://www.patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]
+Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them: +
+https://www.patreon.com/slackwarelinux[Become a Slackware patron] or https://paypal.me/volkerdi[Support Slackware] +
+Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK +
+https://salixos.org/donations.html[Donations to Salix]
 
 === Latest news
 

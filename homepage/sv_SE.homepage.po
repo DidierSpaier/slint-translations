@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-10-16 22:38+0200\n"
-"PO-Revision-Date: 2022-10-19 21:34\n"
+"PO-Revision-Date: 2022-10-27 09:26\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -41,7 +41,7 @@ msgstr "Slint är en stabil distribution. Programvara för tillgänglighet uppda
 #. type: Plain text
 #: source/homepage.adoc:10
 msgid "The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
-msgstr "De inkluderade programvarorna, bland MATÉ och LXQt skrivbord, täcker de flesta behoven. Många andra är tillgängliga i förråd som underhålls av Salix och Slackware som är helt kompatibla med Slint."
+msgstr "De inkluderade programvarorna, bland MATE och LXQt skrivbord, täcker de flesta behoven. Många andra är tillgängliga i förråd som underhålls av Salix och Slackware som är helt kompatibla med Slint."
 
 #. type: Plain text
 #: source/homepage.adoc:12
