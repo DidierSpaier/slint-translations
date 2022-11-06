@@ -435,7 +435,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   font-family: sans-serif;
 }
 .mainmen li:not(:first-child)::before {
-  content: "    ";
+  content: "  ";
   margin: 0 .5em;
 }
 .langmen li:not(:first-child)::before {
@@ -445,7 +445,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }
 .liens {
 	text-align: center;
-	background-color: #f2f2f2
+	background-color: #f2f2f2;
+	min-height: 1.7em
 }
 .liens a{text-decoration: none}
 .liens a:hover {
