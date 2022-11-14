@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-12 14:55+0000\n"
-"PO-Revision-Date: 2022-10-27 09:26\n"
+"PO-Revision-Date: 2022-11-13 21:12\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -22,38 +22,39 @@ msgstr ""
 msgid "There don't seem to be any partitions on this machine\n"
 "of type Linux and size at least ${GCOUNT}G. You need one to install Linux.\n\n"
 "For more information, choose 'doc' from the menu."
-msgstr "Er lijkt geen Linux-partitie van minimaal ${GCOUNT}G op deze machine\\n\n"
-"aanwezig te zijn. Deze is vereist om Linux te kunnen installeren.\n\n"
+msgstr "Het lijkt er op dat er geen Linux-partitie van minimaal ${GCOUNT}G op\n"
+"deze machine aanwezig is. Deze is vereist om Linux te kunnen installeren.\n\n"
 "Kies voor meer informatie 'doc' in het menu."
 
 # File: functions, line: 58
 msgid "This machine booted in EFI mode but no big enough EFI System Partition found.\n\n"
 "For more information. choose 'doc' from the menu."
-msgstr "Deze machine is opgestart in EFI modus maar er werd geen in omvang\\n\n"
-"toereikende EFI System Partition gevonden.\n\n"
-"Kies voor meer informatie 'doc' in het menu."
+msgstr "Deze machine is opgestart in EFI modus maar er werd geen in\n"
+"omvang toereikende EFI System Partition gevonden.\n\n"
+"Typ 'doc' in het menu voor meer informatie."
 
 # File: functions, line: 61
 msgid "If the root partition is in a drive with a GPT, GRUB needs a BIOS boot\n"
 "partition on the same drive, of size at least 3M. We didn't find such a\n"
 "configuration."
-msgstr "Als de root-partitie zich bevindt op een schijf met een GPT heeft GRUB een\\n\n"
-"BIOS boot-partitie op dezelfde schijf nodig van minimaal 3M.\n"
-"We hebben deze niet kunnen vinden."
+msgstr "Als de root-partitie zich bevindt op een schijf met een GPT heeft GRUB\n"
+"een BIOS boot-partitie op dezelfde schijf nodig van minimaal 3M.\n"
+"We hebben die niet kunnen vinden."
 
 # File: functions, line: 64
 #, sh-format
 msgid "We didn't find a drive of size at least ${GCOUNT}G and no mounted\n"
 "partition, so the automatic partitioning is not possible."
-msgstr "We hebben geen schijf gevonden met een minimale grootte van ${GCOUNT}G\\n\n"
-"en ook geen aangekoppelde partitie zodat automatisch partitioneren niet mogelijk is."
+msgstr "We hebben geen schijf gevonden met een minimale grootte van ${GCOUNT}G\n"
+"en ook geen aangekoppelde partitie waardoor automatisch partitioneren\n"
+"niet mogelijk is."
 
 # File: functions, line: 66
 msgid "The machine booted in EFI mode but we did not find a potential root partition\n"
 "with an EFI system partition on the same drive so the manual partitioning\n"
 "mode is not possible."
-msgstr "De machine is opgestart in EFI-modus maar we hebben geen beschikbare\\n\n"
-"root-partitie met een EFI systeem-partitie op dezelfde schijf gevonden\\n\n"
+msgstr "De machine is opgestart in EFI-modus maar we hebben geen beschikbare\n"
+"root-partitie met een EFI systeem-partitie op dezelfde schijf gevonden\n"
 "waardoor handmatig partitioneren niet mogelijk is."
 
 # File: functions, line: 75
@@ -75,16 +76,16 @@ msgid "Welcome back to the menu of the Slint installer.\n\n"
 "When you finish reading this menu will be displayed again."
 msgstr "Welkom terug bij het Slint installatieprogramma!\n\n"
 "Je kunt nu (zonder aanhalingstekens) typen:\n\n"
-"'doc' om de mogelijkheden en het gebruik van het installatieprogramma\\n\n"
+"'doc' om de mogelijkheden en het gebruik van het installatieprogramma\n"
 "te leren kennen.\n"
 "'start' om het installatieprogramma te starten.\n\n"
-"Het installatieprogramma kan de schijf waarop Slint wordt geïnstalleerd\\n\n"
-"voorbereiden door het maken van de benodigde partities. Je kunt dat ook\\n\n"
-"handmatig zelf doen met behulp van de aanwezige hulpprogramma's waarna\\n\n"
-"je 'start' typt als je hiermee klaar bent.\\n\n"
-"Je kunt ook het installatieprogramma verlaten en een programma zoals gparted\\n\n"
-"gebruiken en daarna het installatieprogramma opnieuw starten.\n\n"
-"In dat geval of als je de schijf wilt versleutelen adviseren we 'doc' te typen en de\\n\n"
+"Het installatieprogramma kan de schijf waarop Slint wordt geïnstalleerd\n"
+"voorbereiden door het maken van de benodigde partities. Je kunt dat ook\n"
+"handmatig zelf doen met behulp van de aanwezige hulpprogramma's waarna\n"
+"je 'start' typt als je hiermee klaar bent.\n"
+"Je kunt ook het installatieprogramma verlaten en een programma zoals\n"
+"gparted gebruiken en daarna het installatieprogramma opnieuw starten.\n\n"
+"In dat geval of als je de schijf wilt versleutelen adviseren we 'doc' te typen en de\n"
 "documentatie te lezen waarna je met q weer terugkeert naar het hoofdmenu."
 
 # File: functions, line: 130
@@ -94,25 +95,25 @@ msgid "In manual partitioning mode you partition and format the drive\n"
 "This gives you more choices of partitions layout and file systems but needs\n"
 "to be acquainted to Linux and the command line (but you may also have used\n"
 "a tool like gparted live before starting the installer, or from another system)."
-msgstr "In handmatige partitioneringsmodus partitioneer en formatteer je naar\\n\n"
-"eigen inzicht zelf de schijf waarop je Slint wilt installeren met behulp van\\n\n"
-"de beschikbare hulpprogramma's. Dit geeft je meer vrijheid bij het maken\\n\n"
-"van partities en bestandssystemen maar vereist dat je vertrouwd bent met\\n\n"
-"Linux en de opdrachtregel.\\n\n"
-"Je zou ook een programma als 'gparted live' kunnen gebruiken voordat je het\\n\n"
+msgstr "In handmatige partitioneringsmodus partitioneer en formatteer je naar\n"
+"eigen inzicht zelf de schijf waarop je Slint wilt installeren met behulp van\n"
+"de beschikbare hulpprogramma's. Dit geeft je meer vrijheid bij het maken\n"
+"van partities en bestandssystemen maar vereist dat je vertrouwd bent met\n"
+"Linux en de opdrachtregel.\n"
+"Je zou ook een programma als 'gparted live' kunnen gebruiken voordat je het\n"
 "installatieprogramma, eventueel vanaf een ander systeem, start."
 
 # File: functions, line: 136
 msgid "In auto mode the installer do it for you, but chooses the\n"
 "partition layout and the file system."
-msgstr "In automatische modus doet het installatieprogramma het voor je\\n\n"
+msgstr "In automatische modus doet het installatieprogramma het voor je\n"
 "en bepaalt dan ook de partitie lay-out en het bestandssysteem."
 
 # File: functions, line: 139
 msgid "In both modes you will be given a chance to indicate existing\n"
 "partitions (not needed by Slint) that you want to access from Slint."
-msgstr "In beide modi krijg je de kans om bestaande partities\\n\n"
-"(buiten die benodigd voor Slint) aan te geven die je vanuit Slint\\n\n"
+msgstr "In beide modi krijg je de kans om bestaande partities\n"
+"(buiten die benodigd voor Slint) aan te geven die je vanuit Slint\n"
 "wilt kunnen benaderen."
 
 # File: functions, line: 142
@@ -131,9 +132,9 @@ msgstr "Druk Enter om door te gaan"
 msgid "These directories should not be mounted on separate partitions:\n"
 "$RESERVED\n"
 "or use arbitrary directory names, for instance to mount other Linux systems.\n"
-msgstr "Deze directories mogen niet worden aangekoppeld op een aparte partitie:\n"
-"$RESERVED\\n\n"
-"of willekeurige directory-namen gebruiken om bijvoorbeeld\\n\n"
+msgstr "Deze directories mogen niet worden aangekoppeld op aparte partitie:\n"
+"$RESERVED\n"
+"of willekeurige directory-namen gebruiken om bijvoorbeeld\n"
 "andere Linux systemen op aan te koppelen.\n"
 
 # File: functions, line: 156
@@ -144,12 +145,12 @@ msgid "You may dedicate all the space available on the drive (${ARG2}G) to the r
 "installing later another OS alongside Slint.\n\n"
 "To dedicate all the available space to the root Slint partition, set its size to\n"
 "${ARG2}G."
-msgstr "Je kunt alle beschikbare ruimte (${ARG2}G) op de schijf toewijzen aan\\n\n"
-"de Slint root-partitie of deze partitie verkleinen (tot minimaal ${ARG1}G)\\n\n"
-"om schijfruimte over te houden voor toekomstig gebruik zoals een partitie\\n\n"
-"die gedeeld wordt door meerdere OS'en of om een ander systeem op te\\n\n"
-"installeren naast Slint.\n\n"
-"Om alle beschikbare ruimte toe te wijzen aan de Slint root-partitie geef je\\n\n"
+msgstr "Je kunt alle beschikbare ruimte (${ARG2}G) op de schijf toewijzen aan\n"
+"de Slint root-partitie of deze partitie verkleinen (tot minimaal ${ARG1}G)\n"
+"om schijfruimte over te houden voor toekomstig gebruik zoals een partitie\n"
+"die gedeeld wordt door meerdere OS'en of om naast Slint een ander systeem\n"
+"op te installeren.\n\n"
+"Om alle beschikbare ruimte toe te wijzen aan de Slint root-partitie geef je\n"
 "een grootte op van ${ARG2}G."
 
 # File: functions, line: 166
@@ -159,10 +160,10 @@ msgid "brtfs is the most advanced and flexible linux file system, offering\n"
 "ex4 is the most common Linux file system and is very reliable.\n"
 "xfs can be preferred to ext if you have very large storage requirements with\n"
 "large files"
-msgstr "btrfs is het meest geavanceerde en flexibele linux bestandssysteem en\\n\n"
-"biedt snapshots, ondersteund subvolumes, online controle en reparatie\\n\n"
+msgstr "btrfs is het meest geavanceerde en flexibele linux bestandssysteem en\n"
+"ondersteund snapshots, subvolumes, online controle en reparatie\n"
 "en RAID. Het gebruik van deze features vereist wel specifieke kennis.\n"
-"ext4 is het meest gebruikelijke Linux bestandssysteem en is zeer betrouwbaar.\\n\n"
+"ext4 is het meest gebruikelijke Linux bestandssysteem en is zeer betrouwbaar.\n"
 "xfs verdient de voorkeur bij grote opslagvolumes met grote bestanden"
 
 # File: functions, line: 175
@@ -173,14 +174,14 @@ msgid "Encrypt a drive prevents theft of the data it contains in case of loss\n"
 "Be aware that if you forget the passphrase all data in the drive will be\n"
 "irrecoverably lost! So write it down carefully on a safe place.\n"
 "We will ask you to type the passphrase later using a \"us\" keyboard map."
-msgstr "Het versleutelen van een schijf voorkomt diefstal van de gegevens die er\\n\n"
-"op staan in geval van verlies of diefstal van de schijf zelf of van de machine\\n\n"
-"waar deze in is geïnstalleerd. Als je besluit het station te versleutelen, moet\\n\n"
-"je elke keer als je Slint opstart een wachtwoordzin invoeren om het systeem\\n\n"
+msgstr "Het versleutelen van een schijf voorkomt diefstal van de gegevens die er\n"
+"op staan in geval van verlies of diefstal van de schijf zelf of van de machine\n"
+"waar deze in is geïnstalleerd. Als je besluit het station te versleutelen, moet\n"
+"je elke keer als je Slint opstart een wachtwoordzin invoeren om het systeem\n"
 "te ontgrendelen.\n"
-"Wees je ervan bewust dat als je de wachtwoordzin vergeet alle gegevens in het\\n\n"
-"station verloren zullen gaan! Schrijf deze dus zorgvuldig op en bewaar hem op\\n\n"
-"een veilige plaats.\\n\n"
+"Wees je ervan bewust dat als je de wachtwoordzin vergeet alle gegevens in het\n"
+"station verloren zullen gaan! Schrijf deze dus zorgvuldig op en bewaar hem op\n"
+"een veilige plaats.\n"
 "We vragen je nu een wachtwoordzin in te voeren met een \"VS\"-toetsenbord."
 
 # File: functions, line: 184
@@ -190,8 +191,8 @@ msgid "\n"
 "character of the passphrase you type, which may differ from the one engraved\n"
 "on the keyboard key.\n"
 msgstr "\n"
-"Omdat je momenteel een \"$KEYMAP\" toetsenbord gebruikt, zullen we elk\\n\n"
-"karakter van de wachtwoordzin dat je invoert spellen omdat die kan verschillen\\n\n"
+"Omdat je momenteel een \"$KEYMAP\" toetsenbord gebruikt, zullen we elk\n"
+"karakter van de wachtwoordzin dat je invoert spellen omdat die kan verschillen\n"
 "van het op de toets weergegeven karakter.\n"
 
 # File: functions, line: 194
@@ -200,7 +201,7 @@ msgid "The passphrase should have at least 8 characters. Only ASCII printable\n"
 "letters, digits from 0 to 9, space and following punctuation characters:"
 msgstr "De wachtwoordzin moet uit ten minste 8 tekens bestaan.\n"
 "Alleen ASCII afdrukbare tekens zijn toegestaan.\n"
-"Dit omvat niet-geaccentueerde kleine letters en hoofdletters,\\n\n"
+"Dit omvat niet-geaccentueerde kleine letters en hoofdletters,\n"
 "cijfers van 0 tot en met 9, spaties en volgende leestekens:"
 
 # File: functions, line: 202
@@ -210,13 +211,13 @@ msgid "If you choose C (Console) Slint will start in text mode, in a console\n"
 "environment just typing: 'startx' without the quotes.\n"
 "If instead you choose G (Graphical) you will type your login name then your\n"
 "password in a window, then the graphical environment will be displayed."
-msgstr "Als je kiest voor c (Console) wordt Slint in tekstmodus gestart waarbij\\n\n"
-"je in een console opdrachten invoert bij de cursor. Er zal eerst om je\\n\n"
-"inlognaam worden gevraagd en vervolgens om je wachtwoord. Daarna kun je\\n\n"
+msgstr "Als je kiest voor c (Console) wordt Slint in tekstmodus gestart waarbij\n"
+"je in een console opdrachten invoert bij de cursor. Er zal eerst om je\n"
+"inlognaam worden gevraagd en vervolgens om je wachtwoord. Daarna kun je\n"
 "opdrachten invoeren of een grafische omgeving starten.\n"
 "Daarvoor typ je 'startx' zonder aanhalingstekens.\n"
-"Als je in plaats daarvan g (Graphical) kiest, voer je in een aanmeldvenster\\n\n"
-"je inlognaam en wachtwoord in waarna de grafische omgeving wordt weergegeven."
+"Als je in plaats daarvan g (Graphical) kiest, voer je in een aanmeldvenster\n"
+"je inlognaam en wachtwoord in waarna je in de grafische omgeving belandt."
 
 # File: functions, line: 212
 msgid "In the links web browser you navigate with the keyboard:\n"
@@ -225,10 +226,10 @@ msgid "In the links web browser you navigate with the keyboard:\n"
 "To display the key bindings press F1\n"
 "to display the menu press Esc then  navigate in it with the arrow keys"
 msgstr "In de links webbrowser navigeer je met het toetsenbord:\n"
-"Als je naar de volgende of vorige velden wilt gaan druk je op\\n\n"
+"Als je naar de volgende of vorige velden wilt gaan druk je op\n"
 "de pijltjestoetsen omhoog of omlaag\n"
-"Om af te sluiten typ je q en bevestig je met Enter\\n\n"
-"Om de sneltoetsen weer te geven druk je op F1 en dan Esc om\\n\n"
+"Om af te sluiten typ je q en bevestig je met Enter\n"
+"Om de sneltoetsen weer te geven druk je op F1 en dan Esc om\n"
 "het menu weer te geven waar je navigeert met de pijltjestoetsen"
 
 # File: functions, line: 218
@@ -241,7 +242,7 @@ msgid "Please choose mount point for $NAME.\n"
 "Use only lower case letters and do not choose a directory name reserved in Linux\n"
 "or in other OS from which this partition will be accessed."
 msgstr "Kies het aankoppelpunt voor $NAME.\n"
-"Gebruik alleen kleine letters en kies geen door Linux of ieder ander systeem\\n\n"
+"Gebruik alleen kleine letters en kies geen door Linux of een ander systeem\n"
 "gereserveerde directory-naam vanwaar deze partitie kan worden benaderd."
 
 # File: functions, line: 305
@@ -256,7 +257,7 @@ msgstr "$MOUNTPOINT is een gereserveerde directory-naam."
 
 # File: functions, line: 323
 msgid "This mount point is already in use."
-msgstr "Dit aankoppelpunt is al in gebruik."
+msgstr "Dit aankoppelpunt wordt al gebruikt."
 
 # File: functions, line: 332
 msgid "Only lower case letters and \"/\" are allowed."
@@ -273,20 +274,20 @@ msgstr "Geen installatiemedium gevonden.\n"
 msgid "Found $INSTALLMEDIA installation media!\n"
 "Please restart leaving only one inserted or plugged in."
 msgstr "Installatiemedium $INSTALLMEDIA gevonden!\n"
-"Start opnieuw en laat er slechts één ingeplugd."
+"Start opnieuw en laat er slechts één aangesloten."
 
 # File: functions, line: 364
 #, sh-format
 msgid "We could not mount the installer for this reason:\n"
 "$MOUNTSRCERROR"
-msgstr "We konden het installatieprogramma niet aankoppelen om\\n\n"
+msgstr "We konden het installatieprogramma niet aankoppelen om\n"
 "de volgende reden:\n"
 "$MOUNTSRCERROR"
 
 # File: functions, line: 371
 #, sh-format
 msgid "$INSTALLERPATH is not a media including this Slint installer or is corrupted."
-msgstr "$INSTALLERPATH verwijst niet naar een Slint installatiemedium of\\n\n"
+msgstr "$INSTALLERPATH verwijst niet naar een Slint installatiemedium of\n"
 "het is beschadigd."
 
 # File: functions, line: 607
@@ -294,9 +295,9 @@ msgid "The Slint installer proposes installation options and let you choose\n"
 "what you prefer, through question/answer dialogues, then it installs and\n"
 "configure Slint. After installation you may customize the system through\n"
 "simple commands listed in the included documentation."
-msgstr "Het Slint installatieprogramma stelt installatieopties voor en laat je\\n\n"
-"kiezen via vraag- en antwoorddialogen waarna het Slint installeert en\\n\n"
-"configureert. Na de installatie kun je het systeem aanpassen via\\n\n"
+msgstr "Het Slint installatieprogramma stelt installatieopties voor en laat je\n"
+"keuzes maken via vraag- en antwoorddialogen waarna het Slint installeert en\n"
+"configureert. Na de installatie kun je het systeem aanpassen via\n"
 "eenvoudige commando's die in de documentatie worden beschreven."
 
 # File: functions, line: 612
@@ -306,13 +307,13 @@ msgstr "Je kunt kiezen tussen handmatige of automatische partitionering."
 # File: functions, line: 614
 msgid "If you prefer manual (custom) partitioning but did do the partitioning yet,\n"
 "press q to quit now. You will  type 'start' again when ready."
-msgstr "Als je zelf handmatig (aangepast) wilt partitioneren maar dit nog nog\\n\n"
-"niet hebt gedaan druk je op q om nu te stoppen.\\n\n"
-"Als je daarmee klaar bent typ je opnieuw 'start'."
+msgstr "Als je zelf handmatig (aangepast) wilt partitioneren maar dit nog\n"
+"niet hebt gedaan druk je op q om nu te stoppen.\n"
+"Als je klaar bent typ je opnieuw 'start'."
 
 # File: functions, line: 619
 msgid "Press m for manual, a for auto, h for help or q to quit: "
-msgstr "Typ 'm' voor handmatig, 'a' voor automatisch, 'h' voor hulp\\n\n"
+msgstr "Typ 'm' voor handmatig, 'a' voor automatisch, 'h' voor hulp\n"
 "of 'q' om te stoppen: "
 
 # File: functions, line: 624
@@ -332,7 +333,7 @@ msgstr "Slint kan op deze schijf worden geïnstalleerd:"
 # File: functions, line: 725
 # File: functions, line: 745
 msgid "To install Slint on this drive we need to wipe all data in it"
-msgstr "Om Slint op dit station te kunnen installeren moeten we alle hierop\\n\n"
+msgstr "Om Slint op dit station te kunnen installeren moeten we alle hierop\n"
 "aanwezige gegevens wissen"
 
 # File: functions, line: 734
@@ -356,15 +357,15 @@ msgstr "Slint kan op deze schijf worden geïnstalleerd:"
 msgid "To dedicate $NAME, size ${SIZEG}G to Slint we need to delete all data\n"
 "stored on this drive, including existing OS case occurring.\n"
 "Here are its current partitions:"
-msgstr "Om $NAME met een omvang van ${SIZEG}G volledig aan Slint toe te\\n\n"
-"wijzen moeten we alle gegevens die op deze schijf staan wissen inclusief\\n\n"
-"het erop aanwezige besturingssysteem.\\n\n"
+msgstr "Om $NAME met een omvang van ${SIZEG}G volledig aan Slint toe te\n"
+"wijzen moeten we alle gegevens die op deze schijf staan wissen inclusief\n"
+"het erop aanwezige besturingssysteem.\n"
 "Dit zijn de huidige partities:"
 
 # File: functions, line: 792
 #, sh-format
 msgid "Do you want to delete all data on $NAME then install Slint on it?"
-msgstr "Wilt je alle gegevens op $NAME verwijderen en hier Slint op installeren?"
+msgstr "Wil je alle gegevens op $NAME verwijderen en hier Slint op installeren?"
 
 # File: functions, line: 794
 # File: functions, line: 803
@@ -380,8 +381,8 @@ msgstr "Wil je hier Slint op installeren?"
 msgid "You can dedicate all the available space: ${GAVAILABLE}G to Slint's root partition,\n"
 "or keep part of it for another usage.\n"
 "The size of the Slint root partition should be between ${GCOUNT}G and ${GAVAILABLE}G."
-msgstr "Je kunt alle beschikbare ruimte van ${GAVAILABLE}G aan de Slint\\n\n"
-"root-partitie toewijzen of een deel ervan apart houden voor ander gebruik.\\n\n"
+msgstr "Je kunt alle beschikbare ruimte van ${GAVAILABLE}G aan de Slint\n"
+"root-partitie toewijzen of een deel ervan apart houden voor ander gebruik.\n"
 "De omvang van de Slint root-partitie moet tussen ${GCOUNT}G en ${GAVAILABLE}G zijn."
 
 # File: functions, line: 849
@@ -403,9 +404,9 @@ msgstr "$GROOTSIZE is geen getal tussen $GCOUNT en $GAVAILABLE."
 msgid "There remains ${GREMAINING}G of free space in $DRIVEPATH. You may allocate all\n"
 "or part of it to an additional partition. If you want an additional partition\n"
 "type its size below (at most ${GREMAINING}G), else just press Enter."
-msgstr "Er blijft ${GREMAINING}G vrije ruimte over op $DRIVEPATH.\\n\n"
-"Je kunt deze volledig of deels aan een aanvullende partitie toewijzen.\\n\n"
-"Als je een aanvullende partitie wilt maken typ je hieronder de grootte\\n\n"
+msgstr "Er blijft ${GREMAINING}G vrije ruimte over op $DRIVEPATH.\n"
+"Je kunt deze volledig of deels aan een aanvullende partitie toewijzen.\n"
+"Als je een aanvullende partitie wilt maken typ je hieronder de grootte\n"
 "hiervan (maximaal ${GREMAINING}G) of meteen Enter."
 
 # File: functions, line: 924
@@ -422,9 +423,9 @@ msgstr "De grootte mag maximaal ${GREMAINING}G zijn."
 msgid "Please choose a name for the new partition; like \"data\". Use only lower case\n"
 "letters and do not choose a reserved directory name in Linux or in other OS from\n"
 "which this partition will be accessed."
-msgstr "Kies een naam voor de nieuwe partitie, zoals \"data\".\\n\n"
-"Gebruik alleen kleine letters en kies geen gereserveerde directorynaam\\n\n"
-"in Linux of in een ander OS vanwaar deze partitie kan worden benaderd."
+msgstr "Kies een naam voor de nieuwe partitie, zoals \"data\".\n"
+"Gebruik alleen kleine letters en kies geen in Linux of in een ander OS\n"
+"gereserveerde directorynaam vanwaar deze partitie kan worden benaderd."
 
 # File: functions, line: 954
 msgid "Type the name of the new partition, or h for help: "
@@ -448,15 +449,15 @@ msgstr "Je hebt gekozen voor de \"handmatige\" partitioneringsmodus."
 # File: functions, line: 1087
 msgid "We need to identify the root Slint partition, to be mounted as \"/\".\n"
 "We will later format this partition, which will erase its content."
-msgstr "We moeten de Slint root-partitie bepalen die op \"/\" aangekoppeld\\n\n"
-"zal worden. Later zullen we deze partitie formatteren waarbij alle\\n\n"
+msgstr "We moeten de Slint root-partitie bepalen die op \"/\" aangekoppeld\n"
+"zal worden. Later zullen we deze partitie formatteren waarbij alle\n"
 "gegevens die er op aanwezig zijn gewist zullen worden."
 
 # File: functions, line: 1023
 #, sh-format
 msgid "We have found only one Linux partition big enough to install Slint:\n"
 "${ROOTNAME}, size ${GSIZE}G."
-msgstr "We hebben slechts één Linux partitie gevonden groot genoeg om\\n\n"
+msgstr "We hebben slechts één Linux partitie gevonden groot genoeg om\n"
 "Slint te op te kunnen installeren:\n"
 "${ROOTNAME}, grootte ${GSIZE}G."
 
@@ -499,7 +500,7 @@ msgid "You can associate a mount point to each partition listed below.\n"
 "You will first select a partition typing its number, then its mount point.\n"
 "Type d when done, l to display the list again, or q to quit."
 msgstr "Je kunt aan elke partitie in de lijst hieronder een aankoppelpunt toewijzen.\n"
-"Selecteer hiervoor eerst de partitie door het typen van zijn nummer en\\n\n"
+"Selecteer hiervoor eerst de partitie door het typen van zijn nummer en\n"
 "vervolgens het gewenste aankoppelpunt.\n"
 "Typ d wanneer je klaar bent, l om de lijst nogmaals weer te geven of q om te stoppen."
 
@@ -511,9 +512,9 @@ msgstr "Partitienummer? (typ l om de lijst te tonen, d als je klaar bent of q om
 msgid "We will now list the partitions found on this machine with one of the file systems\n"
 "exfat, ntfs, vfat, used by Windows. You will now type the numbers of those you want\n"
 "to be automatically mounted at boot time, either read-only or read-write."
-msgstr "We tonen nu eerst de op deze machine gevonden partities met bestandssysteem\\n\n"
-"exfat, ntfs of vfat gebruikt door Windows. Typ de nummers van de partities\\n\n"
-"waarvan je wilt dat ze bij het opstarten automatisch aangekoppeld worden,\\n\n"
+msgstr "We tonen nu eerst de op deze machine gevonden partities met bestandssysteem\n"
+"exfat, ntfs of vfat gebruikt door Windows. Typ de nummers van de partities\n"
+"waarvan je wilt dat ze bij het opstarten automatisch aangekoppeld worden,\n"
 "alleen-lezen dan wel lezen-schrijven."
 
 # File: functions, line: 1237
@@ -531,9 +532,9 @@ msgid "The root Slint partition can be encrypted to prevent data\n"
 "steal in case of loss or theft of the machine or the drive where Slint is\n"
 "installed. Then you will type a so-called \"passphrase\" to unlock the Slint\n"
 "partition, giving access to the boot menu. We will record this passphrase"
-msgstr "De Slint rootpartitie kan worden versleuteld om gegevensverlies te\\n\n"
-"voorkomen in geval van verlies of diefstal van de schijf waarop Slint is geinstalleerd.\\n\n"
-"Je moet dan een zogenaamde \"wachtwoordzin\" typen wat je toegang geeft tot\\n\n"
+msgstr "De Slint rootpartitie kan worden versleuteld om gegevensverlies te voorkomen\n"
+"in geval van verlies of diefstal van de schijf waarop Slint is geinstalleerd.\n"
+"Je moet dan een zogenaamde \"wachtwoordzin\" typen wat je toegang geeft tot\n"
 "het opstartmenu om de Slint-partitie te ontgrendelen.\n"
 "We leggen nu deze wachtwoordzin vast"
 
@@ -545,7 +546,7 @@ msgstr " met gebruik van een \"us\"- toetsenbordindeling"
 # File: functions, line: 1318
 #, sh-format
 msgid "Do you want to encrypt $NAME? type yes, no or h for help."
-msgstr "Wilt je $NAME versleutelen? type yes, no of h voor hulp."
+msgstr "Wil je $NAME versleutelen? Typ yes, no of h voor hulp."
 
 # File: functions, line: 1338
 #, sh-format
@@ -569,8 +570,8 @@ msgid "We are ready to do what you requested:\n"
 msgstr "We zijn nu klaar om te doen wat je hebt gevraagd:\n"
 "Het installeren van Slint op partitie:\n"
 "$NAME, grootte ${SIZEG}G en bestandssysteem $FSTYPE\n"
-"Alle hierop aanwezige gegevens zullen worden verwijderd maar de inhoud\\n\n"
-"van andere partities op $PKNAME blijft behouden."
+"Alle hierop aanwezige gegevens zullen worden verwijderd maar de\n"
+"inhoud van andere partities op $PKNAME blijft behouden."
 
 # File: functions, line: 1356
 msgid "The root partition will be encrypted."
@@ -598,8 +599,8 @@ msgstr "De hieronder weergegeven partities zullen toegankelijk zijn:"
 # File: functions, line: 1400
 msgid "If you confirm these settings they will be applied,\n"
 "else you will go back to the greeting screen of the installer."
-msgstr "Als je deze instellingen bevestigd zullen ze worden toegepast,\\n\n"
-"anders keer je terug naar het welkomstscherm van het installatieprogramma."
+msgstr "Als je deze instellingen bevestigd zullen ze worden toegepast, anders\n"
+"keer je terug naar het welkomstscherm van het installatieprogramma."
 
 # File: functions, line: 1404
 msgid "To confirm these settings type yes, else type no: "
@@ -617,15 +618,15 @@ msgstr "We bereiden $DRIVEPATH voor om Slint op te kunnen installeren..."
 # File: functions, line: 1428
 #, sh-format
 msgid "We will now record the passphrase to use to unlock the drive $DRIVEPATH"
-msgstr "We leggen nu de wachtwoordzin vast waarmee de schijf $DRIVEPATH\\n\n"
+msgstr "We leggen nu de wachtwoordzin vast waarmee de schijf $DRIVEPATH\n"
 "ontsleuteld kan worden"
 
 # File: functions, line: 1430
 msgid "It should include at least one capital letter, one lower case letter,\n"
 "one digit and one punctuation sign and have at least 8 characters.\n"
 "Write it in a safe place first!"
-msgstr "Het moet ten minste één hoofdletter, één kleine letter,\\n\n"
-"één cijfer en één leesteken bevatten en bestaan uit ten minste\\n\n"
+msgstr "Het moet ten minste één hoofdletter, één kleine letter,\n"
+"één cijfer en één leesteken bevatten en bestaan uit ten minste\n"
 "8 karakters. Schrijf het meteen op en bewaar het op een veilige plaats!"
 
 # File: functions, line: 1439
@@ -635,9 +636,9 @@ msgid "\n"
 "passphrase to unlock the drive a \"us\" keyboard map will be set up. For this\n"
 "reason we will now display the typed characters using an \"us\" keyboard map.\n"
 msgstr "\n"
-"Je gebruikt momenteel een \"$KEYMAP\"-toetsenbordindeling, maar tijdens het\\n\n"
-"invoeren van de wachtwoordzin om het station te ontgrendelen wordt een\\n\n"
-"\"VS\"-toetsenbord ingesteld. Daarom zullen de ingevoerde karakters worden\\n\n"
+"Je gebruikt momenteel een \"$KEYMAP\"-toetsenbordindeling, maar tijdens het\n"
+"invoeren van de wachtwoordzin om het station te ontgrendelen wordt een\n"
+"\"VS\"-toetsenbord ingesteld. Daarom zullen de ingevoerde karakters worden\n"
 "weergegeven volgens een \"VS\"-toetsenbordindeling.\n"
 
 # File: functions, line: 1447
@@ -694,8 +695,8 @@ msgstr "Decryptie-sleutelbestand genereren..."
 # File: functions, line: 1784
 msgid "The user \"root\" has all rights on the system, including to wipe it.\n"
 "This status should be accessed only with a good password."
-msgstr "Gebruiker \"root\" heeft alle rechten op het systeem inclusief het volledig\\n\n"
-"wissen ervan.\\n\n"
+msgstr "Gebruiker \"root\" heeft alle rechten op het systeem inclusief het volledig\n"
+"wissen ervan.\n"
 "Deze status zou alleen toegankelijk mogen zijn met een sterk wachtwoord."
 
 # File: functions, line: 1791
@@ -735,13 +736,13 @@ msgstr "De gebruikersnaam mag niet beginnen met '_'"
 # File: functions, line: 1839
 msgid "The user name should only contains non accented lower case letters, digits\n"
 "from 0 to 9, '_' or '-'"
-msgstr "De gebruikersnaam mag alleen accentloze kleine letters,\\n\n"
+msgstr "De gebruikersnaam mag alleen accentloze kleine letters,\n"
 "de cijfers 0 tot en met 9, '_' of '-'bevatten"
 
 # File: functions, line: 1853
 msgid "Blind users can run Slint with a Braille device or a screen reader."
-msgstr "Blinde gebruikers kunnen Slint met een Braille-apparaat of een schermlezer\\n\n"
-"gebruiken."
+msgstr "Visueel beperkte gebruikers kunnen Slint met een Braille-apparaat of een\n"
+"schermlezer gebruiken."
 
 # File: functions, line: 1856
 msgid "Will you use a Braille device? Please answer yes or no: "
@@ -772,8 +773,8 @@ msgstr "Even geduld..."
 # File: functions, line: 1949
 msgid "An internet connection would allow to get software packages newer than\n"
 "those shipped with the installer, but we couldn't get a wired connection."
-msgstr "Met een internetverbinding is het mogelijk nieuwere softwarepakketten\\n\n"
-"te verkrijgen dan die zijn meegeleverd bij het installatieprogramma,\\n\n"
+msgstr "Met een internetverbinding is het mogelijk nieuwere softwarepakketten\n"
+"te verkrijgen dan die zijn meegeleverd bij het installatieprogramma,\n"
 "we konden echter geen bedraadde internetverbinding vinden."
 
 # File: functions, line: 1953
@@ -810,7 +811,7 @@ msgstr "Een WPA wachtwoordzin moet tussen de 8 en 63 karakters bevatten"
 
 # File: functions, line: 2067
 msgid "Wrong passphrase. Press Enter to try again or type q to quit: "
-msgstr "Onjuiste wachtwoordzin.\\n\n"
+msgstr "Onjuiste wachtwoordzin.\n"
 "Druk op Enter om het opnieuw te proberen of q om te annuleren: "
 
 # File: functions, line: 2078
@@ -837,7 +838,7 @@ msgstr "Je typt nu de toegangsgegevens in een webbrowser."
 
 # File: functions, line: 2121
 msgid "When done press Q to quit the browser."
-msgstr "Wanneer je klaar bent druk je Q om de browser af te sluiten."
+msgstr "Wanneer je klaar bent druk je q om de browser af te sluiten."
 
 # File: functions, line: 2124
 msgid "Press Enter to start the browser or type h for help on its usage: "
@@ -868,7 +869,7 @@ msgstr "Is $PROPOSEDTZ de huidige tijdzone? Type yes of no: "
 # File: functions, line: 2215
 msgid "You can set the time zone now, or accept the default value (UTC) and modify\n"
 "this setting after installation."
-msgstr "Je kunt nu de tijdzone instellen of de standaard (UTC) accepteren\\n\n"
+msgstr "Je kunt nu de tijdzone instellen of de standaard (UTC) accepteren\n"
 "en deze instelling na de installatie wijzigen."
 
 # File: functions, line: 2219
@@ -926,7 +927,7 @@ msgstr "Controleer de integriteit van het installatiemedium."
 # File: functions, line: 2816
 msgid "Please type the machine name or \"hostname\" and press Enter or just\n"
 "press Enter to accept the default name \"slint\"."
-msgstr "Typ alsjeblieft de naam voor de machine oftewel de \"hostname\" en\\n\n"
+msgstr "Typ alsjeblieft de naam voor de machine oftewel de \"hostname\" en\n"
 "druk Enter of meteen Enter om de standaard naam \"slint\" te accepteren."
 
 # File: functions, line: 2819
@@ -936,7 +937,7 @@ msgstr "Machinenaam[slint]: "
 # File: functions, line: 2837
 msgid "Please select a default desktop among those listed below.\n"
 "mate is the most accessible with a screen reader."
-msgstr "Kies de standaard desktopomgeving uit de lijst hieronder,\\n\n"
+msgstr "Kies de standaard desktopomgeving uit de lijst hieronder,\n"
 "Mate is het best met schermlezer toegankelijk."
 
 # File: functions, line: 2842
@@ -968,10 +969,10 @@ msgid "Installation and initial configuration of Slint are complete.\n"
 "To quit the installer and start your new Slint remove the installation media\n"
 "then type 'reboot' or press Ctrl+Alt+Del."
 msgstr "De installatie en eerste configuratie van Slint zijn voltooid.\n"
-"Als je een voorbeeld wilt zien van het opstartmenu zoals dat zal worden\\n\n"
-"weergegeven na het opnieuw opstarten typ je nu:\\n\n"
-"chroot /SLINT list_boot_entries\\n\n"
+"Als je een voorbeeld wilt zien van het opstartmenu zoals dat zal worden\n"
+"weergegeven na het opnieuw opstarten typ je nu:\n"
+"chroot /SLINT list_boot_entries\n"
 "Druk q om te stoppen (geen Alt+F4 in deze context) en dan y.\n"
-"Om het installatieprogamma te verlaten en Slint opnieuw op te starten\\n\n"
-"verwijder je het installatiemedium en typ je 'reboot' en Enter of druk je Ctrl-Alt-Del."
+"Om het installatieprogamma te verlaten en Slint opnieuw op te starten\n"
+"verwijder je het installatiemedium en typ je 'reboot' en Enter of Ctrl-Alt-Del."
 

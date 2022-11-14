@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-09-25 22:16+0000\n"
-"PO-Revision-Date: 2022-10-27 09:26\n"
+"PO-Revision-Date: 2022-11-13 21:12\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -108,7 +108,7 @@ msgstr "De standaard ingestelde voorkeurstoepassingen kunnen naderhand eenvoudig
 #. type: Title ====
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:42
 #, no-wrap
-msgid "Content, versions and release model."
+msgid "Content, versions and release model"
 msgstr "Inhoud, versies en release-model."
 
 #. type: Plain text
@@ -2748,7 +2748,7 @@ msgstr "Kortom, in een grafische omgeving:"
 #, no-wrap
 msgid "Insert+Space: display the Orca Preferences dialog.\n"
 "Insert+S: activate or deactivate the vocal synthesis.\n"
-"Insert+H: activate the learning mode. In this m\tode:\n"
+"Insert+H: activate the learning mode. In this mode:\n"
 "   Press a key to hear its function\n"
 "   F1: to hear the documentation of the screen reader\n"
 "   F2: list the keyboard shortcuts for Orca\n"
@@ -2766,13 +2766,13 @@ msgstr "Insert+Space: start de Orca voorkeuren dialoog.\n"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1247
 #, no-wrap
-msgid "Voices and TTS in Slint."
+msgid "Voices and TTS in Slint"
 msgstr "Stemmen en TTS in Slint"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1256
 #, no-wrap
-msgid "Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0.2, each with a set of voices, namely:\n"
+msgid "Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0, each with a set of voices, namely:\n"
 "espeak-ng\n"
 "flite\n"
 "pico\n"
@@ -3018,7 +3018,7 @@ msgstr "root[~]# speak-with none\n"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1372
 #, no-wrap
-msgid "Configure a console screen reader."
+msgid "Configure a console screen reader"
 msgstr "Configuratie van een console-schermlezer."
 
 #. type: Plain text
@@ -3376,7 +3376,7 @@ msgstr "Je systeem beheren"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1553
 #, no-wrap
-msgid "Software management in Slint."
+msgid "Software management in Slint"
 msgstr "Softwarebeheer in Slint"
 
 #. type: Plain text
@@ -3921,7 +3921,7 @@ msgstr "Gebruik -c als je een aangepast configuratiebestand wilt gebruiken in pl
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1793
 #, no-wrap
-msgid "Manage users and groups."
+msgid "Manage users and groups"
 msgstr "Gebruikers en groepen beheren"
 
 #. type: Plain text

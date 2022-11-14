@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-09-25 22:16+0000\n"
-"PO-Revision-Date: 2022-10-27 09:26\n"
+"PO-Revision-Date: 2022-11-13 21:12\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -108,7 +108,7 @@ msgstr "As definições predefinidas das aplicações preferidas são fornecidas
 #. type: Title ====
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:42
 #, no-wrap
-msgid "Content, versions and release model."
+msgid "Content, versions and release model"
 msgstr "Conteúdo, versões e modelo de lançamento"
 
 #. type: Plain text
@@ -2668,7 +2668,7 @@ msgstr "As suas definições, feitas antes de iniciar na linha de comandos ou de
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1202
 msgid "A comprehensive manual for brltty is available in English, French and Portuguese in several formats including plain text (txt) at this URL: https://mielke.cc/brltty/doc/Manual-BRLTTY/"
-msgstr "Um manual abrangente para brltty está disponível em inglês, Francês e Português em vários formatos, incluindo em texto simples (txt) neste URL: https://mielke.cc/brltty/doc/Manual-BRLTTY/"
+msgstr "Um manual abrangente para brltty está disponível em Inglês, Francês e Português em vários formatos, incluindo em texto simples (txt) neste URL: https://mielke.cc/brltty/doc/Manual-BRLTTY/"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1204
@@ -2695,7 +2695,7 @@ msgstr "Torne-se membro do grupo braile, escrevendo como root:"
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1214
 #, no-wrap
 msgid "usermod -G braille -a username\n"
-msgstr "usermod -G braille -a username\n"
+msgstr "usermod -G braille -a nome_do_utilizador\n"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1217
@@ -2751,7 +2751,7 @@ msgstr "Em suma, num ambiente gráfico:"
 #, no-wrap
 msgid "Insert+Space: display the Orca Preferences dialog.\n"
 "Insert+S: activate or deactivate the vocal synthesis.\n"
-"Insert+H: activate the learning mode. In this m\tode:\n"
+"Insert+H: activate the learning mode. In this mode:\n"
 "   Press a key to hear its function\n"
 "   F1: to hear the documentation of the screen reader\n"
 "   F2: list the keyboard shortcuts for Orca\n"
@@ -2759,7 +2759,7 @@ msgid "Insert+Space: display the Orca Preferences dialog.\n"
 "   Esc: end of the learning mode\n"
 msgstr "Insert+Espaço: mostrar a janela de Preferências do Orca.\n"
 "Insert+S: ativar ou desativar a síntese vocal.\n"
-"Insert+H: ativar o modo de aprendizagem. Neste m\todo:\n"
+"Insert+H: ativar o modo de aprendizagem. Neste modo:\n"
 "   Prima uma tecla para ouvir a sua função\n"
 "   F1: ouvir a documentação do leitor de ecrã\n"
 "   F2: listar as teclas de atalho para o Orca\n"
@@ -2769,19 +2769,19 @@ msgstr "Insert+Espaço: mostrar a janela de Preferências do Orca.\n"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1247
 #, no-wrap
-msgid "Voices and TTS in Slint."
-msgstr "Vozes e TTS no Slint."
+msgid "Voices and TTS in Slint"
+msgstr "Vozes e TTS no Slint"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1256
 #, no-wrap
-msgid "Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0.2, each with a set of voices, namely:\n"
+msgid "Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0, each with a set of voices, namely:\n"
 "espeak-ng\n"
 "flite\n"
 "pico\n"
 "mbrola\n"
 "RHVoice +"
-msgstr "Os seguintes TTS (sintetizadores de Texto para Voz) são disponibilizados com o Slint64-15.0.2, cada um com um conjunto de vozes, nomeadamente:\n"
+msgstr "Os seguintes TTS (sintetizadores de Texto para Voz) são disponibilizados com o Slint64-15.0 cada um com um conjunto de vozes, nomeadamente:\n"
 "espeak-ng\n"
 "flite\n"
 "pico\n"
@@ -2852,7 +2852,7 @@ msgstr "depois instale um dos ainda não instalados, como por ex."
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1287
 #, no-wrap
 msgid "slapt-get -i mbrola-voice-it2\n"
-msgstr "slapt-get -i mbrola-voice-it2\n"
+msgstr "slapt-get -i mbrola-voice-pt1\n"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1292
@@ -3023,8 +3023,8 @@ msgstr "root[~]# speak-with none\n"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1372
 #, no-wrap
-msgid "Configure a console screen reader."
-msgstr "Configurar um leitor de ecrã de consola."
+msgid "Configure a console screen reader"
+msgstr "Configurar um leitor de ecrã de consola"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1376
@@ -3382,7 +3382,7 @@ msgstr "Faça a gestão do sistema"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1553
 #, no-wrap
-msgid "Software management in Slint."
+msgid "Software management in Slint"
 msgstr "Gestão de software no Slint"
 
 #. type: Plain text
@@ -3927,8 +3927,8 @@ msgstr "Use -c se quiser usar um ficheiro de configuração personalizado ao inv
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1793
 #, no-wrap
-msgid "Manage users and groups."
-msgstr "Gerir utilizadores e grupos."
+msgid "Manage users and groups"
+msgstr "Gerir utilizadores e grupos"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1796

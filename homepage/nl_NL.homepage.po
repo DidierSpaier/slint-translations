@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
-"POT-Creation-Date: 2022-10-16 22:38+0200\n"
-"PO-Revision-Date: 2022-10-27 09:26\n"
+"POT-Creation-Date: 2022-11-10 21:24+0000\n"
+"PO-Revision-Date: 2022-11-13 21:12\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -17,107 +17,113 @@ msgstr ""
 "X-Crowdin-File-ID: 106\n"
 
 #. type: Title ===
-#: source/homepage.adoc:1
+#: homepage.adoc:2
 #, no-wrap
 msgid "About Slint"
 msgstr "Over Slint"
 
 #. type: Plain text
-#: source/homepage.adoc:4
+#: homepage.adoc:5
 msgid "Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier."
 msgstr "Slint is een eenvoudig te gebruiken, veelzijdige, visueel gehandicapten-vriendelijke Linux distributie voor 64-bits computers. Slint is gebaseerd op Slackware en leent gereedschappen van Salix. Onderhouden door Didier Spaier."
 
 #. type: Title ===
-#: source/homepage.adoc:5
+#: homepage.adoc:6
 #, no-wrap
 msgid "Features"
 msgstr "Functionaliteit"
 
 #. type: Plain text
-#: source/homepage.adoc:8
+#: homepage.adoc:9
 msgid "Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis."
 msgstr "Slint is een stabiele distributie. De toegankelijkheidssoftware wordt echter regelmatig bijgewerkt, andere kunnen per geval worden bijgewerkt."
 
 #. type: Plain text
-#: source/homepage.adoc:10
+#: homepage.adoc:11
 msgid "The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
 msgstr "De inbegrepen software, waaronder de MATÉ en LXQt desktops, dekken de meeste behoeften. Vele anderen zijn beschikbaar in repositories die worden onderhouden door Salix en Slackware die volledig compatibel zijn met Slint."
 
 #. type: Plain text
-#: source/homepage.adoc:12
+#: homepage.adoc:13
 msgid "Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them."
 msgstr "Slint kan worden gebruikt in console en grafische modus waartussen kan worden geschakeld zonder opnieuw op te starten. Het is zelfs mogelijk om verschillende grafische omgevingen te starten en tussen hen te schakelen."
 
 #. type: Plain text
-#: source/homepage.adoc:14
+#: homepage.adoc:15
 msgid "Easy-to-use tools facilitate system administration and software package management. Updates are fully automatic, under user control."
 msgstr "Eenvoudig te gebruiken tools vergemakkelijken systeembeheer en beheer van software. Updates zijn volledig automatisch, onder beheer van de gebruiker."
 
 #. type: Plain text
-#: source/homepage.adoc:16
+#: homepage.adoc:17
 msgid "The Slint dashboard gives direct access to the main tools and useful information and links."
 msgstr "Het Dashboard Slint geeft directe toegang tot de belangrijkste hulpmiddelen en nuttige informatie en links."
 
 #. type: Plain text
-#: source/homepage.adoc:18
+#: homepage.adoc:19
 msgid "By default, a compressed swap space in RAM allows doubling the usable memory."
 msgstr "Standaard kan een gecomprimeerde swap-ruimte in RAM het bruikbare geheugen verdubbelen."
 
 #. type: Plain text
-#: source/homepage.adoc:20
+#: homepage.adoc:21
 msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
 msgstr "Slint kan worden geïnstalleerd op een 64-bit machine met ten minste 2G RAM geheugen, en 50G beschikbaar op ieder medium waaronder USB-sticks, zonder secure boot."
 
 #. type: Plain text
-#: source/homepage.adoc:22
+#: homepage.adoc:23
 msgid "If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted."
 msgstr "Indien geïnstalleerd op een USB medium is Slint portable van de ene computer naar de andere. Het medium kan volledig versleuteld worden."
 
 #. type: Title ===
-#: source/homepage.adoc:23
+#: homepage.adoc:24
 #, no-wrap
 msgid "Installation"
 msgstr "Installatie"
 
 #. type: Plain text
-#: source/homepage.adoc:26
+#: homepage.adoc:27
 msgid "The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:"
 msgstr "Het installatieprogramma is in tekstmodus volledig toegankelijk voor visueel gehandicapten met behulp van een schermlezer of een Braillescherm, en verloopt via vragen en antwoorden met online hulp en geïntegreerde documentatie. Er zijn twee partitioneringsmodi beschikbaar:"
 
 #. type: Plain text
-#: source/homepage.adoc:28
+#: homepage.adoc:29
 msgid "Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media can be shared with other systems."
 msgstr "Handmatig: de gebruiker kiest het bestandssysteem (btrfs, ext4 of xfs) en de media kunnen worden gedeeld met andere systemen."
 
 #. type: Plain text
-#: source/homepage.adoc:30
+#: homepage.adoc:31
 msgid "Automatic: The file system is then btrfs and the media dedicated to Slint."
 msgstr "Automatisch: Het bestandssysteem is dan btrfs en de schijfruimte volledig toegewezen aan Slint."
 
 #. type: Plain text
-#: source/homepage.adoc:32
+#: homepage.adoc:33
 msgid "The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks."
 msgstr "Het btrfs-bestandssysteem is geconfigureerd met subvolumes in plaats van afzonderlijke partities. Het is in staat om de gebruikte schijfruimte te halveren, snapshots te maken en ondersteund SSD, NVMe en USB-sticks."
 
 #. type: Title ===
-#: source/homepage.adoc:33
+#: homepage.adoc:34
 #, no-wrap
 msgid "Acknowledgements"
 msgstr "Dankwoord"
 
 #. type: Plain text
-#: source/homepage.adoc:36
-msgid "Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them: https://www.patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]"
-msgstr "Met dank aan de vertalers van Slint en andere medewerkers, aan George Vlahavas voor zijn advies en tools, aan Patrick J. Volkerding voor Slackware, aan slackware.uk voor het hosten van onze bestanden. Je kunt helpen ze te financieren: https://www.patreon.com/slackwarelinux[Slackware (patreon)] https://paypal.me/volkerdi[Slackware (paypal)] https://slackware.uk[slackware.uk]"
+#: homepage.adoc:40
+#, no-wrap
+msgid "Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them:\n"
+"https://www.patreon.com/slackwarelinux[Become a Slackware patron] or https://paypal.me/volkerdi[Support Slackware]\n"
+"Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK\n"
+"https://salixos.org/donations.html[Donations to Salix]"
+msgstr "Met dank aan alle vertalers van Slint en anderen die er aan bijdragen, aan George Vlahavas voor zijn adviezen en gereedschappen, aan Patrick Volkerding voor Slackware en aan slackware.uk voor het hosten van onze bestanden. Je kunt ze financieel ondersteunen via:\n"
+"https://www.patreon.com/slackwarelinux[Become a Slackware patron] of https://paypal.me/volkerdi[Support Slackware]\n"
+"Volg de links bovenaan http://slackware.uk/slint/x86_64/slint15.0/[deze pagina] om Slackware UK te steunen of https://salixos.org/donations.html[Donations to Slaix]"
 
 #. type: Title ===
-#: source/homepage.adoc:37
+#: homepage.adoc:41
 #, no-wrap
 msgid "Latest news"
 msgstr "Laatste nieuws"
 
 #. type: Plain text
-#: source/homepage.adoc:39
+#: homepage.adoc:43
 msgid "Slint 15.0 is officially released!"
 msgstr "Slint 15.0 is officieel vrijgegeven!"
 
