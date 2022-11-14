@@ -1,5 +1,8 @@
 #!/bin/sh
 # rc.S:  Basic system initialization.
+# Modified from the one found in:
+# http://ftp.slackware.com/pub/slackware/slackware-15.0/source/installer/sources/initrd/skeleton_initrd.tar.gz
+# Assumed to have been written initially by Patrick .J. Volkerding
 # Changes post Slint15-beta3
 # Drop using dropbear
 # Drop unused code as us udev is aways used
