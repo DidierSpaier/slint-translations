@@ -1,0 +1,563 @@
+:toc: left
+:toclevels: 1
+:toc-title: 
+
+// Overview
+[[Overview_of_Slint_Installation]]
+== Overview of the installation process
+
+The installer first probes the existing drives and partitions to assess the
+possibilities and options of installation and let you choose between an
+automatic or manual preparation of the partitions used by Slint.
+
+If you choose 'manual' you are presented the Linux partitions where Slint
+could be installed (size at least 50G), select one of them and choose the
+type of the file system that the installer will create in it: btrfs, ext4
+or xfs as mentioned in <<prepare_partitions_for_Slint,Optionally prepare partitions for Slint>>
+
+If you choose 'auto' you are presented the drives where Slint could be
+installed (size at least 50G), and the file system will be of type btrfs.
+
+In case of btrfs; sub-volumes will created for / /home and /snapshots with files
+compressed, and /swap to host a swap file. 'Copy on write' will ease making snapshots and possibly revert a
+faulty system update. Tools to manage the snapshots are included in Slint.
+
+In both modes the user chooses which existing Linux and Windows partitions
+will be automatically mounted after booting Slint, and their mount points
+names, easing access to exiting systems and data from Slint.
+
+Then the user is proposed to encrypt the root system partition, to prevent data
+steal in case of loss or theft of the machine or the drive where Slint is
+installed. If accepted the installer records the passphrase allowing to
+unlock this partition. The user will when typing it at boot time when requested
+by GRUB to display the boot menu.
+
+After all that the installer summarizes your choices and let you confirm
+them or not. Up to this point no modification will have been done to the
+installed systems and data so you can safely deny, then type start again
+or just reboot without any harm.
+
+Then auto partitioning is done case occurring, the Slint root partition is
+encrypted if requested, the root partition is formatted and the first software
+packages are installed.
+
+If you opted for an encrypted disk you type the passphrase that will be used
+to unlock the drive at each boot up.
+
+You choose a password for the user "root." This is the system administrator, 
+who has all privileges.
+
+You also set the login name and password of a regular user.
+
+You indicate if you will need accessible Braille output, and whether you want
+to log in text or graphical mode. If you used the language English (USA) during
+installation you choose the language to use in the installed system, else the
+installer sets the same as during installation.
+
+The installer attempts to establish an Internet connection, and if successful
+proposes a time zone corresponding to your geographical location that you
+confirm, else select one in a list.
+
+You are asked if you will need Braille, then if you prefer to start in a
+console or in a graphical unless you used speech during installation or need
+Braille: then you will land in a console after reboot, for safety. 
+
+The installer then creates a swap file. This can take a long time, please be patient.
+
+The packages are installed on the drive. If an Internet connection has been
+established it downloads and install the most recent version of each package,
+including those provided since the release of the ISO image.
+
+Installation of all packages takes about 10 to 40 minutes depending on the
+hardware.
+
+You will be asked to select a desktop (even if you start in a console at
+first) among fvm, lxqt, mate and wmaker. Other choices will be available
+after installation typing 'xwmconfig' if you start in a console
+
+Then, the system is configured and the GRUB boot manager installed. Slint
+can boot in both Legacy and EFI modes. The boot menu will include a
+"rescue" boot entry to detect and allow any installed OS to be booted.
+
+You can display a preview of the boot menu before rebooting.
+
+Then, remove the installation media and reboot to start your new Slint system.
+// Usage_installer
+[[Usage_of_the_installer]]
+== Usage of the installer
+
+If you are acquainted with the command line, you may skip this topic.
+
+The main installation menu is displayed below:
+....
+Welcome to the Slint installer! (version 15)
+
+You may now type (without the quotes):
+
+'doc' to know the features and usage of the installer.
+'start' to start the installation.
+
+The installer can prepare the drive where Slint will be installed,
+creating the needed partitions. If you prefer you can do it yourself
+using command line utilities available in the installer, then type 'start'
+when done. You can also leave the installer and use a tool like gparted
+to do that then start the installer again.
+
+We recommend that you type 'doc' first in this case, or if you want to
+encrypt the root Slint partition.
+When you finish reading this menu will be displayed again.
+....
+
+As soon as this menu is displayed, you have the hand on the installation process.
+
+You read the screen and type commands in a <<virtual_terminal,virtual terminal>>. The installer
+includes 4 virtual terminals sharing the same physical keyboard and
+screen, that can be used in parallel.
+
+The installer starts in the virtual terminal 1 named *tty1* but you can switch
+to another one. For instance you can switch to *tty2* by pressing
+*Alt-F2* then Enter to activate it and later go back to *tty1* by pressing
+*Alt-F1*, without erasing information displayed in both terminals.
+*Alt-F1* means: press and hold the *Alt* key then press the *F1* key.
+
+This can be useful to continue reading the documentation during installation:
+for instance you can switch to *tty2* to begin installation, switch to *tty1* to
+continue reading the documentation, then switch to *tty1* again to proceed to
+the next installation step.
+
+This can also be used to consult the glossary while reading other documents.
+
+The installer has several modes of interaction with you, the user:
+
+* You type commands at the prompt and read their output.
+* The installer asks a question, you type the answer and confirm it by pressing Enter.
+* The installer displays a menu of choices or options: you select one of them using the up and down arrow keys, then confirm your choice by pressing Enter, or cancel by pressing Escape.
+* The installer displays information in a pager. Then use arrow keys to read the next or previous line, press space to display the next page, Q to stop reading the document.
+
+// Prepare
+[[prepare_partitions_for_Slint]]
+== Optionally, prepare partitions for Slint
+
+In this document 'format' a partition means: create a file system in it to
+manage the files it will contain.
+
+If after having type 'start' you type 'm' for manual partitioning you
+will first select the root system partition, which will be mounted as "/",
+then the type of its file system among: btrfs, ext4, xfs.
+
+The installer lists for selection only partitions of size at least 50G and of Linux (can also be named Linux filesystem), not encrypted. This
+partition may be formatted or not, but in any case its content will be wiped out and a new file system generated by the installer.
+
+In addition the Manual partitioning mode require on the same drive as the root system partition:
+
+* A partition of type BIOS boot partition, of size at least 3M and not formatted.
+* A partition of type EFI system, with at least 32M free space in it, formatted with a 'fat' (or 'vfat') file system as required by the UEFI specification
+
+Using for Slint existing partitions or creating them is up to the user. Already installed systems using the BIOS boot and the EFI partitions will not be affected, only the root partition will be (re)formatted.
+
+The installer includes several partitioning applications: cfdisk, fdisk, sfdisk,
+cgdisk, gdisk, sgdisk, parted. The applications with "g" in their name can
+handle only gpt, parted can handle DOS partition tables as well as GPT. fdisk,
+cfdisk and sfdisk can handle DOS partition tables. In addition, wipefs
+(to erase previous partition table and file system signatures) and partprobe
+(to inform the kernel of a partition table changes) are available.
+The blkid and lsblk applications display information about block devices and
+partitions.
+
+Of course you may also create the partitions form another system before
+starting the installer.
+// Installation
+// Encryption
+[[Encryption]]
+== Slint with an encrypted root partition.
+
+In Auto mode the installer proposes to encrypt the root system partition. If you agree, at each boot the GRUB boot loader will ask you the passphrase
+that you will have typed during installation to unlock the drive, before
+displaying the boot menu. Be aware that unlocking the drive will take a few
+seconds (about ten seconds).
+
+Having an encrypted root system prevents the steal of data it contains in case of
+loss or theft of the machine, or of a removable drive. But this won't protect you if the computer stays running and unattended, only
+if the machine has been switched off completely!
+
+During installation the Slint system partition will be encrypted, and also the
+additional partition that you may request.
+
+A Slint system (or root) partition will the be named: /dev/mapper/cryproot once
+opened, if it has been encrypted.
+
+This is shown by this command:
+
+----
+lsblk -lpo name,fstype,mountpoint | grep /$
+----
+
+Which gives an output like:
+----
+/dev/mapper/cryptroot ext4    /
+----
+
+This command instead:
+
+----
+lsblk -lpo name,fstype,mountpoint | grep /dev/sda3
+----
+
+gives:
+
+----
+/dev/sda3             cryptoLUKS
+----
+
+/dev/sda3 is now a "raw" partition that includes the so called "LUKS header"
+that you will never need nor ever should access directly. It hosts all that is
+needed to encrypt or decrypt the partition /dev/mapper/cryptroot, which
+actually hosts your data (in this example the Slint system).
+
+[WARNING]
+====
+If you forget the passphrase all data in the drive will be irrecoverably lost!
+So write down or record this passphrase and put the record on a safe place as
+soon as done.
+
+Drives die. If that happens and it is encrypted your data will be lost.
+So, regularly back up your important data is not optional.
+
+Also, make a backup copy of the luks header which you can restore in case the luks partition is damaged for any reason. The command could be in our
+example:
+----
+luksHeaderBackup /dev/sda3 --header-backup-file <file>
+----
+where <file> is the name of the backup file, that you will store in a safe place.
+
+Then would you need to restore the backup, type:
+----
+luksHeaderRestore /dev/sda3 --header-backup-file <file>
+----
+
+Don't resize a partition of an encrypted drive as after that it would be
+definitively locked and all the data it contains will be lost! If you really need more space, you will need to backup all the files that you
+want to keep, then install anew and restore the backed up files.
+
+Choose a strong passphrase, so that it would take too much time for a robber to
+discover for it to be worthwhile.
+
+Never ever fiddle with the so-called "LUKS header" located on the raw partition
+(the third one, like e.g. /dev/sda3 for the raw partition on top of the Slint
+system partition). Practically: don't create a file system in this partition,
+don't make it part of a RAID array and generally don't write to it: all data
+would be irrecoverably lost!
+====
+
+To avoid weak passphrases the installer requires that the passphrase include:
+
+. At least 8 characters.
+. Only non accented lower case and capital letters, digits from 0 to 9, space and following punctuation characters:
++
+----
+ ' ! " # $ % & ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+----
++
+This guarantees that even a new keyboard will have all characters needed to
+type the passphrase.
+
+. At least one digit, one lower case letter, one capital letter and one punctuation character.
+
+GRUB assumes that "us" keyboard is in use when you type the passphrase.
+For this reason, if during installation you use an other keyboard map, before
+asking the passphrase the installer will set the keyboard map to "us", and
+after having recorded it restore the previously used one. In this case the
+installer will also spell each typed character of the passphrase, as it may
+differ from the one written on the key.
+
+The application cryptsetup is used to encrypt the drive. To know more type
+after installation: +
+-----
+man cryptsetup
+-----
+// Speakup
+[[Speakup]]
+== Key bindings for the Speakup screen reader
+
+This chapter is intended for users needing a screen reader but not acquainted with Speakup.
+
+Keep numlock off to use Speakup.
+
+The CapsLock key is used like a shift key. For instance "CapsLock 4" means: +
+hold down the CapsLock key like a shift key and press 4.
+
+ First key bindings to remember:
+ PrintScreen         Toggle speakup on/off.
+ CapsLock F1         Speakup Help (press Space to exit the help).
+
+ Key bindings to change settings:
+ CapsLock 1/2        Decrease/Increase the sound volume.
+ CapsLock 5/6        Decrease/Increase the speech rate.
+
+ Key bindings to review the screen:
+ CapsLock j/k/l      Say Previous/Current/Next word.
+ CapsLock k (twice)  Spell current word.
+ CapsLock u/i/o      Say Previous/Current/Next line.
+ CapsLock y          Say from top of screen to reading cursor.
+ CapsLock p          Say from reading cursor line to bottom of screen.
+// First_steps
+[[first_steps_after_installation]]
+== First steps after installation
+
+Here are the first tasks to perform after installation
+
+In this document, all text after a # character are comments of the suggested
+commands, not to be typed.
+
+=== Initial Software update
+
+After installation, the system should be updated to get the most recently
+provided version of each software, as well as new software provided since the
+release of the ISO. This is especially necessary if no network connection was
+available during installation, as then only the packages included in the
+distribution media were installed, and they could be outdated.
+
+Most commands typed below request administrative right associated to a
+specific account named 'root', for which you have recorded a a password
+during installation.
+
+To issue a command as 'root', first type
+----
+su -
+----
+then issue the password for root and press Enter before type the command.
+
+When you are done issuing commands as 'root', press Ctrl+d or type 'exit' to get
+back your "regular user" status.
+
+Alternatively the user registered during installation and other members of the 'wheel' group can type:
+----
+sudo <command>
+----
+then also the password for root.
+
+To update, type as root in a console or a graphical terminal:
+----
+slapt-get --add-keys # retrieve the keys to authenticate the packages
+slapt-get -u # update the list of packages in the mirrors
+slapt-get --install-set slint # get the new packages
+slapt-get --upgrade # Get the new versions of installed packages
+dotnew # lists the changes in configuration files
+----
+When running dotnew, accept to replace all old configuration files by new ones.
+This is safe as you didn't make any customization yet.
+
+Alternatively, you can use these graphical front-ends: gslapt instead of
+slapt-get, and dotnew-gtk instead of dotnew.
+
+To learn more about slapt-get, type:
+----
+man slapt-get
+----
+or as root:
+----
+slapt-get --help
+----
+and read /usr/doc/slapt-get*/README.slaptgetrc.Slint
+
+// Glossary
+== Glossary
+
+Several definitions in this glossary are taken or adapted from https://en.wikipedia.org/wiki/Main_Page[Wikipedia] and https://pubs.opengroup.org/onlinepubs/9699919799/[POSIX]
+
+[[application]]Application:: An application program (application for short) is
+a computer program designed to carry out a specific task typically requested by
+end-users.
++
+Applications are not generally considered as part of the operating system, meaning that they can be added to the system after its installation. They
+perform non-system-related functions, such as word processing, architectural
+design, mechanical design, publishing, or financial analysis.
+
+
+[[boot]]Boot::
+Boot means switch-on a computer to start an operating system. Several operating
+systems can be installed in the same computer. Select which one to load into
+RAM and run can be done either by the firmware or by a software named boot
+manager (GRUB in Slint's case). The firmware of a computer can support one of following booting mode, or both:
++
+* In the Legacy or BIOS mode the OS is loaded executing the instructions written in a boot sector.
+* In the EFI mode the OS loader is a program stored in an executable file, located in a directory of an EFI System partition (ESP).
+
+[[CPU]]CPU::
+The CPU or Central Processing Unit executes the instructions of programs.
+
+[[command]]Command:: Command is defined by https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_104[POSIX] as "a directive to a <<shell,shell>> to perform a specific task".
++
+The task to perform can be an <<application,application>> or an <<utility,utility>>.
++
+The basic structure of shell commands is defined in the chapter https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_09[2.9 Shell Commands] of the POSIX specification.
++
+Examples of commands are provided in <<bash shell>>.
+
+[[console]]Console:: The word "console" refers to the beginning of computer
+systems, when the system administrator typed commands on a device including a
+keyboard and a printer, linked to the computer, the commands typed and the
+output from the computer being printed on the console, providing a log of both.
++
+In personal computers the user type the commands on keyboard and their output
+is printed on a screen, that can be separated from or integrated to the
+computer as in a laptop.
+
+[[device]]Device::
+
+A computer peripheral or an object that appears to the application as such.[POSIX]
+
+[[directory]]Directory::
+A directory is another name for a folder. File systems use directories to
+organize files within partitions.
++
+Directories can contain files and also other directories. The resulting
+structure can be represented as an upside-down tree. The top-level directory of
+a drive is named the root directory. In Linux the character / separates the
+levels of the tree. / alone represents the root directory, /home hosts the files
+belonging to users, /home/didier hosts the files belonging to user didier.
+/root hosts the files of the user named root (the system's administrator).
+Note: 'root' can refer to the top-level directory or the system's administrator.
+
+[[drive]]Drive::
+A drive is a device that stores non volatile data, meaning that the data is not
+erased when the power is turned off. Examples: hard disks, SSD, USB sticks, SD
+cards readers, eMMC.
++
+The media storing the data can be permanently attached to the drive or removable
+like SD cards, USB sticks and drives connected through USB.
++
+An operating system installed in a removable media or an external drive is said
+portable: it can be moved from a computer to another one.
+
+[[display_manager]]Display manager::
+A display manager (or login manager) is a software that displays a window on the
+screen in which it asks the login name and password of the user, then starts
+the graphical environment chosen by said user.
+
+[[encryption]]Encryption::
+Encryption is the process of converting data to an unrecognizable ("encrypted")
+form. It is commonly used to protect sensitive information so that only
+authorized persons can view it. A single file or directory, a partition as well
+as a whole drive can be encrypted, which make it accessible only after having
+typed a small text called a passphrase, kept secret.
+
+[[file]]File::
+A computer file is a set of digital data gathered under the same name, recorded on a permanent storage medium, called mass storage, such as a hard disk, a SSD, a DVD, a SD card or an USB stick and handled as a unit.
++
+Files can contain data like texts, images, sounds, videos or computers programs.
+
+[[file_system]]File System::
+A file system is a software that manages the files and directories in a
+partition. It memorizes the location in the physical media of the data
+contained in the files, allowing to read or writing them. Examples of commonly
+used file systems are vfat, ntfs, ext4, f2fs. This command lists all file
+systems allowing to read data contained in a partition from Linux:
++
+----
+cat /proc/filesystems|grep -v nodev
+----
+
+[[firmware]]Firmware::
+A firmware is a software that initializes and checks the hardware, then either
+selects and load in RAM the operating system, or starts a software called a
+boot manager that will do that. The firmware is held in non-volatile memory
+devices such as ROM, EPROM, or flash memory. It is the first software run when
+booting a computer. It provides a menu allowing to configure the hardware and
+select in which mode (Legacy or EFI) to boot, and in which order look for the
+operating system or other application (like the GRUB boot manager) to run.
+
+[[kernel]]Kernel::
+A Linux kernel is the software at the core of a Slint system which handles the
+interactions between the applications and the hardware.
++
+It presents itself as a single file, installed in the directory /boot. For instance the file /boot/vmlinuz-generic-5.12.11 is a kernel, coming from kernel-generic package.
++
+At startup the kernel is copied into RAM.
+
+[[initrd]]Initrd::
+An initrd (more accurately an initramfs or initial RAM file system for Slint) is
+a Linux system provided as a compressed archive file. At boot, just after the
+kernel has been loaded in RAM the initrd is loaded in RAM too. Its file /init
+runs: it loads needed kernel modules in RAM, register the devices, possibly
+unlock the root device, mount the pseudo file systems then switch to the root
+file system to actually start the system.
++
+An initrd presents itself as a single file, installed in the directory boot.
+For instance the file initrd-generic-5.12.11 is an initrd
+
+[[live_system]]Live system::
+A live system is an operating system that, instead of being installed in a device
+like an hard disk or SSD, lies entirely in <<RAM>>.
++
+An initrd is also a live system, and so is a Slint installer wich is basically an initrd.
+
+[[partition]]Partition::
+A partition is a section of a storage media, such as a hard disk or SSD. It is
+treated by the operating system as a separate logical volume, which makes it
+function similar to a separate device.
+
+[[partition_table]]Partition table::
+A partition table is the permanent structure recording how information is laid
+out on a media, mainly recording the beginning and end of each partition on
+the media.
++
+The most common types of partition tables are the DOS partition table, initially
+used by the MS-DOS operating system, and the GUID Partition Table or GPT, which
+allows to handle more partitions and larger drives.
+
+[[program]]Program::
+A prepared sequence of instructions to the system to accomplish a defined task. The term "program" encompasses applications written in the Shell Command Language, complex utility input languages (for example, awk, lex, sed, and so on), and high-level languages. [POSIX]
+
+[[RAM]]RAM::
+RAM stands for Random Access Memory. This kind of device stores volatile data,
+meaning that the data is erased when the power is turned off.
+
+[[shell]]Shell:: A program that interprets sequences of text input as commands. It may operate on an input stream or it may interactively prompt and read commands from a terminal. The syntax of the commands
+that can be interpreted by the shell can vary depending on the shell in use but are mainly defined in the chapter
+https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html[2.
+Shell Command Language] of the POSIX specification.
++
+Slint ships several programs acting as shell, listed in the file /etc/shells. The *bash* shell is used by default.
+
+[[swap]]Swap::
+A swap space is used to tentatively store data previously in RAM on a device
+like a hard disk or SSD, either because else the RAM would become full, or to
+free space in RAM to store there most frequently used data. The swap space can
+be a partition on a drive of type 'Linux swap' or a regular file stored in an
+an existing partition. There is also the 'swap in zram': in this case the data
+is stored in RAM but in compressed form.
+
+[[terminal]]Terminal::
+Historically a terminal was a physical device composed of a keyboard and a screen
+used to type commands and receives responses from a remote computer.
++
+Nowadays the commands can be typed in console (or text) mode or in graphical
+mode.
+
+[[utility]]Utility::
+An utility is a program that can be invoked by name from a shell (this is also the case of some <<application,applications>>).
++
+Utilities are a part of the operating system (but not of the kernel).
+They perform system-related functions, such as listing directory contents,
+checking file systems, repairing file systems, or
+extracting system status information.
++
+An utility may be invoked as a separate program that executes in a different
+process than the command language interpreter, or it may be implemented as a
+part of the command language interpreter.
++
+For example, the echo command (the
+directive to perform a specific task) may be implemented such that the echo
+utility (the logic that performs the task of echoing) is in a separate program;
+therefore, it is executed in a process that is different from the command
+language interpreter. Practically this means that in this case the utility is a program distinct from the shell
++
+Conversely, the logic that performs the echo utility
+could be built into the command language interpreter; therefore, it could
+execute in the same process as the command language interpreter. Such an utility is said "built-in" the shell.
+
+[[virtual_terminal]]Virtual terminal::
+A virtual terminal is a software that simulates a physical terminal, device
+composed of a keyboard and a screen allowing to communicate remotely with a
+computer.

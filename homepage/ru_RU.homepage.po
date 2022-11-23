@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2022-11-10 21:24+0000\n"
+"PO-Revision-Date: 2022-11-22 23:02\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: homepage.pot\n"
+"X-Crowdin-File-ID: 106\n"
+
+#. type: Title ===
+#: homepage.adoc:2
+#, no-wrap
+msgid "About Slint"
+msgstr "О Slint"
+
+#. type: Plain text
+#: homepage.adoc:5
+msgid "Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier."
+msgstr "Slint — простой в использовании, гибкий и удобный для слепых пользователей дистрибутив Linux для 64-битных компьютеров. Slint основан на Slackware и заимствует инструменты из Salix. Сопровождающий: Didier Spaier."
+
+#. type: Title ===
+#: homepage.adoc:6
+#, no-wrap
+msgid "Features"
+msgstr "Возможности"
+
+#. type: Plain text
+#: homepage.adoc:9
+msgid "Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis."
+msgstr "Slint является стабильным дистрибутивом. При этом программы, обеспечивающие доступность, регулярно обновляются, а остальное программное обеспечение может получать обновления в отдельных случаях."
+
+#. type: Plain text
+#: homepage.adoc:11
+msgid "The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
+msgstr "Входящее в состав программное обеспечение, включающее рабочие столы MATE и LXQt, удовлетворяет большинство потребностей. Многие другие программные пакеты доступны в репозиториях, поддерживаемых Salix и Slackware, которые полностью совместимы с Slint."
+
+#. type: Plain text
+#: homepage.adoc:13
+msgid "Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them."
+msgstr "Slint можно использовать в консольном и графическом режимах и переключаться между этими режимами без перезапуска. Можно даже запустить несколько графических окружений и переключаться между ними."
+
+#. type: Plain text
+#: homepage.adoc:15
+msgid "Easy-to-use tools facilitate system administration and software package management. Updates are fully automatic, under user control."
+msgstr "Простые в использовании инструменты облегчают администрирование системы и управление программными пакетами. Обновления полностью автоматические, под контролем пользователя."
+
+#. type: Plain text
+#: homepage.adoc:17
+msgid "The Slint dashboard gives direct access to the main tools and useful information and links."
+msgstr "Панель приборов Slint обеспечивает прямой доступ к основным инструментам, полезной информации и ссылкам."
+
+#. type: Plain text
+#: homepage.adoc:19
+msgid "By default, a compressed swap space in RAM allows doubling the usable memory."
+msgstr "Использование по умолчанию сжатого пространства подкачки в ОЗУ позволяет удвоить объем доступной памяти."
+
+#. type: Plain text
+#: homepage.adoc:21
+msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
+msgstr "Slint может быть установлен на любом 64-разрядном компьютере с не менее чем 2 Гб памяти и 50 Гб пространства на любом носителе, включая USB-брелки, не использующем Secure Boot."
+
+#. type: Plain text
+#: homepage.adoc:23
+msgid "If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted."
+msgstr "В случае установки на USB-носитель Slint может быть использован на разных компьютерах. Носитель может быть полностью зашифрован."
+
+#. type: Title ===
+#: homepage.adoc:24
+#, no-wrap
+msgid "Installation"
+msgstr "Установка"
+
+#. type: Plain text
+#: homepage.adoc:27
+msgid "The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:"
+msgstr "Программа установки в текстовом режиме полностью доступна для слепых людей с использованием функций экранного чтения или дисплея Брайля. Установка осуществляется в формате вопрос-ответ с использованием онлайн-справки и встроенной документации. Доступны два режима разметки диска:"
+
+#. type: Plain text
+#: homepage.adoc:29
+msgid "Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media can be shared with other systems."
+msgstr "Ручной: пользователь выбирает файловую систему (btrfs, ext4 или xfs), носитель можно использовать совместно с другими системами."
+
+#. type: Plain text
+#: homepage.adoc:31
+msgid "Automatic: The file system is then btrfs and the media dedicated to Slint."
+msgstr "Автоматический: в качестве файловой системы используется btrfs, носитель целиком выделяется под Slint."
+
+#. type: Plain text
+#: homepage.adoc:33
+msgid "The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks."
+msgstr "Файловая система btrfs настроена на использование подтомов вместо отдельных дисковых разделов. Она позволяет вдвое сократить пространство, занимаемое на носителе, поддерживает создание снимков и хорошо адаптирована к SSD, NVMe и USB-флэш-накопителям."
+
+#. type: Title ===
+#: homepage.adoc:34
+#, no-wrap
+msgid "Acknowledgements"
+msgstr "Благодарности"
+
+#. type: Plain text
+#: homepage.adoc:40
+#, no-wrap
+msgid "Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them:\n"
+"https://www.patreon.com/slackwarelinux[Become a Slackware patron] or https://paypal.me/volkerdi[Support Slackware]\n"
+"Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK\n"
+"https://salixos.org/donations.html[Donations to Salix]"
+msgstr "Выражаем благодарность переводчикам Slint и другим участникам проекта, Джорджу Влахавасу за его советы и инструменты, Патрику Дж. Фолькердингу за Slackware, slackware.uk за размещение наших файлов. Вы можете оказать им финансовую поддержку:\n"
+"https://www.patreon.com/slackwarelinux[Стать спонсором Slackware] или https://paypal.me/volkerdi[Поддержать Slackware]\n"
+"Перейдите по ссылкам в начале http://slackware.uk/slint/x86_64/slint-15.0/[этой страницы], чтобы поддержать Slackware UK\n"
+"https://salixos.org/donations.html[Пожертвования для Salix]"
+
+#. type: Title ===
+#: homepage.adoc:41
+#, no-wrap
+msgid "Latest news"
+msgstr "Последние новости"
+
+#. type: Plain text
+#: homepage.adoc:43
+msgid "Slint 15.0 is officially released!"
+msgstr "Slint 15.0 официально выпущен!"
+

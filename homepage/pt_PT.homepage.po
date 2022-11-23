@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-11-10 21:24+0000\n"
-"PO-Revision-Date: 2022-11-13 21:12\n"
+"PO-Revision-Date: 2022-11-22 23:02\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -113,7 +113,7 @@ msgid "Thanks to the translators of Slint and other contributors, to George Vlah
 "Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK\n"
 "https://salixos.org/donations.html[Donations to Salix]"
 msgstr "Obrigado aos tradutores do Slint e outros colaboradores, ao George Vlahavas pelos seus conselhos e ferramentas, ao Patrick J. Volkerding pelo Slackware, ao slackware.uk por alojar os nossos ficheiros. Pode ajudar a financiá-los: https://www.patreon.com/slackwarelinux[Torne-se num patrono do Slackware] ou https://paypal.me/volkerdi[Suporte o Slackware]\n"
-"Siga as ligaçãoes no topo http://slackware.uk/slint/x86_64/slint-15.0/[desta página] para apoiar o Slackware UK\n"
+"Siga as ligações no topo http://slackware.uk/slint/x86_64/slint-15.0/[desta página] para apoiar o Slackware UK\n"
 "https://salixos.org/donations.html[Doações para o Salix]"
 
 #. type: Title ===

@@ -10,7 +10,7 @@
 --
 [.mainmen]
 * link:../en/home.html[Головна]
-* link:../en//HandBook.html[Документація 15.0]
+* link:../en/HandBook.html[Документація 15.0]
 * link:../en/oldHandBook.html[Документація 14.2.1]
 * https://slackware.uk/slint/x86_64/slint-15.0/iso/[Завантажити 15.0]
 * link:../en/support.html[Підтримка]

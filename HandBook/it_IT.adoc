@@ -1,0 +1,385 @@
+:toc: left
+:toclevels: 1
+:toc-title: 
+
+// Overview
+[[Overview_of_Slint_Installation]]
+== Panoramica del processo d'installazione
+
+L'installatore analizza prima di tutto le unità e partizioni esistenti per valutare le possibilità e le opzioni d'installazione e ti consente di scegliere tra una preparazione automatica o manuale delle partizioni usate da Slint.
+
+Se scegli 'manuale', ti sono presentate le partizioni di Linux in cui potrebbe esser installato Slint (dimensioni di almeno 50G), selezionane una e scegli il tipo di file di sistema che l'installatore creerà in essa: btrfs, ext4 o xfs come menzionato in <<prepare_partitions_for_Slint,Optionally prepare partitions for Slint>>
+
+Se scegli 'auto' ti sono presentate le unità in cui Slint potrebbe esser installato (dimensioni di almeno 50G) e il file di sistema sarà di tipo btrfs.
+
+Nel caso di btrfs; i volumi secondari saranno creati per / /home e /snapshots con i file compressi e /swap per hostare un file swap. 'Copia alla scrittura' faciliterà lo scatto delle istantanee e, possibilmente, ripristinerà un aggiornamento di sistema guasto. Gli strumenti per gestire le istantanee sono inclusi in Slint.
+
+In entrambe le modalità, l'utente sceglie quali partizioni di Linux e Windows esistenti saranno montate automaticamente dopo l'avvio di Slint e i nomi dei loro punti di montaggio, facilitando l'accesso a sistemi e dati esistenti da Slint.
+
+Poi, all'utente, è proposto di crittografare la partizione di sistema di root per impedire il furto di dati in caso di perdita o furto della macchina o dell'unità in cui è installato Slint. Se accettato, l'installatore registra la parola d'ordine, consentendo di sbloccare questa partizione. L'utente la digiterà poi al momento dell'avvio, quando richiesto da GRUB per mostrare il menu d'avvio.
+
+Dopodiché, l'installatore riepiloga le tue scelte e te le fa confermare. Fino a questo punto, non sarà stata effettuata alcuna modifica ai sistemi e dati installati, così che tu possa rifiutare in sicurezza. Poi, clicca riavvia o, semplicemente, riavvia senza alcun danno.
+
+Poi, è effettuata la partizione automatica a seconda del caso, la partizione di root di Slint è crittografata se richiesto, la partizione di root è formattata e i primi pacchetti del software sono installati.
+
+Se hai optato per un disco cifrato scrivi la frase segreta che verrà utilizzata per sbloccare l'unità ad ogni avvio.
+
+Scegli una password per l'utente "root". Questo è l'amministratore di sistema, avente tutti i privilegi.
+
+Configuri anche il nome e la password d'accesso di un utente regolare.
+
+Indichi se necessiterai di un'output Braille accessibile e se desideri accedere in modalità testuale o grafica. Se hai usato la lingua inglese (USA) durante l'installazione, scegli la lingua da usare nel sistema installato, altrimenti, l'installatore imposterà l'inglese (predefinita).
+
+L'installatore tenta di stabilire una connessione a Internet e, se vi riesce, propone un fuso orario corrispondente alla tua posizione geografica che puoi confermare, o selezionarne un altro in un elenco.
+
+Ti viene chiesto se necessiterai del Braille, poi, se preferisci iniziare avviare una console o un ambiente grafico, a meno che tu non abbia usato la funzione vocale durante l'installazione o necessiti del Braille: poi, dopo il riavvio, arriverai a una console, per sicurezza.
+
+L'installatore crea quindi un file swap. Questo può richiedere molto tempo, sei pregato di essere paziente.
+
+I pacchetti sono installati sull'unità. Se una connessione a Internet è stata stabilita, scarica e installa la versione più recente di ogni pacchetto, inclusi quelli forniti dal rilascio dell'immagine ISO.
+
+L'installazione di tutti i pacchetti richiede circa 10-40 minuti a seconda dell'hardware.
+
+Ti sarà chiesto di selezionare un desktop (anche se avvii inizialmente su una console) tra fvm, lxqt, mate e wmaker. Altre scelte saranno disponibili dopo l'installazione, digitando 'xwmconfig' se avvii in una console
+
+Quindi, il sistema è configurato e il gestore d'avvio GRUB è installato. Slint può avviarsi sia in modalità Legacy che EFI. Il menu d'avvio includerà una voce di avvio di "salvataggio" per rilevare e consentire l'avvio di qualsiasi OS installato.
+
+Puoi mostrare un'anteprima del menu d'avvio prima del riavvio.
+
+Poi, rimuovi il supporto d'installazione e riavvia per avviare il tuo nuovo sistema di Slint.
+// Usage_installer
+[[Usage_of_the_installer]]
+== Utilizzo dell'installatore
+
+Se conosci la riga di comando, puoi saltare questo argomento.
+
+Il menu di installazione principale è visualizzato qui sotto:
+....
+Benvenuto all'installatore di Slint! (versione 15)
+
+Ora puoi digitare (senza virgolette):
+
+'doc' per conoscere le caratteristiche e l'uso dell'installatore.
+'start' per avviare l'installazione.
+
+L'installatore può preparare dove sarà installato Slint, creando le partizioni necessarie. Se preferisci, puoi farlo usando le utility della riga di comando disponibili nell'installatore, poi digitare 'start' quando hai fatto. Puoi anche uscire dall'installatore e usare uno strumento come gparted per farlo, poi riaprirlo.
+
+Prima, ti consigliamo di digitare 'dog' in questo caso o, se desideri crittografare la partizione di root di Slint. Quando finirai di leggere, questo menu sarà nuovamente mostrato.
+....
+
+Non appena viene visualizzato questo menu, hai la mano sul processo di installazione.
+
+Leggi la schermata e digiti i comandi in un <<virtual_terminal,virtual terminal>>. L'installatore include 4 terminali virtuali che condividono la stessa tastiera fisica e schermo, utilizzabili in parallelo.
+
+The installer starts in the virtual terminal 1 named *tty1* but you can switch to another one. Per esempio puoi passare a *tty2* premendo *Alt-F2* poi Invio per attivarlo e poi tornare a *tty1* premendo *Alt-F1*, senza cancellare le informazioni visualizzate in entrambi i terminali. *Alt-F1* significa: premere e tenere premuto il tasto *Alt* e premere il tasto *F1*.
+
+Questo può essere utile per continuare a leggere la documentazione durante l'installazione: per esempio puoi passare a *tty2* per iniziare l'installazione, passa a *tty1* per continuare a leggere la documentazione, poi passa nuovamente a *tty1* per procedere a il passo successivo di installazione.
+
+Questo può essere utilizzato anche per consultare il glossario durante la lettura di altri documenti.
+
+L'installatore ha diverse modalità di interazione con voi, l'utente:
+
+* Digita i comandi al prompt e leggi il loro output.
+* L'installatore fa una domanda, digita la risposta e la conferma premendo Invio.
+* Il programma di installazione visualizza un menu di scelte o opzioni: si seleziona una di esse utilizzando i tasti freccia su e giù, quindi conferma la tua scelta premendo Invio, o annulla premendo Scappare.
+* L'installatore visualizza le informazioni in un pager. Quindi utilizzare i tasti freccia per leggere la riga successiva o precedente, premere lo spazio per visualizzare la pagina successiva, Q per interrompere la lettura del documento.
+
+// Prepare
+[[prepare_partitions_for_Slint]]
+== Opzionalmente, prepara le partizioni per Slint
+
+In questo documento, 'formattare' una partizione significa: crearvi un file di sistema per gestire i file che conterrà.
+
+Se dopo aver digitato 'start' digiti 'm' per la partizione manuale, selezionerai prima la partizione di root di sistema, che sarà montata come "/", poi digiterai il suo file di sistema tra: btrfs, ext4, xfs.
+
+L'installatore elenca per la selezione solo le partizioni di almeno 50G e di Linux (anche denominabili file di sistema di Linux), non crittografate. Questa partizione potrebbe esser formattata o no, ma in ogni caso i suoi contenuti saranno eliminati e sarà generato un nuovo file di sistema dall'installatore.
+
+Inoltre, la modalità di partizione Manuale richiede di esser sulla stessa unità della partizione di root di sistema:
+
+* Una partizione di tipo d'avvio del BIOS, delle dimensioni di almeno 3M e non formattata.
+* Una partizione del tipo del sistema EFI, con almeno 32M di spazio libero, formattata con un file di sistema 'fat' (o 'vfat') come richiesto dalle specifiche UEFI
+
+Usare partizioni esistenti per Slint o crearle dipende dall'utente. I sistemi già installati usando l'avvio del BIOS e le partizioni EFI non saranno influenzati; solo la partizione di root sarà (ri)formattata.
+
+L'installatore include diverse applicazioni di partizione: cfdisk, fdisk, sfdisk, cgdisk, gdisk, sgdisk, parted. Le applicazioni con "g" nel nome possono gestire solo gpt, parted può gestire le tabelle di partizione DOS nonché GPT. fdisk, cfdisk e sfdisk possono gestire le tabelle di partizione DOS. Inoltre, wipefs (per cancecllare la tabella di partizione precedente e le firme del file di sistema) e partprobe (per informare il kernel delle modifiche alla tabella di partizione) sono disponibili. Le applicazioni blkid e lsblk mostrano le informazioni sui dispositivi del blocco e le partizioni.
+
+Ovviamente, potresti anche creare le partizioni da un altro sistema, prima di avviare l'installatore.
+// Installation
+// Encryption
+[[Encryption]]
+== Slint con una partizione di root crittografata.
+
+In modalità Automatica, l'installatore propone di crittografare la partizione di root di sistema. Se acconsenti, a ogni avvio, il caricamento d'avvio di GRUB ti chiederà la parola d'ordine che avrai digitato durante l'installazione per sbloccare l'unità, prima di mostrare il menu d'avvio. Sappi che lo sblocco dell'unità richiederà qualche secondo (circa dieci secondi).
+
+Avere un sistema di root crittografato impedisce il furto dei dati che contiene nel caso di perdita o furto della macchina o di un'unità rimovibile. Ma questo non ti proteggerà se il tuo computer è in esecuzione e non sotto controllo; solo se la macchina è stata spenta completamente!
+
+Durante l'installazione la partizione di sistema Slint sarà crittografata, e anche la partizione aggiuntiva che si può richiedere.
+
+Una partizione di sistema Slint (o root) verrà nominata: /dev/mapper/cryproot una volta aperta, se è stata cifrata.
+
+Questo è mostrato da questo comando:
+
+----
+lsblk -lpo nome, fstype,mountpoint <unk> grep /$
+----
+
+Che dà un ouptut come:
+----
+/dev/mapper/cryptroot ext4 /
+----
+
+Questo comando invece:
+
+----
+lsblk -lpo name,fstype,mountpoint <unk> grep /dev/sda3
+----
+
+dai:
+
+----
+/dev/sda3             cryptoLUKS
+----
+
+/dev/sda3 è ora una partizione "grezza" che include la cosiddetta "intestazione LUKS", che non necessiterai mai né che dovrai mai accedere direttamente. Ospita tutto il necessario per crittografare o decrittografare la partizione /dev/mapper/cryptroot, che contiene effettivamente i tuoi dati (in questo esempio il sistema di Slint).
+
+[WARNING]
+====
+Se si dimentica la passphrase tutti i dati nell'unità saranno irrimediabilmente persi! Quindi annotare o registrare questa frase segreta e mettere il record in un luogo sicuro come appena fatto.
+
+Le unità muoiono. Se ciò accade e viene crittografato i tuoi dati andranno persi. Così, regolarmente il backup dei dati importanti non è opzionale.
+
+Inoltre, fare un backup dell'intestazione luks che si sarà in grado di ripristinare sarebbe la partizione luks essere danneggiato per qualsiasi motivo. Il comando potrebbe essere nel nostro esempio :
+----
+luksHeaderBackup /dev/sda3 --header-backup-file <file>
+----
+dove <file> è il nome del file di backup, che si memorizzerà in un luogo sicuro.
+
+Quindi sarebbe necessario ripristinare il backup, tipo:
+----
+luksHeaderRestore /dev/sda3 --header-backup-file <file>
+----
+
+Don't ridimensionare una partizione di un'unità crittografata come dopo che sarebbe definitivamente bloccato e tutti i dati che contiene andranno persi! Se hai davvero bisogno di più spazio, dovrai eseguire il backup di tutti i file che vuoi mantenere, quindi installare di nuovo e ripristinare i file di backup.
+
+Scegli una frase di passaggio, in modo che ci vorrebbe troppo tempo per un ladro per scoprire per essere utile.
+
+Non giocherellare mai con la cosiddetta "intestazione LUKS", situata sulla partizione grezza (la terza, come ad esempio /dev/sda3, per la partizione grezza sulla partizione di sistema di Slint). In pratica: non creare un file di sistema in questa partizione, non renderla parte di un insieme RAID e, in generale, non scrivere al suo interno: tutti i dati andranno persi irrecuperabilmente!
+====
+
+Per evitare frasi deboli il programma di installazione richiede che la frase segreta includa:
+
+. Almeno 8 caratteri.
+. Solo lettere minuscole e maiuscole non accentate, cifre da 0 a 9, spazio e seguenti caratteri di punteggiatura:
++
+----
+ ' ! " # $ % & ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+----
++
+Questo garantisce che anche una nuova tastiera avrà tutti i caratteri necessari per digitare la passphrase.
+
+. Almeno una cifra, una lettera minuscola, una lettera maiuscola e un carattere di punteggiatura.
+
+GRUB presuppone che la tastiera "noi" sia in uso quando si digita la passphrase. Per questo motivo, se durante l'installazione si utilizza un'altra mappa della tastiera, prima di chiedere la passphrase l'installatore imposterà la mappa della tastiera a "noi", e dopo averlo registrato ripristina quello precedentemente utilizzato. In questo caso l'installatore scriverà anche ogni carattere digitato della frase segreta, come può differire da quello scritto sulla chiave.
+
+Il cryptsetup dell'applicazione viene utilizzato per crittografare l'unità. Per saperne di più digitare dopo l'installazione: +
+-----
+man cryptsetup
+-----
+// Speakup
+[[Speakup]]
+== Le scorciatoie da tastiera per il lettore dello schermo Speakup
+
+Questo capitolo è inteso per gli utenti che necessitano di un lettore dello schermo, ma non sono abituati a Speakup.
+
+Tieni spento il tastierino numerico per usare Speakup.
+
+Il tasto CapsLock è usato come un tasto Shift. Ad esempio "CapsLock 4" significa: tieni premuto il tasto CapsLock come fosse un tasto Shift e premi 4.
+
+ Prime scorciatoie da tastiera da ricordare:
+ PrintScreen         Attiva/Disattiva Speakup.
+ CapsLock F1         Guida di Speakup (premi spazio per uscire dalla guida).
+
+ Scorciatoie da tastiera per modificare le impostazioni:
+ CapsLock 1/2         Riduci/Aumenta il volume.
+ CapsLock 5/6         Riduci/Aumenta la velocità del discorso.
+
+ Scorciatoie da tastiera per revisionare lo schermo:
+ CapsLock j/k/l         Leggi la parola Precedente/Corrente/Successiva.
+ CapsLock k (due volte)         Spelling della parola corrente.
+ CapsLock u/i/o         Leggi la riga Precedente/Corrente/Successiva.
+ CapsLock y         Leggi da in cima alla schermata al cursore di lettura.
+ CapsLock p         Leggi dalla riga del cursore di lettura fino in fondo alla schermata.
+// First_steps
+[[first_steps_after_installation]]
+== Primi passi dopo l'installazione
+
+Ecco le prime attività da eseguire dopo l'installazione
+
+In questo documento, tutto il testo dopo un carattere # sono commenti dei comandi suggeriti, da non digitare.
+
+=== Aggiornamento iniziale del software
+
+Dopo l'installazione, il sistema dovrebbe essere aggiornato per ottenere la versione più recente fornita di ogni software, così come il nuovo software fornito dopo il rilascio dell'ISO. Ciò è particolarmente necessario se nessuna connessione di rete era disponibile durante l'installazione, come allora solo i pacchetti inclusi nei supporti di distribuzione sono stati installati, e potrebbero essere obsoleti.
+
+La maggior parte dei comandi digitati sotto richiedono diritto amministrativo associato a un account specifico denominato 'root', per cui hai registrato una password durante l'installazione.
+
+Per emettere un comando come 'root', prima digita
+----
+su -
+----
+quindi emettere la password per root e premere Invio prima di digitare il comando.
+
+Quando hai finito di emettere comandi come 'root', premi Ctrl+d o digita 'exit' per recuperare il tuo stato "utente normale".
+
+Altrimenti, l'utente registrato durante l'installazione e gli altri membri del gruppo 'wheel' possono digitare:
+----
+sudo <command>
+----
+quindi, anche la password per il root.
+
+Per aggiornare, digitare come root in una console o in un terminale grafico:
+----
+slapt-get --add-keys # recupera le chiavi per autenticare i pacchetti
+slapt-get -u # aggiorna l'elenco dei pacchetti negli mirrors
+slapt-get --install-set slint # ottieni i nuovi pacchetti
+slapt-get --upgrade # Ottieni le nuove versioni dei pacchetti installati
+dotnew # elenca le modifiche nei file di configurazione
+----
+Quando si esegue dotnew, accettare di sostituire tutti i vecchi file di configurazione con quelli nuovi. Questo è sicuro come hai fatto't fare ancora qualsiasi personalizzazione.
+
+In alternativa, è possibile utilizzare questi front-end grafici: gslapt invece di slapt-get, e dotnew-gtk invece di dotnew.
+
+Per saperne di più su slapt-get, digitare:
+----
+man slapt-get
+----
+come radice:
+----
+slapt-get --help
+----
+e leggi /usr/doc/slapt-get*/README.slaptgetrc.Slint
+
+// Glossary
+== Glossario
+
+Several definitiils in this glossary are taken or adapted from https://en.wikipedia.org/wiki/Main_Page[Wikipedia] and https://pubs.opengroup.org/onlinepubs/9699919799/[POSIX]
+
+[[applicatiil]]Applicazione:: An applicatiil program (applicatiil for short) is a computer program designed to carry out a specific task typically requested by end-users.
++
+Le applicazioni non sono generalmente considerate come parte del sistema operativo, a significare che possono esser aggiunte al sistema dopo la sua installazione. Eseguono funzioni non correlate al sistema, come l'elaborazione delle parole, il design architettonico, il design meccanico, la pubblicazione o l'analisi finanziaria.
+
+
+[[boot]]Avvio::
+Boot means switch-il a computer to start an operating system. Diversi sistemi operativi possono essere installati nello stesso computer. Select which one to load into RAM and run can be dile either by the firmware or by a software named boot manager (GRUB in Slint's case). The firmware of a computer can support ile of following booting mode, or both:
++
+* In the Legacy or BIOS mode the OS is loaded executing the instructiils written in a boot sector.
+* Nella modalità EFI il caricatore OS è un programma memorizzato in un file eseguibile, situato in una directory di una partizione di sistema EFI (ESP).
+
+[[CPU]]CPU::
+La CPU o Central Processing Unit esegue le istruzioni dei programmi.
+
+[[command]]Comando:: Il comando è definito da https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_104[POSIX] come "una direttiva su una shell <<shell, >> per eseguire un'attività specifica".
++
+L'attività da eseguire può essere un'applicazione <<application, >> o un'utilità <<utility, >>.
++
+La struttura di base dei comandi shell è definita nel capitolo https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_09[2.9 Comandi Shell] della specifica POSIX.
++
+Esempi di comandi sono forniti in <<bash shell>>.
+
+[[console]]Console:: La parola "console" si riferisce all'inizio dei sistemi di computer , quando l'amministratore di sistema ha digitato comandi su un dispositivo tra cui una tastiera e una stampante, collegati al computer, i comandi digitati e l'output del computer stampato sulla console, fornendo un registro di entrambi.
++
+Nei personal computer l'utente digita i comandi sulla tastiera e il loro output viene stampato su uno schermo, che può essere separato o integrato al computer come in un computer portatile.
+
+[[device]]Dispositivo::
+
+Un computer periferico o un oggetto che appare all'applicazione in quanto tale.[POSIX]
+
+[[directory]]Cartella::
+Una directory è un altro nome per una cartella. I file system usano le directory per organizzare i file all'interno delle partizioni.
++
+Le cartelle possono contenere file, nonché altre cartelle. La struttura risultante è rappresentabile come un albero invertito. La cartella di livello superiore di un'unità è denominata cartella di root. Su Linux, il carattere / separa i livelli dell'albero. / da solo rappresenta la cartella di root, /home contiene i file appartenenti all'utente, /home/didier contiene i file appartenenti al didier dell'utente. /root contiene i file dell'utente denominato di root (l'amministratore di sistema). Nota: 'root' può riferirsi alla cartella di livello superiore o all'amministratore del sistema.
+
+[[drive]]Unità::
+Un'unità è un dispositivo che memorizza dati non volatili, il che significa che i dati non sono cancellati quando l'alimentazione è spenta. Esempi: dischi rigidi, SSD, chiavette USB, lettori di schede SD , eMMC.
++
+I supporti che memorizzano i dati possono essere collegati permanentemente all'unità o rimovibili come schede SD, chiavette USB e unità collegate tramite USB.
++
+Un sistema operativo installato in un supporto rimovibile o un'unità esterna è detto portatile: può essere spostato da un computer a un altro.
+
+[[display_manager]]Visualizza manager::
+Un display manager (o gestore login) è un software che visualizza una finestra sullo schermo in cui chiede il nome di accesso e la password dell'utente, poi avvia l'ambiente grafico scelto da detto utente.
+
+[[encryption]]Cifratura::
+La cifratura è il processo di conversione dei dati in un modulo irriconoscibile ("cifrato"). È comunemente usato per proteggere le informazioni sensibili in modo che solo persone autorizzate possono visualizzarlo. Un singolo file o directory, una partizione così come come un'intera unità possono essere crittografati, che lo rendono accessibile solo dopo aver digitato un piccolo testo chiamato passphrase mantenuto segreto.
+
+[[file]]File::
+Un file per computer è un insieme di dati digitali raccolti con lo stesso nome, registrati su un supporto di memorizzazione permanente, chiamato archivio di massa, come un disco rigido, un SSD, un DVD, una scheda SD o una chiavetta USN e gestito come unità.
++
+I file possono contenere dati come testi, immagini, suoni, video o programmi computer.
+
+[[file_system]]File di Sistema::
+Un file system è un software che gestisce i file e le directory in una partizione. Memorizza la posizione nei supporti fisici dei dati contenuti nei file, consentendo di leggerli o scriverli. Esempi di file system comunemente utilizzati sono vfat, ntfs, ext4, f2fs. Questo comando elenca tutti i file system che consentono di leggere i dati contenuti in una partizione da Linux:
++
+----
+cat /proc/filesystems<unk> grep -v nodev
+----
+
+[[firmware]]Firmware::
+Un firmware è un software che inizializza e controlla l'hardware, quindi seleziona e carica in RAM il sistema operativo, o avvia un software chiamato boot manager che lo farà. Il firmware è tenuto in dispositivi di memoria non volatile come ROM, EPROM o memoria flash. È il primo software eseguito quando avvia un computer. Fornisce un menu che consente di configurare l'hardware e selezionare in quale modalità (Legacy o EFI) avviare, e in quale ordine cercare il sistema operativo o altre applicazioni (come il GRUB boot manager) da eseguire.
+
+[[kernel]]Kernel::
+Un kernel Linux è il software al centro di un sistema Slint che gestisce le interazioni tra le applicazioni e l'hardware.
++
+Si presenta come un singolo file, installato nella directory /boot. Per esempio, il file /boot/vmlinuz-generic-5.12.11 è un kernel, proveniente dal pacchetto generico del kernel.
++
+All'avvio il kernel viene copiato in RAM.
+
+[[initrd]]Initrd::
+Un initrd (più accuratamente un initramfs o file di sistema RAM iniziale per Slint) è un sistema di Linux fornito come un file archivio compresso. All'avvio, proprio dopo il caricamento del kernel nella RAM, è caricato anche l'initrd. Il suo file /init è eseguito: carica i moduli del kernel necessari nella RAM, registra i dispositivi, possibilmente sblocca il dispositivo di root, monta i sistemi dello pseudo-file, poi passa al file di sistema di root per avviare effettivamente il sistema.
++
+Un initrd si presenta come un singolo file, installato nell'avvio della directory. Per esempio, il file initrd-generic-5.12.11 è un initrd
+
+[[live_system]]Sistema live::
+Un sistema live è un sistema operativo che, invece di essere installato in un dispositivo come un disco rigido o SSD, si trova interamente in <<RAM>>.
++
+An initrd is also a live system, and so is a Slint installatore wich is basically an initrd.
+
+[[partition]]Partizione::
+Una partizione è una sezione di un supporto d'archiviazione, come un disco rigido o SSD. È trattata dal sistema operativo come un volume logico separato, che lo fa funzionare similmente a un dispositivo separato.
+
+[[partition_table]]Tabella delle partizioni::
+Una tabella di partizione è la struttura permanente che registra come sono disposte le informazioni su un supporto, registrando principalmente l'inizio e la fine di ogni partizione sul supporto.
++
+I tipi più comuni di tabelle di partizione sono la tabella di partizione DOS, inizialmente usata dal sistema operativo MS-DOS e la Tabella di Partizione GUID o GPT, che consente di gestire più partizioni e unità più grandi.
+
+[[program]]Programma::
+Una sequenza preparata di istruzioni al sistema per compiere una mansione definita. Il termine "programma" racchiude le applicazioni scritte nel Linguaggio del Comando della Shell, linguaggi di input della utility complessi (ad esempio awk, lex, sed e così via) e i linguaggi di alto livello. [POSIX]
+
+[[RAM]]RAM::
+RAM sta per Memoria di Accesso Casuale. Questo tipo di dispositivo memorizza i dati volatili, il che significa che i dati vengono cancellati quando l'alimentazione è disattivata.
+
+[[shell]]Shell:: Un programma che interpreta le sequenze di input testuali come comandi. Potrebbe operare su un flusso di input o richiedere e leggere interattivamente i comandi da un terminale. La sintassi dei comandi interpretabili dalla shell può variare a seconda della shell in uso, ma è principalmente definita nel capitolo https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html[2. Linguaggio dei Comandi della Shell] della specifica di POSIX.
++
+Slint fornisce diversi programmi che fungono da shell, elencati nel file /etc/shells. La shell *bash* è usata di default.
+
+[[swap]]Scambia::
+Uno spazio di scambio è usato per tentare di memorizzare i dati precedentemente nella RAM su un dispositivo come un disco rigido o un SSD, perché altrimenti la RAM si riempirebbe o per liberare spazio nella RAM per memorizzare in essa i dati usati più di frequente. Lo spazio di scambio può essere una partizione su un'unità di tipo 'Linux swap' o un file regolare memorizzato in una partizione esistente. Esiste anche lo 'swap in zram': in questo caso i dati sono memorizzati nella RAM ma in forma compressa.
+
+[[terminal]]Terminale::
+Storicamente, un terminale era un dispositivo fisico composto da una tastiera e uno schermo, usato per digitare comandi e ricevere risposte da un computer remoto.
++
+Oggigiorno, i comandi, sono digitabili in modalità console (o testuale) o in modalità grafica.
+
+[[utility]]Utilità::
+Una utility è un programma invocabile per nome da una shell (come nel caso di alcune <<application,applications>>).
++
+Le utility sono parte del sistema operativo (ma non del kernel). Eseguono funzioni correlate al sistema, come elencare i contenuti della cartella, verificare i file di sistema, riparare i file di sistema o estrarre le informazioni di stato del sistema.
++
+Un'utility è invocabile come un programma separato eseguito in un processo differente dall'interprete del linguaggio del comando, o potrebbe esser implementata come parte dello stesso.
++
+Ad esempio, il comando echo (la direttiva a eseguire una mansione specifica) potrebbe esser implementato così che la utility di echo (la logica che esegue la mansione di echo) sia in un programma separato; dunque, è eseguito in un processo differente dall'interprete del linguaggio del comando. Praticamente, ciò significa che in questo caso, l'utility è un programma distintio dalla shell
++
+Viceversa, la logica che esegue l'utility di echo potrebbe esser costruita nell'interprete del linguaggio del comando; dunque, potrebbe eseguirsi nello stesso processo dell'interprete del linguaggio del comando. Una simile utility è detta "integrata" nella shell.
+
+[[virtual_terminal]]Terminale virtuale::
+Un terminale virtuale è un software che simula un terminale fisico, dispositivo composto da una tastiera e uno schermo che consente di comunicare in remoto con un computer.
