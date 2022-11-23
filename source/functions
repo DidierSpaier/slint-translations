@@ -30,7 +30,7 @@ SLINTREPO=http://slackware.uk/slint/x86_64/slint-15.0
 # Directory /patches of a Slackware repository
 PATCHESREPO=http://slackware.uk/slackware/slackware64-15.0/patches
 export SLINTVERSION=15.0
-ISOVERSION=15.0
+ISOVERSION=15.0-1
 ISOLABEL="SLINT$ISOVERSION"
 # Installed RAM in kilobytes
 KRAM=$(sed -n 1p /proc/meminfo|sed "s/[ ]\{1,\}/ /"|cut -d" " -f2)

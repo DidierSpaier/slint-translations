@@ -46,7 +46,8 @@ modprobe loop 1> /dev/null 2> /dev/null
 # Run udev:
 /bin/bash /etc/rc.d/rc.udev start
 
-# Added as in slint64-5.0beta.iso
+SYNTH=$(sed "s@.*speakup.synth=\([[:print:]]\{1,\}\)@\1@" /proc/cmdline)
+[ "$SYNTH" ] && modprobe speakup_$SYNTH
 
 sleep 8
 # I assume that we can install all packages we need in the initrd now
@@ -62,7 +63,6 @@ sh /etc/rc.d/rc.swapinzram start
 echo "installing kernel-firmware. Please wait..."
 spkg -i -qq $ISO/slint/kernel-firmware*txz
 
-#End additions as in slint64-5.0beta.iso
 export TEXTDOMAIN=rc.S
 sleep 1
 
