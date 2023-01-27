@@ -7,7 +7,7 @@ cd $WIP/html
 LANGUAGES="el en fr it nl pt sv"
 ALL_LANGUAGES="de el en es fr it ja jp nl pl pt pt_PT pt_BR ru sv uk"
 mkdir doc $ALL_LANGUAGES
-SLINTDOCS=/storage/DidierSpaier/slint-translations
+SLINTDOCS=/data/DidierSpaier/slint-translations
 PAGES="home HandBook oldHandBook support"
 # We rebuild the whole website locally from scratch upon each update.
 # But we will make a local rsync on the server html => server root

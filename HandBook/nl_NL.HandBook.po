@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-09-25 22:16+0000\n"
-"PO-Revision-Date: 2022-11-22 23:02\n"
+"PO-Revision-Date: 2023-01-22 17:52\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -888,7 +888,8 @@ msgstr "Je kunt nu typen (zonder de aanhalingstekens):\n"
 #, no-wrap
 msgid "'doc' to know the features and usage of the installer.\n"
 "'start' to start the installation.\n"
-msgstr "'doc' om de functies en het gebruik van het installatieprogramma te leren kennen.\n"
+msgstr "'doc' om de functies en het gebruik van het installatieprogramma\n"
+"te leren kennen.\n"
 "'start' om de installatie te starten.\n"
 
 #. type: delimited block .
@@ -899,10 +900,10 @@ msgid "The installer can prepare the drive where Slint will be installed,\n"
 "using command line utilities available in the installer, then type 'start'\n"
 "when done. You can also leave the installer and use a tool like gparted\n"
 "to do that then start the installer again.\n"
-msgstr "Het installatieprogramma kan de schijf waarop Slint wordt geïnstalleerd voorbereiden/n\n"
-"en de benodigde partities aanmaken. Je kunt dat ook zelf handmatig doen met behulp van/n\n"
-"de aanwezige hulpprogramma's. Typ 'start' als je hiermee klaar bent. Je kunt ook het/n\n"
-"installatieprogramma verlaten en een programma als gparted gebruiken waarna je het/n\n"
+msgstr "Het installatieprogramma kan de schijf waarop Slint wordt geïnstalleerd voorbereiden\n"
+"en de benodigde partities aanmaken. Je kunt dat ook zelf handmatig doen met behulp van\n"
+"de aanwezige hulpprogramma's. Typ 'start' als je hiermee klaar bent. Je kunt ook het\n"
+"installatieprogramma verlaten en een programma als gparted gebruiken waarna je het\n"
 "installatieprogramma weer start.\n"
 
 #. type: delimited block .
@@ -911,7 +912,8 @@ msgstr "Het installatieprogramma kan de schijf waarop Slint wordt geïnstalleerd
 msgid "We recommend that you type 'doc' first in this case, or if you want to\n"
 "encrypt the root Slint partition.\n"
 "When you finish reading this menu will be displayed again.\n"
-msgstr "We raden je aan eerst 'doc' te typen in geval je de Slint rootpartitie wilt versleutelen.\n"
+msgstr "We raden je aan eerst 'doc' te typen in geval je de Slint rootpartitie\n"
+"wilt versleutelen.\n"
 "Wanneer je hier mee klaar bent wordt dit menu weer weergegeven.\n"
 
 #. type: Plain text
@@ -922,7 +924,9 @@ msgstr "Zodra dit menu wordt weergegeven kun je beginnen met het installatieproc
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:416
 msgid "You read the screen and type commands in a <<virtual_terminal,virtual terminal>>. The installer includes 4 virtual terminals sharing the same physical keyboard and screen, that can be used in parallel."
-msgstr "Je leest het scherm en typt commando's in een <<virtual_terminal,virtuele terminal>>. Het installatieprogramma beschikt over 4 virtuele terminals die hetzelfde fysieke toetsenbord en scherm gebruiken en tegelijkertijd naast elkaar gebruikt kunnen worden."
+msgstr "Je leest het scherm en typt commando's in een <<virtual_terminal,virtuele terminal>>.\n"
+"Het installatieprogramma beschikt over 4 virtuele terminals die hetzelfde fysieke\n"
+"toetsenbord en scherm gebruiken en tegelijkertijd naast elkaar gebruikt kunnen worden."
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:422

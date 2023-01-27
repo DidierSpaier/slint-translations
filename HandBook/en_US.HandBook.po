@@ -1,9 +1,3 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -188,8 +182,8 @@ msgstr ""
 #. type: Title ====
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:42
 #, no-wrap
-msgid "Content, versions and release model."
-msgstr "Content, versions and release model."
+msgid "Content, versions and release model"
+msgstr "Content, versions and release model"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:45
@@ -4197,7 +4191,7 @@ msgstr "In short, in a graphical environment:"
 msgid ""
 "Insert+Space: display the Orca Preferences dialog.\n"
 "Insert+S: activate or deactivate the vocal synthesis.\n"
-"Insert+H: activate the learning mode. In this m\tode:\n"
+"Insert+H: activate the learning mode. In this mode:\n"
 "   Press a key to hear its function\n"
 "   F1: to hear the documentation of the screen reader\n"
 "   F2: list the keyboard shortcuts for Orca\n"
@@ -4206,7 +4200,7 @@ msgid ""
 msgstr ""
 "Insert+Space: display the Orca Preferences dialog.\n"
 "Insert+S: activate or deactivate the vocal synthesis.\n"
-"Insert+H: activate the learning mode. In this m\tode:\n"
+"Insert+H: activate the learning mode. In this mode:\n"
 "   Press a key to hear its function\n"
 "   F1: to hear the documentation of the screen reader\n"
 "   F2: list the keyboard shortcuts for Orca\n"
@@ -4216,21 +4210,21 @@ msgstr ""
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1247
 #, no-wrap
-msgid "Voices and TTS in Slint."
-msgstr "Voices and TTS in Slint."
+msgid "Voices and TTS in Slint"
+msgstr "Voices and TTS in Slint"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1256
 #, no-wrap
 msgid ""
-"Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0.2, each with a set of voices, namely:\n"
+"Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0, each with a set of voices, namely:\n"
 "espeak-ng\n"
 "flite\n"
 "pico\n"
 "mbrola\n"
 "RHVoice +"
 msgstr ""
-"Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0.2, each with a set of voices, namely:\n"
+"Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0, each with a set of voices, namely:\n"
 "espeak-ng\n"
 "flite\n"
 "pico\n"
@@ -4550,8 +4544,8 @@ msgstr ""
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1372
 #, no-wrap
-msgid "Configure a console screen reader."
-msgstr "Configure a console screen reader."
+msgid "Configure a console screen reader"
+msgstr "Configure a console screen reader"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1376
@@ -4991,8 +4985,8 @@ msgstr "Manage your system"
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1553
 #, no-wrap
-msgid "Software management in Slint."
-msgstr "Software management in Slint."
+msgid "Software management in Slint"
+msgstr "Software management in Slint"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1560
@@ -5825,8 +5819,8 @@ msgstr ""
 #. type: Title ===
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1793
 #, no-wrap
-msgid "Manage users and groups."
-msgstr "Manage users and groups."
+msgid "Manage users and groups"
+msgstr "Manage users and groups"
 
 #. type: Plain text
 #: /storage/DidierSpaier/slint-translations/source/HandBook.adoc:1796

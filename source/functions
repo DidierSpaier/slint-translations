@@ -84,6 +84,16 @@ mode is not possible.")
 LOCALES=" de_DE.utf8 el_GR.utf8 en_US.utf8 es_CR.utf8 fr_FR.utf8 it_IT.utf8 \
 nb_NO.utf8 nl_NL.utf8 pl_PL.utf8 pt_BR.utf8 pt_PT.utf8 ru_RU.utf8 sv_SE.utf8 \
 tr_TR.utf8 uk_UA.utf8 "
+# Convert user input case insensitive to lower case
+to_lower() {
+	echo "$1"|tr '[:upper:]' '[:lower:]'
+}
+clear_stdin() {
+	old_tty_settings=$(stty -g)
+	stty -icanon min 0 time 0
+	while read none; do :; done 
+	stty "$old_tty_settings"
+}
 giveup() {
 	echo giveup >>$INSTALL/log
 	gettext "Press Enter to go back to the menu "
@@ -231,10 +241,6 @@ to display the menu press Esc then navigate with the arrow keys"
 	echo
 	echo && gettext "Press Enter to continue." && read && clear
 }
-# Convert user input case insensitive to lower case
-to_lower() {
-	echo "$1"|tr '[:upper:]' '[:lower:]'
-}
 addsetting() {
 	# this function completes one of the partitions lists written by
 	# probepartitions appending to the record indexed by $PARTNUM a setting
@@ -317,6 +323,7 @@ or in other OS from which this partition will be accessed."
 	fi
 	while true; do
 		eval_gettext "Type the mount point for \$NAME, or h for help: "
+		clear_stdin
 		read MOUNTPOINT
 		MOUNTPOINT="${MOUNTPOINT#/}"
 		# In manual mode we allow a separate partition for /home, but not
@@ -614,7 +621,7 @@ press q to quit now. You will type 'start' again when ready."
 	echo
 	unset AUTO MANUAL
 	while true; do
-		gettext "Press m for manual, a for auto, h for help or q to quit: " && read ANSWER
+		gettext "Press m for manual, a for auto, h for help or q to quit: " && clear_stdin && read ANSWER
 		case $(to_lower $ANSWER) in
 			m) MANUAL="yes"; break;;
 			a) AUTO="yes"; break;;
@@ -749,6 +756,7 @@ choosetargetdrive() {
 			# change before we ask for confirmation, for instance if a
 			# drive is inserted or removed.
 			gettext "Please type the chosen drive's number, or q to quit: "
+			clear_stdin
 			read ANSWER
 			if [ "$ANSWER" = "q" ]; then
 				giveup
@@ -789,7 +797,7 @@ Here are its current partitions:"
 		while [ ! "$(to_lower $ANSWER)" = "yes" ] && [ ! "$(to_lower $ANSWER)" = "no" ]; do
 			eval_gettext "Do you want to delete all data on \$NAME then install Slint on it?"
 			echo
-			gettext "Type yes or no: " && read ANSWER
+			gettext "Type yes or no: " && clear_stdin && read ANSWER
 		done
 			if [ ! "$(to_lower $ANSWER)" = "yes" ]; then
 			giveup
@@ -798,7 +806,7 @@ Here are its current partitions:"
 		while [ ! "$(to_lower $ANSWER)" = "yes" ] && [ ! "$(to_lower $ANSWER)" = "no" ]; do
 			gettext "Do you want to install Slint on it?"
 			echo
-			gettext "Type yes or no: " && read ANSWER
+			gettext "Type yes or no: " && clear_stdin && read ANSWER
 		done
 		if [ ! "$(to_lower $ANSWER)" = "yes" ]; then
 			giveup
@@ -845,6 +853,7 @@ The size of the Slint root partition should be between \${GCOUNT}G and \${GAVAIL
 		echo
 		while true; do
 			gettext "Size of the Slint root partition (h for help): "
+			clear_stdin
 			read ANSWER
 			GROOTSIZE=$(echo $ANSWER|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
 			if [ "$(to_lower $ANSWER)" = "h" ]; then
@@ -920,6 +929,7 @@ type its size below (at most \${GREMAINING}G), else just press Enter."
 	echo
 	while true; do
 		eval_gettext "Size of the added partition (h for help): "
+		clear_stdin
 		read ANSWER
 		GADDEDSIZE=$(echo $ANSWER|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
 		if [ "$(to_lower $GADDEDSIZE)" = "h" ]; then
@@ -950,6 +960,7 @@ which this partition will be accessed."
 	echo
 	while true; do
 		gettext "Type the name of the new partition, or h for help: "
+		clear_stdin
 		read NEWPARTNAME
 		if [ "$(to_lower $NEWPARTNAME)" = "h" ]; then
 			clear
@@ -1025,6 +1036,7 @@ echo
 			eval_gettext "Do you want to install Slint on \$ROOTNAME?"
 			echo
 			gettext "Please type yes to confirm or no to quit: "
+			clear_stdin
 			read ANSWER
 			CHOICE=$(to_lower $ANSWER)
 			case $CHOICE in
@@ -1045,6 +1057,7 @@ echo
 		echo
 		while true; do
 			eval_gettext "Type the file system type for \$NAME or h for help: "
+			clear_stdin
 			read ANSWER
 			case $(to_lower $ANSWER) in
 				btrfs|ext4|xfs)
@@ -1095,6 +1108,7 @@ We will later format this partition, which will erase its content."
 	while [ ! "$CHOSEN" ]; do
 		echo
 		gettext "Please type the root partitions's number, or q to quit: "
+		clear_stdin
 		read  ANSWER
 		[ "$(to_lower $ANSWER)" = "q" ] && giveup
 		if ! grep -q "PARTNUM=\"$ANSWER\"" $INSTALL/rootpartitions; then
@@ -1115,6 +1129,7 @@ We will later format this partition, which will erase its content."
 		echo
 		while true; do
 			eval_gettext "Type the file system type for \$NAME or h for help: "
+			clear_stdin
 			read ANSWER
 			case $(to_lower $ANSWER) in
 				btrfs|ext4|xfs)
@@ -1178,6 +1193,7 @@ Type d when done, l to display the list again, or q to quit."
 		displaypartitions linux
 		echo
 		gettext "Partition number? (or l to display the list, d when done, q to quit): "
+		clear_stdin
 		read ANSWER
 		CHOICE=$(to_lower $ANSWER)
 		[ "$CHOICE" = "d" ] && return
@@ -1237,6 +1253,7 @@ to be automatically mounted at boot time, either read-only or read-write."
 	while [ -f $INSTALL/windowspartitions ] && [ $(cat  $INSTALL/windowspartitions|wc -l) -gt 0 ]; do
 		displaypartitions windows
 		gettext "Partition number? (l to display the list, d when done, h for help):"
+		clear_stdin
 		read ANSWER
 		CHOICE=$(to_lower $ANSWER)
 		[ "$CHOICE" = "d" ] && return
@@ -1319,6 +1336,7 @@ partition, giving access to the boot menu. We will record this passphrase"
 	while true; do
 		eval_gettext "Do you want to encrypt \$NAME? type yes, no or h for help."
 		echo
+		clear_stdin
 		read ANSWER
 		case "$(to_lower $ANSWER)" in
 			yes) ENCRYPT="yes"; break;;
@@ -1404,6 +1422,7 @@ else you will go back to the greeting screen of the installer."
 	echo
 	while true; do
 		gettext "To confirm these settings type yes, else type no: "
+		clear_stdin
 		read ANSWER
 		case $(to_lower $ANSWER) in
 			yes) 
@@ -1448,6 +1467,7 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 	while true; do
 		gettext "Passphrase (h for help): "
 		loadkmap < us.bmap
+		clear_stdin
 		read PASS
 		loadkmap < $BKEYMAP
 		case $PASS in
@@ -1491,6 +1511,7 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 		echo
 		eval_gettext "Please type again the passphrase, to check: "
 		loadkmap < us.bmap
+		clear_stdin
 		read NEWPASS
 		loadkmap < $BKEYMAP
 		if [ ! "$PASS" = "$NEWPASS" ]; then
@@ -1793,6 +1814,7 @@ This status should be accessed only with a good password."
 		eval_gettext "Please type the password for \$THISUSER: "
 		stty -echo 2>/dev/null
 		trap "stty  $saveterm" EXIT
+		clear_stdin
 		read ANSWER
 		stty  $saveterm
 		if [ ${#ANSWER} -lt 6 ]; then
@@ -1804,6 +1826,7 @@ This status should be accessed only with a good password."
 		eval_gettext "Please type again the password for \$THISUSER, to check: "
 		stty -echo 2>/dev/null
 		trap "stty  $saveterm" EXIT
+		clear_stdin
 		read NEWANSWER
 		stty  $saveterm
 		if [ ! "$ANSWER" = "$NEWANSWER" ]; then
@@ -1832,6 +1855,7 @@ We need to know under which name this user will log in to access Slint."
 # In addition we 'useradd' e do not allow a <dot> nor capital letters.
 	while true; do
 		gettext "Login name of the first registered user: "
+		clear_stdin
 		read LOGIN
 		case $LOGIN in
 			"") continue;;
@@ -1856,6 +1880,7 @@ brlttyornot() {
 	echo
 	while true; do
 		gettext "Will you use a Braille device? Please answer yes or no: "
+		clear_stdin
 		read ANSWER
 		case $(to_lower $ANSWER) in
 			yes) chroot $SLINT chmod 0755 /etc/rc.d/rc.brltty; break;;
@@ -1872,6 +1897,7 @@ startupmode() {
 	echo
 	while true; do
 		gettext "Type c for console or g for graphical, or h for help then press Enter: "
+		clear_stdin
 		read ANSWER
 		case $(to_lower $ANSWER) in
 			c) sed "/:initdefault:/s/.*/id:3:initdefault:/" $SLINT/etc/inittab > bof
@@ -1909,7 +1935,7 @@ noipv6() {
 }
 wired() {
 	echo wired >>$INSTALL/log
-	CONNECTED=""
+	rm -f /tmp/connected
 	LISTETH=$(for i in $(ls /sys/class/net/|grep -v lo); do
 		if [ ! -d /sys/class/net/$i/wireless ]; then
 			echo $i;
@@ -1922,29 +1948,29 @@ wired() {
 		dhcpcd -k $LISTETH 2>/dev/null
 		dhcpcd -t 10 $LISTETH 1>/dev/null 2>/dev/null
 		if [ $? -eq 0 ]; then
-				CONNECTED=1
+				touch /tmp/connected
 		fi
 	else
 		echo "$LISTETH"|while read ETH; do
 			dhcpcd -t 10 $ETH 1>/dev/null 2>/dev/null
 			if [ $? -eq 0 ]; then
-				CONNECTED=1
+				touch /tmp/connected
 			fi
 		done
 	fi
-	if [ ! "$CONNECTED" ]; then
+	if [ ! -f  /tmp/connected ]; then
 		FAILED=1
 		return
 	else
 		trytoget $SLINTREPO/GPG-KEY
 		if  [ "$FAILED" ]; then
-			unset CONNECTED
+			rm -f /tmp/connected
 			echo "Wired connection failed" >> $INSTALL/errors
 		fi
 	fi
 }
 wireless() {
-	[ "$CONNECTED" ] && return
+	[ -f /tmp/connected ] && return
 	echo wireless >>$INSTALL/log
 	echo "wireless" >>$INSTALL/log
 	echo
@@ -1953,6 +1979,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 	echo
 	while true; do
 		gettext "Should we try to get a wifi connection? Please type yes or no: "
+		clear_stdin
 		read ANSWER
 		case $(to_lower $ANSWER) in
 			yes) break ;;
@@ -2019,6 +2046,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		gettext "SSID (network name) or l to get a list: "
 		# backspace works only in the current line of input.
 		setterm --linewrap off
+		clear_stdin
 		read ANSWER
 		setterm --linewrap on
 		if [ "$(to_lower $ANSWER)" = "l" ]; then
@@ -2045,6 +2073,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				stty -echo
 				trap 'stty +echo' EXIT
 			fi
+			clear_stdin
 			read ANSWER
 			if [ "$DISPLAYPASS" = "no" ]; then
 				echo
@@ -2067,6 +2096,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 			wpa_supplicant -B -i $IFACE -Dnl80211,wext -c $INSTALL/wpa 1>>$INSTALL/log 2>>$INSTALL/log
 			if [ $? -ne 0 ]; then
 				gettext "Wrong passphrase. Press Enter to try again or type q to quit: "
+				clear_stdin
 				read ANSWER
 				if [ "$(to_lower $ANSWER)" = "q" ]; then
 					return 1
@@ -2080,6 +2110,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				gettext "Wifi connection failed. Wrong passphrase?"
 				echo
 				eval_gettext "Press Enter to try again or type q to quit: "
+				clear_stdin
 				read ANSWER
 				if [ "$(to_lower $ANSWER)" = "q" ]; then
 					return 1
@@ -2088,7 +2119,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 					continue
 				fi
 			fi
-			CONNECTED=1
+			touch /tmp/connected
 			return
 		done
 	elif [ $ENCKEY -eq 0 ]; then
@@ -2103,12 +2134,13 @@ those shipped with the installer, but we couldn't get a wired connection."
 		unset ANSWER
 		while true; do
 			eval_gettext "Are credentials requested to use \$SSID? Type yes or no: "
+			clear_stdin
 			read ANSWER
 			case "$(to_lower $ANSWER)" in
 				yes) break;;
 				no) wget --spider ipinfo.io
 					if [ $? -eq 0  ]; then
-						CONNECTED=1
+						touch /tmp/connected
 						return
 					else
 						gettext "Wifi connection failed."
@@ -2124,6 +2156,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		echo
 		while true; do
 			gettext "Press Enter to start the browser or type h for help on its usage: "
+			clear_stdin
 			read ANSWER
 			if [ "$(to_lower $ANSWER)" = "h" ]; then
 				clear
@@ -2135,7 +2168,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		done
 		wget --spider ipinfo.io
 		if [ $? -eq 0  ]; then
-			CONNECTED=1
+			touch /tmp/connected
 		fi
 		return
 	else
@@ -2148,6 +2181,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				fi
 				# backspace works only in the current line of input.
 				setterm --linewrap off
+				clear_stdin
 				read ANSWER
 				setterm --linewrap on
 				if [ "$DISPLAYPASS" = "no" ]; then
@@ -2183,7 +2217,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 			echo "Wifi connection failed."
 			return
 		fi
-		CONNECTED=1
+		touch /tmp/connected
 	fi
 }
 settimezone() {
@@ -2192,12 +2226,13 @@ settimezone() {
 	gettext "Setting of the time zone."
 	echo
 	unset PROPOSEDTZ
-	if [ "$CONNECTED" ]; then
+	if [ -f /tmp/connected ]; then
 		PROPOSEDTZ=$(wget -O - ipinfo.io 2>/dev/null|grep "timezone"|cut -d'"' -f4)
 	fi
 	if [ "$PROPOSEDTZ" ]; then
 		while true; do
 		eval_gettext "Is \$PROPOSEDTZ the current time zone? type yes or no: "
+		clear_stdin
 		read ANSWER
 			case $(to_lower $ANSWER) in
 				yes) rm -f $SLINT/localtime-copied-from
@@ -2219,6 +2254,7 @@ this setting after installation."
 		echo
 		while true; do
 			gettext "To set the time zone now type yes, else type no: "
+			clear_stdin
 			read ANSWER
 			case $(to_lower $ANSWER) in
 				yes) chroot $SLINT clocksetup -c -z; return;;
@@ -2367,6 +2403,7 @@ displaydescornot() {
 		gettext "Do you want a short description of each package during its installation?"
 		echo
 		gettext "Please type yes or no: "
+		clear_stdin
 		read ANSWER
 		case $(to_lower $ANSWER) in
 			yes) DISPLAYNAME=1; break;;
@@ -2401,7 +2438,7 @@ installfromweb() {
 	# occurs very rarely if ever in the life span of a Slackware release.
 	# If no internet connection is available we'll just install all packages from
 	# $ISO, but those already installed.
-	if [ ! "$CONNECTED" ]; then
+	if [ ! -f /tmp/connected ]; then
 		FAILED=1
 		return
 	else
@@ -2709,7 +2746,7 @@ installfromiso() {
 	echo installfromiso >>$PKGLISTS/loginstall
 	echo
 	ls $SLINT/var/lib/pkgtools/packages|while read i; do
-		echo "$(basename $i|sed "s/-[^-]*-[^-]*-[^-]*$//")" >> $PKGLISTS/installed;
+		basename $i|sed "s/-[^-]*-[^-]*-[^-]*$//" >> $PKGLISTS/installed;
 	done
 	ls -1 $ISO/slint/*txz|while read PKG; do
 		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $PKG
@@ -2792,7 +2829,7 @@ bindrootslint() {
 passwords() {
 	echo passwords >>$INSTALL/log
 	while read r; do echo $r|chpasswd -R $SLINT; done </tmp/u
-	rm -f /tm/u
+	rm -f /tmp/u
 }
 postconfigure(){
 	echo postconfigure >>$INSTALL/log
@@ -2819,6 +2856,7 @@ postconfigure(){
 press Enter to accept the default name \"slint\"."
 	echo
 	gettext "Machine name[slint]: "
+	clear_stdin
 	read HOSTNM
 	export HOSTNM
 	cp /sbin/nmconfig $SLINT/sbin
@@ -2842,9 +2880,10 @@ mate is the most accessible with a screen reader."
 		echo
 		cat listesessions
 		gettext "Your choice: "
-		read choice
-		[ ! "$choice" ] && clear && continue
-		session=$(echo "$choice"|tr '[:upper:]' '[:lower:]')
+		clear_stdin
+		read CHOICE
+		[ ! "$CHOICE" ] && clear && continue
+		session=$(echo "$CHOICE"|tr '[:upper:]' '[:lower:]')
 		grep -q $session listesessions && break
 		clear
 		gettext "$session is not an available desktops."

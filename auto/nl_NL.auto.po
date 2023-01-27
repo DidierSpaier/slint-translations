@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-12 14:55+0000\n"
-"PO-Revision-Date: 2022-11-22 23:02\n"
+"PO-Revision-Date: 2023-01-22 17:52\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -75,7 +75,7 @@ msgid "Welcome back to the menu of the Slint installer.\n\n"
 "encrypt the root Slint partition.\n"
 "When you finish reading this menu will be displayed again."
 msgstr "Welkom terug bij het Slint installatieprogramma!\n\n"
-"Je kunt nu (zonder aanhalingstekens) typen:\n\n"
+"Typ nu (zonder aanhalingstekens):\n\n"
 "'doc' om de mogelijkheden en het gebruik van het installatieprogramma\n"
 "te leren kennen.\n"
 "'start' om het installatieprogramma te starten.\n\n"
@@ -417,7 +417,7 @@ msgstr "Grootte van de toe te voegen partitie (h voor hulp): "
 # File: functions, line: 939
 #, sh-format
 msgid "The size should be at most ${GREMAINING}G."
-msgstr "De grootte mag maximaal ${GREMAINING}G zijn."
+msgstr "De maximale grootte is ${GREMAINING}G."
 
 # File: functions, line: 949
 msgid "Please choose a name for the new partition; like \"data\". Use only lower case\n"
@@ -434,7 +434,7 @@ msgstr "Typ de naam van de nieuwe partitie of h voor hulp: "
 # File: functions, line: 962
 #, sh-format
 msgid "$NEWPARTNAME is a reserved directory name."
-msgstr "$NEWPARTNAME is een gereserveerde mapnaam."
+msgstr "$NEWPARTNAME is een gereserveerde directory-naam."
 
 # File: functions, line: 966
 msgid "Only lower case letters are allowed"
@@ -458,7 +458,7 @@ msgstr "We moeten de Slint root-partitie bepalen die op \"/\" aangekoppeld\n"
 msgid "We have found only one Linux partition big enough to install Slint:\n"
 "${ROOTNAME}, size ${GSIZE}G."
 msgstr "We hebben slechts één Linux partitie gevonden groot genoeg om\n"
-"Slint te op te kunnen installeren:\n"
+"Slint op te kunnen installeren:\n"
 "${ROOTNAME}, grootte ${GSIZE}G."
 
 # File: functions, line: 1027

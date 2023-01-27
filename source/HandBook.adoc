@@ -1248,7 +1248,7 @@ Insert+H: activate the learning mode. In this m	ode:
    Esc: end of the learning mode
 ----
 
-=== Voices and TTS in Slint.
+=== Voices and TTS in Slint
 
 Following TTS (Text to Speech synthesizers) are shipped in
 Slint64-15.0.2, each with a set of voices, namely: +
@@ -1373,7 +1373,7 @@ OK
 root[~]#
 ----
 
-=== Configure a console screen reader.
+=== Configure a console screen reader
 
 Slint handle speech hardware synthesizers using speakup and provides the espeakup
 and speechd-up screen readers.
@@ -1554,7 +1554,7 @@ Enabling one of these software disables the other one.
 == Manage your system
 
 [[software_management]]
-=== Software management in Slint.
+=== Software management in Slint
 
 <<The_basics,The basics>> +
 <<Keep_your_system_up_to_date,Keep your system up to date>> +
@@ -1794,7 +1794,7 @@ upgradepkg --install-new /tmp/slapt-src/libraries/mxml/xml*txz
 +
 * Use -c if you want to use a custom configuration file instead of the default one /etc/slapt-get/slap-getrc
 
-=== Manage users and groups.
+=== Manage users and groups
 
 Two commands are provided to manage users and groups:
 

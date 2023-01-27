@@ -1,14 +1,13 @@
 #!/bin/sh
 # rc.S:  Basic system initialization.
-# Modified from the one found in:
+# Modification of the file assumed to have been written by Patrick .J. Volkerding found in:
 # http://ftp.slackware.com/pub/slackware/slackware-15.0/source/installer/sources/initrd/skeleton_initrd.tar.gz
-# Assumed to have been written initially by Patrick .J. Volkerding
-# Changes post Slint15-beta3
-# Drop using dropbear
-# Drop unused code as us udev is aways used
+# heavily modified by Didier Spaier didieratslintdotfr for the Slint Linux distribution.
+
+# Version included in slint64-15.0-1.iso
 
 # Any /etc/mtab that exists here is old, so we start with a new one:
-/bin/rm -f /etc/mtab{,~,.tmp} && /bin/touch /etc/mtab
+/bin/rm -f /etc/mtab /etc/mtab~ /etc/mtab.tmp && /bin/touch /etc/mtab
 
 # Add (fake) entry for / to /etc/mtab:
 /sbin/mount -f -w /dev/initramfs / -t tmpfs 1> /dev/null
@@ -22,15 +21,19 @@
 # Activate swap:
 /sbin/swapon -a 1> /dev/null
 
+
 # Mount the efivars files system if the system booted in EFI mode. This
 # will allow to include in the GRUB # boot menu a boot entry to go to
 # the firmware setup menu.
-[ -d sys/firmware/efi/efivars ] && mount -t efivarfs none /sys/firmware/efi/efivars
+[ -d /sys/firmware/efi/efivars ] && mount -t efivarfs none /sys/firmware/efi/efivars
 
 if [ -x /sbin/ldconfig ]; then
   /sbin/ldconfig 1> /dev/null
 fi
 
+# We source /sbin/functions after having mounted /proc and /sys to avoid hamrless erreor messages
+# But before "export TEXTDOMAIN=rc.S" as the TEXTDOMAIN of /sbin/functions is "auto".
+. /sbin/functions
 export TEXTDOMAIN=rc.S
 . gettext.sh
 . /sbin/SeTlocales
@@ -45,29 +48,41 @@ modprobe loop 1> /dev/null 2> /dev/null
 
 # Run udev:
 /bin/bash /etc/rc.d/rc.udev start
-
-SYNTH=$(sed "s@.*speakup.synth=\([[:print:]]\{1,\}\)@\1@" /proc/cmdline)
-[ "$SYNTH" ] && modprobe speakup_$SYNTH
-
-sleep 8
-# I assume that we can install all packages we need in the initrd now
-# brltty is included in the initrd so that it be started by udev when
-# applicable.
-# We mount the ISO so we can add the ackages we need to this initrd
+unset SYNTH
+if grep -q speakup.synth /proc/cmdline; then
+	SYNTH=$(sed "s@.*speakup[-_]synth=\([[:alpha:]]\{1,\}\).*@\1@" /proc/cmdline)
+	[ "$SYNTH" ] && [ ! "$SYNTH" = "soft" ] && modprobe speakup_"$SYNTH" && touch /tmp/noespeakup
+fi
+sleep 1
+# espeakup initialization. This was done in previous versions just before running
+# /sbin/probe_sound_cards but there is no need to wait. 
+# If a hard synth is set in the command line no need to start espeakup.
+# This could be done runnig "rc.espeakup start", but not knowing yet if espeakup will be really used,
+# instead case occuring espeakup will be started by /sbin/probe_sound_cards.
+if  [ ! -f /tmp/noespeakup ]; then
+	modprobe speakup_soft
+	echo "soft" > /sys/accessibility/speakup/synth
+	sleep 1
+	echo 1 > /sys/accessibility/speakup/soft/direct
+fi
+sleep 1
+# brltty is included in the initrd so that it be started by udev when applicable.
+# We mount the ISO so we can install the packages we need in the initrd
 mkdir -p /ISO
 mkdir -p /INSTALLER
-. /sbin/functions
 mounttheiso
-sh /etc/rc.d/rc.swapinzram start
+#Maybe useless?
+#sh /etc/rc.d/rc.swapinzram start
+
+sleep 3
 
 echo "installing kernel-firmware. Please wait..."
-spkg -i -qq $ISO/slint/kernel-firmware*txz
+spkg -i -qq "$ISO"/slint/kernel-firmware*txz
 
-export TEXTDOMAIN=rc.S
-sleep 1
+#sleep 1
 
-# Start brltty if it has not yet been started by udev - Didier Spaier
-NBPROC="`ps -C brltty --noheaders|wc -l`"
+# Start brltty if it has not yet been started by udev
+NBPROC="$(ps -C brltty --noheaders|wc -l)"
 if [ "$NBPROC" = "0" ]; then
 	echo "starting brltty"
 	/bin/brltty
@@ -94,7 +109,7 @@ fi
 
 TMP=/var/log/setup/tmp
 
-kbd_stored="`cat /tmp/Pkeymap`"
+kbd_stored="$(cat /tmp/Pkeymap)"
 kbd=${kbd_stored%.*}
 #SavedLANG=$LANG
 #LANG=en_US.utf8
@@ -104,8 +119,8 @@ PutFonts
 set_voice () {
 	locale="$1"
 	rawlocale=${locale%.utf8}
-	lang=$(echo $rawlocale |cut -d_ -f1)
-	country=$(echo $rawlocale |cut -d_ -f2|tr A-Z a-z)
+	lang=$(echo "$rawlocale" |cut -d_ -f1)
+	country=$(echo "$rawlocale" |cut -d_ -f2|tr "[:upper:]" "[:lower:]")
 	if [ "$lang" = gl ]; then
 		# Not supported by espeak yet, but pt should be fine enough, better
 		# than English anyway
@@ -124,59 +139,42 @@ set_voice () {
 	echo $VOICE > /tmp/speech
 }
 sh /etc/rc.d/rc.alsa 2>/tmp/error.alsa 1>out.alsa
-# speakup initialization.
-# If a hard synth is set in the command line (how do I provide this ability
-# with grub?) no need to start espeakup.
-if ! grep -q speakup /proc/cmdline; then
-	modprobe speakup_soft
-	echo "soft" > /sys/accessibility/speakup/synth
-	sleep 1
-	# chmod 666 not needed in the installer, we are root.
-	# chmod 666 /sys/accessibility/speakup/soft/*
-	echo 1 > /sys/accessibility/speakup/soft/direct
-else
-	touch /tmp/noespeakup
-fi
-# End speakup initialization
-# Mostly from Debian
-if [ ! -f /tmp/noespeakup ]; then
-	set_voice $LANG
-	# Probe the sound cards as in Debian
-	sh /sbin/probe_sound_cards
-	sleep 2
-fi
+set_voice $LANG
+# Probe the sound cards as in Debian
+# We will do it, regardless or espeakup could be used or not
+# TODO: internationalize and localize the messages from /sbin/probe_sound_cards
+sh /sbin/probe_sound_cards
+sleep 2
 # If a working sound card has been found, its id has been written in
 # /tmp/alsacard, else /tmp/noespeakup has been written
+sleep 2
+clear
 if [ ! -f /tmp/noespeakup ]; then
-	sleep 2
-	clear
-	read -N 10000000 -t 0.01
 	gettext  "This installer has speech and Braille device support in order
 to be accessible to visually impaired users. To have speech turned on
 during installation type S, then press [Enter]. Else, just press Enter.
 "
+	clear_stdin
 	read sound
 	if [ ! "$sound" = "s" ] && [ ! "$sound" = "S" ]; then
 		PID=$(ps -C espeakup --noheaders -o pid)
-		kill -s 9 $PID
+		kill -s 9 "$PID"
 		sleep 1
 		touch /tmp/noespeakup
-	fi
-fi
-clear
-
-if [ ! -f /tmp/noespeakup ] || grep -q speakup /proc/cmdline; then
-	gettext  "To display keyboard shortcuts for reviewing the screen with speech
+	else
+		# I assume that people owning a hard synthesizer already know the speakup keybord shosrtcuts.
+		clear
+		gettext  "To display keyboard shortcuts for reviewing the screen with speech
 press R, then press [Enter],
 Else, just press [Enter]: "
-	read ANSWER
-	if [ "$ANSWER" = "R" ] ||  [ "$ANSWER" = "r" ]; then
-		clear
-		/bin/less /Speakup
-		read
+		clear_stdin
+		read ANSWER
+		if [ "$ANSWER" = "R" ] ||  [ "$ANSWER" = "r" ]; then
+			clear
+			w3m -o confirm_qq=false /Speakup
+		fi
 	fi
 fi
-clear
 INITLANG=$LANG
 TITLE=$(gettext "LANGUAGE TO USE DURING INSTALLATION")
 dialog --visit-items --no-tags --no-cancel --nook --title "$TITLE" --default-item "$INITLANG" --menu \
@@ -187,10 +185,11 @@ fr_FR.utf8 "$(gettext "French")" \
 el_GR.utf8 "$(gettext "Greek")" \
 it_IT.utf8 "$(gettext "Italian")" \
 pt_PT.utf8 "$(gettext "Portuguese (Portugal)")" \
+ru_RU.utf8 "$(gettext "Russian")" \
 sv_SE.utf8 "$(gettext "Swedish")" \
  2> /tmp/.SlintInstallationLANG
 if [ $? -ne 0 ]; then
-	echo $INITLANG > /tmp/.SlintInstallationLANG
+	echo "$INITLANG" > /tmp/.SlintInstallationLANG
 fi
 LANG=$(cat /tmp/.SlintInstallationLANG)
 ll_TT=${LANG%.*}
@@ -200,11 +199,11 @@ SeTFonts
 PutFonts
 if [ ! -f /tmp/noespeakup ] && [ ! "$INITLANG" = "$LANG" ]; then
 	PID=$(ps -C espeakup --noheaders -o pid)
-	kill -s 9 $PID
+	kill -s 9 "$PID"
 	sleep 1
-	set_voice $LANG
+	set_voice "$LANG"
 	ALSA_CARD=$(cat /tmp/alsacard)
-	ALSA_CARD=$ALSA_CARD /usr/bin/espeakup -V $(cat /tmp/speech) >> /tmp/espeakup.log 2>&1
+	ALSA_CARD=$ALSA_CARD /usr/bin/espeakup -V "$(cat /tmp/speech)" >> /tmp/espeakup.log 2>&1
 	echo "ALSA_CARD=$ALSA_CARD /usr/bin/espeakup -V $(cat /tmp/speech)" >> /tmp/report
 fi
 clear
@@ -217,6 +216,7 @@ To continue using the \"\$kbd\" keyboard map, just hit [Enter]."
 echo
 echo
 gettext "Enter 1 to select a keyboard map: "
+clear_stdin
 read ONE
 if [ "$ONE" = "1" ]; then
   /sbin/SeTkeymap
@@ -228,7 +228,6 @@ clear
 # Fake login:  (fooled ya! ;^)
 #
 Version=15.0
-GCOUNTMIN=50
 
 eval_gettext "Welcome to the Slint installer! (version \${Version})
 

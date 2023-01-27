@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2022-11-10 21:24+0000\n"
-"PO-Revision-Date: 2022-11-22 23:02\n"
+"PO-Revision-Date: 2023-01-22 17:53\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -66,7 +66,7 @@ msgstr "Использование по умолчанию сжатого про
 #. type: Plain text
 #: homepage.adoc:21
 msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
-msgstr "Slint может быть установлен на любом 64-разрядном компьютере с не менее чем 2 Гб памяти и 50 Гб пространства на любом носителе, включая USB-брелки, не использующем Secure Boot."
+msgstr "Slint может быть установлен на любом 64-разрядном компьютере, не использующем Secure Boot, с не менее чем 2 Гб памяти и 50 Гб пространства на любом носителе, включая USB-брелки."
 
 #. type: Plain text
 #: homepage.adoc:23
