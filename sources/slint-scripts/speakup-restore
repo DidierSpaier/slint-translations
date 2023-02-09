@@ -1,0 +1,65 @@
+#!/bin/sh
+export TEXTDOMAIN=slint-scripts
+if [ ! "$(id -u)" -eq 0 ]; then
+	gettext "Please run this script as root."; echo
+	exit
+fi
+
+if [ ! -f /sys/accessibility/speakup/synth ]; then
+	gettext  "speakup being not in use, there is no setting to restore."; echo
+	exit
+elif [ "$(cat /sys/accessibility/speakup/synth)" = "none" ]; then
+	gettext "speakup being not in use, there is no setting to restore."; echo
+	exit
+fi
+
+SYNTH="$(cat /sys/accessibility/speakup/synth)"
+ESPEAKUP=$(ps -C espeakup --noheaders|wc -l)
+SPEECHD_UP=$(ps -C speechd-up --noheaders|wc -l)
+# We saved settings separately for:
+# espeakup
+# each hard synthesizer
+# speechd-up
+# so that we restore the relevant settings for the synthesizer and
+# screen reader in use.
+
+SAVEDSYNTH="$SYNTH"
+if [ "$SYNTH" = "soft" ] && [ "$ESPEAKUP" -ne 0 ]; then
+	SAVEDSYNTH="espeakup"
+fi
+if [ "$SYNTH" = "soft" ] && [ "$SPEECHD_UP" -ne 0 ]; then
+	SAVEDSYNTH="speechd-up"
+fi
+# If SYNTH has not been set to speechd-up or speakup a hard synth is
+# in use, like e.g. SAVEDSYNTH=apollo
+if [ ! -d "/var/lib/speakup/$SAVEDSYNTH" ]; then
+	gettext "No speakup settings saved for "
+	printf '%s' "${SAVEDSYNTH}"
+	gettext "so nothing to restore."; echo
+	exit
+fi
+cd "/var/lib/speakup/$SAVEDSYNTH" || exit 1
+find ./* -prune|while read -r i; do
+	if [ -w "/sys/accessibility/speakup/$i" ] && [ -f "/sys/accessibility/speakup/$i" ]; then
+		cp "$i" /sys/accessibility/speakup/
+	fi
+done
+if [ -d i18n ] && [ -d /sys/accessibility/speakup/i18n ]; then
+	( cd i18n || exit 1
+	find ./* -prune|grep -v chartab|while read -r i; do
+		if [ -w "/sys/accessibility/speakup/i18n/$i" ]; then
+			cp "$i" /sys/accessibility/speakup/i18n/
+		fi
+	done
+	)
+fi
+( cd "$SYNTH" || exit 1
+find ./* -prune|while read -r i; do
+	if [ -w "/sys/accessibility/speakup/$SYNTH/$i" ]; then
+			cp "$i" "/sys/accessibility/speakup/$SYNTH/"
+		fi
+	done
+	)
+gettext "speakup settings have been restored for "
+echo "$SAVEDSYNTH."
+

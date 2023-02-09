@@ -1,0 +1,107 @@
+#!/bin/sh
+# Written by Didier Spâier, Paris France.
+# Public domain.
+# shellcheck source=/dev/null
+export TEXTDOMAIN=slint-scripts
+if [ "$(id -u)" -ne 0 ]; then
+        gettext "This script should be run as root."; echo
+        exit
+fi
+to_lower() {
+	echo "$1"|tr '[:upper:]' '[:lower:]'
+}
+RESCUE=$(mktemp -d)
+MEGA=$((1024*1024))
+rescuebootstick(){
+		ISORESCUE=$RESCUE/isorescue
+	echo
+	gettext "Do you want to make a rescue boot stick of an USB flash drive? "; echo
+	while true; do
+		gettext "Please type yes or no: "
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
+			yes) break;;
+			no) return;;
+			*) :
+		esac
+	done
+	while true; do
+		lsblk -lno serial,name,type|grep disk|grep ' sd'|sed "s@[[:space:]].*@@" >"$RESCUE/before"
+		gettext "Plug in the USB boot stick, then press Enter."
+		read -r
+		sleep 3
+		lsblk -lno serial,name,type|grep disk|grep ' sd'|sed "s@[[:space:]].*@@"  >"$RESCUE/after"
+		# Lines found in after but not in before are added
+		rm -f "$RESCUE/added"
+		while read -r added; do
+			if ! grep -q "$added" "$RESCUE/before"; then
+				echo "$added" >> "$RESCUE/added"
+			fi
+		done < "$RESCUE/after"
+		if [ ! -f "$RESCUE/added" ]; then
+		echo
+			gettext "We didn't find a newly inserted USB flash drive."; echo
+			gettext "Maybe it was already inserted?"; echo
+			while true; do
+				gettext "If you want to try again remove it then type yes, else type no: "
+				read -r ANSWER
+				case $(to_lower "$ANSWER") in
+					yes) continue 2;;
+					no) return;;
+					*) :
+				esac
+			done
+		else
+			NBADDED=$(wc -l "$RESCUE"/added|cut -d" " -f 1)
+		fi
+		if [ "$NBADDED" -eq 1 ]; then
+			SERIAL=$(cat "$RESCUE/added")
+			lsblk -bpPo serial,name,size,vendor,model,type|grep "SERIAL=\"$SERIAL\"" > "$RESCUE/rescuebootstick"
+			. "$RESCUE/rescuebootstick"
+			echo
+			RESCUEPATH="$NAME"
+			gettext "This drive will be used as rescue boot stick."; echo
+			echo "$NAME $VENDOR $MODEL ($((SIZE/MEGA))M)"
+			gettext  "If you accept all data currently stored on it will be lost!"; echo
+			gettext "You will confirm that want to use this one, choose another one or give up."; echo
+			while true; do
+				gettext "Type yes to use it, no to try another one or q to give up: "
+				read -r ANSWER
+					case $(to_lower "$ANSWER") in
+						yes) break 2;;
+						no) gettext "Remove this USB flash drive, then press Enter: "; read -r; continue 2;;
+						q) return;;
+						*) :
+					esac
+			done
+		fi
+		if [ "$NBADDED" -gt 1 ]; then
+			echo
+			gettext "Several newly inserted drives have been detected!"; echo
+			gettext "No rescue boot disk can be made now."; echo
+			gettext "Press Enter to continue."; echo
+			read -r
+			return
+		fi
+	done
+	echo
+	gettext "Please wait while we prepare the booting equipment..."; echo
+	KERNELPATH=$(find /boot -name "vmlinuz-generic-*")
+	VERSION=$(sed  "s&[[:space:]].*&&;s&.*-&&" /proc/cmdline)
+	INITRD="initramfs-${VERSION}.img"
+	mkdir -p "$ISORESCUE/boot/grub"
+	grub-mkconfig -o "$ISORESCUE/boot/grub/grub.cfg"
+	cp "$KERNELPATH" "$ISORESCUE/" || exit 1
+	cp "/boot/$INITRD" "$ISORESCUE/" || exit 1
+	gettext "Writing the booting equipment on the stick..."; echo
+	grub-mkrescue --locales='' \
+	--themes='' --compress=xz -V "ISORESCUE" -iso_mbr_part_type 0x83 \
+	-o "$RESCUE/rescue.iso"  -partition_offset 16 -J \
+	--xorriso=grub-mkrescue-sed.sh "$ISORESCUE" 1>>"$RESCUE/makerescueiso.log" 2>>"$RESCUE/makerescueiso.log"
+	cp "$RESCUE/rescue.iso" "$RESCUEPATH"
+	sync
+	rm -r "$RESCUE"
+	gettext "Done. you may now remove the rescue boot stick."; echo
+	echo
+}
+rescuebootstick

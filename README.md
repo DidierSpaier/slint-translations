@@ -1,12 +1,7 @@
-This repository gathers source and translated files for the Slint distribution,
-version 15.0
+This repository gathers source and translated files for the Slint distribution, version 15.0.
 
 Content of the folders:
-source/ internationalized shell scripts, and documents in ascidoc format.
-HandBook/, rc.S/, homepage/, auto/ contain the translations (PO files)
-auto/, rc.S/, homepage/ and HandBook/ contain also the POT files gathering to-be
-translated strings from the files in source bearing the same name.
-the files in rc.S/ are available in Transifex, see rc.S/note
-All other POT and PO files are available in Crowdin.
-tools/ contain all that is needed to manage the internationalization of
-shell scripts using gettext tools.
+* `localization`: all that is needed to manage the internationalization of shell scripts using gettext tools.
+* `sources`: internationalized shell scripts, and documents in asciidoc format, in sub-directories. The sub-directories auto, rc.S, SeTkeymap and slints-scripts contain shell scripts from which messages are are extracted using `localization/toolbox.sh` to build POT (portables object templates) files. The sub-directories `Handbook` and `homepage` contain files in asciidoc format, processed by the application po4a to build the POT files. The sub-directory `HandBook14.2.1` contain sources that are frozen, but used to include the HandBook for Slint-14.2.1 in the Slint website https://slint.fr 
+* `auto`, `HandBook`, `homepage`, `rc.S`, `SeTkeymap` and `slint-scripts` contain the POT files built from the sources files in sub-directories of `sources` bearing the same names. Al but SeTkeymap (translated in Transifex) are sent to the Crowdin platform. These dircetories also contain the translation files in PO format downloaded from the platform.
+

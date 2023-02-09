@@ -1,0 +1,662 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint-scripts 20230203\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-03 19:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+#
+# File: display-desktop, line: 4
+msgid "Please run 'display-desktop' as regular user."
+msgstr ""
+#
+# File: display-desktop, line: 9
+# File: hide-desktop, line: 9
+msgid "Usage: display-desktop <desktop>"
+msgstr ""
+#
+# File: display-desktop, line: 11
+msgid ""
+"This program displays menu entries specific to the selected desktop,\n"
+"if installed, when using another one."
+msgstr ""
+#
+# File: display-desktop, line: 13
+# File: hide-desktop, line: 15
+msgid "List of desktops:"
+msgstr ""
+#
+# File: display-desktop, line: 17
+msgid ""
+"If you choose 'all' the menu entries for any installed desktop will be \n"
+"displayed in other ones."
+msgstr ""
+#
+# File: display-desktop, line: 20
+msgid "This can be reverted with the command hide-desktop."
+msgstr ""
+#
+# File: display-desktop, line: 37
+# File: display-desktop, line: 41
+# File: hide-desktop, line: 39
+# File: hide-desktop, line: 43
+# File: speak-with, line: 89
+# File: speak-with, line: 111
+# File: speak-with, line: 135
+# File: speak-with, line: 177
+msgid "Done."
+msgstr ""
+#
+# File: display-desktop, line: 38
+# File: display-desktop, line: 42
+msgid "The menus will be modified at next login."
+msgstr ""
+#
+# File: display-desktop, line: 45
+# File: hide-desktop, line: 47
+msgid "is not a listed session."
+msgstr ""
+#
+# File: hide-desktop, line: 4
+msgid "Please run 'hide-desktop' as regular user."
+msgstr ""
+#
+# File: hide-desktop, line: 11
+msgid ""
+"This program hide most menu entries specific to the selected desktop,\n"
+"if installed, when running another one. Corresponding applications will\n"
+"stay available in all other desktops typing commands from a terminal or\n"
+"through a \"run...\" dialog (Alt+F2)."
+msgstr ""
+#
+# File: hide-desktop, line: 19
+msgid ""
+"If you choose all the menu entries for any installed desktop will be\n"
+"hidden from all others."
+msgstr ""
+#
+# File: hide-desktop, line: 22
+msgid "This can be reverted with the command display-desktop."
+msgstr ""
+#
+# File: hide-desktop, line: 40
+# File: hide-desktop, line: 44
+msgid "The menus will be modified at next boot."
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 14
+# File: list-espeak-ng-voices, line: 44
+# File: list-espeak-ng-voices.save, line: 14
+# File: list-espeak-ng-voices.save, line: 44
+msgid ""
+"To use one of theses voices with espeakup, set it in /etc/espeakup.conf."
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 15
+# File: list-espeak-ng-voices, line: 45
+# File: list-espeak-ng-voices, line: 64
+# File: list-espeak-ng-voices.save, line: 15
+# File: list-espeak-ng-voices.save, line: 45
+# File: list-espeak-ng-voices.save, line: 64
+msgid "For instance, to use the voice: "
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 17
+# File: list-espeak-ng-voices, line: 47
+# File: list-espeak-ng-voices.save, line: 17
+# File: list-espeak-ng-voices.save, line: 47
+msgid "write:"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 19
+# File: list-espeak-ng-voices, line: 49
+# File: list-espeak-ng-voices, line: 71
+# File: list-espeak-ng-voices.save, line: 19
+# File: list-espeak-ng-voices.save, line: 49
+# File: list-espeak-ng-voices.save, line: 71
+msgid "in /etc/espeakup.conf."
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 21
+# File: list-espeak-ng-voices.save, line: 21
+msgid "Do yo want to list also the mbrola voices? [y/N]"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 40
+# File: list-espeak-ng-voices.save, line: 40
+msgid "Installed mbrola voices:"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 51
+# File: list-espeak-ng-voices, line: 63
+# File: list-espeak-ng-voices.save, line: 51
+# File: list-espeak-ng-voices.save, line: 63
+msgid "Other mbrola voices could be used if installed."
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 52
+# File: list-espeak-ng-voices.save, line: 52
+msgid "Do yo want to display them? [Y/n] "
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 59
+# File: list-espeak-ng-voices.save, line: 59
+msgid "Not Installed mbrola voices:"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 66
+# File: list-espeak-ng-voices.save, line: 66
+msgid "type as root:"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 69
+# File: list-espeak-ng-voices.save, line: 69
+msgid "then write:"
+msgstr ""
+#
+# File: list_boot_entries, line: 4
+msgid "Please run this command as root."
+msgstr ""
+#
+# File: list_boot_entries, line: 8
+msgid "The file /boot/grub/grub.cfg does not exist."
+msgstr ""
+#
+# File: list_boot_entries, line: 9
+msgid "Prior to runninng this command you should install grub and run either:"
+msgstr ""
+#
+# File: list_boot_entries, line: 11
+msgid "or if this command does not exist:"
+msgstr ""
+#
+# File: list_boot_entries, line: 20
+msgid "After booting, the boot menu will be displayed as above."
+msgstr ""
+#
+# File: list_boot_entries, line: 23
+msgid ""
+"To navigate in the menu you will use the down and up arrow keys, then\n"
+"press Enter to use the selected boot entry."
+msgstr ""
+#
+# File: list_boot_entries, line: 26
+msgid "To boot directly the most recent snapshot (if any), just press 1."
+msgstr ""
+#
+# File: list_boot_entries, line: 29
+msgid "Press q quit this display."
+msgstr ""
+#
+# File: login-chooser, line: 12
+# File: rescuebootstick, line: 7
+msgid "This script should be run as root."
+msgstr ""
+#
+# File: login-chooser, line: 23
+msgid "Usage: login-chooser <login manager>"
+msgstr ""
+#
+# File: login-chooser, line: 24
+msgid "Available login managers:"
+msgstr ""
+#
+# File: login-chooser, line: 26
+msgid "Short descriptions:"
+msgstr ""
+#
+# File: login-chooser, line: 28
+msgid "Login in text mode, in a console. From there, you"
+msgstr ""
+#
+# File: login-chooser, line: 30
+msgid "can type \"startx\" to start a graphical session."
+msgstr ""
+#
+# File: login-chooser, line: 31
+msgid "lightdm: Light Display Manager, accessible with speech."
+msgstr ""
+#
+# File: login-chooser, line: 34
+msgid "Simple Desktop Display Manager."
+msgstr ""
+#
+# File: login-chooser, line: 38
+msgid "Login is currently set to text mode."
+msgstr ""
+#
+# File: login-chooser, line: 43
+# File: login-chooser, line: 125
+# File: login-chooser, line: 141
+# File: login-chooser, line: 156
+# File: login-chooser, line: 171
+# File: login-chooser, line: 186
+msgid "The display manager"
+msgstr ""
+#
+# File: login-chooser, line: 45
+msgid "is currently set."
+msgstr ""
+#
+# File: login-chooser, line: 53
+msgid "To reboot immediatly press R then Enter, else just press Enter."
+msgstr ""
+#
+# File: login-chooser, line: 60
+msgid "If you want speech at login press S then Enter, else just press Enter."
+msgstr ""
+#
+# File: login-chooser, line: 79
+msgid "You will have speech at login."
+msgstr ""
+#
+# File: login-chooser, line: 90
+msgid "You won't have speech at login."
+msgstr ""
+#
+# File: login-chooser, line: 97
+msgid "is not among the available login managers:"
+msgstr ""
+#
+# File: login-chooser, line: 105
+msgid "Login will occur in text mode on next boot."
+msgstr ""
+#
+# File: login-chooser, line: 106
+msgid "If you need speech type one of these commands before rebooting:"
+msgstr ""
+#
+# File: login-chooser, line: 127
+# File: login-chooser, line: 143
+# File: login-chooser, line: 158
+# File: login-chooser, line: 173
+# File: login-chooser, line: 188
+msgid "will be in use on next boot."
+msgstr ""
+#
+# File: login-chooser, line: 193
+msgid "Unknown choice. Check your spelling."
+msgstr ""
+#
+# File: orca-off, line: 4
+# File: orca-on, line: 6
+# File: switch-off, line: 6
+# File: switch-on, line: 7
+msgid "Please run this script as regular user."
+msgstr ""
+#
+# File: orca-off, line: 24
+msgid "Orca has been disabled for you."
+msgstr ""
+#
+# File: orca-off, line: 26
+# File: orca-on, line: 37
+msgid "File ~/.config/autostart/startorca.desktop not found."
+msgstr ""
+#
+# File: orca-on, line: 5
+msgid "Start a graphical environment as root with speech is not advisable."
+msgstr ""
+#
+# File: orca-on, line: 35
+msgid "Orca has been enabled for you."
+msgstr ""
+#
+# File: rescuebootstick, line: 18
+msgid "Do you want to make a rescue boot stick of an USB flash drive? "
+msgstr ""
+#
+# File: rescuebootstick, line: 20
+msgid "Please type yes or no: "
+msgstr ""
+#
+# File: rescuebootstick, line: 30
+msgid "Plug in the USB boot stick, then press Enter."
+msgstr ""
+#
+# File: rescuebootstick, line: 43
+msgid "We didn't find a newly inserted USB flash drive."
+msgstr ""
+#
+# File: rescuebootstick, line: 44
+msgid "Maybe it was already inserted?"
+msgstr ""
+#
+# File: rescuebootstick, line: 46
+msgid "If you want to try again remove it then type yes, else type no: "
+msgstr ""
+#
+# File: rescuebootstick, line: 63
+msgid "This drive will be used as rescue boot stick."
+msgstr ""
+#
+# File: rescuebootstick, line: 65
+msgid "If you accept all data currently stored on it will be lost!"
+msgstr ""
+#
+# File: rescuebootstick, line: 66
+msgid ""
+"You will confirm that want to use this one, choose another one or give up."
+msgstr ""
+#
+# File: rescuebootstick, line: 68
+msgid "Type yes to use it, no to try another one or q to give up: "
+msgstr ""
+#
+# File: rescuebootstick, line: 72
+msgid "Remove this USB flash drive, then press Enter: "
+msgstr ""
+#
+# File: rescuebootstick, line: 80
+msgid "Several newly inserted drives have been detected!"
+msgstr ""
+#
+# File: rescuebootstick, line: 81
+msgid "No rescue boot disk can be made now."
+msgstr ""
+#
+# File: rescuebootstick, line: 82
+msgid "Press Enter to continue."
+msgstr ""
+#
+# File: rescuebootstick, line: 88
+msgid "Please wait while we prepare the booting equipment..."
+msgstr ""
+#
+# File: rescuebootstick, line: 96
+msgid "Writing the booting equipment on the stick..."
+msgstr ""
+#
+# File: rescuebootstick, line: 104
+msgid "Done. you may now remove the rescue boot stick."
+msgstr ""
+#
+# File: session-chooser, line: 14
+msgid "Running a graphical session as root is not allowed."
+msgstr ""
+#
+# File: session-chooser, line: 29
+msgid "Your default session is not set."
+msgstr ""
+#
+# File: session-chooser, line: 31
+msgid "Your session is currently set to"
+msgstr ""
+#
+# File: session-chooser, line: 39
+msgid "Usage: session-chooser <desktop session>"
+msgstr ""
+#
+# File: session-chooser, line: 40
+msgid "Available desktop sessions:"
+msgstr ""
+#
+# File: session-chooser, line: 65
+msgid "is not part of the available sessions:"
+msgstr ""
+#
+# File: session-chooser, line: 98
+msgid "Your default session has been set to"
+msgstr ""
+#
+# File: spd-list, line: 7
+msgid ""
+"This script lists languages and synthesizers available for applications\n"
+"relying on Speech Dispatcher, like Orca or speech-up.\n"
+"Each command below answers the question following it.\n"
+"Don't type the quotes surrounding the command."
+msgstr ""
+#
+# File: spd-list, line: 11
+msgid "\"spd-list\" usage"
+msgstr ""
+#
+# File: spd-list, line: 12
+msgid "\"spd-list -s\" available synthesizers?"
+msgstr ""
+#
+# File: spd-list, line: 13
+msgid "\"spd-list -l\" available languages codes?"
+msgstr ""
+#
+# File: spd-list, line: 14
+msgid ""
+"\"spd-list -ls\" <synthesizer> languages available for this synthesizer?"
+msgstr ""
+#
+# File: spd-list, line: 15
+msgid ""
+"\"spd-list -sl\" <language code> synthesizers providing voices in this "
+"language?"
+msgstr ""
+#
+# File: spd-list, line: 16
+msgid ""
+"The language code has most often two characters, like 'en' 'es' or 'fr'."
+msgstr ""
+#
+# File: spd-list, line: 21
+# File: spd-list, line: 54
+# File: spd-list, line: 101
+msgid "is not a valid command."
+msgstr ""
+#
+# File: spd-list, line: 31
+msgid "Installed synthesizers:"
+msgstr ""
+#
+# File: spd-list, line: 47
+msgid "Available languages: "
+msgstr ""
+#
+# File: spd-list, line: 62
+msgid "is not the name of an available synthesizer"
+msgstr ""
+#
+# File: spd-list, line: 71
+msgid "No information available about languages for "
+msgstr ""
+#
+# File: spd-list, line: 74
+msgid "Available languages codes for "
+msgstr ""
+#
+# File: spd-list, line: 91
+msgid "No installed synthesizer provides the language "
+msgstr ""
+#
+# File: spd-list, line: 94
+msgid "The language "
+msgstr ""
+#
+# File: spd-list, line: 96
+msgid "is provided by: "
+msgstr ""
+#
+# File: speak-with, line: 9
+# File: speakup-restore, line: 4
+# File: speakup-save, line: 4
+msgid "Please run this script as root."
+msgstr ""
+#
+# File: speak-with, line: 28
+msgid "Usage: speak_with <screen reader> or <hard synthesizer> or 'none'"
+msgstr ""
+#
+# File: speak-with, line: 29
+msgid "Choose a console screen reader to talk with among:"
+msgstr ""
+#
+# File: speak-with, line: 31
+msgid "or one of the supported hard synthesizers:"
+msgstr ""
+#
+# File: speak-with, line: 33
+msgid "or type  \"speak-with none\" to mute all screen readers."
+msgstr ""
+#
+# File: speak-with, line: 48
+msgid "is not a valid argument of this command."
+msgstr ""
+#
+# File: speak-with, line: 75
+msgid "espeakup is not installed."
+msgstr ""
+#
+# File: speak-with, line: 76
+msgid "espeakup is already started."
+msgstr ""
+#
+# File: speak-with, line: 83
+msgid "Should espeakup be also started at next boot? [Y/n] "
+msgstr ""
+#
+# File: speak-with, line: 97
+msgid "speechd-up is not installed."
+msgstr ""
+#
+# File: speak-with, line: 98
+msgid "speechd-up is already started."
+msgstr ""
+#
+# File: speak-with, line: 105
+# File: speak-with, line: 129
+msgid "Should speechd-up be also started at next boot? [Y/n] "
+msgstr ""
+#
+# File: speak-with, line: 119
+msgid "fenrir is not installed."
+msgstr ""
+#
+# File: speak-with, line: 120
+msgid "fenrir is already started."
+msgstr ""
+#
+# File: speak-with, line: 147
+msgid "Do you also want a mute console at next boot? [Y/n] "
+msgstr ""
+#
+# File: speak-with, line: 155
+msgid "OK"
+msgstr ""
+#
+# File: speak-with, line: 163
+msgid "Unable to switch to the synthesizer "
+msgstr ""
+#
+# File: speak-with, line: 169
+msgid "Do you also want to use this hard synthesizer at next boot? [Y/n] "
+msgstr ""
+#
+# File: speakup-restore, line: 9
+# File: speakup-restore, line: 12
+msgid "speakup being not in use, there is no setting to restore."
+msgstr ""
+#
+# File: speakup-restore, line: 36
+msgid "No speakup settings saved for "
+msgstr ""
+#
+# File: speakup-restore, line: 38
+msgid "so nothing to restore."
+msgstr ""
+#
+# File: speakup-restore, line: 63
+msgid "speakup settings have been restored for "
+msgstr ""
+#
+# File: speakup-save, line: 8
+# File: speakup-save, line: 14
+msgid "speakup being not in use, there is no setting to save."
+msgstr ""
+#
+# File: speakup-save, line: 26
+msgid "espeakup and speechd-up are both running, not saving settings."
+msgstr ""
+#
+# File: speakup-save, line: 30
+msgid "neither espeakup nor speechd-up is running, not saving settings."
+msgstr ""
+#
+# File: speakup-save, line: 51
+msgid "Current speakup settings have been saved in "
+msgstr ""
+#
+# File: switch-off, line: 12
+# File: switch-on, line: 13
+msgid "emacspeak (The Complete Audio Desktop, based on emacs)"
+msgstr ""
+#
+# File: switch-off, line: 13
+# File: switch-on, line: 14
+msgid "speechd-el (Emacs client to speech synthesizers and Braille displays)"
+msgstr ""
+#
+# File: switch-off, line: 20
+# File: switch-on, line: 23
+msgid "Usage: "
+msgstr ""
+#
+# File: switch-off, line: 22
+# File: switch-on, line: 25
+msgid "or"
+msgstr ""
+#
+# File: switch-off, line: 24
+msgid "This script allows to disable:"
+msgstr ""
+#
+# File: switch-off, line: 31
+# File: switch-on, line: 34
+msgid "is an unknown feature."
+msgstr ""
+#
+# File: switch-off, line: 32
+# File: switch-on, line: 35
+msgid "Available features:"
+msgstr ""
+#
+# File: switch-off, line: 40
+# File: switch-off, line: 54
+# File: switch-on, line: 43
+# File: switch-on, line: 81
+msgid "is not installed."
+msgstr ""
+#
+# File: switch-off, line: 49
+msgid "emacspeak is disabled."
+msgstr ""
+#
+# File: switch-off, line: 63
+msgid "speechd-el is disabled."
+msgstr ""
+#
+# File: switch-on, line: 27
+msgid "This script allows to enable:"
+msgstr ""
+#
+# File: switch-on, line: 61
+msgid ""
+"emacspeak is enabled and speechd-el is disabled, as they are mutually "
+"exclusive."
+msgstr ""
+#
+# File: switch-on, line: 67
+msgid "Do you want to use a voxin voice with emacspeak? [Y/n] "
+msgstr ""
+#
+# File: switch-on, line: 98
+msgid ""
+"speechd-el is enabled and emacspeak is disabled, as they are mutually "
+"exclusive."
+msgstr ""

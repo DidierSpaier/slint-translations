@@ -1,0 +1,1001 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-31 09:53+0100\n"
+"PO-Revision-Date: 2023-01-22 18:10\n"
+"Last-Translator: Unknown <didier@darkstar.machine.fr>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 "
+"&& n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 "
+"&& n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: /slint_scripts/slint_scripts.pot\n"
+"X-Crowdin-File-ID: 46\n"
+#
+# File: display-desktop, line: 4
+# File: display-desktop, line: 9
+# File: display-desktop, line: 36
+# File: display-desktop, line: 37
+# File: display-desktop, line: 40
+# File: display-desktop, line: 41
+# File: display-desktop, line: 44
+# File: hide-desktop, line: 4
+# File: hide-desktop, line: 9
+# File: hide-desktop, line: 37
+# File: hide-desktop, line: 38
+# File: hide-desktop, line: 41
+# File: hide-desktop, line: 42
+# File: hide-desktop, line: 45
+# File: list-espeak-ng-voices, line: 15
+# File: list-espeak-ng-voices, line: 16
+# File: list-espeak-ng-voices, line: 20
+# File: list-espeak-ng-voices, line: 41
+# File: list-espeak-ng-voices, line: 45
+# File: list-espeak-ng-voices, line: 46
+# File: list-espeak-ng-voices, line: 50
+# File: list-espeak-ng-voices, line: 52
+# File: list-espeak-ng-voices, line: 60
+# File: list-espeak-ng-voices, line: 64
+# File: list-espeak-ng-voices, line: 65
+# File: list-espeak-ng-voices, line: 70
+# File: list-espeak-ng-voices, line: 72
+# File: list_boot_entries, line: 4
+# File: list_boot_entries, line: 7
+# File: list_boot_entries, line: 8
+# File: list_boot_entries, line: 9
+# File: list_boot_entries, line: 10
+# File: list_boot_entries, line: 11
+# File: list_boot_entries, line: 18
+# File: list_boot_entries, line: 22
+# File: list_boot_entries, line: 23
+# File: login-chooser, line: 13
+# File: login-chooser, line: 24
+# File: login-chooser, line: 25
+# File: login-chooser, line: 27
+# File: login-chooser, line: 29
+# File: login-chooser, line: 31
+# File: login-chooser, line: 32
+# File: login-chooser, line: 35
+# File: login-chooser, line: 40
+# File: login-chooser, line: 48
+# File: login-chooser, line: 55
+# File: login-chooser, line: 74
+# File: login-chooser, line: 85
+# File: login-chooser, line: 91
+# File: login-chooser, line: 99
+# File: login-chooser, line: 100
+# File: login-chooser, line: 101
+# File: login-chooser, line: 102
+# File: login-chooser, line: 103
+# File: login-chooser, line: 119
+# File: login-chooser, line: 133
+# File: login-chooser, line: 146
+# File: login-chooser, line: 159
+# File: login-chooser, line: 172
+# File: login-chooser, line: 177
+# File: orca-off, line: 4
+# File: orca-off, line: 25
+# File: orca-off, line: 27
+# File: orca-on, line: 5
+# File: orca-on, line: 6
+# File: orca-on, line: 35
+# File: orca-on, line: 37
+# File: rescuebootstick, line: 13
+# File: rescuebootstick, line: 38
+# File: rescuebootstick, line: 39
+# File: rescuebootstick, line: 58
+# File: rescuebootstick, line: 60
+# File: rescuebootstick, line: 61
+# File: rescuebootstick, line: 75
+# File: rescuebootstick, line: 76
+# File: rescuebootstick, line: 77
+# File: rescuebootstick, line: 83
+# File: rescuebootstick, line: 91
+# File: rescuebootstick, line: 99
+# File: session-chooser, line: 14
+# File: session-chooser, line: 29
+# File: session-chooser, line: 39
+# File: session-chooser, line: 40
+# File: spd-list, line: 8
+# File: spd-list, line: 12
+# File: spd-list, line: 13
+# File: spd-list, line: 14
+# File: spd-list, line: 15
+# File: spd-list, line: 16
+# File: spd-list, line: 17
+# File: spd-list, line: 31
+# File: spd-list, line: 61
+# File: speak-with, line: 29
+# File: speak-with, line: 30
+# File: speak-with, line: 32
+# File: speak-with, line: 34
+# File: speak-with, line: 49
+# File: speak-with, line: 75
+# File: speak-with, line: 76
+# File: speak-with, line: 97
+# File: speak-with, line: 98
+# File: speak-with, line: 119
+# File: speak-with, line: 120
+# File: speak-with, line: 155
+# File: speak-with, line: 177
+# File: speakup-restore, line: 5
+# File: speakup-restore, line: 10
+# File: speakup-restore, line: 13
+# File: speakup-restore, line: 39
+# File: speakup-save, line: 4
+# File: speakup-save, line: 8
+# File: speakup-save, line: 14
+# File: speakup-save, line: 26
+# File: speakup-save, line: 30
+#. TRANSLATORS please take care to use 9 characters before description in order to keep alignment intact
+msgid "-s"
+msgstr ""
+#
+# File: list-espeak-ng-voices, line: 18
+# File: list-espeak-ng-voices, line: 48
+#, sh-format
+msgid "write:"
+msgstr ""
+#
+# File: switch-on, line: 61
+#, fuzzy
+msgid "Do yo want to list also the mbrola voices? [y/N]"
+msgstr "Бажаєте використовувати голос voxin у emacspeak? [Y/n] "
+#
+# File: switch-on, line: 61
+#, fuzzy
+msgid "Do yo want to display them? [Y/n] "
+msgstr "Бажаєте використовувати голос voxin у emacspeak? [Y/n] "
+#
+# File: list-espeak-ng-voices, line: 67
+#, sh-format
+msgid "type as root:"
+msgstr ""
+#
+# File: login-chooser, line: 42
+#, fuzzy
+msgid "-ssddm:    Simple Desktop Display Manager."
+msgstr "sddm:    Simple Desktop Display Manager."
+#
+# File: rescuebootstick, line: 15
+msgid "Please type yes or no: "
+msgstr ""
+#
+# File: rescuebootstick, line: 25
+msgid "Plug in the USB boot stick, then press Enter."
+msgstr ""
+#
+# File: login-chooser, line: 68
+#, fuzzy
+msgid "If you want to try again remove it then type yes, else type no: "
+msgstr ""
+"Якщо бажаєте використовувати мовлення під час входу, натисніть S а потім "
+"Enter. Інакше - просто натисніть Enter."
+#
+# File: rescuebootstick, line: 63
+msgid "Type yes to use it, no to try another one or q to give up: "
+msgstr ""
+#
+# File: rescuebootstick, line: 67
+msgid "Remove this USB flash drive, then press Enter: "
+msgstr ""
+#
+# File: session-chooser, line: 24
+#, fuzzy
+msgid "Your session is currently set to"
+msgstr "Наразі для користувача $USER, вибрано сеанс "
+#
+# File: session-chooser, line: 38
+#, fuzzy
+msgid "is not part of the available sessions:"
+msgstr "$1 немає серед доступних сеансів"
+#
+# File: setsession, line: 26
+#, fuzzy
+msgid "Your default session has been set to"
+msgstr "Основного сеансу системи не вибрано."
+#
+# File: spd-list, line: 22
+# File: spd-list, line: 56
+# File: spd-list, line: 98
+#, fuzzy
+msgid "spd-list $*\" is not a valid command."
+msgstr "\"$program_name $*\" не є правильною командою."
+#
+# File: spd-list, line: 49
+msgid "Available languages: "
+msgstr "Доступні мови: "
+#
+# File: spd-list, line: 72
+#, fuzzy, sh-format
+msgid "No information available about languages for "
+msgstr "Немає інформації про підтримувані мови для $parameter2."
+#
+# File: spd-list, line: 74
+#, fuzzy, sh-format
+msgid "Available languages codes for "
+msgstr "Доступні коди мов для $parameter2: "
+#
+# File: spd-list, line: 91
+#, fuzzy
+msgid "No installed synthesizer provides the language "
+msgstr "Жоден зі встановлених синтезаторів не підтримує мову $parameter2"
+#
+# File: spd-list, line: 49
+#, fuzzy, sh-format
+msgid "The language "
+msgstr "Доступні мови: "
+#
+# File: spd-list, line: 95
+msgid "is provided by: "
+msgstr ""
+#
+# File: speak-with, line: 101
+msgid "# File written by speak-with. Do not edit."
+msgstr "# Файл створено утилітою speak-with. Не редагуйте його."
+#
+# File: speak-with, line: 106
+msgid "Should espeakup be also started at next boot? [Y/n] "
+msgstr "Також запустити espeakup при наступному завантаженні? [Y/n] "
+#
+# File: speak-with, line: 113
+# File: speak-with, line: 148
+# File: speak-with, line: 187
+# File: speak-with, line: 247
+msgid "Done."
+msgstr "Виконано."
+#
+# File: speak-with, line: 141
+# File: speak-with, line: 180
+msgid "Should speechd-up be also started at next boot? [Y/n] "
+msgstr "Також запустити speechd-up при наступному завантаженні? [Y/n] "
+#
+# File: speak-with, line: 207
+msgid "Do you also want a mute console at next boot? [Y/n] "
+msgstr "Бажаєте також вимкнути консоль при наступному завантаженні? [Y/n] "
+#
+# File: speak-with, line: 233
+#, fuzzy
+msgid "Unable to switch to the synthesizer "
+msgstr ""
+"Неможливо перемкнутися на синтезатор мовлення $ARGUMENT.\n"
+"Щось пішло не так."
+#
+# File: speak-with, line: 207
+#, fuzzy
+msgid "Do you also want to use this hard synthesizer at next boot? [Y/n] "
+msgstr "Бажаєте також вимкнути консоль при наступному завантаженні? [Y/n] "
+#
+# File: speakup-save, line: 52
+#, fuzzy
+msgid "No speakup settings saved for "
+msgstr "Поточні налаштування speakup збережені до "
+#
+# File: speakup-save, line: 52
+#, fuzzy, sh-format
+msgid "speakup settings have been restored for "
+msgstr "Поточні налаштування speakup збережені до "
+#
+# File: speakup-save, line: 52
+msgid "Current speakup settings have been saved in "
+msgstr "Поточні налаштування speakup збережені до "
+#
+# File: orca-off, line: 5
+# File: switch-off, line: 7
+# File: switch-on, line: 7
+msgid "Please run this script as regular user."
+msgstr "Будь ласка, запустіть цей скрипт із правами звичайного користувача."
+#
+# File: switch-off, line: 13
+# File: switch-on, line: 13
+msgid "emacspeak (The Complete Audio Desktop, based on emacs)"
+msgstr "emacspeak (Повністю Озвучене Робоче Середовище, що базується на emacs)"
+#
+# File: switch-off, line: 14
+# File: switch-on, line: 14
+msgid "speechd-el (Emacs client to speech synthesizers and Braille displays)"
+msgstr "speechd-el (клієнт Emacs, що підтримує мовлення й дисплеї Брайля)"
+#
+# File: switch-off, line: 20
+# File: switch-on, line: 22
+#, sh-format
+msgid "Usage: $program_name <emacspeak> or <speechd-el>"
+msgstr "Використання: $program_name <emacspeak> або <speechd-el>"
+#
+# File: switch-off, line: 21
+msgid "This script allows to disable:"
+msgstr "Цей скрипт вимикає:"
+#
+# File: switch-off, line: 27
+# File: switch-on, line: 29
+msgid "$1 is an unknown feature."
+msgstr "Невідома функція $1."
+#
+# File: switch-off, line: 28
+# File: switch-on, line: 30
+msgid "Available features:"
+msgstr "Доступні функції:"
+#
+# File: switch-off, line: 35
+# File: switch-on, line: 37
+msgid "$1 is not installed"
+msgstr "$1 не встановлено"
+#
+# File: switch-off, line: 44
+msgid "emacspeak is disabled."
+msgstr "emacspeak вимкнено."
+#
+# File: switch-off, line: 48
+# File: switch-on, line: 75
+msgid "$1 is not installed."
+msgstr "$1 не встановлено."
+#
+# File: switch-off, line: 57
+msgid "speechd-el is disabled."
+msgstr "speechd-el вимкнено."
+#
+# File: switch-on, line: 23
+msgid "This script allows to enable:"
+msgstr "Цей скрипт вмикає:"
+#
+# File: switch-on, line: 55
+msgid ""
+"emacspeak is enabled and speechd-el is disabled, as they are mutually "
+"exclusive."
+msgstr ""
+"emacspeak увімкнено, але speechd-el вимкнено, оскільки вони взаємовиключні."
+#
+# File: switch-on, line: 61
+msgid "Do you want to use a voxin voice with emacspeak? [Y/n] "
+msgstr "Бажаєте використовувати голос voxin у emacspeak? [Y/n] "
+#
+# File: switch-on, line: 92
+msgid ""
+"speechd-el is enabled and emacspeak is disabled, as they are mutually "
+"exclusive."
+msgstr ""
+"speechd-el увімкнено, але emacspeak вимкнено, оскільки вони взаємовиключні."
+#
+# File: doc, line: 11
+#~ msgid "Installer documentation "
+#~ msgstr "Документація встановлювача "
+#
+# File: doc, line: 12
+# File: readSlintDocs.sh, line: 95
+#~ msgid ""
+#~ "Navigate in this menu with the up and down arrow keys.\n"
+#~ "Press Enter to read a highlighted document.\n"
+#~ "Press Q to stop reading a document and go back to the menu.\n"
+#~ "Press Escape to quit."
+#~ msgstr ""
+#~ "Для навігації по цьому меню, використовуйте курсорні клавіші вгору та "
+#~ "вниз.\n"
+#~ "Натисніть Enter, щоб переглянути вибраний документ.\n"
+#~ "Натисніть Q щоб зупинити читання документа, і повернутися у меню.\n"
+#~ "Натисніть Escape щоб вийти."
+#
+# File: doc, line: 16
+#~ msgid "Presentation of the Slint installer."
+#~ msgstr "Знайомство зі встановлювачем Slint."
+#
+# File: doc, line: 17
+#~ msgid "How-to use the installer"
+#~ msgstr "Як використовувати встановлювач"
+#
+# File: doc, line: 18
+#~ msgid "The automatic installation mode"
+#~ msgstr "Напівавтоматичний режим встановлення"
+#
+# File: doc, line: 19
+#~ msgid "Slint in an encrypted drive"
+#~ msgstr "Slint на зашифрованому диску"
+#
+# File: doc, line: 20
+#~ msgid "The manual installation mode"
+#~ msgstr "Експертний режим встановлення"
+#
+# File: doc, line: 21
+#~ msgid "How to make room for Slint on a drive"
+#~ msgstr "Як звільнити на диску простір для Slint"
+#
+# File: doc, line: 22
+#~ msgid "Glossary of technical terms used in the documentation"
+#~ msgstr "Словник технічних термінів, що використовуються в документації"
+#
+# File: doc, line: 23
+#~ msgid "key bindings for the speakup screen reader"
+#~ msgstr "сполучення клавіш читача екрана speakup"
+#
+# File: doc, line: 24
+#~ msgid "First steps after Slint installation"
+#~ msgstr "Перші кроки після встановлення Slint"
+#
+# File: doc, line: 46
+#, sh-format
+#~ msgid ""
+#~ "Welcome back to the menu of the Slint installer\n"
+#~ "\n"
+#~ "Available commands (do not type the quotes):\n"
+#~ "\n"
+#~ "'doc' to know the features and usage of the installer.\n"
+#~ "'auto' to start a semi-automatic, guided installation.\n"
+#~ "'setup' to start a manual installation.\n"
+#~ "\n"
+#~ "We recommend that you type 'doc' first, especially if you want to use "
+#~ "the\n"
+#~ "'Manual' installation mode or want that the installer encrypt the drive "
+#~ "where\n"
+#~ "Slint will be installed. When done reading you will go back to this menu."
+#~ msgstr ""
+#~ "Ласкаво просимо назад, до меню встановлювача Slint\n"
+#~ "\n"
+#~ "Доступні команди (вводьте без лапок):\n"
+#~ "\n"
+#~ "\"doc\" - інформація про особливості встановлювача, а також про його "
+#~ "використання.\n"
+#~ "\"auto\" - розпочати встановлення у напівавтоматичному режимі.\n"
+#~ "\"setup\" - розпочати встановлення у експертному режимі.\n"
+#~ "\n"
+#~ "Рекомендуємо ввести \"doc\", щоб підготуватися до використання "
+#~ "експертного режиму встановлення, або якщо ви бажаєте зашифрувати диск, на "
+#~ "якому буде встановлений Slint. Після прочитання, ви повернетеся до цього "
+#~ "меню."
+#
+# File: hide-kde-apps, line: 5
+# File: speak-with, line: 13
+#~ msgid "Please run this script as root."
+#~ msgstr "Будь ласка, запустіть цей скрипт із правами root."
+#
+# File: hide-kde-apps, line: 9
+# File: show-kde-apps, line: 9
+#~ msgid "KDE is not installed."
+#~ msgstr "KDE не встановлено."
+#
+# File: hide-kde-apps, line: 13
+#~ msgid ""
+#~ "This script includes KDE applications in the menus of KDE only,\n"
+#~ "for all users.\n"
+#~ "This can be reverted with the command show-kde-apps."
+#~ msgstr ""
+#~ "Цей скрипт вмикає відображення програм KDE лише у меню KDE,\n"
+#~ "для всіх користувачів.\n"
+#~ "Для зворотньої дії, скористайтеся командою show-kde-apps."
+#
+# File: hide-kde-apps, line: 17
+# File: show-kde-apps, line: 17
+#~ msgid "To confirm press Y else press N: "
+#~ msgstr "Для підтвердження натисніть Y. Інакше - натисніть N: "
+#
+# File: hide-kde-apps, line: 20
+# File: show-kde-apps, line: 20
+#~ msgid "Nothing done."
+#~ msgstr "Нічого не виконано."
+#
+# File: hide-kde-apps, line: 62
+# File: show-kde-apps, line: 59
+#~ msgid "All done."
+#~ msgstr "Усе виконано."
+#
+# File: login-chooser, line: 13
+#~ msgid "This script should be run as root."
+#~ msgstr "Цей скрипт потрібно запускати з правами root."
+#
+# File: login-chooser, line: 28
+#~ msgid "Usage: login-chooser <login manager>"
+#~ msgstr "Використання: login-chooser <менеджер входу>"
+#
+# File: login-chooser, line: 29
+#~ msgid "Available login managers:"
+#~ msgstr "Доступні менеджери входу:"
+#
+# File: login-chooser, line: 31
+#~ msgid "Short descriptions:"
+#~ msgstr "Короткі описи:"
+#
+# File: login-chooser, line: 33
+#~ msgid ""
+#~ "text:    Login in text mode, in a console. From there, you\n"
+#~ "         can type \"startx\" to start a graphical session."
+#~ msgstr ""
+#~ "text:    Вхід у текстовий режим, у консоль. У цьому режимі,\n"
+#~ "         Для запуску графічного сеансу, введіть \"startx\"."
+#
+# File: login-chooser, line: 36
+#~ msgid "lightdm: Light Display Manager, accessible with speech."
+#~ msgstr ""
+#~ "lightdm: Light Display Manager, доступний для незрячих користувачів."
+#
+# File: login-chooser, line: 38
+#~ msgid "lxdm:    LXDE Display Manager."
+#~ msgstr "lxdm:    LXDE Display Manager."
+#
+# File: login-chooser, line: 40
+#~ msgid "kdm:     KDE Display Manager."
+#~ msgstr "kdm:     KDE Display Manager."
+#
+# File: login-chooser, line: 44
+#~ msgid "gdm:     GNOME Display Manager, fully accessible with speech."
+#~ msgstr ""
+#~ "gdm:     GNOME Display Manager, повністю доступний для незрячих "
+#~ "користувачів."
+#
+# File: login-chooser, line: 46
+#~ msgid "xdm:     X Display Manager."
+#~ msgstr "xdm:     X Display Manager."
+#
+# File: login-chooser, line: 48
+#~ msgid "Login is currently set to text mode."
+#~ msgstr "Наразі вхід здійснюється у текстовому режимі."
+#
+# File: login-chooser, line: 53
+#, sh-format
+#~ msgid "The display manager ${dm} is currently set."
+#~ msgstr "Наразі вибрано менеджер входу ${dm}."
+#
+# File: login-chooser, line: 61
+#~ msgid "To reboot immediatly press R then Enter, else just press Enter."
+#~ msgstr ""
+#~ "Для негайного перезавантаження, натисніть R а потім Enter. Інакше - "
+#~ "просто натисніть Enter."
+#
+# File: login-chooser, line: 87
+#~ msgid "You will have speech at login."
+#~ msgstr "Мовлення під час входу ввімкнено."
+#
+# File: login-chooser, line: 98
+#~ msgid "You won't have speech at login."
+#~ msgstr "Мовлення під час входу вимкнено."
+#
+# File: login-chooser, line: 104
+#~ msgid "\"$1\" is not among the available login managers:"
+#~ msgstr "\"$1\" немає серед доступних менеджерів входу:"
+#
+# File: login-chooser, line: 112
+#~ msgid "Login will occur in text mode on next boot."
+#~ msgstr ""
+#~ "При наступному завантаженні, вхід відбуватиметься у текстовому режимі."
+#
+# File: login-chooser, line: 113
+#~ msgid "If you need speech type one of these commands before rebooting:"
+#~ msgstr ""
+#~ "Якщо вам необхідна підтримка мовлення, введіть одну з цих команд перед "
+#~ "перезавантаженням:"
+#
+# File: login-chooser, line: 132
+# File: login-chooser, line: 146
+# File: login-chooser, line: 159
+# File: login-chooser, line: 172
+# File: login-chooser, line: 185
+# File: login-chooser, line: 199
+#, sh-format
+#~ msgid "The display manager $choice will be in use on next boot."
+#~ msgstr ""
+#~ "Менеджер входу $choice використовуватиметься при наступному завантаженні."
+#
+# File: login-chooser, line: 203
+#~ msgid "Unknown choice. Check your spelling."
+#~ msgstr "Не відома назва. Перевірте правильність написання."
+#
+# File: orca-off, line: 26
+#, sh-format
+#~ msgid "Orca has been disabled for user $username."
+#~ msgstr "Orca вимкнено для користувача $username."
+#
+# File: orca-off, line: 28
+# File: orca-on, line: 38
+#~ msgid "File ~/.config/autostart/startorca.desktop not found."
+#~ msgstr "Файл ~/.config/autostart/startorca.desktop не знайдено."
+#
+# File: orca-on, line: 6
+#~ msgid ""
+#~ "Start a graphical environment as root with speech is not advisable.\n"
+#~ "Please run this script as regular user."
+#~ msgstr ""
+#~ "Запуск графічного середовища з підтримкою мовлення використовуючи права "
+#~ "root, не є вдалою ідеєю.\n"
+#~ "Будь ласка, запустіть цей скрипт із правами звичайного користувача."
+#
+# File: orca-on, line: 36
+#, sh-format
+#~ msgid "Orca has been enabled for user $username."
+#~ msgstr "Orca ввімкнено для користувача $username."
+#
+# File: readSlintDocs.sh, line: 14
+#~ msgid "Slint for the visually impaired"
+#~ msgstr "Slint для незрячих і слабозорих користувачів"
+#
+# File: readSlintDocs.sh, line: 15
+# File: readSlintDocs.sh, line: 46
+# File: readSlintDocs.sh, line: 69
+#~ msgid ""
+#~ "Navigate in this sub-menu with the up and down arrow keys.\n"
+#~ "Press Enter to read a highlighted document.\n"
+#~ "Press Q to stop reading a document and go back to this sub-menu.\n"
+#~ "Press Escape to return to the main menu."
+#~ msgstr ""
+#~ "Для навігації по цьому підменю, використовуйте курсорні клавіші вгору та "
+#~ "вниз.\n"
+#~ "Натисніть Enter, щоб переглянути вибраний документ.\n"
+#~ "Натисніть Q щоб зупинити читання документа, і повернутися до цього "
+#~ "підменю.\n"
+#~ "Натисніть Escape, щоб повернутися до головного меню."
+#
+# File: readSlintDocs.sh, line: 19
+#~ msgid "Accessibility HowTo"
+#~ msgstr "Інформація про доступність у дистрибутиві Slint"
+#
+# File: readSlintDocs.sh, line: 20
+#~ msgid "Brltty HowTo"
+#~ msgstr "Особливості використання Brltty"
+#
+# File: readSlintDocs.sh, line: 21
+#~ msgid "Key bindings for Compiz "
+#~ msgstr "Сполучення клавіш Compiz "
+#
+# File: readSlintDocs.sh, line: 22
+#~ msgid "Key bindings for Mate"
+#~ msgstr "Сполучення клавіш Mate"
+#
+# File: readSlintDocs.sh, line: 23
+#~ msgid "Espeakup usage"
+#~ msgstr "Використання Espeakup"
+#
+# File: readSlintDocs.sh, line: 24
+#~ msgid "Fenrir usage"
+#~ msgstr "Використання Fenrir"
+#
+# File: readSlintDocs.sh, line: 25
+#~ msgid "How-to use the MBROLA voices"
+#~ msgstr "Використання голосів MBROLA"
+#
+# File: readSlintDocs.sh, line: 26
+#~ msgid "SpeechD-El usage"
+#~ msgstr "Використання SpeechD-El"
+#
+# File: readSlintDocs.sh, line: 27
+#~ msgid "SpeechD-Up usage"
+#~ msgstr "Використання SpeechD-Up"
+#
+# File: readSlintDocs.sh, line: 28
+#~ msgid "How-to make Slint speak (or not)."
+#~ msgstr "Як змусити Slint розмовляти (чи навпаки)."
+#
+# File: readSlintDocs.sh, line: 29
+#~ msgid "Speakup key bindings with a numeric keypad"
+#~ msgstr ""
+#~ "Сполучення клавіш Speakup для клавіатур із додаткових цифровим блоком"
+#
+# File: readSlintDocs.sh, line: 30
+#~ msgid "Speakup key bindings without numeric keypad"
+#~ msgstr ""
+#~ "Сполучення клавіш Speakup для клавіатур без додаткового цифрового блоку"
+#
+# File: readSlintDocs.sh, line: 31
+#~ msgid "Voices and TTS in Slint"
+#~ msgstr ""
+#~ "Голоси й рушії перетворення тексту в мовлення, що входять до складу Slint"
+#
+# File: readSlintDocs.sh, line: 32
+#~ msgid "Speakup guide (kernel documentation)"
+#~ msgstr "Посібник із використання Speakup (документація ядра)"
+#
+# File: readSlintDocs.sh, line: 45
+#~ msgid "How to localize shell scripts"
+#~ msgstr "Як локалізовувати скрипти shell"
+#
+# File: readSlintDocs.sh, line: 50
+#~ msgid "General presentation"
+#~ msgstr "Загальне ознайомлення"
+#
+# File: readSlintDocs.sh, line: 51
+#~ msgid "Processes diagrams"
+#~ msgstr "Діаграми процесів"
+#
+# File: readSlintDocs.sh, line: 52
+#~ msgid "Internationalization process"
+#~ msgstr "Процес інтернаціоналізації"
+#
+# File: readSlintDocs.sh, line: 53
+#~ msgid "Localization, usage and maintenance processes"
+#~ msgstr "Процеси локалізації, використання й супроводу"
+#
+# File: readSlintDocs.sh, line: 54
+#~ msgid "Recommendations for developers and maintainers"
+#~ msgstr "Рекомендації для розробників і супровідників"
+#
+# File: readSlintDocs.sh, line: 55
+#~ msgid "Recommendations for translators"
+#~ msgstr "Рекомендації для перекладачів"
+#
+# File: readSlintDocs.sh, line: 68
+#~ msgid " How to display man pages in Persian "
+#~ msgstr " Як відобразити сторінки довідки man Перською мовою "
+#
+# File: readSlintDocs.sh, line: 73
+#~ msgid "How to in English (Portable Document)"
+#~ msgstr "Англійською (документ PDF)"
+#
+# File: readSlintDocs.sh, line: 74
+#~ msgid "How to in Persian (Portable Document)"
+#~ msgstr "Перською (документ PDF)"
+#
+# File: readSlintDocs.sh, line: 94
+#~ msgid " Slint documentation "
+#~ msgstr " Документація Slint "
+#
+# File: readSlintDocs.sh, line: 99
+#~ msgid "Presentation of the Slint project"
+#~ msgstr "Знайомство з проєктом Slint"
+#
+# File: readSlintDocs.sh, line: 100
+#~ msgid ">> Slint for the visually impaired (sub-menu)"
+#~ msgstr ">> Slint для незрячих і слабозорих користувачів (підменю)"
+#
+# File: readSlintDocs.sh, line: 101
+#~ msgid "Announce of Slint64-14.2.1.2"
+#~ msgstr "Анонс релізу Slint64-14.2.1.2"
+#
+# File: readSlintDocs.sh, line: 102
+#~ msgid "Introduction - Slint documentation"
+#~ msgstr "Вступ - документація Slint"
+#
+# File: readSlintDocs.sh, line: 103
+#~ msgid "How to upgrade the kernels provided by Slint"
+#~ msgstr "Як оновлювати ядра, що надає Slint"
+#
+# File: readSlintDocs.sh, line: 104
+#~ msgid ">> How-to localize shell scrips (sub-menu)"
+#~ msgstr ">> Як локалізовувати скрипти shell (підменю)"
+#
+# File: readSlintDocs.sh, line: 105
+#~ msgid ">> How-to display man pages in Persian (sub-menu)"
+#~ msgstr ">> Як відобразити сторінки довідки man Перською мовою (підменю)"
+#
+# File: readSlintDocs.sh, line: 106
+#~ msgid "How to manage network connections"
+#~ msgstr "Як керувати мережевими з'єднаннями"
+#
+# File: readSlintDocs.sh, line: 107
+#~ msgid "What's new in Slint64-14.2.1.2"
+#~ msgstr "Нове у Slint64-14.2.1.2"
+#
+# File: readSlintDocs.sh, line: 108
+#~ msgid "Presentation of Slint64-14.2.1.2"
+#~ msgstr "Знайомство зі Slint64-14.2.1.2"
+#
+# File: readSlintDocs.sh, line: 109
+#~ msgid "Create and maintain a portable Slint"
+#~ msgstr "Створення й супровід переносного Slint"
+#
+# File: readSlintDocs.sh, line: 110
+#~ msgid "Software Management in Slint"
+#~ msgstr "Керування програмним забезпеченням у Slint"
+#
+# File: readSlintDocs.sh, line: 111
+#~ msgid "Manage the sound in Slint"
+#~ msgstr "Керування звуком у Slint"
+#
+# File: readSlintDocs.sh, line: 112
+#~ msgid "Utilities to manage your Slint system"
+#~ msgstr "Утиліти для керування вашою системою Slint"
+#
+# File: session-chooser, line: 14
+#~ msgid "Running a graphical session as root is not allowed."
+#~ msgstr "Запуск графічного сеансу з правами root заборонено."
+#
+# File: session-chooser, line: 21
+#~ msgid ""
+#~ "Usage: $0 <desktop session>\n"
+#~ "\tAvailable desktop sessions:"
+#~ msgstr ""
+#~ "Використання: $0 <сеанс стільниці>\n"
+#~ "\tДоступні сеанси стільниці:"
+#
+# File: session-chooser, line: 40
+#~ msgid "The current session is "
+#~ msgstr "Поточний сеанс "
+#
+# File: session-chooser, line: 100
+#, sh-format
+#~ msgid "A default session $thissession has been set for ${USER}."
+#~ msgstr "$thissession вибрано основним сеансом для користувача ${USER}."
+#
+# File: setsession, line: 13
+#, sh-format
+#~ msgid "Usage: $program_name username."
+#~ msgstr "Використання: $program_name ім'я користувача."
+#
+# File: setsession, line: 14
+#~ msgid ""
+#~ "This script should be run as root, for a regular user account that\n"
+#~ "has just been created. To set your default session as regular user,\n"
+#~ "use session-chooser instead.\n"
+#~ "errors go to /tmp/setsession-errors"
+#~ msgstr ""
+#~ "Цей скрипт потрібно запускати з правами root, для облікового запису "
+#~ "звичайного користувача.\n"
+#~ "Щоб вибрати основний сеанс із правами звичайного користувача, "
+#~ "скористайтеся session-chooser.\n"
+#~ "За інформацією стосовно помилок, зверніться до /tmp/setsession-errors"
+#
+# File: setsession, line: 30
+#, sh-format
+#~ msgid "No home directory for user $user. Does it exist?"
+#~ msgstr "Немає домашнього каталогу для користувача $user. Він існує?"
+#
+# File: setsession, line: 32
+#, sh-format
+#~ msgid "A default session has already been set for user $user."
+#~ msgstr "Основний сеанс вже вибрано для користувача $user."
+#
+# File: setsession, line: 62
+#, sh-format
+#~ msgid "A default session $xsession has been set for user $user."
+#~ msgstr "$xsession вибрано основним сеансом для користувача $user."
+#
+# File: show-kde-apps, line: 5
+#~ msgid "Only root is allowed to run this program."
+#~ msgstr "Цю програму може запускати лише root."
+#
+# File: show-kde-apps, line: 13
+#~ msgid ""
+#~ "This script includes KDE applications in the menus of all graphical\n"
+#~ "environments for all users, but the applications for personal\n"
+#~ "information management, that however stay available from KDE.\n"
+#~ "This can be reverted with the command hide-kde-apps."
+#~ msgstr ""
+#~ "Цей скрипт вмикає відображення всіх програм KDE у меню всіх стільниць для "
+#~ "всіх користувачів окрім програм для керування персональною інформацією, "
+#~ "які залишаються доступними лише із KDE.\n"
+#~ "Для зворотньої дії, виконайте команду hide-kde-apps."
+#
+# File: spd-list, line: 9
+#~ msgid ""
+#~ "This script lists languages and synthesizers available for applications\n"
+#~ "relying on Speech Dispatcher, like Orca or speech-up.\n"
+#~ "Each command below answers the question following it.\n"
+#~ "Don't type the quotes surrounding the command."
+#~ msgstr ""
+#~ "Цей скрипт виводить список усіх доступних синтезаторів мовлення й "
+#~ "підтримуваних ними мов для програм які використовують Speech Dispatcher, "
+#~ "таких як Orca чи Speech-up.\n"
+#~ "Вводьте без лапок, що оточують команди."
+#
+# File: spd-list, line: 13
+#, sh-format
+#~ msgid "\"$program_name\" usage?"
+#~ msgstr "\"$program_name\" - Довідка з використання"
+#
+# File: spd-list, line: 14
+#, sh-format
+#~ msgid "\"$program_name -s\" available synthesizers?"
+#~ msgstr "\"$program_name -s\" - Список усіх доступних синтезаторів мовлення"
+#
+# File: spd-list, line: 15
+#, sh-format
+#~ msgid "\"$program_name -l\" available languages codes?"
+#~ msgstr "\"$program_name -l\" - Список доступних кодів мов"
+#
+# File: spd-list, line: 16
+#, sh-format
+#~ msgid ""
+#~ "\"$program_name -ls <synthesizer>\" languages available for this "
+#~ "synthesizer?"
+#~ msgstr ""
+#~ "\"$program_name -ls <назва синтезатора>\" - Список мов, що підтримує "
+#~ "вказаний синтезатор мовлення"
+#
+# File: spd-list, line: 17
+#, sh-format
+#~ msgid ""
+#~ "\"$program_name -sl <language code>\" synthesizers providing voices in "
+#~ "this language?"
+#~ msgstr ""
+#~ "\"$program_name -sl <код мови>\" - Список синтезаторів мовлення, що "
+#~ "надають голоси для вказаної мови"
+#
+# File: spd-list, line: 18
+#~ msgid ""
+#~ "The language code has most often two characters, like 'en' 'es' or 'fr'"
+#~ msgstr ""
+#~ "Найчастіше код мови містить два символи (наприклад \"en\" es\", або fr\")."
+#
+# File: spd-list, line: 33
+#~ msgid "Installed synthesizers:"
+#~ msgstr "Встановлені синтезатори мовлення:"
+#
+# File: spd-list, line: 63
+#, sh-format
+#~ msgid "$parameter2 is not the name of an available synthesizer"
+#~ msgstr "$parameter2 не є назвою доступного синтезатора мовлення"
+#
+# File: spd-list, line: 93
+#, sh-format
+#~ msgid "The language $parameter2 is provided by: "
+#~ msgstr "Мову $parameter2 підтримують: "
+#
+# File: speak-with, line: 18
+#~ msgid ""
+#~ "  espeakup (Console screen reader connecting espeak-ng and speakup)\\n"
+#~ msgstr ""
+#~ "  espeakup (Консольний читач екрана, що поєднує espeak-ng і speakup)\\n"
+#
+# File: speak-with, line: 22
+#~ msgid ""
+#~ "  speechd-up (Console screen reader connecting Speech Dispatcher and "
+#~ "speakup)\\n"
+#~ msgstr ""
+#~ "  speechd-up (Консольний читач екрана, що поєднує Speech Dispatcher і "
+#~ "speakup)\\n"
+#
+# File: speak-with, line: 26
+#~ msgid "  fenrir (Modular, flexible and fast console screen reader)\\n"
+#~ msgstr "  fenrir (Модульний, гнучкий і швидкий консольний читач екрана)\\n"
+#
+# File: speak-with, line: 33
+#, sh-format
+#~ msgid "Usage: $program_name <screen reader> or <hard synthesizer> or none"
+#~ msgstr ""
+#~ "Використання: $program_name <читач екрана> чи <апаратний синтезатор> або "
+#~ "не вказуйте нічого"
+#
+# File: speak-with, line: 35
+#~ msgid "Choose a console screen reader to talk with among:"
+#~ msgstr "Оберіть консольний читач екрана:"
+#
+# File: speak-with, line: 38
+#~ msgid "or use one of the supported hard synthesizers:"
+#~ msgstr "або скористайтеся одним із підтримуваних апаратних синтезаторів:"
+#
+# File: speak-with, line: 41
+#, sh-format
+#~ msgid "or type  \"$program_name none\" to mute all screen readers."
+#~ msgstr "або введіть \"$program_name none\", щоб вимкнути всі читачі екрана."
+#
+# File: speak-with, line: 55
+#, sh-format
+#~ msgid "$first_argument_name is not a valid argument of this command."
+#~ msgstr "$first_argument_name не є правильним аргументом для цієї команди."
+#
+# File: speak-with, line: 86
+#~ msgid "espeakup is not installed."
+#~ msgstr "espeakup не встановлено."
+#
+# File: speak-with, line: 91
+#, sh-format
+#~ msgid "$first_argument_name is already started."
+#~ msgstr "$first_argument_name вже запущено."
+#
+# File: speak-with, line: 122
+#~ msgid "speechd-up is not installed."
+#~ msgstr "speechd-up не встановлено."
+#
+# File: speak-with, line: 127
+#~ msgid "speechd-up is already started."
+#~ msgstr "speechd-up вже запущено."
+#
+# File: speak-with, line: 157
+#~ msgid "fenrir is not installed."
+#~ msgstr "fenrir не встановлено."
+#
+# File: speak-with, line: 162
+#~ msgid "fenrir is already started."
+#~ msgstr "fenrir вже запущено."
+#
+# File: speak-with, line: 216
+#~ msgid "OK"
+#~ msgstr "OK"
+#
+# File: speak-with, line: 238
+#, sh-format
+#~ msgid "Should $ARGUMENT be also used at next boot? [Y/n] "
+#~ msgstr ""
+#~ "Бажаєте також використовувати $ARGUMENT при наступному завантаженні? [Y/"
+#~ "n] "

@@ -1,2 +1,0 @@
-When updating HandBook.adoc, update (not recreate HandBook.pot), like this:
-po4a-updatepo -M UTF-8 -m HandBook.adoc -f asciidoc -p HandBook.pot
