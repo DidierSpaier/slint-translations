@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-03 19:54+0100\n"
-"PO-Revision-Date: 2023-02-09 21:08\n"
+"PO-Revision-Date: 2023-02-11 10:42\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -39,7 +39,8 @@ msgstr "Lista de ambientes de trabalho:"
 # File: display-desktop, line: 17
 msgid "If you choose 'all' the menu entries for any installed desktop will be \n"
 "displayed in other ones."
-msgstr "Se escolher 'todas' as entradas de menu para qualquer ambiente de trabalho instalado serão exibidas em outros."
+msgstr "Se escolher 'all' todas as entradas do menu para qualquer ambiente \n"
+"de trabalho instalado serão exibidas em outros."
 
 # File: display-desktop, line: 20
 msgid "This can be reverted with the command hide-desktop."
@@ -142,8 +143,8 @@ msgstr "Outras vozes mbrola poderiam ser usadas se instaladas."
 
 # File: list-espeak-ng-voices, line: 52
 # File: list-espeak-ng-voices.save, line: 52
-msgid "Do yo want to display them? [Y/n] "
-msgstr "Quer exibi-las? [Y/n]"
+msgid "Do you want to display them? [Y/n] "
+msgstr "Quer exibi-las? [Y/n] "
 
 # File: list-espeak-ng-voices, line: 59
 # File: list-espeak-ng-voices.save, line: 59
@@ -309,7 +310,7 @@ msgstr "O Orca foi ativado para si."
 
 # File: rescuebootstick, line: 18
 msgid "Do you want to make a rescue boot stick of an USB flash drive? "
-msgstr "Quer criar uma unidade de recuperação de arranque com uma Pen USB?"
+msgstr "Quer criar uma unidade de recuperação de arranque com uma Pen USB? "
 
 # File: rescuebootstick, line: 20
 msgid "Please type yes or no: "

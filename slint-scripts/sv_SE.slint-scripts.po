@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-03 19:54+0100\n"
-"PO-Revision-Date: 2023-02-09 21:08\n"
+"PO-Revision-Date: 2023-02-11 10:42\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -148,7 +148,7 @@ msgstr "Andra mbrola-röster kan användas om de installeras."
 
 # File: list-espeak-ng-voices, line: 52
 # File: list-espeak-ng-voices.save, line: 52
-msgid "Do yo want to display them? [Y/n] "
+msgid "Do you want to display them? [Y/n] "
 msgstr "Vill du visa dem? [Y/n] "
 
 # File: list-espeak-ng-voices, line: 59
