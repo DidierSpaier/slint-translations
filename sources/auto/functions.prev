@@ -30,7 +30,7 @@ SLINTREPO=http://slackware.uk/slint/x86_64/slint-15.0
 # Directory /patches of a Slackware repository
 PATCHESREPO=http://slackware.uk/slackware/slackware64-15.0/patches
 export SLINTVERSION=15.0
-ISOVERSION=15.0-2
+ISOVERSION=15.0-1
 ISOLABEL="SLINT$ISOVERSION"
 # Installed RAM in kilobytes
 KRAM=$(sed -n 1p /proc/meminfo|sed "s/[ ]\{1,\}/ /"|cut -d" " -f2)
@@ -121,6 +121,7 @@ exit
 backtomenu() {
 	ARG=$1
 	echo "backtomenu $ARG" >>$INSTALL/log
+	umount -f $ISO 2>/dev/null
 	clear
 	echo "$ARG"
 	giveup
@@ -1561,11 +1562,13 @@ formatpartitionsandsetswapfile() {
 		mount -o compress=zstd:3,noatime $ROOTNAME $SLINT
 		btrfs subvolume create $SLINT/@
 		btrfs subvolume create $SLINT/@home
+		btrfs subvolume create $SLINT/@snapshots
 		btrfs subvolume create $SLINT/@swap
 		umount $SLINT
 		mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT
 		mkdir $SLINT/home
 		mkdir $SLINT/swap
+		mkdir $SLINT/snapshots
 		mount -o subvol=/@home,compress=zstd:3,noatime $ROOTNAME $SLINT/home
 		if [ -f "$INSTALL/addedpartname" ]; then
 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
@@ -1712,6 +1715,8 @@ fstab() {
 		echo "UUID=$UUID / btrfs subvol=/@,compress=zstd:3,noatime 0 0" >>$FSTAB
 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
 		echo "UUID=$UUID /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0" >>$FSTAB
+		echo "# Initially $ROOTPARTPATH" >>$FSTAB
+		echo "UUID=$UUID /snapshots btrfs subvol=/@snapshots,compress=zstd:3,noatime 0 0" >>$FSTAB
 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
 		echo "UUID=$UUID /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0" >>$FSTAB
 		echo "/swap/swapfile none swap pri=5 0 0" >>$FSTAB
@@ -2815,7 +2820,7 @@ installfromiso() {
 }
 bindrootslint() {
 	echo bindrootslint >>$INSTALL/log
-	rm -rf /boot
+	rm -f /boot
 	ln -s $SLINT/boot /boot
 	mount -B /dev $SLINT/dev
 	mount -B /proc $SLINT/proc
@@ -2937,6 +2942,13 @@ fi" > $SLINT/etc/rc.d/rc.4.local
 		chmod 755 $SLINT/etc/rc.d/rc.4.local
 	echo
 }
+removesymlinks() {
+	# until we remove these symlinks from the package kernel-generic...
+	rm -f $SLINT/boot/config
+	rm -f $SLINT/boot/System.map
+	rm -f $SLINT/boot/vmlinuz
+	rm -f $SLINT/boot/vmlinuz-generic
+}
 bootingsetup() {
 	echo bootingsetup >>$INSTALL/log
 	# We install in both Legacy and EFI modes.
@@ -2956,9 +2968,9 @@ bootingsetup() {
 	fi
 	gettext "building an initramfs..."
 	echo
-	KVER=$(find $SLINT/boot -type f -name "vmlinuz*"|sed "s/.*-//")
+	KVER=$(find $SLINT/boot -type f -name "vmlinuz-generic*"|sed "s/.*-//")
 	if [ $(echo "$KVER"|wc -l) -gt 1 ]; then
-		echo "Several kernels are installed. Something should be wrong."
+		echo "Several generic kernels are installed. Something should be wrong."
 		exit
 	fi
 	if [ ! -d $SLINT/lib/modules/$KVER ]; then
@@ -2971,10 +2983,10 @@ bootingsetup() {
 		/^GRUB_DISABLE_LINUX_PARTUUID/s/.*/GRUB_DISABLE_LINUX_PARTUUID=true/
 		/^GRUB_DISABLE_LINUX_UUID/s/.*/GRUB_DISABLE_LINUX_UUID=false/" $SLINT/etc/default/grub >bof
 		mv bof $SLINT/etc/default/grub
-		chroot $SLINT dracut --kver $KVER --zstd -q --install " /etc/keys/$KEYFILE " 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver $KVER --kernel-image $SLINT/boot/kernel-generic-$KVER --zstd -q --install " /etc/keys/$KEYFILE " 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay rd.luks.key=/etc/keys/$KEYFILE:/ rd.luks.uuid=$(cat $INSTALL/rootcryptuuid)"
 	else
-		chroot $SLINT dracut --kver $KVER  --zstd -q 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver $KVER --kernel-image $SLINT/boot/kernel-generic-$KVER --zstd -q 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay"
 	fi
 	gettext "Installing the GRUB bootloader..."

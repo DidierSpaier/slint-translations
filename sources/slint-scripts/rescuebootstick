@@ -101,7 +101,7 @@ rescuebootstick(){
 	cp "$RESCUE/rescue.iso" "$RESCUEPATH"
 	sync
 	rm -r "$RESCUE"
-	gettext "Done. you may now remove the rescue boot stick."; echo
+	gettext "Done. You may now remove the rescue boot stick."; echo
 	echo
 }
 rescuebootstick

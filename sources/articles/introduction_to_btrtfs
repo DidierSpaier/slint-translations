@@ -1,0 +1,26 @@
+== Introduction to BTRFS
+
+Cet article présente les fonctionnalités essentielles de BTRFS, pour permettre aux utilisateurs de Slint de se familiariser avec ce système de fichiers.
+
+Nous commençons par donner des définitions, pour la plupart issues du https://btrfs.readthedocs.io/en/latest/Glossary.html[glossaire] officiel, sélectionnées parmi les moins techniques, avec quelques adaptation e ajouts.
+
+[[block]]::Block
+A single physically and logically contiguous piece of storage on a device, of size e.g. 4K.
+
+[[device]]::Device
+A Linux block device, e.g. a whole disk, partition, LVM logical volume, loopback device, or network block device. A btrfs filesystem can reside on one or more devices.
+
+[[volume]]::Volume according to https://wiki.manjaro.org/index.php/Btrfs[Manjaro]: A volume is a pool of raw storage and consists of one or more devices. The size of the volume will be the addition of all devices that are part of this volume. In most cases you will only use one volume. You are able to add/remove devices at any time. 
+
+[[subvolume]]::Subvolume
+A tree of files and directories inside a btrfs that can be mounted as if it were an independent filesystem. A subvolume is created by taking a reference on the root of another subvolume. Each btrfs filesystem has at least one subvolume, the top-level subvolume, which contains everything else in the filesystem. Additional subvolumes can be created and deleted with the btrfs tools.
+
+[[copyonwrite]]::Copy_on-write
+Also known as COW. The method that btrfs uses for modifying data. Instead of directly overwriting data in place, btrfs takes a copy of the data, alters it, and then writes the modified data back to a different (free) location on the disk.
+
+[[snapshot]]::Snapshot
+A subvolume which is a copy on write copy of another subvolume. The two subvolumes share all of their common (unmodified) data, which means that snapshots can be used to keep the historical state of a filesystem very cheaply. After the snapshot is made, the original subvolume and the snapshot are of equal status: the original does not “own” the snapshot, and either one can be deleted without affecting the other one.
+
+
+mount /dev/sda5 /mnt -o subvol=/,suvolid=5
+mount /dev/sda5 /mnt -o subvol=/

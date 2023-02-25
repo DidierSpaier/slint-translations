@@ -39,7 +39,7 @@ Slint users are notified about upgrades of installed packages as soon as availab
 
 Default preferred applications settings are provided and can be easily customized.
 
-==== Content, versions and release model.
+==== Content, versions and release model
 
 The Slint installer provides only a complete installation.
 
@@ -208,7 +208,17 @@ Be sure to enter the full path to the Slint ISO on your filesystem.
 
 On ++Microsoft Windows 2000/XP/Vista/7++ you can write to a DVD using the application http://infrarecorder.org/[InfraRecorder]. It is free and open source.
 
-On ++Microsoft Windows 7/8/10++ you can use the http://windows.microsoft.com/en-US/windows7/Burn-a-CD-or-DVD-from-an-ISO-file[Windows Disk Image Burner] utility that is shipped with Microsoft Windows.
+On ++Microsoft Windows 7/8/10++ you can use the utility that is shipped with Microsoft Windows.
+
+* Right-click the ISO file and select Burn disk image (if on Windows 11, slecet Show more optison first (Shift+f10)
+* To make sure the ISO was burned without any errors, select Verify disc after burning.
+
+[NOTE]
+====
+Instructions not checked by the writer.
+====
+
+
 // Prepare
 [[prepare_partitions_for_Slint]]
 ==== Optionally, prepare partitions for Slint
@@ -1251,7 +1261,7 @@ Insert+H: activate the learning mode. In this m	ode:
 === Voices and TTS in Slint
 
 Following TTS (Text to Speech synthesizers) are shipped in
-Slint64-15.0.2, each with a set of voices, namely: +
+Slint64-15.0, each with a set of voices, namely: +
 espeak-ng +
 flite +
 pico +
@@ -2156,6 +2166,7 @@ loads the appropriate kernel modules, and configures the devices.
 
 You can start or stop a service using as root the command `service`. To know more type `man service`.
 // Glossary
+
 == Glossary
 
 Several definitions in this glossary are taken or adapted from https://en.wikipedia.org/wiki/Main_Page[Wikipedia] and https://pubs.opengroup.org/onlinepubs/9699919799/[POSIX]

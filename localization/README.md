@@ -21,5 +21,5 @@ po4a-gettextize -f asciidoc -o compat=asciidoctor -m ${name}.adoc -M UTF-8  -p $
 After an update of ${name}.adoc, update (not recreate) ${name}.pot, like this:
 po4a-updatepo -M UTF-8 -m ${name}.adoc -f asciidoc -p ${name}.pot
 
-To convert back a PO file to asciidoc format a command like this one can be used example for French as sopekn in France:
+To convert back a PO file to asciidoc format a command like this one can be used example for French as spoken in France:
 po4a-translate -f asciidoc -m HandBook.adoc -M UTF-8 -l fr_FR.${name}.adoc -p fr_FR.${name}.po

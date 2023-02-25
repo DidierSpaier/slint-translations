@@ -18,7 +18,7 @@ gettext  "write:"; echo
 echo  "voice=$THISCODE"
 gettext "in /etc/espeakup.conf."; echo
 echo
-question=$(gettext "Do yo want to list also the mbrola voices? [y/N]")
+question=$(gettext "Do you want to list also the mbrola voices? [y/N]")
 printf '%s' "$question "
 read -r ANSWER
 if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ];  then
@@ -49,7 +49,7 @@ if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ];  then
 	gettext "in /etc/espeakup.conf."; echo
 	echo
 	gettext "Other mbrola voices could be used if installed."; echo
-	question=$(gettext "Do yo want to display them? [Y/n] ")
+	question=$(gettext "Do you want to display them? [Y/n] ")
 	printf '%s' "$question "
 	read -r ANSWER
 	if [ "$ANSWER" = "n" ] || [ "$ANSWER" = "n" ];  then
