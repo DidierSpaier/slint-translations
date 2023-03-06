@@ -5,7 +5,6 @@
 :toc-title: Content
 :pdf-themesdir: themes
 :pdf-theme: default
-:sectnums:
 
 == Introduction to Slint
 
@@ -210,7 +209,7 @@ On ++Microsoft Windows 2000/XP/Vista/7++ you can write to a DVD using the applic
 
 On ++Microsoft Windows 7/8/10++ you can use the utility that is shipped with Microsoft Windows.
 
-* Right-click the ISO file and select Burn disk image (if on Windows 11, slecet Show more optison first (Shift+f10)
+* Right-click the ISO file and select Burn disk image (if on Windows 11, select Show more options first (Shift+f10)
 * To make sure the ISO was burned without any errors, select Verify disc after burning.
 
 [NOTE]
@@ -1250,7 +1249,7 @@ In short, in a graphical environment:
 ----
 Insert+Space: display the Orca Preferences dialog.
 Insert+S: activate or deactivate the vocal synthesis.
-Insert+H: activate the learning mode. In this m	ode:
+Insert+H: activate the learning mode. In this mode:
    Press a key to hear its function
    F1: to hear the documentation of the screen reader
    F2: list the keyboard shortcuts for Orca

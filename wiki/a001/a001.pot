@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-02-28 11:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ==
+#: wiki.adoc:1
+msgid "Slint with BTRFS"
+msgstr "Slint with BTRFS"
+
+#. type: Plain text
+#: wiki.adoc:4
+msgid ""
+"In this article we outline the unique characteristics of the BTRFS file "
+"system and how a Slint system is configured at installation to take "
+"advantage of them."
+msgstr ""
+"In this article we outline the unique characteristics of the BTRFS file "
+"system and how a Slint system is configured at installation to take "
+"advantage of them."
+
+#. type: Plain text
+#: wiki.adoc:6
+msgid ""
+"In order not to overload this document with definitions, we refer the reader "
+"to the https://slint.fr/en/HandBook.html#_glossary[glossary] included in the "
+"Slint Manual and more specifically for btrfs \"jargon\" to the "
+"https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] included in "
+"its documentation."
+msgstr ""
+"In order not to overload this document with definitions, we refer the reader "
+"to the https://slint.fr/en/HandBook.html#_glossary[glossary] included in the "
+"Slint Manual and more specifically for btrfs \"jargon\" to the "
+"https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] included in "
+"its documentation."
+
+#. type: Plain text
+#: wiki.adoc:8
+msgid ""
+"A BTRFS file system consists of a logical volume that can span multiple "
+"block devices (partitions or disks). Initially Slint is installed on a "
+"single partition."
+msgstr ""
+"A BTRFS file system consists of a logical volume that can span multiple "
+"block devices (partitions or disks). Initially Slint is installed on a "
+"single partition."
+
+#. type: Plain text
+#: wiki.adoc:10
+msgid ""
+"A subvolume is a subtree of files inside the volume, the root of which can "
+"be mounted as if it were an independent filesystem. However, the space "
+"allocated to a volume is also allocated to each of its sub-volumes: it is "
+"therefore not necessary to distribute it between the sub-volumes, as if they "
+"were in distinct partitions."
+msgstr ""
+"A subvolume is a subtree of files inside the volume, the root of which can "
+"be mounted as if it were an independent filesystem. However, the space "
+"allocated to a volume is also allocated to each of its sub-volumes: it is "
+"therefore not necessary to distribute it between the sub-volumes, as if they "
+"were in distinct partitions."
+
+#. type: Plain text
+#: wiki.adoc:12
+msgid ""
+"Subvolumes can be created at the same time as the volume (by the mkfs.btrfs "
+"command), but also added or deleted later using the btrfs tools."
+msgstr ""
+"Subvolumes can be created at the same time as the volume (by the mkfs.btrfs "
+"command), but also added or deleted later using the btrfs tools."
+
+#. type: Plain text
+#: wiki.adoc:14
+msgid ""
+"As an example the commands below create the Slint \"system\" volume and its "
+"subvolumes, in case BTRFS is used. In the following $ROOTNAME is the name of "
+"the partition in which Slint will be installed and $SLINT the mount point of "
+"the system volume during installation."
+msgstr ""
+"As an example the commands below create the Slint \"system\" volume and its "
+"subvolumes, in case BTRFS is used. In the following $ROOTNAME is the name of "
+"the partition in which Slint will be installed and $SLINT the mount point of "
+"the system volume during installation."
+
+#. type: delimited block - 4
+#: wiki.adoc:26
+msgid ""
+"mkdir /SLINT\n"
+"SLINT=\"/SLINT\"\n"
+"mkfs.btrfs -L root $ROOTNAME\n"
+"mount -o compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"btrfs subvolume create $SLINT/@\n"
+"btrfs subvolume create $SLINT/@home\n"
+"btrfs subvolume create $SLINT/@swap\n"
+"umount $SLINT\n"
+"mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"mkdir $SLINT/home\n"
+"mkdir $SLINT/swap \n"
+msgstr ""
+"mkdir /SLINT\n"
+"SLINT=\"/SLINT\"\n"
+"mkfs.btrfs -L root $ROOTNAME\n"
+"mount -o compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"btrfs subvolume create $SLINT/@\n"
+"btrfs subvolume create $SLINT/@home\n"
+"btrfs subvolume create $SLINT/@swap\n"
+"umount $SLINT\n"
+"mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"mkdir $SLINT/home\n"
+"mkdir $SLINT/swap \n"
+
+#. type: Plain text
+#: wiki.adoc:28
+msgid ""
+"The $ROOTNAME partition (denoted by its UUID which we will call <uuid>) will "
+"then be mounted three times (once per subvolume) each time Slint is started, "
+"as indicated in the /etc/fstab file:"
+msgstr ""
+"The $ROOTNAME partition (denoted by its UUID which we will call <uuid>) will "
+"then be mounted three times (once per subvolume) each time Slint is started, "
+"as indicated in the /etc/fstab file:"
+
+#. type: delimited block - 4
+#: wiki.adoc:32
+msgid ""
+"UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 \n"
+msgstr ""
+"UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 \n"
+
+#. type: Plain text
+#: wiki.adoc:34
+msgid "Which gives for example (taken from the output of lsblk /dev/sda5):"
+msgstr "Which gives for example (taken from the output of lsblk /dev/sda5):"
+
+#. type: delimited block - 4
+#: wiki.adoc:39
+msgid ""
+"Filesystem      Size  Used Avail Use% Mounted on\n"
+"/dev/sda5        50G   22G   28G  44% /\n"
+"/dev/sda5        50G   22G   28G  44% /home\n"
+"/dev/sda5        50G   22G   28G  44% /swap\n"
+msgstr ""
+"Filesystem      Size  Used Avail Use% Mounted on\n"
+"/dev/sda5        50G   22G   28G  44% /\n"
+"/dev/sda5        50G   22G   28G  44% /home\n"
+"/dev/sda5        50G   22G   28G  44% /swap\n"
+
+#. type: Plain text
+#: wiki.adoc:41
+msgid ""
+"We see that the space available for the volume (22G) is also available for "
+"each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount "
+"option means that all the files that will be stored will be compressed by "
+"the zstd utility with compression level 3. Thus the size of the system is "
+"approximately half that with the ext4 file system."
+msgstr ""
+"We see that the space available for the volume (22G) is also available for "
+"each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount "
+"option means that all the files that will be stored will be compressed by "
+"the zstd utility with compression level 3. Thus the size of the system is "
+"approximately half that with the ext4 file system."
+
+#. type: Plain text
+#: wiki.adoc:43
+msgid ""
+"If we mount the device at the root of the volume (without mention of a "
+"subvolume), like this:"
+msgstr ""
+"If we mount the device at the root of the volume (without mention of a "
+"subvolume), like this:"
+
+#. type: delimited block - 4
+#: wiki.adoc:45
+msgid "mount /dev/sda5 /mnt\n"
+msgstr "mount /dev/sda5 /mnt\n"
+
+#. type: Plain text
+#: wiki.adoc:47
+msgid "we see the subvolumes appear as subdirectories of /mnt:"
+msgstr "we see the subvolumes appear as subdirectories of /mnt:"
+
+#. type: delimited block - 4
+#: wiki.adoc:52
+msgid ""
+"ls /mnt\n"
+"@ @home @swap\n"
+"ls /mnt/@home/didier\n"
+"Desktop Documents GNUstep Images Templates Music Audience Downloads Videos "
+"\n"
+msgstr ""
+"ls /mnt\n"
+"@ @home @swap\n"
+"ls /mnt/@home/didier\n"
+"Desktop Documents GNUstep Images Templates Music Audience Downloads Videos "
+"\n"
+
+#. type: Plain text
+#: wiki.adoc:54
+msgid ""
+"Another remarkable feature of BTRFS is \"copy-on-write\". When a file is "
+"modified, a copy is made, and the modified parts are written to another "
+"location. Thus, the original version can coexist with the modified version, "
+"which makes it possible to take a snapshot of a subvolume and then be able "
+"to restore it to its state before modification."
+msgstr ""
+"Another remarkable feature of BTRFS is \"copy-on-write\". When a file is "
+"modified, a copy is made, and the modified parts are written to another "
+"location. Thus, the original version can coexist with the modified version, "
+"which makes it possible to take a snapshot of a subvolume and then be able "
+"to restore it to its state before modification."
+
+#. type: Plain text
+#: wiki.adoc:56
+msgid ""
+"Slint includes the utility `absm`, which allows to take snapshots of the "
+"subvolume @, allowing to return to a previous state of the system if an "
+"update goes wrong, by booting the system on this snapshot, selected in the "
+"GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
+msgstr ""
+"Slint includes the utility `absm`, which allows to take snapshots of the "
+"subvolume @, allowing to return to a previous state of the system if an "
+"update goes wrong, by booting the system on this snapshot, selected in the "
+"GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
+
+#. type: Plain text
+#: wiki.adoc:58
+msgid ""
+"BTRFS also verifies the integrity of each file when it is opened using a "
+"checksum, making it unnecessary to check the file system at system "
+"startup. In addition, the \"btrfs scrub\" command verifies the integrity of "
+"all files, including those that are rarely read. By default, the utility "
+"`btrfsmaintenance` included in Slint runs \"btrtfs scrub\" once a week."
+msgstr ""
+"BTRFS also verifies the integrity of each file when it is opened using a "
+"checksum, making it unnecessary to check the file system at system "
+"startup. In addition, the \"btrfs scrub\" command verifies the integrity of "
+"all files, including those that are rarely read. By default, the utility "
+"`btrfsmaintenance` included in Slint runs \"btrtfs scrub\" once a week."
+
+#. type: Plain text
+#: wiki.adoc:60
+msgid ""
+"`btrfsmaintenance` also triggers \"btrfs balance\" once a week by "
+"default. This command allows you to distribute the data between the devices "
+"if the file system extends over several, but also to reorganize the space "
+"used, in particular to free the unallocated space of the file system, which "
+"improves in particular the performance of BTRFS in the case of a hard "
+"disk. To know more about `btrfsmaintenance` read "
+"/usr/doc/btrfsmaintenance*/README.html"
+msgstr ""
+"`btrfsmaintenance` also triggers \"btrfs balance\" once a week by "
+"default. This command allows you to distribute the data between the devices "
+"if the file system extends over several, but also to reorganize the space "
+"used, in particular to free the unallocated space of the file system, which "
+"improves in particular the performance of BTRFS in the case of a hard "
+"disk. To know more about `btrfsmaintenance` read "
+"/usr/doc/btrfsmaintenance*/README.html"
+
+#. type: Plain text
+#: wiki.adoc:62
+msgid ""
+"Other useful and BTRFS-compatible tools are included in Slint, all have a "
+"--help option and a man page:"
+msgstr ""
+"Other useful and BTRFS-compatible tools are included in Slint, all have a "
+"--help option and a man page:"
+
+#. type: Plain text
+#: wiki.adoc:64
+msgid ""
+"`jdupes` detects duplicate files and allows you to take action accordingly, "
+"regardless of the file system used"
+msgstr ""
+"`jdupes` detects duplicate files and allows you to take action accordingly, "
+"regardless of the file system used"
+
+#. type: Plain text
+#: wiki.adoc:66
+msgid ""
+"`btdu` allows to know with precision the place occupied by the BTRFS "
+"sub-volumes and directories"
+msgstr ""
+"`btdu` allows to know with precision the place occupied by the BTRFS "
+"sub-volumes and directories"
+
+#. type: Plain text
+#: wiki.adoc:68
+msgid ""
+"`restic` is a very versatile backup software that can be used for any file "
+"system."
+msgstr ""
+"`restic` is a very versatile backup software that can be used for any file "
+"system."
+
+#. type: Plain text
+#: wiki.adoc:70
+msgid "Recommendations."
+msgstr "Recommendations."
+
+#. type: Plain text
+#: wiki.adoc:72
+msgid "BTRFS needs room to breathe and reorganize. Always keep 10-20% free space."
+msgstr "BTRFS needs room to breathe and reorganize. Always keep 10-20% free space."
+
+#. type: Plain text
+#: wiki.adoc:73
+msgid ""
+"Some tool options included in the btrfs-tools package can be dangerous or "
+"counterproductive. Use only those whose effect you know perfectly well and "
+"if in doubt seek advice first, on the Slint mailing list or by IRC on "
+"irc.libera.chat, channel #btrfs."
+msgstr ""
+"Some tool options included in the btrfs-tools package can be dangerous or "
+"counterproductive. Use only those whose effect you know perfectly well and "
+"if in doubt seek advice first, on the Slint mailing list or by IRC on "
+"irc.libera.chat, channel #btrfs."
+
+#. type: Plain text
+#: wiki.adoc:74
+msgid ""
+"In particular, avoid using \"btrfs filesystem defrag\" and especially not "
+"\"btrfs check --repair\"."
+msgstr ""
+"In particular, avoid using \"btrfs filesystem defrag\" and especially not "
+"\"btrfs check --repair\"."
+
+#. type: Plain text
+#: wiki.adoc:75
+msgid ""
+"Before using a command, carefully read the corresponding man page (starting "
+"with \"man btrtfs\" which lists the others)."
+msgstr ""
+"Before using a command, carefully read the corresponding man page (starting "
+"with \"man btrtfs\" which lists the others)."
+
+#. type: Plain text
+#: wiki.adoc:76
+msgid ""
+"As with any file system: make regular backups! This is usually the only way "
+"to recover your data in the event of hardware failure."
+msgstr ""
+"As with any file system: make regular backups! This is usually the only way "
+"to recover your data in the event of hardware failure."
+
+#. type: Plain text
+#: wiki.adoc:78
+msgid "For further:"
+msgstr "For further:"
+
+#. type: Plain text
+#: wiki.adoc:80
+msgid "The Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
+msgstr "The Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
+
+#. type: Plain text
+#: wiki.adoc:81
+msgid "The official documentation: https://btrfs.readthedocs.io/en/latest/"
+msgstr "The official documentation: https://btrfs.readthedocs.io/en/latest/"
+
+#. type: Plain text
+#: wiki.adoc:82
+msgid "Questions, problems: on irc.libera.chat channel #btrfs"
+msgstr "Questions, problems: on irc.libera.chat channel #btrfs"
