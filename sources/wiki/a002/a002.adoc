@@ -1,4 +1,18 @@
 == Customize a Slint system layout
 
-Dans cet article, nous rappelons la manière dont l'installateur de Slint organise les répertoires de base du système (leur disposition), et comment les adapter ou personnaliser après installation.
+Dans cet article, nous rappelons la manière dont l'installateur de Slint organise les répertoires de base du système (leur disposition), et indiquons comment les personnaliser cette disposition après installation. Le processus d'installation est détallé dans le chapitre 2: Installation du manuel Slint. 
+
+Initialement le système est installé dans une seule partition, (cependant en mode "partitionnement automatique" l'installateur propose, si la place disponible est suffisante, d'en créer une autre sur le même périphérique ou disque pour y stocker des données ne faisant pas partie du coeur du système).
+
+Dans les deux modes de partitionnement (automatique et manuel), après avoir défini la partition système, l'installateur liste les autres partitions déjà formatées de type Linux ou Windows trouvées sur tous les supports accessibles durant l'installation. Pour chacune d'elles il propose à l'utilisateur de définir un point de montage, qui sera le nom du répertoire associé. Ce nom ne doit pas être celui d'un des répertoires constituant le coeur du système, listés ci-dessous:
+
+bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Tous ces répertoires doivent être montés dès le démarrage du système pour qu'il fonctionne correctement, et par souci de simplicité l'installateur les configure tous dans la même partition.
+
+Note: dans le cas d'un système de fichier btrfs, /home est monté comme un sous volume mais pas installé dans une partition distincte, comme indiqué dans l'article Slint ace BTRFS de de WiKi.
+
+Vous pouvez souhaiter utiliser des partitions sur un autre périphérique que celui ou le coeur du système a été installé, notamment pour y stocker des fichiers très volumineux. Par exemple si l'ordinateur est équipé d'un périphérique rapide (SSD ou NVMe) et aussi d'un disque dur, plus lent mais de plus grande capacité, vous pouvez souhaiter les fichiers les plus volumineux dans le disque dur.
+
+Vous pouvez aussi souhaiter partager avec un autre système des fichiers habituellement stockés dans /home quand un environnement graphique est utilisé, comme des images, des documents divers, des fichiers audio ou vidéo.
 

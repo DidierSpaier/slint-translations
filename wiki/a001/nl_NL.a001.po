@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
-"POT-Creation-Date: 2023-02-28 11:36+0100\n"
-"PO-Revision-Date: 2023-03-07 20:27\n"
+"POT-Creation-Date: 2023-03-07 23:17+0100\n"
+"PO-Revision-Date: 2023-03-08 21:30\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -17,42 +17,44 @@ msgstr ""
 "X-Crowdin-File-ID: 115\n"
 
 #. type: Title ==
-#: wiki.adoc:1
+#: a001.adoc:1
+#, no-wrap
 msgid "Slint with BTRFS"
 msgstr "Slint met BTRFS"
 
 #. type: Plain text
-#: wiki.adoc:4
+#: a001.adoc:4
 msgid "In this article we outline the unique characteristics of the BTRFS file system and how a Slint system is configured at installation to take advantage of them."
 msgstr "In dit artikel schetsen we de unieke eigenschappen van het BTRFS bestandssysteem en hoe een Slint systeem tijdens de installatie wordt geconfigureerd om hiervan te profiteren."
 
 #. type: Plain text
-#: wiki.adoc:6
+#: a001.adoc:6
 msgid "In order not to overload this document with definitions, we refer the reader to the https://slint.fr/en/HandBook.html#_glossary[glossary] included in the Slint Manual and more specifically for btrfs \"jargon\" to the https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] included in its documentation."
 msgstr "Om dit document niet te overladen met definities, verwijzen we de lezer naar https://slint.fr/en/HandBook.html#_glossary[glossary] opgenomen in de Slint Manual en specifiek voor btrfs \"jargon\" naar https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] opgenomen in de documentatie."
 
 #. type: Plain text
-#: wiki.adoc:8
+#: a001.adoc:8
 msgid "A BTRFS file system consists of a logical volume that can span multiple block devices (partitions or disks). Initially Slint is installed on a single partition."
 msgstr "Een BTRFS-bestandssysteem bestaat uit een logisch volume dat meerdere blokapparaten (partities of schijven) kan omvatten. Slint wordt in eerste instantie geïnstalleerd op een enkele partitie."
 
 #. type: Plain text
-#: wiki.adoc:10
+#: a001.adoc:10
 msgid "A subvolume is a subtree of files inside the volume, the root of which can be mounted as if it were an independent filesystem. However, the space allocated to a volume is also allocated to each of its sub-volumes: it is therefore not necessary to distribute it between the sub-volumes, as if they were in distinct partitions."
 msgstr "Een subvolume is een onderliggende structuur van bestanden in een volume, waarvan de root kan worden aangekoppeld alsof het een opzichzelfstaand bestandssysteem is. De aan een volume toegewezen ruimte wordt echter ook aan elk van de subvolumes toegewezen: het is daarom niet nodig deze apart aan alle subvolumes toe te wijzen alsof het afzonderlijke partities waren."
 
 #. type: Plain text
-#: wiki.adoc:12
+#: a001.adoc:12
 msgid "Subvolumes can be created at the same time as the volume (by the mkfs.btrfs command), but also added or deleted later using the btrfs tools."
 msgstr "Subvolumes kunnen op hetzelfde moment worden gemaakt als het volume (met de opdracht mkfs.btrfs), maar ook later worden toegevoegd of verwijderd met behulp van de btrfs tools."
 
 #. type: Plain text
-#: wiki.adoc:14
+#: a001.adoc:14
 msgid "As an example the commands below create the Slint \"system\" volume and its subvolumes, in case BTRFS is used. In the following $ROOTNAME is the name of the partition in which Slint will be installed and $SLINT the mount point of the system volume during installation."
 msgstr "Als voorbeeld maak je met onderstaande opdrachten het Slint \"systeem\"-volume en subvolumes in het geval dat BTRFS wordt gebruikt. Hierin is $ROOTNAME is de naam van de partitie waarin Slint wordt geïnstalleerd en $SLINT het aankoppelpunt van het systeemvolume tijdens de installatie."
 
-#. type: delimited block - 4
-#: wiki.adoc:26
+#. type: delimited block -
+#: a001.adoc:26
+#, no-wrap
 msgid "mkdir /SLINT\n"
 "SLINT=\"/SLINT\"\n"
 "mkfs.btrfs -L root $ROOTNAME\n"
@@ -77,12 +79,13 @@ msgstr "mkdir /SLINT\n"
 "mkdir $SLINT/swap \n"
 
 #. type: Plain text
-#: wiki.adoc:28
+#: a001.adoc:28
 msgid "The $ROOTNAME partition (denoted by its UUID which we will call <uuid>) will then be mounted three times (once per subvolume) each time Slint is started, as indicated in the /etc/fstab file:"
 msgstr "De $ROOTNAME partitie (aangeduid met het UUID dat we <uuid>noemen) zal dan steeds als Slint wordt gestart drie keer (eenmaal per subvolume) worden aangekoppeld, zoals aangegeven in het bestand /etc/fstab:"
 
-#. type: delimited block - 4
-#: wiki.adoc:32
+#. type: delimited block -
+#: a001.adoc:32
+#, no-wrap
 msgid "UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
 "UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0\n"
 "UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 \n"
@@ -91,12 +94,13 @@ msgstr "UUID=<uuid> /btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
 "UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 \n"
 
 #. type: Plain text
-#: wiki.adoc:34
+#: a001.adoc:34
 msgid "Which gives for example (taken from the output of lsblk /dev/sda5):"
 msgstr "Dat geeft bijvoorbeeld (volgens de uitvoer van lsblk /dev/sda5):"
 
-#. type: delimited block - 4
-#: wiki.adoc:39
+#. type: delimited block -
+#: a001.adoc:39
+#, no-wrap
 msgid "Filesystem      Size  Used Avail Use% Mounted on\n"
 "/dev/sda5        50G   22G   28G  44% /\n"
 "/dev/sda5        50G   22G   28G  44% /home\n"
@@ -107,27 +111,29 @@ msgstr "Filesystem      Size  Used Avail Use% Mounted on\n"
 "/dev/sda5        50G   22G   28G  44% /swap\n"
 
 #. type: Plain text
-#: wiki.adoc:41
-msgid "We see that the space available for the volume (22G) is also available for each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount option means that all the files that will be stored will be compressed by the zstd utility with compression level 3. Thus the size of the system is approximately half that with the ext4 file system."
-msgstr "We zien dat de ruimte beschikbaar voor het volume (22G) ook beschikbaar is voor elk van de sub-volumes. Verder zien we dat met de optie \"compress_zstd: 3\" alle opgeslagen bestanden worden gecomprimeerd door de zstd utility met compressieniveau 3. Dus de grootte van het systeem is ongeveer de helft van een ext4-bestandssysteem."
+#: a001.adoc:41
+msgid "We see that the space available for the volume (28G) is also available for each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount option means that all the files that will be stored will be compressed by the zstd utility with compression level 3. Thus the size of the system is approximately half that with the ext4 file system."
+msgstr "We zien dat de ruimte beschikbaar voor het volume (28G) ook beschikbaar is voor elk van de subvolumes. Verder zien we dat met de aankoppel-optie \"compress_zstd:3\" alle opgeslagen bestanden worden gecomprimeerd door de zstd utility met compressieniveau 3. Dus de grootte van het systeem is ongeveer de helft van die van een ext4-bestandssysteem."
 
 #. type: Plain text
-#: wiki.adoc:43
+#: a001.adoc:43
 msgid "If we mount the device at the root of the volume (without mention of a subvolume), like this:"
 msgstr "Als we het apparaat aan de root van het volume aankoppelen (zonder vermelding van subvolume) zoals:"
 
-#. type: delimited block - 4
-#: wiki.adoc:45
+#. type: delimited block -
+#: a001.adoc:45
+#, no-wrap
 msgid "mount /dev/sda5 /mnt\n"
 msgstr "mount /dev/sda5 /mnt\n"
 
 #. type: Plain text
-#: wiki.adoc:47
+#: a001.adoc:47
 msgid "we see the subvolumes appear as subdirectories of /mnt:"
 msgstr "we zien dat de subvolumes worden weergegeven als subdirectory's van /mnt:"
 
-#. type: delimited block - 4
-#: wiki.adoc:52
+#. type: delimited block -
+#: a001.adoc:52
+#, no-wrap
 msgid "ls /mnt\n"
 "@ @home @swap\n"
 "ls /mnt/@home/didier\n"
@@ -138,92 +144,97 @@ msgstr "ls /mnt\n"
 "Desktop Documents GNUstep Images Templates Music Audience Downloads Videos \n"
 
 #. type: Plain text
-#: wiki.adoc:54
-msgid "Another remarkable feature of BTRFS is \"copy-on-write\". When a file is modified, a copy is made, and the modified parts are written to another location. Thus, the original version can coexist with the modified version, which makes it possible to take a snapshot of a subvolume and then be able to restore it to its state before modification."
-msgstr "Een ander opmerkelijke eigenschap van BTRFS is \"copy-on-write\". Als een bestand wordt gewijzigd, wordt hier een kopie van gemaakt en naar een andere locatie geschreven. Zo kan de originele versie naast de gewijzigde versie bestaan, waardoor het mogelijk is een snapshot van een subvolume te nemen zodat deze kan worden hersteld naar de staat van voor de wijziging."
+#: a001.adoc:54
+msgid "Another remarkable feature of BTRFS is \"copy-on-write\". When editing a file, modified parts are written to another location, the metadata (which record the location of all parts of the file) being updated. As long as the previous data are still referenced, they will stay untouched."
+msgstr "Een ander opmerkelijk kenmerk van BTRFS is \"copy-on-write\". Bij het bewerken van een bestand worden de wijzigingen naar een andere locatie geschreven, waarbij de metagegevens (die de locatie van alle delen van het bestand) worden bijgewerkt. Zolang er nog steeds naar de vorige gegevens wordt verwezen, blijven deze onaangeroerd."
 
 #. type: Plain text
-#: wiki.adoc:56
-msgid "Slint includes the utility `absm`, which allows to take snapshots of the subvolume @, allowing to return to a previous state of the system if an update goes wrong, by booting the system on this snapshot, selected in the GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
-msgstr "Slint bevat het hulpprogramma `absm`, waarmee snapshots van het subvolume @ kunnen worden gemaakt. Hierdoor wordt het mogelijk terug te keren naar een eerdere status van het systeem als er een update fout gaat, door het systeem met dit snapshot te starten, geselecteerd in het GRUB-opstartmenu. Voor informatie over het gebruik ervan typ je gewoon `absm` als root of via sudo."
+#: a001.adoc:56
+msgid "This makes it very easy to create snapshots of BTRFS subvolume: taking a new snapshot is \"free\", as it uses very few disk space: only the metadata of the snapshot are written, which stores the physical location of all parts of files in the subvolume, and this is done almost instantly. The space used by the snapshot will only grow when the original subvolume and the snapshot differ, as then the snapshot will retrieves data removed from the original. On the other hand data added to the original will not be included in he snapshot: in other words a modification of the original subvolume does not modify the snapshot."
+msgstr "Dit maakt het heel eenvoudig om snapshots van een BTRFS subvolume te maken: het maken van een nieuw snapshot is \"vrij\", omdat het heel weinig schijfruimte gebruikt: alleen de metadata - de fysieke locatie van alle delen van bestanden in het subvolume- wordt geschreven en gebeurt bijna direct. De ruimte die door het snapshot wordt gebruikt, zal alleen toenemen als het oorspronkelijke subvolume en het snapshot verschillen Dan zal de snapshot de gegevens ophalen die verwijderd zijn uit origineel. Aan de andere kant zullen de aan het origineel toegevoegde gegevens niet worden opgenomen in het snapshot: met andere woorden, een wijziging van het oorspronkelijke subvolume wijzigt het snapshot niet."
 
 #. type: Plain text
-#: wiki.adoc:58
+#: a001.adoc:58
+msgid "Slint includes the utility `absm`, which takes snapshots of the subvolume @, allowing to return to a previous state of the system if an update goes wrong, by booting the system on this snapshot, selected in the GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
+msgstr "Slint bevat het hulpprogramma `absm`, waarmee snapshots van het subvolume @ kunnen worden gemaakt. Hierdoor wordt het mogelijk terug te keren naar een eerdere status van het systeem als er een update fout gaat. Hiervoor start je het systeem met dit snapshot dat je selecteerd in het GRUB-opstartmenu. Voor informatie over het gebruik ervan typ je gewoon `absm` als root of via sudo."
+
+#. type: Plain text
+#: a001.adoc:60
 msgid "BTRFS also verifies the integrity of each file when it is opened using a checksum, making it unnecessary to check the file system at system startup. In addition, the \"btrfs scrub\" command verifies the integrity of all files, including those that are rarely read. By default, the utility `btrfsmaintenance` included in Slint runs \"btrtfs scrub\" once a week."
 msgstr "BTRFS controleert ook de integriteit van elk bestand wanneer het wordt geopend met een controlegetal, waardoor het niet nodig is om het bestandssysteem te controleren bij het opstarten van het systeem. Daarnaast controleert de opdracht \"btrfs scrub\" de integriteit van alle bestanden, met inbegrip van de bestanden die zelden worden gelezen. Standaard wordt door de utility `btrfsmaintenance`, die in Slint is opgenomen, een keer per week \"btrtfs scrub\" uitgevoerd."
 
 #. type: Plain text
-#: wiki.adoc:60
+#: a001.adoc:62
 msgid "`btrfsmaintenance` also triggers \"btrfs balance\" once a week by default. This command allows you to distribute the data between the devices if the file system extends over several, but also to reorganize the space used, in particular to free the unallocated space of the file system, which improves in particular the performance of BTRFS in the case of a hard disk. To know more about `btrfsmaintenance` read /usr/doc/btrfsmaintenance*/README.html"
 msgstr "`btrfsmaintenance` activeert ook eenmaal per week \"btrfs balance\". Deze opdracht verdeelt de gegevens over de apparaten als het bestandssysteem zich over meerdere apparaten uitstrekt, maar maakt ook de niet toegewezen ruimte van het bestandssysteem vrij wat met name in het geval van een harde schijf de prestaties van BTRFS verbetert. Lees /usr/doc/btrfsmaintenance*/README.html voor meer informatie over 'btrfsmaintenance`."
 
 #. type: Plain text
-#: wiki.adoc:62
+#: a001.adoc:64
 msgid "Other useful and BTRFS-compatible tools are included in Slint, all have a --help option and a man page:"
 msgstr "Andere nuttige en BTRFS-compatibele tools zijn opgenomen in Slint en hebben allemaal een -- help optie en een man page:"
 
 #. type: Plain text
-#: wiki.adoc:64
+#: a001.adoc:66
 msgid "`jdupes` detects duplicate files and allows you to take action accordingly, regardless of the file system used"
 msgstr "`jdupes` detecteert dubbele bestanden en stelt je ongeacht het gebruikte bestandssysteem in staat de vereiste actie te ondernemen"
 
 #. type: Plain text
-#: wiki.adoc:66
+#: a001.adoc:67
 msgid "`btdu` allows to know with precision the place occupied by the BTRFS sub-volumes and directories"
 msgstr "`btdu` maakt het mogelijk om met precisie de plaats van de BTRFS subvolumes en mappen te bepalen"
 
 #. type: Plain text
-#: wiki.adoc:68
+#: a001.adoc:68
 msgid "`restic` is a very versatile backup software that can be used for any file system."
 msgstr "'restic' is een veelzijdig backupprogramma dat voor elk bestandssysteem kan worden gebruikt."
 
 #. type: Plain text
-#: wiki.adoc:70
+#: a001.adoc:70
 msgid "Recommendations."
 msgstr "Aanbevelingen."
 
 #. type: Plain text
-#: wiki.adoc:72
+#: a001.adoc:72
 msgid "BTRFS needs room to breathe and reorganize. Always keep 10-20% free space."
 msgstr "BTRFS heeft ruimte nodig om te zijn werk te kunnen doen. Zorg altijd voor 10-20% vrije ruimte."
 
 #. type: Plain text
-#: wiki.adoc:73
+#: a001.adoc:73
 msgid "Some tool options included in the btrfs-tools package can be dangerous or counterproductive. Use only those whose effect you know perfectly well and if in doubt seek advice first, on the Slint mailing list or by IRC on irc.libera.chat, channel #btrfs."
 msgstr "Sommige tools in het btrfs-tools pakket kunnen gevaarlijk of contraproductief zijn. Gebruik alleen die programma's waarvan je de werking kent en kijk wanneer je hierover twijfelt op de Slint mailinglijst of op IRC op irc.libera.chat, kanaal #btrfs."
 
 #. type: Plain text
-#: wiki.adoc:74
+#: a001.adoc:74
 msgid "In particular, avoid using \"btrfs filesystem defrag\" and especially not \"btrfs check --repair\"."
 msgstr "Vermijd met name \"btrfs filesystem defrag\" en vooral niet \"btrfs check --repair\"."
 
 #. type: Plain text
-#: wiki.adoc:75
+#: a001.adoc:75
 msgid "Before using a command, carefully read the corresponding man page (starting with \"man btrtfs\" which lists the others)."
 msgstr "Lees voor het gebruik van een commando de bijbehorende man page zorgvuldig (te beginnen met \"man btrtfs\" die de anderen weergeeft)."
 
 #. type: Plain text
-#: wiki.adoc:76
+#: a001.adoc:76
 msgid "As with any file system: make regular backups! This is usually the only way to recover your data in the event of hardware failure."
 msgstr "Zoals met elk bestandssysteem: maak regelmatig back-ups! Dit is meestal de enige manier om je gegevens te herstellen in geval van een hardwarestoring."
 
 #. type: Plain text
-#: wiki.adoc:78
+#: a001.adoc:78
 msgid "For further:"
 msgstr "Verder:"
 
 #. type: Plain text
-#: wiki.adoc:80
+#: a001.adoc:80
 msgid "The Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
 msgstr "De Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
 
 #. type: Plain text
-#: wiki.adoc:81
+#: a001.adoc:81
 msgid "The official documentation: https://btrfs.readthedocs.io/en/latest/"
 msgstr "De officiële documentatie: https://btrfs.readthedocs.io/en/latest/"
 
 #. type: Plain text
-#: wiki.adoc:82
+#: a001.adoc:82
 msgid "Questions, problems: on irc.libera.chat channel #btrfs"
 msgstr "Vragen en problemen: op irc.libera.chat channel #btrfs"
 
