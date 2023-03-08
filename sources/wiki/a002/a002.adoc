@@ -1,0 +1,4 @@
+== Customize a Slint system layout
+
+Dans cet article, nous rappelons la manière dont l'installateur de Slint organise les répertoires de base du système (leur disposition), et comment les adapter ou personnaliser après installation.
+
