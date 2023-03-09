@@ -1,18 +1,56 @@
 == Customize a Slint system layout
 
+=== Introduction
+
 Dans cet article, nous rappelons la manière dont l'installateur de Slint organise les répertoires de base du système (leur disposition), et indiquons comment les personnaliser cette disposition après installation. Le processus d'installation est détallé dans le chapitre 2: Installation du manuel Slint. 
 
-Initialement le système est installé dans une seule partition, (cependant en mode "partitionnement automatique" l'installateur propose, si la place disponible est suffisante, d'en créer une autre sur le même périphérique ou disque pour y stocker des données ne faisant pas partie du coeur du système).
-
-Dans les deux modes de partitionnement (automatique et manuel), après avoir défini la partition système, l'installateur liste les autres partitions déjà formatées de type Linux ou Windows trouvées sur tous les supports accessibles durant l'installation. Pour chacune d'elles il propose à l'utilisateur de définir un point de montage, qui sera le nom du répertoire associé. Ce nom ne doit pas être celui d'un des répertoires constituant le coeur du système, listés ci-dessous:
-
+L'installateur place tous les répertoires listés ci-après, qui constituent le coeur du système, dans la même partition :
 bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
 
-Tous ces répertoires doivent être montés dès le démarrage du système pour qu'il fonctionne correctement, et par souci de simplicité l'installateur les configure tous dans la même partition.
+Si d'autres partitions déjà formatées sont accessibles durant l'installation, l'installateur propose qu'elles soient montées au démarrage du système, avec comme point de montage un nom de répertoires choisi par l'utilisateur hors de ceux constituant le coeur du système.
 
-Note: dans le cas d'un système de fichier btrfs, /home est monté comme un sous volume mais pas installé dans une partition distincte, comme indiqué dans l'article Slint ace BTRFS de de WiKi.
+En outre si le partitionnement automatique a été choisi l'installateur propose de créer sur la place restant disponible sur le périphérique sera installé une partition, et un point de montage également choisi par l'utilisateur hors coeur du système.
 
-Vous pouvez souhaiter utiliser des partitions sur un autre périphérique que celui ou le coeur du système a été installé, notamment pour y stocker des fichiers très volumineux. Par exemple si l'ordinateur est équipé d'un périphérique rapide (SSD ou NVMe) et aussi d'un disque dur, plus lent mais de plus grande capacité, vous pouvez souhaiter les fichiers les plus volumineux dans le disque dur.
+En somme, l'installateur:
+
+* place tous les répertoires constituant le coeur du système dans la même partition,
+* permet de configurer d'autre répertoires dans d'autres partitions y compris des partitions déjà formatées, situées dans d'autres périphériques que celui où le système sera installé.
+
+Cependant vous pouvez souhaiter installer des fichiers ou répertoire faisant partie du coeur du système, comme /home ou /usr/local, dans une autre partition que celui-ci, notamment parce que la place est limitées sur le périphérique où le système est installé. Par exemple si l'ordinateur est équipé d'un périphérique rapide (SSD ou NVMe) et aussi d'un disque dur, plus lent mais de plus grande capacité, vous pouvez souhaiter installer le système sur le SSD ou NVMe et les fichiers les plus volumineux sur le disque dur, notamment ceux peu fréquemment lus.
 
 Vous pouvez aussi souhaiter partager avec un autre système des fichiers habituellement stockés dans /home quand un environnement graphique est utilisé, comme des images, des documents divers, des fichiers audio ou vidéo.
+
+=== Guide pratique
+
+A titre d'exemple nous supposerons que vous souhaitez transférer sur un disque dur le répertoire /home, initialement installé sur un SSD ou NVMe, une fois le système installé.
+
+Il faut tout d'abord créer et formater la partition destinée à accueillir /home sur le disque dur:
+
+* Si pas déjà fait, créer une table de partitions, de type GPT et créer la partition en utilisant un des outils parted, gdisk, cgdisk ou gparted (tous inclus dans Slint), d'une taille  suffisante pour hénerger les fichiers qu'elle devra contenir.
+* Formater cette partition en utilisant un des types de fichier btrfs, ext4, ou xfs (commandes `mkfs.btrfs`, `mkfs.ext4` ou `mkfs.xfs`)
+
+Puis, copier le répertoire /home dans cette partition. 
+
+Sauf si la partition destinée à accueillir /home sur le disque dur existait avant l'installation (utilisée par exemple par un autre système déjà) il gaut vous pouvez sauter cette étape.
+
+Pour créer une partition sur le disque dur vous pouvez utiliser  
+
+Il faut pour cela, après installation de Slint :
+
+* créer si ce n'est déjà fait les partitions qui hébergeront les répertoires à transférer
+* formater ces partitions,
+* y créer les répertoires qui hébergeront les fichiers à transférer,
+* copier les données à transférer de l'ancien vers le nouvel emplacement et les liens symboliques nécessaires le cas échéant,
+* après vérification du bon fonctionnement, remplacer dans le fichier /etc/fstab les points de montage des anciens répertoires par ceux des nouveaux.
+
+
+
+
+
+
+
+
+
+
+
 

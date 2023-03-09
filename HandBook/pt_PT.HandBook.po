@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2023-02-25 22:05+0100\n"
-"PO-Revision-Date: 2023-03-08 21:30\n"
+"PO-Revision-Date: 2023-03-09 11:44\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -37,7 +37,7 @@ msgstr "Acerca do Slint"
 #. type: Plain text
 #: HandBook.adoc:15
 msgid "Slint is a https://en.wikipedia.org/wiki/Linux_distribution[Linux distribution], based on http://www.slackware.com/[Slackware], polyglot, easy to install, versatile, beginner friendly and accessible to the visually impaired."
-msgstr "O Slint é uma https://en.wikipedia.org/wiki/Linux_distribution[distribuição Linux], baseada no http://www.slackware.com/[Slackware], que é fácil de instalar, versátil, poliglota, amigável para iniciantes e acessível aos deficientes visuais."
+msgstr "O Slint é uma https://en.wikipedia.org/wiki/Linux_distribution[distribuição Linux], baseada no http://www.slackware.com/[Slackware], que é fácil de instalar, versátil, poliglota, amigável para iniciantes e acessível a invisuais."
 
 #. type: Plain text
 #: HandBook.adoc:17
