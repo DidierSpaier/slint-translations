@@ -2,55 +2,141 @@
 
 === Introduction
 
-Dans cet article, nous rappelons la manière dont l'installateur de Slint organise les répertoires de base du système (leur disposition), et indiquons comment les personnaliser cette disposition après installation. Le processus d'installation est détallé dans le chapitre 2: Installation du manuel Slint. 
+In this article, we review how the Slint installer organizes the system's basic directories (their layout), and show how to customize this layout after installation. The installation process is detailed in Chapter 2: Installation of the HandBook. 
 
-L'installateur place tous les répertoires listés ci-après, qui constituent le coeur du système, dans la même partition :
-bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+The installer places all the directories listed below, which constitute the core of the system, in the same partition:
 
-Si d'autres partitions déjà formatées sont accessibles durant l'installation, l'installateur propose qu'elles soient montées au démarrage du système, avec comme point de montage un nom de répertoires choisi par l'utilisateur hors de ceux constituant le coeur du système.
+ bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
 
-En outre si le partitionnement automatique a été choisi l'installateur propose de créer sur la place restant disponible sur le périphérique sera installé une partition, et un point de montage également choisi par l'utilisateur hors coeur du système.
+If other partitions already formatted are accessible during the installation, the installer proposes that they be mounted at system startup, with a directory name chosen by the user as mount point, except those listed above.
 
-En somme, l'installateur:
+Furthermore, if automatic partitioning has been chosen, the installer proposes to create an additional partition in the remaining space available on the device, with a mount point chosen by the user, also outside those listed above.
 
-* place tous les répertoires constituant le coeur du système dans la même partition,
-* permet de configurer d'autre répertoires dans d'autres partitions y compris des partitions déjà formatées, situées dans d'autres périphériques que celui où le système sera installé.
+In sum, the installer:
 
-Cependant vous pouvez souhaiter installer des fichiers ou répertoire faisant partie du coeur du système, comme /home ou /usr/local, dans une autre partition que celui-ci, notamment parce que la place est limitées sur le périphérique où le système est installé. Par exemple si l'ordinateur est équipé d'un périphérique rapide (SSD ou NVMe) et aussi d'un disque dur, plus lent mais de plus grande capacité, vous pouvez souhaiter installer le système sur le SSD ou NVMe et les fichiers les plus volumineux sur le disque dur, notamment ceux peu fréquemment lus.
+* places all directories constituting the core of the system in the same partition,
+* allows to set up other directories in other partitions, previously formatted.
 
-Vous pouvez aussi souhaiter partager avec un autre système des fichiers habituellement stockés dans /home quand un environnement graphique est utilisé, comme des images, des documents divers, des fichiers audio ou vidéo.
+However, you may want to install files or directories that are part of the core of the system such as /home in another partition, especially if space is limited on the device. For example, if the computer is equipped with a fast device (SSD or NVMe) and also with a slower but larger capacity hard disk, you might want to install the system on the SSD or NVMe and the larger files on the hard disk.
 
-=== Guide pratique
+You may also want to share large files usually stored in /home with another system, such as images, various documents, audio or video files.
 
-A titre d'exemple nous supposerons que vous souhaitez transférer sur un disque dur le répertoire /home, initialement installé sur un SSD ou NVMe, une fois le système installé.
+=== Practical guide
 
-Il faut tout d'abord créer et formater la partition destinée à accueillir /home sur le disque dur:
+As an example we show how to move /home to another device, with some variations.
 
-* Si pas déjà fait, créer une table de partitions, de type GPT et créer la partition en utilisant un des outils parted, gdisk, cgdisk ou gparted (tous inclus dans Slint), d'une taille  suffisante pour hénerger les fichiers qu'elle devra contenir.
-* Formater cette partition en utilisant un des types de fichier btrfs, ext4, ou xfs (commandes `mkfs.btrfs`, `mkfs.ext4` ou `mkfs.xfs`)
+==== Move /home entirely to another device 
 
-Puis, copier le répertoire /home dans cette partition. 
+We assume that you want to move the /home directory, initially installed on an SSD or NVMe, to a hard disk. This can be done right after installation or later. All the following is to be done as root. 
 
-Sauf si la partition destinée à accueillir /home sur le disque dur existait avant l'installation (utilisée par exemple par un autre système déjà) il gaut vous pouvez sauter cette étape.
+First, you need a formatted partition on the hard disk, named /dev/sdb1 below, to host /home:
 
-Pour créer une partition sur le disque dur vous pouvez utiliser  
+* Create if not already done on the hard disk the partition table (GPT type) and the partition using one of theses tools: parted, gdisk, cgdisk or gparted, all included in Slint, big enough for its intended use. 
+* Format this partition using one of the btrfs, ext4, or xfs file types (commands `mkfs.btrfs`, `mkfs.ext4` or `mkfs.xfs`)
 
-Il faut pour cela, après installation de Slint :
+To be able to copy the /home directory to this partition you need to mount it, for example on /mnt, with one of the following commands:
 
-* créer si ce n'est déjà fait les partitions qui hébergeront les répertoires à transférer
-* formater ces partitions,
-* y créer les répertoires qui hébergeront les fichiers à transférer,
-* copier les données à transférer de l'ancien vers le nouvel emplacement et les liens symboliques nécessaires le cas échéant,
-* après vérification du bon fonctionnement, remplacer dans le fichier /etc/fstab les points de montage des anciens répertoires par ceux des nouveaux.
+ mount /dev/sdb1 /mnt -o compress=zstd:3 # if /dev/sdb1 has been formatted with btrfs
+ mount /dev/sdb1 /mnt # if /dev/sdb1 was formatted with xfs or ext4
 
+Then copy the files, for example like this:
 
+ cp -a /home/* /mnt
 
+or like this:
 
+ rsync -aAXv /home/* /mnt
 
+Then, check that the copy has been done correctly:
 
+ diff -r /home /mnt
 
+Then modify the /etc/fstab file to mount /home on the new partition at the next boot.
 
+If the root file system is btrfs, /home is mounted as subvolume. In this case comment out the line in the file used to mount /home by inserting a # character at its beginning. For example edit this line (replace <uuid1> with the UUID value specified in /etc/fstab):
 
+ UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
 
+which becomes:
 
+ #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
 
+Then insert in the file a line to mount at boot time /home on the new partition. We will designate <uuid2> the value of its UUID, displayed by this command:
+
+ lsblk -lno uuid /dev/sdb1
+
+The line to insert in the /etc/fstab file depends on the chosen file system of /dev/sdb1.
+
+For btrfs:
+
+ UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0
+
+For ext4 or xfs:
+
+ UUID=<uuid2> /home ext4 noatime 1 2
+
+Then, reboot the machine. In case of problem, to go back:
+
+* Case occurring  uncomment the commented line in /etc/fstab (remove the # character at the beginning of the line)
+* Comment the new one (insert a # character at the beginning of the line)
+* Then reboot.
+
+Once the new partition has been checked for correct operation, the old one can be deleted. The way to do this depends on the file system configured by the installer. Once the machine is rebooted, make sure that /home is mounted on the new partition, for example with the command
+
+findmnt -o /source
+
+Then delete the old /home:
+
+* In case of btrfs type these commands (we assume that the system was installed in /dev/sda3):
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # this command initiates the recovery of the space occupied by the old /home 
+ btrfs filesystem sync # this command ends the recovery of the space occupied by the old /home
+ umount /mnt
+
+* In case of ext4 or xfs, we need that the new /home be not in use to remove the old one. So: 
++
+ First, reboot in text mode.
+ Login as root # Not as regular user, else we could not umount /home as it would be busy.
+ umount /home # This makes the previous /home accessible again.
+ rm -r /home/* # We delete the content of the previous /home but keep the directory.
+ mount /home # Now /dev/sdb1 is mounted as /home 
+
+==== Move only the largest files from /home to the hard disk
+
+In the example above the /home directory has been completely transferred from the SSD to the hard disk.
+
+It may be preferable to store only large files on the hard disk and to leave hidden directories and files on the SSD, which are subject to frequent writes, much faster on an SSD.
+
+To do this, you can name the mount point of the /dev/sdb1 partition `/data` in /etc/fstab, for example, then once this partition is mounted, copy the directories to be transferred from /home to /data, and finally replace these directories in /home with symbolic links to the directories in /data. For instance, once the /data directory is created and mounted on /dev/sdb1:
+
+ chown -R didier:users /data
+ mv /home/didier/Images /data
+ ln -s /data/Images /home/didier/Images
+
+This way of doing is to be adapted if the system is multi-user, for example by creating a subdirectory per user in /data.
+
+==== Move /home to the hard disk but store frequently changed files on the SSD 
+
+On the other hand it is possible to selectively store frequently changed files on the SSD, like those contained in ~/.mozilla, ~/.thunderbird or ~/.purple.
+
+For example, you can create a directory /data and a subdirectory /data/.thunderbird on the SSD, move ~/.thunderbird to it, and create a symbolic link /data/.thunderbird => ~/.thunderbird.
+
+If btrfs is used for the core system it is recommended to create a subvolume for /data with the following commands, before moving ~/.mozilla or ~/.thunderbird there, like this:
+
+ mount /dev/sda3 /mnt subvolid=0
+ btrfs subvolume create /mnt/@data
+ mkdir /data
+ umount /mnt
+
+Then insert a line in /etc/fstab to mount /data at system boot (<uuid1> is the UUID value of /dev/sda3):
+
+ UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Then reboot and type the following commands:
+
+  chown -R didier:users /data
+  mv /home/didier/.thunderbird /data
+  ln -s /data/.thunderbird ~/.thunderbird
