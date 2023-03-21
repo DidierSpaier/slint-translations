@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-12 14:55+0000\n"
-"PO-Revision-Date: 2023-03-14 22:07\n"
+"PO-Revision-Date: 2023-03-19 19:57\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -55,11 +55,11 @@ msgid "The machine booted in EFI mode but we did not find a potential root parti
 "mode is not possible."
 msgstr "De machine is opgestart in EFI-modus maar we hebben geen beschikbare\n"
 "root-partitie met een EFI systeem-partitie op dezelfde schijf gevonden\n"
-"waardoor handmatig partitioneren niet mogelijk is."
+"zodat handmatig partitioneren niet mogelijk is."
 
 # File: functions, line: 75
 msgid "Press Enter to go back to the menu "
-msgstr "Druk op Enter om terug te keren naar het menu "
+msgstr "Druk op Enter om naar het menu terug te keren "
 
 # File: functions, line: 78
 msgid "Welcome back to the menu of the Slint installer.\n\n"
@@ -106,14 +106,14 @@ msgstr "In handmatige partitioneringsmodus partitioneer en formatteer je naar\n"
 # File: functions, line: 136
 msgid "In auto mode the installer do it for you, but chooses the\n"
 "partition layout and the file system."
-msgstr "In automatische modus doet het installatieprogramma het voor je\n"
+msgstr "In automatische modus doet het installatieprogramma dit voor je\n"
 "en bepaalt dan ook de partitie lay-out en het bestandssysteem."
 
 # File: functions, line: 139
 msgid "In both modes you will be given a chance to indicate existing\n"
 "partitions (not needed by Slint) that you want to access from Slint."
 msgstr "In beide modi krijg je de kans om bestaande partities\n"
-"(buiten die benodigd voor Slint) aan te geven die je vanuit Slint\n"
+"(buiten die benodigd zijn voor Slint) aan te geven die je vanuit Slint\n"
 "wilt kunnen benaderen."
 
 # File: functions, line: 142
