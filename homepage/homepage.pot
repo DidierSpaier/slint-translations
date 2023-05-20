@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-11-10 21:24+0000\n"
+"POT-Creation-Date: 2023-05-18 10:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,9 +25,9 @@ msgstr ""
 #. type: Plain text
 #: homepage.adoc:5
 msgid ""
-"Slint is an easy-to-use, versatile, blind-friendly Linux distribution for "
-"64-bit computers. Slint is based on Slackware and borrows tools from "
-"Salix. Maintainer: Didier Spaier."
+"Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-"
+"bit computers. Slint is based on Slackware and borrows tools from Salix. "
+"Maintainer: Didier Spaier."
 msgstr ""
 
 #. type: Title ===
@@ -46,9 +46,10 @@ msgstr ""
 #. type: Plain text
 #: homepage.adoc:11
 msgid ""
-"The included software, among which the MATÉ and LXQt desktops, cover most "
-"needs. Many others are available in repositories maintained by Salix and "
-"Slackware that are fully compatible with Slint."
+"The included software, among which the MATÉ and LXQt desktops (with XFCE "
+"installed on-demand), cover most needs. Many others are available in "
+"repositories maintained by Salix and Slackware that are fully compatible "
+"with Slint."
 msgstr ""
 
 #. type: Plain text
@@ -76,8 +77,7 @@ msgstr ""
 #. type: Plain text
 #: homepage.adoc:19
 msgid ""
-"By default, a compressed swap space in RAM allows doubling the usable "
-"memory."
+"By default, a compressed swap space in RAM allows doubling the usable memory."
 msgstr ""
 
 #. type: Plain text
@@ -90,8 +90,8 @@ msgstr ""
 #. type: Plain text
 #: homepage.adoc:23
 msgid ""
-"If installed on USB media Slint is portable from one computer to "
-"another. The media can be fully encrypted."
+"If installed on USB media Slint is portable from one computer to another. "
+"The media can be fully encrypted."
 msgstr ""
 
 #. type: Title ===
@@ -118,7 +118,8 @@ msgstr ""
 
 #. type: Plain text
 #: homepage.adoc:31
-msgid "Automatic: The file system is then btrfs and the media dedicated to Slint."
+msgid ""
+"Automatic: The file system is then btrfs and the media dedicated to Slint."
 msgstr ""
 
 #. type: Plain text
@@ -132,30 +133,103 @@ msgstr ""
 #. type: Title ===
 #: homepage.adoc:34
 #, no-wrap
-msgid "Acknowledgements"
+msgid "Links"
 msgstr ""
 
 #. type: Plain text
-#: homepage.adoc:40
-#, no-wrap
-msgid ""
-"Thanks to the translators of Slint and other contributors, to George "
-"Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, "
-"to slackware.uk for hosting our files. You can help fund them:\n"
-"https://www.patreon.com/slackwarelinux[Become a Slackware patron] or "
-"https://paypal.me/volkerdi[Support Slackware]\n"
-"Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this "
-"page] to support Slackware UK\n"
-"https://salixos.org/donations.html[Donations to Salix]"
+#: homepage.adoc:37
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]"
 msgstr ""
 
-#. type: Title ===
+#. type: Plain text
+#: homepage.adoc:39
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]"
+msgstr ""
+
+#. type: Plain text
 #: homepage.adoc:41
-#, no-wrap
-msgid "Latest news"
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]"
 msgstr ""
 
 #. type: Plain text
 #: homepage.adoc:43
-msgid "Slint 15.0 is officially released!"
+msgid ""
+"http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in "
+"the ISO]"
+msgstr ""
+
+#. type: Plain text
+#: homepage.adoc:45
+msgid ""
+"http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable "
+"on demand]"
+msgstr ""
+
+#. type: Plain text
+#: homepage.adoc:47
+msgid "link:../old/index.html[Archived old website]"
+msgstr ""
+
+#. type: Plain text
+#: homepage.adoc:49
+msgid "link:../en/oldHandBook.html[Documentation 14.2.1]"
+msgstr ""
+
+#. type: Title ===
+#: homepage.adoc:50
+#, no-wrap
+msgid "Pictures of lightDM and the main desktops in Slint "
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:53 homepage.adoc:54
+#, no-wrap
+msgid "lightDM"
+msgstr ""
+
+#. type: Target for macro image
+#: homepage.adoc:54
+#, no-wrap
+msgid "../doc/lightdm.png"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:57 homepage.adoc:58
+#, no-wrap
+msgid "LXQt"
+msgstr ""
+
+#. type: Target for macro image
+#: homepage.adoc:58
+#, no-wrap
+msgid "../doc/lxqt.png"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:61 homepage.adoc:62
+#, no-wrap
+msgid "MATE"
+msgstr ""
+
+#. type: Target for macro image
+#: homepage.adoc:62
+#, no-wrap
+msgid "../doc/mate.png"
+msgstr ""
+
+#. type: Plain text
+#: homepage.adoc:65
+msgid "XFCE (installed on demand)"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:66
+#, no-wrap
+msgid "XFCE"
+msgstr ""
+
+#. type: Target for macro image
+#: homepage.adoc:66
+#, no-wrap
+msgid "../doc/xfce.png"
 msgstr ""

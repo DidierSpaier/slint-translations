@@ -1,0 +1,78 @@
+
+[.debut]
+== News
+
+=== 16 May 2023: A new ISO is available (yes, again!)
+
+This new ISO is provided mainly to fix the bug described in https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3].
+
+Other fixes and enhancements:
+
+* The user who refuses the proposed (through geoIP) time zone is given the choice to select another one or keep the default one (UTC), as if none were proposed.
+
+* The EFI boot loader grub.x64.efi is installed in /boot/efi/EFI/slint-$SLINTVERSION, currently /boot/efi/EFI/slint-15.0, to help select the boot entry if several versions are installed. 
+
+In case of manual partitioning:
+
+* If the machine booted the installer in Legacy mode GRUB is also installed in EFI mode if an EFI System Partition (ESP) is found on the drive of the root partition.
+
+* If the machine booted the installer in EFI mode GRUB is also installed in Legacy mode unless the root partition be in a drive with a GUID partition table (GPT) but with no BIOS boot partition.
+
+Thus, in most cases the installed system will be able to boot in both EFI and Legacy modes in manual as in auto partitioning modes.
+
+=== 10 May 2023: A new Slint ISO is available
+
+* The lightweight i3 desktop is added as well as the I38 utility which make it fully accessible with a screen reader, just running the i38 command after installation, thanks to Storm Dragon.
+
+* The repository  https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] is enabled by default, allowing to install a fully configured and featured xfce-4.18 desktop just typing `+slapt-get --install-set xfce+`, thanks to George Vlahavas.
+
+* In `manual` partitioning mode it is no more required to include a BIOS Boot partition in a GUID partition table (GPT) if the machine booted in EFI mode, nor an EFI System partition if the machine booted in Legacy mode. 
+
+* In `auto` partitioning mode it is now allowed to put the /home directory in dedicated partition, only if it is in another drive than the one hosting the main partition mounted as /. 
+
+* The user is allowed to select an existing partition for /home, possibly to continue using an existing one.
+
+* If /home is in an already formatted partition (in case the user wants to continue using an existing one), the installer will offer to keep its content or re-format it, as with any other linux partition except the main one mounted as /.
+
+* All main desktops (MATE, LXQt, Xfce) as the lightDM greeting screen have the same background "clouds in a blue sky".
+
+* A lot of packages have been added, upgraded or fixed since the release of the previous ISO, some of the added ones included in the ISO,among which: compsize, confuse, fim, gpart, nushell, Qogir-icon-theme, qogir-theme, salix-xfwm4-theme, rust, testdisk, others available in the /extra repository: calibre, emacs-nativecomp, libgccjit, notmuch, soft.
+
+* The boot menu of the installed system include a menu entry to access the firmware's setup in EFI mode.
+
+* If GRUB is installed it is now possible to boot the installation ISO stored in an internal disk's partition: no need to write this ISO on a DVD or USB stick in this case. To do so, edit the file /etc/grub.d/40_custom so it contains:
+....
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries. Simply type the
+# menu entries you want to add after this comment. Be careful not to change
+# the 'exec tail' line above.
+    menuentry 'Slint ISO 15.0-3' {
+    insmod part_gpt
+    insmod part_msdos
+    search --no-floppy --fs-uuid --set=root <UUID>
+    set isofile='slint64-15.0-3.iso'
+    loopback loop /repo/x86_64/slint-15.0/iso/$isofile
+    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0
+    initrd (loop)/initrd
+    }
+....
+Just replace <UUID> by the UUID of the partition where the ISO is stored. For instance if the ISO is in /dev/sda3, this command will output this UUID: `lsblk -lno uuid /dev/sda3`. Also replace `/repo/x86_64/slint-15.0/iso/` by the path to the ISO file. After that, run grub-mkconfig or update-grub so that this boot entry be included in grub.cfg. The installer will tell you it can't find the ISO and how to mount it if it is in an internal disk's partition.
+
+==== Pictures of lightDM and the main desktops in Slint 
+
+lightDM
+
+image::../doc/lightdm.png[lightDM]
+
+LXQt
+
+image::../doc/lxqt.png[LXQt]
+
+MATE
+
+image::../doc/mate.png[MATE]
+
+XFCE (installed on demand)
+
+image::../doc/xfce.png[XFCE]

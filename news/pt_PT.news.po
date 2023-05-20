@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2023-05-18 12:03+0200\n"
+"PO-Revision-Date: 2023-05-18 15:32\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /news/news.pot\n"
+"X-Crowdin-File-ID: 123\n"
+
+#. type: Title ==
+#: news.adoc:3
+#, no-wrap
+msgid "News"
+msgstr "Notícias"
+
+#. type: Title ===
+#: news.adoc:5
+#, no-wrap
+msgid "16 May 2023: A new ISO is available (yes, again!)"
+msgstr "16 de maio de 2023: Uma nova ISO está disponível (sim, novamente!)"
+
+#. type: Plain text
+#: news.adoc:8
+msgid "This new ISO is provided mainly to fix the bug described in https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3]."
+msgstr "Esta nova ISO é fornecida principalmente para corrigir o erro descrito em https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3]."
+
+#. type: Plain text
+#: news.adoc:10
+msgid "Other fixes and enhancements:"
+msgstr "Outras correções e melhorias:"
+
+#. type: Plain text
+#: news.adoc:12
+msgid "The user who refuses the proposed (through geoIP) time zone is given the choice to select another one or keep the default one (UTC), as if none were proposed."
+msgstr "O utilizador que recusar o fuso horário proposto (através do geoIP) tem a possibilidade de escolher outro ou manter o fuso horário predefinido (UTC), como se não tivesse sido proposto nenhum."
+
+#. type: Plain text
+#: news.adoc:14
+msgid "The EFI boot loader grub.x64.efi is installed in /boot/efi/EFI/slint-$SLINTVERSION, currently /boot/efi/EFI/slint-15.0, to help select the boot entry if several versions are installed."
+msgstr "O carregador de arranque EFI grub.x64.efi está instalado em /boot/efi/EFI/slint-$SLINTVERSION, atualmente /boot/efi/EFI/slint-15.0, para ajudar a selecionar a entrada de arranque se estiverem instaladas várias versões."
+
+#. type: Plain text
+#: news.adoc:16
+msgid "In case of manual partitioning:"
+msgstr "No caso de particionamento manual:"
+
+#. type: Plain text
+#: news.adoc:18
+msgid "If the machine booted the installer in Legacy mode GRUB is also installed in EFI mode if an EFI System Partition (ESP) is found on the drive of the root partition."
+msgstr "Se a máquina arrancar com o instalador no modo Legacy o GRUB também é instalado no modo EFI se uma Partição de Sistema EFI (ESP) for encontrada na unidade da partição root."
+
+#. type: Plain text
+#: news.adoc:20
+msgid "If the machine booted the installer in EFI mode GRUB is also installed in Legacy mode unless the root partition be in a drive with a GUID partition table (GPT) but with no BIOS boot partition."
+msgstr "Se a máquina arrancar com o instalador no modo EFI o GRUB também é instalado no modo Legacy a não ser que a partição root esteja numa unidade com uma tabela de partições GUID (GPT) mas sem uma partição de arranque BIOS."
+
+#. type: Plain text
+#: news.adoc:22
+msgid "Thus, in most cases the installed system will be able to boot in both EFI and Legacy modes in manual as in auto partitioning modes."
+msgstr "Assim, na maioria dos casos, o sistema instalado será capaz de arrancar em ambos os modos EFI e Legacy nos modos de particionamento manual e automático."
+
+#. type: Title ===
+#: news.adoc:23
+#, no-wrap
+msgid "10 May 2023: A new Slint ISO is available"
+msgstr "10 de Maio de 2023: Uma nova ISO do Slint está disponível"
+
+#. type: Plain text
+#: news.adoc:26
+msgid "The lightweight i3 desktop is added as well as the I38 utility which make it fully accessible with a screen reader, just running the i38 command after installation, thanks to Storm Dragon."
+msgstr "O gestor de janelas i3 foi adicionado, bem como o utilitário I38, que o torna totalmente acessível com um leitor de ecrã, bastando executar o comando i38 após a instalação, graças ao Storm Dragon."
+
+#. type: Plain text
+#: news.adoc:28
+msgid "The repository https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] is enabled by default, allowing to install a fully configured and featured xfce-4.18 desktop just typing `+slapt-get --install-set xfce+`, thanks to George Vlahavas."
+msgstr "O repositório https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] está ativado por padrão, permitindo a instalação de um ambiente de trabalho xfce-4.18 totalmente configurado e repleto de funcionalidades, apenas introduzindo o comando `+slapt-get --install-set xfce+`, graças ao George Vlahavas."
+
+#. type: Plain text
+#: news.adoc:30
+msgid "In `manual` partitioning mode it is no more required to include a BIOS Boot partition in a GUID partition table (GPT) if the machine booted in EFI mode, nor an EFI System partition if the machine booted in Legacy mode."
+msgstr "No modo de particionamento `manual` já não é necessário incluir uma partição de arranque BIOS numa tabela de partições GUID (GPT) se a máquina arrancar em modo EFI, nem uma partição de sistema EFI se a máquina arrancar em modo Legacy."
+
+#. type: Plain text
+#: news.adoc:32
+msgid "In `auto` partitioning mode it is now allowed to put the /home directory in dedicated partition, only if it is in another drive than the one hosting the main partition mounted as /."
+msgstr "No modo de particionamento `auto` agora é permitido colocar o diretório /home numa partição dedicada, somente se a mesma estiver noutra unidade que não a que aloja a partição principal montada como /."
+
+#. type: Plain text
+#: news.adoc:34
+msgid "The user is allowed to select an existing partition for /home, possibly to continue using an existing one."
+msgstr "O utilizador tem permissão para selecionar uma partição existente para a /home, possivelmente para continuar a utilizar uma partição existente."
+
+#. type: Plain text
+#: news.adoc:36
+msgid "If /home is in an already formatted partition (in case the user wants to continue using an existing one), the installer will offer to keep its content or re-format it, as with any other linux partition except the main one mounted as /."
+msgstr "Se a /home está numa partição já formatada (no caso do utilizador querer continuar a utilizar uma existente), o instalador irá oferecer-se para manter o seu conteúdo ou reformatá-la, como com qualquer outra partição linux excepto a principal montada como /."
+
+#. type: Plain text
+#: news.adoc:38
+msgid "All main desktops (MATE, LXQt, Xfce) as the lightDM greeting screen have the same background \"clouds in a blue sky\"."
+msgstr "Todos os ambientes de trabalho principais (MATE, LXQt, Xfce), tal como o ecrã de saudação lightDM, têm o mesmo fundo \"nuvens num céu azul\"."
+
+#. type: Plain text
+#: news.adoc:40
+msgid "A lot of packages have been added, upgraded or fixed since the release of the previous ISO, some of the added ones included in the ISO,among which: compsize, confuse, fim, gpart, nushell, Qogir-icon-theme, qogir-theme, salix-xfwm4-theme, rust, testdisk, others available in the /extra repository: calibre, emacs-nativecomp, libgccjit, notmuch, soft."
+msgstr "Muitos pacotes foram adicionados, atualizados ou corrigidos desde o lançamento da ISO anterior, alguns dos adicionados incluídos na ISO, entre os quais: compsize, confuse, fim, gpart, nushell, Qogir-icon-theme, qogir-theme, salix-xfwm4-theme, rust, testdisk, outros disponíveis no repositório /extra: calibre, emacs-nativecomp, libgccjit, notmuch, soft."
+
+#. type: Plain text
+#: news.adoc:42
+msgid "The boot menu of the installed system include a menu entry to access the firmware's setup in EFI mode."
+msgstr "O menu de arranque do sistema instalado inclui uma entrada de menu para aceder à configuração do firmware no modo EFI."
+
+#. type: Plain text
+#: news.adoc:44
+msgid "If GRUB is installed it is now possible to boot the installation ISO stored in an internal disk's partition: no need to write this ISO on a DVD or USB stick in this case. To do so, edit the file /etc/grub.d/40_custom so it contains:"
+msgstr "Se o GRUB estiver instalado, é agora possível arrancar a ISO de instalação armazenada numa partição do disco interno: neste caso, não é necessário gravar esta ISO num DVD ou numa pen USB. Para o fazer, edite o ficheiro /etc/grub.d/40_custom de modo a que contenha:"
+
+#. type: delimited block .
+#: news.adoc:59
+#, no-wrap
+msgid "#!/bin/sh\n"
+"exec tail -n +3 $0\n"
+"# This file provides an easy way to add custom menu entries. Simply type the\n"
+"# menu entries you want to add after this comment. Be careful not to change\n"
+"# the 'exec tail' line above.\n"
+"    menuentry 'Slint ISO 15.0-3' {\n"
+"    insmod part_gpt\n"
+"    insmod part_msdos\n"
+"    search --no-floppy --fs-uuid --set=root <UUID>\n"
+"    set isofile='slint64-15.0-3.iso'\n"
+"    loopback loop /repo/x86_64/slint-15.0/iso/$isofile\n"
+"    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0\n"
+"    initrd (loop)/initrd\n"
+"    }\n"
+msgstr "#!/bin/sh\n"
+"exec tail -n +3 $0\n"
+"# Este ficheiro fornece uma forma fácil de adicionar entradas de menu personalizadas.\n"
+"# Basta escrever as entradas de menu que deseja adicionar após este comentário.\n"
+"# Tenha cuidado para não alterar a linha 'exec tail' acima.\n"
+"    menuentry 'Slint ISO 15.0-3' {\n"
+"    insmod part_gpt\n"
+"    insmod part_msdos\n"
+"    search --no-floppy --fs-uuid --set=root <UUID>\n"
+"    set isofile='slint64-15.0-3.iso'\n"
+"    loopback loop /repo/x86_64/slint-15.0/iso/$isofile\n"
+"    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0\n"
+"    initrd (loop)/initrd\n"
+"    }\n"
+
+#. type: Plain text
+#: news.adoc:61
+msgid "Just replace <UUID> by the UUID of the partition where the ISO is stored. For instance if the ISO is in /dev/sda3, this command will output this UUID: `lsblk -lno uuid /dev/sda3`. Also replace `/repo/x86_64/slint-15.0/iso/` by the path to the ISO file. After that, run grub-mkconfig or update-grub so that this boot entry be included in grub.cfg. The installer will tell you it can't find the ISO and how to mount it if it is in an internal disk's partition."
+msgstr "Basta substituir o <UUID> pelo UUID da partição onde a ISO está armazenada. Por exemplo, se a ISO está em /dev/sda3, este comando irá mostrar este UUID: `lsblk -lno uuid /dev/sda3`. Substituir também o `/repo/x86_64/slint-15.0/iso/` pelo caminho para o ficheiro ISO. Depois disso, execute grub-mkconfig ou update-grub para que essa entrada de arranque seja incluída no grub.cfg. O instalador dir-lhe-á que não consegue encontrar a ISO e como montá-la se estiver numa partição do disco interno."
+
+#. type: Title ====
+#: news.adoc:62
+#, no-wrap
+msgid "Pictures of lightDM and the main desktops in Slint "
+msgstr "Imagens do lightDM e dos principais ambientes de trabalho no Slint "
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: news.adoc:65 news.adoc:66
+#, no-wrap
+msgid "lightDM"
+msgstr "lightDM"
+
+#. type: Target for macro image
+#: news.adoc:66
+#, no-wrap
+msgid "../doc/lightdm.png"
+msgstr "../doc/lightdm.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: news.adoc:69 news.adoc:70
+#, no-wrap
+msgid "LXQt"
+msgstr "LXQt"
+
+#. type: Target for macro image
+#: news.adoc:70
+#, no-wrap
+msgid "../doc/lxqt.png"
+msgstr "../doc/lxqt.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: news.adoc:73 news.adoc:74
+#, no-wrap
+msgid "MATE"
+msgstr "MATE"
+
+#. type: Target for macro image
+#: news.adoc:74
+#, no-wrap
+msgid "../doc/mate.png"
+msgstr "../doc/mate.png"
+
+#. type: Plain text
+#: news.adoc:77
+msgid "XFCE (installed on demand)"
+msgstr "XFCE (instalado a pedido)"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: news.adoc:78
+#, no-wrap
+msgid "XFCE"
+msgstr "XFCE"
+
+#. type: Target for macro image
+#: news.adoc:78
+#, no-wrap
+msgid "../doc/xfce.png"
+msgstr "../doc/xfce.png"
+

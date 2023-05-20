@@ -28,7 +28,7 @@ fi
 	export ACCESSIBILITY_ENABLED=1 # for Chrome/Chromium
 	EOF
 if [ -f ~/.config/autostart/startorca.desktop ]; then
-    (cd ~/.config/autostart/ ||
+    (cd ~/.config/autostart/ || exit 1
     sed -i "s/Hidden.*/Hidden=false/" startorca.desktop
     )
     gsettings set org.mate.interface accessibility true 2>/dev/null

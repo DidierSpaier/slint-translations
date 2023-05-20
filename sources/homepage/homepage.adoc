@@ -7,7 +7,7 @@ Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit
 
 * Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis.
 
-* The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint.
+* The included software, among which the MATÉ and LXQt desktops (with XFCE installed on-demand), cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint.
 
 * Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them.
 
@@ -31,13 +31,36 @@ The installation program, in text mode, is fully accessible for blind people usi
 
 The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks.
 
-=== Acknowledgements
+=== Links
 
-Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them: +
-https://www.patreon.com/slackwarelinux[Become a Slackware patron] or https://paypal.me/volkerdi[Support Slackware] +
-Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK +
-https://salixos.org/donations.html[Donations to Salix]
+* http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]
 
-=== Latest news
+* http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]
 
-Slint 15.0 is officially released!
+* http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in the ISO]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable on demand]
+
+* link:../old/index.html[Archived old website]
+
+* link:../en/oldHandBook.html[Documentation 14.2.1]
+
+=== Pictures of lightDM and the main desktops in Slint 
+
+lightDM
+
+image::../doc/lightdm.png[lightDM]
+
+LXQt
+
+image::../doc/lxqt.png[LXQt]
+
+MATE
+
+image::../doc/mate.png[MATE]
+
+XFCE (installed on demand)
+
+image::../doc/xfce.png[XFCE]

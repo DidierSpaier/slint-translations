@@ -109,7 +109,7 @@ The current Slint version can be installed on computers meeting these requiremen
 
 * Architecture: x86_64 (64-bit CPU), also known as AMD64
 * In Auto partitioning mode a disk drive of size at least 50G
-* In Manual partitioning mode a partition of type Linux of size at least 50G, an EFI system partition and a BIOS boot partition on the same disk drive.
+* In Manual partitioning mode a partition of type Linux of size at least 50G, an EFI system partition and/or a BIOS boot partition on the same disk drive. The EFI partition is mandatory if the machine boots in EFI mode, the BIOS boot partition if the machine boots in Legacy mode, having both is better to allow swictching between EFI and Legacy modes.
 * Slint can be installed on these kinds of drives: hard drives, SSD, NVME, eMMC, USB sticks, SD cards (preferably in USB enclosures).
 * RAM: at least 2G
 * a DVD drive or an USB slot available, with ability of the firmware to boot a DVD or USB stick. A blank DVD or a 5G or more USB stick can be used as installation media
@@ -167,6 +167,13 @@ Else, redo the downloads.
 
 You can use either a DVD or an USB stick as installation media.
 
+[TIP]
+====
+You can just store the ISO image in the first partition of a Ventoy USB stick.
+
+In this case at the beginning of installation the installer will request that you mount this partition, then mount the ISO itself.
+====
+
 [[make_a_bootable_usb_stick]]
 ===== Make a Bootable USB Stick
 
@@ -217,7 +224,6 @@ On ++Microsoft Windows 7/8/10++ you can use the utility that is shipped with Mic
 Instructions not checked by the writer.
 ====
 
-
 // Prepare
 [[prepare_partitions_for_Slint]]
 ==== Optionally, prepare partitions for Slint
@@ -234,10 +240,12 @@ partition may be formatted or not, but in any case its content will be wiped out
 
 In addition the Manual partitioning mode require on the same drive as the root system partition:
 
-* A partition of type BIOS boot partition, of size at least 3M and not formatted.
-* A partition of type EFI system, with at least 32M free space in it, formatted with a 'fat' (or 'vfat') file system as required by the UEFI specification
+* A partition of type BIOS boot partition, of size at least 3M and not formatted if the machine boots in Legacy mode and the drive has a partition table of type GPT.
+* A partition of type EFI system, with at least 32M free space in it, formatted with a 'fat' (or 'vfat') file system as required by the UEFI specification if the machine boots in EFI mode
 
-Using for Slint existing partitions or creating them is up to the user. Already installed systems using the BIOS boot and the EFI partitions will not be affected, only the root partition will be (re)formatted.
+It is better to set up both partitions to allow switching between Legacy and EFI modes if the drive has a partition table of type GPT.
+
+Using for Slint existing partitions or creating them is up to the user. Already installed systems using the BIOS boot and the EFI partitions will not be affected, only the root partition will be (re)formatted, and an existing /home partition only if requested.
 
 The installer includes several partitioning applications: cfdisk, fdisk, sfdisk,
 cgdisk, gdisk, sgdisk, parted. The applications with "g" in their name can
@@ -330,7 +338,7 @@ or xfs as mentioned in <<prepare_partitions_for_Slint,Optionally prepare partiti
 If you choose 'auto' you are presented the drives where Slint could be
 installed (size at least 50G), and the file system will be of type btrfs.
 
-In case of btrfs; sub-volumes will created for / /home and /snapshots with files
+In case of btrfs sub-volumes will created for "/" and "/home" with files
 compressed, and /swap to host a swap file. 'Copy on write' will ease making snapshots and possibly revert a
 faulty system update. Tools to manage the snapshots are included in Slint.
 
@@ -686,7 +694,7 @@ typed as root.
 * To choose which services start at boot: servicesetup and gtkservicesetup.
 * To (re)configure the network: netsetup.
 * To choose to start in text or graphical mode and in the later case the graphical login manager: login-chooser
-* To choose a desktop among FVWM, LXQt, MATE and WindowMaker: session-chooser (as regular user)
+* To choose a desktop among FVWM, i3, LXQt, MATE and WindowMaker: session-chooser (as regular user)
 * To choose one of these desktops or one of the standalone window managers: xwmconfig (as regular user)
 * To display or not the applications specific to a desktop in other desktops: show-desktop or hide-desktop (as regular user)
 * To enable or not speech in graphical mode: orca-on or orca-off (as regular user)
@@ -757,13 +765,18 @@ We will now present the graphical environments, then how to use a shell.
 
 A full featured graphical environment includes several components, among which a window manager which draws windows on the screen associated with applications, move, re-size and close these windows.
 
-Slint includes several graphical environments: BlackBox, Fluxbox, FVWM, LXQt, MATE, ratpoison, TWM, and WindowMaker. It is a matter of preference which one you choose.
+Slint includes several graphical environments: BlackBox, Fluxbox, FVWM, i3, LXQt, MATE, TWM, and WindowMaker. It is a matter of preference which one you choose.
 
-LXQt and MATE are are full featured desktops, FVWM and WindowMaker offer unique features and can be selected with the graphical lightdm login as well and also started from a console typing "startx". The other ones are mainly window managers that can only be started from a console. All allow you to access your documents and applications, generally opened in a window. 
+LXQt MATE and XFCE are are full featured desktops, FVWM and WindowMaker offer unique features and can be selected with the graphical lightdm login as well and also started from a console typing "startx". The other ones are mainly window managers that can only be started from a console. All allow you to access your documents and applications, generally opened in a window. 
 
-You can choose among FVWM, LXQt, MATE and WindowMaker typing as regular user `session-chooser`. In Graphical mode you also can choose one when logging in.
+You can choose among FVWM, i3, LXQt, MATE and WindowMaker typing as regular user `session-chooser`. In Graphical mode you also can choose one when logging in.
 
-To choose one of the other graphical environments (BlackBox, Fluxbox, ratpoison, TWM) you need to use the command "xwmconfig".
+To choose one of the other graphical environments you need to use the command "xwmconfig".
+
+[NOTE]
+====
+if you want to use i3 and need speech we recommend that you login in text mode and run **i38** before **startx**.
+====
 
 We will now briefly describe the components of the Mate desktop, which is the default and is also the most accessible with speech and braille.
 

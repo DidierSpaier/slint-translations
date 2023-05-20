@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
-"POT-Creation-Date: 2022-11-10 21:24+0000\n"
-"PO-Revision-Date: 2023-03-19 19:57\n"
+"POT-Creation-Date: 2023-05-18 10:16+0200\n"
+"PO-Revision-Date: 2023-05-18 15:32\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -40,8 +40,8 @@ msgstr "O Slint é uma distribuição estável. No entanto, o software de acessi
 
 #. type: Plain text
 #: homepage.adoc:11
-msgid "The included software, among which the MATÉ and LXQt desktops, cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
-msgstr "O software incluído, entre os quais os ambientes de trabalho MATE e LXQt, cobrem a maioria das necessidades. Muitos outros estão disponíveis em repositórios mantidos pelo Salix e Slackware que são totalmente compatíveis com o Slint."
+msgid "The included software, among which the MATÉ and LXQt desktops (with XFCE installed on-demand), cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
+msgstr "O software incluído, entre os quais os ambientes de trabalho MATE e LXQt (com o XFCE instalado a pedido), cobrem a maioria das necessidades. Muitos outros estão disponíveis em repositórios mantidos pelo Salix e Slackware que são totalmente compatíveis com o Slint."
 
 #. type: Plain text
 #: homepage.adoc:13
@@ -102,28 +102,100 @@ msgstr "O sistema de ficheiros btrfs é configurado com subvolumes em vez de par
 #. type: Title ===
 #: homepage.adoc:34
 #, no-wrap
-msgid "Acknowledgements"
-msgstr "Agradecimentos"
+msgid "Links"
+msgstr "Links"
 
 #. type: Plain text
-#: homepage.adoc:40
-#, no-wrap
-msgid "Thanks to the translators of Slint and other contributors, to George Vlahavas for his advice and tools, to Patrick J. Volkerding for Slackware, to slackware.uk for hosting our files. You can help fund them:\n"
-"https://www.patreon.com/slackwarelinux[Become a Slackware patron] or https://paypal.me/volkerdi[Support Slackware]\n"
-"Follow the links on top of http://slackware.uk/slint/x86_64/slint-15.0/[this page] to support Slackware UK\n"
-"https://salixos.org/donations.html[Donations to Salix]"
-msgstr "Obrigado aos tradutores do Slint e outros colaboradores, ao George Vlahavas pelos seus conselhos e ferramentas, ao Patrick J. Volkerding pelo Slackware, ao slackware.uk por alojar os nossos ficheiros. Pode ajudar a financiá-los: https://www.patreon.com/slackwarelinux[Torne-se num patrono do Slackware] ou https://paypal.me/volkerdi[Suporte o Slackware]\n"
-"Siga as ligações no topo http://slackware.uk/slint/x86_64/slint-15.0/[desta página] para apoiar o Slackware UK\n"
-"https://salixos.org/donations.html[Doações para o Salix]"
+#: homepage.adoc:37
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/[Repositório principal]"
 
-#. type: Title ===
+#. type: Plain text
+#: homepage.adoc:39
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/iso/[Transferir]"
+
+#. type: Plain text
 #: homepage.adoc:41
-#, no-wrap
-msgid "Latest news"
-msgstr "Últimas notícias"
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Registo de alterações]"
 
 #. type: Plain text
 #: homepage.adoc:43
-msgid "Slint 15.0 is officially released!"
-msgstr "O Slint 15.0 foi disponibilizado oficialmente!"
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in the ISO]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Pacotes incluídos na ISO]"
+
+#. type: Plain text
+#: homepage.adoc:45
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable on demand]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Pacotes instaláveis a pedido]"
+
+#. type: Plain text
+#: homepage.adoc:47
+msgid "link:../old/index.html[Archived old website]"
+msgstr "link:../old/index.html[Arquivo do antigo website]"
+
+#. type: Plain text
+#: homepage.adoc:49
+msgid "link:../en/oldHandBook.html[Documentation 14.2.1]"
+msgstr "link:../en/oldHandBook.html[Documentação 14.2.1]"
+
+#. type: Title ===
+#: homepage.adoc:50
+#, no-wrap
+msgid "Pictures of lightDM and the main desktops in Slint "
+msgstr "Imagens do lightDM e dos principais ambientes de trabalho do Slint "
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:53 homepage.adoc:54
+#, no-wrap
+msgid "lightDM"
+msgstr "lightDM"
+
+#. type: Target for macro image
+#: homepage.adoc:54
+#, no-wrap
+msgid "../doc/lightdm.png"
+msgstr "../doc/lightdm.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:57 homepage.adoc:58
+#, no-wrap
+msgid "LXQt"
+msgstr "LXQt"
+
+#. type: Target for macro image
+#: homepage.adoc:58
+#, no-wrap
+msgid "../doc/lxqt.png"
+msgstr "../doc/lxqt.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:61 homepage.adoc:62
+#, no-wrap
+msgid "MATE"
+msgstr "MATE"
+
+#. type: Target for macro image
+#: homepage.adoc:62
+#, no-wrap
+msgid "../doc/mate.png"
+msgstr "../doc/mate.png"
+
+#. type: Plain text
+#: homepage.adoc:65
+msgid "XFCE (installed on demand)"
+msgstr "XFCE (instalado a pedido)"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: homepage.adoc:66
+#, no-wrap
+msgid "XFCE"
+msgstr "XFCE"
+
+#. type: Target for macro image
+#: homepage.adoc:66
+#, no-wrap
+msgid "../doc/xfce.png"
+msgstr "../doc/xfce.png"
 

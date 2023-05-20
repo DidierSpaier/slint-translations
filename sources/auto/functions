@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# shellcheck disable=SC1004,SC1090,SC1091,SC2016,SC2034,SC2094,SC2114,SC2129,SC2153
 # This script has been written from scratch and dedicated to the public
 # domain by its author: Didier Spaier, 5 place Violet 75015 Paris.
 
@@ -30,25 +30,26 @@ SLINTREPO=http://slackware.uk/slint/x86_64/slint-15.0
 # Directory /patches of a Slackware repository
 PATCHESREPO=http://slackware.uk/slackware/slackware64-15.0/patches
 export SLINTVERSION=15.0
-ISOVERSION=15.0-2
+ISOVERSION=15.0-4
 ISOLABEL="SLINT$ISOVERSION"
 # Installed RAM in kilobytes
-KRAM=$(sed -n 1p /proc/meminfo|sed "s/[ ]\{1,\}/ /"|cut -d" " -f2)
-BRAM=$((KRAM*1024))
+#KRAM=$(sed -n 1p /proc/meminfo|sed "s/[ ]\{1,\}/ /"|cut -d" " -f2)
+#BRAM=$((KRAM*1024))
 GIGA=1073741824
 MEGA=1048576
 GUIDLINUXDOS=0x83
 GUIDLINUXGPT=0fc63daf-8483-4772-8e79-3d69d8477de4
-BIOSBOOTMINSIZE=3000000
+BIOSBOOTMINDRIVESIZE=3000000
 # Name of the key file written if user wants an encrypted drive
 KEYFILE=crypto_keyfile.bin
 # minimum size in gigabytes of a drive allowed to install Slint in guided mode
 GCOUNT=50
 # minimum available room  in megabytes in a ESP in manual mode
-MINSIZE=$((GCOUNT*GIGA))
+MINLINUXSIZE=$((MEGA*100))
+MINDRIVESIZE=$((GCOUNT*GIGA))
 MINAVAILESP=$((MEGA*32))
 # If EFI is not empty the machine booted in EFI mode
-EFI=$(ls /sys/firmware|grep efi)
+EFI=$(ls /sys/firmware/efi 2>/dev/null)
 # $SLINT is the mount point of the root partition of the new system
 SLINT="/SLINT"
 # $ISO is the mountpoint of the device hosting the installer and packages
@@ -60,11 +61,11 @@ INSTALL="/INSTALLER"
 # in auto partitioning mode
 # current size of the file system for which we allow to shrink it.
 MINPARTSIZE=2
-MINSIZE=$((GIGA*GCOUNT)) # Minimum free size in G to install Slint
-MINFREESIZE=$((MINSIZE+(MINPARTSIZE*GIGA))) # Min free size for one partition beyond /
+MINDRIVESIZE=$((GIGA*GCOUNT)) # Minimum free size in G to install Slint
+MINFREESIZE=$((MINDRIVESIZE+(MINPARTSIZE*GIGA))) # Min free size for one partition beyond /
 # RESERVED is the list of directories which should not be mounted on separate
 # partitions.
-RESERVED="bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr"
+RESERVED="bin boot dev etc lib lib64 media mnt proc root run sbin srv sys usr"
 MSGNOLINUX=$(eval_gettext "There don't seem to be any partitions on this machine
 of type Linux and size at least \${GCOUNT}G. You need one to install Linux.
 
@@ -91,13 +92,13 @@ to_lower() {
 clear_stdin() {
 	old_tty_settings=$(stty -g)
 	stty -icanon min 0 time 0
-	while read none; do :; done 
+	while read -r; do :; done 
 	stty "$old_tty_settings"
 }
 giveup() {
 	echo giveup >>$INSTALL/log
 	gettext "Press Enter to go back to the menu "
-	read </dev/tty
+	read -r  </dev/tty
 	clear
 	gettext "Welcome back to the menu of the Slint installer.
 
@@ -128,22 +129,22 @@ backtomenu() {
 displaydescription() {
 	SOURCEDIR=$1
 	package=$2
-	( cd $SOURCEDIR
-	if [ -f ${package%t?z}desc ]; then
-		sed -n "1p" ${package%t?z}desc
-	elif [ -f ${package%t?z}txt ]; then
-		sed -n "1{s/[^:]\{1,\}://;p}" ${package%t?z}txt
+	( cd "$SOURCEDIR" || exit
+	if [ -f "${package%t?z}"desc ]; then
+		sed -n "1p" "${package%t?z}"desc
+	elif [ -f "${package%t?z}"txt ]; then
+		sed -n "1{s/[^:]\{1,\}://;p}" "${package%t?z}"txt
 	else
 		echo "${package%.t?z} (no available description)"
 	fi
 	)
 }
 trytoget() {
-	rm -f "$(basename $1)"
+	rm -f "$(basename "$1")"
 	FAILED=""
-	MYFILE="$(basename $1)"
-	wget -q $1
-	if [ $(cat $MYFILE|wc -l) -eq 0 ]; then 
+	MYFILE="$(basename "$1")"
+	wget -q "$1" 2>>$INSTALL/errors
+	if [ ! -f "$MYFILE" ]; then 
 		FAILED=1
 	fi
 }
@@ -162,7 +163,7 @@ partition layout and the file system."
 	gettext "In both modes you will be given a chance to indicate existing
 partitions (not needed by Slint) that you want to access from Slint."
 	echo
-	echo && gettext "Press Enter to continue" && read && clear
+	echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintpartname(){
 	# We are called by setotherlinux or addpartition or setmountpoint
@@ -170,7 +171,7 @@ hintpartname(){
 \$RESERVED
 or use arbitrary directory names, for instance to mount other Linux systems.
 "
-	echo && gettext "Press Enter to continue" && read && clear
+	echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintrootsize() {
 # Arguments $GMINFREESIZE $GAVAILABLE
@@ -183,7 +184,7 @@ installing later another OS alongside Slint.
 
 To dedicate all the available space to the root Slint partition, set its size to
 \${ARG2}G."
-echo && gettext "Press Enter to continue" && read && clear
+echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintlinuxfilesystems() {
 	gettext "brtfs is the most advanced and flexible linux file system, offering
@@ -192,7 +193,7 @@ features needs some learning.
 ex4 is the most common Linux file system and is very reliable.
 xfs can be preferred to ext if you have very large storage requirements with
 large files"
-echo && gettext "Press Enter to continue" && read  && clear
+echo && gettext "Press Enter to continue" && read  -r && clear
 }
 hintencryptornot() {
 	gettext "Encrypt a drive prevents theft of the data it contains in case of loss
@@ -202,7 +203,7 @@ to unlock it every time you boot Slint.
 Be aware that if you forget the passphrase all data in the drive will be
 irrecoverably lost! So write it down carefully on a safe place.
 We will ask you to type the passphrase later using a \"us\" keyboard map."
-	KEYMAP=$(cat /tmp/Pkeymap|cut -d. -f1)
+	KEYMAP=$(cut -d. -f1 /tmp/Pkeymap)
 	if [ ! "$KEYMAP" = "us" ]; then
 		eval_gettext "
 As you are currently using a \"\$KEYMAP\" keyboard map, we will spell each
@@ -211,7 +212,7 @@ on the keyboard key.
 "
 	fi
 	echo
-	echo && gettext "Press Enter to continue" && read && clear
+	echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintpassphrase() {
 	gettext "The passphrase should have at least 8 characters. Only ASCII printable
@@ -219,7 +220,7 @@ characters are allowed. This includes non accented lower case and capital
 letters, digits from 0 to 9, space and following punctuation characters:"
 echo
 echo " ' ! \" # $ %  & ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ \` { | } ~ "
-	echo && gettext "Press Enter to continue" && read && clear
+	echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintloginmode() {
 	gettext "If you choose C (Console) Slint will start in text mode, in a console
@@ -228,8 +229,8 @@ your password. After that you can type commands or start a graphical
 environment just typing: 'startx' without the quotes.
 If instead you choose G (Graphical) you will type your login name then your
 password in a window, then the graphical environment will be displayed."
-	echo
-	echo && gettext "Press Enter to continue" && read && clear
+echo
+echo && gettext "Press Enter to continue" && read -r && clear
 }
 hintlinks() {
 	gettext "In the links web browser you navigate with the keyboard:
@@ -238,7 +239,7 @@ To quit press q then confirm pressing Enter
 To display the key bindings press F1
 to display the menu press Esc then navigate with the arrow keys"
 	echo
-	echo && gettext "Press Enter to continue." && read && clear
+	echo && gettext "Press Enter to continue." && read -r && clear
 }
 addsetting() {
 	# this function completes one of the partitions lists written by
@@ -247,20 +248,22 @@ addsetting() {
 	rm -f $INSTALL/newtable
 	QPARTUUID=$1
 	KIND="$2" # can be root, linux, efi or windows
-	SETTING="$3" # like MOUNTPOINT of FSTYPE or OPTIONS
+	SETTING="$3" # like MOUNTPOINT of NEWFSTYPE or OPTIONS
 	VALUE="$4"
 	# We rewrite $INSTALL/${KIND}partitions with the requested setting
 	# added to the record with the matching partition number.
 	rm -rf $INSTALL/newtable
-	while read record; do
-		echo $record >$INSTALL/setting
+	while read -r record; do
+		echo "$record" >$INSTALL/setting
 		. $INSTALL/setting
 		if [ "$QPARTUUID" = "$PARTUUID" ]; then
 			record="$record $SETTING=\"$VALUE\""
 		fi
 		echo "$record" >>$INSTALL/newtable
-	done < $INSTALL/${KIND}partitions
-	mv $INSTALL/newtable $INSTALL/${KIND}partitions
+	done < $INSTALL/"${KIND}"partitions
+	mv $INSTALL/newtable $INSTALL/"${KIND}"partitions
+	grep "PARTUUID=\"$QPARTUUID\"" $INSTALL/"${KIND}"partitions > $INSTALL/partition
+	. $INSTALL/partition
 }
 displaypartitions() {
 	# We are called by setotherlinux, setwindows, setroot
@@ -273,102 +276,175 @@ displaypartitions() {
 		. $INSTALL/drive
 		DRIVENAME=$NAME
 	fi
-	rm -f $INSTALL/display$KIND
-	rm -f $INSTALL/${KIND}partitionsnew
-	touch $INSTALL/${KIND}partitionsnew
-	while read partition; do
+	rm -f $INSTALL/display"$KIND"
+	rm -f $INSTALL/"${KIND}"partitionsnew
+	touch $INSTALL/"${KIND}"partitionsnew
+	while read -r partition; do
 		unset MOUNTPOINT
 		echo "$partition" > $INSTALL/partition
+		unset "$NEWFSTYPE"
 		. $INSTALL/partition
-		if [ $SIZE -lt $MINSIZE ] && [ "$KIND" = "root" ]; then
+		[ "$NEWFSTYPE" ] && FSTYPE="$NEWFSTYPE"
+		if [ "$SIZE" -lt $MINDRIVESIZE ] && [ "$KIND" = "root" ]; then
 			continue
 		fi
 		if [ "$MOUNTPOINT" ]; then
 			continue
 		fi
-		# In auto mode, if we are going use the full drive do not propose
-		# on setotherlinux or setwindows to re-use partitions that we
-		# are going to destroy.
+		# In auto mode, if we are going use the full drive we do not propose to re-use
+		# partitions on the same drive that we are going to destroy.
 		[ "$AUTO" ] && [ ! "$KIND" = "root" ] && [ "$PKNAME" = "$DRIVENAME" ] && continue
 		GSIZE=$((SIZE/GIGA))
-		if [ "$KIND" = "root" ]; then
-			echo "$PARTNUM $NAME (${GSIZE}G)" >> $INSTALL/display$KIND
-		else
-			echo "$PARTNUM $NAME (${GSIZE}G) $FSTYPE" >> $INSTALL/display$KIND
-		fi
-		echo "$partition" >> $INSTALL/${KIND}partitionsnew
-	done < $INSTALL/${KIND}partitions
-	mv $INSTALL/${KIND}partitionsnew $INSTALL/${KIND}partitions
+		echo "$PARTNUM $NAME (${GSIZE}G) $FSTYPE" >> $INSTALL/display"$KIND"
+		echo "$partition" >> $INSTALL/"${KIND}"partitionsnew
+	done < $INSTALL/"${KIND}"partitions
+	mv $INSTALL/"${KIND}"partitionsnew $INSTALL/"${KIND}"partitions
 }
 setmountpoint(){
 	# We are called by setotherlinux or setwindows with a partition number as
-	# argument.
+	# argument, or by createadditionalpartition with no argument
 	# The chosen mount point will be recorded as MOUNTPOINT among the variables
 	# associated to this partition in the table $INSTALL/linuxpartitions
 	# category can be linux or windows
+	# If the mount point is home and is already formatted we ask if it should be formatted.
+	# If not formatted we will of course format it.
 	# Note: we do not allow to bail out in this function, so if user has
 	# chosen to set a mount point this can only be reverted denying to
 	# confirm the configuration of the installation as a whole.
-	QPARTUUID=$1
-	KIND=$2
-	grep "PARTUUID=\"$QPARTUUID\"" $INSTALL/${KIND}partitions > $INSTALL/partition
-	. $INSTALL/partition
+	nbargs="$#"
+	if [ "$nbargs" -eq 0 ]; then
+		KIND="added"
+	else
+		QPARTUUID=$1
+		KIND=$2
+		grep "PARTUUID=\"$QPARTUUID\"" $INSTALL/"${KIND}"partitions > $INSTALL/partition
+		. $INSTALL/partition
 	echo
+	fi
 	if [ "$KIND" = "windows" ]; then
 		eval_gettext "Please choose mount point for \$NAME.
 Use only lower case letters and do not choose a directory name reserved in Linux
 or in other OS from which this partition will be accessed."
 	echo
 	fi
+	if [ "$KIND" = "added" ]; then
+		gettext "Please choose a name for the new partition; like \"data\". Use only lower case
+letters and do not choose a reserved directory name in Linux or in other OS from
+which this partition will be accessed."
+		echo
+	fi
 	while true; do
-		eval_gettext "Type the mount point for \$NAME, or h for help: "
+		if [ "$KIND" = "added" ]; then
+			gettext "Type the name of the new partition, or h for help: "
+		else
+			eval_gettext "Type the mount point for \$NAME, or h for help: "
+		fi
 		clear_stdin
-		read MOUNTPOINT
+		read -r MOUNTPOINT
 		MOUNTPOINT="${MOUNTPOINT#/}"
-		# In manual mode we allow a separate partition for /home, but not
-		# reusing one.
-		if [ "$(to_lower $MOUNTPOINT)" = "h" ]; then
+		if [ ! "$MOUNTPOINT" ]; then
+			continue
+		fi
+		if [ "$(to_lower "$MOUNTPOINT")" = "h" ]; then
 			clear
 			hintpartname
-		elif [ "$MOUNTPOINT" ]; then
-			if echo $RESERVED|sed 's/ /\n/g'|grep -q $MOUNTPOINT; then
-				echo
-				eval_gettext "\$MOUNTPOINT is a reserved directory name."
-				echo
-			fi
-			# Do not use the same mount point for two partitions.
-			for KINDS in linux windows; do
-				if [ -f ${KINDS}usedpart ] && [ $(cat ${KINDS}usedpart|wc -l) -gt 0 ]; then
-					if grep -q "MOUNTPOINT=\"/$MOUNTPOINT\"" ${KINDS}usedpart; then
-						gettext "This mount point is already in use."
-						echho
-						continue 2
-					fi
-				fi
-			done
-			case $MOUNTPOINT in
-				*[!*a-z/]*)
-					echo
-					gettext "Only lower case letters and \"/\" are allowed."
-					echo ;;
-				*)
-					addsetting $QPARTUUID $KIND MOUNTPOINT "/$MOUNTPOINT"
-					break
-			esac
+			continue
 		fi
+		if echo "$RESERVED"|sed 's/ /\n/g'|grep -q "$MOUNTPOINT"; then
+			echo
+			eval_gettext "\$MOUNTPOINT is a reserved directory name."
+			echo
+			continue
+		fi
+		# Do not use the same mount point for two partitions.
+		if grep -q " $MOUNTPOINT " $INSTALL/mountpoints; then
+			gettext "This mount point is already in use."
+			echo
+			continue
+		fi
+		if [ "$MOUNTPOINT" = "home" ] && [ "$KIND" = "added" ]; then
+			echo
+			gettext "in \"auto\" mode a partition for /home should be located in another drive."
+			echo
+			gettext "You will be allowed to select one later, already used or just created."
+			echo
+			gettext "If it already contains data you will choose to keep or erase them."
+			echo
+			continue
+		fi
+		pathchk -pP -- "$MOUNTPOINT"
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
+			continue
+		fi
+		if [ "$KIND" = "added" ]; then
+			echo "$MOUNTPOINT" > $INSTALL/addedpartname
+			return
+		fi
+		echo " $MOUNTPOINT " >> $INSTALL/mountpoints
+		addsetting "$QPARTUUID" "$KIND" MOUNTPOINT "/$MOUNTPOINT"
+		break
 	done
 }
+setfstype(){
+		if [ "$FSTYPE" ]; then
+			gettext "Do you want to format this partition? If yes we will erase everything in it
+so all data it contains will be lost!"
+			echo
+			unset FORMAT
+			while [ ! "$(to_lower "$FORMAT")" = "yes" ] && [ ! "$(to_lower "$FORMAT")" = "no" ]; do
+				eval_gettext "Do you want to delete all data on \$NAME et re-format it?" 
+				echo
+				gettext "Type yes or no: " && clear_stdin && read -r FORMAT
+			done
+		fi
+		if [ ! "$FSTYPE" ] || [ "$(to_lower "$FORMAT")" = "yes" ]; then
+			FILESYSTEMS="btrfs ext4 xfs"
+			gettext "Allowed file system types for linux partitions are:"
+			echo
+			echo "$FILESYSTEMS"
+			echo
+			while true; do
+				eval_gettext "Type the file system type for \$NAME or h for help: "
+				clear_stdin
+				read -r ANSWER
+				case $(to_lower "$ANSWER") in
+					btrfs|ext4|xfs)
+					FSTYPE=$(to_lower "$ANSWER")
+					break;;
+					h)
+					clear
+					hintlinuxfilesystems;;
+					*) :
+				esac
+			done
+			FORMAT=yes
+		fi
+		if [ "$(to_lower "$FORMAT")" = "yes" ]; then
+			sed "s@FSTYPE=[[:graph:]]*@FSTYPE=\"$FSTYPE\" FORMATME=\"yes\"@" $INSTALL/partition > bof
+			mv bof $INSTALL/partition
+		fi
+}
 mounttheiso() {
+	if grep -q /ISO /proc/mounts; then
+		return
+	fi
 	echo mounttheiso >>$INSTALL/log
 	INSTALLMEDIAFOUND=$(blkid -L $ISOLABEL)
 	if [ ! "$INSTALLMEDIAFOUND" ]; then
 		gettext "No installation media found.
 Please restart leaving it inserted or plugged in."
 		echo
+		gettext "But if the installation ISO is in some disk partition, mount this partition like this:
+mount <partition /dev/something/> /floppy
+then type: mount <path to the ISO> /ISO
+then type start again."
+		echo
 		exit
 	fi
-	mount $INSTALLMEDIAFOUND $ISO 2>$INSTALL/mountisoerror
-	if [ $? -ne 0 ]; then
+	mount "$INSTALLMEDIAFOUND" $ISO 2>$INSTALL/mountisoerror
+	mycmd="$?"
+	if [ "$mycmd" -ne 0 ]; then
 		MOUNTSRCERROR=$(cat $INSTALL/mountisoerror)
 		eval_gettext "We could not mount the installer for this reason:
 \$MOUNTSRCERROR"
@@ -383,7 +459,6 @@ initlocales() {
 		ll_TT=${LANG%.*}
 	fi
 }
-
 probedrives() {
 	echo probedrives >>$INSTALL/log
 	# We want to know ASAP for each drive if/how Slint can be installed on it
@@ -391,8 +466,8 @@ probedrives() {
 	# 2. On the free space on a drive
 	# The documentation tells the user how to allow dual booting
 	# Requirements:
-	# 1 drive size at least MINSIZE, drive should not be mounted
-	# 2: free space at least MINSIZE, gpt, efi
+	# 1 drive size at least MINDRIVESIZE, drive should not be mounted
+	# 2: free space at least MINDRIVESIZE, gpt, efi
 	# We store in $INSTALL/drives one line for each drive's usable in 'auto' mode.
 	# We need to know:
 	#  . Whether the installer booted in EFI mode? look for efi on /sys/firmware
@@ -417,23 +492,23 @@ probedrives() {
 	echo 0 > $INSTALL/available
 	# In this loop we categorize the drives.
 	MOUNTEDDRIVES=$(lsblk -lno pkname,mountpoint|grep /|cut -d" " -f1|sort|uniq)
-	while read drive; do
+	while read -r drive; do
 		rm -f $INSTALL/fitforauto
 		echo "$drive" > $INSTALL/drive
 		. $INSTALL/drive
 		DRIVEPATH=$NAME
 		DRIVESIZE=$SIZE
-		SHORTNAME=$(echo $DRIVEPATH|sed s,/dev/,,)
+		SHORTNAME=$(echo "$DRIVEPATH"|sed s,/dev/,,)
 		if echo "$MOUNTEDDRIVES"|grep -q "$SHORTNAME"; then
 			continue
 		fi
-		if [ $DRIVESIZE -lt $MINSIZE ]; then
+		if [ "$DRIVESIZE" -lt $MINDRIVESIZE ]; then
 			continue
 		fi
 		echo "$drive" >>  $INSTALL/drives
 	done < "$INSTALL/alldrives"
 	unset FITFORAUTO
-	if [ "$(cat $INSTALL/drives|wc -l)" -gt 0 ]; then
+	if [ "$(wc -l $INSTALL/drives|cut -d" " -f1)" -gt 0 ]; then
 		FITFORAUTO="yes"
 	else
 		return
@@ -441,7 +516,7 @@ probedrives() {
 	# Now let's number the drives we allow to use to install Slint in "auto" mode
 	i=0
 	rm -f $INSTALL/numbereddrives
-	while read drive; do
+	while read -r drive; do
 		i=$((i+1))
 		echo "DRIVENUM=\"$i\" $drive" >>$INSTALL/numbereddrives
 	done < $INSTALL/drives
@@ -460,7 +535,7 @@ probepartitions() {
 	# be used as root system partitions as they are of type Linux and big
 	# enough. We do not require that they be formatted as they will be
 	# reformatted anyway to avoid that they contain stale files
-	# We number them to easily refer to each 
+	# We number them to easily refer to each.
 
 	# The partitions recorded in $INSTALL/linuxpartitions can, in both auto
 	# and manual modes, be recorded in /etc/fstab associated with a mount
@@ -469,52 +544,30 @@ probepartitions() {
 	# file system types btrfs, ext2, ext4, f2fs, jfs, reiserfs or xfs
 	# We number them to easily refer to each.
 
-	LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype,type \
-	| grep -e 'TYPE="part"' \
-	| grep -e 'PARTTYPE="0x83"' -e 'PARTTYPE="0fc63daf-8483-4772-8e79-3d69d8477de4"' \
-	> $INSTALL/partitionsmaybeoftypelinux
-
 	# We exclude partitions /dev/partname if for any partition
 	# /dev/pkname  = /dev/partname as then /dev/partname is a container
 	# like a crypto_LUKS device.
-	rm -f $INSTALL/partitionsoftypelinux
-	if [ -f $INSTALL/partitionsmaybeoftypelinux ]; then
-		while read candidate; do
-			echo "$candidate" > $INSTALL/partition
-			. $INSTALL/partition
-			if ! lsblk -lo pkname|sed "s@.*@/dev/&@"|grep -q $NAME; then
-				echo "$candidate" >> $INSTALL/partitionsoftypelinux
-			fi
-		done < $INSTALL/partitionsmaybeoftypelinux
-	fi
+	# We also a require a minimum size, which most probably exclude BIOS Boot partitions.
 
-	if [ -f $INSTALL/partitionsoftypelinux ]; then
-		i=0
-		while read partition; do
-			echo "$partition" > $INSTALL/partition
-			. $INSTALL/partition
-			if [ $SIZE -ge $MINSIZE ]; then
-				i=$((i+1))
-				echo "PARTNUM=\"$i\" $partition" >>$INSTALL/rootpartitions
-			fi
-		done <$INSTALL/partitionsoftypelinux
-		i=O
-		# We consider as a linux partition any partition with a Linux filesystem
-		# regardless of its partition type.
-		LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype,type \
-		| grep -e 'TYPE="part"' > $INSTALL/allpartitions
-		while read partition; do
-			echo "$partition" > $INSTALL/partition
-			. $INSTALL/partition
-			if [ "$FSTYPE" = "ext2" ] || [ "$FSTYPE" = "ext3" ] || [ "$FSTYPE" = "ext4" ] \
-			|| [ "$FSTYPE" = "btrfs" ] || [ "$FSTYPE" = "xfs" ] || [ "$FSTYPE" = "f2fs" ] \
-			|| [ "$FSTYPE" = "jfs" ] || [ "$FSTYPE" = "reiserfs" ]; then
-				i=$((i+1))
-				echo "PARTNUM=\"$i\" $partition" >>$INSTALL/linuxpartitions
-			fi
-		done <$INSTALL/allpartitions
-	fi
-
+	i=0
+	j=0
+	LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype,type \
+	| grep -e 'TYPE="part"' \
+	| grep -e "PARTTYPE=\"$GUIDLINUXDOS\"" -e "PARTTYPE=\"$GUIDLINUXGPT\"" \
+	| while read -r partition; do
+		echo "$partition" > $INSTALL/partition
+		. $INSTALL/partition
+		if [ "$SIZE" -ge "$MINLINUXSIZE" ] &&
+		! lsblk -lo pkname|sed "s@.*@/dev/&@"|grep -q "$NAME"; then
+			i=$((i+1))
+			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/linuxpartitions
+		fi
+		if [ "$SIZE" -ge "$MINDRIVESIZE" ] &&
+		! lsblk -lo pkname|sed "s@.*@/dev/&@"|grep -q "$NAME"; then
+			j=$((j+1))
+			echo "PARTNUM=\"$j\" $partition" >>$INSTALL/rootpartitions
+		fi
+	done
 	# We assume that the partitions of fstype ntfs, exfat and vfat are
 	# "windows" partitions the the user may  want to mount at boot. We
 	# will not reformat them.
@@ -522,88 +575,73 @@ probepartitions() {
 	# not expect that they contain user data.
 	# Even if no Windows partition has been found, do this to simplify
 	# testing their number as $($INSTALL/windowspartitions|wc -l)
+	i=0
 	touch $INSTALL/windowspartitions
 	LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype \
 	|grep -e 'FSTYPE="ntfs"' -e 'FSTYPE="exfat"' -e 'FSTYPE="vfat"' \
 	|grep -v -e 'PARTTYPE="c12a7328-f81f-11d2-ba4b-00a0c93ec93b"' -e 'PARTTYPE="0xef"' \
-	> $INSTALL/windowspartitionslist
+	|while read -r partition; do
+	
+		i=$((i+1))
+		echo "PARTNUM=\"$i\" $partition" >>$INSTALL/windowspartitions
+	done
 	i=0
-	if [ -f $INSTALL/windowspartitionslist ]; then
-		while read partition; do
-			i=$((i+1))
-			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/windowspartitions
-		done <$INSTALL/windowspartitionslist
-	fi
 	LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype \
 	| grep -e 'PARTTYPE="0657fd6d-a4ab-43c4-84e5-0933c84b4f4f"' -e 'PARTTYPE="0x82"' \
-	> $INSTALL/swappartitionslist
-	if [ -f $INSTALL/swappartitionslist ]; then
-		while read partition; do
+	| while read -r partition; do
 			i=$((i+1))
 			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/swappartitions
-		done <$INSTALL/swappartitionslist
-	fi
+	done
+	i=0
 	LANG=C lsblk -bpPo name,pttype,parttype,parttypename,size,pkname,partuuid,fstype \
 	| grep -e 'PARTTYPE="c12a7328-f81f-11d2-ba4b-00a0c93ec93b"' -e 'PARTTYPE="0xef"' \
-	> $INSTALL/efipartitionslist
-	if [ -f $INSTALL/efipartitionslist ] && [ "$(cat $INSTALL/efipartitionslist|wc -l)" -ne 0 ] ; then
-		
-		while read partition; do
-			i=$((i+1))
-			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/efipartitions
-		done <$INSTALL/efipartitionslist
+	| while read -r partition; do
 		# We discard the EFI partitions in which the free space is too small.
 		# The minimum accepted size is set as MINAVAILESP in top of this script.
-		mkdir $INSTALL/esp
-		while read efipart; do
-			echo $efipart > $INSTALL/efipart
-			. $INSTALL/efipart
-			# If the partition is not formatted, we consider its size, else
-			# the available size on it file system. If this file system is
-			# not vfat, we discard it.
-			if [ "$FSTYPE" = "" ]; then
-				if [ $SIZE  -lt  $MINAVAILESP ]; then
-					sed "\@NAME=\"$NAME\"@d" $INSTALL/efipartitions > bof
-					mv bof  $INSTALL/efipartitions
-				fi
-			else
-				mount $NAME $INSTALL/esp
-				if [ ! "$FSTYPE" = "vfat" ]; then
-					sed "\@NAME=\"$NAME\"@d" $INSTALL/efipartitions > bof
-					mv bof  $INSTALL/efipartitions
-				else
-					FSSIZE=$(lsblk -lnbo fsavail $NAME)
-					if [ $FSSIZE  -lt  $MINAVAILESP ]; then
-						sed "\@NAME=\"$NAME\"@d" $INSTALL/efipartitions > bof
-						mv bof  $INSTALL/efipartitions
-					fi
-				fi
-				umount $INSTALL/esp
+		echo "$partition" > $INSTALL/efipart
+		. $INSTALL/efipart
+		# If the partition is not formatted, we consider its size, else
+		# the available size on it file system. If this file system is
+		# not vfat, we discard it.
+		if [ "$FSTYPE" = "" ]; then
+			if [ "$SIZE"  -lt  $MINAVAILESP ]; then
+				continue
 			fi
-		done < $INSTALL/efipartitions
-		rmdir $INSTALL/esp
-		NBESP=$(cat $INSTALL/efipartitions|wc -l)
-	else
-		NBESP=0
-	fi
+			i=$((i+1))
+			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/efipartitions
+		else
+			if [ ! "$FSTYPE" = "vfat" ]; then
+				continue
+			fi
+			TEMPESP=$(mktemp -d)
+			mount "$NAME" "$TEMPESP"/
+			FSSIZE=$(lsblk -lnbo fsavail "$NAME")
+			if [ "$FSSIZE"  -lt  "$MINAVAILESP" ]; then
+				umount "$NAME"
+				rmdir "$TEMPESP"
+				continue
+			fi
+			i=$((i+1))
+			echo "PARTNUM=\"$i\" $partition" >>$INSTALL/efipartitions
+			umount "$NAME"
+			rmdir "$TEMPESP"
+		fi
+	done
+	NBESP=0
+	[ -f $INSTALL/efipartitions ] && NBESP=$(wc -l $INSTALL/efipartitions|cut -d" " -f1)
 	# We register the not formatted partitions big enough for GRUB
 	LANG=C lsblk -bpPo name,pkname,parttypename,size,fstype \
 	| grep -e 'PARTTYPENAME="BIOS boot"' -e 'PARTTYPENAME="BIOS boot partition"' \
 	| grep -e 'FSTYPE=""' \
-	> $INSTALL/biosbootpartitions
-	if [ -f $INSTALL/biosbootpartitions ]  && [ "$(cat $INSTALL/biosbootpartitions|wc -l)" -ne 0 ]; then
-		while read partition; do
-			echo "$partition" > $INSTALL/partition
-			. $INSTALL/partition
-			if [ "$SIZE" -ge "$BIOSBOOTMINSIZE" ]; then
-				echo "$partition" >> $INSTALL/biosbootpartitions.new
-			fi
-		done < $INSTALL/biosbootpartitions
-		mv $INSTALL/biosbootpartitions.new $INSTALL/biosbootpartitions
-		NBBIOSBOOT=$(cat $INSTALL/biosbootpartitions|wc -l)
-	else
-		NBBIOSBOOT=0
-	fi
+	| while read -r partition; do
+		echo "$partition" > $INSTALL/partition
+		. $INSTALL/partition
+		if [ "$SIZE" -ge "$BIOSBOOTMINDRIVESIZE" ]; then
+			echo "$partition" >> $INSTALL/biosbootpartitions
+		fi
+	done
+	NBBIOSBOOT=0
+	[ -f $INSTALL/biosbootpartitions ] && NBBIOSBOOT=$(wc -l $INSTALL/biosbootpartitions|cut -d" " -f1)
 }
 choosemanualorauto() {
 	echo choosemanualorauto >>$INSTALL/log
@@ -620,8 +658,8 @@ press q to quit now. You will type 'start' again when ready."
 	echo
 	unset AUTO MANUAL
 	while true; do
-		gettext "Press m for manual, a for auto, h for help or q to quit: " && clear_stdin && read ANSWER
-		case $(to_lower $ANSWER) in
+		gettext "Press m for manual, a for auto, h for help or q to quit: " && clear_stdin && read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			m) MANUAL="yes"; break;;
 			a) AUTO="yes"; break;;
 			h) clear; hintmode;;
@@ -649,6 +687,7 @@ checkinstallationmodes() {
 	# partition so that SLINT be portable if connected through USB and
 	# 
 	# In auto mode we just need a big enough drive
+	touch $INSTALL/driveswithbiosboot
 	[ "$AUTO" ] && [ ! "$FITFORAUTO" ] && backtomenu "$MSGNOSUITABLEDRIVE"
 	if [ "$MANUAL" ]; then
 		# We need a big enough Linux partition
@@ -658,13 +697,13 @@ checkinstallationmodes() {
 		# partition, output an error message.
 		# Re-write the candidate root partitions including only the ones
 		# that fit the bill.
-		if [ $EFI ]; then
+		if [ "$EFI" ]; then
 			[ "$NBESP" -eq 0 ] && backtomenu "$MSGNOSUITABLESP"
-			while read rootpart; do
+			while read -r rootpart; do
 				echo "$rootpart" > /tmp/part
 				. /tmp/part
 				DRIVEROOT="$PKNAME"
-				while read efipart; do
+				while read -r efipart; do
 					echo "$efipart" > /tmp/part
 					. /tmp/part
 					DRIVEEFI="$PKNAME"
@@ -678,22 +717,25 @@ checkinstallationmodes() {
 			[ ! $EFIROOTSAMEDRIVE ]  && backtomenu "$MSGMISFITROOTEFI"
 		fi
 		# In case of a GPT we require that a BIOS boot partition on the
-		# same drive as the root partition.
+		# same drive as the root partition, if the machine did not boot in EFI mode.
 		# We will re-write $INSTALL/rootpartitions including only the
 		# ones that meet this spec.
-		[ "$PTTYPE" = "gpt" ] && [ $NBBIOSBOOT -eq 0 ] && backtomenu "$MSGMISFITROOTBIOSBOOT"
+		[ "$EFI" ] && return
+		[ "$PTTYPE" = "gpt" ] && [ "$NBBIOSBOOT" -eq 0 ] && backtomenu "$MSGMISFITROOTBIOSBOOT"
 		rm -f $INSTALL/rootpartitions.new
-		while read rootpart; do
+		while read -r rootpart; do
 			echo "$rootpart" > /tmp/part
 			. /tmp/part
 			if [ "$PTTYPE" = "gpt" ]; then
 				DRIVEROOT="$PKNAME"
-				while read biosbootpart; do
+				while read -r biosbootpart; do
 					echo "$biosbootpart" > /tmp/part
 					. /tmp/part
 					DRIVEBIOSBOOT="$PKNAME"
 					if [ "$DRIVEROOT" = "$DRIVEBIOSBOOT" ]; then
 						echo "$rootpart" >> $INSTALL/rootpartitions.new
+						echo "$DRIVEROOT" >> $INSTALL/driveswithbiosboot
+						BIOSBOOTROOTSAMEDRIVE="yes"
 					fi
 				done < $INSTALL/biosbootpartitions
 			else
@@ -703,7 +745,7 @@ checkinstallationmodes() {
 		if [ -f $INSTALL/rootpartitions.new ]; then 
 			mv $INSTALL/rootpartitions.new $INSTALL/rootpartitions
 		else
-			[ ! $BIOSBOOTROOTSAMEDRIVE ] && backtomenu "$MSGMISFITROOTBIOSBOOT"
+			[ ! "$BIOSBOOTROOTSAMEDRIVE" ] && backtomenu "$MSGMISFITROOTBIOSBOOT"
 		fi
 	fi
 }
@@ -714,17 +756,17 @@ choosetargetdrive() {
 	# If a drive has a GPT and the installer booted in EFI mode, we propose to
 	# install Slint in the biggest free space of a drive, if big enough.
 	echo
-	if [ "$(wc -l $INSTALL/drives|sed "s/ .*//")" = "1" ]; then
+	if [ "$(wc -l $INSTALL/drives|cut -d" " -f1)" = "1" ]; then
 	# Only one drive is fit for installation in auto mode
 		cp $INSTALL/drives $INSTALL/drive
 		. $INSTALL/drive
 		GSIZE=$((SIZE/GIGA))
 		echo "$SERIAL" >$INSTALL/serial
-		SHORTNAME=$(echo $NAME|sed s,/dev/,,)
+		SHORTNAME=$(echo "$NAME"|sed s,/dev/,,)
 		gettext "Slint can be installed on this drive:"
 		echo
-		VEND=$(echo $VENDOR|sed "s/[[:space:]]//g")
-		MOD=$(echo $MODEL|sed "s/[[:space:]]//g")
+		VEND=$(echo "$VENDOR"|sed "s/[[:space:]]//g")
+		MOD=$(echo "$MODEL"|sed "s/[[:space:]]//g")
 		echo "$NAME $VEND $MOD (${GSIZE}G)"
 		gettext "To install Slint on this drive we need to wipe all data in it"
 		echo
@@ -733,17 +775,17 @@ choosetargetdrive() {
 		CHOSEN=no
 		# We will check that the drive number typed by the user is among the
 		# available ones
-		NUMBEROFDRIVES=$(cat $INSTALL/drives|wc -l)
+		NUMBEROFDRIVES=$(wc -l $INSTALL/drives|cut -d" " -f1)
 		while [ "$CHOSEN" = "no" ]; do
 			gettext "Slint can be installed on one of the drives listed below."
 			echo
-			while read drive; do
+			while read -r drive; do
 				echo "$drive" > $INSTALL/drive
 				. $INSTALL/drive
 				GSIZE=$((SIZE/GIGA))
-				SHORTNAME=$(echo $NAME|sed s,/dev/,,)
-				VEND=$(echo $VENDOR|sed "s/[[:space:]]//g")
-				MOD=$(echo $MODEL|sed "s/[[:space:]]//g")
+				SHORTNAME=$(echo "$NAME"|sed s,/dev/,,)
+				VEND=$(echo "$VENDOR"|sed "s/[[:space:]]//g")
+				MOD=$(echo "$MODEL"|sed "s/[[:space:]]//g")
 				echo "$DRIVENUM $NAME $VEND $MOD (${GSIZE}G)"
 				printf "   "
 					gettext "To install Slint on this drive we need to wipe all data in it"
@@ -756,14 +798,14 @@ choosetargetdrive() {
 			# drive is inserted or removed.
 			gettext "Please type the chosen drive's number, or q to quit: "
 			clear_stdin
-			read ANSWER
+			read -r ANSWER
 			if [ "$ANSWER" = "q" ]; then
 				giveup
 			fi
 			if [ "$ANSWER" ] && \
 			! echo "$ANSWER" | grep -q "[^123456789]" && \
-			[ $ANSWER -ge 1 ] && \
-			[ $ANSWER -le $NUMBEROFDRIVES ]; then
+			[ "$ANSWER" -ge 1 ] && \
+			[ "$ANSWER" -le "$NUMBEROFDRIVES" ]; then
 				CHOSEN="yes"
 				grep "DRIVENUM=\"$ANSWER\"" $INSTALL/drives > $INSTALL/drive
 				. $INSTALL/drive
@@ -791,23 +833,23 @@ stored on this drive, including existing OS case occurring.
 Here are its current partitions:"
 		echo
 		echo
-		lsblk -lp -o name,size,fstype,type $NAME|grep -v disk|sed 's/TYPE$//;s/part$//'
+		lsblk -lp -o name,size,fstype,type "$NAME"|grep -v disk|sed 's/TYPE$//;s/part$//'
 		echo
-		while [ ! "$(to_lower $ANSWER)" = "yes" ] && [ ! "$(to_lower $ANSWER)" = "no" ]; do
+		while [ ! "$(to_lower "$ANSWER")" = "yes" ] && [ ! "$(to_lower "$ANSWER")" = "no" ]; do
 			eval_gettext "Do you want to delete all data on \$NAME then install Slint on it?"
 			echo
-			gettext "Type yes or no: " && clear_stdin && read ANSWER
+			gettext "Type yes or no: " && clear_stdin && read -r ANSWER
 		done
-			if [ ! "$(to_lower $ANSWER)" = "yes" ]; then
+			if [ ! "$(to_lower "$ANSWER")" = "yes" ]; then
 			giveup
 	fi
 	else
-		while [ ! "$(to_lower $ANSWER)" = "yes" ] && [ ! "$(to_lower $ANSWER)" = "no" ]; do
+		while [ ! "$(to_lower "$ANSWER")" = "yes" ] && [ ! "$(to_lower "$ANSWER")" = "no" ]; do
 			gettext "Do you want to install Slint on it?"
 			echo
-			gettext "Type yes or no: " && clear_stdin && read ANSWER
+			gettext "Type yes or no: " && clear_stdin && read -r ANSWER
 		done
-		if [ ! "$(to_lower $ANSWER)" = "yes" ]; then
+		if [ ! "$(to_lower "$ANSWER")" = "yes" ]; then
 			giveup
 		fi
 	fi
@@ -853,9 +895,9 @@ The size of the Slint root partition should be between \${GCOUNT}G and \${GAVAIL
 		while true; do
 			gettext "Size of the Slint root partition (h for help): "
 			clear_stdin
-			read ANSWER
-			GROOTSIZE=$(echo $ANSWER|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
-			if [ "$(to_lower $ANSWER)" = "h" ]; then
+			read -r ANSWER
+			GROOTSIZE=$(echo "$ANSWER"|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
+			if [ "$(to_lower "$ANSWER")" = "h" ]; then
 				GROOTSIZE=0
 				clear
 				hintrootsize $GMINFREESIZE $GAVAILABLE
@@ -915,7 +957,7 @@ createadditionalpartition() {
 	# and GREMAINING as the sizes in megabytes and gigabytes of the remaining
 	# free space after the root Slint partition.
 	AVAILABLE=$(cat $INSTALL/available)
-	if [ $AVAILABLE -eq 0 ]; then
+	if [ "$AVAILABLE" -eq 0 ]; then
 		return
 	fi
 	MREMAINING=$((AVAILABLE/MEGA))
@@ -929,9 +971,9 @@ type its size below (at most \${GREMAINING}G), else just press Enter."
 	while true; do
 		eval_gettext "Size of the added partition (h for help): "
 		clear_stdin
-		read ANSWER
-		GADDEDSIZE=$(echo $ANSWER|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
-		if [ "$(to_lower $GADDEDSIZE)" = "h" ]; then
+		read -r ANSWER
+		GADDEDSIZE=$(echo "$ANSWER"|sed "s/[ ]\{1,\}g//;s/[Gg]//;s/[.].*//")
+		if [ "$(to_lower "$GADDEDSIZE")" = "h" ]; then
 			GADDEDSIZE=-1
 			clear
 			hintaddedsize $GREMAINING
@@ -953,32 +995,7 @@ type its size below (at most \${GREMAINING}G), else just press Enter."
 		return
 	fi
 	echo
-	gettext "Please choose a name for the new partition; like \"data\". Use only lower case
-letters and do not choose a reserved directory name in Linux or in other OS from
-which this partition will be accessed."
-	echo
-	while true; do
-		gettext "Type the name of the new partition, or h for help: "
-		clear_stdin
-		read NEWPARTNAME
-		if [ "$(to_lower $NEWPARTNAME)" = "h" ]; then
-			clear
-			hintpartname
-		elif [ "$NEWPARTNAME" ]; then
-			if echo $RESERVED|sed 's/ /\n/g'|grep -q $NEWPARTNAME; then
-				echo
-				eval_gettext "\$NEWPARTNAME is a reserved directory name."
-				echo
-			elif echo $NEWPARTNAME|grep -q "[^[:lower:]]"; then
-				echo
-				gettext "Only lower case letters are allowed"
-				echo
-			else
-				break
-			fi
-		fi
-	done
-	echo "$NEWPARTNAME" >$INSTALL/addedpartname
+	setmountpoint
 	# We want the size of the added partition to be a whole number of gigabytes
 	# as set by the user, adjust the remaining free space in megabytes
 	# accordingly unless it would be less that 1G in which case allocate all
@@ -1012,9 +1029,9 @@ setroot() {
 	# during installation we will refer to it by its partuuid, which won't
 	# change. We do not use the uuid as it is set only for formatted
 	# partitions, and we allow registering not yet formatted ones.
-	NBROOTPART=$(cat $INSTALL/rootpartitions|wc -l)
+	NBROOTPART=$(wc -l $INSTALL/rootpartitions|cut -d" " -f1)
 	# If only one partition meets the specs of a root partition...
-	if [ $NBROOTPART -eq 1 ]; then
+	if [ "$NBROOTPART" -eq 1 ]; then
 		. $INSTALL/rootpartitions
 		GSIZE=$((SIZE/GIGA))
 		# ROOTPARTNUM seems unused
@@ -1036,11 +1053,11 @@ echo
 			echo
 			gettext "Please type yes to confirm or no to quit: "
 			clear_stdin
-			read ANSWER
-			CHOICE=$(to_lower $ANSWER)
+			read -r ANSWER
+			CHOICE=$(to_lower "$ANSWER")
 			case $CHOICE in
 				yes)
-					echo $ROOTPARTUUID > $INSTALL/rootpartuuid
+					echo "$ROOTPARTUUID" > $INSTALL/rootpartuuid
 					break;;
 				no)
 					giveup;;
@@ -1048,7 +1065,7 @@ echo
 					:
 			esac
 		done
-		addsetting $ROOTPARTUUID root MOUNTPOINT "/"
+		addsetting "$ROOTPARTUUID" root MOUNTPOINT "/"
 		FILESYSTEMS="btrfs ext4 xfs"
 		gettext "Allowed file system types for linux partitions are:"
 		echo
@@ -1057,10 +1074,10 @@ echo
 		while true; do
 			eval_gettext "Type the file system type for \$NAME or h for help: "
 			clear_stdin
-			read ANSWER
-			case $(to_lower $ANSWER) in
+			read -r ANSWER
+			case $(to_lower "$ANSWER") in
 				btrfs|ext4|xfs)
-				FSTYPE=$(to_lower $ANSWER)
+				FSTYPE=$(to_lower "$ANSWER")
 				break;;
 				h)
 				clear
@@ -1074,14 +1091,14 @@ echo
 		cp $INSTALL/rootpartitions $INSTALL/partition
 		. $INSTALL/partition
 		ROOTNAME=$NAME
-		echo $ROOTNAME >$INSTALL/rootpartpath
+		echo "$ROOTNAME" >$INSTALL/rootpartpath
 		grep "NAME=\"$ROOTPKNAME\"" $INSTALL/drives > $INSTALL/drive
 		# Remove this partition from the list of Linux partitions as
 		# it should be mounted only once (as /).
 		cp $INSTALL/partition $INSTALL/rootusedpart
 		if [ -f $INSTALL/linuxpartitions ]; then
 			mv $INSTALL/linuxpartitions $INSTALL/linuxpartitions.prev
-			while read part; do
+			while read  -r part; do
 			echo "$part" > $INSTALL/part
 			. $INSTALL/part
 				if [ ! "$PARTUUID" = "$ROOTPARTUUID" ]; then
@@ -1108,8 +1125,8 @@ We will later format this partition, which will erase its content."
 		echo
 		gettext "Please type the root partitions's number, or q to quit: "
 		clear_stdin
-		read  ANSWER
-		[ "$(to_lower $ANSWER)" = "q" ] && giveup
+		read  -r ANSWER
+		[ "$(to_lower "$ANSWER")" = "q" ] && giveup
 		if ! grep -q "PARTNUM=\"$ANSWER\"" $INSTALL/rootpartitions; then
 			eval_gettext "\$ANSWER is not a listed partition number."
 			echo
@@ -1118,7 +1135,7 @@ We will later format this partition, which will erase its content."
 		grep "PARTNUM=\"$ANSWER\"" $INSTALL/rootpartitions > $INSTALL/partition
 		. $INSTALL/partition
 		ROOTPARTUUID=$PARTUUID
-		addsetting $ROOTPARTUUID root MOUNTPOINT "/"
+		addsetting "$ROOTPARTUUID" root MOUNTPOINT "/"
 		grep "PARTNUM=\"$ANSWER\"" $INSTALL/rootpartitions > $INSTALL/partition
 		. $INSTALL/partition
 		FILESYSTEMS="btrfs ext4 xfs"
@@ -1129,10 +1146,10 @@ We will later format this partition, which will erase its content."
 		while true; do
 			eval_gettext "Type the file system type for \$NAME or h for help: "
 			clear_stdin
-			read ANSWER
-			case $(to_lower $ANSWER) in
+			read -r ANSWER
+			case $(to_lower "$ANSWER") in
 				btrfs|ext4|xfs)
-				FSTYPE=$(to_lower $ANSWER)
+				FSTYPE=$(to_lower "$ANSWER")
 				break;;
 				h)
 				clear
@@ -1144,14 +1161,14 @@ We will later format this partition, which will erase its content."
 		grep "PARTUUID=\"$ROOTPARTUUID\"" $INSTALL/rootpartitions > $INSTALL/partition
 		. $INSTALL/partition
 		ROOTNAME=$NAME
-		echo $NAME >$INSTALL/rootpartpath
+		echo "$NAME" >$INSTALL/rootpartpath
 		grep "NAME=\"$PKNAME\"" $INSTALL/drives > $INSTALL/drive
 		# Remove this partitions from the list of Linux partitions as
 		# it should be mounted only as /.
 		grep "PARTUUID=\"$ROOTPARTUUID\""  $INSTALL/rootpartitions > $INSTALL/rootusedpart
 		if [ -f $INSTALL/linuxpartitions ]; then
 			mv $INSTALL/linuxpartitions $INSTALL/linuxpartitions.prev
-			while read part; do
+			while read -r part; do
 				echo "$part" > $INSTALL/part
 				. $INSTALL/part
 				if [ ! "$PARTUUID" = "$ROOTPARTUUID" ]; then
@@ -1164,7 +1181,7 @@ We will later format this partition, which will erase its content."
 }
 setotherlinux() {
 	[ ! -f $INSTALL/linuxpartitions ] && return
-	[ $(cat  $INSTALL/linuxpartitions|wc -l) -eq 0 ] && return
+	[ "$(wc -l $INSTALL/linuxpartitions|cut -d" " -f1)" -eq 0 ] && return
 	displaypartitions linux
 	[ ! -f $INSTALL/displaylinux ] && return
 	echo setotherlinux >>$INSTALL/log
@@ -1174,7 +1191,7 @@ setotherlinux() {
 	# We stop as soon as the user quits or there is no more available
 	# and not yet selected partition, or the user is done selecting
 	# Linux partitions
-	# We record the partition as used in $INSTALL/linuxusedpart then
+	# We record the partition as used in $INSTALL/linuxusedparts then
 	# remove it from $INSTALL/linuxpartitions to not a partition to several
 	# mount points.
 	# As the name of the partitions can change if a drive is (dis)connected
@@ -1188,13 +1205,14 @@ Type d when done, l to display the list again, or q to quit."
 	echo
 	echo
 	cat $INSTALL/displaylinux
-	while [ -f $INSTALL/linuxpartitions ] && [ $(cat  $INSTALL/linuxpartitions|wc -l) -gt 0 ]; do
+	rm -f $INSTALL/linuxusedparts
+	while [ -f $INSTALL/linuxpartitions ] && [ "$(wc -l $INSTALL/linuxpartitions|cut -d" " -f1)" -gt 0 ]; do
 		displaypartitions linux
 		echo
 		gettext "Partition number? (or l to display the list, d when done, q to quit): "
 		clear_stdin
-		read ANSWER
-		CHOICE=$(to_lower $ANSWER)
+		read -r ANSWER
+		CHOICE=$(to_lower "$ANSWER")
 		[ "$CHOICE" = "d" ] && return
 		[ "$CHOICE" = "q" ] && clear && backtomenu "$(gettext "Type 'start' again when you will be ready.")"
 		if [ "$CHOICE" = "l" ]; then
@@ -1211,28 +1229,21 @@ Type d when done, l to display the list again, or q to quit."
 			OTHERPARTNUM=$ANSWER
 			grep "PARTNUM=\"$OTHERPARTNUM\"" $INSTALL/linuxpartitions > $INSTALL/partition
 			. $INSTALL/partition
-			LINUXPARTUUID=$PARTUUID
-			setmountpoint $LINUXPARTUUID linux
-			grep "PARTUUID=\"$LINUXPARTUUID\"" $INSTALL/linuxpartitions > $INSTALL/partition
-			. $INSTALL/partition
-			addsetting $LINUXPARTUUID linux FSTYPE "$FSTYPE"
-			grep "PARTUUID=\"$LINUXPARTUUID\"" $INSTALL/linuxpartitions >>$INSTALL/linuxusedpart
-			mv $INSTALL/linuxpartitions $INSTALL/linuxpartitions.prev
-			while read part; do
-				echo "$part" > $INSTALL/part
-				. $INSTALL/part
-				if [ ! "$PARTUUID" = "$LINUXPARTUUID" ]; then
-					cat $INSTALL/part >> $INSTALL/linuxpartitions
-				fi
-			done <$INSTALL/linuxpartitions.prev
+			setmountpoint "$PARTUUID" linux
+			# MOUNTPOINT="<mountpoint>" has been appended to $INSTALL/partition
+			setfstype "$LINUXPARTUUID"
+			# FSTYPE=<fstype> can have changed, if yes FORMATME="yes" has been appended to $INSTALL/partition
+			cat $INSTALL/partition >>$INSTALL/linuxusedparts
+			sed "/PARTUUID=\"$PARTUUID\"/d" $INSTALL/linuxpartitions > bof
+			mv bof $INSTALL/linuxpartitions
 		fi
 	done
 }
 setwindows() {
 	[ ! -f $INSTALL/windowspartitions ] && return
-	[ $(cat  $INSTALL/windowspartitions|wc -l) -eq 0 ] && return
+	[ "$(wc -l  $INSTALL/windowspartitions|cut -d" " -f 1)" -eq 0 ] && return
 	displaypartitions windows
-	[ ! -f $INSTALL/displaywindows ] && return	
+	[ ! -f $INSTALL/displaywindows ] && return
 	echo setwindows >>$INSTALL/log
 	# We will propose to mount automatically partitions formatted with one of
 	# theses file systems, according to lsblk: exfat, ntfs, vfat.
@@ -1249,12 +1260,12 @@ to be automatically mounted at boot time, either read-only or read-write."
 	echo
 	echo
 	cat $INSTALL/displaywindows
-	while [ -f $INSTALL/windowspartitions ] && [ $(cat  $INSTALL/windowspartitions|wc -l) -gt 0 ]; do
+	while [ -f $INSTALL/windowspartitions ] && [ "$(wc -l $INSTALL/windowspartitions|cut -d" " -f1)" -gt 0 ]; do
 		displaypartitions windows
 		gettext "Partition number? (l to display the list, d when done, h for help):"
 		clear_stdin
-		read ANSWER
-		CHOICE=$(to_lower $ANSWER)
+		read -r ANSWER
+		CHOICE=$(to_lower "$ANSWER")
 		[ "$CHOICE" = "d" ] && return
 		if [ "$CHOICE" = "h" ]; then
 			clear
@@ -1272,19 +1283,13 @@ to be automatically mounted at boot time, either read-only or read-write."
 			echo
 		else
 			WINDOWSPARTNUM=$ANSWER
-			grep "PARTNUM=\"$WINDOWSPARTNUM\"" $INSTALL/windowspartitions >> $INSTALL/part
-			. $INSTALL/part
+			grep "PARTNUM=\"$WINDOWSPARTNUM\"" $INSTALL/windowspartitions >> $INSTALL/partition
+			. $INSTALL/partition
 			WINPARTUUID=$PARTUUID
-			setmountpoint $WINPARTUUID windows
-			grep "PARTUUID=\"$WINPARTUUID\"" $INSTALL/windowspartitions >> $INSTALL/windowsusedpart
-			mv $INSTALL/windowspartitions $INSTALL/windowspartitions.prev
-			while read part; do
-				echo "$part" > $INSTALL/part
-				. $INSTALL/part
-				if [ ! "$PARTUUID" = "$WINPARTUUID" ]; then
-					cat $INSTALL/part >> $INSTALL/windowspartitions
-				fi
-			done <$INSTALL/windowspartitions.prev
+			setmountpoint "$WINPARTUUID" windows
+			grep "PARTUUID=\"$WINPARTUUID\"" $INSTALL/windowspartitions >> $INSTALL/windowsusedparts
+			sed "/PARTUUID=\"$PARTUUID\"/d" $INSTALL/windowspartitions > bof
+			mv bof $INSTALL/windowspartitions
 		fi
 	done
 }
@@ -1318,11 +1323,10 @@ encryptornot() {
 		DRIVEPATH=$NAME
 	else
 		. $INSTALL/rootusedpart
-		grep "PARTUUID=\"$PARTUUID\"" $INSTALL/partitionsoftypelinux >$INSTALL/part
 		DRIVEPATH=$PKNAME
 	fi
 	echo
-	KEYMAP=$(cat /tmp/Pkeymap|cut -d. -f1)
+	KEYMAP=$(cut -d. -f1 /tmp/Pkeymap)
 	eval_gettext  "The root Slint partition can be encrypted to prevent data
 steal in case of loss or theft of the machine or the drive where Slint is
 installed. Then you will type a so-called \"passphrase\" to unlock the Slint
@@ -1336,8 +1340,8 @@ partition, giving access to the boot menu. We will record this passphrase"
 		eval_gettext "Do you want to encrypt \$NAME? type yes, no or h for help."
 		echo
 		clear_stdin
-		read ANSWER
-		case "$(to_lower $ANSWER)" in
+		read -r ANSWER
+		case "$(to_lower "$ANSWER")" in
 			yes) ENCRYPT="yes"; break;;
 			no) break;;
 			h) clear; hintencryptornot;;
@@ -1349,8 +1353,8 @@ confirm() {
 	echo confirm >>$INSTALL/log
 	if [ "$AUTO" ]; then
 		. $INSTALL/drive
-		VEND=$(echo $VENDOR|sed "s/[[:space:]]//g")
-		MOD=$(echo $MODEL|sed "s/[[:space:]]//g")
+		VEND=$(echo "$VENDOR"|sed "s/[[:space:]]//g")
+		MOD=$(echo "$MODEL"|sed "s/[[:space:]]//g")
 		CHOSEN="no"
 		echo
 		SIZEG=$((SIZE/GIGA))
@@ -1386,35 +1390,43 @@ other partitions on \$PKNAME will be preserved."
 			eval_gettext "A \"\$ADDEDPARTNAME\" partition of size \${ADDEDPARTSIZE}G will be set up."
 			echo
 		fi
-		if [ $(cat $INSTALL/available) -ne 0 ]; then
+		if [ "$(cat $INSTALL/available)" -ne 0 ]; then
 			AVAILABLE=$(cat $INSTALL/available)
 			GAVAILABLE=$((AVAILABLE/GIGA))
 			eval_gettext "A space of size \${GAVAILABLE}G will stay free after the last partition."
 			echo
 		fi
 	fi
-	if [ -f $INSTALL/windowsusedpart ] || [ -f $INSTALL/linuxusedpart ]; then
+	if [ -f $INSTALL/windowsusedparts ] || [ -f $INSTALL/linuxusedparts ]; then
 		gettext "Partitions listed below will be accessible:"
 		echo
 		unset root linux windows
-		[ -f $INSTALL/rootusedpart ] && root=$root
-		[ -f $INSTALL/windowsusedpart ] && windows=windows
-		[ -f $INSTALL/linuxusedpart ] && linux=linux
+		[ -f $INSTALL/rootusedpart ] && root=root
+		[ -f $INSTALL/windowsusedparts ] && windows=windows && \
+		cp $INSTALL/windowsusedparts $INSTALL/windowsusedpart
+		[ -f $INSTALL/linuxusedparts ] && linux=linux && \
+		cp $INSTALL/linuxusedparts $INSTALL/linuxusedpart
 		for KIND in $root $linux $windows; do
 			DRIVES=""
-			while read partition; do
-				unset FORMAT
+			while read -r partition; do
 				echo "$partition" > $INSTALL/partition
+				FORMATME="no"
 				. $INSTALL/partition
 				if ! echo "$DRIVES" | grep -q "$PKNAME "; then
 					DRIVES="$DRIVES $PKNAME "
 				fi
 				GSIZE=$((SIZE/GIGA))
-				[ "$KIND" = "root" ] && MOUNTPOINT="/"
-				echo "$KIND $NAME (${GSIZE}G) $MOUNTPOINT $FSTYPE"
-			done < $INSTALL/${KIND}usedpart
+				if [ "$KIND" = "root" ]; then
+					echo "linux $(cat $INSTALL/rootpartpath) (${GSIZE}G) / $(cat $INSTALL/rootfstype) formatted"
+				else
+					FORMATTED=""
+					[ "$FORMATME" = "yes" ] && FORMATTED="formatted"  
+					echo "$KIND $NAME (${GSIZE}G) $MOUNTPOINT $FSTYPE $FORMATTED"
+				fi
+			done < $INSTALL/"${KIND}"usedpart
 		done
 	fi
+	rm -f $INSTALL/windowsusedpart $INSTALL/linuxusedpart
 	echo
 	gettext "If you confirm these settings they will be applied,
 else you will go back to the greeting screen of the installer."
@@ -1422,8 +1434,8 @@ else you will go back to the greeting screen of the installer."
 	while true; do
 		gettext "To confirm these settings type yes, else type no: "
 		clear_stdin
-		read ANSWER
-		case $(to_lower $ANSWER) in
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			yes) 
 				echo "Version of ISO used for installation: $ISOVERSION"  >>$INSTALL/log
 				break 2;;
@@ -1450,9 +1462,9 @@ encryptthedrive() {
 	gettext "It should include at least one capital letter, one lower case letter,
 one digit and one punctuation sign and have at least 8 characters.
 Write it in a safe place first!"
-	KEYMAP=$(cat /tmp/Pkeymap|cut -d. -f1)
+	KEYMAP=$(cut -d. -f1 /tmp/Pkeymap)
 	BKEYMAP=$(sed s/map/bmap/ /tmp/Pkeymap)
-	tar xf /etc/keymaps.tar.gz $BKEYMAP
+	tar xf /etc/keymaps.tar.gz "$BKEYMAP"
 	tar xf /etc/keymaps.tar.gz us.bmap
 	if [ ! "$KEYMAP" = "us" ]; then
 		echo
@@ -1467,8 +1479,8 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 		gettext "Passphrase (h for help): "
 		loadkmap < us.bmap
 		clear_stdin
-		read PASS
-		loadkmap < $BKEYMAP
+		read -r PASS
+		loadkmap < "$BKEYMAP"
 		case $PASS in
 			h) clear; hintpassphrase; continue 2;;
 			*[!\ 0-9a-zA-Z\'!\"#\$%\&\(\)*+,./:\;\<=\>?@[\]^_\`\{\|\}~\\-]*)
@@ -1483,25 +1495,25 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 			echo
 			continue
 		fi
-		if ! echo $PASS|grep -q "[a-z]"; then
+		if ! echo "$PASS"|grep -q "[a-z]"; then
 			echo
 			gettext "The passphrase should include at least one lower case letter."
 			echo
 			continue
 		fi
-		if ! echo $PASS|grep -q "[A-Z]"; then
+		if ! echo "$PASS"|grep -q "[A-Z]"; then
 			echo
 			gettext "The passphrase should include at least one capital letter."
 			echo
 			continue
 		fi
-		if ! echo $PASS|grep -q "[0-9]"; then
+		if ! echo "$PASS"|grep -q "[0-9]"; then
 			echo
 			gettext "The passphrase should include at least one digit."
 			echo
 			continue
 		fi
-		if ! echo $PASS|grep -q "[[:punct:]]"; then
+		if ! echo "$PASS"|grep -q "[[:punct:]]"; then
 			echo
 			gettext "The passphrase should include at least one punctuation character."
 			echo
@@ -1511,8 +1523,8 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 		eval_gettext "Please type again the passphrase, to check: "
 		loadkmap < us.bmap
 		clear_stdin
-		read NEWPASS
-		loadkmap < $BKEYMAP
+		read -r NEWPASS
+		loadkmap < "$BKEYMAP"
 		if [ ! "$PASS" = "$NEWPASS" ]; then
 			echo
 			gettext "Passphrases do not match. please try again."
@@ -1530,50 +1542,46 @@ reason we will now display the typed characters using an \"us\" keyboard map.
 	# For now we use luks1 but this could change
 	mkdir -p /run/cryptsetup
 	chmod 700 /run/cryptsetup
-	wipefs -af $(cat $INSTALL/rootpartpath)
-	printf "%s" "$PASS" | cryptsetup luksFormat  --type luks1 $(cat $INSTALL/rootpartpath) -
-	printf "%s" "$PASS" | cryptsetup open $(cat $INSTALL/rootpartpath) cryptroot -
-	cryptsetup  luksUUID $(cat $INSTALL/rootpartpath) >$INSTALL/rootcryptuuid
+	wipefs -af "$(cat $INSTALL/rootpartpath)"
+	printf "%s" "$PASS" | cryptsetup luksFormat  --type luks1 "$(cat $INSTALL/rootpartpath)" -
+	printf "%s" "$PASS" | cryptsetup open "$(cat $INSTALL/rootpartpath)" cryptroot -
+	cryptsetup  luksUUID "$(cat $INSTALL/rootpartpath)" >$INSTALL/rootcryptuuid
 	echo /dev/mapper/cryptroot >$INSTALL/rootpartpath
 	# If an  additional partition was set up in auto mode, we'll encrypt it
 	# using the same passphrase. Maybe use the argon2i key derival function later.
 	if [ -f "$INSTALL/addedpartpath" ]; then
-		printf "%s" "$PASS" | cryptsetup luksFormat --type luks1 $(cat $INSTALL/addedpartpath) -
-		printf "%s" "$PASS" | cryptsetup open $(cat $INSTALL/addedpartpath) cryptadd -
-		cryptsetup luksUUID $(cat $INSTALL/addedpartpath) >$INSTALL/addedcryptuuid
+		printf "%s" "$PASS" | cryptsetup luksFormat --type luks1 "$(cat $INSTALL/addedpartpath)" -
+		printf "%s" "$PASS" | cryptsetup open "$(cat $INSTALL/addedpartpath)" cryptadd -
+		cryptsetup luksUUID "$(cat $INSTALL/addedpartpath)" >$INSTALL/addedcryptuuid
 		echo /dev/mapper/cryptadd >$INSTALL/addedpartpath
 	fi
-	# In case of other Linux partitions on the same drive as root one, encrypt
-	# using the same passphrase those for which a mount point has been set.
 }
-formatpartitionsandsetswapfile() {
+formatrootpartitionandsetswapfile() {
 	# We will record the UUID of each partition we format so to ease
 	# writing $SLINT/etc/fstab
 	echo formatpartitions >>$INSTALL/log
 	# In case of encryption NAME=/dev/mapper/<name>
 	ROOTNAME=$(cat $INSTALL/rootpartpath)
 	FSTYPE=$(cat $INSTALL/rootfstype)
-	[ "$MANUAL" ] && [ ! "$ENCRYPT" ] && wipefs -fa $ROOTNAME
+	[ "$MANUAL" ] && [ ! "$ENCRYPT" ] && wipefs -fa "$ROOTNAME"
 	if [ "$FSTYPE" = "btrfs" ]; then
-		mkfs.btrfs -L root $ROOTNAME 1>/dev/null 2>>$INSTALL/errors
+		mkfs.btrfs -L root "$ROOTNAME" 1>/dev/null 2>>$INSTALL/errors
 		sleep 1
-		lsblk -lno uuid $ROOTNAME > $INSTALL/rootuuid
-		mount -o compress=zstd:3,noatime $ROOTNAME $SLINT
+		lsblk -lno uuid "$ROOTNAME" > $INSTALL/rootuuid
+		mount -o compress=zstd:3,noatime "$ROOTNAME" $SLINT
 		btrfs subvolume create $SLINT/@
-		btrfs subvolume create $SLINT/@home
 		btrfs subvolume create $SLINT/@swap
+		# We mount /home here if and only if it is not in a separate directory (which is
+		# only allowed in manual partitioning mode so far), else it will be mounted in
+		# formatotherlinuxpartitions and not as a subvolume.
+		! grep -q ' home ' $INSTALL/mountpoints && btrfs subvolume create $SLINT/@home
 		umount $SLINT
-		mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT
-		mkdir $SLINT/home
+		! grep -q ' home ' $INSTALL/mountpoints && mkdir $SLINT/home
+		! grep -q ' home ' $INSTALL/mountpoints && \
+		mount -o subvol=@home,compress=zstd:3,noatime "$ROOTNAME" $SLINT/home
+		mount -o subvol=@,compress=zstd:3,noatime "$ROOTNAME" $SLINT
 		mkdir $SLINT/swap
-		mount -o subvol=/@home,compress=zstd:3,noatime $ROOTNAME $SLINT/home
-		if [ -f "$INSTALL/addedpartname" ]; then
-			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
-			mkfs.btrfs -L added $ADDEDPARTPATH 1>/dev/null 2>>$INSTALL/errors
-			sleep 1
-			lsblk -lno uuid $ADDEDPARTPATH > $INSTALL/addeduuid
-		fi
-		mount -o subvol=/@swap,compress=zstd:3,noatime $ROOTNAME $SLINT/swap
+		mount -o subvol=@swap,compress=zstd:3,noatime "$ROOTNAME" $SLINT/swap
 		truncate -s 0 $SLINT/swap/swapfile
 		# +C=no copy-on-write
 		# +m=no compression
@@ -1581,22 +1589,53 @@ formatpartitionsandsetswapfile() {
 		dd if=/dev/zero of=$SLINT/swap/swapfile bs=${MEGA}c count=1024 status=none
 		chmod 0600 $SLINT/swap/swapfile
 		mkswap $SLINT/swap/swapfile
+		if [ -f "$INSTALL/addedpartname" ]; then
+			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
+			mkfs.btrfs -L added "$ADDEDPARTPATH" 1>/dev/null 2>>$INSTALL/errors
+			sleep 1
+			lsblk -lno uuid "$ADDEDPARTPATH" > $INSTALL/addeduuid
+		fi
 	else
 		label='-L root'
-		mkfs.$FSTYPE -q $label $ROOTNAME 1>/dev/null
-		lsblk -lno uuid $ROOTNAME > $INSTALL/rootuuid
-		mount -o noatime $ROOTNAME $SLINT
+		mkfs."$FSTYPE" -q "$label" "$ROOTNAME" 1>/dev/null
+		lsblk -lno uuid "$ROOTNAME" > $INSTALL/rootuuid
+		mount -o noatime "$ROOTNAME" $SLINT
 		dd if=/dev/zero of=$SLINT/swapfile bs=${MEGA}c count=1024 status=none
 		chmod 600 $SLINT/swapfile
 		mkswap $SLINT/swapfile 1>>$INSTALL/log
 	fi
 }
+formatotherlinuxpartitions() {
+	[ ! -f "$INSTALL/linuxusedparts" ] && return
+	while read -r partition; do
+		FORMATME="no"
+		echo "$partition" > $INSTALL/part
+		. $INSTALL/part
+		if [ "$FORMATME" = "yes" ]; then
+			echo "Wipe existing file system in $NAME" >>$INSTALL/log
+			wipefs -af "$NAME" 1>>$INSTALL/log 2>>$INSTALL/log
+			partprobe "$NAME" 1>>$INSTALL/log 2>>$INSTALL/log
+			echo "Formatting $NAME as $FSTYPE" >>$INSTALL/log
+			mkfs."$FSTYPE" -q "$NAME" 1>>$INSTALL/log 2>>$INSTALL/errors
+		fi
+		if  [ "$MOUNTPOINT" = "/home" ]; then
+			mkdir $SLINT/home
+			mount "$NAME" $SLINT/home
+		fi
+	done <$INSTALL/linuxusedparts
+}
+formatefimanual(){
+	[ "$AUTO" ] && return
+	[ ! -f  $INSTALL/efiusedpart ] && return
+	. $INSTALL/efiusedpart
+	[ ! "$FSTYPE" ] && mkfs.fat  "$NAME" 1>/dev/null 2>>$INSTALL/errors
+}
 installaaabaseandfixperms() {
 	echo "installaaabaseandfixperms" >> $INSTALL/log
 	# Until I fix the perms in the aaa_base package...
-	spkg  --root $SLINT -qq -i $ISO/slint/aaa_base*txz
-	(cd $SLINT
-	ls |while read dir; do chown -R root:root $dir; done
+	spkg  --root=$SLINT -qq -i $ISO/slint/aaa_base*txz
+	(cd $SLINT || exit
+	find $SLINT/* -prune -exec chown -R root:root {} +
 	chown root:mail var/spool/mail
 	chmod 1777 tmp
 	chmod 1777 var/spool/mail
@@ -1605,32 +1644,32 @@ installaaabaseandfixperms() {
 setmountpoints() {
 		echo "setmountpoints" >>$INSTALL/log
 	if [ -f "$INSTALL/addedpartname" ]; then
-		mkdir -p $SLINT/$(cat $INSTALL/addedpartname)
-	fi 
-	[ ! -f $INSTALL/windowsusedpart ] && return
-	echo $0 >>$INSTALL/log
-	while read windowspart; do
+		mkdir -p $SLINT/"$(cat $INSTALL/addedpartname)"
+	fi
+	[ ! -f $INSTALL/windowsusedparts ] && return
+	echo "$0" >>$INSTALL/log
+	while read -r windowspart; do
 		echo "$windowspart" > $INSTALL/partition
 		. $INSTALL/partition
-		mkdir -p $SLINT/$MOUNTPOINT
-	done < $INSTALL/windowsusedpart
-	[ ! -f $INSTALL/linuxusedpart ] && return
-	while read linuxpart; do
+		mkdir -p $SLINT/"$MOUNTPOINT"
+	done < $INSTALL/windowsusedparts
+	[ ! -f $INSTALL/linuxusedparts ] && return
+	while read -r linuxpart; do
 		unset FORMAT
 		echo "$linuxpart" > $INSTALL/partition
 		. $INSTALL/partition
-		mkdir -p $SLINT/$MOUNTPOINT
-	done < $INSTALL/linuxusedpart
+		mkdir -p $SLINT/"$MOUNTPOINT"
+	done < $INSTALL/linuxusedparts
 }
 installfirstpackages() {
 	echo "installfirtspackages" >>$INSTALL/log
 	echo
-	PKGLISTS=/tmp/PKGLISTS
+	PKGLISTS="$SLINT"/PKGLISTS
 	mkdir -p $PKGLISTS
-	echo $0 >>$PKGLISTS/loginstall
+	echo "$0" >>$PKGLISTS/loginstall
 	SRCPATH=$ISO/slint || exit 1
-	(cd $SRCPATH
-	Liste="devs \
+	(cd $SRCPATH || exit
+	Liste=" devs \
 	aaa_libraries \
 	aaa_terminfo \
 	coreutils \
@@ -1654,13 +1693,13 @@ installfirstpackages() {
 	slint-user-settings \
 	sysvinit-scripts \
 	pam \
-	pam-krb5"
+	pam-krb5 "
 	gettext "Installing the first software packages..."
 	echo
 	for i in $Liste;  do
-		PKG=$(ls|grep "${i}-[^-]*-[^-]*-[^-]*.t.z")
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $PKG
-		spkg --root $SLINT -qq --no-gtk-update-icon-cache -i $PKG 1>>$PKGLISTS/loginstall 2>>$PKGLISTS/loginstall
+		PKG=$(find . |grep "${i}-[^-]*-[^-]*-[^-]*.t.z")
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKG"
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache -i "$PKG" 1>>$PKGLISTS/loginstall 2>>$PKGLISTS/loginstall
 	done
 	echo
 	)
@@ -1684,12 +1723,12 @@ Do not touch the files in the directory else you will need to type a
 passphrase to unlock each partition.
 	EOF
 	cp $SLINT/etc/keys/$KEYFILE $SLINT/etc/keys/root$KEYFILE
-	printf "%s" "$PASS" | cryptsetup luksAddKey /dev/disk/by-uuid/$(cat $INSTALL/rootcryptuuid) $SLINT/etc/keys/root$KEYFILE -
+	printf "%s" "$PASS" | cryptsetup luksAddKey /dev/disk/by-uuid/"$(cat $INSTALL/rootcryptuuid)" $SLINT/etc/keys/root$KEYFILE -
 	chmod 600 $SLINT/etc/keys/root$KEYFILE
 	echo /dev/mapper/cryptroot > $INSTALL/rootpart
 	if [ -f "$INSTALL/addedpartpath" ]; then
 		cp $SLINT/etc/keys/$KEYFILE $SLINT/etc/keys/add$KEYFILE
-		printf "%s" "$PASS" |  cryptsetup luksAddKey /dev/disk/by-uuid/$(cat $INSTALL/addedcryptuuid) $SLINT/etc/keys/add$KEYFILE -
+		printf "%s" "$PASS" |  cryptsetup luksAddKey /dev/disk/by-uuid/"$(cat $INSTALL/addedcryptuuid)" $SLINT/etc/keys/add$KEYFILE -
 		chmod 600 $SLINT/etc/keys/add$KEYFILE
 		echo /dev/mapper/cryptadd > $INSTALL/addedpartpath
 	fi
@@ -1697,30 +1736,34 @@ passphrase to unlock each partition.
 fstab() {
 	echo fstab >>$INSTALL/log
 	FSTAB=$SLINT/etc/fstab
-	touch /etc/fstab
+	touch $FSTAB
 	if [ -f $INSTALL/esppath ]; then
 		ESPPATH=$(cat $INSTALL/esppath)
-		UUID=$(lsblk -nlo uuid $ESPPATH)
+		UUID=$(lsblk -nlo uuid "$ESPPATH")
 		echo "# Initially $ESPPATH" >>$FSTAB
 		echo "UUID=$UUID /boot/efi vfat defaults 1 0" >>$FSTAB
 	fi
 	ROOTPARTPATH=$(cat $INSTALL/rootpartpath)
-	UUID=$(blkid -s UUID -o value $ROOTPARTPATH)
+	UUID=$(blkid -s UUID -o value "$ROOTPARTPATH")
 	FSTYPE=$(cat $INSTALL/rootfstype)
 	if [ "$FSTYPE" = "btrfs" ]; then
 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
-		echo "UUID=$UUID / btrfs subvol=/@,compress=zstd:3,noatime 0 0" >>$FSTAB
+		echo "UUID=$UUID / btrfs subvol=@,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
+		# If the test below check that /home is not its own partition. Else we will include
+		# an entry for /home reading $INSTALL/linuxusedparts
+		if ! grep -q " home " $INSTALL/mountpoints ; then
+			echo "# Initially $ROOTPARTPATH" >>$FSTAB
+			echo "UUID=$UUID /home btrfs subvol=@home,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
+		fi
 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
-		echo "UUID=$UUID /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0" >>$FSTAB
-		echo "# Initially $ROOTPARTPATH" >>$FSTAB
-		echo "UUID=$UUID /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0" >>$FSTAB
+		echo "UUID=$UUID /swap btrfs subvol=@swap,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
 		echo "/swap/swapfile none swap pri=5 0 0" >>$FSTAB
 		if [ -f $INSTALL/addedpartname ]; then
 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
-			UUID=$(blkid -s UUID -o value $ADDEDPARTPATH) 
+			UUID=$(blkid -s UUID -o value "$ADDEDPARTPATH") 
 			echo "# Initially $ADDEDPARTPATH" >>$FSTAB
-			echo "UUID=$UUID /$ADDEDPARTNAME btrfs compress=zstd:3,noatime 0 0" >>$FSTAB
-			mkdir -p $SLINT/$ADDEDPARTNAME
+			echo "UUID=$UUID /$ADDEDPARTNAME btrfs compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
+			mkdir -p $SLINT/"$ADDEDPARTNAME"
 		fi
 	else
 		FSTYPE=$(cat $INSTALL/rootfstype)
@@ -1728,18 +1771,18 @@ fstab() {
 		echo "UUID=$UUID / $FSTYPE noatime 1 1" >>$FSTAB
 		echo "/swapfile none swap pri=5 0 0" >>$FSTAB
 	fi
-	if [ -f $INSTALL/linuxusedpart ] \
-		&& [ $(cat $INSTALL/linuxusedpart|wc -l) -ne 0 ]; then
-		while read linuxpart; do
+	if [ -f $INSTALL/linuxusedparts ] \
+		&& [ "$(wc -l $INSTALL/linuxusedparts|cut -d" " -f1)" -ne 0 ]; then
+		while read -r linuxpart; do
 			echo "$linuxpart" > $INSTALL/partition
 			MOUNTPOINT=""
 			. $INSTALL/partition
 			[ ! "$MOUNTPOINT" ]  && continue
-			UUID=$(lsblk -nlo uuid $NAME)
-			FSTYPE=$(lsblk -nlo fstype $NAME)
+			UUID=$(lsblk -nlo uuid "$NAME")
+			FSTYPE=$(lsblk -nlo fstype "$NAME")
 			if [ "$FSTYPE" = "btrfs" ]; then
 				echo "# Initially $NAME" >>$FSTAB
-				echo "UUID=$UUID $MOUNTPOINT $FSTYPE compress=zstd:3,noatime 0 0" >>$FSTAB
+				echo "UUID=$UUID $MOUNTPOINT $FSTYPE compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
 			elif [ "$FSTYPE" = "f2fs" ]; then
 				echo "# Initially $NAME" >>$FSTAB
 				echo "UUID=$UUID $MOUNTPOINT $FSTYPE noatime,fsync_mode=strict 1 2" >>$FSTAB
@@ -1747,21 +1790,21 @@ fstab() {
 				echo "# Initially $NAME" >>$FSTAB
 				echo "UUID=$UUID $MOUNTPOINT $FSTYPE noatime 1 2" >>$FSTAB
 			fi
-			mkdir -p $SLINT/$MOUNTPOINT
-		done < $INSTALL/linuxusedpart
+			mkdir -p $SLINT/"$MOUNTPOINT"
+		done < $INSTALL/linuxusedparts
 	fi
-	if [ -f $INSTALL/windowsusedpart ]; then
-		while read windowspart; do
+	if [ -f $INSTALL/windowsusedparts ]; then
+		while read -r windowspart; do
 			MOUNTPOINT=""
 			echo "$windowspart" > $INSTALL/partition
 			. $INSTALL/partition
 			[ ! "$MOUNTPOINT" ]  && continue
-			UUID=$(lsblk -nlo uuid $NAME)
-			FSTYPE=$(lsblk -nlo fstype $NAME)
+			UUID=$(lsblk -nlo uuid "$NAME")
+			FSTYPE=$(lsblk -nlo fstype "$NAME")
 			[ "$FSTYPE" = "ntfs" ] && FSTYPE=ntfs3
 			echo "# Initially $NAME" >>$FSTAB
 			echo "UUID=$UUID $MOUNTPOINT $FSTYPE noatime,$OPTIONS 1 2" >>$FSTAB
-		done < $INSTALL/windowsusedpart
+		done < $INSTALL/windowsusedparts
 	fi
     echo "devpts /dev/pts devpts gid=5,mode=620 0 0" >>$FSTAB
     echo "proc /proc proc defaults 0 0" >>$FSTAB
@@ -1808,10 +1851,10 @@ This status should be accessed only with a good password."
 	while true; do
 		eval_gettext "Please type the password for \$THISUSER: "
 		stty -echo 2>/dev/null
-		trap "stty  $saveterm" EXIT
+		trap 'stty "$saveterm"' EXIT
 		clear_stdin
-		read ANSWER
-		stty  $saveterm
+		read -r ANSWER
+		stty  "$saveterm"
 		if [ ${#ANSWER} -lt 6 ]; then
 			echo
 			gettext "The password should have at least 6 characters."
@@ -1820,10 +1863,10 @@ This status should be accessed only with a good password."
 		echo
 		eval_gettext "Please type again the password for \$THISUSER, to check: "
 		stty -echo 2>/dev/null
-		trap "stty  $saveterm" EXIT
+		trap 'stty  "$saveterm"' EXIT
 		clear_stdin
-		read NEWANSWER
-		stty  $saveterm
+		read -r NEWANSWER
+		stty  "$saveterm"
 		if [ ! "$ANSWER" = "$NEWANSWER" ]; then
 			echo
 			gettext "Passwords do not match. please try again."
@@ -1847,11 +1890,10 @@ We need to know under which name this user will log in to access Slint."
 # requirements for a portable user name: portable file name not beginning qith a <hyphen-minus>:
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_437
 # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_282
-# In addition we 'useradd' e do not allow a <dot> nor capital letters.
 	while true; do
 		gettext "Login name of the first registered user: "
 		clear_stdin
-		read LOGIN
+		read -r LOGIN
 		case $LOGIN in
 			"") continue;;
 			_*) gettext "The username should not begin with a '_'"; echo; continue;;
@@ -1862,10 +1904,10 @@ from 0 to 9, '_' or '-'"; echo; continue;;
 		*) break
 		esac
 	done
-    chroot $SLINT /usr/sbin/useradd -s /bin/bash  -g 100 -G $ADDGROUPS -m -k /etc/skel -u 1000 $LOGIN
-    echo $LOGIN>$INSTALL/firstuserlogin
+    chroot $SLINT /usr/sbin/useradd -s /bin/bash  -g 100 -G $ADDGROUPS -m -k /etc/skel -u 1000 "$LOGIN"
+    echo "$LOGIN">$INSTALL/firstuserlogin
 	setpasswd "$LOGIN"
-	chroot $SLINT chmod 711 /home/$LOGIN
+	chroot $SLINT chmod 711 /home/"$LOGIN"
 	echo
 }
 brlttyornot() {
@@ -1876,8 +1918,8 @@ brlttyornot() {
 	while true; do
 		gettext "Will you use a Braille device? Please answer yes or no: "
 		clear_stdin
-		read ANSWER
-		case $(to_lower $ANSWER) in
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			yes) chroot $SLINT chmod 0755 /etc/rc.d/rc.brltty; break;;
 			no) chroot $SLINT chmod 0644 /etc/rc.d/rc.brltty; break;;
 			*) :
@@ -1893,8 +1935,8 @@ startupmode() {
 	while true; do
 		gettext "Type c for console or g for graphical, or h for help then press Enter: "
 		clear_stdin
-		read ANSWER
-		case $(to_lower $ANSWER) in
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			c) sed "/:initdefault:/s/.*/id:3:initdefault:/" $SLINT/etc/inittab > bof
 				mv bof $SLINT/etc/inittab
 				break;;
@@ -1909,7 +1951,7 @@ startupmode() {
 defaultlocale() {
 	# Set the default locale for the installed system,
 	if echo "$LOCALES"|grep -q " $LANG " && [ ! "$LANG" = "en_US.utf8" ]; then
-		chroot $SLINT /usr/sbin/localesetup $LANG 1>>$INSTALL/log
+		chroot $SLINT /usr/sbin/localesetup "$LANG" 1>>$INSTALL/log
     else
 		gettext "In the next dialog, you will choose the language for your Slint System."
 		echo
@@ -1931,24 +1973,26 @@ noipv6() {
 wired() {
 	echo wired >>$INSTALL/log
 	rm -f /tmp/connected
-	LISTETH=$(for i in $(ls /sys/class/net/|grep -v lo); do
-		if [ ! -d /sys/class/net/$i/wireless ]; then
-			echo $i;
+	LISTETH=$(find /sys/class/net/*|grep -v lo|while read -r i; do
+		if [ ! -e /sys/class/net/"$(basename "$i")"/wireless ]; then
+			basename "$i";
 		fi
 		done)
 	NUMETH=$(echo "$LISTETH"|wc -l)
-	if [ $NUMETH -eq 0 ]; then
+	if [ "$NUMETH" -eq 0 ]; then
 		return
-	elif [ $NUMETH -eq 1 ]; then
-		dhcpcd -k $LISTETH 2>/dev/null
-		dhcpcd -t 10 $LISTETH 1>/dev/null 2>/dev/null
-		if [ $? -eq 0 ]; then
+	elif [ "$NUMETH" -eq 1 ]; then
+		dhcpcd -k "$LISTETH" 2>/dev/null
+		dhcpcd -t 10 "$LISTETH" 1>/dev/null 2>/dev/null
+		mycmd="$?"
+		if [ "$mycmd" -eq 0 ]; then
 				touch /tmp/connected
 		fi
 	else
-		echo "$LISTETH"|while read ETH; do
-			dhcpcd -t 10 $ETH 1>/dev/null 2>/dev/null
-			if [ $? -eq 0 ]; then
+		echo "$LISTETH"|while read -r ETH; do
+			dhcpcd -t 10 "$ETH" 1>/dev/null 2>/dev/null
+			mycmd="$?"
+			if [ "$mycmd" -eq 0 ]; then
 				touch /tmp/connected
 			fi
 		done
@@ -1975,8 +2019,8 @@ those shipped with the installer, but we couldn't get a wired connection."
 	while true; do
 		gettext "Should we try to get a wifi connection? Please type yes or no: "
 		clear_stdin
-		read ANSWER
-		case $(to_lower $ANSWER) in
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			yes) break ;;
 			no) return 1 ;;
 			*) :
@@ -1995,12 +2039,13 @@ those shipped with the installer, but we couldn't get a wired connection."
 		fi
 	done)
 	for IFACE in $IFACELIST; do
-		dhcpcd -k $IFACE 1>>$INSTALL/log 2>>$INSTALL/log
-		ifconfig $IFACE down
-		# To avoid timeouts waiting for a carrier (ArchWiki)
-		iwconfig $IFACE channel auto
-		ifconfig $IFACE up
-		iwlist $IFACE scanning 1>$INSTALL/raw
+		dhcpcd -k "$IFACE" 1>>$INSTALL/log 2>>$INSTALL/log
+		ifconfig "$IFACE" down
+		# To avoid timeouts waiting for a carrier (ArchWiki),
+		# but not supported by all interfaces
+		iwconfig "$IFACE" channel auto 2>/dev/null
+		ifconfig "$IFACE" up
+		iwlist "$IFACE" scanning 1>$INSTALL/raw
 		if grep -q "No scan results" $INSTALL/raw; then
 			echo "No wifi networks found" >>$INSTALL/raw
 			return 1
@@ -2011,26 +2056,26 @@ those shipped with the installer, but we couldn't get a wired connection."
 		grep -e Address -e ESSID -e Encryption -e PSK $INSTALL/war|sed 's/^[[:space:]]\{1,\}//' > $INSTALL/dummy
 		ENCKEY=0
 		PSK=0
-		while read line; do
-			if echo $line|grep -q Address; then
+		while read -r line; do
+			if echo "$line"|grep -q Address; then
 				if [ "$NETWORK" ]; then
-					ADDRESS=$(echo $line|grep Address|sed "s/.*Address: //")
-					echo "ADDRESS=\"$ADDRESS\" SSID=\"$NETWORK\" ENCKEY=$ENCKEY PSK=$PSK" >> $INSTALL/netlist$IFACE
+					ADDRESS=$(echo "$line"|grep Address|sed "s/.*Address: //")
+					echo "ADDRESS=\"$ADDRESS\" SSID=\"$NETWORK\" ENCKEY=$ENCKEY PSK=$PSK" >> $INSTALL/netlist"$IFACE"
 					ENCKEY=0
 					PSK=0
 				fi
 			fi
-			if echo $line|grep -q ESSID; then
-				NETWORK="$(echo $line|sed 's/ESSID://;s/"//g')"
+			if echo "$line"|grep -q ESSID; then
+				NETWORK="$(echo "$line"|sed 's/ESSID://;s/"//g')"
 			fi
-			if echo $line|grep -q "Encryption key:on"; then
+			if echo "$line"|grep -q "Encryption key:on"; then
 				ENCKEY=1
 			fi
-			if echo $line|grep -q "PSK"; then
+			if echo "$line"|grep -q "PSK"; then
 				PSK=1
 			fi
 		done < $INSTALL/dummy
-		sed "s/.\{1,\}/& IFACE=$IFACE/" $INSTALL/netlist$IFACE >>$INSTALL/netlist
+		sed "s/.\{1,\}/& IFACE=$IFACE/" $INSTALL/netlist"$IFACE" >>$INSTALL/netlist
 	done
 	if [ ! -s $INSTALL/netlist ]; then
 		gettext "No wifi network detected."
@@ -2042,19 +2087,19 @@ those shipped with the installer, but we couldn't get a wired connection."
 		# backspace works only in the current line of input.
 		setterm --linewrap off
 		clear_stdin
-		read ANSWER
+		read -r ANSWER
 		setterm --linewrap on
-		if [ "$(to_lower $ANSWER)" = "l" ]; then
+		if [ "$(to_lower "$ANSWER")" = "l" ]; then
 			sort $INSTALL/netlist|uniq|cut -d'"' -f4
-		elif grep -q \"$ANSWER\" $INSTALL/netlist; then
+		elif grep -q \""$ANSWER"\" $INSTALL/netlist; then
 			SSID="$ANSWER"
-			grep \"$SSID\" $INSTALL/netlist|head -n 1 > $INSTALL/network
+			grep \""$SSID"\" $INSTALL/netlist|head -n 1 > $INSTALL/network
 			break
 		else
 			gettext "Wrong SSID."
 			echo
 			gettext "Press Enter to try again or type q to give up: "
-			read ANSWER
+			read -r ANSWER
 			if [ "$(to_lower ANSWER)" = "q" ]; then
 				return 1
 			fi
@@ -2069,12 +2114,12 @@ those shipped with the installer, but we couldn't get a wired connection."
 				trap 'stty +echo' EXIT
 			fi
 			clear_stdin
-			read ANSWER
+			read -r ANSWER
 			if [ "$DISPLAYPASS" = "no" ]; then
 				echo
 				stty +echo
 			fi
-			if [ "$(to_lower $ANSWER)" = "q" ]; then
+			if [ "$(to_lower "$ANSWER")" = "q" ]; then
 				return 1
 			fi
 			if [ ${#ANSWER} -lt 8 ] || [ ${#ANSWER} -gt 63 ]; then
@@ -2088,26 +2133,28 @@ those shipped with the installer, but we couldn't get a wired connection."
 		ap_scan=1
 			/psk/i\
 		scan_ssid=1' > $INSTALL/wpa
-			wpa_supplicant -B -i $IFACE -Dnl80211,wext -c $INSTALL/wpa 1>>$INSTALL/log 2>>$INSTALL/log
-			if [ $? -ne 0 ]; then
+			wpa_supplicant -B -i "$IFACE" -Dnl80211,wext -c $INSTALL/wpa 1>>$INSTALL/log 2>>$INSTALL/log
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				gettext "Wrong passphrase. Press Enter to try again or type q to quit: "
 				clear_stdin
-				read ANSWER
-				if [ "$(to_lower $ANSWER)" = "q" ]; then
+				read -r ANSWER
+				if [ "$(to_lower "$ANSWER")" = "q" ]; then
 					return 1
 				fi
 				clear
 			fi
 			gettext "Please wait..."
 			echo
-			dhcpcd $IFACE 1>>$INSTALL/log 2>>$INSTALL/log
-			if [ $? -ne 0 ]; then
+			dhcpcd "$IFACE" 1>>$INSTALL/log 2>>$INSTALL/log
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				gettext "Wifi connection failed. Wrong passphrase?"
 				echo
 				eval_gettext "Press Enter to try again or type q to quit: "
 				clear_stdin
-				read ANSWER
-				if [ "$(to_lower $ANSWER)" = "q" ]; then
+				read -r ANSWER
+				if [ "$(to_lower "$ANSWER")" = "q" ]; then
 					return 1
 				else
 					killall wpa_supplicant 2>/dev/null
@@ -2118,11 +2165,12 @@ those shipped with the installer, but we couldn't get a wired connection."
 			return
 		done
 	elif [ $ENCKEY -eq 0 ]; then
-		iwconfig $IFACE essid "$SSID" 1>>$INSTALL/log 2>>$INSTALL/log
-		iwconfig $IFACE key off
-		iwconfig $IFACE ap $ADDRESS
-		dhcpcd $IFACE 1>>$INSTALL/log 2>>$INSTALL/log
-		if [ $? -ne 0 ]; then
+		iwconfig "$IFACE" essid "$SSID" 1>>$INSTALL/log 2>>$INSTALL/log
+		iwconfig "$IFACE" key off
+		iwconfig "$IFACE" ap "$ADDRESS"
+		dhcpcd "$IFACE" 1>>$INSTALL/log 2>>$INSTALL/log
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			echo "Wifi connection failed" >> $INSTALL/log
 			return 1
 		fi
@@ -2130,11 +2178,12 @@ those shipped with the installer, but we couldn't get a wired connection."
 		while true; do
 			eval_gettext "Are credentials requested to use \$SSID? Type yes or no: "
 			clear_stdin
-			read ANSWER
-			case "$(to_lower $ANSWER)" in
+			read -r ANSWER
+			case "$(to_lower "$ANSWER")" in
 				yes) break;;
 				no) wget --spider ipinfo.io
-					if [ $? -eq 0  ]; then
+						mycmd="$?"
+						if [ "$mycmd" -eq 0 ]; then
 						touch /tmp/connected
 						return
 					else
@@ -2152,8 +2201,8 @@ those shipped with the installer, but we couldn't get a wired connection."
 		while true; do
 			gettext "Press Enter to start the browser or type h for help on its usage: "
 			clear_stdin
-			read ANSWER
-			if [ "$(to_lower $ANSWER)" = "h" ]; then
+			read -r ANSWER
+			if [ "$(to_lower "$ANSWER")" = "h" ]; then
 				clear
 				hintlinks
 				continue
@@ -2162,7 +2211,8 @@ those shipped with the installer, but we couldn't get a wired connection."
 			break
 		done
 		wget --spider ipinfo.io
-		if [ $? -eq 0  ]; then
+		mycmd="$?"
+		if [ "$mycmd" -eq 0 ]; then
 			touch /tmp/connected
 		fi
 		return
@@ -2177,13 +2227,13 @@ those shipped with the installer, but we couldn't get a wired connection."
 				# backspace works only in the current line of input.
 				setterm --linewrap off
 				clear_stdin
-				read ANSWER
+				read -r ANSWER
 				setterm --linewrap on
 				if [ "$DISPLAYPASS" = "no" ]; then
 					echo
 					stty +echo
 				fi
-				if [ "$(to_lower $ANSWER)" = "q" ]; then
+				if [ "$(to_lower "$ANSWER")" = "q" ]; then
 					return 1
 				fi
 				if [ ! "$ANSWER" ]; then
@@ -2192,8 +2242,8 @@ those shipped with the installer, but we couldn't get a wired connection."
 				fi
 				break
 			done
-			iwconfig $IFACE essid "$SSID"
-			iwconfig $IFACE key $ANSWER 2>$INSTALL/keyerror
+			iwconfig "$IFACE" essid "$SSID"
+			iwconfig "$IFACE" key "$ANSWER" 2>$INSTALL/keyerror
 			if grep -q Encode $INSTALL/keyerror; then
 				gettext "Wrong password. Try again."
 				echo
@@ -2202,9 +2252,10 @@ those shipped with the installer, but we couldn't get a wired connection."
 			break
 		done
 		unset ANSWER
-		iwconfig $IFACE ap $ADDRESS
-		dhcpcd $IFACE 1>>$INSTALL/log 2>>$INSTALL/log
-		if [ $? -ne 0 ]; then
+		iwconfig "$IFACE" ap "$ADDRESS"
+		dhcpcd "$IFACE" 1>>$INSTALL/log 2>>$INSTALL/log
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			echo "Wifi connection failed."
 			return
 		fi
@@ -2224,34 +2275,37 @@ settimezone() {
 	if [ -f /tmp/connected ]; then
 		PROPOSEDTZ=$(wget -O - ipinfo.io 2>/dev/null|grep "timezone"|cut -d'"' -f4)
 	fi
+	unset ACCEPTEDTZ
 	if [ "$PROPOSEDTZ" ]; then
 		while true; do
 		eval_gettext "Is \$PROPOSEDTZ the current time zone? type yes or no: "
 		clear_stdin
-		read ANSWER
-			case $(to_lower $ANSWER) in
+		read -r ANSWER
+			case $(to_lower "$ANSWER") in
 				yes) rm -f $SLINT/localtime-copied-from
 					rm -f $SLINT/localtime
-					ln -sf $SLINT/usr/share/zoneinfo/$PROPOSEDTZ $SLINT/etc/localtime-copied-from
+					ln -sf $SLINT/usr/share/zoneinfo/"$PROPOSEDTZ" $SLINT/etc/localtime-copied-from
 					cp $SLINT/etc/localtime-copied-from $SLINT/etc/localtime
 					echo "# This file just says if localtime or UTC is set." >$SLINT/etc/hardwareclock
 					echo "# Do not edit it manually, use clocksetup or gtkclocksetup instead." >>$SLINT/etc/hardwareclock
 					echo >>$SLINT/etc/hardwareclock
 					echo UTC >>$SLINT/etc/hardwareclock
-					return;;
+					ACCEPTEDTZ="yes"
+					break;;
 				no) break ;;
 				*) :
 			esac
 		done
-	else
+	fi
+	if [ ! "$ACCEPTEDTZ" ];then 
 		gettext "You can set the time zone now, or accept the default value (UTC) and modify
 this setting after installation."
 		echo
 		while true; do
 			gettext "To set the time zone now type yes, else type no: "
 			clear_stdin
-			read ANSWER
-			case $(to_lower $ANSWER) in
+			read -r ANSWER
+			case $(to_lower "$ANSWER") in
 				yes) chroot $SLINT clocksetup -c -z; return;;
 				no) rm -f $SLINT/localtime-copied-from
 					rm -f localtime
@@ -2399,8 +2453,8 @@ displaydescornot() {
 		echo
 		gettext "Please type yes or no: "
 		clear_stdin
-		read ANSWER
-		case $(to_lower $ANSWER) in
+		read -r ANSWER
+		case $(to_lower "$ANSWER") in
 			yes) DISPLAYNAME=1; break;;
 			no) echo
 			gettext "Installing the packages. Please be patient."
@@ -2439,7 +2493,7 @@ installfromweb() {
 	else
 		[ "$DISPLAYNAME" ] && gettext "Preparing packages installation..." && echo
 	fi
-	cd $PKGLISTS
+	cd $PKGLISTS || exit
 	trytoget $SLINTREPO/CHECKSUMS.md5
 	[ "$FAILED" ] && return
 	mv CHECKSUMS.md5 SLINTREPO.md5
@@ -2449,29 +2503,29 @@ installfromweb() {
 	# Exclude the packages in /extra /voices and /locales not shipped in
 	# isoslintpkg below
 	grep "txz$" SLINTREPO.md5|grep -v -e "/extra/" -e "/voices/" -e "/locales/" |sed "s@[^.]*[.]@@" > reposlintpkg
-	while read PKG; do
-		basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//" >>reposlintbase
+	while read -r PKG; do
+		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>reposlintbase
 	done <reposlintpkg
 	# List the packages in the /patches directory of the Slackware repository
 	grep "txz$" PATCHESREPO.md5|grep -v "/kernel-"|sed "s@[^.]*[.]@@" > patchespkg
-	while read PKG; do
-		basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//" >>patchesbase
+	while read -r PKG; do
+		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>patchesbase
 	done <patchespkg
 	# List the package from the ISO that come from Slint
-	ls $ISO/slint|grep "slint.txz$" > isoslintpkg
+	ls $ISO/slint/*slint.txz > isoslintpkg
 	cp isoslintpkg isoslintpkg.orig
-	while read PKG; do
-		basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//" >>isoslintbase
+	while read -r PKG; do
+		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>isoslintbase
 	done <isoslintpkg
 	# List the package from the ISO that come from Slackware
-	ls $ISO/slint|grep "txz$"|grep -v "slint.txz$" >isoslackpkg
+	find $ISO/slint/*txz|grep -v "slint.txz$" >isoslackpkg
 	cp isoslackpkg isoslackpkg.orig
 	# list the Slackware packages in /patches at another version than in
 	# the ISO and remove them from the list isoslackpkg
-	while read PKG; do
-		BASE=$(basename $PKG)
-		SHORT=$(echo $BASE|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if grep -q "^${SHORT}$" patchesbase && ! grep -q $BASE patchespkg; then
+	while read -r PKG; do
+		BASE=$(basename "$PKG")
+		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		if grep -q "^${SHORT}$" patchesbase && ! grep -q "$BASE" patchespkg; then
 			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" patchespkg >>webpatchespkg
 			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslackpkg >bof
 			mv bof isoslackpkg
@@ -2479,12 +2533,12 @@ installfromweb() {
 	done <isoslackpkg
 	# List the packages of the Slint repository at another version than
 	# in the ISO and remove them from the list isoslintpkg
-	while read PKG; do
-		BASE=$(basename $PKG)
-		SHORT=$(echo $BASE|sed "s/-[^-]*-[^-]*-[^-]*$//")
+	while read -r PKG; do
+		BASE=$(basename "$PKG")
+		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if grep -q "^${SHORT}$" reposlintbase && \
-		! grep -q $BASE reposlintpkg && \
-		! echo $SHORT | grep -q "[-]voice[-]"; then
+		! grep -q "$BASE" reposlintpkg && \
+		! echo "$SHORT" | grep -q "[-]voice[-]"; then
 			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" reposlintpkg >>webslintpkg
 			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslintpkg >bof
 			mv bof isoslintpkg
@@ -2492,17 +2546,17 @@ installfromweb() {
 	done <isoslintpkg
 	# List the packages added to the Slint repository since the ISO was built.
 	# But we won't add voices non shipped in the ISO
-	while read PKG; do
-		BASE=$(basename $PKG)
-		SHORT=$(echo $BASE|sed "s/-[^-]*-[^-]*-[^-]*$//")
+	while read -r PKG; do
+		BASE=$(basename "$PKG")
+		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if ! grep -q "^${SHORT}$" isoslintbase; then
 			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" reposlintpkg >>webslintpkg
 		fi
 	done <reposlintpkg
 	# Packages removed from the Slint repository since the release of the ISO
-	while read PKG; do
-		BASE=$(basename $PKG)
-		SHORT=$(echo $BASE|sed "s/-[^-]*-[^-]*-[^-]*$//")
+	while read -r PKG; do
+		BASE=$(basename "$PKG")
+		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if ! grep -q "^${SHORT}$" reposlintbase; then
 			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslintpkg >bof
 			mv bof isoslintpkg
@@ -2513,9 +2567,9 @@ installfromweb() {
 	# First the packages you will get from a remote repository
 	if [ -s webslintpkg ]; then
 		echo
-		while read PKG; do
+		while read -r PKG; do
 			PKGBASE=${PKG%.t?z}
-			if ls $SLINT/var/lib/pkgtools/packages|grep -q $PKGBASE; then
+			if [ -f $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
 				echo "$PKG is already installed" >>$PKGLISTS/loginstall
 				continue
 			fi
@@ -2526,59 +2580,62 @@ installfromweb() {
 				continue
 			fi
 			echo "fetching $PKG" >>$PKGLISTS/loginstall
-			BASE=$(basename $PKG)
-			trytoget $SLINTREPO/slint/$BASE
+			BASE=$(basename "$PKG")
+			trytoget $SLINTREPO/slint/"$BASE"
 			if [ "$FAILED" ]; then
-				rm -f *txz
+				rm -f -- *txz
 				return
 			fi
-			SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $BASE
+			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall $BASE
-			if [ $? -ne 0 ]; then
+			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$BASE"
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				FAILED=1
-				rm -f *txz
+				rm -f -- *txz
 				return
 			fi
 			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-			rm -f *txz
+			rm -f -- *txz
 		done <webslintpkg
 		PKG=$(grep "libreoffice-l10n_${lo}-*t?z" webslintpkg)
 		if [ "$PKG" ]; then
-			SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			BASE=$(basename $PKG)
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $BASE
+			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+			BASE=$(basename "$PKG")
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			if [ $? -ne 0 ]; then
+			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				SPKGERROR=$(cat $PKGLISTS/spkgerror)
 				echo
 				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
 				echo >>$PKGLISTS/installerrors
 				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				rm -f *txz
+				rm -f -- *txz
 				FAILED=1
 				return
 			else
 				echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-				rm -f *txz
+				rm -f -- *txz
 			fi
 		fi
 		PKG=$(grep "libreoffice-help_${lo}-*t?z" webslintpkg)
 		if [ "$PKG" ]; then
-			SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			BASE=$(basename $PKG)
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $BASE
+			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+			BASE=$(basename "$PKG")
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			if [ $? -ne 0 ]; then
+			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+				mycmd="$?"
+				if [ "$mycmd" -ne 0 ]; then
 				SPKGERROR=$(cat $PKGLISTS/spkgerror)
 				echo
 				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
 				echo >>$PKGLISTS/installerrors
 				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				rm -f *txz
+				rm -f -- *txz
 				FAILED=1
 				return
 			else
@@ -2588,50 +2645,52 @@ installfromweb() {
 	fi
 	if [ -s webpatchespkg ]; then
 		echo
-		while read PKG; do
-			BASE=$(basename $PKG)
-			if ls $SLINT/var/lib/pkgtools/packages|grep -q $BASE; then
+		while read -r PKG; do
+			BASE=$(basename "$PKG")
+			if  [ -f $SLINT/var/lib/pkgtools/packages/"$BASE" ]; then
 				echo "$PKG is already installed" >>$PKGLISTS/loginstall
 				continue
 			fi
 			echo "fetching $PKG" >>$PKGLISTS/loginstall
-			trytoget $PATCHESREPO/$PKG
+			trytoget $PATCHESREPO/"$PKG"
 			if [ "$FAILED" ]; then
-				rm -f *txz
+				rm -f -- *txz
 				return
 			fi
-			SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
+			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 			PKGBASE=${PKG%.t?z}
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $BASE
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall $BASE 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$BASE" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			if [ $? -ne 0 ]; then
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				FAILED=1
-				rm -f *txz
+				rm -f -- *txz
 				return
 			fi
 			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-			rm -f *txz
+			rm -f -- *txz
 		done <webpatchespkg
 	fi
 	# Then, the package from the installation media
-	while read PKG; do
+	while read -r PKG; do
 	# in isoslackpkg each record is like /slint/<package name>
-		BASE=$(basename $PKG)
-		SHORT=$(echo $BASE|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		BASE=$(basename "$PKG")
+		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if [ "$SHORT" = "kernel-huge" ]; then
 			continue
 		fi
 		PKGBASE=${PKG%.t?z}
-		if ls $SLINT/var/lib/pkgtools/packages|grep -q $PKGBASE; then
+		if [ -f $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
 			echo "$PKG is already installed" >>$PKGLISTS/loginstall
 			continue
 		fi
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $BASE
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall $ISO/slint/$PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			eval_gettext "Installation of \$PKG failed for this reason:" >$PKGLISTS/installerror
@@ -2645,23 +2704,24 @@ installfromweb() {
 		fi
 	done <isoslackpkg
 	# in isoslintpkg each record is like /slint/<package name>
-	while read PKG; do
+	while read -r PKG; do
 		# the variable $lo is set according to the language/region by SeTlocales
-		if echo $PKG|grep -q locales/; then
+		if echo "$PKG"|grep -q locales/; then
 			continue
 		fi
 		PKGBASE=${PKG%.t?z}
-		if ls $SLINT/var/lib/pkgtools/packages|grep -q $PKGBASE; then
+		if [ -g $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
 			echo "$PKG is already installed" >>$PKGLISTS/loginstall
 			continue
 		fi
-		BASE=$(basename $PKG)
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		BASE=$(basename "$PKG")
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		PKGBASE=${PKG%.t?z}
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $BASE
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall $ISO/slint/$PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			eval_gettext "Installation of \$PKG failed for this reason:" >$PKGLISTS/installerror
@@ -2676,12 +2736,13 @@ installfromweb() {
 	done <isoslintpkg
 	PKG=$(find $ISO/slint/locales -name "libreoffice-l10n-${lo}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename $PKG)
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $BASE
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		BASE=$(basename "$PKG")
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2695,12 +2756,13 @@ installfromweb() {
 	fi
 	PKG=$(find $ISO/slint/locales -name "libreoffice-help-${lo}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename $PKG)
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $BASE
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		BASE=$(basename "$PKG")
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2714,12 +2776,13 @@ installfromweb() {
 	fi
 	PKG=$(find $ISO/slint/locales -name "aspell-${asp}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename $PKG)
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $BASE
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		BASE=$(basename "$PKG")
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2733,6 +2796,7 @@ installfromweb() {
 	fi
 }
 installfromiso() {
+	cd / || exit
 	if [ ! "$FAILED" ]; then
 		echo "no need to install from ISO" >>$INSTALL/log
 		return
@@ -2740,14 +2804,15 @@ installfromiso() {
 	echo installfromiso >>$INSTALL/log
 	echo installfromiso >>$PKGLISTS/loginstall
 	echo
-	ls $SLINT/var/lib/pkgtools/packages|while read i; do
-		basename $i|sed "s/-[^-]*-[^-]*-[^-]*$//" >> $PKGLISTS/installed;
+	find $SLINT/var/lib/pkgtools/packages|while read -r i; do
+		basename "$i"|sed "s/-[^-]*-[^-]*-[^-]*$//" >> $PKGLISTS/installed;
 	done
-	ls -1 $ISO/slint/*txz|while read PKG; do
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint $PKG
+	find $ISO/slint/*txz|while read -r PKG; do
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKG"
 		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root=$SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		if [ $? -ne 0 ]; then
+		spkg --root=$SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+		if [ "$mycmd" -ne 0 ]; then
 			SPKGERROR=$(cat $PKGLISTS/spkgerror)
 			echo
 			clear
@@ -2763,12 +2828,13 @@ installfromiso() {
 	done
 	PKG=$(find $ISO/slint/locales -name "libreoffice-l10n-${lo}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $PKG
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			if [ $? -ne 0 ]; then
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
+			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				SPKGERROR=$(cat $PKGLISTS/spkgerror)
 				echo
 				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2780,12 +2846,13 @@ installfromiso() {
 	fi
 	PKG=$(find $ISO/slint/locales -name "libreoffice-help-${lo}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $PKG
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 2>$PKGLISTS/spkgerror
-			if [ $? -ne 0 ]; then
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
+			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				SPKGERROR=$(cat $PKGLISTS/spkgerror)
 				echo
 				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2797,12 +2864,13 @@ installfromiso() {
 	fi
 	PKG=$(find $ISO/slint/locales -name "aspell-${asp}-*t?z")
 	if [ "$PKG" ]; then
-		SHORT=$(basename $PKG|sed "s/-[^-]*-[^-]*-[^-]*$//")
+		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
 		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
 			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales $PKG
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache $PKG 2>$PKGLISTS/spkgerror
-			if [ $? -ne 0 ]; then
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
+			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			if [ "$mycmd" -ne 0 ]; then
 				SPKGERROR=$(cat $PKGLISTS/spkgerror)
 				echo
 				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
@@ -2823,7 +2891,7 @@ bindrootslint() {
 }
 passwords() {
 	echo passwords >>$INSTALL/log
-	while read r; do echo $r|chpasswd -R $SLINT; done </tmp/u
+	while read -r r; do echo "$r"|chpasswd -R $SLINT; done </tmp/u
 	rm -f /tmp/u
 }
 postconfigure(){
@@ -2832,18 +2900,18 @@ postconfigure(){
     # in graphical desktops.
     LOGIN=$(cat $INSTALL/firstuserlogin)
 	if [ ! -f /tmp/noespeakup ]; then
-		(cd $SLINT/home/$LOGIN/.config/autostart
+		(cd $SLINT/home/"$LOGIN"/.config/autostart || exit
 		sed s/Hidden=true/Hidden=false/ startorca.desktop > bof
 		mv bof startorca.desktop
-		cat $SLINT/usr/share/orca/orcaprofile >> $SLINT/home/$LOGIN/.profile
+		cat $SLINT/usr/share/orca/orcaprofile >> $SLINT/home/"$LOGIN"/.profile
 		)
-		chroot $SLINT chown ${LOGIN}: \
-		/home/$LOGIN/.config/autostart/startorca.desktop
-		chroot $SLINT chown ${LOGIN}: /home/$LOGIN/.profile
+		chroot $SLINT chown "${LOGIN}": \
+		/home/"$LOGIN"/.config/autostart/startorca.desktop
+		chroot $SLINT chown "${LOGIN}": /home/"$LOGIN"/.profile
 	fi
 	# console and Xkeybord settings
 	KMAP="$(cat /tmp/Pkeymap)"
-	chroot $SLINT keyboardsetup -k ${KMAP%.map} 1>>/$INSTALL/log
+	chroot $SLINT keyboardsetup -k "${KMAP%.map}" 1>>/$INSTALL/log
 	# write the network configuration files, set Network Manager as connection
 	# method
 	echo
@@ -2852,7 +2920,7 @@ press Enter to accept the default name \"slint\"."
 	echo
 	gettext "Machine name[slint]: "
 	clear_stdin
-	read HOSTNM
+	read -r HOSTNM
 	export HOSTNM
 	cp /sbin/nmconfig $SLINT/sbin
 	chroot $SLINT chmod 0755 /sbin/nmconfig
@@ -2861,70 +2929,79 @@ press Enter to accept the default name \"slint\"."
 	zzz-settings
 	# Braille settings
 	if grep -q "brltty=" /proc/cmdline ; then
+		# command line parameters are set system wide but not to anger checkshell
+		brltty=$(sed "s/.*brltty=/brltty=/" /proc/cmdline|cut -d" " -f1)
 		# If a Braille display was set up in the command line, lets'
 		# convey these settings in the installed system.
 		sh /usr/sbin/setup/bp2cf -u -p "$brltty" -f $SLINT/etc/brltty.conf
 	fi
 	# Set the graphical session
-	for filename in $SLINT/usr/share/xsessions/*; do
-		! grep -q safe $filename && echo ${filename%.*}|sed "s@.*/@@"
+	for filename in "$SLINT"/usr/share/xsessions/*; do
+		! grep -q safe "$filename" && echo "${filename%.*}"|sed "s@.*/@@"
 	done > listesessions
 	while true; do
 		gettext "Please select a default desktop among those listed below.
 mate is the most accessible with a screen reader."
 		echo
+		gettext "i3 is also accessible. If you need speech, preferably type i38 before starting it."
+		echo
 		cat listesessions
 		gettext "Your choice: "
 		clear_stdin
-		read CHOICE
+		read -r CHOICE
 		[ ! "$CHOICE" ] && clear && continue
 		session=$(echo "$CHOICE"|tr '[:upper:]' '[:lower:]')
-		grep -q $session listesessions && break
+		grep -q "$session" listesessions && break
 		clear
-		gettext "$session is not an available desktops."
+		eval_gettext "\$session is not an available desktops."
+		echo
 		sleep 1
 		clear
 	done
-	echo "$session has been chosen."
-	echo '[Desktop]' > $SLINT/home/$LOGIN/.dmrc
-	echo "Session=$session" >> $SLINT/home/$LOGIN/.dmrc
+	eval_gettext "\$session has been chosen."
+	echo
+	echo '[Desktop]' > $SLINT/home/"$LOGIN"/.dmrc
+	echo "Session=$session" >> $SLINT/home/"$LOGIN"/.dmrc
 	case $session in
-		plasma) xinit=kde;;
+		i3) xinit=i3;;
 		lxqt) xinit=lxqt;;
 		xfce) xinit=xfce;;
 		mate) xinit=mate;;
 		wmaker) xinit=wmaker;;
-		blackbox) xinit=blackbox;;
 		fvwm) xinit=fvwm2;;
-		ratpoison) xinit=ratpoison;;
 	esac
 	# This is for startx
-	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/$LOGIN/.xinitrc
-	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/$LOGIN/.xsession
+	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
+	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
 
 	# We need to run setxkbmap just after having started X, so that $DISPLAY
 	# be set. But in some cases that is easier to do live than when building
 	# the window manager or desktop.
 	case $session in
-		lxqt|mate|ratpoison|xfce) (cd $SLINT/home/$LOGIN
+		lxqt|mate|i3|xfce) (cd $SLINT/home/"$LOGIN" || exit
 			sed '/exec/i \
 	/usr/bin/setxkbmap' .xinitrc > bof
 			mv bof .xinitrc);;
-		*) (cd $SLINT/home/$LOGIN
+		*) (cd $SLINT/home/"$LOGIN" || exit
 		sed '/DESKTOP_SESSION/i \
 	/usr/bin/setxkbmap' .xinitrc > bof
 			mv bof .xinitrc)
 	esac
-	chroot $SLINT chown $LOGIN: /home/$LOGIN/.dmrc
-	chroot $SLINT chown $LOGIN: /home/$LOGIN/.xsession
-	chroot $SLINT chown $LOGIN: /home/$LOGIN/.xinitrc
+	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.dmrc
+	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xsession
+	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xinitrc
 	echo "Running update_all. Please be patient..."
 	cp /sbin/update-all $SLINT/sbin
 	chroot $SLINT chmod 0755 /usr/sbin/update-all
 	chroot $SLINT /sbin/update-all
-	mkdir -p $SLINT/boot/efi
-	# grub will need to access the ESP
-	chroot $SLINT mount /boot/efi
+	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
+	# exists in the same drive as the rott partition its path is set in $INSTALL/path 
+	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
+		mkdir -p $SLINT/boot/efi
+		# grub will need to access the ESP
+		chroot $SLINT mount /boot/efi
+		mkdir -p $SLINT/boot/efi/EFI/BOOT
+	fi
 	# set lightdm by default as graphical login manager
 	chmod 755 $SLINT/usr/sbin/lightdm
 	echo \
@@ -2937,9 +3014,17 @@ fi" > $SLINT/etc/rc.d/rc.4.local
 		chmod 755 $SLINT/etc/rc.d/rc.4.local
 	echo
 }
+mountefivarsandmovehome(){
+	[ -d /sys/firmware/efi/efivars ] && chroot $SLINT mount -t efivarfs none /sys/firmware/efi/efivars
+	# Until I understand why $HOME don't survive after reboot if /home is in a @home btrfs sub volume...
+	if [ "$(cat $INSTALL/rootfstype)" = "btrfs" ] && ! grep -q " home " $INSTALL/mountpoints; then
+		mount "$(cat $INSTALL/rootpartpath)" /mnt
+		cp -a $SLINT/home/* /mnt/@home
+		umount /mnt
+	fi
+}
 bootingsetup() {
 	echo bootingsetup >>$INSTALL/log
-	# We install in both Legacy and EFI modes.
 	if [ "$AUTO" ]; then 
 		SERIAL=$(cat $INSTALL/serial)
 		grep "SERIAL=\"$SERIAL\"" $INSTALL/drives > $INSTALL/drive
@@ -2947,21 +3032,20 @@ bootingsetup() {
 		DRIVEPATH=$NAME
 	else
 		. $INSTALL/rootusedpart
-		grep "PARTUUID=\"$PARTUUID\"" $INSTALL/partitionsoftypelinux >$INSTALL/part
 		DRIVEPATH=$PKNAME
 	fi
 	rootdelay=1
-	if  [ "$(to_lower $TRAN)" = "usb" ]; then
+	if  [ "$(to_lower "$TRAN")" = "usb" ]; then
 		rootdelay=10
 	fi
 	gettext "building an initramfs..."
 	echo
 	KVER=$(find $SLINT/boot -type f -name "vmlinuz*"|sed "s/.*-//")
-	if [ $(echo "$KVER"|wc -l) -gt 1 ]; then
+	if [ "$(echo "$KVER"|wc -l)" -gt 1 ]; then
 		echo "Several kernels are installed. Something should be wrong."
 		exit
 	fi
-	if [ ! -d $SLINT/lib/modules/$KVER ]; then
+	if [ ! -d $SLINT/lib/modules/"$KVER" ]; then
 		echo "No modules found for the kernel ${KVER}, so no intramfs cannot be built."
 		exit
 	fi
@@ -2971,20 +3055,33 @@ bootingsetup() {
 		/^GRUB_DISABLE_LINUX_PARTUUID/s/.*/GRUB_DISABLE_LINUX_PARTUUID=true/
 		/^GRUB_DISABLE_LINUX_UUID/s/.*/GRUB_DISABLE_LINUX_UUID=false/" $SLINT/etc/default/grub >bof
 		mv bof $SLINT/etc/default/grub
-		chroot $SLINT dracut --kver $KVER --zstd -q --install " /etc/keys/$KEYFILE " 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver "$KVER" --zstd -q --install " /etc/keys/$KEYFILE " 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay rd.luks.key=/etc/keys/$KEYFILE:/ rd.luks.uuid=$(cat $INSTALL/rootcryptuuid)"
 	else
-		chroot $SLINT dracut --kver $KVER  --zstd -q 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver "$KVER"  --zstd -q 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay"
 	fi
 	gettext "Installing the GRUB bootloader..."
+	# Install with --target=i386-pc except in case of a GPT if no BIOS boot partition is available
+	# in the same drive as the root one, which is allowed in manual partitioning mode and EFI booting.
 	echo
-	chroot $SLINT grub-install --target=i386-pc  $DRIVEPATH 1>>$INSTALL/log 2>>$INSTALL/errors
-	if [ "$EFI" ]; then
-		chroot $SLINT grub-install --target=x86_64-efi --bootloader-id=slint $DRIVEPATH 1>>$INSTALL/log 2>>$INSTALL/errors
-		mkdir -p $SLINT/boot/efi/EFI/BOOT
-		cp  $SLINT/boot/efi/EFI/slint/grubx64.efi $SLINT/boot/efi/EFI/BOOT/BOOTx64.EFI
-		echo "EFI\slint\grubx64" > /SLINT/boot/efi/startup.nsh
+	INSTALLINLEGACYMODE="yes"
+	if [ "$(lsblk -lno pttype "$DRIVEPATH"|head -n 1)" = "gpt" ] && \
+	! lsblk -lno parttypename|grep -q 'BIOS boot'; then
+		unset INSTALLINLEGACYMODE
+	fi
+	if [ "$INSTALLINLEGACYMODE" ]; then
+		chroot $SLINT grub-install --target=i386-pc "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
+	fi
+	# Install with --target=x86_64-efi except if is no ESP in the same drive as the root one.
+	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
+		if [ "$EFI" ]; then
+			chroot $SLINT grub-install --target=x86_64-efi --bootloader-id=slint-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
+		else
+			chroot $SLINT grub-install --target=x86_64-efi --no-nvram --bootloader-id=slint-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
+		fi
+		cp  $SLINT/boot/efi/EFI/slint-$SLINTVERSION/grubx64.efi $SLINT/boot/efi/EFI/BOOT/BOOTx64.EFI
+		echo "EFI\slint-$SLINTVERSION\grubx64" > /SLINT/boot/efi/startup.nsh
 	fi
 	echo "GRUB_CMDLINE_LINUX=\"$args\"" >> $SLINT/etc/default/grub
 	gettext "Building the GRUB boot menu..."
@@ -3002,13 +3099,12 @@ echo byebye >>$INSTALL/log
 	rm -f /tmp/u
 	echo "coyping /tmp in $SLINT/var/log/$INSTALL" >>$INSTALL/log
 	cp -r /tmp $SLINT/var/log/$INSTALL/
+	mv $PKGLISTS $SLINT/var/log/$INSTALL/ 
 	echo "copying installation scripts in $SLINT/var/log/$INSTALL/installation-scripts"  >>$INSTALL/log
 	mkdir -p $SLINT/var/log/$INSTALL/installation-scripts
 	cp  -f /sbin/functions /sbin/start $SLINT/var/log/$INSTALL/installation-scripts/
-	echo "copying /var/log/syslog in  $SLINT/var/log/$INSTALL/" >>$INSTALL/log
-	cp /var/log/syslog $SLINT/var/log/$INSTALL/
 	echo "compressing the directory $INSTALL in /SLINT/var/log/" >>$INSTALL/log
-	( cd $SLINT/var/log/
+	( cd $SLINT/var/log/ || exit
 	tar --use-compress-program xz -cf INSTALLER.xz INSTALLER
 	)
 	echo
