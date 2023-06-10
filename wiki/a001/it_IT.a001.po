@@ -4,15 +4,15 @@ msgstr ""
 "POT-Creation-Date: 2023-03-07 23:17+0100\n"
 "PO-Revision-Date: 2023-06-10 15:49\n"
 "Last-Translator: \n"
-"Language-Team: Swedish\n"
-"Language: sv_SE\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: slint\n"
 "X-Crowdin-Project-ID: 442342\n"
-"X-Crowdin-Language: sv-SE\n"
+"X-Crowdin-Language: it\n"
 "X-Crowdin-File: /wiki/a001/a001.pot\n"
 "X-Crowdin-File-ID: 115\n"
 
@@ -20,37 +20,37 @@ msgstr ""
 #: a001.adoc:1
 #, no-wrap
 msgid "Slint with BTRFS"
-msgstr "Slint med BTRFS"
+msgstr "Slint con BTRFS"
 
 #. type: Plain text
 #: a001.adoc:4
 msgid "In this article we outline the unique characteristics of the BTRFS file system and how a Slint system is configured at installation to take advantage of them."
-msgstr "I den här artikeln beskriver vi de unika egenskaperna hos filsystemet BTRFS och hur ett Slint-system konfigureras vid installationen för att dra nytta av dem."
+msgstr "In questo articolo delineiamo le caratteristiche uniche del file di sistema BTRFS e come un sistema di Slint è configurato all'installazione, per usufruirne."
 
 #. type: Plain text
 #: a001.adoc:6
 msgid "In order not to overload this document with definitions, we refer the reader to the https://slint.fr/en/HandBook.html#_glossary[glossary] included in the Slint Manual and more specifically for btrfs \"jargon\" to the https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] included in its documentation."
-msgstr "För att inte överbelasta detta dokument med definitioner, hänvisar vi läsaren till https://slint.fr/en/HandBook.html#_glossary[glossary] som, ingår i Slint Manualen och mer specifikt för btrfs \"jargon\" till https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] ingår i dess dokumentation."
+msgstr "Per non sovraccaricare questo documento con le definizioni, facciamo riferimento al https://slint.fr/en/HandBook.html#_glossary[glossario], incluso nel Manuale di Slint e più specificamente per il \"gergo\" di btrfs, al https://btrfs.readthedocs.io/en/latest/Glossary.html[glossario] incluso in questa documentazione."
 
 #. type: Plain text
 #: a001.adoc:8
 msgid "A BTRFS file system consists of a logical volume that can span multiple block devices (partitions or disks). Initially Slint is installed on a single partition."
-msgstr "Ett BTRFS filsystem består av en logisk volym som kan sträcka sig över flera blockenheter (partitioner eller diskar). Ursprungligen är Slint installerat på en enda partition."
+msgstr "Un file di sistema BTRFS consiste in un volume logico che può estendersi per più dispositivi di blocco (partizioni o dischi). Inizialmente, Slint è installato su una partizione singola."
 
 #. type: Plain text
 #: a001.adoc:10
 msgid "A subvolume is a subtree of files inside the volume, the root of which can be mounted as if it were an independent filesystem. However, the space allocated to a volume is also allocated to each of its sub-volumes: it is therefore not necessary to distribute it between the sub-volumes, as if they were in distinct partitions."
-msgstr "En undervolym är ett underträd av filer inuti volymen, vars rot kan monteras som om det vore ett oberoende filsystem. Men det utrymme som tilldelas en volym fördelas också till var och en av dess undervolymer: det är därför inte nödvändigt att fördela den mellan undervolymerna, som om de vore i distinkta partitioner."
+msgstr "Un volume secondario è un albero secondario di file nel volume, la radice del quale può essere montat come se fosse un file di sistema indipendente. Tuttavia, lo spazio allocato a un volume è anch'esso allocato a ognuno dei suoi volumi secondari: dunque, è necessario distribuirlo tra i volumi secondari, come se fossero in partizioni distinte."
 
 #. type: Plain text
 #: a001.adoc:12
 msgid "Subvolumes can be created at the same time as the volume (by the mkfs.btrfs command), but also added or deleted later using the btrfs tools."
-msgstr "Subvolymer kan skapas samtidigt som volymen (med kommandot mkfs.btrfs), men även läggas till eller tas bort senare med hjälp av btrfs-verktygen."
+msgstr "I volumi secondari possono essere creati in contemporanea al volume (dal comando mkfs.btrfs), nonché aggiunti o eliminati in seguito utilizzando gli strumenti di btrfs."
 
 #. type: Plain text
 #: a001.adoc:14
 msgid "As an example the commands below create the Slint \"system\" volume and its subvolumes, in case BTRFS is used. In the following $ROOTNAME is the name of the partition in which Slint will be installed and $SLINT the mount point of the system volume during installation."
-msgstr "I exemplet nedan skapar kommandona Slint-systemet och dess undervolymer, om BTRFS används. I följande $ROOTNAME är namnet på den partition där Slint kommer att installeras och $SLINT monteringspunkten för systemvolymen under installationen."
+msgstr "Come un esempio per i seguenti comandi, crea il volume di \"sistema\" di Slint e i suoi volumi secondari, nel caso in cui è utilizzato BTRFS. Nel seguente $ROOTNAME è indicato il nome della partizione in cui Slint sarà installato ee in $SLINT il punto di montaggio del volume di sistema, durante l'installazione."
 
 #. type: delimited block -
 #: a001.adoc:26
@@ -81,7 +81,7 @@ msgstr "mkdir /SLINT\n"
 #. type: Plain text
 #: a001.adoc:28
 msgid "The $ROOTNAME partition (denoted by its UUID which we will call <uuid>) will then be mounted three times (once per subvolume) each time Slint is started, as indicated in the /etc/fstab file:"
-msgstr "$ROOTNAME partitionen (betecknas av dess UUID som vi kallar <uuid>) kommer sedan att monteras tre gånger (en gång per delvolym) varje gång Slint startas, enligt vad som anges i /etc/fstab filen:"
+msgstr "La partizione $ROOTNAME (denotata dal suo ID, che chiameremo <uuid>), sarà quindi montata tre volte (una per volume secondario), a ogni avvio di Slint, come indicato nel file /etc/fstab:"
 
 #. type: delimited block -
 #: a001.adoc:32
@@ -96,7 +96,7 @@ msgstr "UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
 #. type: Plain text
 #: a001.adoc:34
 msgid "Which gives for example (taken from the output of lsblk /dev/sda5):"
-msgstr "Vilket ger till exempel (taget från utmatningen av lsblk /dev/sda5):"
+msgstr "Che restituisce, ad esempio (tratto dall'output di Isblk /dev/sda5):"
 
 #. type: delimited block -
 #: a001.adoc:39
@@ -105,7 +105,7 @@ msgid "Filesystem      Size  Used Avail Use% Mounted on\n"
 "/dev/sda5        50G   22G   28G  44% /\n"
 "/dev/sda5        50G   22G   28G  44% /home\n"
 "/dev/sda5        50G   22G   28G  44% /swap\n"
-msgstr "Filesystem      Size  Used Avail Use% Mounted on\n"
+msgstr "File di Sistema Dimensioni Utilizzati Disponibili Utilizzo% Montato su\n"
 "/dev/sda5        50G   22G   28G  44% /\n"
 "/dev/sda5        50G   22G   28G  44% /home\n"
 "/dev/sda5        50G   22G   28G  44% /swap\n"
@@ -113,12 +113,12 @@ msgstr "Filesystem      Size  Used Avail Use% Mounted on\n"
 #. type: Plain text
 #: a001.adoc:41
 msgid "We see that the space available for the volume (28G) is also available for each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount option means that all the files that will be stored will be compressed by the zstd utility with compression level 3. Thus the size of the system is approximately half that with the ext4 file system."
-msgstr "Vi ser att det tillgängliga utrymmet för volymen (28G) är också tillgängligt för var och en av undervolymerna. Å andra sidan, \"compress_zstd:3\" monteringsalternativet innebär att alla filer som kommer att lagras kommer att komprimeras av zstd verktyget med komprimeringsnivå 3. Således är storleken på systemet ungefär hälften som med ext4 filsystemet."
+msgstr "Vediamo che lo spazio disponibile per il volume (28G) è anche disponibile per ognuno dei volumi secondri. D'altra parte, l'opzione di montaggio \"compress_zstd:3\" significa che tutti i file che saranno memorizzati, saranno compressi dall'utilità di zstd con livello di compressione 3. Dunque, le dimensioni del sistema sono approssimativamente dimezzate, con il file di sistema ext4."
 
 #. type: Plain text
 #: a001.adoc:43
 msgid "If we mount the device at the root of the volume (without mention of a subvolume), like this:"
-msgstr "Om vi monterar enheten i roten av volymen (utan att nämna en subvolym), så här:"
+msgstr "Se montiamo il dispositivo alla radice del volume (senza menzione di un volume secondario), come segue:"
 
 #. type: delimited block -
 #: a001.adoc:45
@@ -129,7 +129,7 @@ msgstr "mount /dev/sda5 /mnt\n"
 #. type: Plain text
 #: a001.adoc:47
 msgid "we see the subvolumes appear as subdirectories of /mnt:"
-msgstr "ser vi att undervolymerna visas som underkataloger till /mnt:"
+msgstr "vediamo che i volumi secondari appaiono come sottocartelle di /mnt:"
 
 #. type: delimited block -
 #: a001.adoc:52
@@ -141,100 +141,100 @@ msgid "ls /mnt\n"
 msgstr "ls /mnt\n"
 "@ @home @swap\n"
 "ls /mnt/@home/didier\n"
-"Desktop Documents GNUstep Images Templates Music Audience Downloads Videos \n"
+"Desktop Documenti GNUstep Immagini Template Musica Pubblico Download Video\n"
 
 #. type: Plain text
 #: a001.adoc:54
 msgid "Another remarkable feature of BTRFS is \"copy-on-write\". When editing a file, modified parts are written to another location, the metadata (which record the location of all parts of the file) being updated. As long as the previous data are still referenced, they will stay untouched."
-msgstr "Ett annat anmärkningsvärt inslag i BTRFS är \"copy-on-write\". När du redigerar en fil, skrivs de ändrade delarna till en annan plats, metadata (som registrerar platsen för alla delar av filen) som uppdateras. Så länge som de tidigare uppgifterna fortfarande refereras till, förblir de orörda."
+msgstr "Un'altra funzionalità notevole di BTRFS è la \"copia alla scrittura\". Modificando un file, le parti modificate sono scritte a un'altra posizione, i metadati (che registrano la posizione di tutte le parti del file), sono aggiornati. Finché i dati precedenti sono ancora indicati, resteranno intoccati."
 
 #. type: Plain text
 #: a001.adoc:56
 msgid "This makes it very easy to create snapshots of BTRFS subvolume: taking a new snapshot is \"free\", as it uses very few disk space: only the metadata of the snapshot are written, which stores the physical location of all parts of files in the subvolume, and this is done almost instantly. The space used by the snapshot will only grow when the original subvolume and the snapshot differ, as then the snapshot will retrieves data removed from the original. On the other hand data added to the original will not be included in he snapshot: in other words a modification of the original subvolume does not modify the snapshot."
-msgstr "Detta gör det mycket enkelt att skapa ögonblicksbilder av BTRFS undervolym: ta en ny ögonblicksbild är \"fri\", eftersom den använder mycket litet diskutrymme: endast metadata för ögonblicksbilden skrivs, som lagrar den fysiska platsen för alla delar av filer i delvolymen, och detta görs nästan omedelbart. Utrymmet som används av ögonblicksbilden växer bara när den ursprungliga undervolymen och ögonblicksbilden skiljer sig åt, som då ögonblicksbilden kommer att hämta data som tagits bort från originalet. Å andra sidan kommer data som lagts till i originalet inte att inkluderas i ögonblicksbilden: med andra ord en ändring av den ursprungliga undervolymen ändrar inte ögonblicksbilden."
+msgstr "Questo semplifica molto la creazione di istantanee del volume secondario di BTRFS: scattare una nuova istantanea è \"gratuito\", dato che utilizza molto poco spazio su disco: soltanto i metadati dell'istantanea sono scritti, memorizzando la posizione fisica di tutte le parti dei file nel volume secondario, e quasi istantaneamente. Lo spazio utilizzato dall'istantanea crescerà soltanto quando il volume secondario originale e l'istantanea differiscono, poiché l'istantanea recupererà i dati rimossi dall'originale. D'altra parte, i dati aggiunti all'originale non saranno inclusi nell'istantanea; in altre parole, una modifica del volume secondario originale non modifica l'istantanea."
 
 #. type: Plain text
 #: a001.adoc:58
 msgid "Slint includes the utility `absm`, which takes snapshots of the subvolume @, allowing to return to a previous state of the system if an update goes wrong, by booting the system on this snapshot, selected in the GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
-msgstr "Slint innehåller verktyget \"absm\", som gör det möjligt att ta statusbilder av subvolymen @, vilket gör det möjligt att återgå till en tidigare status i systemet om en uppdatering går fel, genom att starta systemet på den här statusbilden, som är markerad i GRUB-startmenyn. För att känna till dess användning, skriv bara \"absm\" som root eller genom att använda sudo."
+msgstr "Slint include l'utilità `absm`, che scatta istantanee del volume secondario @, consentendo il ritorno a uno stato precedente del sistema se un aggiornamento va storto, avviando il sistema su tale istantanea, selezionata nel menu d'avvio GRUB. Per conoscerne l'utilizzo, basta digitare `absm` come radice, o utilizzare sudo."
 
 #. type: Plain text
 #: a001.adoc:60
 msgid "BTRFS also verifies the integrity of each file when it is opened using a checksum, making it unnecessary to check the file system at system startup. In addition, the \"btrfs scrub\" command verifies the integrity of all files, including those that are rarely read. By default, the utility `btrfsmaintenance` included in Slint runs \"btrtfs scrub\" once a week."
-msgstr "BTRFS verifierar också integriteten för varje fil när den öppnas med hjälp av en kontrollsumma, vilket gör det onödigt att kontrollera filsystemet vid systemstart. Dessutom verifierar kommandot \"btrfs scrub\" integriteten för alla filer, inklusive de som sällan är lästa. Som standard ingår verktyget \"btrfsmaintenance\", Slint kör \"btrtfs scrub\" en gång i veckan."
+msgstr "BTRFS, inoltre, verifica l'integrità di ogni file quando viene aperto utilizzando una checksum, rendendo non necessario controllare il file di sistema all'avvio di sistema. Inoltre, il comando \"btrfs scrub\" verifica l'integrità di tutti i file, inclusi quelli letti raramente. Di default, l'utilità \"btrfsmaintenance\" inclusa su Slint, esegue \"btrfs scrub\" una volta a settimaana."
 
 #. type: Plain text
 #: a001.adoc:62
 msgid "`btrfsmaintenance` also triggers \"btrfs balance\" once a week by default. This command allows you to distribute the data between the devices if the file system extends over several, but also to reorganize the space used, in particular to free the unallocated space of the file system, which improves in particular the performance of BTRFS in the case of a hard disk. To know more about `btrfsmaintenance` read /usr/doc/btrfsmaintenance*/README.html"
-msgstr "\"btrfsmaintenance\" utlöser också \"btrfs balance\" en gång i veckan som standard. Med det här kommandot kan du distribuera data mellan enheterna om filsystemet sträcker sig över flera, men också för att omorganisera det utrymme som används, i synnerhet för att frigöra utrymme för oallokerat utrymme i filsystemet, vilket förbättrar framför allt BTRFS-prestanda i fallet med en hårddisk. För att veta mer om \"btrfsmaintenance\" läs /usr/doc/btrfsmaintenance*/README.html"
+msgstr "`btrfsmaintenance`, inoltre, innesca \"btrfs balance\" una volta a settimana di default. Questo comando ti consente di distribuire i dati tra i dispositivi, se il file di sistema si estende tra più di essi, nonché di riorgaanizzare lo spazio utilizzato, in prticolare per liberare lo spazio non allocato del file di sistema, migliorando in particolare le prestazioni di BTRFS, nel caso di un disco rigido. Per sapere di più su `btrfsmaintenance` leggi /usr/doc/btrfsmaintenance*/README.html"
 
 #. type: Plain text
 #: a001.adoc:64
 msgid "Other useful and BTRFS-compatible tools are included in Slint, all have a --help option and a man page:"
-msgstr "Andra användbara verktyg och BTRFS-kompatibla verktyg ingår i Slint, alla har ett --help-alternativ och en man-sida:"
+msgstr "Altri strumenti utili, compatibili con BTRFS sono inclusi su Slint, tutti dotati di un'opzione --help e una pagina principale:"
 
 #. type: Plain text
 #: a001.adoc:66
 msgid "`jdupes` detects duplicate files and allows you to take action accordingly, regardless of the file system used"
-msgstr "`jdupes` identifierar dubblettfiler och låter dig vidta åtgärder därefter, oavsett vilket filsystem som används"
+msgstr "`jdupes` rileva i file duplicati e ti consente di agire di conseguenz, indipendentemente dal file di sistema utilizzato"
 
 #. type: Plain text
 #: a001.adoc:67
 msgid "`btdu` allows to know with precision the place occupied by the BTRFS sub-volumes and directories"
-msgstr "\"btdu\" gör det möjligt att med precision känna till den plats som BTRFS-undervolymer och kataloger har"
+msgstr "`btdu` consente di conoscere con precisione il posto occupato dai volumi secondari e le cartelle di BTRFS"
 
 #. type: Plain text
 #: a001.adoc:68
 msgid "`restic` is a very versatile backup software that can be used for any file system."
-msgstr "`restic` är ett mycket mångsidigt säkerhetskopieringsprogram som kan användas för alla filsystem."
+msgstr "`restic` è un software di backup molto versatile, utilizzabile per qualsiasi file di sistema."
 
 #. type: Plain text
 #: a001.adoc:70
 msgid "Recommendations."
-msgstr "Rekommendationer."
+msgstr "Consigli."
 
 #. type: Plain text
 #: a001.adoc:72
 msgid "BTRFS needs room to breathe and reorganize. Always keep 10-20% free space."
-msgstr "BTRFS behöver utrymme för att andas och omorganisera. Behåll alltid 10-20% ledigt utrymme."
+msgstr "BTRFS necessita di spazio per respirare e riorganizzarsi. Mantieni sempre libero il 10-20% dello spazio."
 
 #. type: Plain text
 #: a001.adoc:73
 msgid "Some tool options included in the btrfs-tools package can be dangerous or counterproductive. Use only those whose effect you know perfectly well and if in doubt seek advice first, on the Slint mailing list or by IRC on irc.libera.chat, channel #btrfs."
-msgstr "Vissa verktygsalternativ som ingår i paketet btrfs-tools kan vara farliga eller kontraproduktiva. Använd endast de vars effekt du kan mycket väl och i tveksamma fall sök råd först, på Slint e-postlista eller IRC på irc.libera.chat, kanalen #btrfs."
+msgstr "Alcune opzioni dello strumento incluse nel pcchetto btrfs-tools, possono essere pericolose o controproducenti. Utilizza soltanto quelle di cui conosci perfettamente bene gli effetti e, se in dubbio, cerca consigli, sulla mailing list di Slint o via IRC su irc.libera.chat, nel canale #btrfs."
 
 #. type: Plain text
 #: a001.adoc:74
 msgid "In particular, avoid using \"btrfs filesystem defrag\" and especially not \"btrfs check --repair\"."
-msgstr "Undvik särskilt att använda \"btrfs filesystem defrag\" och särskilt inte \"btrfs check --repair\"."
+msgstr "In particolare, evita di utilizzare \"btrfs filesystem defrag\" e, specialmente, non \"btrfs check --repair\"."
 
 #. type: Plain text
 #: a001.adoc:75
 msgid "Before using a command, carefully read the corresponding man page (starting with \"man btrtfs\" which lists the others)."
-msgstr "Innan du använder ett kommando läser du noga motsvarande mansida (som börjar med \"man btrtfs\" som listar de andra)."
+msgstr "Prima di utilizzare un comando, leggi attentamente la pagina corrispondente (iniziando da \"man btrtfs\", che elenca gli altri)."
 
 #. type: Plain text
 #: a001.adoc:76
 msgid "As with any file system: make regular backups! This is usually the only way to recover your data in the event of hardware failure."
-msgstr "Som med alla filsystem: gör regelbundna säkerhetskopior! Detta är oftast det enda sättet att återställa dina data i händelse av maskinvarufel."
+msgstr "Come con qualsiasi file di sistema, effettua backup regolari! Questo è solitamente il solo modo per recuperare i tuoi dati in caso di guasto hardware."
 
 #. type: Plain text
 #: a001.adoc:78
 msgid "For further:"
-msgstr "För ytterligare information:"
+msgstr "Per ulteriori informazioni:"
 
 #. type: Plain text
 #: a001.adoc:80
 msgid "The Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
-msgstr "Forza-wikin: https://wiki.tnonline.net/w/Category:Btrfs"
+msgstr "La Wiki di Forza: https://wiki.tnonline.net/w/Category:Btrfs"
 
 #. type: Plain text
 #: a001.adoc:81
 msgid "The official documentation: https://btrfs.readthedocs.io/en/latest/"
-msgstr "Den officiella dokumentationen: https://btrfs.readthedocs.io/en/latest/"
+msgstr "La documentazione ufficiale: https://btrfs.readthedocs.io/en/latest/"
 
 #. type: Plain text
 #: a001.adoc:82
 msgid "Questions, problems: on irc.libera.chat channel #btrfs"
-msgstr "Frågor, problem: på irc.libera.chat-kanalen #btrfs"
+msgstr "Domande e problemi: su irc.libera.chat, canale #btrfs"
 

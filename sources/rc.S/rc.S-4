@@ -21,9 +21,6 @@ if ! grep -q "^sysfs" /proc/mounts; then
   /sbin/mount -v sysfs /sys -t sysfs 1> /dev/null
 fi
 
-# Activate swap:
-/sbin/swapon -a 1> /dev/null
-
 # Mount the efivars files system if the system booted in EFI mode. This
 # will allow to include in the GRUB # boot menu a boot entry to go to
 # the firmware setup menu.
@@ -68,18 +65,6 @@ if  [ ! -f /tmp/noespeakup ]; then
 	echo 1 > /sys/accessibility/speakup/soft/direct
 fi
 sleep 1
-# brltty is included in the initrd so that it be started by udev when applicable.
-# We mount the ISO so we can install the packages we need in the initrd
-mkdir -p /ISO
-mkdir -p /INSTALLER
-mounttheiso
-sh /etc/rc.d/rc.swapinzram start
-
-sleep 3
-
-echo "installing kernel-firmware. Please wait..."
-spkg -i -qq "$ISO"/slint/kernel-firmware*txz
-
 # brltty is included in the initrd so that it be started by udev when applicable.
 # Start brltty if it has not yet been started by udev
 NBPROC="$(ps -C brltty --noheaders|wc -l)"
@@ -228,7 +213,7 @@ clear
 
 # Fake login:  (fooled ya! ;^)
 #
-Version=15.0-5
+Version=15.0-3
 
 eval_gettext "Welcome to the Slint installer! (version \${Version})
 

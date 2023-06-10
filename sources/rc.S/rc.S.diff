@@ -1,0 +1,115 @@
+--- rc.S-2	2023-06-07 19:42:24.214134522 +0200
++++ rc.S	2023-06-07 22:48:13.218149652 +0200
+@@ -1,26 +1,25 @@
+ #!/bin/sh
++# shellcheck disable=SC1091,SC2034
+ # rc.S:  Basic system initialization.
+ # Modification of the file assumed to have been written by Patrick .J. Volkerding found in:
+ # http://ftp.slackware.com/pub/slackware/slackware-15.0/source/installer/sources/initrd/skeleton_initrd.tar.gz
+ # heavily modified by Didier Spaier didieratslintdotfr for the Slint Linux distribution.
+ 
+-# Version included in slint64-15.0-1.iso
++# Version included in slint64-15.0-3.iso
+ 
+ # Any /etc/mtab that exists here is old, so we start with a new one:
+-/bin/rm -f /etc/mtab /etc/mtab~ /etc/mtab.tmp && /bin/touch /etc/mtab
++#/bin/rm -f /etc/mtab /etc/mtab~ /etc/mtab.tmp && /bin/touch /etc/mtab
+ 
+ # Add (fake) entry for / to /etc/mtab:
+-/sbin/mount -f -w /dev/initramfs / -t tmpfs 1> /dev/null
++#/sbin/mount -f -w /dev/initramfs / -t tmpfs 1> /dev/null
+ 
+-# Mount /proc:
+-/sbin/mount -v proc /proc -t proc 1> /dev/null
+-
+-# Mount sysfs next:
+-/sbin/mount -v sysfs /sys -t sysfs 1> /dev/null
+-
+-# Activate swap:
+-/sbin/swapon -a 1> /dev/null
+ 
++if [ ! -e /proc/mounts ]; then
++  /sbin/mount -v proc /proc -t proc 1> /dev/null
++fi
++if ! grep -q "^sysfs" /proc/mounts; then
++  /sbin/mount -v sysfs /sys -t sysfs 1> /dev/null
++fi
+ 
+ # Mount the efivars files system if the system booted in EFI mode. This
+ # will allow to include in the GRUB # boot menu a boot entry to go to
+@@ -67,20 +66,6 @@
+ fi
+ sleep 1
+ # brltty is included in the initrd so that it be started by udev when applicable.
+-# We mount the ISO so we can install the packages we need in the initrd
+-mkdir -p /ISO
+-mkdir -p /INSTALLER
+-mounttheiso
+-#Maybe useless?
+-#sh /etc/rc.d/rc.swapinzram start
+-
+-sleep 3
+-
+-echo "installing kernel-firmware. Please wait..."
+-spkg -i -qq "$ISO"/slint/kernel-firmware*txz
+-
+-#sleep 1
+-
+ # Start brltty if it has not yet been started by udev
+ NBPROC="$(ps -C brltty --noheaders|wc -l)"
+ if [ "$NBPROC" = "0" ]; then
+@@ -139,7 +124,7 @@
+ 	echo $VOICE > /tmp/speech
+ }
+ sh /etc/rc.d/rc.alsa 2>/tmp/error.alsa 1>out.alsa
+-set_voice $LANG
++set_voice "$LANG"
+ # Probe the sound cards as in Debian
+ # We will do it, regardless or espeakup could be used or not
+ # TODO: internationalize and localize the messages from /sbin/probe_sound_cards
+@@ -155,7 +140,7 @@
+ during installation type S, then press [Enter]. Else, just press Enter.
+ "
+ 	clear_stdin
+-	read sound
++	read -r sound
+ 	if [ ! "$sound" = "s" ] && [ ! "$sound" = "S" ]; then
+ 		PID=$(ps -C espeakup --noheaders -o pid)
+ 		kill -s 9 "$PID"
+@@ -168,7 +153,7 @@
+ press R, then press [Enter],
+ Else, just press [Enter]: "
+ 		clear_stdin
+-		read ANSWER
++		read -r ANSWER
+ 		if [ "$ANSWER" = "R" ] ||  [ "$ANSWER" = "r" ]; then
+ 			clear
+ 			w3m -o confirm_qq=false /Speakup
+@@ -188,7 +173,8 @@
+ ru_RU.utf8 "$(gettext "Russian")" \
+ sv_SE.utf8 "$(gettext "Swedish")" \
+  2> /tmp/.SlintInstallationLANG
+-if [ $? -ne 0 ]; then
++	mycmd="$?"
++	if [ "$mycmd" -ne 0 ]; then
+ 	echo "$INITLANG" > /tmp/.SlintInstallationLANG
+ fi
+ LANG=$(cat /tmp/.SlintInstallationLANG)
+@@ -217,7 +203,7 @@
+ echo
+ gettext "Enter 1 to select a keyboard map: "
+ clear_stdin
+-read ONE
++read -r ONE
+ if [ "$ONE" = "1" ]; then
+   /sbin/SeTkeymap
+ fi
+@@ -227,7 +213,7 @@
+ 
+ # Fake login:  (fooled ya! ;^)
+ #
+-Version=15.0
++Version=15.0-3
+ 
+ eval_gettext "Welcome to the Slint installer! (version \${Version})
+ 
