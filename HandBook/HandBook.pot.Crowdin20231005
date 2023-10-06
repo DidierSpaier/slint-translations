@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-10-06 22:12+0200\n"
+"POT-Creation-Date: 2023-02-25 22:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgid "Slint Handbook (version 15.0)"
 msgstr ""
 
 #. type: Title ==
-#: HandBook.adoc:9
+#: HandBook.adoc:10
 #, no-wrap
 msgid "Introduction to Slint"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:11
+#: HandBook.adoc:12
 #, no-wrap
 msgid "About Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:14
+#: HandBook.adoc:15
 msgid ""
 "Slint is a https://en.wikipedia.org/wiki/Linux_distribution[Linux "
 "distribution], based on http://www.slackware.com/[Slackware], polyglot, easy "
@@ -38,20 +38,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:16
+#: HandBook.adoc:17
 msgid ""
 "A Slint system is functional out of the box and can be tailored to fit most "
 "computing requirements."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:17
+#: HandBook.adoc:18
 #, no-wrap
 msgid "Features"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:20
+#: HandBook.adoc:21
 msgid ""
 "Two installation modes are proposed: Automatic (the installer prepare the "
 "drive chosen by the user and install Slint on it) and Manual (The installer "
@@ -60,14 +60,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:22
+#: HandBook.adoc:23
 msgid ""
 "Slint is accessible to visually impaired users, with speech and braille, "
 "from installation to usage in a console as in graphical environments."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:24
+#: HandBook.adoc:25
 msgid ""
 "A wide assortment of software for servers, desktops, and laptops is "
 "installed in all Slint systems, which include two graphical desktop "
@@ -79,19 +79,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:26
+#: HandBook.adoc:27
 msgid "The language chosen will be used for internationalized applications."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:28
+#: HandBook.adoc:29
 msgid ""
 "The Slint Dashboard centralizes access to hardware and system settings, "
 "packages, system tools, documentation and utilities."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:30
+#: HandBook.adoc:31
 msgid ""
 "Slint ships with many applications out of the box to create, edit, view and "
 "convert documents in various formats, communicate by email, text and audio "
@@ -102,7 +102,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:32
+#: HandBook.adoc:33
 msgid ""
 "Many applications are accessible to visually impaired users, a wide choice "
 "of TTS and associated voices is included, if you still need others they are "
@@ -111,14 +111,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:34
+#: HandBook.adoc:35
 msgid ""
 "Several in-house tools ease administration and configuration of your Slint "
 "system."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:36
+#: HandBook.adoc:37
 msgid ""
 "Many more applications are easily built installed as software packages "
 "through a simple command or a few clicks. Thousands of software packages are "
@@ -126,32 +126,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:38
+#: HandBook.adoc:39
 msgid ""
 "Slint users are notified about upgrades of installed packages as soon as "
 "available, easily installed upon request. This keeps your system safe."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:40
+#: HandBook.adoc:41
 msgid ""
 "Default preferred applications settings are provided and can be easily "
 "customized."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:41
+#: HandBook.adoc:42
 #, no-wrap
 msgid "Content, versions and release model"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:44
+#: HandBook.adoc:45
 msgid "The Slint installer provides only a complete installation."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:46
+#: HandBook.adoc:47
 msgid ""
 "Slint follows a \"semi-rolling\" release model, meaning that during the life "
 "cycle of a given version, in addition to updates as security fixes and major "
@@ -161,7 +161,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:48
+#: HandBook.adoc:49
 msgid ""
 "We recommend that users switch to a new version as soon as possible after "
 "its release. We recommend that they do a full backup of all data they want "
@@ -169,13 +169,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:49
+#: HandBook.adoc:50
 #, no-wrap
 msgid "About this book, other sources of information"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:52
+#: HandBook.adoc:53
 msgid ""
 "This book is intended for the Slint newcomer whom it guides through its "
 "installation process and usage. The concepts and conventions specific to "
@@ -184,33 +184,33 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:54
+#: HandBook.adoc:55
 msgid ""
 "We try to accommodate folks coming from Windows or MacOS as users of another "
 "distribution like Ubuntu."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:56
+#: HandBook.adoc:57
 msgid ""
 "Documentation about installed software is generally available in a Slint "
 "system. We will state in this book how to access it."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:58
+#: HandBook.adoc:59
 msgid "Other sources of information are available:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:60
+#: HandBook.adoc:61
 msgid ""
 "The information often provided in their website by the authors of software "
 "included in Slint."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:61
+#: HandBook.adoc:62
 msgid ""
 "http://docs.slackware.com/[The Slackware documentation project] and "
 "particularly its http://docs.slackware.com/howtos:start[HOWTO articles] Many "
@@ -219,7 +219,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:62
+#: HandBook.adoc:63
 msgid ""
 "Beyond the Arch distribution, the ArchWiki provides often helpful article on "
 "software also shipped in Slint. For instance searching \"arch wiki mate\" "
@@ -231,25 +231,25 @@ msgstr ""
 
 #.  Support
 #. type: Plain text
-#: HandBook.adoc:63
+#: HandBook.adoc:64
 msgid ""
 "And of course an Internet search engine can often help find answers to "
 "questions and solutions to issues."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:65
+#: HandBook.adoc:66
 #, no-wrap
 msgid "Support"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:68
+#: HandBook.adoc:69
 msgid "You can get help through these channels:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:70
+#: HandBook.adoc:71
 msgid ""
 "The Slint mailing list is the primary support channel. To register, email "
 "slint-request@freelists.org with as subject: 'subscribe' then answer the "
@@ -259,46 +259,46 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:71
+#: HandBook.adoc:72
 msgid ""
 "The archives of the mailing list are available https://www.freelists.org/"
 "archive/slint[here]."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:72
+#: HandBook.adoc:73
 msgid ""
 "On IRC: chat on the #slint channel, server irc.libera.chat, no registration "
 "needed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:73
+#: HandBook.adoc:74
 msgid "Mumble: server slint.fr (on appointment taken through another channel)."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:74
+#: HandBook.adoc:75
 msgid ""
 "The https://forum.salixos.org/viewforum.php?f=44[Slint forum] kindly hosted "
 "by our friends at Salix (another Slackware derivative). Registration needed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:77
+#: HandBook.adoc:78
 msgid ""
 "To find out more, see the links under Information in the Slint Dashboard or "
 "just type: slint-doc in a terminal after installation."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:78
+#: HandBook.adoc:79
 #, no-wrap
 msgid "Translation and other contributions to the Slint project"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:81
+#: HandBook.adoc:82
 msgid ""
 "Slint need translators! If you want to participate to the translation "
 "effort, read the instructions in https://slint.fr/doc/translate_slint."
@@ -306,7 +306,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:83
+#: HandBook.adoc:84
 msgid ""
 "The translation files are hosted on https://crowdin.com/project/"
 "slint[Crowdin]."
@@ -314,7 +314,7 @@ msgstr ""
 
 #.  Acknowledgments
 #. type: Plain text
-#: HandBook.adoc:85
+#: HandBook.adoc:86
 msgid ""
 "If you want to contribute to Slint for other tasks, just post in the mailing "
 "list or drop a line to: didieratslintdotfr. Of course translators are "
@@ -322,27 +322,27 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:87
+#: HandBook.adoc:88
 #, no-wrap
 msgid "Acknowledgments"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:90
+#: HandBook.adoc:91
 msgid ""
 "The Slint project exists mainly through to the hard work of the Slint "
 "translators and other contributors, thanks to all of you!"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:92
+#: HandBook.adoc:93
 msgid ""
 "Thanks to George Vlahavas for his advice and tools, to the contributors to "
 "the SlackBuilds.org project, who help building so many additional software."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:94
+#: HandBook.adoc:95
 msgid ""
 "Slint is based on Slackware, brought by Patrick J. Volkerding and "
 "contributors. Thanks! I encourage all Slint users to contribute to Slackware "
@@ -350,7 +350,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:96
+#: HandBook.adoc:97
 msgid ""
 "The Slint repositories are kindly hosted for free by Darren 'Tadgy' Austin. "
 "I encourage all Slint users to contribute to funding the host https://"
@@ -358,7 +358,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:101
+#: HandBook.adoc:102
 #, no-wrap
 msgid ""
 "Links for financial contributions:\n"
@@ -368,13 +368,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: HandBook.adoc:102
+#: HandBook.adoc:103
 #, no-wrap
 msgid "Install Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:105
+#: HandBook.adoc:106
 msgid ""
 "This part of the HandBook walks through the process of downloading Slint, "
 "verifying the ISO image with a check-sum, writing the ISO to an installation "
@@ -383,52 +383,49 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:106
+#: HandBook.adoc:107
 #, no-wrap
 msgid "Requirements"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:109
+#: HandBook.adoc:110
 msgid ""
 "The current Slint version can be installed on computers meeting these "
 "requirements:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:111
+#: HandBook.adoc:112
 msgid "Architecture: x86_64 (64-bit CPU), also known as AMD64"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:112
+#: HandBook.adoc:113
 msgid "In Auto partitioning mode a disk drive of size at least 50G"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:113
+#: HandBook.adoc:114
 msgid ""
 "In Manual partitioning mode a partition of type Linux of size at least 50G, "
-"an EFI system partition and/or a BIOS boot partition on the same disk drive. "
-"The EFI partition is mandatory if the machine boots in EFI mode, the BIOS "
-"boot partition if the machine boots in Legacy mode, having both is better to "
-"allow swictching between EFI and Legacy modes."
+"an EFI system partition and a BIOS boot partition on the same disk drive."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:114
+#: HandBook.adoc:115
 msgid ""
 "Slint can be installed on these kinds of drives: hard drives, SSD, NVME, "
 "eMMC, USB sticks, SD cards (preferably in USB enclosures)."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:115
+#: HandBook.adoc:116
 msgid "RAM: at least 2G"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:116
+#: HandBook.adoc:117
 msgid ""
 "a DVD drive or an USB slot available, with ability of the firmware to boot a "
 "DVD or USB stick. A blank DVD or a 5G or more USB stick can be used as "
@@ -436,46 +433,46 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:118
+#: HandBook.adoc:119
 msgid "Secure boot should be disabled to install Slint."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:119
+#: HandBook.adoc:120
 #, no-wrap
 msgid "Features of the installer"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:122
+#: HandBook.adoc:123
 msgid ""
 "The installer is a \"live system\", running in memory: it will not modify an "
 "installed system, unless and until you tell it to."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:123
+#: HandBook.adoc:124
 msgid ""
 "For blind users the installer is fully usable with Braille, and speech using "
 "the Speakup screen reader."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:124
+#: HandBook.adoc:125
 msgid ""
 "It includes all needed utilities to prepare the needed partitions prior to "
 "an installation in Manual partitioning mode."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:125
+#: HandBook.adoc:126
 msgid ""
 "The Auto mode of installation instead just needs user to answering questions "
 "and provide a contextual help about them."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:126
+#: HandBook.adoc:127
 msgid ""
 "If installed alone on a removable device connected through USB, Slint is "
 "portable, i.e. usable on any computer able to boot off an USB drive beyond "
@@ -484,7 +481,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:127
+#: HandBook.adoc:128
 msgid ""
 "The installer can encrypt the drive where Slint is installed alone. This "
 "prevents the steal of data it contains in case of loss or theft of the "
@@ -492,20 +489,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:128
+#: HandBook.adoc:129
 msgid ""
 "Slint can be installed in its own drive, and in manual partitioning mode "
 "alongside another system."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:129
+#: HandBook.adoc:130
 #, no-wrap
 msgid "Preparation"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:134
+#: HandBook.adoc:135
 #, no-wrap
 msgid ""
 "<<download_and_verify,Download and verify a Slint ISO image>>\n"
@@ -514,51 +511,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:136
+#: HandBook.adoc:137
 #, no-wrap
 msgid "Download and verify a Slint ISO image"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:139
+#: HandBook.adoc:140
 msgid "The latest version of the Slint distribution is 15.0"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:141
+#: HandBook.adoc:142
 msgid ""
 "The latest installation ISO image is always available in https://slackware."
 "uk/slint/x86_64/slint-15.0/iso[this directory]"
 msgstr ""
 
-#. type: Plain text
-#: HandBook.adoc:143
-msgid ""
-"This ISO image can also be downloaded using a Torrent Client from this page:"
-msgstr ""
-
-#. type: Plain text
-#: HandBook.adoc:145
-msgid "https://seedbox.slackware.uk/"
-msgstr ""
-
-#. type: Plain text
-#: HandBook.adoc:147
-msgid "The link to the torrent, after the label \"Slint Torrents\", is:"
-msgstr ""
-
-#. type: Plain text
-#: HandBook.adoc:149
-msgid "https://seedbox.slackware.uk/torrents/slint64-15.0-5-iso.torrent"
-msgstr ""
-
-#. type: Plain text
-#: HandBook.adoc:151
-msgid "A magnet is also provided."
-msgstr ""
-
 #. type: delimited block =
-#: HandBook.adoc:155
+#: HandBook.adoc:146
 msgid ""
 "As long as you are running Slint version 15.0 there is no need to re-install "
 "when a new ISO is provided, as it only brings new features of the installer "
@@ -567,47 +538,47 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:158
+#: HandBook.adoc:149
 msgid ""
 "The file name of the ISO indicated below is just an example, that you will "
 "adapt to the current name when downloading."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:160
+#: HandBook.adoc:151
 msgid ""
 "If you are running Windows, an Internet search with as argument \"check "
 "sha256sum windows\" will tell you how to proceed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:162
+#: HandBook.adoc:153
 msgid ""
 "If you are running Linux you can download the ISO image and its sha256 "
 "checksum typing:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:165
+#: HandBook.adoc:156
 #, no-wrap
 msgid ""
-"wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso\n"
-"wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso.sha256\n"
+"wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.iso\n"
+"wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.iso.sha256\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:168
+#: HandBook.adoc:159
 msgid "To check the integrity of the downloaded files type this command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:170
+#: HandBook.adoc:161
 #, no-wrap
-msgid "sha256sum -c slint64-15.0-5.iso.sha256\n"
+msgid "sha256sum -c slint64-15.0.iso.sha256\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:174
+#: HandBook.adoc:165
 #, no-wrap
 msgid ""
 "The result should be : OK\n"
@@ -615,51 +586,37 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:176
+#: HandBook.adoc:167
 #, no-wrap
 msgid "Write the ISO image on an Installation Medium"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:179
+#: HandBook.adoc:170
 msgid "You can use either a DVD or an USB stick as installation media."
 msgstr ""
 
-#. type: delimited block =
-#: HandBook.adoc:183
-msgid ""
-"You can just store the ISO image in the first partition of a Ventoy USB "
-"stick."
-msgstr ""
-
-#. type: delimited block =
-#: HandBook.adoc:185
-msgid ""
-"In this case at the beginning of installation the installer will request "
-"that you mount this partition, then mount the ISO itself."
-msgstr ""
-
 #. type: Title =====
-#: HandBook.adoc:188
+#: HandBook.adoc:172
 #, no-wrap
 msgid "Make a Bootable USB Stick"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:191
+#: HandBook.adoc:175
 msgid ""
 "On a ++Linux++ system, plug in the USB stick, and check it's name with the "
 "following command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:194
+#: HandBook.adoc:178
 #, no-wrap
 msgid "lsblk -o model,name,size,fstype,mountpoint\n"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:199
+#: HandBook.adoc:183
 msgid ""
 "Carefully review the output of the command to make sure that you will not "
 "type the name of a hard disk partition instead of the name of your USB "
@@ -668,7 +625,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:202
+#: HandBook.adoc:186
 msgid ""
 "Let's assume that the name of the USB stick be /dev/sdb. It could be named "
 "otherwise, so don't copy blindly the following command. The command syntax "
@@ -676,13 +633,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:205
+#: HandBook.adoc:189
 #, no-wrap
-msgid "dd if=slint64-15.0-5.iso of=/dev/sdb bs=1M status=progress && sync\n"
+msgid "dd if=slint64-15.0.iso of=/dev/sdb bs=1M status=progress && sync\n"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:210
+#: HandBook.adoc:194
 msgid ""
 "The above command assumes **if=** points to the path of the Slint ISO and "
 "**of=** points to the name of the USB stick. These values may differ on your "
@@ -690,36 +647,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:213
+#: HandBook.adoc:197
 msgid ""
 "On ++Windows++ use an application like http://rufus.akeo.ie/[Rufus]. It is "
 "free and open source."
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:215
+#: HandBook.adoc:199
 #, no-wrap
 msgid "Make a Bootable DVD Disc"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:218
+#: HandBook.adoc:202
 msgid "On a ++Linux++ system insert the DVD and type the following command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:221
+#: HandBook.adoc:205
 #, no-wrap
-msgid "xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0-5.iso\n"
+msgid "xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0.iso\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:224
+#: HandBook.adoc:208
 msgid "Be sure to enter the full path to the Slint ISO on your filesystem."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:226
+#: HandBook.adoc:210
 msgid ""
 "On ++Microsoft Windows 2000/XP/Vista/7++ you can write to a DVD using the "
 "application http://infrarecorder.org/[InfraRecorder]. It is free and open "
@@ -727,47 +684,47 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:228
+#: HandBook.adoc:212
 msgid ""
 "On ++Microsoft Windows 7/8/10++ you can use the utility that is shipped with "
 "Microsoft Windows."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:230
+#: HandBook.adoc:214
 msgid ""
 "Right-click the ISO file and select Burn disk image (if on Windows 11, "
-"select Show more options first (Shift+f10)"
+"slecet Show more optison first (Shift+f10)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:231
+#: HandBook.adoc:215
 msgid ""
 "To make sure the ISO was burned without any errors, select Verify disc after "
 "burning."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:235
+#: HandBook.adoc:219
 msgid "Instructions not checked by the writer."
 msgstr ""
 
 #.  Prepare
 #. type: Title ====
-#: HandBook.adoc:239
+#: HandBook.adoc:224
 #, no-wrap
 msgid "Optionally, prepare partitions for Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:243
+#: HandBook.adoc:228
 msgid ""
 "In this document 'format' a partition means: create a file system in it to "
 "manage the files it will contain."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:247
+#: HandBook.adoc:232
 msgid ""
 "If after having type 'start' you type 'm' for manual partitioning you will "
 "first select the root system partition, which will be mounted as \"/\", then "
@@ -775,7 +732,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:250
+#: HandBook.adoc:235
 msgid ""
 "The installer lists for selection only partitions of size at least 50G and "
 "of Linux (can also be named Linux filesystem), not encrypted. This partition "
@@ -784,46 +741,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:252
+#: HandBook.adoc:237
 msgid ""
 "In addition the Manual partitioning mode require on the same drive as the "
 "root system partition:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:254
+#: HandBook.adoc:239
 msgid ""
 "A partition of type BIOS boot partition, of size at least 3M and not "
-"formatted if the machine boots in Legacy mode and the drive has a partition "
-"table of type GPT."
+"formatted."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:255
+#: HandBook.adoc:240
 msgid ""
 "A partition of type EFI system, with at least 32M free space in it, "
 "formatted with a 'fat' (or 'vfat') file system as required by the UEFI "
-"specification if the machine boots in EFI mode"
+"specification"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:257
-msgid ""
-"It is better to set up both partitions to allow switching between Legacy and "
-"EFI modes if the drive has a partition table of type GPT."
-msgstr ""
-
-#. type: Plain text
-#: HandBook.adoc:259
+#: HandBook.adoc:242
 msgid ""
 "Using for Slint existing partitions or creating them is up to the user. "
 "Already installed systems using the BIOS boot and the EFI partitions will "
-"not be affected, only the root partition will be (re)formatted, and an "
-"existing /home partition only if requested."
+"not be affected, only the root partition will be (re)formatted."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:268
+#: HandBook.adoc:251
 msgid ""
 "The installer includes several partitioning applications: cfdisk, fdisk, "
 "sfdisk, cgdisk, gdisk, sgdisk, parted. The applications with \"g\" in their "
@@ -837,20 +785,20 @@ msgstr ""
 
 #.  Installation
 #. type: Plain text
-#: HandBook.adoc:271
+#: HandBook.adoc:254
 msgid ""
 "Of course you may also create the partitions form another system before "
 "starting the installer."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:273
+#: HandBook.adoc:256
 #, no-wrap
 msgid "Slint Installation"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:280
+#: HandBook.adoc:263
 #, no-wrap
 msgid ""
 "<<Start_of_the_installation,Start of the installation>>\n"
@@ -862,44 +810,44 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:282
+#: HandBook.adoc:265
 #, no-wrap
 msgid "Start of the installation"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:285
+#: HandBook.adoc:268
 msgid ""
 "If need be, setup the firmware of the machine to boot off the DVD or USB "
 "stick that you have prepared."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:287
+#: HandBook.adoc:270
 msgid ""
 "Insert the installation media (DVD or USB stick) and reboot your machine. To "
 "help blind users a tune is heard when the boot menu is displayed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:289
+#: HandBook.adoc:272
 msgid "Start the installer just pressing Enter."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:291
+#: HandBook.adoc:274
 msgid "The installer will first probe you sounds cards."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:293
+#: HandBook.adoc:276
 msgid ""
 "This can help setting a working one as default, and also is used for speech "
 "during installation used by some blind users."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:297
+#: HandBook.adoc:280
 #, no-wrap
 msgid ""
 "If the installer finds more than one sound card it will say in English for each:\n"
@@ -908,7 +856,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:299
+#: HandBook.adoc:282
 msgid ""
 "At the next step, when asked you will confirm (typing s) or deny (just "
 "pressing Enter) that you want speech during installation. Braille is always "
@@ -916,7 +864,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:301
+#: HandBook.adoc:284
 msgid ""
 "You will then choose, confirm or change the language used during "
 "installation. Then all screens will be in the chosen language if the "
@@ -924,14 +872,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:303
+#: HandBook.adoc:286
 msgid ""
 "If you need to append additional kernel parameters to the boot command line, "
 "before pressing Enter do what follows :"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:307
+#: HandBook.adoc:290
 #, no-wrap
 msgid ""
 "Be aware that the US keyboard map will be in use when typing.\n"
@@ -939,7 +887,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:316
+#: HandBook.adoc:299
 #, no-wrap
 msgid ""
 "Press the e key\n"
@@ -952,46 +900,46 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:319
+#: HandBook.adoc:302
 msgid ""
 "For instance to configure the speakup driver for your hardware synthesizer "
 "you could type a kernel parameter like:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:321
+#: HandBook.adoc:304
 #, no-wrap
 msgid "speakup.synth=apollo\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:323
+#: HandBook.adoc:306
 msgid ""
 "You can also include in the boot command line the settings for your Braille "
 "device, in this form:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:325
+#: HandBook.adoc:308
 #, no-wrap
 msgid "brltty=<driver code>,<device>,<text table>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:327
+#: HandBook.adoc:310
 msgid ""
 "For instance to install with a Papenmeier device connected through USB with "
 "a French text table type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:329
+#: HandBook.adoc:312
 #, no-wrap
 msgid "brltty=pm,usb:,fr_FR\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:331
+#: HandBook.adoc:314
 msgid ""
 "A braille device connected through USB should always be recognized, maybe "
 "just the text table won't be the good one if you didn't enter the settings "
@@ -999,7 +947,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:333
+#: HandBook.adoc:316
 msgid ""
 "In any case, as there is no timeout, booting will only begin when you press "
 "[Enter]."
@@ -1007,18 +955,18 @@ msgstr ""
 
 #.  Overview
 #. type: Plain text
-#: HandBook.adoc:335
+#: HandBook.adoc:318
 msgid "Speech and Braille are available at the beginning of installation."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:337
+#: HandBook.adoc:320
 #, no-wrap
 msgid "Overview of the installation process"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:342
+#: HandBook.adoc:325
 msgid ""
 "The installer first probes the existing drives and partitions to assess the "
 "possibilities and options of installation and let you choose between an "
@@ -1026,7 +974,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:347
+#: HandBook.adoc:330
 msgid ""
 "If you choose 'manual' you are presented the Linux partitions where Slint "
 "could be installed (size at least 50G), select one of them and choose the "
@@ -1036,23 +984,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:350
+#: HandBook.adoc:333
 msgid ""
 "If you choose 'auto' you are presented the drives where Slint could be "
 "installed (size at least 50G), and the file system will be of type btrfs."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:354
+#: HandBook.adoc:337
 msgid ""
-"In case of btrfs sub-volumes will created for \"/\" and \"/home\" with files "
-"compressed, and /swap to host a swap file. 'Copy on write' will ease making "
-"snapshots and possibly revert a faulty system update. Tools to manage the "
-"snapshots are included in Slint."
+"In case of btrfs; sub-volumes will created for / /home and /snapshots with "
+"files compressed, and /swap to host a swap file. 'Copy on write' will ease "
+"making snapshots and possibly revert a faulty system update. Tools to manage "
+"the snapshots are included in Slint."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:358
+#: HandBook.adoc:341
 msgid ""
 "In both modes the user chooses which existing Linux and Windows partitions "
 "will be automatically mounted after booting Slint, and their mount points "
@@ -1060,7 +1008,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:364
+#: HandBook.adoc:347
 msgid ""
 "Then the user is proposed to encrypt the root system partition, to prevent "
 "data steal in case of loss or theft of the machine or the drive where Slint "
@@ -1070,7 +1018,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:369
+#: HandBook.adoc:352
 msgid ""
 "After all that the installer summarizes your choices and let you confirm "
 "them or not. Up to this point no modification will have been done to the "
@@ -1079,7 +1027,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:373
+#: HandBook.adoc:356
 msgid ""
 "Then auto partitioning is done case occurring, the Slint root partition is "
 "encrypted if requested, the root partition is formatted and the first "
@@ -1087,26 +1035,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:376
+#: HandBook.adoc:359
 msgid ""
 "If you opted for an encrypted disk you type the passphrase that will be used "
 "to unlock the drive at each boot up."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:379
+#: HandBook.adoc:362
 msgid ""
 "You choose a password for the user \"root.\" This is the system "
 "administrator, who has all privileges."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:381
+#: HandBook.adoc:364
 msgid "You also set the login name and password of a regular user."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:386
+#: HandBook.adoc:369
 msgid ""
 "You indicate if you will need accessible Braille output, and whether you "
 "want to log in text or graphical mode. If you used the language English "
@@ -1115,7 +1063,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:390
+#: HandBook.adoc:373
 msgid ""
 "The installer attempts to establish an Internet connection, and if "
 "successful proposes a time zone corresponding to your geographical location "
@@ -1123,7 +1071,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:394
+#: HandBook.adoc:377
 msgid ""
 "You are asked if you will need Braille, then if you prefer to start in a "
 "console or in a graphical unless you used speech during installation or need "
@@ -1131,14 +1079,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:396
+#: HandBook.adoc:379
 msgid ""
 "The installer then creates a swap file. This can take a long time, please be "
 "patient."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:400
+#: HandBook.adoc:383
 msgid ""
 "The packages are installed on the drive. If an Internet connection has been "
 "established it downloads and install the most recent version of each "
@@ -1146,14 +1094,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:403
+#: HandBook.adoc:386
 msgid ""
 "Installation of all packages takes about 10 to 40 minutes depending on the "
 "hardware."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:407
+#: HandBook.adoc:390
 msgid ""
 "You will be asked to select a desktop (even if you start in a console at "
 "first) among fvm, lxqt, mate and wmaker. Other choices will be available "
@@ -1161,7 +1109,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:411
+#: HandBook.adoc:394
 msgid ""
 "Then, the system is configured and the GRUB boot manager installed. Slint "
 "can boot in both Legacy and EFI modes. The boot menu will include a \"rescue"
@@ -1169,48 +1117,48 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:413
+#: HandBook.adoc:396
 msgid "You can display a preview of the boot menu before rebooting."
 msgstr ""
 
 #.  Usage_installer
 #. type: Plain text
-#: HandBook.adoc:415
+#: HandBook.adoc:398
 msgid ""
 "Then, remove the installation media and reboot to start your new Slint "
 "system."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:417
+#: HandBook.adoc:400
 #, no-wrap
 msgid "Usage of the installer"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:420
+#: HandBook.adoc:403
 msgid "If you are acquainted with the command line, you may skip this topic."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:422
+#: HandBook.adoc:405
 msgid "The main installation menu is displayed below:"
 msgstr ""
 
 #. type: delimited block .
-#: HandBook.adoc:424
+#: HandBook.adoc:407
 #, no-wrap
 msgid "Welcome to the Slint installer! (version 15)\n"
 msgstr ""
 
 #. type: delimited block .
-#: HandBook.adoc:426
+#: HandBook.adoc:409
 #, no-wrap
 msgid "You may now type (without the quotes):\n"
 msgstr ""
 
 #. type: delimited block .
-#: HandBook.adoc:429
+#: HandBook.adoc:412
 #, no-wrap
 msgid ""
 "'doc' to know the features and usage of the installer.\n"
@@ -1218,7 +1166,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block .
-#: HandBook.adoc:435
+#: HandBook.adoc:418
 #, no-wrap
 msgid ""
 "The installer can prepare the drive where Slint will be installed,\n"
@@ -1229,7 +1177,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block .
-#: HandBook.adoc:439
+#: HandBook.adoc:422
 #, no-wrap
 msgid ""
 "We recommend that you type 'doc' first in this case, or if you want to\n"
@@ -1238,14 +1186,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:442
+#: HandBook.adoc:425
 msgid ""
 "As soon as this menu is displayed, you have the hand on the installation "
 "process."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:446
+#: HandBook.adoc:429
 msgid ""
 "You read the screen and type commands in a <<virtual_terminal,virtual "
 "terminal>>. The installer includes 4 virtual terminals sharing the same "
@@ -1253,7 +1201,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:452
+#: HandBook.adoc:435
 msgid ""
 "The installer starts in the virtual terminal 1 named *tty1* but you can "
 "switch to another one. For instance you can switch to *tty2* by pressing "
@@ -1263,7 +1211,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:457
+#: HandBook.adoc:440
 msgid ""
 "This can be useful to continue reading the documentation during "
 "installation: for instance you can switch to *tty2* to begin installation, "
@@ -1272,30 +1220,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:459
+#: HandBook.adoc:442
 msgid ""
 "This can also be used to consult the glossary while reading other documents."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:461
+#: HandBook.adoc:444
 msgid "The installer has several modes of interaction with you, the user:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:463
+#: HandBook.adoc:446
 msgid "You type commands at the prompt and read their output."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:464
+#: HandBook.adoc:447
 msgid ""
 "The installer asks a question, you type the answer and confirm it by "
 "pressing Enter."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:465
+#: HandBook.adoc:448
 msgid ""
 "The installer displays a menu of choices or options: you select one of them "
 "using the up and down arrow keys, then confirm your choice by pressing "
@@ -1303,7 +1251,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:466
+#: HandBook.adoc:449
 msgid ""
 "The installer displays information in a pager. Then use arrow keys to read "
 "the next or previous line, press space to display the next page, Q to stop "
@@ -1312,13 +1260,13 @@ msgstr ""
 
 #.  Encryption
 #. type: Title ====
-#: HandBook.adoc:469
+#: HandBook.adoc:452
 #, no-wrap
 msgid "Slint with an encrypted root partition."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:475
+#: HandBook.adoc:458
 msgid ""
 "In Auto mode the installer proposes to encrypt the root system partition. If "
 "you agree, at each boot the GRUB boot loader will ask you the passphrase "
@@ -1328,7 +1276,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:479
+#: HandBook.adoc:462
 msgid ""
 "Having an encrypted root system prevents the steal of data it contains in "
 "case of loss or theft of the machine, or of a removable drive. But this "
@@ -1337,65 +1285,65 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:482
+#: HandBook.adoc:465
 msgid ""
 "During installation the Slint system partition will be encrypted, and also "
 "the additional partition that you may request."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:485
+#: HandBook.adoc:468
 msgid ""
 "A Slint system (or root) partition will the be named: /dev/mapper/cryproot "
 "once opened, if it has been encrypted."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:487
+#: HandBook.adoc:470
 msgid "This is shown by this command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:490
+#: HandBook.adoc:473
 #, no-wrap
 msgid "lsblk -lpo name,fstype,mountpoint | grep /$\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:493
+#: HandBook.adoc:476
 msgid "Which gives an output like:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:495
+#: HandBook.adoc:478
 #, no-wrap
 msgid "/dev/mapper/cryptroot ext4    /\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:498
+#: HandBook.adoc:481
 msgid "This command instead:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:501
+#: HandBook.adoc:484
 #, no-wrap
 msgid "lsblk -lpo name,fstype,mountpoint | grep /dev/sda3\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:504
+#: HandBook.adoc:487
 msgid "gives:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:507
+#: HandBook.adoc:490
 #, no-wrap
 msgid "/dev/sda3             cryptoLUKS\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:513
+#: HandBook.adoc:496
 msgid ""
 "/dev/sda3 is now a \"raw\" partition that includes the so called \"LUKS "
 "header\" that you will never need nor ever should access directly. It hosts "
@@ -1404,7 +1352,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:519
+#: HandBook.adoc:502
 msgid ""
 "If you forget the passphrase all data in the drive will be irrecoverably "
 "lost! So write down or record this passphrase and put the record on a safe "
@@ -1412,14 +1360,14 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:522
+#: HandBook.adoc:505
 msgid ""
 "Drives die. If that happens and it is encrypted your data will be lost.  So, "
 "regularly back up your important data is not optional."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:525
+#: HandBook.adoc:508
 msgid ""
 "Also, make a backup copy of the luks header which you can restore in case "
 "the luks partition is damaged for any reason. The command could be in our "
@@ -1427,31 +1375,31 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:527
+#: HandBook.adoc:510
 #, no-wrap
 msgid "luksHeaderBackup /dev/sda3 --header-backup-file <file>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:529
+#: HandBook.adoc:512
 msgid ""
 "where <file> is the name of the backup file, that you will store in a safe "
 "place."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:531
+#: HandBook.adoc:514
 msgid "Then would you need to restore the backup, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:533
+#: HandBook.adoc:516
 #, no-wrap
 msgid "luksHeaderRestore /dev/sda3 --header-backup-file <file>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:538
+#: HandBook.adoc:521
 msgid ""
 "Don't resize a partition of an encrypted drive as after that it would be "
 "definitively locked and all the data it contains will be lost! If you really "
@@ -1460,14 +1408,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:541
+#: HandBook.adoc:524
 msgid ""
 "Choose a strong passphrase, so that it would take too much time for a robber "
 "to discover for it to be worthwhile."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:547
+#: HandBook.adoc:530
 msgid ""
 "Never ever fiddle with the so-called \"LUKS header\" located on the raw "
 "partition (the third one, like e.g. /dev/sda3 for the raw partition on top "
@@ -1477,45 +1425,45 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:550
+#: HandBook.adoc:533
 msgid ""
 "To avoid weak passphrases the installer requires that the passphrase include:"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:552
+#: HandBook.adoc:535
 msgid "At least 8 characters."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:553
+#: HandBook.adoc:536
 msgid ""
 "Only non accented lower case and capital letters, digits from 0 to 9, space "
 "and following punctuation characters:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:556
+#: HandBook.adoc:539
 #, no-wrap
 msgid " ' ! \" # $ % & ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:560
+#: HandBook.adoc:543
 msgid ""
 "This guarantees that even a new keyboard will have all characters needed to "
 "type the passphrase."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:562
+#: HandBook.adoc:545
 msgid ""
 "At least one digit, one lower case letter, one capital letter and one "
 "punctuation character."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:569
+#: HandBook.adoc:552
 msgid ""
 "GRUB assumes that \"us\" keyboard is in use when you type the passphrase.  "
 "For this reason, if during installation you use an other keyboard map, "
@@ -1526,39 +1474,39 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:572
+#: HandBook.adoc:555
 msgid ""
 "The application cryptsetup is used to encrypt the drive. To know more type "
 "after installation: +"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:574
+#: HandBook.adoc:557
 #, no-wrap
 msgid "man cryptsetup\n"
 msgstr ""
 
 #.  Speakup
 #. type: Title ====
-#: HandBook.adoc:577
+#: HandBook.adoc:560
 #, no-wrap
 msgid "Key bindings for the Speakup screen reader"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:580
+#: HandBook.adoc:563
 msgid ""
 "This chapter is intended for users needing a screen reader but not "
 "acquainted with Speakup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:582
+#: HandBook.adoc:565
 msgid "Keep numlock off to use Speakup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:585
+#: HandBook.adoc:568
 #, no-wrap
 msgid ""
 "The CapsLock key is used like a shift key. For instance \"CapsLock 4\" means:\n"
@@ -1566,7 +1514,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:589
+#: HandBook.adoc:572
 #, no-wrap
 msgid ""
 " First key bindings to remember:\n"
@@ -1575,7 +1523,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:593
+#: HandBook.adoc:576
 #, no-wrap
 msgid ""
 " Key bindings to change settings:\n"
@@ -1585,7 +1533,7 @@ msgstr ""
 
 #.  First_steps
 #. type: Plain text
-#: HandBook.adoc:600
+#: HandBook.adoc:583
 #, no-wrap
 msgid ""
 " Key bindings to review the screen:\n"
@@ -1597,31 +1545,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:602
+#: HandBook.adoc:585
 #, no-wrap
 msgid "First steps after installation"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:605
+#: HandBook.adoc:588
 msgid "Here are the first tasks to perform after installation"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:608
+#: HandBook.adoc:591
 msgid ""
 "In this document, all text after a # character are comments of the suggested "
 "commands, not to be typed."
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:609
+#: HandBook.adoc:592
 #, no-wrap
 msgid "Initial Software update"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:616
+#: HandBook.adoc:599
 msgid ""
 "After installation, the system should be updated to get the most recently "
 "provided version of each software, as well as new software provided since "
@@ -1632,7 +1580,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:620
+#: HandBook.adoc:603
 msgid ""
 "Most commands typed below request administrative right associated to a "
 "specific account named 'root', for which you have recorded a a password "
@@ -1640,54 +1588,54 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:622
+#: HandBook.adoc:605
 msgid "To issue a command as 'root', first type"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:624
+#: HandBook.adoc:607
 #, no-wrap
 msgid "su -\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:626
+#: HandBook.adoc:609
 msgid ""
 "then issue the password for root and press Enter before type the command."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:629
+#: HandBook.adoc:612
 msgid ""
 "When you are done issuing commands as 'root', press Ctrl+d or type 'exit' to "
 "get back your \"regular user\" status."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:631
+#: HandBook.adoc:614
 msgid ""
 "Alternatively the user registered during installation and other members of "
 "the 'wheel' group can type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:633
+#: HandBook.adoc:616
 #, no-wrap
 msgid "sudo <command>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:635
+#: HandBook.adoc:618
 msgid "then also the password for root."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:637
+#: HandBook.adoc:620
 msgid "To update, type as root in a console or a graphical terminal:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:643
+#: HandBook.adoc:626
 #, no-wrap
 msgid ""
 "slapt-get --add-keys # retrieve the keys to authenticate the packages\n"
@@ -1698,73 +1646,73 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:646
+#: HandBook.adoc:629
 msgid ""
 "When running dotnew, accept to replace all old configuration files by new "
 "ones.  This is safe as you didn't make any customization yet."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:649
+#: HandBook.adoc:632
 msgid ""
 "Alternatively, you can use these graphical front-ends: gslapt instead of "
 "slapt-get, and dotnew-gtk instead of dotnew."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:651
+#: HandBook.adoc:634
 msgid "To learn more about slapt-get, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:653
+#: HandBook.adoc:636
 #, no-wrap
 msgid "man slapt-get\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:655
+#: HandBook.adoc:638
 msgid "or as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:657
+#: HandBook.adoc:640
 #, no-wrap
 msgid "slapt-get --help\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:659
+#: HandBook.adoc:642
 msgid "and read /usr/doc/slapt-get*/README.slaptgetrc.Slint"
 msgstr ""
 
 #.  Usage
 #. type: Title ==
-#: HandBook.adoc:661
+#: HandBook.adoc:644
 #, no-wrap
 msgid "Slint usage"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:665
+#: HandBook.adoc:648
 msgid ""
 "This chapter presents the ways you can interact with your Slint system to "
 "have it do what you want."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:666
+#: HandBook.adoc:649
 #, no-wrap
 msgid "What is a Slint system?"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:669
+#: HandBook.adoc:652
 msgid "Slint is a set of software that roughly fall into these categories:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:671
+#: HandBook.adoc:654
 msgid ""
 "The operating system, made of the Linux <<kernel,kernel>> and <<utilities,"
 "utilities>>. It acts as an interface between the user, the applications and "
@@ -1772,21 +1720,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:672
+#: HandBook.adoc:655
 msgid ""
 "The <<Applications,applications>> that carry out the tasks that users want "
 "to accomplish."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:675
+#: HandBook.adoc:658
 msgid ""
 "Slint can be used in two modes distinguished by the appearance of the screen "
 "and the way to interact with the system:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:677
+#: HandBook.adoc:660
 msgid ""
 "In text mode you type commands interpreted by a <<shell,shell>>. These "
 "commands can start an utility or an application. The text mode is also "
@@ -1795,7 +1743,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:678
+#: HandBook.adoc:661
 msgid ""
 "In graphical mode graphical elements like windows, panels or icons are "
 "displayed on the screen, generally associated to applications or utilities. "
@@ -1803,27 +1751,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:681
+#: HandBook.adoc:664
 msgid ""
 "Commands can be also be typed in graphical mode inside a window associated "
 "with a <<terminal,terminal>> in which runs a shell."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:682
+#: HandBook.adoc:665
 #, no-wrap
 msgid "Utilities provided"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:685
+#: HandBook.adoc:668
 msgid ""
 "Beyond the utilities found in most Linux distributions, Slint includes tools "
 "written for it, inherited from Slackware and borrowed to Salix."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:687
+#: HandBook.adoc:670
 msgid ""
 "Here are the utilities that you can use to (re)configure your Slint system "
 "after installation. Usage of simpler ones is self-explanatory, most have an "
@@ -1832,7 +1780,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:691
+#: HandBook.adoc:674
 msgid ""
 "Unless otherwise noted these utilities should be used as root. To become "
 "root, i.e. get the 'admin' status and privileges type \"su -\" then root's "
@@ -1840,14 +1788,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:693
+#: HandBook.adoc:676
 msgid ""
 "Alternatively you can run commands needing root's privileges typing \"sudo "
 "<command>\""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:697
+#: HandBook.adoc:680
 msgid ""
 "Most utilities have a command line and a graphical version. The command line "
 "version is listed first below. Unless otherwise stated all commands should "
@@ -1855,155 +1803,155 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:699
+#: HandBook.adoc:682
 #, no-wrap
 msgid "*General settings*\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:701
+#: HandBook.adoc:684
 msgid "To manage users: usersetup or gtkusersetup"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:702
+#: HandBook.adoc:685
 msgid "To change the language and region: localesetup or gtklocalesetup"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:703
+#: HandBook.adoc:686
 msgid ""
 "To change the keyboard setup and the input method: keyboardsetup or "
 "gtkkeyboardsetup"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:704
+#: HandBook.adoc:687
 msgid ""
 "To configure the date, the time or the timezone: clocksetup and "
 "gtkclocksetup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:705
+#: HandBook.adoc:688
 msgid ""
 "To choose which services start at boot: servicesetup and gtkservicesetup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:706
+#: HandBook.adoc:689
 msgid "To (re)configure the network: netsetup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:707
+#: HandBook.adoc:690
 msgid ""
 "To choose to start in text or graphical mode and in the later case the "
 "graphical login manager: login-chooser"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:708
+#: HandBook.adoc:691
 msgid ""
-"To choose a desktop among FVWM, i3, LXQt, MATE and WindowMaker: session-"
-"chooser (as regular user)"
+"To choose a desktop among FVWM, LXQt, MATE and WindowMaker: session-chooser "
+"(as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:709
+#: HandBook.adoc:692
 msgid ""
 "To choose one of these desktops or one of the standalone window managers: "
 "xwmconfig (as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:710
+#: HandBook.adoc:693
 msgid ""
 "To display or not the applications specific to a desktop in other desktops: "
 "show-desktop or hide-desktop (as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:711
+#: HandBook.adoc:694
 msgid ""
 "To enable or not speech in graphical mode: orca-on or orca-off (as regular "
 "user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:712
+#: HandBook.adoc:695
 msgid ""
 "To choose and enable a console screen reader or disable all of them: speak-"
 "with"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:713
+#: HandBook.adoc:696
 msgid ""
 "To display or not boot entries specific to MATE and/or LXQt in other "
 "graphical environments: display-desktop or hide-desktop (as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:714
+#: HandBook.adoc:697
 msgid ""
 "To enable or disable emacspeak or speechd-el: switch-on or switch-off (as "
 "regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:715
+#: HandBook.adoc:698
 msgid ""
 "To view the layout of the GRUB boot menu as it will be displayed at next "
 "boot: list_boot_entries"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:716
+#: HandBook.adoc:699
 msgid ""
 "To write a rescue boot stick, allowing to boot if failing otherwise: "
 "rescuebootstick"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:717
+#: HandBook.adoc:700
 msgid "To save/restore the speakup settings: speakup-save or speakup-restore"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:718
+#: HandBook.adoc:701
 msgid ""
 "To list the voices for espeak-ng, including the mbrola ones: list-espeak-ng-"
 "voices (as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:719
+#: HandBook.adoc:702
 msgid "To list the sound cards as : list-cards (as regular user)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:720
+#: HandBook.adoc:703
 msgid ""
 "To list the speech synthesizers and associated languages available through "
 "speech-dispatcher: spd-list (as regular user)"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:721
+#: HandBook.adoc:704
 #, no-wrap
 msgid "How Slint starts"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:725
+#: HandBook.adoc:708
 msgid ""
 "Upon installation, the software shipped in the installation ISO or "
 "downloaded from remote repositories is installed in a <<drive,drive>>."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:729
+#: HandBook.adoc:712
 msgid ""
 "When you boot Slint, the <<firmware,firmware>> first checks the hardware "
 "then looks for a program called an OS loader (commonly named a boot loader) "
@@ -2011,14 +1959,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:732
+#: HandBook.adoc:715
 msgid ""
 "There can be several OS loaders in the machine. In this case the firmware "
 "allows the user to choose which one to start in a menu."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:737
+#: HandBook.adoc:720
 msgid ""
 "In Slint the software that makes and install a boot loader is GRUB.Actually "
 "the boot loader built by GRUB is also a boot manager, as it allows to choose "
@@ -2026,7 +1974,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:741
+#: HandBook.adoc:724
 msgid ""
 "The OS loader built by GRUB can be installed in a boot sector (in case of "
 "Legacy booting) or in an EFI System Partition or ESP (in case of EFI "
@@ -2034,7 +1982,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:745
+#: HandBook.adoc:728
 msgid ""
 "The aim of the Slint loader is to start the Slint system. To do that it "
 "first loads in RAM the <<kernel,kernel>>, then the <<initrd,initrd>>, which "
@@ -2042,7 +1990,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:751
+#: HandBook.adoc:734
 msgid ""
 "In the last step of this initialization the user is invited to \"log in\", "
 "in other words to connect oneself to the system and take the hand on it. To "
@@ -2053,14 +2001,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:753
+#: HandBook.adoc:736
 msgid ""
 "At time of installation you chose to start Slint in either text or graphical "
 "mode."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:755
+#: HandBook.adoc:738
 msgid ""
 "If you chose C for <<console,console>> after initialization of the system "
 "you type your user (or login) name then your the password, each input being "
@@ -2068,7 +2016,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:756
+#: HandBook.adoc:739
 msgid ""
 "If you chose G (graphical) you type the same information in a "
 "<<display_manager,display manager>> or login manager, which then starts the "
@@ -2076,7 +2024,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:762
+#: HandBook.adoc:745
 msgid ""
 "After installation, you can change the mode typing as root `login-chooser`, "
 "in console mode as well as in graphical mode (in a <<terminal,terminal>>). "
@@ -2086,19 +2034,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:764
+#: HandBook.adoc:747
 msgid ""
 "We will now present the graphical environments, then how to use a shell."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:765
+#: HandBook.adoc:748
 #, no-wrap
 msgid "The Graphical Environments"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:775
+#: HandBook.adoc:758
 #, no-wrap
 msgid ""
 "<<the_windows, The windows>>\n"
@@ -2112,7 +2060,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:777
+#: HandBook.adoc:760
 msgid ""
 "A full featured graphical environment includes several components, among "
 "which a window manager which draws windows on the screen associated with "
@@ -2120,55 +2068,46 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:779
+#: HandBook.adoc:762
 msgid ""
-"Slint includes several graphical environments: BlackBox, Fluxbox, FVWM, i3, "
-"LXQt, MATE, TWM, and WindowMaker. It is a matter of preference which one you "
-"choose."
+"Slint includes several graphical environments: BlackBox, Fluxbox, FVWM, "
+"LXQt, MATE, ratpoison, TWM, and WindowMaker. It is a matter of preference "
+"which one you choose."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:781
+#: HandBook.adoc:764
 msgid ""
-"LXQt MATE and XFCE are are full featured desktops, FVWM and WindowMaker "
-"offer unique features and can be selected with the graphical lightdm login "
-"as well and also started from a console typing \"startx\". The other ones "
-"are mainly window managers that can only be started from a console. All "
-"allow you to access your documents and applications, generally opened in a "
-"window."
+"LXQt and MATE are are full featured desktops, FVWM and WindowMaker offer "
+"unique features and can be selected with the graphical lightdm login as well "
+"and also started from a console typing \"startx\". The other ones are mainly "
+"window managers that can only be started from a console. All allow you to "
+"access your documents and applications, generally opened in a window."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:783
+#: HandBook.adoc:766
 msgid ""
-"You can choose among FVWM, i3, LXQt, MATE and WindowMaker typing as regular "
-"user `session-chooser`. In Graphical mode you also can choose one when "
-"logging in."
+"You can choose among FVWM, LXQt, MATE and WindowMaker typing as regular user "
+"`session-chooser`. In Graphical mode you also can choose one when logging in."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:785
+#: HandBook.adoc:768
 msgid ""
-"To choose one of the other graphical environments you need to use the "
-"command \"xwmconfig\"."
-msgstr ""
-
-#. type: delimited block =
-#: HandBook.adoc:789
-msgid ""
-"if you want to use i3 and need speech we recommend that you login in text "
-"mode and run **i38** before **startx**."
+"To choose one of the other graphical environments (BlackBox, Fluxbox, "
+"ratpoison, TWM) you need to use the command \"xwmconfig\"."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:792
+#: HandBook.adoc:770
 msgid ""
 "We will now briefly describe the components of the Mate desktop, which is "
 "the default and is also the most accessible with speech and braille."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:794
+#: HandBook.adoc:772
 msgid ""
 "Using the mouse you can discover the features of each component doing or "
 "simulating a right, middle or left click. Move or delete most of the "
@@ -2176,7 +2115,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:796
+#: HandBook.adoc:774
 msgid ""
 "These components can be reached moving the mouse and also through keyboard "
 "shortcuts. We indicate below inside parenthesis the keyboard shortcuts "
@@ -2186,7 +2125,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:800
+#: HandBook.adoc:778
 msgid ""
 "You can discover most of the features of applications and other components "
 "of Slint with a right, middle, or left click of the mouse. For instance by "
@@ -2195,13 +2134,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:802
+#: HandBook.adoc:780
 #, no-wrap
 msgid "The windows"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:805
+#: HandBook.adoc:783
 msgid ""
 "A window is a rectangular area associated with an application. Windows can "
 "be moved, re-sized, maximized, restored reduced, closed (terminating the "
@@ -2209,13 +2148,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:807
+#: HandBook.adoc:785
 #, no-wrap
 msgid "The work spaces"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:810
+#: HandBook.adoc:788
 msgid ""
 "To allow having a lot of windows opened in an orderly fashion, the graphical "
 "environment provide several work spaces and allow to switch between them. "
@@ -2227,13 +2166,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:812
+#: HandBook.adoc:790
 #, no-wrap
 msgid "The desktop"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:815
+#: HandBook.adoc:793
 msgid ""
 "The desktop encompasses the whole screen, on which other components can be "
 "be put, in case of Mate and as shipped in Slint a top and a bottom panels, "
@@ -2241,69 +2180,69 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:817
+#: HandBook.adoc:795
 msgid "the root directory in the file manager"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:818
+#: HandBook.adoc:796
 msgid "your home directory in the file manager"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:819
+#: HandBook.adoc:797
 msgid "the Slint Control Center"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:820
+#: HandBook.adoc:798
 msgid ""
 "the trash can, where are placed files that you intend to delete but didn't "
 "yet."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:822
+#: HandBook.adoc:800
 msgid "Windows of application you start as also put on the desktop."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:824
+#: HandBook.adoc:802
 msgid ""
 "Mate includes two panels, which presents themselves as slim rectangular "
 "horizontal areas, one at the top and one at the bottom of the screen."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:826
+#: HandBook.adoc:804
 msgid ""
 "Pressing Ctrl+Alt+Tab allow to cycle between the desktop, the top and the "
 "bottom panels"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:828
+#: HandBook.adoc:806
 msgid "Pressing Alt+Tab allows to cycle between the windows on the desktop."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:830
+#: HandBook.adoc:808
 #, no-wrap
 msgid "The top panel"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:833 HandBook.adoc:856
+#: HandBook.adoc:811 HandBook.adoc:834
 msgid "It presents, from left to right:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:835
+#: HandBook.adoc:813
 msgid "Three menus:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:836
+#: HandBook.adoc:814
 msgid ""
 "An Applications menu which can be opened pressing Alt+F1. From there you can "
 "open the other menus using the right arrow key. You can use the down and up "
@@ -2311,12 +2250,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:837
+#: HandBook.adoc:815
 msgid "A Places menu."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:838
+#: HandBook.adoc:816
 msgid ""
 "A System menu which gives access to a preferences sub-menu, the Mate Control "
 "Center and buttons to get help about the desktop, lock the screen, close the "
@@ -2324,66 +2263,66 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:839
+#: HandBook.adoc:817
 msgid ""
 "Applications launchers for mate-terminal, the file manager Caja, the email "
 "client Thunderbird, the web browser Firefox, the text editor Geany."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:840
+#: HandBook.adoc:818
 msgid ""
 "A notification area which can gather applets like a Bluetooth manager, a "
 "sound mixer, a network manager, and an \"update available\" notifier."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:841
+#: HandBook.adoc:819
 msgid "A clock and calendar."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:842
+#: HandBook.adoc:820
 msgid "A screen locker."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:843
+#: HandBook.adoc:821
 msgid "A close session dialog."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:844
+#: HandBook.adoc:822
 msgid "A shutdown dialog."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:848
+#: HandBook.adoc:826
 msgid ""
 "To customize the panel to your liking: right click on an empty space on the "
 "panel."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:849
+#: HandBook.adoc:827
 msgid ""
 "If you wish to move an item on the panel: Middle-click the element, drag "
 "your mouse, and it will follow the mouse until the middle button be released."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:850
+#: HandBook.adoc:828
 msgid "For a contextual help press F1"
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:853
+#: HandBook.adoc:831
 #, no-wrap
 msgid "The bottom panel"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:858
+#: HandBook.adoc:836
 msgid ""
 "A windows list that can be configured with a right click on the line of "
 "three vertical dots at its beginning and choosing preferences. This also "
@@ -2391,7 +2330,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:859
+#: HandBook.adoc:837
 msgid ""
 "A *show desktop* button. A left click on it will minimize or hide all "
 "windows, clicking once again will restore the windows in their previous "
@@ -2399,7 +2338,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:860
+#: HandBook.adoc:838
 msgid ""
 "A work space switcher, or pager. It allows to switch from a work space to "
 "another one and also to move windows from a work space to another one by "
@@ -2407,13 +2346,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:862
+#: HandBook.adoc:840
 #, no-wrap
 msgid "The Slint Control Center"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:865
+#: HandBook.adoc:843
 msgid ""
 "We will end this introduction to Slint's usage by presenting the Slint "
 "Control Center. You can display it from the application menu on the top "
@@ -2422,7 +2361,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:867
+#: HandBook.adoc:845
 msgid ""
 "The goal of the control panel is to gather applications that are useful for "
 "system administration, documentation, and settings in a consistent fashion "
@@ -2433,14 +2372,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:869
+#: HandBook.adoc:847
 msgid ""
 "Most administrative tools should be used with administrative privileges. You "
 "will be asked for the root account password in order to launch a tool."
 msgstr ""
 
 #. type: Table
-#: HandBook.adoc:894
+#: HandBook.adoc:872
 #, no-wrap
 msgid ""
 "<|**Category** <|**Tool** <|**Purpose and comments**\n"
@@ -2468,13 +2407,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:897
+#: HandBook.adoc:875
 #, no-wrap
 msgid "Terminals"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:903
+#: HandBook.adoc:881
 msgid ""
 "You can type commands in graphical mode as in console mode, if you open a "
 "window with a terminal in it. In Mate you can just press Ctrl+Alt+t, or "
@@ -2484,7 +2423,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:907
+#: HandBook.adoc:885
 msgid ""
 "Most of the information below about the command line and the shell in "
 "Console mode also apply to typing commands in a terminal. You can close mate-"
@@ -2492,20 +2431,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:909
+#: HandBook.adoc:887
 #, no-wrap
 msgid "Key bindings"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:912
+#: HandBook.adoc:890
 msgid ""
 "We present here the default key bindings for the Compiz window manager and "
 "the Mate desktop, and how to customize them."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:916
+#: HandBook.adoc:894
 msgid ""
 "When a key binding includes one or more **+** sign, press then hold from "
 "left to right the keys before the last one like a `Shift` key, then press "
@@ -2513,20 +2452,20 @@ msgid ""
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:917
+#: HandBook.adoc:895
 #, no-wrap
 msgid "Key bindings for the Mate desktop"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:921
+#: HandBook.adoc:899
 msgid ""
 "When using Mate in Slint, some key bindings are the same using either the "
 "Marco or Compiz window managers. They are listed below:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:926
+#: HandBook.adoc:904
 #, no-wrap
 msgid ""
 "Alt+Tab               Cycle between windows\n"
@@ -2536,7 +2475,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:931
+#: HandBook.adoc:909
 #, no-wrap
 msgid ""
 "Once in a graphical environment, you can toggle between it and a console. Let's say you want to use tty2 (tty1 being busy): Press `Ctrl+Alt+F2`, then login.\n"
@@ -2544,14 +2483,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:934
+#: HandBook.adoc:912
 msgid ""
 "The same general key bindings are used in all graphical environments, with a "
 "few exceptions, Mod1 being generally the left Alt key: +"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:937
+#: HandBook.adoc:915
 #, no-wrap
 msgid ""
 "Mod1+F1 raises the panel's application menu.\n"
@@ -2559,12 +2498,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:939
+#: HandBook.adoc:917
 msgid "Also in Fluxbox:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:942
+#: HandBook.adoc:920
 #, no-wrap
 msgid ""
 "Mod1+F3 restarts Fluxbox.\n"
@@ -2572,99 +2511,99 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:946
+#: HandBook.adoc:924
 msgid ""
 "In Mate, partially sighted users can use the Compiz window manager instead "
 "or Marco which is the default."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:948
+#: HandBook.adoc:926
 msgid "As a regular user, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:950
+#: HandBook.adoc:928
 #, no-wrap
 msgid "gsettings set org.mate.session.required-components windowmanager compiz\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:952
+#: HandBook.adoc:930
 msgid "To go back to Marco:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:954
+#: HandBook.adoc:932
 #, no-wrap
 msgid "gsettings set org.mate.session.required-components windowmanager marco\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:956
+#: HandBook.adoc:934
 msgid "This setting will take effect at next start of a Mate session."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:958
+#: HandBook.adoc:936
 msgid "Or to make the change just for the current session type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:960
+#: HandBook.adoc:938
 #, no-wrap
 msgid "compiz --replace &\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:962
+#: HandBook.adoc:940
 msgid "and to go back to Marco:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:964
+#: HandBook.adoc:942
 #, no-wrap
 msgid "marco --replace &\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:966
+#: HandBook.adoc:944
 msgid "The replacement will be effective immediately."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:969
+#: HandBook.adoc:947
 msgid ""
 "This setting is also available graphically from mate-tweak, in the Windows "
 "category."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:971
+#: HandBook.adoc:949
 msgid "You can access specific Compiz settings just typing:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:973
+#: HandBook.adoc:951
 #, no-wrap
 msgid "ccsm &\n"
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:974
+#: HandBook.adoc:952
 #, no-wrap
 msgid "Key bindings for the Compiz window manager"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:978
+#: HandBook.adoc:956
 msgid ""
 "In the default settings indicated below the key or mouse buttons are named "
 "like this:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:986
+#: HandBook.adoc:964
 #, no-wrap
 msgid ""
 "Super: Windows key on most keyboards\n"
@@ -2676,19 +2615,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:989
+#: HandBook.adoc:967
 msgid ""
 "The default settings listed below by category can be changed from the CCSM. "
 "We indicate the short name of the plugin between square brackets."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:991
+#: HandBook.adoc:969
 msgid "Category General"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1003
+#: HandBook.adoc:981
 #, no-wrap
 msgid ""
 "[core] General options, tab \"key bindings\":\n"
@@ -2705,7 +2644,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1007
+#: HandBook.adoc:985
 #, no-wrap
 msgid ""
 "[matecompat] Mate Compatibility\n"
@@ -2714,12 +2653,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1009
+#: HandBook.adoc:987
 msgid "Category Accessibility"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1012
+#: HandBook.adoc:990
 #, no-wrap
 msgid ""
 "[addhelper] Dim inactive (less light on non focused windows)\n"
@@ -2727,7 +2666,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1017
+#: HandBook.adoc:995
 #, no-wrap
 msgid ""
 "[colorfilter] (Filter color for accessibility purposes)\n"
@@ -2737,7 +2676,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1022
+#: HandBook.adoc:1000
 #, no-wrap
 msgid ""
 "[ezoom] Enhanced Zoom Desktop\n"
@@ -2747,7 +2686,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1026
+#: HandBook.adoc:1004
 #, no-wrap
 msgid ""
 "[neg] Negative (toggle inverse colors of the window or screen)\n"
@@ -2756,7 +2695,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1030
+#: HandBook.adoc:1008
 #, no-wrap
 msgid ""
 "[obs] Opacity, Brightness and Saturation adjustments\n"
@@ -2765,7 +2704,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1033
+#: HandBook.adoc:1011
 #, no-wrap
 msgid ""
 "[showmouse] (Increase visibility of the mouse pointer)\n"
@@ -2773,12 +2712,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1035
+#: HandBook.adoc:1013
 msgid "Category Window Management"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1039
+#: HandBook.adoc:1017
 #, no-wrap
 msgid ""
 "[move] Move window\n"
@@ -2787,7 +2726,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1043
+#: HandBook.adoc:1021
 #, no-wrap
 msgid ""
 "[resize] Resize window\n"
@@ -2796,7 +2735,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1050
+#: HandBook.adoc:1028
 #, no-wrap
 msgid ""
 "[switcher] Application switcher (switch between windows or panels and\n"
@@ -2808,33 +2747,33 @@ msgid ""
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:1051
+#: HandBook.adoc:1029
 #, no-wrap
 msgid "How to add a custom keybinding for Mate."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1055
+#: HandBook.adoc:1033
 msgid ""
 "Let's take an example: we want that Alt+F3 starts firefox.  type in a "
 "terminal or in Run command (brought up pressing Alt+F2):"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1057
+#: HandBook.adoc:1035
 #, no-wrap
 msgid "mate-keybinding-properties\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1060
+#: HandBook.adoc:1038
 msgid ""
 "In the new window you can use the down and up arrow keys press to navigate "
 "in the list of existing key bindings."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1066
+#: HandBook.adoc:1044
 msgid ""
 "To set a new key binding, press Tab twice to put the cursor on Add, then "
 "press Enter. In the small dialog box brought up type the name of the custom "
@@ -2844,25 +2783,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1069
+#: HandBook.adoc:1047
 msgid ""
 "To activate the new key binding, navigate until you find it on the bottom of "
 "the list, pres Enter the press Alt+F3."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1071
+#: HandBook.adoc:1049
 msgid "Next time you pres Alt+F3 that should start firefox"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1072
+#: HandBook.adoc:1050
 #, no-wrap
 msgid "The shell"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1075
+#: HandBook.adoc:1053
 msgid ""
 "This chapter is a short introduction. More in depth information is provided "
 "in the document https://slint.fr/doc/shell_and_bash_scripts.html[Shell and "
@@ -2870,7 +2809,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1079
+#: HandBook.adoc:1057
 #, no-wrap
 msgid ""
 "When the computer starts in console mode, after having logged in typing your user name and password, the <<shell,shell>> displays a \"prompt\" like the one below:\n"
@@ -2879,36 +2818,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1081
+#: HandBook.adoc:1059
 msgid "`didier` is the user name"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1082
+#: HandBook.adoc:1060
 msgid "`darkstar` the machine name"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1083
+#: HandBook.adoc:1061
 msgid ""
 "the tilde `~` represents the home directory of the user, in this example `/"
 "home/didier`"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1084
+#: HandBook.adoc:1062
 msgid ""
 "the dollar sign `$` indicates that the user is a \"regular one\" not a "
 "\"super user\" (see below)."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1086
+#: HandBook.adoc:1064
 msgid "The cursor is then positioned after the prompt."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1088
+#: HandBook.adoc:1066
 msgid ""
 "The user can now type a command on the line (hence the name \"command line"
 "\") and confirm it pressing Enter. The shell then analyzes the command and "
@@ -2918,7 +2857,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1090
+#: HandBook.adoc:1068
 msgid ""
 "During its execution the commands can display an output on the screen or "
 "not. In all cases after execution the prompt will be displayed again in a "
@@ -2926,7 +2865,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1092
+#: HandBook.adoc:1070
 msgid ""
 "For this to work, the user needs to know which commands are available and "
 "their syntax. Some commands are executed by the shell itself, others start "
@@ -2936,14 +2875,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1094
+#: HandBook.adoc:1072
 msgid ""
 "Several shells are available for Linux to choose from; in Slint the shell "
 "used by default is named *bash*."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1096
+#: HandBook.adoc:1074
 msgid ""
 "To allow running several programs at the same time Linux provides several "
 "\"virtual consoles\" sharing then same keyboard and screen, numbered from "
@@ -2957,7 +2896,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1099
+#: HandBook.adoc:1077
 #, no-wrap
 msgid ""
 "When the shell is used in a graphical environment (in a graphical terminal), its behaves the same way but the prompt is slightly different, as illustrated below:\n"
@@ -2965,14 +2904,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1101
+#: HandBook.adoc:1079
 msgid ""
 "You can switch back and forth between the console and a graphical "
 "environment:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1103
+#: HandBook.adoc:1081
 msgid ""
 "From the graphical environment pressing for instance Ctrl+Alt+F3 to go to "
 "tty3. The first time you go to a tty you will have to type your login and "
@@ -2980,26 +2919,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1104
+#: HandBook.adoc:1082
 msgid ""
 "From a console or tty pressing Alt+F7 if the graphical environment is "
 "already running, else typing `startx` to start it."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1105
+#: HandBook.adoc:1083
 #, no-wrap
 msgid "Typing commands as root"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1108
+#: HandBook.adoc:1086
 #, no-wrap
 msgid "*root* is the conventional name of the \"super user\" which have all rights to do administrative tasks, including those that could harm or even destroy the system.\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1113
+#: HandBook.adoc:1091
 #, no-wrap
 msgid ""
 "You can (but this is not recommended for beginners) log in directly as root. To do this type *root* as user, then root's password. To inform you (and warn you about the associated risks and responsibilities), the prompt will look like this:\n"
@@ -3008,7 +2947,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1117
+#: HandBook.adoc:1095
 #, no-wrap
 msgid ""
 "If you are already logged as regular user, you can \"become root\" typing:\n"
@@ -3017,7 +2956,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1120
+#: HandBook.adoc:1098
 #, no-wrap
 msgid ""
 "The regular user registered during installation and other users members of the 'wheel' group can also type commands reserved to root preceding the name of the command by 'sudo' like this for instance:\n"
@@ -3025,24 +2964,24 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1121
+#: HandBook.adoc:1099
 #, no-wrap
 msgid "How-to solve blocking issues"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1124
+#: HandBook.adoc:1102
 msgid ""
 "By \"blocking issue\" we mean \"an issue that prevents to use Slint\" like:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1126
+#: HandBook.adoc:1104
 msgid "The system fails to boot."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1127
+#: HandBook.adoc:1105
 msgid ""
 "The system boots, but the start-up sequence is interrupted before "
 "completion. This can happen for instance if the root system partition can't "
@@ -3052,33 +2991,33 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1129
+#: HandBook.adoc:1107
 msgid ""
 "If the system completely fails to boot, try each of the solutions below in "
 "sequence, until one works."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1131
+#: HandBook.adoc:1109
 msgid ""
 "If this occurs after a kernel upgrade, try the second boot entry instead of "
 "the first one."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1132
+#: HandBook.adoc:1110
 msgid ""
 "Try to boot off the rescue boot stick that you have requested at end of "
 "installation."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1133
+#: HandBook.adoc:1111
 msgid "Jump into Slint to repair it, as explained below."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1135
+#: HandBook.adoc:1113
 msgid ""
 "You can always get help emailing slint@freelists.org providing all "
 "information that could help investigate the issue. If not already done, "
@@ -3089,12 +3028,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1137
+#: HandBook.adoc:1115
 msgid "We will now explain how to jump into Slint to repair it."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1141
+#: HandBook.adoc:1119
 #, no-wrap
 msgid ""
 "<<Start_the_installer,Start the installer and identify Slint's root partition>>\n"
@@ -3103,13 +3042,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1143
+#: HandBook.adoc:1121
 #, no-wrap
 msgid "Start the installer and identify Slint's root partition"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1146
+#: HandBook.adoc:1124
 msgid ""
 "If the start-up up sequence is interrupted, jump into Slint from its "
 "installer to try to solve the issue. Insert or plug-in the installation "
@@ -3118,109 +3057,109 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1148
+#: HandBook.adoc:1126
 msgid "Start the installer."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1149
+#: HandBook.adoc:1127
 msgid "As soon as logged in as root, to list the drives and partitions, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1152
+#: HandBook.adoc:1130
 #, no-wrap
 msgid "lsblk -lpo name,size,fstype\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1154
+#: HandBook.adoc:1132
 msgid ""
 "Find in the output the name of the Slint root partition, checking its size "
 "and file system type, labeled FSTYPE."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1155
+#: HandBook.adoc:1133
 msgid "Mount this partition"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1158
+#: HandBook.adoc:1136
 #, no-wrap
 msgid "mount /dev/sda3 /mnt\n"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:1164
+#: HandBook.adoc:1142
 msgid ""
 "If Slint's root file system is btrfs (as indicated by the output of \"lsblk"
 "\")  you need to mount it using the options mentioned in its /etc/fstab."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:1166
+#: HandBook.adoc:1144
 msgid ""
 "In this case you need to use the same options as in Slint on btrfs, so type "
 "instead:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1168
+#: HandBook.adoc:1146
 #, no-wrap
 msgid "mount /dev/sda3 /mnt -o subvol=/@,compress=zstd:3\n"
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:1171
+#: HandBook.adoc:1149
 msgid ""
 "Check that the partition be the right one. For instance if it is /dev/sda3, "
 "type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1174
+#: HandBook.adoc:1152
 #, no-wrap
 msgid "cat /etc/mnt/etc/slint-version\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1177
+#: HandBook.adoc:1155
 msgid ""
 "Assuming that you installed Slint64-15.0 the output should be: *Slint 15.0*"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1179
+#: HandBook.adoc:1157
 msgid ""
 "If the output is \"file not found\" the partition is not the one you looked "
 "for. In this case only, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1182
+#: HandBook.adoc:1160
 #, no-wrap
 msgid "umount /mnt\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1185
+#: HandBook.adoc:1163
 msgid "then try another one, going back to the list of drives and partitions."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1187
+#: HandBook.adoc:1165
 #, no-wrap
 msgid "Issue the needed commands to jump into Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1190
+#: HandBook.adoc:1168
 msgid "mount the file systems /proc /sys and /dev typing:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1195
+#: HandBook.adoc:1173
 #, no-wrap
 msgid ""
 "mount -B /dev /mnt/dev\n"
@@ -3229,14 +3168,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1198
+#: HandBook.adoc:1176
 msgid ""
 "Issue the next commands to \"jump into\" your Slint and mount all devices "
 "mentioned in its /etc/fstab:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1202
+#: HandBook.adoc:1180
 #, no-wrap
 msgid ""
 "chroot /mnt\n"
@@ -3244,52 +3183,52 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1205
+#: HandBook.adoc:1183
 #, no-wrap
 msgid "Repair Slint from Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1208
+#: HandBook.adoc:1186
 msgid ""
 "From Slint you can modify the system to solve the issue. Here are some "
 "examples:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1210
+#: HandBook.adoc:1188
 msgid "Run \"update-grub\". +"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1211
+#: HandBook.adoc:1189
 msgid "Run \"grub-emu\" or \"list_boot_entries\" +"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1212
+#: HandBook.adoc:1190
 msgid ""
 "Re-install GRUB using the command \"grub-install drivename\", drivename "
 "being the drive where to install Slint. +"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1213
+#: HandBook.adoc:1191
 msgid "Type \"passwd\" to change the password for root. +"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1214
+#: HandBook.adoc:1192
 msgid "Remove, install or upgrade packages."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1216
+#: HandBook.adoc:1194
 msgid "When done, remove the installation media then type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1220
+#: HandBook.adoc:1198
 #, no-wrap
 msgid ""
 "exit\n"
@@ -3297,38 +3236,38 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: HandBook.adoc:1223
+#: HandBook.adoc:1201
 #, no-wrap
 msgid "Accessibility"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1227
+#: HandBook.adoc:1205
 msgid ""
 "If you chose to keep speech when asked at the beginning installation, it "
 "will be enabled from start up in a console as in graphical environments."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1228
+#: HandBook.adoc:1206
 #, no-wrap
 msgid "Use Slint with braille"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1231
+#: HandBook.adoc:1209
 msgid "Slint includes the brltty software to handle braille displays."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1234
+#: HandBook.adoc:1212
 msgid ""
 "Your settings, made before booting on the command line or later, are "
 "recorded in the installed system in /etc/brltty.conf."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1238
+#: HandBook.adoc:1216
 msgid ""
 "A comprehensive manual for brltty is available in English, French and "
 "Portuguese in several formats including plain text (txt) at this URL: "
@@ -3336,92 +3275,92 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1240
+#: HandBook.adoc:1218
 msgid ""
 "If braille was not enabled during installation or has been disabled, to "
 "enable it do this:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1242
+#: HandBook.adoc:1220
 msgid "Make /etc/rc.d/rc.brltty executable typing as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1245
+#: HandBook.adoc:1223
 #, no-wrap
 msgid "chmod 755 /etc/rc.d/rc.brltty\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1247
+#: HandBook.adoc:1225
 msgid "Make yourself member of the braille group, typing as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1250
+#: HandBook.adoc:1228
 #, no-wrap
 msgid "usermod -G braille -a username\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1253
+#: HandBook.adoc:1231
 msgid "In the command above, replace username with your login name."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1255
+#: HandBook.adoc:1233
 msgid "To disable braille type as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1257
+#: HandBook.adoc:1235
 #, no-wrap
 msgid "chmod 644 /etc/rc.d/rc.brltty\n"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1259
+#: HandBook.adoc:1237
 #, no-wrap
 msgid "Speech in graphical environments"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1262
+#: HandBook.adoc:1240
 msgid ""
 "As a reminder speech in graphical environments using the Orca screen reader "
 "is enabled typing:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1264
+#: HandBook.adoc:1242
 #, no-wrap
 msgid "orca-on\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1267
+#: HandBook.adoc:1245
 msgid "To know how to use Orca, including its specific key bindings, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1269
+#: HandBook.adoc:1247
 #, no-wrap
 msgid "man orca\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1272
+#: HandBook.adoc:1250
 msgid "In short, in a graphical environment:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1281
+#: HandBook.adoc:1259
 #, no-wrap
 msgid ""
 "Insert+Space: display the Orca Preferences dialog.\n"
 "Insert+S: activate or deactivate the vocal synthesis.\n"
-"Insert+H: activate the learning mode. In this mode:\n"
+"Insert+H: activate the learning mode. In this m\tode:\n"
 "   Press a key to hear its function\n"
 "   F1: to hear the documentation of the screen reader\n"
 "   F2: list the keyboard shortcuts for Orca\n"
@@ -3430,13 +3369,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1283
+#: HandBook.adoc:1261
 #, no-wrap
 msgid "Voices and TTS in Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1292
+#: HandBook.adoc:1270
 #, no-wrap
 msgid ""
 "Following TTS (Text to Speech synthesizers) are shipped in Slint64-15.0, each with a set of voices, namely:\n"
@@ -3448,7 +3387,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1296
+#: HandBook.adoc:1274
 msgid ""
 "Most of the time these TTS and the associated voices and languages are "
 "managed by speech-dispatcher through its so-called \"modules\" (roughly, a "
@@ -3456,14 +3395,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1299
+#: HandBook.adoc:1277
 msgid ""
 "The custom utility spd-list can answer several questions about the available "
 "synthesizers, voices and languages. Typing spd-list displays this:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1309
+#: HandBook.adoc:1287
 #, no-wrap
 msgid ""
 "This script lists languages and synthesizers available for applications\n"
@@ -3478,28 +3417,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1311
+#: HandBook.adoc:1289
 msgid ""
 "All voices listed are available in Orca and speechd-up, and also fenrir if "
 "configured to use speech-dispatcher."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1314
+#: HandBook.adoc:1292
 msgid ""
 "You can get additional voices for flite and mbrola, associated with the "
 "modules flite-generic and espeak-ng-mbrola-generic."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1316
+#: HandBook.adoc:1294
 msgid ""
 "You can always know which are installed or not typing as root one of these "
 "commands:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1319
+#: HandBook.adoc:1297
 #, no-wrap
 msgid ""
 "slapt-get --search mbrola-voice\n"
@@ -3507,18 +3446,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1321
+#: HandBook.adoc:1299
 msgid "then install one of the not-yet installed one, like e.g."
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1323
+#: HandBook.adoc:1301
 #, no-wrap
 msgid "slapt-get -i mbrola-voice-it2\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1328
+#: HandBook.adoc:1306
 #, no-wrap
 msgid ""
 "In addition to the free (as in free beer) voices shipped in Slint, you can buy voices for:\n"
@@ -3527,7 +3466,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1331
+#: HandBook.adoc:1309
 msgid ""
 "More voices and synthesizers could be made available later, this will be "
 "announced on the Slint mailing list and this http://slackware.uk/slint/"
@@ -3535,20 +3474,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1333
+#: HandBook.adoc:1311
 msgid ""
 "The keyboard shortcuts for graphical environments are listed in "
 "<<key_bindings,Key bindings>>."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1334
+#: HandBook.adoc:1312
 #, no-wrap
 msgid "Use the lightdm login manager with speech"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1344
+#: HandBook.adoc:1322
 msgid ""
 "In lightdm, pressing F4 toggle the sound on or off. Initially the cursor is "
 "in the password field. Press Tab leads to the \"login push button\", then to "
@@ -3561,13 +3500,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1345
+#: HandBook.adoc:1323
 #, no-wrap
 msgid "Choose a console screen reader"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1351
+#: HandBook.adoc:1329
 #, no-wrap
 msgid ""
 "Slint provides these console screen readers:\n"
@@ -3577,30 +3516,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1354
+#: HandBook.adoc:1332
 msgid ""
 "Additionally, several hardware speech synthesizers can be used in console "
 "mode, using speakup."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1356
+#: HandBook.adoc:1334
 msgid "To choose a screen reader run as root this command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1358
+#: HandBook.adoc:1336
 #, no-wrap
 msgid "speak-with\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1360
+#: HandBook.adoc:1338
 msgid "Here is its output with no argument:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1371
+#: HandBook.adoc:1349
 #, no-wrap
 msgid ""
 "root[~]# speak-with\n"
@@ -3616,19 +3555,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1374
+#: HandBook.adoc:1352
 msgid ""
 "The hardware speech synthesizers listed are those available in the running "
 "kernel or shipped as modules."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1376
+#: HandBook.adoc:1354
 msgid "Example of commands and associated output:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1383
+#: HandBook.adoc:1361
 #, no-wrap
 msgid ""
 "root[~]# speak-with speechd-up\n"
@@ -3639,14 +3578,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1386
+#: HandBook.adoc:1364
 msgid ""
 "As soon as you type the command, the previously used screen reader will be "
 "stopped and speechd-up will begin talking."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1392
+#: HandBook.adoc:1370
 #, no-wrap
 msgid ""
 "If you answer Y (the default) to the question:\n"
@@ -3656,12 +3595,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1394
+#: HandBook.adoc:1372
 msgid "Other examples:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1401
+#: HandBook.adoc:1379
 #, no-wrap
 msgid ""
 "root[~]# speak-with apollo\n"
@@ -3672,7 +3611,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1406
+#: HandBook.adoc:1384
 #, no-wrap
 msgid ""
 "root[~]# speak-with none\n"
@@ -3682,20 +3621,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1408
+#: HandBook.adoc:1386
 #, no-wrap
 msgid "Configure a console screen reader"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1412
+#: HandBook.adoc:1390
 msgid ""
 "Slint handle speech hardware synthesizers using speakup and provides the "
 "espeakup and speechd-up screen readers."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1417
+#: HandBook.adoc:1395
 msgid ""
 "You can save the settings you make, for instance to increase or decrease the "
 "rate of seech or the sound volume. Just type as root: speakup-save. This "
@@ -3704,14 +3643,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1420
+#: HandBook.adoc:1398
 msgid ""
 "All these settings will be restored at next boot: the startup scripts rc."
 "espeakup and rc.speechd-up run the command speakup-restore for you."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1423
+#: HandBook.adoc:1401
 #, no-wrap
 msgid ""
 "If you don't to want to restore the saved settings, type as root:\n"
@@ -3719,7 +3658,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1426
+#: HandBook.adoc:1404
 #, no-wrap
 msgid ""
 "If you want to have them restored again type as root:\n"
@@ -3727,12 +3666,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1428
+#: HandBook.adoc:1406
 msgid "Here are some key bindings for settings speakup as well as speechd-up:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1439
+#: HandBook.adoc:1417
 #, no-wrap
 msgid ""
 "spk_f9   punctuation_level_decrease\n"
@@ -3748,7 +3687,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1443
+#: HandBook.adoc:1421
 msgid ""
 "In the table above spk is the speakup key CapLock, or Ins/0 on a numeric "
 "keypad. For instance to increase the rate you could press and hold the "
@@ -3756,7 +3695,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1447
+#: HandBook.adoc:1425
 msgid ""
 "Some settings available only on specific hardware synthesizers do not have "
 "associated key bindings. Then to set a new value you echo it in /sys/"
@@ -3764,7 +3703,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1450
+#: HandBook.adoc:1428
 #, no-wrap
 msgid ""
 "For instance to change the voice in use by an apollo 2 you could write:\n"
@@ -3772,12 +3711,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1452
+#: HandBook.adoc:1430
 msgid "speakup-save will also save this setting."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1457
+#: HandBook.adoc:1435
 #, no-wrap
 msgid ""
 "Caveat: I never used a hardware speech synthesizer, so the explanation below is only an assumption based in the speakup_apollo driver, consistent with this manual, found in:\n"
@@ -3785,13 +3724,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1459
+#: HandBook.adoc:1437
 #, no-wrap
 msgid "Speakup desktop keys"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1465
+#: HandBook.adoc:1443
 msgid ""
 "Almost all keys listed below are located on the numeric keypad.  The Insert "
 "or 0 key on the keypad acts like a shift key. For instance, Ins 2 means "
@@ -3800,19 +3739,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1468 HandBook.adoc:1533
+#: HandBook.adoc:1446 HandBook.adoc:1511
 msgid ""
 "Scope: these key bindings can be used with hard synthesizers and with "
 "espeakup, and also with speechd-up."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1470 HandBook.adoc:1535
+#: HandBook.adoc:1448 HandBook.adoc:1513
 msgid "First keys to remember:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1473
+#: HandBook.adoc:1451
 #, no-wrap
 msgid ""
 "PrintScreen    Toggle speakup on/off\n"
@@ -3820,12 +3759,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1476
+#: HandBook.adoc:1454
 msgid "Keys used for screen review:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1505
+#: HandBook.adoc:1483
 #, no-wrap
 msgid ""
 "1/2/3          Say Previous/Current/Next character\n"
@@ -3859,12 +3798,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1508 HandBook.adoc:1562
+#: HandBook.adoc:1486 HandBook.adoc:1540
 msgid "Other keys:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1514
+#: HandBook.adoc:1492
 #, no-wrap
 msgid ""
 "Ins f5         Edit some\n"
@@ -3875,7 +3814,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1517
+#: HandBook.adoc:1495
 #, no-wrap
 msgid ""
 "Enter          Shut up (until another key is hit) and sync reading cursor.\n"
@@ -3883,7 +3822,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1520
+#: HandBook.adoc:1498
 #, no-wrap
 msgid ""
 "slash          Mark and Cut screen region.\n"
@@ -3891,13 +3830,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1521
+#: HandBook.adoc:1499
 #, no-wrap
 msgid "Speakup laptop keys"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1526
+#: HandBook.adoc:1504
 msgid ""
 "These key bindings (for US keyboard layout) don't need a numeric keypad.  If "
 "you have one, use the <<desktop_keys,speakup desktop keys>> easier to use, "
@@ -3905,7 +3844,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1530
+#: HandBook.adoc:1508
 #, no-wrap
 msgid ""
 "The CapsLock key acts like a Shift key.\n"
@@ -3914,7 +3853,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1538
+#: HandBook.adoc:1516
 #, no-wrap
 msgid ""
 "PrintScreen          Toggle speakup on/off\n"
@@ -3922,12 +3861,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1541
+#: HandBook.adoc:1519
 msgid "Key used for screen review:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1560
+#: HandBook.adoc:1538
 #, no-wrap
 msgid ""
 "CapsLock m/comma/dot Say Previous/Current/Next character\n"
@@ -3951,7 +3890,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1568
+#: HandBook.adoc:1546
 #, no-wrap
 msgid ""
 "CapsLock f5          Edit some\n"
@@ -3962,20 +3901,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1570
+#: HandBook.adoc:1548
 #, no-wrap
 msgid "Make emacs speak"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1574
+#: HandBook.adoc:1552
 msgid ""
 "You can use either emacspeak or speechd-el. To enable or disable one of them "
 "type as regular either one of these commands:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1579
+#: HandBook.adoc:1557
 #, no-wrap
 msgid ""
 "switch-on emacspeak\n"
@@ -3985,7 +3924,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1582
+#: HandBook.adoc:1560
 #, no-wrap
 msgid ""
 "Then just type:\n"
@@ -3993,24 +3932,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1584
+#: HandBook.adoc:1562
 msgid "Enabling one of these software disables the other one."
 msgstr ""
 
 #. type: Title ==
-#: HandBook.adoc:1586
+#: HandBook.adoc:1564
 #, no-wrap
 msgid "Manage your system"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1589
+#: HandBook.adoc:1567
 #, no-wrap
 msgid "Software management in Slint"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1596
+#: HandBook.adoc:1574
 #, no-wrap
 msgid ""
 "<<The_basics,The basics>>\n"
@@ -4021,13 +3960,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1598
+#: HandBook.adoc:1576
 #, no-wrap
 msgid "The basics"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1601
+#: HandBook.adoc:1579
 msgid ""
 "In Slint software is provided in the form of packages. A package is a bundle "
 "of files provided in a compressed archive file, put together to provide all "
@@ -4038,14 +3977,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1603
+#: HandBook.adoc:1581
 msgid ""
 "Installation and removal of software are recorded in a database made of text "
 "files in these directories:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1608
+#: HandBook.adoc:1586
 #, no-wrap
 msgid ""
 "/var/lib/pkgtools/packages\n"
@@ -4055,7 +3994,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1610
+#: HandBook.adoc:1588
 msgid ""
 "The files in /var/lib/pkgtools/packages record information about the "
 "packages, mainly their content: the list of files they include and where "
@@ -4063,14 +4002,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1612
+#: HandBook.adoc:1590
 msgid ""
 "The main commands to manage the packages are listed below. All of them have "
 "associated man pages."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1614
+#: HandBook.adoc:1592
 msgid ""
 "These commands require administrative rights, associated to a specific "
 "account named 'root', for which you have specified a password during Slint "
@@ -4078,21 +4017,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1619
+#: HandBook.adoc:1597
 msgid ""
 "To issue a command as 'root', first type su - then enter the password for "
 "root and type the command.+ or use sudo."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1621
+#: HandBook.adoc:1599
 msgid ""
 "Commands below can be run from a graphical terminal or in a console, but "
 "gslapt that only works in a graphical environment."
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1626
+#: HandBook.adoc:1604
 #, no-wrap
 msgid ""
 "installpkg # to install a package stored locally.\n"
@@ -4102,28 +4041,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1628
+#: HandBook.adoc:1606
 msgid ""
 "The packages shipped in the installation ISO come from the repositories "
 "listed in /etc/slapt-get/slapt-getrc"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1630
+#: HandBook.adoc:1608
 msgid ""
 "Do yourself a favor: read the comments in /etc/slapt-get/slapt-getrc and /"
 "usr/doc/slapt-get-0.10.2t/README.slapgetrc.Slint in the installed system."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1632
+#: HandBook.adoc:1610
 msgid ""
 "After having installed Slint, you'll be notified of updates of installed "
 "packages coming from repositories listed in /etc/slapt-get/slapt-getrc"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1634
+#: HandBook.adoc:1612
 msgid ""
 "You can install additional packages using the command slapt-get or the "
 "graphical application gslapt, if stored in a repository listed in /etc/slapt-"
@@ -4131,14 +4070,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1636
+#: HandBook.adoc:1614
 msgid ""
 "slapt-get and gslapt provide a search feature that helps you finding "
 "packages."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1638
+#: HandBook.adoc:1616
 msgid ""
 "you can use slapt-get, gslapt and removepkg to remove installed packages but "
 "do not remove packages shipped in the Slint ISO, even if you do not use them "
@@ -4150,106 +4089,106 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1640
+#: HandBook.adoc:1618
 #, no-wrap
 msgid "Keep your system up to date"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1643
+#: HandBook.adoc:1621
 msgid ""
 "Keep your system safe installing the software updates provided by Slint as "
 "soon as they're available."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1645
+#: HandBook.adoc:1623
 msgid ""
 "All updates are listed in the ChangeLog: http://slackware.uk/slint/x86_64/"
 "slint-15.0/ChangeLog.txt"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1647
+#: HandBook.adoc:1625
 msgid ""
 "After Slint installation or any change in the file /etc/slapt-get/slapt-getr "
 "run this command once:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1649
+#: HandBook.adoc:1627
 #, no-wrap
 msgid "slapt-get --add-keys\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1652
+#: HandBook.adoc:1630
 msgid ""
 "To synchronize the local list of available package with that of the "
 "repository, this command is automatically run every two hours:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1654
+#: HandBook.adoc:1632
 #, no-wrap
 msgid "slapt-get -u\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1656
+#: HandBook.adoc:1634
 msgid "You can also run it manually."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1658
+#: HandBook.adoc:1636
 msgid "This of course requires that the machine be connected to the internet."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1661
+#: HandBook.adoc:1639
 msgid ""
 "To download and install the upgraded or rebuilt packages run as root the "
 "following command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1663
+#: HandBook.adoc:1641
 #, no-wrap
 msgid "slapt-get --upgrade\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1665
+#: HandBook.adoc:1643
 msgid ""
 "Alternatively you could also use gslapt, a graphical front-end for slapt-get."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1667
+#: HandBook.adoc:1645
 msgid "To get new packages listed in the ChangeLog as \"Added\", type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1669
+#: HandBook.adoc:1647
 #, no-wrap
 msgid "slapt-get -i <package name>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1671
+#: HandBook.adoc:1649
 msgid ""
 "or to make sure you have installed all packages shipped in Slint, including "
 "those added to the repository after you installed Slint, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1673
+#: HandBook.adoc:1651
 #, no-wrap
 msgid "slapt-get --install-set slint\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1676
+#: HandBook.adoc:1654
 msgid ""
 "On the desktops, a small icon is displayed in the notification area of a "
 "panel (the top panel in MATE) to notify of available software updates. Just "
@@ -4257,27 +4196,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1680
+#: HandBook.adoc:1658
 msgid ""
 "Be aware that some packages are blacklisted in /etc/slapt-get/slapt-getrc, i."
 "e. can not be automatically upgraded or installed."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1682
+#: HandBook.adoc:1660
 #, no-wrap
 msgid "Kernel upgrades"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1685
+#: HandBook.adoc:1663
 msgid ""
 "New kernels are provided whenever necessary, either to bring security fixes "
 "or enhancements."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1687
+#: HandBook.adoc:1665
 msgid ""
 "Usually no manual intervention from the user is necessary when this happens, "
 "but it can be useful to know how the kernel upgrade is done and what to do "
@@ -4285,7 +4224,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1689
+#: HandBook.adoc:1667
 msgid ""
 "Several packages include files associated with each kernel, namely: kernel-"
 "generic, kernel-modules, kernel-source, kernel headers. kernel-source and "
@@ -4294,7 +4233,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1691
+#: HandBook.adoc:1669
 msgid ""
 "The package kernel-modules ships files called modules, which are pieces of "
 "code that are \"plugged in\" the kernel to provide a specific feature or "
@@ -4302,7 +4241,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1695
+#: HandBook.adoc:1673
 msgid ""
 "As soon as both a kernel package and the associated kernel-modules package "
 "are installed, the script /sbin/wrapupgradepkg builds an <<initrd,initrd>> "
@@ -4311,38 +4250,38 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1697
+#: HandBook.adoc:1675
 msgid "Then previous kernels (not in use at time of upgrade) are removed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1699
+#: HandBook.adoc:1677
 msgid ""
 "Then the script updates the GRUB configuration file /boot/grub/grub.cfg, "
 "read by the OS loader to build the boot menu."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1701
+#: HandBook.adoc:1679
 msgid ""
 "This boot menu will then include at least two boot entries each indicating, "
 "to indicating a kernel and its associated initrd to use. From the top:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1703
+#: HandBook.adoc:1681
 msgid ""
 "A boot entry to start Slint using the new kernel that has just been "
 "installed."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1704
+#: HandBook.adoc:1682
 msgid "A boot entry to start Slint using the kernel in use at time of upgrade."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1707
+#: HandBook.adoc:1685
 msgid ""
 "This provide kind of a \"safety net\" in case Slint wouldn't boot with the "
 "new kernel: in this case just arrow down once when the boot menu is "
@@ -4350,25 +4289,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1709
+#: HandBook.adoc:1687
 msgid "You can preview the new boot menu before rebooting, typing as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1711
+#: HandBook.adoc:1689
 #, no-wrap
 msgid "grub-emu\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1714
+#: HandBook.adoc:1692
 msgid ""
 "Then an emulated or \"fake\" boot menu is displayed, with the same layout as "
 "the real one which will displayed at next boot."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1716
+#: HandBook.adoc:1694
 msgid ""
 "You can navigate in it with the down and up arrow keys to highlight (put the "
 "focus on)  a boot entry of which you can display the details pressing 'e'. "
@@ -4376,29 +4315,29 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1718
+#: HandBook.adoc:1696
 msgid "To exit from grub-emu press c then type *exit* and press Enter."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1720
+#: HandBook.adoc:1698
 msgid "Alternatively you can type as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1722
+#: HandBook.adoc:1700
 #, no-wrap
 msgid "list_boot_entries\n"
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1725
+#: HandBook.adoc:1703
 #, no-wrap
 msgid "Get additional applications"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1729
+#: HandBook.adoc:1707
 msgid ""
 "The easiest and recommended way to get additional applications not shipped "
 "in Slint is to use slapt-get or its graphical front-end gslapt.  This gives "
@@ -4407,14 +4346,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1731
+#: HandBook.adoc:1709
 msgid ""
 "The Slackware repository, with dependency information: SOURCE=https://"
 "slackware.uk/salix/x86_64/slackware-15.0/:OFFICIAL"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1732
+#: HandBook.adoc:1710
 msgid ""
 "The Salix extra repository, fed for Salix distribution by its maintainer "
 "George Vlahavas aka gapan but usable in Slint as well: SOURCE=https://"
@@ -4422,7 +4361,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1734
+#: HandBook.adoc:1712
 msgid ""
 "If the application you want is not installed and also not available in one "
 "of the repositories enabled in /etc/slapt-get/slapt-getrc you could make a "
@@ -4432,12 +4371,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1736
+#: HandBook.adoc:1714
 msgid "The packages built this way should be compatible with Slint."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1738
+#: HandBook.adoc:1716
 msgid ""
 "The application *slapt-src* and its graphical front-end *sourcery* allows "
 "you to build and install packages using the build material provided at "
@@ -4445,12 +4384,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1740
+#: HandBook.adoc:1718
 msgid "We will describe slapt-src in more details."
 msgstr ""
 
 #. type: delimited block =
-#: HandBook.adoc:1744
+#: HandBook.adoc:1722
 msgid ""
 "Pre-built packages for most applications that can be built with slap-src or "
 "sourcery are available in the Salix extra repository. Preferably install "
@@ -4459,20 +4398,20 @@ msgid ""
 msgstr ""
 
 #. type: Title =====
-#: HandBook.adoc:1747
+#: HandBook.adoc:1725
 #, no-wrap
 msgid "Usage of slapt-srcrc"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1750
+#: HandBook.adoc:1728
 msgid ""
 "The default configuration script for slapt-src is /etc/slapt-get/slap-srcrc "
 "and has this content:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1754
+#: HandBook.adoc:1732
 #, no-wrap
 msgid ""
 "BUILDDIR=/var/lib/slapt-src\n"
@@ -4481,34 +4420,34 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1756
+#: HandBook.adoc:1734
 msgid "So:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1758
+#: HandBook.adoc:1736
 msgid "All build material and packages will go in /var/lib/slapt-src"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1759
+#: HandBook.adoc:1737
 msgid "The names of packages built end in .txz"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1760
+#: HandBook.adoc:1738
 msgid ""
 "The build material is fetched from the repository https://slackbuilds.org/"
 "slackbuilds/15.0/"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1762
+#: HandBook.adoc:1740
 msgid "Here is the output of the command *slapt-src --help*:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1783
+#: HandBook.adoc:1761
 #, no-wrap
 msgid ""
 "Usage: slapt-src [option(s)] [action] [slackbuild(s)]\n"
@@ -4534,12 +4473,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1786
+#: HandBook.adoc:1764
 msgid "Let's comment some of these options:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1788
+#: HandBook.adoc:1766
 msgid ""
 "Use -u or --update every time to update the list of packages that can be "
 "built and installed. This commands writes the file /tmp/slapt-src/"
@@ -4547,12 +4486,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1789
+#: HandBook.adoc:1767
 msgid "Use -e to save space on disk, removing most files in /tmp/slapt-src/"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1790
+#: HandBook.adoc:1768
 msgid ""
 "do *not* use -U except to list the possible upgrades or downgrades, without "
 "confirming: confirming would lead to replace all Slint packages by one at "
@@ -4561,7 +4500,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1791
+#: HandBook.adoc:1769
 msgid ""
 "-i can also upgrade a package already installed from https://slackbuilds."
 "org, if a the maintainer of the SlackBuild script has upgraded it, changing "
@@ -4569,7 +4508,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1792
+#: HandBook.adoc:1770
 msgid ""
 "Use -f to only download the files in https://slackbuilds.org for the target "
 "software. This can be useful if you want to check build material, or "
@@ -4580,7 +4519,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1804
+#: HandBook.adoc:1782
 #, no-wrap
 msgid ""
 "slapt-src --show mxml\n"
@@ -4596,20 +4535,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1807
+#: HandBook.adoc:1785
 msgid ""
 "Now fetch theses files and also the source archive from upstream repository "
 "with the next command:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1810
+#: HandBook.adoc:1788
 #, no-wrap
 msgid "slapt-get -f mxml\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1813
+#: HandBook.adoc:1791
 msgid ""
 "Knowing from the output of the previous command that the files are stored in "
 "the subdirectory libraries/mxml, you can check which files have been "
@@ -4617,7 +4556,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1820
+#: HandBook.adoc:1798
 #, no-wrap
 msgid ""
 "ls -1 /var/lib/slapt-src/libraries/mxml\n"
@@ -4628,7 +4567,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1822
+#: HandBook.adoc:1800
 msgid ""
 "Use -b if you want to build a package but not install it yet. In the example "
 "above it will be stored in /tmp/slapt-src/libraries/mxml, so you will be "
@@ -4636,50 +4575,50 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1825
+#: HandBook.adoc:1803
 #, no-wrap
 msgid "upgradepkg --install-new /tmp/slapt-src/libraries/mxml/xml*txz\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1828
+#: HandBook.adoc:1806
 msgid ""
 "Use -c if you want to use a custom configuration file instead of the default "
 "one /etc/slapt-get/slap-getrc"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1829
+#: HandBook.adoc:1807
 #, no-wrap
 msgid "Manage users and groups"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1832
+#: HandBook.adoc:1810
 msgid "Two commands are provided to manage users and groups:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1834
+#: HandBook.adoc:1812
 msgid "The _usersetup_ command (TUI)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1835
+#: HandBook.adoc:1813
 msgid ""
 "The _gtkusersetup_ command (GUI), with an icon in the Slint Control Center, "
 "System category)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1837
+#: HandBook.adoc:1815
 msgid ""
 "These commands allow you to add or delete users and groups of users, and add "
 "users to groups."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1839
+#: HandBook.adoc:1817
 msgid ""
 "Bear in mind that each user account is associated by default to its on space "
 "in the /home directory. For instance if you add a user *leonie*, a /home/"
@@ -4688,30 +4627,30 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1840
+#: HandBook.adoc:1818
 #, no-wrap
 msgid "Change the default language of the system"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1843
+#: HandBook.adoc:1821
 msgid "Two commands are provided for that:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1845
+#: HandBook.adoc:1823
 msgid "The _localesetup_ command (TUI)."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1846
+#: HandBook.adoc:1824
 msgid ""
 "The _gtklocalesetup_ command (GUI), with an icon in the Slint Control "
 "Center, Settings category."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1848
+#: HandBook.adoc:1826
 msgid ""
 "Bear in mind that this settings changes the language used by the "
 "applications' interfaces if they are internationalized, not the keyboard map "
@@ -4719,7 +4658,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1850
+#: HandBook.adoc:1828
 msgid ""
 "Also, localized packages (if available) matching the language chosen have "
 "been already installed at end of Slint installation. If you change the "
@@ -4728,7 +4667,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1852
+#: HandBook.adoc:1830
 msgid ""
 "Localized means \"provided in a given locale\", the locale being a language "
 "plus peculiarities associated to a geographic area. For instance Portuguese "
@@ -4738,7 +4677,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1854
+#: HandBook.adoc:1832
 msgid ""
 "Localized packages are included for many languages. Their name include the "
 "base package name, a hyphen, then the language code. We list below the base "
@@ -4746,7 +4685,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: HandBook.adoc:1860
+#: HandBook.adoc:1838
 #, no-wrap
 msgid ""
 "| Base package name | Description\n"
@@ -4756,7 +4695,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1864
+#: HandBook.adoc:1842
 #, no-wrap
 msgid ""
 "To find a localized package, type in a terminal emulator as root (example for libreoffice-l10n):\n"
@@ -4764,7 +4703,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1867
+#: HandBook.adoc:1845
 #, no-wrap
 msgid ""
 "This will display the list of all localized LibreOffice package. Find the one you want and install it. For instance for Persian the language code is `fa` (short for Farsi), so to install it type:\n"
@@ -4772,37 +4711,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1869
+#: HandBook.adoc:1847
 msgid ""
 "If you prefer you can use `gslapt`. Then, type the package name in the "
 "search field to display all localized libreoffice packages."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1870
+#: HandBook.adoc:1848
 #, no-wrap
 msgid "Change the keyboard map"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1873
+#: HandBook.adoc:1851
 msgid "You can change the default keymap used in graphical mode using:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1875
+#: HandBook.adoc:1853
 msgid "The _keyboardsetup_ command (TUI)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1876
+#: HandBook.adoc:1854
 msgid ""
 "The _gtkkeyboardsetup_ command (GUI), with an icon in the Slint Control "
 "Center, Hardware category."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1878
+#: HandBook.adoc:1856
 msgid ""
 "These commands also allow you to choose if numlock should be enabled when "
 "the system is started, and if the SCIM (input method) should be enabled at "
@@ -4810,7 +4749,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1880
+#: HandBook.adoc:1858
 msgid ""
 "If you use a window manager with a panel, you can also make this setting "
 "through a right click on the keyboard applet (displayed by default as the "
@@ -4818,14 +4757,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1882
+#: HandBook.adoc:1860
 msgid ""
 "On the command line but still for the graphical mode use instead the command "
 "`setxbmap`"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1885
+#: HandBook.adoc:1863
 #, no-wrap
 msgid ""
 "For instance to set the keyboard layout to Ukrainian in graphical mode, just type as regular user:\n"
@@ -4833,18 +4772,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1887
+#: HandBook.adoc:1865
 msgid "To know more, read the man page for setxkbmap."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1888
+#: HandBook.adoc:1866
 #, no-wrap
 msgid "Install a printer"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1891
+#: HandBook.adoc:1869
 msgid ""
 "In Slint the CUPS print server manages printers and printing tasks. In its "
 "default configuration, recorded in the file /etc/cups/cupsd.conf, only users "
@@ -4853,7 +4792,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1893
+#: HandBook.adoc:1871
 msgid ""
 "For a simple setup (printer attached to a desktop or laptop and not shared "
 "between machines), you just need to add one user (who will manage the "
@@ -4862,19 +4801,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1895
+#: HandBook.adoc:1873
 msgid ""
 "In console mode or using a terminal emulator, become root with `su -` then "
 "type:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1897
+#: HandBook.adoc:1875
 msgid "`gpasswd --add didier sys`"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1899
+#: HandBook.adoc:1877
 msgid ""
 "In graphical mode from the Slint Control Center click on Users and Groups "
 "(System category), select the user and click Properties, then in the Groups "
@@ -4883,21 +4822,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1901
+#: HandBook.adoc:1879
 msgid ""
 "There are several ways to add and configure a printer (this has to be done "
 "by an user member of the group `sys`):"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1903
+#: HandBook.adoc:1881
 msgid ""
 "From the Slint Control Center, category Hardware, click on Printer Setup to "
 "display a GUI allowing a simple setup..."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1904
+#: HandBook.adoc:1882
 msgid ""
 "... Or click on Cups Print Control the display a web interface to the CUPS "
 "server. You can also display the web interface to the CUPS server typing "
@@ -4905,14 +4844,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1905
+#: HandBook.adoc:1883
 msgid ""
 "If you have a Hewlett Packard device, make a right click on the *hp* logo in "
 "the notification area of the panel."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1907
+#: HandBook.adoc:1885
 msgid ""
 "To make any print setting the CUPS server should be running. It is started "
 "when you start Slint if the service `cups` in checked among the System "
@@ -4920,27 +4859,27 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:1908
+#: HandBook.adoc:1886
 #, no-wrap
 msgid "Sound set up"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1911
+#: HandBook.adoc:1889
 msgid ""
 "In Slint applications either send their sound output either to ALSA or to "
 "PulseAudio."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1913
+#: HandBook.adoc:1891
 msgid ""
 "In the latter case PulseAudio in turn sends the output stream to an ALSA "
 "mixer which direct it to the sound cards."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1915
+#: HandBook.adoc:1893
 msgid ""
 "As a result, a setting like an output sound volume can always be done by an "
 "ALSA mixer, and also by a PulseAudio mixer but only in case the application "
@@ -4948,20 +4887,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1917
+#: HandBook.adoc:1895
 msgid ""
 "We will present now applications that can be used to modify the sound "
 "settings"
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1918
+#: HandBook.adoc:1896
 #, no-wrap
 msgid "pavucontrol (for PulseAudio)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1921
+#: HandBook.adoc:1899
 msgid ""
 "`pavucontrol` stands for PulseAudio Volume Control and is a graphical "
 "application. You can start it from a terminal or application menu, or doing "
@@ -4971,7 +4910,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1923
+#: HandBook.adoc:1901
 msgid ""
 "You can also use volume control applet in the notification area of the "
 "panel: a left click allows to adjust the volume, a right click gives access "
@@ -4979,84 +4918,84 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1926
+#: HandBook.adoc:1904
 #, no-wrap
 msgid "alsamixer (for ALSA)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1929
+#: HandBook.adoc:1907
 msgid ""
 "alsamixer is a ncurses application, providing a semi-graphical user "
 "interface."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1931
+#: HandBook.adoc:1909
 msgid "To use it type in a console or in a graphical terminal:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1933
+#: HandBook.adoc:1911
 #, no-wrap
 msgid "alsamixer\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1935
+#: HandBook.adoc:1913
 msgid "then:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1937
+#: HandBook.adoc:1915
 msgid "Use the page up key to increase the volume by 5%"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1938
+#: HandBook.adoc:1916
 msgid "Use the page down key to decrease the volume by 5%"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1939
+#: HandBook.adoc:1917
 msgid "press Esc to leave the application."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1940
+#: HandBook.adoc:1918
 #, no-wrap
 msgid "amixer (for ALSA)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1942
+#: HandBook.adoc:1920
 msgid "The command is of the form:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1944
+#: HandBook.adoc:1922
 #, no-wrap
 msgid "amixer <arguments>\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1946
+#: HandBook.adoc:1924
 msgid "For instance to set the main volume to 70% type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1948
+#: HandBook.adoc:1926
 #, no-wrap
 msgid "amixer sset Master 70%\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1950
+#: HandBook.adoc:1928
 msgid "To know more, type one of these commands:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1953
+#: HandBook.adoc:1931
 #, no-wrap
 msgid ""
 "man amixer\n"
@@ -5064,13 +5003,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1954
+#: HandBook.adoc:1932
 #, no-wrap
 msgid "sam (the Speech-Friendly Alsa Mixer)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1959
+#: HandBook.adoc:1937
 #, no-wrap
 msgid ""
 "sam allows selection of the sound card to work on when there are more than one such device in your machine.\n"
@@ -5078,7 +5017,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1965
+#: HandBook.adoc:1943
 #, no-wrap
 msgid ""
 "All selections, be it sound cards, mixers or a given feature of a\n"
@@ -5089,7 +5028,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1973
+#: HandBook.adoc:1951
 msgid ""
 "When the name of the desired option is known, one can instead press its "
 "first letter. First-letter navigation is case-insensitive.  That will then "
@@ -5100,7 +5039,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1978
+#: HandBook.adoc:1956
 #, no-wrap
 msgid ""
 "The settable features of a mixer can be listed pressing F1.\n"
@@ -5108,24 +5047,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1980
+#: HandBook.adoc:1958
 msgid ""
 "sam does not work correctly in a graphical terminal. Use it in a console."
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1981
+#: HandBook.adoc:1959
 #, no-wrap
 msgid "pamixer and ponymix (for PulseAudio)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1983
+#: HandBook.adoc:1961
 msgid "These utilities are similar, with commands in this form:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1986
+#: HandBook.adoc:1964
 #, no-wrap
 msgid ""
 "pamixer <arguments>\n"
@@ -5133,14 +5072,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1988
+#: HandBook.adoc:1966
 msgid ""
 "For instance to set the volume to 70% for the default sink type one of these "
 "commands:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1991
+#: HandBook.adoc:1969
 #, no-wrap
 msgid ""
 "pamixer --set-volume 7\n"
@@ -5148,12 +5087,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:1993
+#: HandBook.adoc:1971
 msgid "To know more, type:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:1996
+#: HandBook.adoc:1974
 #, no-wrap
 msgid ""
 "pamixer -h\n"
@@ -5161,31 +5100,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:1998
+#: HandBook.adoc:1976
 #, no-wrap
 msgid "pacmd and pactl (for PulseAudio)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2001
+#: HandBook.adoc:1979
 msgid ""
 "Both of these command line applications control a running PulseAudio daemon."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2003
+#: HandBook.adoc:1981
 msgid ""
 "pacmd typed alone brings up an interactive dialog. Press Ctrl+d to exit from "
 "it but do not type exit, as that would kill PulseAudio!"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2005 HandBook.adoc:2035
+#: HandBook.adoc:1983 HandBook.adoc:2013
 msgid "To know more:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2010
+#: HandBook.adoc:1988
 #, no-wrap
 msgid ""
 "man pactl\n"
@@ -5195,24 +5134,24 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: HandBook.adoc:2012
+#: HandBook.adoc:1990
 #, no-wrap
 msgid "Save and restore the sound level"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2015
+#: HandBook.adoc:1993
 msgid "Just make the file /etc/rc.d/rc.alsa executable. As root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2017
+#: HandBook.adoc:1995
 #, no-wrap
 msgid "chmod /etc/rc.d/rc.alsa\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2021
+#: HandBook.adoc:1999
 msgid ""
 "At startup, this script will restore the previous sound settings if saved, "
 "else will set default volumes and store them, so that they will be restored "
@@ -5220,49 +5159,49 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2023
+#: HandBook.adoc:2001
 msgid ""
 "If you don't want that this script to set the default volume type as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2025
+#: HandBook.adoc:2003
 #, no-wrap
 msgid "touch /var/lib/alsa/no.asound.state\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2029
+#: HandBook.adoc:2007
 msgid ""
 "You can change these default sound levels with alsamixer or amixer then "
 "typing as root:"
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2031
+#: HandBook.adoc:2009
 #, no-wrap
 msgid "alsactl store\n"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2033
+#: HandBook.adoc:2011
 msgid "Then at next startup the script will restore them."
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2037
+#: HandBook.adoc:2015
 #, no-wrap
 msgid "man alsactl\n"
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:2039
+#: HandBook.adoc:2017
 #, no-wrap
 msgid "Network configuration"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2044
+#: HandBook.adoc:2022
 msgid ""
 "If you didn't set up your network settings during Slint installation, first "
 "become root by typing `su -` either in a console or in graphical terminal "
@@ -5270,7 +5209,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2055
+#: HandBook.adoc:2033
 msgid ""
 "Setup of the network is done by the `netsetup` script.  So you would just "
 "type the command `netsetup` in that same terminal, where you've just aquired "
@@ -5284,21 +5223,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2058
+#: HandBook.adoc:2036
 msgid ""
 "For wired connections, that should be enough to be connected on next boot "
 "automatically."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2061
+#: HandBook.adoc:2039
 msgid ""
 "To configure a wireless connection, two commands are available using the "
 "command line."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2067
+#: HandBook.adoc:2045
 msgid ""
 "Again, you can type the commands directly on the console or in a graphical "
 "terminal like mate-terminal. Type them as regular user not as root.  If you "
@@ -5307,14 +5246,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2070
+#: HandBook.adoc:2048
 msgid ""
 "The two mentioned commands are `nmtui` (dialog boxes) or `nmcli` (pure "
 "command line), both are accessible."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2077
+#: HandBook.adoc:2055
 msgid ""
 "If you prefer working on a command line, make sure to read the nmcli "
 "documentation first. Just type `nmcli --help` and `man nmcli` to find out "
@@ -5324,7 +5263,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2083
+#: HandBook.adoc:2061
 #, no-wrap
 msgid ""
 "Using `nmtui`, you can navigate with the Tab and arrow keys. You will be proposed three options:\n"
@@ -5334,7 +5273,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2090
+#: HandBook.adoc:2068
 msgid ""
 "If no wireless connection has been set yet choose `Activate a connection`.  "
 "Starting from top to bottom, first the wired connections (if any) will be "
@@ -5346,30 +5285,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2093
+#: HandBook.adoc:2071
 msgid ""
 "In graphical mode only, instead of `nmcli` or `nmtui` you can use the "
 "application `nm-connection-editor`."
 msgstr ""
 
 #. type: Title ===
-#: HandBook.adoc:2094
+#: HandBook.adoc:2072
 #, no-wrap
 msgid "Services configuration"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2097
+#: HandBook.adoc:2075
 msgid "You can change the default settings several ways:"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2099
+#: HandBook.adoc:2077
 msgid "Running as root the `servicesetup` command (TUI)"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2100
+#: HandBook.adoc:2078
 msgid ""
 "In graphical mode only, using `gtkervicesetup`, accessible from the Slint "
 "Control Center, category System or typing Alt+F2 to raise a \"Run...\" "
@@ -5377,7 +5316,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2101
+#: HandBook.adoc:2079
 msgid ""
 "As root making the relevant script executable (chmod 755 <path to the "
 "script> or non executable (chmod 644 <path to the script>). For instance to "
@@ -5385,12 +5324,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2103
+#: HandBook.adoc:2081
 msgid "Only change the default settings if you know what you are doing."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2105
+#: HandBook.adoc:2083
 msgid ""
 "The services are managed by scripts whose name begin with `rc.` in the "
 "directory /etc/rc.d/. For instance the service acpi is managed by the shell "
@@ -5405,7 +5344,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: HandBook.adoc:2187
+#: HandBook.adoc:2165
 #, no-wrap
 msgid ""
 "| *Service* | *A* | *Package* | *Purpose and comments*\n"
@@ -5491,20 +5430,20 @@ msgstr ""
 
 #.  Glossary
 #. type: Plain text
-#: HandBook.adoc:2190
+#: HandBook.adoc:2168
 msgid ""
 "You can start or stop a service using as root the command `service`. To know "
 "more type `man service`."
 msgstr ""
 
 #. type: Title ==
-#: HandBook.adoc:2192
+#: HandBook.adoc:2170
 #, no-wrap
 msgid "Glossary"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2195
+#: HandBook.adoc:2173
 msgid ""
 "Several definitions in this glossary are taken or adapted from https://en."
 "wikipedia.org/wiki/Main_Page[Wikipedia] and https://pubs.opengroup.org/"
@@ -5512,20 +5451,20 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2196
+#: HandBook.adoc:2174
 #, no-wrap
 msgid "[[application]]Application"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2199
+#: HandBook.adoc:2177
 msgid ""
 "An application program (application for short) is a computer program "
 "designed to carry out a specific task typically requested by end-users."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2203
+#: HandBook.adoc:2181
 msgid ""
 "Applications are not generally considered as part of the operating system, "
 "meaning that they can be added to the system after its installation. They "
@@ -5534,13 +5473,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2205
+#: HandBook.adoc:2183
 #, no-wrap
 msgid "[[boot]]Boot"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2210
+#: HandBook.adoc:2188
 msgid ""
 "Boot means switch-on a computer to start an operating system. Several "
 "operating systems can be installed in the same computer. Select which one to "
@@ -5550,39 +5489,39 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2212
+#: HandBook.adoc:2190
 msgid ""
 "In the Legacy or BIOS mode the OS is loaded executing the instructions "
 "written in a boot sector."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2213
+#: HandBook.adoc:2191
 msgid ""
 "In the EFI mode the OS loader is a program stored in an executable file, "
 "located in a directory of an EFI System partition (ESP)."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2214
+#: HandBook.adoc:2192
 #, no-wrap
 msgid "[[CPU]]CPU"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2216
+#: HandBook.adoc:2194
 msgid ""
 "The CPU or Central Processing Unit executes the instructions of programs."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2217
+#: HandBook.adoc:2195
 #, no-wrap
 msgid "[[command]]Command"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2218
+#: HandBook.adoc:2196
 msgid ""
 "Command is defined by https://pubs.opengroup.org/onlinepubs/9699919799/"
 "basedefs/V1_chap03.html#tag_03_104[POSIX] as \"a directive to a <<shell,"
@@ -5590,14 +5529,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2220
+#: HandBook.adoc:2198
 msgid ""
 "The task to perform can be an <<application,application>> or an <<utility,"
 "utility>>."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2222
+#: HandBook.adoc:2200
 msgid ""
 "The basic structure of shell commands is defined in the chapter https://pubs."
 "opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_09[2.9 "
@@ -5605,18 +5544,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2224
+#: HandBook.adoc:2202
 msgid "Examples of commands are provided in <<bash shell>>."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2225
+#: HandBook.adoc:2203
 #, no-wrap
 msgid "[[console]]Console"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2229
+#: HandBook.adoc:2207
 msgid ""
 "The word \"console\" refers to the beginning of computer systems, when the "
 "system administrator typed commands on a device including a keyboard and a "
@@ -5625,7 +5564,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2233
+#: HandBook.adoc:2211
 msgid ""
 "In personal computers the user type the commands on keyboard and their "
 "output is printed on a screen, that can be separated from or integrated to "
@@ -5633,33 +5572,33 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2234
+#: HandBook.adoc:2212
 #, no-wrap
 msgid "[[device]]Device"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2237
+#: HandBook.adoc:2215
 msgid ""
 "A computer peripheral or an object that appears to the application as such."
 "[POSIX]"
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2238
+#: HandBook.adoc:2216
 #, no-wrap
 msgid "[[directory]]Directory"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2241
+#: HandBook.adoc:2219
 msgid ""
 "A directory is another name for a folder. File systems use directories to "
 "organize files within partitions."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2249
+#: HandBook.adoc:2227
 msgid ""
 "Directories can contain files and also other directories. The resulting "
 "structure can be represented as an upside-down tree. The top-level directory "
@@ -5672,13 +5611,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2250
+#: HandBook.adoc:2228
 #, no-wrap
 msgid "[[drive]]Drive"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2254
+#: HandBook.adoc:2232
 msgid ""
 "A drive is a device that stores non volatile data, meaning that the data is "
 "not erased when the power is turned off. Examples: hard disks, SSD, USB "
@@ -5686,27 +5625,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2257
+#: HandBook.adoc:2235
 msgid ""
 "The media storing the data can be permanently attached to the drive or "
 "removable like SD cards, USB sticks and drives connected through USB."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2260
+#: HandBook.adoc:2238
 msgid ""
 "An operating system installed in a removable media or an external drive is "
 "said portable: it can be moved from a computer to another one."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2261
+#: HandBook.adoc:2239
 #, no-wrap
 msgid "[[display_manager]]Display manager"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2265
+#: HandBook.adoc:2243
 msgid ""
 "A display manager (or login manager) is a software that displays a window on "
 "the screen in which it asks the login name and password of the user, then "
@@ -5714,13 +5653,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2266
+#: HandBook.adoc:2244
 #, no-wrap
 msgid "[[encryption]]Encryption"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2272
+#: HandBook.adoc:2250
 msgid ""
 "Encryption is the process of converting data to an unrecognizable "
 "(\"encrypted\")  form. It is commonly used to protect sensitive information "
@@ -5731,13 +5670,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2273
+#: HandBook.adoc:2251
 #, no-wrap
 msgid "[[file]]File"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2275
+#: HandBook.adoc:2253
 msgid ""
 "A computer file is a set of digital data gathered under the same name, "
 "recorded on a permanent storage medium, called mass storage, such as a hard "
@@ -5745,20 +5684,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2277
+#: HandBook.adoc:2255
 msgid ""
 "Files can contain data like texts, images, sounds, videos or computers "
 "programs."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2278
+#: HandBook.adoc:2256
 #, no-wrap
 msgid "[[file_system]]File System"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2284
+#: HandBook.adoc:2262
 msgid ""
 "A file system is a software that manages the files and directories in a "
 "partition. It memorizes the location in the physical media of the data "
@@ -5768,19 +5707,19 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: HandBook.adoc:2287
+#: HandBook.adoc:2265
 #, no-wrap
 msgid "cat /proc/filesystems|grep -v nodev\n"
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2289
+#: HandBook.adoc:2267
 #, no-wrap
 msgid "[[firmware]]Firmware"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2297
+#: HandBook.adoc:2275
 msgid ""
 "A firmware is a software that initializes and checks the hardware, then "
 "either selects and load in RAM the operating system, or starts a software "
@@ -5793,20 +5732,20 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2298
+#: HandBook.adoc:2276
 #, no-wrap
 msgid "[[kernel]]Kernel"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2301
+#: HandBook.adoc:2279
 msgid ""
 "A Linux kernel is the software at the core of a Slint system which handles "
 "the interactions between the applications and the hardware."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2303
+#: HandBook.adoc:2281
 msgid ""
 "It presents itself as a single file, installed in the directory /boot. For "
 "instance the file /boot/vmlinuz-generic-5.12.11 is a kernel, coming from "
@@ -5814,18 +5753,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2305
+#: HandBook.adoc:2283
 msgid "At startup the kernel is copied into RAM."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2306
+#: HandBook.adoc:2284
 #, no-wrap
 msgid "[[initrd]]Initrd"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2313
+#: HandBook.adoc:2291
 msgid ""
 "An initrd (more accurately an initramfs or initial RAM file system for "
 "Slint) is a Linux system provided as a compressed archive file. At boot, "
@@ -5836,40 +5775,40 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2316
+#: HandBook.adoc:2294
 msgid ""
 "An initrd presents itself as a single file, installed in the directory "
 "boot.  For instance the file initrd-generic-5.12.11 is an initrd"
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2317
+#: HandBook.adoc:2295
 #, no-wrap
 msgid "[[live_system]]Live system"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2320
+#: HandBook.adoc:2298
 msgid ""
 "A live system is an operating system that, instead of being installed in a "
 "device like an hard disk or SSD, lies entirely in <<RAM>>."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2322
+#: HandBook.adoc:2300
 msgid ""
 "An initrd is also a live system, and so is a Slint installer wich is "
 "basically an initrd."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2323
+#: HandBook.adoc:2301
 #, no-wrap
 msgid "[[partition]]Partition"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2327
+#: HandBook.adoc:2305
 msgid ""
 "A partition is a section of a storage media, such as a hard disk or SSD. It "
 "is treated by the operating system as a separate logical volume, which makes "
@@ -5877,13 +5816,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2328
+#: HandBook.adoc:2306
 #, no-wrap
 msgid "[[partition_table]]Partition table"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2332
+#: HandBook.adoc:2310
 msgid ""
 "A partition table is the permanent structure recording how information is "
 "laid out on a media, mainly recording the beginning and end of each "
@@ -5891,7 +5830,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2336
+#: HandBook.adoc:2314
 msgid ""
 "The most common types of partition tables are the DOS partition table, "
 "initially used by the MS-DOS operating system, and the GUID Partition Table "
@@ -5899,13 +5838,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2337
+#: HandBook.adoc:2315
 #, no-wrap
 msgid "[[program]]Program"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2339
+#: HandBook.adoc:2317
 msgid ""
 "A prepared sequence of instructions to the system to accomplish a defined "
 "task. The term \"program\" encompasses applications written in the Shell "
@@ -5914,26 +5853,26 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2340
+#: HandBook.adoc:2318
 #, no-wrap
 msgid "[[RAM]]RAM"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2343
+#: HandBook.adoc:2321
 msgid ""
 "RAM stands for Random Access Memory. This kind of device stores volatile "
 "data, meaning that the data is erased when the power is turned off."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2344
+#: HandBook.adoc:2322
 #, no-wrap
 msgid "[[shell]]Shell"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2348
+#: HandBook.adoc:2326
 msgid ""
 "A program that interprets sequences of text input as commands. It may "
 "operate on an input stream or it may interactively prompt and read commands "
@@ -5944,20 +5883,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2350
+#: HandBook.adoc:2328
 msgid ""
 "Slint ships several programs acting as shell, listed in the file /etc/"
 "shells. The *bash* shell is used by default."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2351
+#: HandBook.adoc:2329
 #, no-wrap
 msgid "[[swap]]Swap"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2358
+#: HandBook.adoc:2336
 msgid ""
 "A swap space is used to tentatively store data previously in RAM on a device "
 "like a hard disk or SSD, either because else the RAM would become full, or "
@@ -5968,40 +5907,40 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2359
+#: HandBook.adoc:2337
 #, no-wrap
 msgid "[[terminal]]Terminal"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2362
+#: HandBook.adoc:2340
 msgid ""
 "Historically a terminal was a physical device composed of a keyboard and a "
 "screen used to type commands and receives responses from a remote computer."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2365
+#: HandBook.adoc:2343
 msgid ""
 "Nowadays the commands can be typed in console (or text) mode or in graphical "
 "mode."
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2366
+#: HandBook.adoc:2344
 #, no-wrap
 msgid "[[utility]]Utility"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2368
+#: HandBook.adoc:2346
 msgid ""
 "An utility is a program that can be invoked by name from a shell (this is "
 "also the case of some <<application,applications>>)."
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2373
+#: HandBook.adoc:2351
 msgid ""
 "Utilities are a part of the operating system (but not of the kernel).  They "
 "perform system-related functions, such as listing directory contents, "
@@ -6010,7 +5949,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2377
+#: HandBook.adoc:2355
 msgid ""
 "An utility may be invoked as a separate program that executes in a different "
 "process than the command language interpreter, or it may be implemented as a "
@@ -6018,7 +5957,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2383
+#: HandBook.adoc:2361
 msgid ""
 "For example, the echo command (the directive to perform a specific task) may "
 "be implemented such that the echo utility (the logic that performs the task "
@@ -6028,7 +5967,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2387
+#: HandBook.adoc:2365
 msgid ""
 "Conversely, the logic that performs the echo utility could be built into the "
 "command language interpreter; therefore, it could execute in the same "
@@ -6037,13 +5976,13 @@ msgid ""
 msgstr ""
 
 #. type: Labeled list
-#: HandBook.adoc:2388
+#: HandBook.adoc:2366
 #, no-wrap
 msgid "[[virtual_terminal]]Virtual terminal"
 msgstr ""
 
 #. type: Plain text
-#: HandBook.adoc:2391
+#: HandBook.adoc:2369
 msgid ""
 "A virtual terminal is a software that simulates a physical terminal, device "
 "composed of a keyboard and a screen allowing to communicate remotely with a "

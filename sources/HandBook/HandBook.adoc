@@ -139,6 +139,16 @@ The latest version of the Slint distribution is 15.0
 
 The latest installation ISO image is always available in https://slackware.uk/slint/x86_64/slint-15.0/iso[this directory]
 
+This ISO image can also be downloaded using a Torrent Client from this page:
+
+https://seedbox.slackware.uk/
+
+The link to the torrent, after the label "Slint Torrents", is:
+
+https://seedbox.slackware.uk/torrents/slint64-15.0-5-iso.torrent
+
+A magnet is also provided.
+
 [TIP]
 ====
 As long as you are running Slint version 15.0 there is no need to re-install when a new ISO is provided, as it only brings new features of the installer and new or and upgraded packages that you can also get keeping your system up to date.
@@ -150,13 +160,13 @@ If you are running Windows, an Internet search with as argument "check sha256sum
 
 If you are running Linux you can download the ISO image and its sha256 checksum typing:
 ----
-wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.iso
-wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.iso.sha256
+wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso
+wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso.sha256
 ----
 
 To check the integrity of the downloaded files type this command:
 ----
-sha256sum -c slint64-15.0.iso.sha256
+sha256sum -c slint64-15.0-5.iso.sha256
 ----
 
 The result should be : OK +
@@ -191,7 +201,7 @@ Carefully review the output of the command to make sure that you will not type t
 Let's assume that the name of the USB stick be /dev/sdb. It could be named otherwise, so don't copy blindly the following command. The command syntax to write the Slint ISO to a USB stick that resides at /dev/sdb is as follows:
 
 ----
-dd if=slint64-15.0.iso of=/dev/sdb bs=1M status=progress && sync
+dd if=slint64-15.0-5.iso of=/dev/sdb bs=1M status=progress && sync
 ----
 
 [NOTE]
@@ -207,7 +217,7 @@ On ++Windows++ use an application like http://rufus.akeo.ie/[Rufus]. It is free 
 On a ++Linux++ system insert the DVD and type the following command:
 
 ----
-xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0.iso
+xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0-5.iso
 ----
 
 Be sure to enter the full path to the Slint ISO on your filesystem.

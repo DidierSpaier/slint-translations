@@ -56,7 +56,7 @@ sleep 1
 # espeakup initialization. This was done in previous versions just before running
 # /sbin/probe_sound_cards but there is no need to wait. 
 # If a hard synth is set in the command line no need to start espeakup.
-# This could be done runnig "rc.espeakup start", but not knowing yet if espeakup will be really used,
+# This could be done running "rc.espeakup start", but not knowing yet if espeakup will be really used,
 # instead case occuring espeakup will be started by /sbin/probe_sound_cards.
 if  [ ! -f /tmp/noespeakup ]; then
 	modprobe speakup_soft

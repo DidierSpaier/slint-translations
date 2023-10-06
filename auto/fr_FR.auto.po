@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-18 07:51+0200\n"
-"PO-Revision-Date: 2023-06-10 15:49\n"
+"PO-Revision-Date: 2023-06-10 19:16\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -343,7 +343,7 @@ msgstr "Si vous préférez le partitionnement manuel (personnalisé), mais que v
 
 # File: functions, line: 661
 msgid "Press m for manual, a for auto, h for help or q to quit: "
-msgstr "Appuyez sur m pour manuel, a pour l'auto, h pour l'aide ou q pour quitter : "
+msgstr "Appuyez sur m pour \"manuel\", a pour \"auto\", h pour l'aide ou q pour quitter : "
 
 # File: functions, line: 666
 # File: functions, line: 1217
@@ -396,7 +396,7 @@ msgstr "Voulez-vous supprimer toutes les données sur $NAME puis y installer Sli
 
 # File: functions, line: 848
 msgid "Do you want to install Slint on it?"
-msgstr "Voulez-vous installer Slint dessus ?"
+msgstr "Voulez-vous y installer Slint ?"
 
 # File: functions, line: 891
 #, sh-format

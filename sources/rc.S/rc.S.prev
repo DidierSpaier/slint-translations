@@ -5,7 +5,7 @@
 # http://ftp.slackware.com/pub/slackware/slackware-15.0/source/installer/sources/initrd/skeleton_initrd.tar.gz
 # heavily modified by Didier Spaier didieratslintdotfr for the Slint Linux distribution.
 
-# Version included in slint64-15.0-6.iso
+# Version included in slint64-15.0-3.iso
 
 # Any /etc/mtab that exists here is old, so we start with a new one:
 #/bin/rm -f /etc/mtab /etc/mtab~ /etc/mtab.tmp && /bin/touch /etc/mtab
@@ -77,42 +77,8 @@ sh /etc/rc.d/rc.swapinzram start
 
 sleep 3
 
-echo "installing some packages in the iniramfs. Please wait..."
-
-spkg -i -qq \
-"$ISO"/slint/kernel-firmware*txz \
-"ISO"/slint/acl-*txz \
-"ISO"/slint/dracut*txz \
-"ISO"/slint/file*txz \
-"ISO"/slint/gpm*txz \
-"ISO"/slint/gc-*txz \
-"ISO"/slint/dialog-*.t?z \
-"ISO"/slint/expat*.t?z \
-"ISO"/slint/pcre2*.t?z \
-"ISO"/slint/libsndfile*.t?z \
-"ISO"/slint/orc-0*.t?z \
-"ISO"/slint/flac*.t?z \
-"ISO"/slint/libogg-*.t?z \
-"ISO"/slint/libvorbis*.t?z \
-"ISO"/slint/libyaml*.t?z \
-"ISO"/slint/dbus-1*.t?z \
-"ISO"/slint/libnl3*.t?z \
-"ISO"/slint/wireless_tools*.t?z \
-"ISO"/slint/net-tools*.t?z \
-"ISO"/slint/wpa_supplicant*.t?z \
-"ISO"/slint/slang-*.t?z \
-"ISO"/slint/most*.t?z \
-"ISO"/slint/findutils*.t?z \
-"ISO"/slint/ca-certificates*.t?z \
-"ISO"/slint/openssl-solibs-*txz \
-"ISO"/slint/libunistring*txz \
-"ISO"/slint/nano*txz \
-"ISO"/slint/util-linux*txz \
-"ISO"/slint/json-c*txz \
-"ISO"/slint/ncurses*txz \
-"ISO"/slint/aaa_glibc-solibs-*.txz \
-"ISO"/slint/efibootmgr*.txz \
-"ISO"/slint/tree*.txz
+echo "installing kernel-firmware. Please wait..."
+spkg -i -qq "$ISO"/slint/kernel-firmware*txz
 
 # brltty is included in the initrd so that it be started by udev when applicable.
 # Start brltty if it has not yet been started by udev
@@ -262,7 +228,7 @@ clear
 
 # Fake login:  (fooled ya! ;^)
 #
-Version=15.0-6
+Version=15.0-5
 
 eval_gettext "Welcome to the Slint installer! (version \${Version})
 
