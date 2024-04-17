@@ -1,0 +1,86 @@
+#!/bin/sh
+# This script sets the X session started with the startx command or
+# with a display manager, unless the session be set from the display
+# manager's greeter.
+# the accountsservice package in Slint.
+# Written from scratch and dedicates to the public domain as stated in
+# https://unlicense.org/
+# Didier Spaier didieratslintdotfr  25 November 2017
+
+# Currently usable with lightdm or using startx but not using sddm.
+# 21 April 2022
+export TEXTDOMAIN=slint-scripts
+if [ "$(id -u)" -eq 0 ]; then
+	gettext "Running a graphical session as root is not allowed."; echo
+	exit
+fi
+
+listesessions() {
+	cd /usr/share/xsessions || exit 1
+	for filename in *; do
+		name=$(printf '%s' "${filename%.*}")
+		[ "$name" = "gnome-xorg" ] && continue
+		[ "$name" = "z_plasma-safe" ] && name="plasma-safe"
+		echo $name
+	done|sort
+}
+
+currentsession() {
+	if [ ! -f "$HOME/.dmrc" ]; then
+		gettext "Your default session is not set."; echo
+	else
+		gettext "Your session is currently set to"
+		name=$(sed -n "s@.*=@@;2p" "$HOME/.dmrc")
+		[ "$name" = "z_plasma-safe" ] && name="plasma-safe"
+		echo " ${name}."
+	fi
+}
+
+usage() {
+	gettext "Usage: session-chooser <desktop session>"; echo
+	gettext "Available desktop sessions:"; echo
+	listesessions
+	currentsession
+}
+ 
+[ $# -ne 1 ] && usage && exit
+
+session=$(echo "$1"|tr '[:upper:]' '[:lower:]')
+
+[ "$session" = "plasma-safe" ] && session="z_plasma-safe"
+
+# This is for lightdm, kept to store then display the chosen session. 
+echo '[Desktop]' > "$HOME/.dmrc"
+echo "Session=$session" >> "$HOME/.dmrc"
+
+# This is for startx
+cp /etc/X11/xinit/xinitrc.${session%-classic} "$HOME/.xinitrc"
+[ "$session" = "z_plasma-safe" ]  \
+&& \
+sed "s@startplasma-x11@startplasma-x11 --failsafe@" "$HOME/.xinitrc" > /tmp/.xinitrc \
+&& mv /tmp/.xinitrc "$HOME/.xinitrc"
+# We need to run setxkbmap just after having started X, so that $DISPLAY
+# be set. But in some cases that is easier to do live than when building
+# the window manager or desktop. 
+case $session in
+	lxqt|mate|ratpoison|xfce|gnome) (cd "$HOME" || exit 1
+		sed "/exec/i\
+/usr/bin/setxkbmap" .xinitrc > bof
+		mv bof .xinitrc);;
+	gnome-classic) (cd "$HOME" || exit 1
+		sed '/exec/i\
+/usr/bin/setxkbmap' .xinitrc > bof
+		sed '/exec/i\
+export GNOME_SHELL_SESSION_MODE=classic' bof > .xinitrc
+		rm -f bof);;
+  	*) (cd "$HOME" || exit 1
+	sed "/DESKTOP_SESSION/i \
+/usr/bin/setxkbmap" .xinitrc > bof
+		mv bof .xinitrc)
+esac
+case $session in
+	z_plasma-safe) displayedsession=plasma-safe;;
+	*) displayedsession=$session
+esac
+gettext  "Your default session has been set to"
+echo " ${displayedsession}."

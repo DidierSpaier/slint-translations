@@ -170,7 +170,7 @@ merge_PO () {
 	if [ ! -f ${POT} ]; then
 		make_POT
 	fi
-	msgmerge --strict --add-location -v -o ${ROOT}/wip/${PO} \
+	msgmerge --strict --no-fuzzy-matching --add-location -v -o ${ROOT}/wip/${PO} \
 	${ROOT}/po/${PO} ${POT}
 	echo >> $TMP/foutput
 	eval_gettext "The new PO file \${ROOT}/po/\${PO} is ready to \
@@ -184,7 +184,7 @@ merge_all () {
 	( cd $ROOT/po
 	for i in $(ls *po); do
 		echo $i >> $TMP/foutput
-		msgmerge --strict -v -o ${ROOT}/wip/$i \
+		msgmerge --strict --no-fuzzy-matching -v -o ${ROOT}/wip/$i \
 		${ROOT}/po/$i ${POT} 2>>$TMP/foutput
 		echo done >>$TMP/foutput
 	done

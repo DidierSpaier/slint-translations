@@ -1,0 +1,200 @@
+#!/bin/sh
+# This script allows to choose the display manager in Slint among those
+# shipped, and to have speech or not at login in gdm and lightdm.
+# Please note that to have speech or not in graphical environments each
+# user should use either the orca-on or the orca-off command.
+# To have speech on the console use espeakup, fenrir or speechd-up."
+# They can be enabled with the switch-on utility.
+# Didier Spaier didieratslintdotfr  November 2017
+# Last updated on 21 April 2022
+export TEXTDOMAIN=slint-scripts
+if [ "$(id -u)" -ne 0 ]; then
+	gettext "This script should be run as root."; echo
+	exit
+fi
+# Just in case someone removes or adds a display manager
+[ ! -f /etc/rc.d/rc.4.local ] && echo "#/etc/rc.d/rc.4.local" > /etc/rc.d/rc.4.local
+liste="text "
+[ -x /usr/sbin/lightdm ] && liste="${liste}lightdm "
+[ -x /usr/bin/sddm ] && liste="${liste}sddm "
+[ -x /usr/sbin/gdm ] && liste="${liste}gdm "
+listew=" $liste"
+usage() {
+	echo
+	gettext "Usage: login-chooser <login manager>"; echo
+	gettext "Available login managers:"; echo
+	echo "$listew"
+	gettext "Short descriptions:"; echo
+	printf '%s' "text:    "
+	gettext "Login in text mode, in a console. From there, you"; echo
+	printf '%s' "         "
+	gettext "can type \"startx\" to start a graphical session."; echo
+	[ -x /usr/sbin/lightdm ] && gettext "lightdm: Light Display Manager, accessible with speech."; echo
+	[ -x /usr/sbin/gdm ] && \
+	printf '%s' "gdm:     " && \
+	gettext "Gnome Desktop Manager, accessible with speech."; echo
+	if [ -x /usr/bin/sddm ]; then
+		printf '%s' "sddm:    "
+		gettext "Simple Desktop Display Manager."; echo
+	fi
+	echo
+	if grep -q id:3:initdefault: /etc/inittab; then
+		gettext "Login is currently set to text mode."; echo
+	else
+		for dm in $liste; do
+			if grep -q "^#$dm$" /etc/rc.d/rc.4.local  && \
+			[ -x /etc/rc.d/rc.4.local ]; then
+				gettext "The display manager" 
+				printf '%s' " ${dm} "
+				gettext "is currently set."; echo
+				break
+			fi
+		done
+	fi
+exit
+}
+restartornot() {
+	gettext "To reboot immediatly press R then Enter, else just press Enter."; echo
+	read -r answer
+	if [ "$answer" = "r" ] || [ "$answer" = "R" ]; then
+		shutdown -r now
+	fi
+}
+speak() {
+	gettext "If you want speech at login press S then Enter, else just press Enter."; echo
+	read -r sound
+	if [ "$sound" = "s" ] || [ "$sound" = "S" ]; then
+		echo "yes" > /etc/dm-speak
+		chmod 755 /etc/rc.d/rc.espeakup
+		if [ -f /etc/lightdm/lightdm-gtk-greeter.conf ]; then
+			(
+				cd /etc/lightdm || exit 1
+				if ! grep -wq orca lightdm-gtk-greeter.conf; then
+					echo "reader = orca" >> lightdm-gtk-greeter.conf
+				fi
+				if ! grep -wq a11y-states lightdm-gtk-greeter.conf ; then
+					echo "a11y-states = +reader" >> lightdm-gtk-greeter.conf
+				elif ! grep -wq +reader lightdm-gtk-greeter.conf; then
+					sed "/^a11y-states/s/.*/&;+reader/" lightdm-gtk-greeter.conf > dummy
+					mv dummy lightdm-gtk-greeter.conf
+				fi
+			)
+		fi
+		gettext "You will have speech at login."; echo
+	else
+		rm -f /etc/dm-speak
+		chmod 644 /etc/rc.d/rc.espeakup
+		if [ -f /etc/lightdm/lightdm-gtk-greeter.conf ]; then
+			(
+				cd /etc/lightdm || exit 1
+				sed /orca/d	lightdm-gtk-greeter.conf > dummy
+				mv dummy lightdm-gtk-greeter.conf
+			)
+		fi
+		gettext "You won't have speech at login."; echo
+	fi
+}
+[ $# -ne 1 ] && usage
+choice=$(echo "$1"|tr "[:upper:]" "[:lower:]")
+
+if [ "$(echo "$listew"|grep " $choice ")" = "" ]; then
+	printf '%s ' "$1 "
+	gettext "is not among the available login managers:"; echo
+	echo "$listew"
+	exit
+fi
+case $choice in
+	text)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:3:initdefault:/" /etc/inittab.save > /etc/inittab
+		gettext "Login will occur in text mode on next boot."; echo
+		gettext "If you need speech type one of these commands before rebooting:"; echo
+		echo "speak-with espeakup"
+		echo "speak-with fenrir"
+		echo "speak-with speechd-up"
+		restartornot
+		;;
+	lightdm)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:4:initdefault:/" /etc/inittab.save > /etc/inittab
+		cat <<-"EOF" > /etc/rc.d/rc.4.local
+		#lightdm
+		if [ -x /usr/sbin/lightdm ]; then
+			if [ -f /var/log/lightdm/startlightdm.log ]; then
+				mv /var/log/lightdm/startlightdm.log /var/log/lightdm/startlightdm.log.old
+			fi
+			exec /usr/sbin/lightdm  2>/var/log/lightdm/startlightdm.log
+		fi
+		EOF
+		chmod 755 /etc/rc.d/rc.4.local
+		gettext "The display manager"
+		printf '%s ' " $choice "
+		gettext "will be in use on next boot."; echo
+		speak
+		restartornot
+		;;
+	lxdm)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:4:initdefault:/" /etc/inittab.save > /etc/inittab
+		cat <<-"EOF" > /etc/rc.d/rc.4.local
+		#lxdm
+		if [ -x /usr/sbin/lxdm ]; then
+		    exec /usr/sbin/lxdm -nodaemon
+		fi
+		EOF
+		chmod 755 /etc/rc.d/rc.4.local
+		gettext "The display manager"
+		printf '%s ' " $choice "
+		gettext "will be in use on next boot."; echo
+		restartornot
+		;;
+	kdm)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:4:initdefault:/" /etc/inittab.save > /etc/inittab
+		cat <<-"EOF" > /etc/rc.d/rc.4.local
+		#kdm
+		if [ -x /usr/bin/kdm ]; then
+		    exec /usr/bin/kdm -nodaemon
+		fi
+		EOF
+		chmod 755 /etc/rc.d/rc.4.local
+		gettext "The display manager"
+		printf '%s ' " $choice "
+		gettext "will be in use on next boot."; echo
+		restartornot
+		;;
+	sddm)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:4:initdefault:/" /etc/inittab.save > /etc/inittab
+		cat <<-"EOF" > /etc/rc.d/rc.4.local
+		#sddm
+		if [ -x /usr/bin/sddm ]; then
+		    exec /usr/bin/sddm
+		fi
+		EOF
+		chmod 755 /etc/rc.d/rc.4.local
+		gettext "The display manager"
+		printf '%s ' " $choice "
+		gettext "will be in use on next boot."; echo
+		restartornot
+		;;
+	gdm)
+		cp /etc/inittab /etc/inittab.save
+		sed "/:initdefault:/s/.*/id:4:initdefault:/" /etc/inittab.save > /etc/inittab
+		cat <<-"EOF" > /etc/rc.d/rc.4.local
+		#gdm
+		if [ -x /usr/sbin/gdm ]; then
+		    exec /usr/sbin/gdm -nodaemon
+		fi
+		EOF
+		chmod 755 /etc/rc.d/rc.4.local
+		gettext "The display manager"
+		printf '%s ' " $choice "
+		gettext "will be in use on next boot."; echo
+		speak
+		restartornot
+		;;
+	*)
+		gettext "Unknown choice. Check your spelling."; echo
+		;;
+esac

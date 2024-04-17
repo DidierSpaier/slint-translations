@@ -1,12 +1,12 @@
 #!/bin/sh
 # This script allows to choose the display manager in Slint among those
-# shipped, and to have speech or not at login in gdm and lightdm.
+# shipped, and to have speech or not at login in lightdm or text mode.
 # Please note that to have speech or not in graphical environments each
 # user should use either the orca-on or the orca-off command.
 # To have speech on the console use espeakup, fenrir or speechd-up."
 # They can be enabled with the switch-on utility.
-# Didier Spaier didieratslintdotfr  November 2017
-# Last updated on 21 April 2022
+# Didier Spaier didieratslintdotfr November 2017
+# Last updated on 8 March 2024: handle lightdm-slick-greeter. 
 export TEXTDOMAIN=slint-scripts
 if [ "$(id -u)" -ne 0 ]; then
 	gettext "This script should be run as root."; echo
@@ -76,6 +76,20 @@ speak() {
 				fi
 			)
 		fi
+		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]  &&
+		[ -f /etc/lightdm/slick-greeter.conf ]; then
+			sed /screen-reader/d /etc/lightdm/slick-greeter.conf > dummy
+			echo "screen-reader=yes" >> dummy
+			mv dummy /etc/lightdm/slick-greeter.conf
+			(
+				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
+				unset DISPLAY
+				echo "screen-reader=yes" >> dummmy
+				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
+				dbus-launch gsettings set x.dm.slick-greeter screen-reader true" gdm
+			)
+			kill -1 $(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)
+		fi
 		gettext "You will have speech at login."; echo
 	else
 		rm -f /etc/dm-speak
@@ -86,6 +100,20 @@ speak() {
 				sed /orca/d	lightdm-gtk-greeter.conf > dummy
 				mv dummy lightdm-gtk-greeter.conf
 			)
+		fi
+		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]  &&
+		[ -f /etc/lightdm/slick-greeter.conf ]; then
+			sed /screen-reader/d /etc/lightdm/slick-greeter.conf > dummy
+			echo "screen-reader=yes" >> dummy
+			mv dummy /etc/lightdm/slick-greeter.conf
+			(
+				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
+				unset DISPLAY
+				echo "screen-reader=yes" >> dummmy
+				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
+				dbus-launch gsettings set x.dm.slick-greeter screen-reader false" gdm
+			)
+			kill -1 $(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)
 		fi
 		gettext "You won't have speech at login."; echo
 	fi

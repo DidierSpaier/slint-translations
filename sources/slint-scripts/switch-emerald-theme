@@ -1,0 +1,49 @@
+#!/bin/sh
+# Public domain
+# Initially written by Didier Spaier diideratslintdotfr
+# shellcheck disable=SC2009
+export TEXTDOMAIN=slint-scripts
+to_lower() {
+	echo "$1"|tr '[:upper:]' '[:lower:]'
+}
+if [ "$(id -u)" -eq 0 ]; then
+	gettext "Running this script as root is not allowed."
+	echo
+	exit
+fi
+if tty|grep -q /dev/tty; then
+	gettext "This script should be used in a graphical environment" 
+	echo
+	exit
+fi
+if ! ps -ef|grep -v grep|grep -q "compiz"; then
+	gettext "The compiz window manager should run to try Emerald themes"
+	echo
+	gettext "Do you want to start it? (y/N): "
+	read -r ANSWER
+	if [ ! "$(to_lower "$ANSWER")" = "y" ]; then
+		exit
+	fi
+	compiz ccp --replace --sm-disable --ignore-desktop-hints 2>/dev/null &
+	emerald --replace &
+fi
+try_a_theme() {
+	cd /usr/share/emerald/themes || exit
+	ls > /tmp/list_of_emerald_themes
+	cd - || exit
+	dialog --no-lines --no-items --visit-items --erase-on-exit --menu "$(gettext "Try Emerald themes, Esc to exit.")" 0 0 0 --file /tmp/list_of_emerald_themes 2>/tmp/emerald_theme_chosen
+	if [ ! -s /tmp/emerald_theme_chosen ]; then
+		return
+	fi
+	rm -f ~/.emerald/theme/*
+	find ~/.emerald/theme
+	_theme="$(cat /tmp/emerald_theme_chosen)"
+    cp /usr/share/emerald/themes/"$_theme"/* ~/.emerald/theme/
+    emerald --replace &
+}
+rm -f /tmp/emerald_theme_chosen
+try_a_theme
+while [ -s /tmp/emerald_theme_chosen ]; do
+	try_a_theme
+done
+clear

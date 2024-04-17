@@ -1,0 +1,658 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-03 19:54+0100\n"
+"PO-Revision-Date: 2023-06-10 15:49\n"
+"Last-Translator: \n"
+"Language-Team: Greek\n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: el\n"
+"X-Crowdin-File: /slint_scripts/slint_scripts.pot\n"
+"X-Crowdin-File-ID: 46\n"
+
+# File: display-desktop, line: 4
+msgid "Please run 'display-desktop' as regular user."
+msgstr "Παρακαλώ εκτελέστε το 'display-desktop' ως κανονικός χρήστης."
+
+# File: display-desktop, line: 9
+# File: hide-desktop, line: 9
+msgid "Usage: display-desktop <desktop>"
+msgstr "Χρήση: display-desktop <desktop>"
+
+# File: display-desktop, line: 11
+msgid "This program displays menu entries specific to the selected desktop,\n"
+"if installed, when using another one."
+msgstr "Αυτό το πρόγραμμα εμφανίζει τις καταχωρήσεις μενού ειδικά για την επιλεγμένη επιφάνεια εργασίας,\n"
+"αν έχει εγκατασταθεί, όταν χρησιμοποιείτε ένα άλλο."
+
+# File: display-desktop, line: 13
+# File: hide-desktop, line: 15
+msgid "List of desktops:"
+msgstr "Κατάλογος των υπολογιστών:"
+
+# File: display-desktop, line: 17
+msgid "If you choose 'all' the menu entries for any installed desktop will be \n"
+"displayed in other ones."
+msgstr "Αν επιλέξετε 'όλα' οι καταχωρήσεις μενού για οποιαδήποτε εγκατεστημένη επιφάνεια εργασίας θα εμφανίζονται \n"
+"σε άλλες."
+
+# File: display-desktop, line: 20
+msgid "This can be reverted with the command hide-desktop."
+msgstr "Αυτό μπορεί να επανέλθει με την εντολή hide-desktop."
+
+# File: display-desktop, line: 37
+# File: display-desktop, line: 41
+# File: hide-desktop, line: 39
+# File: hide-desktop, line: 43
+# File: speak-with, line: 89
+# File: speak-with, line: 111
+# File: speak-with, line: 135
+# File: speak-with, line: 177
+msgid "Done."
+msgstr "Ολοκληρώθηκε."
+
+# File: display-desktop, line: 38
+# File: display-desktop, line: 42
+msgid "The menus will be modified at next login."
+msgstr "Τα μενού θα τροποποιηθούν κατά την επόμενη σύνδεση."
+
+# File: display-desktop, line: 45
+# File: hide-desktop, line: 47
+msgid "is not a listed session."
+msgstr "δεν είναι μια καταχωρημένη συνεδρία."
+
+# File: hide-desktop, line: 4
+msgid "Please run 'hide-desktop' as regular user."
+msgstr "Παρακαλώ εκτελέστε το 'display-desktop' ως κανονικός χρήστης."
+
+# File: hide-desktop, line: 11
+msgid "This program hide most menu entries specific to the selected desktop,\n"
+"if installed, when running another one. Corresponding applications will\n"
+"stay available in all other desktops typing commands from a terminal or\n"
+"through a \"run...\" dialog (Alt+F2)."
+msgstr "Αυτό το πρόγραμμα αποκρύπτει τις περισσότερες καταχωρήσεις μενού ειδικά για την επιλεγμένη επιφάνεια εργασίας,\n"
+"αν εγκατασταθεί, όταν εκτελείται μια άλλη. Αντίστοιχες εφαρμογές\n"
+"θα παραμείνουν διαθέσιμες σε όλες τις άλλες επιφάνειες εργασίας πληκτρολογώντας εντολές από ένα τερματικό ή\n"
+"μέσω ενός διαλόγου \"run...\" (Alt+F2)."
+
+# File: hide-desktop, line: 19
+msgid "If you choose all the menu entries for any installed desktop will be\n"
+"hidden from all others."
+msgstr "Αν επιλέξετε όλες τις καταχωρήσεις μενού για οποιαδήποτε εγκατεστημένη επιφάνεια εργασίας θα\n"
+"κρυφτεί από όλες τις άλλες."
+
+# File: hide-desktop, line: 22
+msgid "This can be reverted with the command display-desktop."
+msgstr "Αυτό μπορεί να επανέλθει με την εντολή display-desktop."
+
+# File: hide-desktop, line: 40
+# File: hide-desktop, line: 44
+msgid "The menus will be modified at next boot."
+msgstr "Τα μενού θα τροποποιηθούν στην επόμενη εκκίνηση."
+
+# File: list-espeak-ng-voices, line: 14
+# File: list-espeak-ng-voices, line: 44
+# File: list-espeak-ng-voices.save, line: 14
+# File: list-espeak-ng-voices.save, line: 44
+msgid "To use one of theses voices with espeakup, set it in /etc/espeakup.conf."
+msgstr "Για να χρησιμοποιήσετε μία από τις θέσεις φωνές με espeakup, ρυθμίστε το στο /etc/espeakup.conf."
+
+# File: list-espeak-ng-voices, line: 15
+# File: list-espeak-ng-voices, line: 45
+# File: list-espeak-ng-voices, line: 64
+# File: list-espeak-ng-voices.save, line: 15
+# File: list-espeak-ng-voices.save, line: 45
+# File: list-espeak-ng-voices.save, line: 64
+msgid "For instance, to use the voice: "
+msgstr "Για παράδειγμα, για να χρησιμοποιήσετε τη φωνή: "
+
+# File: list-espeak-ng-voices, line: 17
+# File: list-espeak-ng-voices, line: 47
+# File: list-espeak-ng-voices.save, line: 17
+# File: list-espeak-ng-voices.save, line: 47
+msgid "write:"
+msgstr "εγγραφή:"
+
+# File: list-espeak-ng-voices, line: 19
+# File: list-espeak-ng-voices, line: 49
+# File: list-espeak-ng-voices, line: 71
+# File: list-espeak-ng-voices.save, line: 19
+# File: list-espeak-ng-voices.save, line: 49
+# File: list-espeak-ng-voices.save, line: 71
+msgid "in /etc/espeakup.conf."
+msgstr "στο /etc/espeakup.conf."
+
+# File: list-espeak-ng-voices, line: 21
+# File: list-espeak-ng-voices.save, line: 21
+msgid "Do you want to list also the mbrola voices? [y/N]"
+msgstr "Θέλετε να καταχωρήσετε επίσης τις φωνές mbrola? [y/N]"
+
+# File: list-espeak-ng-voices, line: 40
+# File: list-espeak-ng-voices.save, line: 40
+msgid "Installed mbrola voices:"
+msgstr "Εγκατεστημένες φωνές mbrola:"
+
+# File: list-espeak-ng-voices, line: 51
+# File: list-espeak-ng-voices, line: 63
+# File: list-espeak-ng-voices.save, line: 51
+# File: list-espeak-ng-voices.save, line: 63
+msgid "Other mbrola voices could be used if installed."
+msgstr "Άλλες mbrola φωνές θα μπορούσαν να χρησιμοποιηθούν αν εγκατασταθεί."
+
+# File: list-espeak-ng-voices, line: 52
+# File: list-espeak-ng-voices.save, line: 52
+msgid "Do you want to display them? [Y/n] "
+msgstr "Θέλετε να τα εμφανίσετε? [Y/n] "
+
+# File: list-espeak-ng-voices, line: 59
+# File: list-espeak-ng-voices.save, line: 59
+msgid "Not Installed mbrola voices:"
+msgstr "Μη εγκατεστημένες φωνές mbrola:"
+
+# File: list-espeak-ng-voices, line: 66
+# File: list-espeak-ng-voices.save, line: 66
+msgid "type as root:"
+msgstr "πληκτρολογήστε ως root:"
+
+# File: list-espeak-ng-voices, line: 69
+# File: list-espeak-ng-voices.save, line: 69
+msgid "then write:"
+msgstr "μετά γράψτε:"
+
+# File: list_boot_entries, line: 4
+msgid "Please run this command as root."
+msgstr "Εκτελέστε αυτή την εντολή ως root."
+
+# File: list_boot_entries, line: 8
+msgid "The file /boot/grub/grub.cfg does not exist."
+msgstr "Το αρχείο /boot/grub/grub.cfg δεν υπάρχει."
+
+# File: list_boot_entries, line: 9
+msgid "Prior to runninng this command you should install grub and run either:"
+msgstr "Πριν εκτελέσετε αυτή την εντολή θα πρέπει να εγκαταστήσετε το grub και να εκτελέσετε είτε:"
+
+# File: list_boot_entries, line: 11
+msgid "or if this command does not exist:"
+msgstr "ή αν αυτή η εντολή δεν υπάρχει:"
+
+# File: list_boot_entries, line: 20
+msgid "After booting, the boot menu will be displayed as above."
+msgstr "Μετά την εκκίνηση, το μενού εκκίνησης θα εμφανιστεί όπως παραπάνω."
+
+# File: list_boot_entries, line: 23
+msgid "To navigate in the menu you will use the down and up arrow keys, then\n"
+"press Enter to use the selected boot entry."
+msgstr "Για να πλοηγηθείτε στο μενού θα χρησιμοποιήσετε τα πλήκτρα κάτω και πάνω βέλους, και στη συνέχεια\n"
+"πατήστε Enter για να χρησιμοποιήσετε την επιλεγμένη καταχώρηση εκκίνησης."
+
+# File: list_boot_entries, line: 26
+msgid "To boot directly the most recent snapshot (if any), just press 1."
+msgstr "Για να εκκινήσετε απευθείας το πιο πρόσφατο στιγμιότυπο (αν υπάρχει), απλά πατήστε 1."
+
+# File: list_boot_entries, line: 29
+msgid "Press q quit this display."
+msgstr "Πατήστε q για έξοδο από την οθόνη."
+
+# File: login-chooser, line: 12
+# File: rescuebootstick, line: 7
+msgid "This script should be run as root."
+msgstr "Αυτό το σενάριο θα πρέπει να εκτελείται ως root."
+
+# File: login-chooser, line: 23
+msgid "Usage: login-chooser <login manager>"
+msgstr "Χρήση: επιλογή σύνδεσης <login manager>"
+
+# File: login-chooser, line: 24
+msgid "Available login managers:"
+msgstr "Διαθέσιμοι διαχειριστές σύνδεσης:"
+
+# File: login-chooser, line: 26
+msgid "Short descriptions:"
+msgstr "Σύντομες περιγραφές:"
+
+# File: login-chooser, line: 28
+msgid "Login in text mode, in a console. From there, you"
+msgstr "Συνδεθείτε σε λειτουργία κειμένου, σε μια κονσόλα. Από εκεί, εσείς"
+
+# File: login-chooser, line: 30
+msgid "can type \"startx\" to start a graphical session."
+msgstr "μπορεί να πληκτρολογήσει \"εκκίνηση\" για να ξεκινήσει μια γραφική συνεδρία."
+
+# File: login-chooser, line: 31
+msgid "lightdm: Light Display Manager, accessible with speech."
+msgstr "lightdm: Light Display Manager, προσβάσιμο με ομιλία."
+
+# File: login-chooser, line: 34
+msgid "Simple Desktop Display Manager."
+msgstr "Απλός διαχειριστής επιφάνειας εργασίας."
+
+# File: login-chooser, line: 38
+msgid "Login is currently set to text mode."
+msgstr "Η σύνδεση έχει οριστεί σε λειτουργία κειμένου."
+
+# File: login-chooser, line: 43
+# File: login-chooser, line: 125
+# File: login-chooser, line: 141
+# File: login-chooser, line: 156
+# File: login-chooser, line: 171
+# File: login-chooser, line: 186
+msgid "The display manager"
+msgstr "Ο διαχειριστής οθόνης"
+
+# File: login-chooser, line: 45
+msgid "is currently set."
+msgstr "έχει οριστεί."
+
+# File: login-chooser, line: 53
+msgid "To reboot immediatly press R then Enter, else just press Enter."
+msgstr "Για να επανεκκινήσετε αμέσως πατήστε το πλήκτρο R και μετά το Enter, αλλιώς πατήστε το πλήκτρο Enter."
+
+# File: login-chooser, line: 60
+msgid "If you want speech at login press S then Enter, else just press Enter."
+msgstr "Αν θέλετε ομιλία κατά τη σύνδεση πατήστε S τότε Enter, αλλιώς πατήστε Enter."
+
+# File: login-chooser, line: 79
+msgid "You will have speech at login."
+msgstr "Θα έχετε ομιλία κατά τη σύνδεση."
+
+# File: login-chooser, line: 90
+msgid "You won't have speech at login."
+msgstr "Δεν θα έχετε ομιλία κατά τη σύνδεση."
+
+# File: login-chooser, line: 97
+msgid "is not among the available login managers:"
+msgstr "δεν είναι μεταξύ των διαθέσιμων διαχειριστών σύνδεσης:"
+
+# File: login-chooser, line: 105
+msgid "Login will occur in text mode on next boot."
+msgstr "Η σύνδεση θα συμβεί σε λειτουργία κειμένου στην επόμενη εκκίνηση."
+
+# File: login-chooser, line: 106
+msgid "If you need speech type one of these commands before rebooting:"
+msgstr "Εάν χρειάζεστε ομιλία, πληκτρολογήστε μία από αυτές τις εντολές πριν από την επανεκκίνηση:"
+
+# File: login-chooser, line: 127
+# File: login-chooser, line: 143
+# File: login-chooser, line: 158
+# File: login-chooser, line: 173
+# File: login-chooser, line: 188
+msgid "will be in use on next boot."
+msgstr "θα χρησιμοποιηθεί στην επόμενη εκκίνηση."
+
+# File: login-chooser, line: 193
+msgid "Unknown choice. Check your spelling."
+msgstr "Άγνωστη επιλογή. Ελέγξτε την ορθογραφία σας."
+
+# File: orca-off, line: 4
+# File: orca-on, line: 6
+# File: switch-off, line: 6
+# File: switch-on, line: 7
+msgid "Please run this script as regular user."
+msgstr "Παρακαλώ εκτελέστε αυτό το σενάριο ως κανονικός χρήστης."
+
+# File: orca-off, line: 24
+msgid "Orca has been disabled for you."
+msgstr "Το Orca έχει απενεργοποιηθεί για εσάς."
+
+# File: orca-off, line: 26
+# File: orca-on, line: 37
+msgid "File ~/.config/autostart/startorca.desktop not found."
+msgstr "Το αρχείο ~/.config/autostart/startorca.desktop δεν βρέθηκε."
+
+# File: orca-on, line: 5
+msgid "Start a graphical environment as root with speech is not advisable."
+msgstr "Η έναρξη ενός γραφικού περιβάλλοντος ως root με την ομιλία δεν συνιστάται."
+
+# File: orca-on, line: 35
+msgid "Orca has been enabled for you."
+msgstr "Το Orca έχει ενεργοποιηθεί για εσάς."
+
+# File: rescuebootstick, line: 18
+msgid "Do you want to make a rescue boot stick of an USB flash drive? "
+msgstr "Θέλετε να δημιουργήσετε ένα USB boot διάσωσης ενός USB flash drive; "
+
+# File: rescuebootstick, line: 20
+msgid "Please type yes or no: "
+msgstr "Πληκτρολογήστε yes ή no: "
+
+# File: rescuebootstick, line: 30
+msgid "Plug in the USB boot stick, then press Enter."
+msgstr "Συνδέστε το USB boot stick και στη συνέχεια, πατήστε Enter."
+
+# File: rescuebootstick, line: 43
+msgid "We didn't find a newly inserted USB flash drive."
+msgstr "Δεν βρήκαμε μια μονάδα flash USB που εισήχθη πρόσφατα."
+
+# File: rescuebootstick, line: 44
+msgid "Maybe it was already inserted?"
+msgstr "Ίσως είχε ήδη εισαχθεί;"
+
+# File: rescuebootstick, line: 46
+msgid "If you want to try again remove it then type yes, else type no: "
+msgstr "Αν θέλετε να προσπαθήσετε ξανά αφαιρέστε το μετά πληκτρολογήστε yes, αλλιώς πληκτρολογήστε no: "
+
+# File: rescuebootstick, line: 63
+msgid "This drive will be used as rescue boot stick."
+msgstr "Αυτή η μονάδα δίσκου θα χρησιμοποιηθεί ως rescue boot stick."
+
+# File: rescuebootstick, line: 65
+msgid "If you accept all data currently stored on it will be lost!"
+msgstr "Αν αποδεχθείτε όλα τα δεδομένα που είναι αποθηκευμένα επί του παρόντος σε αυτό θα χαθούν!"
+
+# File: rescuebootstick, line: 66
+msgid "You will confirm that want to use this one, choose another one or give up."
+msgstr "Θα επιβεβαιώσετε ότι θέλετε να χρησιμοποιήσετε αυτό, να επιλέξτε ένα άλλο ή να εγκαταλείψετε."
+
+# File: rescuebootstick, line: 68
+msgid "Type yes to use it, no to try another one or q to give up: "
+msgstr "Πληκτρολογήστε yes για να το χρησιμοποιήσετε, no για να δοκιμάσετε ένα άλλο ή q για να σταματήσετε: "
+
+# File: rescuebootstick, line: 72
+msgid "Remove this USB flash drive, then press Enter: "
+msgstr "Αφαιρέστε αυτό το USB flash drive, στη συνέχεια πατήστε Enter: "
+
+# File: rescuebootstick, line: 80
+msgid "Several newly inserted drives have been detected!"
+msgstr "Εντοπίστηκαν πολλές νέες μονάδες!"
+
+# File: rescuebootstick, line: 81
+msgid "No rescue boot disk can be made now."
+msgstr "Δεν μπορεί να γίνει κανένας δίσκος εκκίνησης."
+
+# File: rescuebootstick, line: 82
+msgid "Press Enter to continue."
+msgstr "Πιέστε Enter για να συνεχίσουμε."
+
+# File: rescuebootstick, line: 88
+msgid "Please wait while we prepare the booting equipment..."
+msgstr "Παρακαλώ περιμένετε ενώ ετοιμάζουμε τον εξοπλισμό εκκίνησης..."
+
+# File: rescuebootstick, line: 96
+msgid "Writing the booting equipment on the stick..."
+msgstr "Γράφοντας τον εξοπλισμό εκκίνησης στο stick..."
+
+# File: rescuebootstick, line: 104
+msgid "Done. You may now remove the rescue boot stick."
+msgstr "Έγινε. Τώρα μπορείτε να αφαιρέσετε το stick εκκίνησης διάσωσης."
+
+# File: session-chooser, line: 14
+msgid "Running a graphical session as root is not allowed."
+msgstr "Η εκτέλεση μιας γραφικής συνεδρίας ως root δεν επιτρέπεται."
+
+# File: session-chooser, line: 29
+msgid "Your default session is not set."
+msgstr "Δεν έχει οριστεί η προεπιλεγμένη συνεδρία σας."
+
+# File: session-chooser, line: 31
+msgid "Your session is currently set to"
+msgstr "Η συνεδρία σας έχει οριστεί σε"
+
+# File: session-chooser, line: 39
+msgid "Usage: session-chooser <desktop session>"
+msgstr "Χρήση: session-chooser <desktop session>"
+
+# File: session-chooser, line: 40
+msgid "Available desktop sessions:"
+msgstr "Διαθέσιμες συνεδρίες επιφάνειας εργασίας:"
+
+# File: session-chooser, line: 65
+msgid "is not part of the available sessions:"
+msgstr "δεν αποτελεί μέρος των διαθέσιμων συνεδριών:"
+
+# File: session-chooser, line: 98
+msgid "Your default session has been set to"
+msgstr "Η προεπιλεγμένη συνεδρία σας έχει οριστεί σε"
+
+# File: spd-list, line: 7
+msgid "This script lists languages and synthesizers available for applications\n"
+"relying on Speech Dispatcher, like Orca or speech-up.\n"
+"Each command below answers the question following it.\n"
+"Don't type the quotes surrounding the command."
+msgstr "Αυτό το σενάριο παραθέτει τις γλώσσες και τα synthesizers διαθέσιμα για τις εφαρμογές\n"
+"βασίζεται σε Speech Dispatcher, όπως Orca ή το speech-up.\n"
+"Κάθε εντολή που ακολουθεί απαντά στην ερώτηση που ακολουθεί.\n"
+"Μην πληκτρολογήσετε τα εισαγωγικά που περιβάλλουν την εντολή."
+
+# File: spd-list, line: 11
+msgid "\"spd-list\" usage"
+msgstr "\"spd-list\" usage"
+
+# File: spd-list, line: 12
+msgid "\"spd-list -s\" available synthesizers?"
+msgstr "\"Spd-list-s\" διαθέσιμα synthesizers;"
+
+# File: spd-list, line: 13
+msgid "\"spd-list -l\" available languages codes?"
+msgstr "\"Spd-list -l\" διαθέσιμες γλώσσες;"
+
+# File: spd-list, line: 14
+msgid "\"spd-list -ls\" <synthesizer> languages available for this synthesizer?"
+msgstr "\"Spd-list-ls\" <synthesizer> γλώσσες διαθέσιμες για αυτό το synthesizer;"
+
+# File: spd-list, line: 15
+msgid "\"spd-list -sl\" <language code> synthesizers providing voices in this language?"
+msgstr "\"Spd-list-sl\" <language code> synthesizers που παρέχουν φωνές σε αυτή τη γλώσσα;"
+
+# File: spd-list, line: 16
+msgid "The language code has most often two characters, like 'en' 'es' or 'fr'."
+msgstr "Ο κωδικός γλώσσας έχει συνήθως δύο χαρακτήρες, όπως \"en\" ή \"fr\"."
+
+# File: spd-list, line: 21
+# File: spd-list, line: 54
+# File: spd-list, line: 101
+msgid "is not a valid command."
+msgstr "δεν είναι έγκυρη εντολή."
+
+# File: spd-list, line: 31
+msgid "Installed synthesizers:"
+msgstr "Εγκατεστημένοι συνθέτες:"
+
+# File: spd-list, line: 47
+msgid "Available languages: "
+msgstr "Διαθέσιμες γλώσσες: "
+
+# File: spd-list, line: 62
+msgid "is not the name of an available synthesizer"
+msgstr "δεν είναι το όνομα ενός διαθέσιμου synthesizer"
+
+# File: spd-list, line: 71
+msgid "No information available about languages for "
+msgstr "Δεν υπάρχουν διαθέσιμες πληροφορίες για τις γλώσσες για "
+
+# File: spd-list, line: 74
+msgid "Available languages codes for "
+msgstr "Διαθέσιμοι κωδικοί γλωσσών για "
+
+# File: spd-list, line: 91
+msgid "No installed synthesizer provides the language "
+msgstr "Κανένας εγκατεστημένος synthesizer δεν παρέχει τη γλώσσα "
+
+# File: spd-list, line: 94
+msgid "The language "
+msgstr "Η γλώσσα "
+
+# File: spd-list, line: 96
+msgid "is provided by: "
+msgstr "παρέχεται από: "
+
+# File: speak-with, line: 9
+# File: speakup-restore, line: 4
+# File: speakup-save, line: 4
+msgid "Please run this script as root."
+msgstr "Παρακαλώ εκτελέστε αυτό το σενάριο ως root."
+
+# File: speak-with, line: 28
+msgid "Usage: speak_with <screen reader> or <hard synthesizer> or 'none'"
+msgstr "Χρήση: speak_with <screen reader> or <hard synthesizer> or 'none'"
+
+# File: speak-with, line: 29
+msgid "Choose a console screen reader to talk with among:"
+msgstr "Επιλέξτε μια λειτουργία ανάγνωσης οθόνης κονσόλας για να μιλήσετε μεταξύ:"
+
+# File: speak-with, line: 31
+msgid "or one of the supported hard synthesizers:"
+msgstr "ή ένα από τα υποστηριζόμενα σκληρά synthesizers:"
+
+# File: speak-with, line: 33
+msgid "or type  \"speak-with none\" to mute all screen readers."
+msgstr "ή πληκτρολογήστε \"speak-with none\" για σίγαση όλων των αναγνωστών οθόνης."
+
+# File: speak-with, line: 48
+msgid "is not a valid argument of this command."
+msgstr "δεν είναι ένα έγκυρο όρισμα αυτής της εντολής."
+
+# File: speak-with, line: 75
+msgid "espeakup is not installed."
+msgstr "το espeakup δεν έχει εγκατασταθεί."
+
+# File: speak-with, line: 76
+msgid "espeakup is already started."
+msgstr "το espeakup έχει ήδη ξεκινήσει."
+
+# File: speak-with, line: 83
+msgid "Should espeakup be also started at next boot? [Y/n] "
+msgstr "Θα πρέπει το speechd-up να ξεκινήσει επίσης στο επόμενο boot? [Y/n] "
+
+# File: speak-with, line: 97
+msgid "speechd-up is not installed."
+msgstr "το speechd-up δεν έχει εγκατασταθεί."
+
+# File: speak-with, line: 98
+msgid "speechd-up is already started."
+msgstr "το speechd-up έχει ήδη ξεκινήσει."
+
+# File: speak-with, line: 105
+# File: speak-with, line: 129
+msgid "Should speechd-up be also started at next boot? [Y/n] "
+msgstr "Θα πρέπει espeakup να ξεκινήσει επίσης στο επόμενο boot? [Y/n] "
+
+# File: speak-with, line: 119
+msgid "fenrir is not installed."
+msgstr "το fenrir δεν έχει εγκατασταθεί."
+
+# File: speak-with, line: 120
+msgid "fenrir is already started."
+msgstr "το fenrir έχει ήδη ξεκινήσει."
+
+# File: speak-with, line: 147
+msgid "Do you also want a mute console at next boot? [Y/n] "
+msgstr "Θέλετε επίσης μια κονσόλα σίγασης στο επόμενο boot? [Y/n] "
+
+# File: speak-with, line: 155
+msgid "OK"
+msgstr "ΟΚ"
+
+# File: speak-with, line: 163
+msgid "Unable to switch to the synthesizer "
+msgstr "Δεν είναι δυνατή η μετάβαση στο synthesizer "
+
+# File: speak-with, line: 169
+msgid "Do you also want to use this hard synthesizer at next boot? [Y/n] "
+msgstr "Θέλετε επίσης να χρησιμοποιήσετε αυτό το σκληρό synthesizer στο επόμενο boot? [Y/n] "
+
+# File: speakup-restore, line: 9
+# File: speakup-restore, line: 12
+msgid "speakup being not in use, there is no setting to restore."
+msgstr "το speakup δεν είναι σε χρήση, δεν υπάρχει ρύθμιση για την επαναφοράς."
+
+# File: speakup-restore, line: 36
+msgid "No speakup settings saved for "
+msgstr "Δεν αποθηκεύτηκαν ρυθμίσεις ομιλίας για "
+
+# File: speakup-restore, line: 38
+msgid "so nothing to restore."
+msgstr "δεν υπάρχει τίποτα για επαναφορά."
+
+# File: speakup-restore, line: 63
+msgid "speakup settings have been restored for "
+msgstr "οι ρυθμίσεις speakup έχουν αποκατασταθεί για "
+
+# File: speakup-save, line: 8
+# File: speakup-save, line: 14
+msgid "speakup being not in use, there is no setting to save."
+msgstr "το speakup δεν είναι σε χρήση, δεν υπάρχει ρύθμιση για αποθήκευση."
+
+# File: speakup-save, line: 26
+msgid "espeakup and speechd-up are both running, not saving settings."
+msgstr "espeakup και speechd-up τρέχουν και οι δύο, δεν αποθηκεύονται οι ρυθμίσεις."
+
+# File: speakup-save, line: 30
+msgid "neither espeakup nor speechd-up is running, not saving settings."
+msgstr "δεν εκτελείται η λειτουργία espeakup ούτε το speechd-up, δεν αποθηκεύονται οι ρυθμίσεις."
+
+# File: speakup-save, line: 51
+msgid "Current speakup settings have been saved in "
+msgstr "Οι τρέχουσες ρυθμίσεις ομιλητή έχουν αποθηκευτεί σε "
+
+# File: switch-off, line: 12
+# File: switch-on, line: 13
+msgid "emacspeak (The Complete Audio Desktop, based on emacs)"
+msgstr "emacspeak (Η πλήρης επιφάνεια εργασίας ήχου, βασισμένη σε emacs)"
+
+# File: switch-off, line: 13
+# File: switch-on, line: 14
+msgid "speechd-el (Emacs client to speech synthesizers and Braille displays)"
+msgstr "speechd-el (Πελάτης Emacs σε συνθέτες ομιλίας και οθόνες Braille)"
+
+# File: switch-off, line: 20
+# File: switch-on, line: 23
+msgid "Usage: "
+msgstr "Χρήση: "
+
+# File: switch-off, line: 22
+# File: switch-on, line: 25
+msgid "or"
+msgstr "ή"
+
+# File: switch-off, line: 24
+msgid "This script allows to disable:"
+msgstr "Αυτό το σενάριο επιτρέπει την απενεργοποίηση:"
+
+# File: switch-off, line: 31
+# File: switch-on, line: 34
+msgid "is an unknown feature."
+msgstr "είναι ένα άγνωστο χαρακτηριστικό."
+
+# File: switch-off, line: 32
+# File: switch-on, line: 35
+msgid "Available features:"
+msgstr "Διαθέσιμες δυνατότητες:"
+
+# File: switch-off, line: 40
+# File: switch-off, line: 54
+# File: switch-on, line: 43
+# File: switch-on, line: 81
+msgid "is not installed."
+msgstr "δεν έχει εγκατασταθεί."
+
+# File: switch-off, line: 49
+msgid "emacspeak is disabled."
+msgstr "το emacspeak είναι απενεργοποιημένο."
+
+# File: switch-off, line: 63
+msgid "speechd-el is disabled."
+msgstr "η ομιλία speechd-el είναι απενεργοποιημένη."
+
+# File: switch-on, line: 27
+msgid "This script allows to enable:"
+msgstr "Αυτό το σενάριο επιτρέπει την ενεργοποίηση:"
+
+# File: switch-on, line: 61
+msgid "emacspeak is enabled and speechd-el is disabled, as they are mutually exclusive."
+msgstr "το emacspeak είναι ενεργοποιημένο και το speechd-el είναι απενεργοποιημένο, καθώς αλληλοαποκλείονται."
+
+# File: switch-on, line: 67
+msgid "Do you want to use a voxin voice with emacspeak? [Y/n] "
+msgstr "Θέλετε να χρησιμοποιήσετε μια φωνή voxin με emacspeak? [Y/n] "
+
+# File: switch-on, line: 98
+msgid "speechd-el is enabled and emacspeak is disabled, as they are mutually exclusive."
+msgstr "το speechd-el είναι ενεργοποιημένο και το emacspeak είναι απενεργοποιημένο, καθώς αλληλοαποκλείονται."
+

@@ -1,0 +1,27 @@
+#!/bin/sh
+export TEXTDOMAIN=slint-scripts
+if [ "$(id -u)" = "0" ]; then
+    gettext "Please run this script as regular user."; echo
+    exit
+fi
+if [ -f ~/.profile ]; then
+	(cd ~ || exit 1
+	sed  "
+	/SAL_USE_VCLPLUGIN/d
+	/GNOME_ACCESSIBILITY/d
+	/GTK_MODULES/d
+	/QT_ACCESSIBILITY/d
+	/QT_LINUX_ACCESSIBILITY_ALWAYS_ON/d
+	/ACCESSIBILITY_ENABLED/d" .profile > .dummyprofile
+	mv .dummyprofile .profile
+	)
+fi
+if [ -f ~/.config/autostart/startorca.desktop ]; then
+    (cd ~/.config/autostart/ || exit 1
+    sed -i "s/Hidden.*/Hidden=true/" startorca.desktop
+    )
+    gsettings set org.mate.interface accessibility false 2>/dev/null
+    gettext "Orca has been disabled for you."; echo
+else
+    gettext "File ~/.config/autostart/startorca.desktop not found."; echo
+fi

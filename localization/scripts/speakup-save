@@ -1,0 +1,52 @@
+#!/bin/sh
+export TEXTDOMAIN=slint-scripts
+if [ ! "$(id -u)" -eq 0 ]; then
+	gettext "Please run this script as root."; echo
+	exit
+fi
+if [ ! -f /sys/accessibility/speakup/synth ]; then
+	 gettext "speakup being not in use, there is no setting to save."; echo
+	exit
+fi
+SYNTH="$(cat /sys/accessibility/speakup/synth)"
+
+if [ "$SYNTH" = "none" ]; then
+	gettext "speakup being not in use, there is no setting to save."; echo
+	exit
+fi
+ESPEAKUP="$(ps -C espeakup --noheaders|wc -l)"
+SPEECHD_UP="$(ps -C speechd-up --noheaders|wc -l)"
+# We save settings separately for:
+# espeakup
+# each hard synthesizer
+# speechd-up
+# so that we restore the relevant settings for the synthesizer and
+# case occurring the screen reader in use.
+if [ "$SYNTH" = "soft" ] && [ "$ESPEAKUP" -ne 0 ] && [ "$SPEECHD_UP" -ne 0 ]; then
+	gettext "espeakup and speechd-up are both running, not saving settings."; echo
+	exit
+fi
+if [ "$SYNTH" = "soft" ] && [ "$ESPEAKUP" -eq 0 ] && [ "$SPEECHD_UP" -eq 0 ]; then
+	gettext "neither espeakup nor speechd-up is running, not saving settings."; echo
+	exit
+fi
+if [ "$SYNTH" = "soft" ] && [ "$ESPEAKUP" -ne 0 ]; then
+	SYNTH="espeakup"
+fi
+if [ "$SYNTH" = "soft" ] && [ "$SPEECHD_UP" -ne 0 ]; then
+	SYNTH="speechd-up"
+fi
+# If SYNTH has not been set to speechd-up or speakup it is the hard synth
+# in use.
+mkdir -p "/var/lib/speakup/$SYNTH"
+cd /sys/accessibility/speakup || exit 1
+for i in $(find . -type d|sed "/^.$/d;s/..//"); do
+	mkdir -p "/var/lib/speakup/$SYNTH/$i"
+done
+for i in $(find . -type f|sed "s/..//"|grep -v -e silent -e version -e "synth.*"); do
+	if [ -f "$i" ] && [ -w "$i" ]; then
+		cp "$i" "/var/lib/speakup/$SYNTH/$i"
+	fi
+done
+gettext "Current speakup settings have been saved in "
+echo "/var/lib/speakup/$SYNTH."

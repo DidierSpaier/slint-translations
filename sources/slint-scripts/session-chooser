@@ -19,6 +19,7 @@ listesessions() {
 	cd /usr/share/xsessions || exit 1
 	for filename in *; do
 		name=$(printf '%s' "${filename%.*}")
+		[ "$name" = "gnome-xorg" ] && continue
 		[ "$name" = "z_plasma-safe" ] && name="plasma-safe"
 		echo $name
 	done|sort
@@ -47,45 +48,31 @@ usage() {
 session=$(echo "$1"|tr '[:upper:]' '[:lower:]')
 
 [ "$session" = "plasma-safe" ] && session="z_plasma-safe"
-# This is for xdm
-case $session in
-	plasma) xinit=kde;;
-	z_plasma-safe) xinit=kde;;
-	Lumina-DE) xinit=lumina;;
-	lxqt) xinit=lxqt;;
-	xfce) xinit=xfce;;
-	mate) xinit=mate;;
-	wmaker) xinit=wmaker;;
-	blackbox) xinit=blackbox;;
-	fvwm) xinit=fvwm2;;
-	fluxbox) xinit=fluxbox;;
-	ratpoison) xinit=ratpoison;;
-	i3) xinit=i3;;
-	*) printf '%s' "$session "
-	gettext "is not part of the available sessions:"; echo
-	listesessions
-	exit
-esac
 
 # This is for lightdm, kept to store then display the chosen session. 
 echo '[Desktop]' > "$HOME/.dmrc"
 echo "Session=$session" >> "$HOME/.dmrc"
 
 # This is for startx
-cp /etc/X11/xinit/xinitrc.$xinit "$HOME/.xinitrc"
+cp /etc/X11/xinit/xinitrc.${session%-classic} "$HOME/.xinitrc"
 [ "$session" = "z_plasma-safe" ]  \
 && \
 sed "s@startplasma-x11@startplasma-x11 --failsafe@" "$HOME/.xinitrc" > /tmp/.xinitrc \
 && mv /tmp/.xinitrc "$HOME/.xinitrc"
-
 # We need to run setxkbmap just after having started X, so that $DISPLAY
 # be set. But in some cases that is easier to do live than when building
 # the window manager or desktop. 
 case $session in
-	lxqt|mate|ratpoison|xfce) (cd "$HOME" || exit 1
-		sed "/exec/i \
+	lxqt|mate|ratpoison|xfce|gnome) (cd "$HOME" || exit 1
+		sed "/exec/i\
 /usr/bin/setxkbmap" .xinitrc > bof
 		mv bof .xinitrc);;
+	gnome-classic) (cd "$HOME" || exit 1
+		sed '/exec/i\
+/usr/bin/setxkbmap' .xinitrc > bof
+		sed '/exec/i\
+export GNOME_SHELL_SESSION_MODE=classic' bof > .xinitrc
+		rm -f bof);;
   	*) (cd "$HOME" || exit 1
 	sed "/DESKTOP_SESSION/i \
 /usr/bin/setxkbmap" .xinitrc > bof

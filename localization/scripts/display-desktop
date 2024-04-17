@@ -1,0 +1,51 @@
+#!/bin/sh
+export TEXTDOMAIN=slint-scripts
+if [ "$(id -u)" = "0" ];then
+	gettext "Please run 'display-desktop' as regular user."; echo
+	exit
+fi
+usage()	{
+	echo
+	gettext "Usage: display-desktop <desktop>"; echo
+echo
+gettext "This program displays menu entries specific to the selected desktop,
+if installed, when using another one."; echo
+gettext "List of desktops:"; echo
+echo "  lxqt"
+echo "  mate"
+echo "  all"
+gettext "If you choose 'all' the menu entries for any installed desktop will be 
+displayed in other ones."; echo
+echo
+gettext "This can be reverted with the command hide-desktop."; echo
+echo
+}
+display() {
+	from="/usr/share/slint/applications"
+	to="$HOME/.local/share/applications"
+	find "$from/$1"|sed "s|.*/||"| while read -r i; do
+		rm -f "$to/$i"
+		
+	done
+}
+[ $# -ne 1 ] && usage && exit
+mkdir -p "$HOME"/.local/share/applications
+desktop=$(echo "$1"|tr '[:upper:]' '[:lower:]')
+case $desktop in
+	lxqt|mate)
+		display "$desktop"
+		gettext "Done."; echo
+		gettext "The menus will be modified at next login."; echo;;
+	all)
+		display lxqt; display mate
+		gettext "Done."; echo
+		gettext "The menus will be modified at next login."; echo;;
+	*)
+		printf '%s' "$desktop "
+		gettext "is not a listed session."; echo
+		usage
+esac
+
+
+
+

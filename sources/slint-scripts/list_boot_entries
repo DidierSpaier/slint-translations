@@ -1,4 +1,10 @@
 #!/bin/sh
+# This script has been written from scratch and dedicated to the public
+# domain by its author: Didier Spaier, Paris.
+# For more information, please refer to <http://unlicense.org/>
+
+# Last updated 10 March 2024
+
 export TEXTDOMAIN=slint-scripts
 if [ ! "$(id -u)" -eq 0 ]; then
 	gettext "Please run this command as root."; echo
@@ -11,7 +17,14 @@ if [ ! -f /boot/grub/grub.cfg ]; then
 	gettext "or if this command does not exist:"; echo
 	echo "grub-mkconfig -o /boot/grub/grub.cfg"
 fi
-sed -n "/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%\1%p" /boot/grub/grub.cfg > /tmp/list_boot_entries 
+rm -f /tmp/list_boot_entries
+sed -n "{ 
+	/submenu/,/^}$/ {
+	/^[[:space:]]*submenu /s%[[:space:]]*[^']*'\([^']*\)'.*%\1%p
+	/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%  \1%p
+	}
+	/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%\1%p
+}" /boot/grub/grub.cfg >> /tmp/list_boot_entries
 for i in $(find /boot/grub/* -prune -name "*.cfg"|grep -v grub.cfg); do
 	sed -n "/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%\1%p" "$i" >> /tmp/list_boot_entries
 done
@@ -23,11 +36,32 @@ echo
 gettext "To navigate in the menu you will use the down and up arrow keys, then
 press Enter to use the selected boot entry."
 echo
+gettext "To display the boot entries inside a submenu, select it then press Enter."
+echo
 gettext "To boot directly the most recent snapshot (if any), just press 1."
 echo
-echo
-gettext "Press q quit this display."
-echo
 } >> /tmp/list_boot_entries
-w3m -o confirm_qq=false /tmp/list_boot_entries
+if command -v w3m >/dev/null; then
+	{
+	echo
+	gettext "Press q quit this display."
+	echo
+	} >> /tmp/list_boot_entries
+	w3m -o confirm_qq=false /tmp/list_boot_entries
+elif command -v most >/dev/null; then
+	{
+	echo
+	gettext "Press q quit this display."
+	echo
+	} >> /tmp/list_boot_entries
+    less /tmp/list_boot_entries
+elif command -v less >/dev/null; then
+	{
+	echo
+	gettext "Press q quit this display."
+	echo
+	} >> /tmp/list_boot_entries
+    less /tmp/list_boot_entries
+else cat /tmp/list_boot_entries
+fi
 rm /tmp/list_boot_entries

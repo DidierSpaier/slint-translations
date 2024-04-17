@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: slint-scripts 20230203\n"
+"Project-Id-Version: slint-scripts 20231117\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 19:54+0100\n"
+"POT-Creation-Date: 2023-11-17 16:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,10 +50,10 @@ msgstr ""
 # File: display-desktop, line: 41
 # File: hide-desktop, line: 39
 # File: hide-desktop, line: 43
-# File: speak-with, line: 89
-# File: speak-with, line: 111
-# File: speak-with, line: 135
-# File: speak-with, line: 177
+# File: speak-with, line: 95
+# File: speak-with, line: 119
+# File: speak-with, line: 145
+# File: speak-with, line: 190
 msgid "Done."
 msgstr ""
 #
@@ -96,8 +96,6 @@ msgstr ""
 #
 # File: list-espeak-ng-voices, line: 14
 # File: list-espeak-ng-voices, line: 44
-# File: list-espeak-ng-voices.save, line: 14
-# File: list-espeak-ng-voices.save, line: 44
 msgid ""
 "To use one of theses voices with espeakup, set it in /etc/espeakup.conf."
 msgstr ""
@@ -105,62 +103,46 @@ msgstr ""
 # File: list-espeak-ng-voices, line: 15
 # File: list-espeak-ng-voices, line: 45
 # File: list-espeak-ng-voices, line: 64
-# File: list-espeak-ng-voices.save, line: 15
-# File: list-espeak-ng-voices.save, line: 45
-# File: list-espeak-ng-voices.save, line: 64
 msgid "For instance, to use the voice: "
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 17
 # File: list-espeak-ng-voices, line: 47
-# File: list-espeak-ng-voices.save, line: 17
-# File: list-espeak-ng-voices.save, line: 47
 msgid "write:"
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 19
 # File: list-espeak-ng-voices, line: 49
 # File: list-espeak-ng-voices, line: 71
-# File: list-espeak-ng-voices.save, line: 19
-# File: list-espeak-ng-voices.save, line: 49
-# File: list-espeak-ng-voices.save, line: 71
 msgid "in /etc/espeakup.conf."
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 21
-# File: list-espeak-ng-voices.save, line: 21
-msgid "Do yo want to list also the mbrola voices? [y/N]"
+msgid "Do you want to list also the mbrola voices? [y/N]"
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 40
-# File: list-espeak-ng-voices.save, line: 40
 msgid "Installed mbrola voices:"
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 51
 # File: list-espeak-ng-voices, line: 63
-# File: list-espeak-ng-voices.save, line: 51
-# File: list-espeak-ng-voices.save, line: 63
 msgid "Other mbrola voices could be used if installed."
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 52
-# File: list-espeak-ng-voices.save, line: 52
-msgid "Do yo want to display them? [Y/n] "
+msgid "Do you want to display them? [Y/n] "
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 59
-# File: list-espeak-ng-voices.save, line: 59
 msgid "Not Installed mbrola voices:"
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 66
-# File: list-espeak-ng-voices.save, line: 66
 msgid "type as root:"
 msgstr ""
 #
 # File: list-espeak-ng-voices, line: 69
-# File: list-espeak-ng-voices.save, line: 69
 msgid "then write:"
 msgstr ""
 #
@@ -203,88 +185,92 @@ msgstr ""
 msgid "This script should be run as root."
 msgstr ""
 #
-# File: login-chooser, line: 23
+# File: login-chooser, line: 24
 msgid "Usage: login-chooser <login manager>"
 msgstr ""
 #
-# File: login-chooser, line: 24
+# File: login-chooser, line: 25
 msgid "Available login managers:"
 msgstr ""
 #
-# File: login-chooser, line: 26
+# File: login-chooser, line: 27
 msgid "Short descriptions:"
 msgstr ""
 #
-# File: login-chooser, line: 28
+# File: login-chooser, line: 29
 msgid "Login in text mode, in a console. From there, you"
 msgstr ""
 #
-# File: login-chooser, line: 30
+# File: login-chooser, line: 31
 msgid "can type \"startx\" to start a graphical session."
 msgstr ""
 #
-# File: login-chooser, line: 31
+# File: login-chooser, line: 32
 msgid "lightdm: Light Display Manager, accessible with speech."
 msgstr ""
 #
-# File: login-chooser, line: 34
-msgid "Simple Desktop Display Manager."
+# File: login-chooser, line: 35
+msgid "Gnome Desktop Manager, accessible with speech."
 msgstr ""
 #
 # File: login-chooser, line: 38
+msgid "Simple Desktop Display Manager."
+msgstr ""
+#
+# File: login-chooser, line: 42
 msgid "Login is currently set to text mode."
 msgstr ""
 #
-# File: login-chooser, line: 43
-# File: login-chooser, line: 125
-# File: login-chooser, line: 141
-# File: login-chooser, line: 156
-# File: login-chooser, line: 171
-# File: login-chooser, line: 186
+# File: login-chooser, line: 47
+# File: login-chooser, line: 130
+# File: login-chooser, line: 146
+# File: login-chooser, line: 161
+# File: login-chooser, line: 176
+# File: login-chooser, line: 191
 msgid "The display manager"
 msgstr ""
 #
-# File: login-chooser, line: 45
+# File: login-chooser, line: 49
 msgid "is currently set."
 msgstr ""
 #
-# File: login-chooser, line: 53
+# File: login-chooser, line: 57
 msgid "To reboot immediatly press R then Enter, else just press Enter."
 msgstr ""
 #
-# File: login-chooser, line: 60
+# File: login-chooser, line: 64
 msgid "If you want speech at login press S then Enter, else just press Enter."
 msgstr ""
 #
-# File: login-chooser, line: 79
+# File: login-chooser, line: 83
 msgid "You will have speech at login."
 msgstr ""
 #
-# File: login-chooser, line: 90
+# File: login-chooser, line: 94
 msgid "You won't have speech at login."
 msgstr ""
 #
-# File: login-chooser, line: 97
+# File: login-chooser, line: 102
 msgid "is not among the available login managers:"
 msgstr ""
 #
-# File: login-chooser, line: 105
+# File: login-chooser, line: 110
 msgid "Login will occur in text mode on next boot."
 msgstr ""
 #
-# File: login-chooser, line: 106
+# File: login-chooser, line: 111
 msgid "If you need speech type one of these commands before rebooting:"
 msgstr ""
 #
-# File: login-chooser, line: 127
-# File: login-chooser, line: 143
-# File: login-chooser, line: 158
-# File: login-chooser, line: 173
-# File: login-chooser, line: 188
+# File: login-chooser, line: 132
+# File: login-chooser, line: 148
+# File: login-chooser, line: 163
+# File: login-chooser, line: 178
+# File: login-chooser, line: 193
 msgid "will be in use on next boot."
 msgstr ""
 #
-# File: login-chooser, line: 193
+# File: login-chooser, line: 198
 msgid "Unknown choice. Check your spelling."
 msgstr ""
 #
@@ -378,34 +364,30 @@ msgid "Writing the booting equipment on the stick..."
 msgstr ""
 #
 # File: rescuebootstick, line: 104
-msgid "Done. you may now remove the rescue boot stick."
+msgid "Done. You may now remove the rescue boot stick."
 msgstr ""
 #
 # File: session-chooser, line: 14
 msgid "Running a graphical session as root is not allowed."
 msgstr ""
 #
-# File: session-chooser, line: 29
+# File: session-chooser, line: 30
 msgid "Your default session is not set."
 msgstr ""
 #
-# File: session-chooser, line: 31
+# File: session-chooser, line: 32
 msgid "Your session is currently set to"
 msgstr ""
 #
-# File: session-chooser, line: 39
+# File: session-chooser, line: 40
 msgid "Usage: session-chooser <desktop session>"
 msgstr ""
 #
-# File: session-chooser, line: 40
+# File: session-chooser, line: 41
 msgid "Available desktop sessions:"
 msgstr ""
 #
-# File: session-chooser, line: 65
-msgid "is not part of the available sessions:"
-msgstr ""
-#
-# File: session-chooser, line: 98
+# File: session-chooser, line: 85
 msgid "Your default session has been set to"
 msgstr ""
 #
@@ -509,52 +491,55 @@ msgstr ""
 msgid "is not a valid argument of this command."
 msgstr ""
 #
-# File: speak-with, line: 75
+# File: speak-with, line: 78
 msgid "espeakup is not installed."
 msgstr ""
 #
-# File: speak-with, line: 76
+# File: speak-with, line: 79
 msgid "espeakup is already started."
 msgstr ""
 #
-# File: speak-with, line: 83
+# File: speak-with, line: 89
 msgid "Should espeakup be also started at next boot? [Y/n] "
 msgstr ""
 #
-# File: speak-with, line: 97
+# File: speak-with, line: 103
 msgid "speechd-up is not installed."
 msgstr ""
 #
-# File: speak-with, line: 98
+# File: speak-with, line: 104
 msgid "speechd-up is already started."
 msgstr ""
 #
-# File: speak-with, line: 105
-# File: speak-with, line: 129
+# File: speak-with, line: 113
 msgid "Should speechd-up be also started at next boot? [Y/n] "
 msgstr ""
 #
-# File: speak-with, line: 119
+# File: speak-with, line: 127
 msgid "fenrir is not installed."
 msgstr ""
 #
-# File: speak-with, line: 120
+# File: speak-with, line: 128
 msgid "fenrir is already started."
 msgstr ""
 #
-# File: speak-with, line: 147
+# File: speak-with, line: 139
+msgid "Should fenrir be also started at next boot? [Y/n] "
+msgstr ""
+#
+# File: speak-with, line: 160
 msgid "Do you also want a mute console at next boot? [Y/n] "
 msgstr ""
 #
-# File: speak-with, line: 155
+# File: speak-with, line: 168
 msgid "OK"
 msgstr ""
 #
-# File: speak-with, line: 163
+# File: speak-with, line: 176
 msgid "Unable to switch to the synthesizer "
 msgstr ""
 #
-# File: speak-with, line: 169
+# File: speak-with, line: 182
 msgid "Do you also want to use this hard synthesizer at next boot? [Y/n] "
 msgstr ""
 #
