@@ -58,8 +58,6 @@ rescuebootstick(){
 			SERIAL=$(cat "$RESCUE/added")
 			lsblk -bpPo serial,name,size,vendor,model,type|grep "SERIAL=\"$SERIAL\"" > "$RESCUE/rescuebootstick"
 			. "$RESCUE/rescuebootstick"
-cat $RESCUE/rescuebootstick
-read
 			echo
 			RESCUEPATH="$NAME"
 			gettext "This drive will be used as rescue boot stick."; echo
@@ -101,9 +99,7 @@ read
 	--themes='' --compress=xz -V "ISORESCUE" -iso_mbr_part_type 0x83 \
 	-o "$RESCUE/rescue.iso"  -partition_offset 16 -J \
 	--xorriso=grub-mkrescue-sed.sh "$ISORESCUE" 1>>"$RESCUE/makerescueiso.log" 2>>"$RESCUE/makerescueiso.log"
-echo "cp $RESCUE/rescue.iso" "$RESCUEPATH"
-read
-cp "$RESCUE/rescue.iso" "$RESCUEPATH"
+	cp "$RESCUE/rescue.iso" "$RESCUEPATH"
 	sync
 	rm -r "$RESCUE"
 	gettext "Done. You may now remove the rescue boot stick."; echo
