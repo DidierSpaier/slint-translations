@@ -58,6 +58,8 @@ rescuebootstick(){
 			SERIAL=$(cat "$RESCUE/added")
 			lsblk -bpPo serial,name,size,vendor,model,type|grep "SERIAL=\"$SERIAL\"" > "$RESCUE/rescuebootstick"
 			. "$RESCUE/rescuebootstick"
+cat $RESCUE/rescuebootstick
+read
 			echo
 			RESCUEPATH="$NAME"
 			gettext "This drive will be used as rescue boot stick."; echo
@@ -86,8 +88,9 @@ rescuebootstick(){
 	done
 	echo
 	gettext "Please wait while we prepare the booting equipment..."; echo
-	KERNELPATH=$(find /boot -name "vmlinuz-generic-*")
+	KERNELPATH=$(find /boot -name "vmlinuz-*")
 	VERSION=$(sed  "s&[[:space:]].*&&;s&.*-&&" /proc/cmdline)
+	KERNELPATH=$(find /boot -name "vmlinuz-*"|grep $VERSION)
 	INITRD="initramfs-${VERSION}.img"
 	mkdir -p "$ISORESCUE/boot/grub"
 	grub-mkconfig -o "$ISORESCUE/boot/grub/grub.cfg"
@@ -98,7 +101,9 @@ rescuebootstick(){
 	--themes='' --compress=xz -V "ISORESCUE" -iso_mbr_part_type 0x83 \
 	-o "$RESCUE/rescue.iso"  -partition_offset 16 -J \
 	--xorriso=grub-mkrescue-sed.sh "$ISORESCUE" 1>>"$RESCUE/makerescueiso.log" 2>>"$RESCUE/makerescueiso.log"
-	cp "$RESCUE/rescue.iso" "$RESCUEPATH"
+echo "cp $RESCUE/rescue.iso" "$RESCUEPATH"
+read
+cp "$RESCUE/rescue.iso" "$RESCUEPATH"
 	sync
 	rm -r "$RESCUE"
 	gettext "Done. You may now remove the rescue boot stick."; echo
