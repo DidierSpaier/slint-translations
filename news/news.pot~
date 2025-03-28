@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-21 18:58+0200\n"
+"POT-Creation-Date: 2024-06-20 22:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: Title ===
 #: sources/news/news.adoc:5
 #, no-wrap
-msgid "20 June 2024: Updates preparing the release of a new ISO"
+msgid "18 June 2024: Updates preparing the release of a new ISO"
 msgstr ""
 
 #. type: Plain text
 #: sources/news/news.adoc:8
 msgid ""
-"The batch of updates available today paves the way for a new ISO that will, "
+"The batch of updates available today pave the way for a new ISO that will, "
 "beyond these updates and a few fixes of the installer, provide only one "
 "desktop: MATE."
 msgstr ""
@@ -63,7 +63,7 @@ msgstr ""
 
 #. type: Plain text
 #: sources/news/news.adoc:16
-msgid "An upgrade of several a11y applications to their latest stable versions"
+msgid "An upgrade to several a11y applications to their latest stable versions"
 msgstr ""
 
 #. type: Plain text
@@ -75,14 +75,14 @@ msgstr ""
 #: sources/news/news.adoc:19
 msgid ""
 "The changes are detailed in the https://slackware.uk/slint/x86_64/slint-15.0/"
-"ChangeLog.txt[Changelog]"
+"ChangeLog.txt.[Changelog]"
 msgstr ""
 
 #. type: Plain text
 #: sources/news/news.adoc:21
 msgid ""
 "Before listing the major ones, here is how to make existing desktops look as "
-"if they had been installed after the upgrade."
+"if they had been installed them after the upgrade."
 msgstr ""
 
 #. type: Plain text
@@ -103,8 +103,8 @@ msgstr ""
 #: sources/news/news.adoc:27
 msgid ""
 "If you want to reconfigure LXQt to get its new appearance for a given user, "
-"you need to first get out of LXQt. Either type as root `login-chooser text` "
-"then reboot, or log in another desktop like MATE. Then type as regular user:"
+"you need first to get out of LXQt. Either type as root `login-chooser text` "
+"then rebootn, or log in another desktop like MATE. Then type as regular user:"
 msgstr ""
 
 #. type: Plain text
@@ -149,7 +149,7 @@ msgid ""
 "The Slint layout provides a single panel including a Brisk menu giving a "
 "direct access to several utilities. 3 other menus are available: Advanced, "
 "Classic (the default for Slint-legacy) and Compact. In the Slint layout "
-"pressing alt-f1 now raises the Compact menu with a single column. In the "
+"pressing alt-f1 now raise the Compact menu with a single column. In the "
 "Slint-legacy layout pressing alt-F1 still raises the Classical menu."
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr ""
 #. type: Plain text
 #: sources/news/news.adoc:59
 msgid ""
-"Visual appearance: many themes are added or upgraded: Qogir-icon-theme, "
+"Visual appearance: many themes are added or upgarded: Qogir-icon-theme, "
 "emerald-themes (the \"overglossed\" theme of the emerald decorator is "
 "associated with the Compiz window manager), kvantum-theme-qogir, breeze-blue-"
 "cursor-theme and breeze-icons for LXQt, papirus-icon-theme, yaru-gtk-theme. "
@@ -254,10 +254,10 @@ msgstr ""
 #. type: Plain text
 #: sources/news/news.adoc:60
 msgid ""
-"System: btrtbk (backup tool for BTRFS subvolumes) and sof-firmware are "
-"added, absm (BTRFS snashot manager), amd-microcode, intel-microcode, kernel, "
-"kernel-firmware, and qemu (in /extra) are upgraded. The guake drop-down "
-"terminal is added"
+"System: btrtbk (backup tool for BTRFS subvolumes) and sof-firmware is added, "
+"absm (BTRFS snashot manager), amd-microcode, intel-microcode, kernel, kernel-"
+"firmware, and qemu (in /extra) are upgraded. The guake drop-down terminal is "
+"added"
 msgstr ""
 
 #. type: Plain text
@@ -284,12 +284,12 @@ msgstr ""
 #. type: Plain text
 #: sources/news/news.adoc:66
 msgid ""
-"After upgrade LXQt can have a black background because the previous default "
-"wallpaper has been removed. You can choose another one typing `lxqt-config-"
-"appearance`, that can also be started form the menu or a left click on the "
-"desktop. Alternatively, as indicated above type after a text login: `cp /usr/"
-"share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`. This will display the "
-"new default wallpaper."
+"After upgrade the LXQt can have a black background because the previous "
+"default wallpaper has been removed. You can choose another one typing `lxqt-"
+"config-appearance`, that can also be started form the menu or a left click "
+"on the desktop. Alternatively, as indicated above type after a text login: "
+"`cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`. This will "
+"display the new default wallpaper."
 msgstr ""
 
 #. type: Plain text
@@ -302,8 +302,8 @@ msgstr ""
 #. type: Plain text
 #: sources/news/news.adoc:68
 msgid ""
-"If you disable the display of the desktop icons in mate-tweak, a right click "
-"on the desktop becomes ineffective."
+"If you disable the dispay of the desktop icons in mate-tweak, the right "
+"click on the desktop becomes ineffective."
 msgstr ""
 
 #. type: Title ===
@@ -456,7 +456,7 @@ msgid ""
 "contains:"
 msgstr ""
 
-#. type: delimited block .
+#. type: delimited block . 4
 #: sources/news/news.adoc:124
 #, no-wrap
 msgid ""

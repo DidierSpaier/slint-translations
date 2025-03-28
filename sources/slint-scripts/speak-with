@@ -78,9 +78,7 @@ case $ARGUMENT in
 		[ ! -x /usr/bin/espeakup ] && gettext "espeakup is not installed." && echo && exit
 		[ "$ESPEAKUP" = "y" ] && gettext "espeakup is already started." && echo && exit
 		[ "$FENRIR" = "y" ] && [ -f /etc/rc.d/rc.fenrir ] && sh /etc/rc.d/rc.fenrir stop
-		[ ! "$(ps -C fenrir --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.fenrir stop
 		[ "$SPEECHDUP" = "y" ] && sh /etc/rc.d/rc.speechd-up stop
-		[ ! "$(ps -C speechd-up --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.speechd-up stop
 		echo "$confnote" > /etc/speakup.conf
 		echo "hard=none" >> /etc/speakup.conf
 		
@@ -103,9 +101,7 @@ case $ARGUMENT in
 		[ ! -x /usr/bin/speechd-up ] && gettext "speechd-up is not installed." && echo && exit
 		[ "$SPEECHDUP" = "y" ] && gettext "speechd-up is already started." && echo && exit
 		[ "$FENRIR" = "y" ]  && [ -f /etc/rc.d/rc.fenrir ] && sh /etc/rc.d/rc.fenrir stop
-		[ ! "$(ps -C fenrir --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.fenrir stop
 		[ "$ESPEAKUP" = "y" ] && sh /etc/rc.d/rc.espeakup stop
-		[ ! "$(ps -C espeakup --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.espeakup stop
 		echo "$confnote" > /etc/speakup.conf
 		echo "hard=none" >> /etc/speakup.conf
 		sh /etc/rc.d/rc.speechd-up start
@@ -127,9 +123,7 @@ case $ARGUMENT in
 		[ ! -x /usr/bin/fenrir ] && gettext "fenrir is not installed." && echo && exit
 		[ "$FENRIR" = "y" ] && gettext "fenrir is already started." && echo && exit
 		[ "$SPEECHDUP" = "y" ] && sh /etc/rc.d/rc.speechd-up stop
-		[ ! "$(ps -C speechd-up --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.speechd-up stop
 		[ "$ESPEAKUP" = "y" ] && sh /etc/rc.d/rc.espeakup stop
-		[ ! "$(ps -C espeakup --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.espeakup stop
 		[ "$SPKSYNTH" ] && echo none > /sys/accessibility/speakup/synth
 		echo "$confnote" > /etc/speakup.conf
 		echo "hard=none" >> /etc/speakup.conf
@@ -151,11 +145,8 @@ case $ARGUMENT in
 	;;
 	none)
 		[ "$FENRIR" = "y" ] && sh /etc/rc.d/rc.fenrir stop
-		[ ! "$(ps -C fenrir --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.fenrir stop
 		[ "$ESPEAKUP" = "y" ] && sh /etc/rc.d/rc.espeakup stop
-		[ ! "$(ps -C espeakup --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.espeakup stop
 		[ "$SPEECHDUP" = "y" ] && sh /etc/rc.d/rc.speechd-up stop
-		[ ! "$(ps -C speechd-up --noheaders|wc -l)" = "0" ] && sh /etc/rc.d/rc.speehcd-up stop
 		[ ! "$SPKSYNTH" = "" ] && echo none > /sys/accessibility/speakup/synth
 		gettext "Do you also want a mute console at next boot? [Y/n] "
 		read -r ANSWER

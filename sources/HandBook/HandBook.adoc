@@ -6,6 +6,8 @@
 :pdf-themesdir: themes
 :pdf-theme: default
 
+Note: this document will be updated to reflect recent changes - 21/06/2024
+
 == Introduction to Slint
 
 === About Slint

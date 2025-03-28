@@ -49,9 +49,14 @@ session=$(echo "$1"|tr '[:upper:]' '[:lower:]')
 
 [ "$session" = "plasma-safe" ] && session="z_plasma-safe"
 
-# This is for lightdm, kept to store then display the chosen session. 
-echo '[Desktop]' > "$HOME/.dmrc"
-echo "Session=$session" >> "$HOME/.dmrc"
+# This is for lightdm, set the default session for the user.
+# We need that the script user_session authored by Alexandros Frantzis
+# be installed. It is shipped in the lightdm package in Slint.
+
+username=$(id -un)
+if [ -x /usr/bin/user_xsession.py ]; then
+	user_xsession.py --user-name $username set $session
+fi
 
 # This is for startx
 cp /etc/X11/xinit/xinitrc.${session%-classic} "$HOME/.xinitrc"

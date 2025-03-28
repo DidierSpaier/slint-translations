@@ -3,7 +3,7 @@
 # domain by its author: Didier Spaier, Paris.
 # For more information, please refer to <http://unlicense.org/>
 
-# Last updated 10 March 2024
+# Last updated Friday 21 March 2024
 
 export TEXTDOMAIN=slint-scripts
 if [ ! "$(id -u)" -eq 0 ]; then
@@ -18,16 +18,18 @@ if [ ! -f /boot/grub/grub.cfg ]; then
 	echo "grub-mkconfig -o /boot/grub/grub.cfg"
 fi
 rm -f /tmp/list_boot_entries
+sed /^[[:space:]]*menuentry[[:space:]]/s#\"#\'#g /boot/grub/grub.cfg > /tmp/editedgrub.cfg
 sed -n "{ 
 	/submenu/,/^}$/ {
 	/^[[:space:]]*submenu /s%[[:space:]]*[^']*'\([^']*\)'.*%\1%p
 	/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%  \1%p
 	}
 	/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%\1%p
-}" /boot/grub/grub.cfg >> /tmp/list_boot_entries
+}" /tmp/editedgrub.cfg >> /tmp/list_boot_entries
 for i in $(find /boot/grub/* -prune -name "*.cfg"|grep -v grub.cfg); do
 	sed -n "/^[[:space:]]*\menuentry /s%[^']*'\([^']*\)'.*%\1%p" "$i" >> /tmp/list_boot_entries
 done
+rm -f /tmp/editedgrub.cfg
 {
 echo
 gettext "After booting, the boot menu will be displayed as above."
