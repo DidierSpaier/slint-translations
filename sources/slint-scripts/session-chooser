@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC1091
 # This script sets the X session started with the startx command or
 # with a display manager, unless the session be set from the display
 # manager's greeter.
@@ -8,84 +9,61 @@
 # Didier Spaier didieratslintdotfr  25 November 2017
 
 # Currently usable with lightdm or using startx but not using sddm.
-# 21 April 2022
+# Last revision: 29 March 2025
 export TEXTDOMAIN=slint-scripts
+. gettext.sh
 if [ "$(id -u)" -eq 0 ]; then
 	gettext "Running a graphical session as root is not allowed."; echo
 	exit
 fi
-
-listesessions() {
-	cd /usr/share/xsessions || exit 1
-	for filename in *; do
-		name=$(printf '%s' "${filename%.*}")
-		[ "$name" = "gnome-xorg" ] && continue
-		[ "$name" = "z_plasma-safe" ] && name="plasma-safe"
-		echo $name
-	done|sort
-}
-
+available=$(mktemp)
+(cd /usr/share/xsessions || exit 1
+for filename in *; do
+	name=$(printf '%s' "${filename%.*}")
+	echo "$name"
+done|sort >"$available"
+)
 currentsession() {
 	if [ ! -f "$HOME/.dmrc" ]; then
 		gettext "Your default session is not set."; echo
 	else
 		gettext "Your session is currently set to"
 		name=$(sed -n "s@.*=@@;2p" "$HOME/.dmrc")
-		[ "$name" = "z_plasma-safe" ] && name="plasma-safe"
 		echo " ${name}."
 	fi
 }
-
 usage() {
 	gettext "Usage: session-chooser <desktop session>"; echo
 	gettext "Available desktop sessions:"; echo
-	listesessions
+	cat "$available"
 	currentsession
+	rm "$available"
 }
  
 [ $# -ne 1 ] && usage && exit
-
 session=$(echo "$1"|tr '[:upper:]' '[:lower:]')
-
-[ "$session" = "plasma-safe" ] && session="z_plasma-safe"
-
-# This is for lightdm, set the default session for the user.
+if ! grep -q "^${session}$" "$available"; then
+	eval_gettext "The session \$session is not available"
+	echo
+	usage
+	exit
+fi
+# This is for lightdm: set the default session for the user.
 # We need that the script user_session authored by Alexandros Frantzis
 # be installed. It is shipped in the lightdm package in Slint.
-
 username=$(id -un)
 if [ -x /usr/bin/user_xsession.py ]; then
-	user_xsession.py --user-name $username set $session
+	user_xsession.py --user-name "$username" set "$session"
 fi
-
 # This is for startx
-cp /etc/X11/xinit/xinitrc.${session%-classic} "$HOME/.xinitrc"
-[ "$session" = "z_plasma-safe" ]  \
-&& \
-sed "s@startplasma-x11@startplasma-x11 --failsafe@" "$HOME/.xinitrc" > /tmp/.xinitrc \
-&& mv /tmp/.xinitrc "$HOME/.xinitrc"
+cp /etc/X11/xinit/xinitrc."$session" "$HOME/.xinitrc"
 # We need to run setxkbmap just after having started X, so that $DISPLAY
 # be set. But in some cases that is easier to do live than when building
 # the window manager or desktop. 
-case $session in
-	lxqt|mate|ratpoison|xfce|gnome) (cd "$HOME" || exit 1
-		sed "/exec/i\
+(cd "$HOME" || exit 1
+sed "/DESKTOP_SESSION/i \
 /usr/bin/setxkbmap" .xinitrc > bof
-		mv bof .xinitrc);;
-	gnome-classic) (cd "$HOME" || exit 1
-		sed '/exec/i\
-/usr/bin/setxkbmap' .xinitrc > bof
-		sed '/exec/i\
-export GNOME_SHELL_SESSION_MODE=classic' bof > .xinitrc
-		rm -f bof);;
-  	*) (cd "$HOME" || exit 1
-	sed "/DESKTOP_SESSION/i \
-/usr/bin/setxkbmap" .xinitrc > bof
-		mv bof .xinitrc)
-esac
-case $session in
-	z_plasma-safe) displayedsession=plasma-safe;;
-	*) displayedsession=$session
-esac
-gettext  "Your default session has been set to"
-echo " ${displayedsession}."
+mv bof .xinitrc
+)
+eval_gettext  "Your default session has been set to"
+echo " ${session}."
