@@ -6,7 +6,7 @@
 
 # Propose to remove all packages kernel, kernel-source and kernel-headers
 # with a version number not matching that of the running kernel.
-# Remove the iniramfs whose version number that of a running kernel.
+# Then remove the iniramfs not associated to an installed kernel.
 TEXTDOMAIN=slint-scripts
 if [ ! "$(id -u)" -eq 0 ]; then
 	gettext "Please run this script as root."; echo
