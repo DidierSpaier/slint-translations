@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-17 16:48+0100\n"
-"PO-Revision-Date: 2023-06-10 15:49\n"
+"POT-Creation-Date: 2023-02-03 19:54+0100\n"
+"PO-Revision-Date: 2025-05-09 09:55\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -16,41 +16,36 @@ msgstr ""
 "X-Crowdin-Language: nl\n"
 "X-Crowdin-File: /slint_scripts/slint_scripts.pot\n"
 "X-Crowdin-File-ID: 46\n"
-#
+
 # File: display-desktop, line: 4
 msgid "Please run 'display-desktop' as regular user."
 msgstr "Voer 'display-desktop' uit als gewone gebruiker."
-#
+
 # File: display-desktop, line: 9
 # File: hide-desktop, line: 9
 msgid "Usage: display-desktop <desktop>"
 msgstr "Gebruik: display-desktop <desktop>"
-#
+
 # File: display-desktop, line: 11
-msgid ""
-"This program displays menu entries specific to the selected desktop,\n"
+msgid "This program displays menu entries specific to the selected desktop,\n"
 "if installed, when using another one."
-msgstr ""
-"Dit programma toont menu-items specifiek voor de gekozen desktop tijdens "
-"gebruik van een andere indien geïnstalleerd."
-#
+msgstr "Dit programma toont menu-items specifiek voor de gekozen desktop tijdens gebruik van een andere indien geïnstalleerd."
+
 # File: display-desktop, line: 13
 # File: hide-desktop, line: 15
 msgid "List of desktops:"
 msgstr "Lijst van desktops:"
-#
+
 # File: display-desktop, line: 17
-msgid ""
-"If you choose 'all' the menu entries for any installed desktop will be \n"
+msgid "If you choose 'all' the menu entries for any installed desktop will be \n"
 "displayed in other ones."
-msgstr ""
-"Als je 'alle' kiest worden de menu-items van alle geïnstalleerde \n"
+msgstr "Als je 'alle' kiest worden de menu-items van alle geïnstalleerde \n"
 "desktops in alle desktops getoond."
-#
+
 # File: display-desktop, line: 20
 msgid "This can be reverted with the command hide-desktop."
 msgstr "Dit kan worden teruggedraaid met het commando hide-desktop."
-#
+
 # File: display-desktop, line: 37
 # File: display-desktop, line: 41
 # File: hide-desktop, line: 39
@@ -61,61 +56,54 @@ msgstr "Dit kan worden teruggedraaid met het commando hide-desktop."
 # File: speak-with, line: 177
 msgid "Done."
 msgstr "Klaar."
-#
+
 # File: display-desktop, line: 38
 # File: display-desktop, line: 42
 msgid "The menus will be modified at next login."
 msgstr "De gewijzigde menu's worden na opnieuw inloggen getoond."
-#
+
 # File: display-desktop, line: 45
 # File: hide-desktop, line: 47
 msgid "is not a listed session."
 msgstr "is geen sessie uit de lijst."
-#
+
 # File: hide-desktop, line: 4
 msgid "Please run 'hide-desktop' as regular user."
 msgstr "Voer 'hide-desktop' uit als gewone gebruiker."
-#
+
 # File: hide-desktop, line: 11
-msgid ""
-"This program hide most menu entries specific to the selected desktop,\n"
+msgid "This program hide most menu entries specific to the selected desktop,\n"
 "if installed, when running another one. Corresponding applications will\n"
 "stay available in all other desktops typing commands from a terminal or\n"
 "through a \"run...\" dialog (Alt+F2)."
-msgstr ""
-"Dit programma verbergt de meeste menu-items specifiek voor de gekozen\n"
+msgstr "Dit programma verbergt de meeste menu-items specifiek voor de gekozen\n"
 "desktop tijdens gebruik van een andere indien geïnstalleerd.\n"
 "De bijbehorende toepassingen blijven in alle andere desktops beschikbaar\n"
 "via het invoeren van commando's in een terminal of via de \"Uitvoeren...\"\n"
 "dialoog (Alt+F2)."
-#
+
 # File: hide-desktop, line: 19
-msgid ""
-"If you choose all the menu entries for any installed desktop will be\n"
+msgid "If you choose all the menu entries for any installed desktop will be\n"
 "hidden from all others."
-msgstr ""
-"Als je 'alle' kiest worden de menu-items van alle geïnstalleerde \n"
+msgstr "Als je 'alle' kiest worden de menu-items van alle geïnstalleerde \n"
 "desktops in alle andere desktops verborgen."
-#
+
 # File: hide-desktop, line: 22
 msgid "This can be reverted with the command display-desktop."
 msgstr "Dit kan worden teruggedraaid met het commando display-desktop."
-#
+
 # File: hide-desktop, line: 40
 # File: hide-desktop, line: 44
 msgid "The menus will be modified at next boot."
 msgstr "De menu's zullen na het opnieuw opstarten zijn gewijzigd."
-#
+
 # File: list-espeak-ng-voices, line: 14
 # File: list-espeak-ng-voices, line: 44
 # File: list-espeak-ng-voices.save, line: 14
 # File: list-espeak-ng-voices.save, line: 44
-msgid ""
-"To use one of theses voices with espeakup, set it in /etc/espeakup.conf."
-msgstr ""
-"Om één van deze stemmen met espeakup te gebruiken stel je dat in in /etc/"
-"espeakup.conf."
-#
+msgid "To use one of theses voices with espeakup, set it in /etc/espeakup.conf."
+msgstr "Om één van deze stemmen met espeakup te gebruiken stel je dat in in /etc/espeakup.conf."
+
 # File: list-espeak-ng-voices, line: 15
 # File: list-espeak-ng-voices, line: 45
 # File: list-espeak-ng-voices, line: 64
@@ -124,14 +112,14 @@ msgstr ""
 # File: list-espeak-ng-voices.save, line: 64
 msgid "For instance, to use the voice: "
 msgstr "Om bijvoorbeeld de volgende stemmen te gebruiken: "
-#
+
 # File: list-espeak-ng-voices, line: 17
 # File: list-espeak-ng-voices, line: 47
 # File: list-espeak-ng-voices.save, line: 17
 # File: list-espeak-ng-voices.save, line: 47
 msgid "write:"
 msgstr "schrijf je:"
-#
+
 # File: list-espeak-ng-voices, line: 19
 # File: list-espeak-ng-voices, line: 49
 # File: list-espeak-ng-voices, line: 71
@@ -140,123 +128,115 @@ msgstr "schrijf je:"
 # File: list-espeak-ng-voices.save, line: 71
 msgid "in /etc/espeakup.conf."
 msgstr "in /etc/espeakup.conf."
-#
+
 # File: list-espeak-ng-voices, line: 21
 # File: list-espeak-ng-voices.save, line: 21
 msgid "Do you want to list also the mbrola voices? [y/N]"
 msgstr "Wil je ook de mbrola stemmen zien? [y/N]"
-#
+
 # File: list-espeak-ng-voices, line: 40
 # File: list-espeak-ng-voices.save, line: 40
 msgid "Installed mbrola voices:"
 msgstr "Geïnstalleerde mbrola-stemmen:"
-#
+
 # File: list-espeak-ng-voices, line: 51
 # File: list-espeak-ng-voices, line: 63
 # File: list-espeak-ng-voices.save, line: 51
 # File: list-espeak-ng-voices.save, line: 63
 msgid "Other mbrola voices could be used if installed."
 msgstr "Indien geïnstalleerd, kunnen andere mbrola stemmen worden gebruikt."
-#
+
 # File: list-espeak-ng-voices, line: 52
 # File: list-espeak-ng-voices.save, line: 52
 msgid "Do you want to display them? [Y/n] "
 msgstr "Wil je ze zien? [Y/n] "
-#
+
 # File: list-espeak-ng-voices, line: 59
 # File: list-espeak-ng-voices.save, line: 59
 msgid "Not Installed mbrola voices:"
 msgstr "Niet geïnstalleerde mbrola-stemmen:"
-#
+
 # File: list-espeak-ng-voices, line: 66
 # File: list-espeak-ng-voices.save, line: 66
 msgid "type as root:"
 msgstr "type als root:"
-#
+
 # File: list-espeak-ng-voices, line: 69
 # File: list-espeak-ng-voices.save, line: 69
 msgid "then write:"
 msgstr "schrijf dan:"
-#
+
 # File: list_boot_entries, line: 4
 msgid "Please run this command as root."
 msgstr "Voer dit commando uit als root."
-#
+
 # File: list_boot_entries, line: 8
 msgid "The file /boot/grub/grub.cfg does not exist."
 msgstr "Het bestand /boot/grub/grub.cfg bestaat niet."
-#
+
 # File: list_boot_entries, line: 9
 msgid "Prior to runninng this command you should install grub and run either:"
-msgstr ""
-"Voor het uitvoeren van dit programma moet grub geïnstalleerd zijn en typ je:"
-#
+msgstr "Voor het uitvoeren van dit programma moet grub geïnstalleerd zijn en typ je:"
+
 # File: list_boot_entries, line: 11
 msgid "or if this command does not exist:"
 msgstr "of als dit commando niet aanwezig is:"
-#
+
 # File: list_boot_entries, line: 20
 msgid "After booting, the boot menu will be displayed as above."
 msgstr "Na het opstarten wordt het opstartmenu als hierboven weergegeven."
-#
+
 # File: list_boot_entries, line: 23
-msgid ""
-"To navigate in the menu you will use the down and up arrow keys, then\n"
+msgid "To navigate in the menu you will use the down and up arrow keys, then\n"
 "press Enter to use the selected boot entry."
-msgstr ""
-"Navigeer in het menu met de pijltjestoetsen op en neer en druk op Enter\n"
+msgstr "Navigeer in het menu met de pijltjestoetsen op en neer en druk op Enter\n"
 "om het geselecteerde item te kiezen."
-#
+
 # File: list_boot_entries, line: 26
 msgid "To boot directly the most recent snapshot (if any), just press 1."
-msgstr ""
-"Om het meest recente snapshot (indien aanwezig) op te starten druk je 1."
-#
+msgstr "Om het meest recente snapshot (indien aanwezig) op te starten druk je 1."
+
 # File: list_boot_entries, line: 29
 msgid "Press q quit this display."
 msgstr "Druk q om dit scherm te verlaten."
-#
+
 # File: login-chooser, line: 12
 # File: rescuebootstick, line: 7
 msgid "This script should be run as root."
 msgstr "Dit script moet als root worden uitgevoerd."
-#
+
 # File: login-chooser, line: 23
 msgid "Usage: login-chooser <login manager>"
 msgstr "Gebruik: login-chooser <login manager>"
-#
+
 # File: login-chooser, line: 24
 msgid "Available login managers:"
 msgstr "Beschikbare login managers:"
-#
+
 # File: login-chooser, line: 26
 msgid "Short descriptions:"
 msgstr "Korte beschrijvingen:"
-#
+
 # File: login-chooser, line: 28
 msgid "Login in text mode, in a console. From there, you"
 msgstr "Log in in tekstmodus in een console. Vanaf hier"
-#
+
 # File: login-chooser, line: 30
 msgid "can type \"startx\" to start a graphical session."
 msgstr "kun je \"startx\" typen om een grafische sessie te starten."
-#
+
 # File: login-chooser, line: 31
 msgid "lightdm: Light Display Manager, accessible with speech."
 msgstr "lightdm: Light Display Manager, toegankelijk met spraak."
-#
-# File: login-chooser, line: 35
-msgid "Gnome Desktop Manager, accessible with speech."
-msgstr ""
-#
+
 # File: login-chooser, line: 34
 msgid "Simple Desktop Display Manager."
 msgstr "Simple Desktop Display Manager."
-#
+
 # File: login-chooser, line: 38
 msgid "Login is currently set to text mode."
 msgstr "Inloggen is momenteel ingesteld op tekstmodus."
-#
+
 # File: login-chooser, line: 43
 # File: login-chooser, line: 125
 # File: login-chooser, line: 141
@@ -265,45 +245,42 @@ msgstr "Inloggen is momenteel ingesteld op tekstmodus."
 # File: login-chooser, line: 186
 msgid "The display manager"
 msgstr "De display-manager"
-#
+
 # File: login-chooser, line: 45
 msgid "is currently set."
 msgstr "is nu ingesteld."
-#
+
 # File: login-chooser, line: 53
 msgid "To reboot immediatly press R then Enter, else just press Enter."
-msgstr ""
-"Om nu meteen opnieuw op te starten, druk je r en vervolgens\n"
+msgstr "Om nu meteen opnieuw op te starten, druk je r en vervolgens\n"
 "op Enter, anders meteen Enter."
-#
+
 # File: login-chooser, line: 60
 msgid "If you want speech at login press S then Enter, else just press Enter."
-msgstr ""
-"Als je bij het inloggen spraak wilt gebruiken druk je op S en vervolgens\n"
+msgstr "Als je bij het inloggen spraak wilt gebruiken druk je op S en vervolgens\n"
 "op Enter, anders meteen Enter."
-#
+
 # File: login-chooser, line: 79
 msgid "You will have speech at login."
 msgstr "Je gebruikt nu spraak bij het inloggen."
-#
+
 # File: login-chooser, line: 90
 msgid "You won't have speech at login."
 msgstr "Je gebruikt geen spraak bij het inloggen."
-#
+
 # File: login-chooser, line: 97
 msgid "is not among the available login managers:"
 msgstr "is niet één van de aanwezige inlog-managers:"
-#
+
 # File: login-chooser, line: 105
 msgid "Login will occur in text mode on next boot."
 msgstr "Inloggen vindt bij de volgende herstart plaats in tekstmodus."
-#
+
 # File: login-chooser, line: 106
 msgid "If you need speech type one of these commands before rebooting:"
-msgstr ""
-"Als je spraak wilt gebruiken geef voordat je opnieuw opstart\n"
+msgstr "Als je spraak wilt gebruiken geef voordat je opnieuw opstart\n"
 "een van deze commando's:"
-#
+
 # File: login-chooser, line: 127
 # File: login-chooser, line: 143
 # File: login-chooser, line: 158
@@ -311,411 +288,374 @@ msgstr ""
 # File: login-chooser, line: 188
 msgid "will be in use on next boot."
 msgstr "zal na het opnieuw opstarten worden gebruikt."
-#
+
 # File: login-chooser, line: 193
 msgid "Unknown choice. Check your spelling."
 msgstr "Keuze niet herkend. Controleer je spelling."
-#
+
 # File: orca-off, line: 4
 # File: orca-on, line: 6
 # File: switch-off, line: 6
 # File: switch-on, line: 7
 msgid "Please run this script as regular user."
 msgstr "Je dient dit script als gewone gebruiker uit te voeren."
-#
+
 # File: orca-off, line: 24
 msgid "Orca has been disabled for you."
 msgstr "Orca is uitgeschakeld voor deze gebruiker."
-#
+
 # File: orca-off, line: 26
 # File: orca-on, line: 37
 msgid "File ~/.config/autostart/startorca.desktop not found."
 msgstr "Het bestand ~/.config/autostart/startorca.desktop werd niet gevonden."
-#
+
 # File: orca-on, line: 5
 msgid "Start a graphical environment as root with speech is not advisable."
-msgstr ""
-"Starten van een grafische omgeving als root met spraak wordt afgeraden."
-#
+msgstr "Starten van een grafische omgeving als root met spraak wordt afgeraden."
+
 # File: orca-on, line: 35
 msgid "Orca has been enabled for you."
 msgstr "Orca is ingeschakeld voor deze gebruiker."
-#
+
 # File: rescuebootstick, line: 18
 msgid "Do you want to make a rescue boot stick of an USB flash drive? "
 msgstr "Wil je een rescue usb-stick maken? "
-#
+
 # File: rescuebootstick, line: 20
 msgid "Please type yes or no: "
 msgstr "Typ yes of no alsjeblieft: "
-#
+
 # File: rescuebootstick, line: 30
 msgid "Plug in the USB boot stick, then press Enter."
 msgstr "Plaats de usb-stick en druk Enter."
-#
+
 # File: rescuebootstick, line: 43
 msgid "We didn't find a newly inserted USB flash drive."
 msgstr "Er werd geen nieuw geplaatste usb-stick gevonden."
-#
+
 # File: rescuebootstick, line: 44
 msgid "Maybe it was already inserted?"
 msgstr "Was deze al geplaatst?"
-#
+
 # File: rescuebootstick, line: 46
 msgid "If you want to try again remove it then type yes, else type no: "
-msgstr ""
-"Om het opnieuw te proberen verwijder je deze en typ je yes, anders typ je "
-"no: "
-#
+msgstr "Om het opnieuw te proberen verwijder je deze en typ je yes, anders typ je no: "
+
 # File: rescuebootstick, line: 63
 msgid "This drive will be used as rescue boot stick."
 msgstr "Deze usb-stick zal als rescue usb-stick worden gebruikt."
-#
+
 # File: rescuebootstick, line: 65
 msgid "If you accept all data currently stored on it will be lost!"
-msgstr ""
-"Als je dit accepteert zullen alle hierop aanwezige gegevens gewist worden!"
-#
+msgstr "Als je dit accepteert zullen alle hierop aanwezige gegevens gewist worden!"
+
 # File: rescuebootstick, line: 66
-msgid ""
-"You will confirm that want to use this one, choose another one or give up."
-msgstr ""
-"Je bevestigt dat je deze wilt gebruiken, kiest een andere of je annuleert."
-#
+msgid "You will confirm that want to use this one, choose another one or give up."
+msgstr "Je bevestigt dat je deze wilt gebruiken, kiest een andere of je annuleert."
+
 # File: rescuebootstick, line: 68
 msgid "Type yes to use it, no to try another one or q to give up: "
-msgstr ""
-"Typ yes om deze te gebruiken, probeer een andere of typ q om te annuleren: "
-#
+msgstr "Typ yes om deze te gebruiken, probeer een andere of typ q om te annuleren: "
+
 # File: rescuebootstick, line: 72
 msgid "Remove this USB flash drive, then press Enter: "
 msgstr "Verwijder deze usb-stick en druk Enter: "
-#
+
 # File: rescuebootstick, line: 80
 msgid "Several newly inserted drives have been detected!"
 msgstr "Er werden meerdere opnieuw geplaatste usb-sticks gevonden!"
-#
+
 # File: rescuebootstick, line: 81
 msgid "No rescue boot disk can be made now."
 msgstr "Er kan nu geen rescue usb-stick worden gemaakt."
-#
+
 # File: rescuebootstick, line: 82
 msgid "Press Enter to continue."
 msgstr "Druk Enter om door te gaan."
-#
+
 # File: rescuebootstick, line: 88
 msgid "Please wait while we prepare the booting equipment..."
 msgstr "Wacht totdat het opstartmedium is voorbereidt..."
-#
+
 # File: rescuebootstick, line: 96
 msgid "Writing the booting equipment on the stick..."
 msgstr "Opstartgegevens naar de usb-stick schrijven..."
-#
+
 # File: rescuebootstick, line: 104
 msgid "Done. You may now remove the rescue boot stick."
 msgstr "Klaar. De rescue usb-stick mag nu worden verwijderd."
-#
+
 # File: session-chooser, line: 14
 msgid "Running a graphical session as root is not allowed."
 msgstr "Het uitvoeren van een grafische sessie als root is niet toegestaan."
-#
+
 # File: session-chooser, line: 29
 msgid "Your default session is not set."
 msgstr "De standaard sessie is nog niet ingesteld."
-#
+
 # File: session-chooser, line: 31
 msgid "Your session is currently set to"
 msgstr "De sessie is momenteel ingesteld op"
-#
+
 # File: session-chooser, line: 39
 msgid "Usage: session-chooser <desktop session>"
 msgstr "Gebruik: session-chooser <desktop session>"
-#
+
 # File: session-chooser, line: 40
 msgid "Available desktop sessions:"
 msgstr "Beschikbare desktop-sessies:"
-#
+
+# File: session-chooser, line: 65
+msgid "is not part of the available sessions:"
+msgstr "is geen beschikbare sessie:"
+
 # File: session-chooser, line: 98
 msgid "Your default session has been set to"
 msgstr "De standaard sessie in ingesteld op"
-#
+
 # File: spd-list, line: 7
-msgid ""
-"This script lists languages and synthesizers available for applications\n"
+msgid "This script lists languages and synthesizers available for applications\n"
 "relying on Speech Dispatcher, like Orca or speech-up.\n"
 "Each command below answers the question following it.\n"
 "Don't type the quotes surrounding the command."
-msgstr ""
-"Dit script bevat talen en synthesizers voor toepassingen die gebruik\n"
+msgstr "Dit script bevat talen en synthesizers voor toepassingen die gebruik\n"
 "maken van Speech Dispatcher zoals Orca of speech-up.\n"
 "Elke onderstaande opdracht beantwoordt de vraag die er achter staat.\n"
 "Typ de opdracht zonder aanhalingstekens."
-#
+
 # File: spd-list, line: 11
 msgid "\"spd-list\" usage"
 msgstr "\"spd-list\" gebruik"
-#
+
 # File: spd-list, line: 12
 msgid "\"spd-list -s\" available synthesizers?"
 msgstr "\"spd-list -s\" toont beschikbare synthesizers"
-#
+
 # File: spd-list, line: 13
 msgid "\"spd-list -l\" available languages codes?"
 msgstr "\"spd-list -l\" toont beschikbare taalcodes"
-#
+
 # File: spd-list, line: 14
-msgid ""
-"\"spd-list -ls\" <synthesizer> languages available for this synthesizer?"
-msgstr ""
-"\"spd-list -ls\" <synthesizer> toont beschikbare talen voor deze synthesizer"
-#
+msgid "\"spd-list -ls\" <synthesizer> languages available for this synthesizer?"
+msgstr "\"spd-list -ls\" <synthesizer> toont beschikbare talen voor deze synthesizer"
+
 # File: spd-list, line: 15
-msgid ""
-"\"spd-list -sl\" <language code> synthesizers providing voices in this "
-"language?"
-msgstr ""
-"\"spd-list -sl\" <language code> toont beschikbare synthesizers die deze "
-"taal ondersteunen"
-#
+msgid "\"spd-list -sl\" <language code> synthesizers providing voices in this language?"
+msgstr "\"spd-list -sl\" <language code> toont beschikbare synthesizers die deze taal ondersteunen"
+
 # File: spd-list, line: 16
-msgid ""
-"The language code has most often two characters, like 'en' 'es' or 'fr'."
+msgid "The language code has most often two characters, like 'en' 'es' or 'fr'."
 msgstr "De taalcode bestaat meestal uit 2 letters zoals 'en', 'es' of 'fr'."
-#
+
 # File: spd-list, line: 21
 # File: spd-list, line: 54
 # File: spd-list, line: 101
 msgid "is not a valid command."
 msgstr "is geen geldig commando."
-#
+
 # File: spd-list, line: 31
 msgid "Installed synthesizers:"
 msgstr "Geïnstalleerde synthesizers:"
-#
+
 # File: spd-list, line: 47
 msgid "Available languages: "
 msgstr "Beschikbare talen: "
-#
+
 # File: spd-list, line: 62
 msgid "is not the name of an available synthesizer"
 msgstr "is geen naam van een beschikbare synthesizer."
-#
+
 # File: spd-list, line: 71
 msgid "No information available about languages for "
 msgstr "Geen informatie beschikbaar over talen voor "
-#
+
 # File: spd-list, line: 74
 msgid "Available languages codes for "
 msgstr "Beschikbare taalcodes voor "
-#
+
 # File: spd-list, line: 91
 msgid "No installed synthesizer provides the language "
 msgstr "Geen van de geïnstalleerde synthesizers ondersteunt de taal "
-#
+
 # File: spd-list, line: 94
 msgid "The language "
 msgstr "De taal "
-#
+
 # File: spd-list, line: 96
 msgid "is provided by: "
 msgstr "wordt ondersteund door: "
-#
+
 # File: speak-with, line: 9
 # File: speakup-restore, line: 4
 # File: speakup-save, line: 4
 msgid "Please run this script as root."
 msgstr "Voer dit script uit als root."
-#
+
 # File: speak-with, line: 28
 msgid "Usage: speak_with <screen reader> or <hard synthesizer> or 'none'"
 msgstr "Gebruik: speak_with <screen reader> of <hard synthesizer> of 'none'"
-#
+
 # File: speak-with, line: 29
 msgid "Choose a console screen reader to talk with among:"
 msgstr "Kies een consoleschermlezer om mee te praten uit de volgende lijst:"
-#
+
 # File: speak-with, line: 31
 msgid "or one of the supported hard synthesizers:"
 msgstr "of één van de ondersteunde hard synthesizers:"
-#
+
 # File: speak-with, line: 33
 msgid "or type  \"speak-with none\" to mute all screen readers."
 msgstr "of typ \"speak-with none\" om alle schermlezers uit te schakelen."
-#
+
 # File: speak-with, line: 48
 msgid "is not a valid argument of this command."
 msgstr "is geen geldig argument voor dit commando."
-#
+
 # File: speak-with, line: 75
 msgid "espeakup is not installed."
 msgstr "Espeakup is niet geïnstalleerd."
-#
+
 # File: speak-with, line: 76
 msgid "espeakup is already started."
 msgstr "espeakup is al ingeschakeld."
-#
+
 # File: speak-with, line: 83
 msgid "Should espeakup be also started at next boot? [Y/n] "
 msgstr "Moet Espeakup ook bij de volgende start worden uitgevoerd? [y/n] "
-#
+
 # File: speak-with, line: 97
 msgid "speechd-up is not installed."
 msgstr "speechd-up is niet geïnstalleerd."
-#
+
 # File: speak-with, line: 98
 msgid "speechd-up is already started."
 msgstr "speechd-up is al gestart."
-#
+
 # File: speak-with, line: 105
 # File: speak-with, line: 129
 msgid "Should speechd-up be also started at next boot? [Y/n] "
-msgstr ""
-"Moet speechd-up ook worden uitgevoerd bij de volgende keer opstarten? [ y/n] "
-#
+msgstr "Moet speechd-up ook worden uitgevoerd bij de volgende keer opstarten? [ y/n] "
+
 # File: speak-with, line: 119
 msgid "fenrir is not installed."
 msgstr "fenrir is niet geïnstalleerd."
-#
+
 # File: speak-with, line: 120
 msgid "fenrir is already started."
 msgstr "fenrir is al gestart."
-#
-# File: speak-with, line: 139
-msgid "Should fenrir be also started at next boot? [Y/n] "
-msgstr ""
-#
+
 # File: speak-with, line: 147
 msgid "Do you also want a mute console at next boot? [Y/n] "
-msgstr ""
-"Wil je ook een spraakloze console bij de volgende keer opstarten? [Y/n] "
-#
+msgstr "Wil je ook een spraakloze console bij de volgende keer opstarten? [Y/n] "
+
 # File: speak-with, line: 155
 msgid "OK"
 msgstr "OK"
-#
+
 # File: speak-with, line: 163
 msgid "Unable to switch to the synthesizer "
 msgstr "Kan niet overschakelen naar synthesizer "
-#
+
 # File: speak-with, line: 169
 msgid "Do you also want to use this hard synthesizer at next boot? [Y/n] "
-msgstr ""
-"Wil je deze hard synthesizer ook gebruiken bij de volgende herstart?[Y/n] "
-#
+msgstr "Wil je deze hard synthesizer ook gebruiken bij de volgende herstart?[Y/n] "
+
 # File: speakup-restore, line: 9
 # File: speakup-restore, line: 12
 msgid "speakup being not in use, there is no setting to restore."
-msgstr ""
-"speakup wordt niet gebruikt dus er zijn geen instellingen om te herstellen."
-#
+msgstr "speakup wordt niet gebruikt dus er zijn geen instellingen om te herstellen."
+
 # File: speakup-restore, line: 36
 msgid "No speakup settings saved for "
 msgstr "Er zijn geen speakup-instellingen opgeslagen voor "
-#
+
 # File: speakup-restore, line: 38
 msgid "so nothing to restore."
 msgstr "dus niets te herstellen."
-#
+
 # File: speakup-restore, line: 63
 msgid "speakup settings have been restored for "
 msgstr "speakup-instellingen zijn hersteld voor "
-#
+
 # File: speakup-save, line: 8
 # File: speakup-save, line: 14
 msgid "speakup being not in use, there is no setting to save."
-msgstr ""
-"speakup wordt niet gebruikt dus er zijn geen instellingen om op te slaan."
-#
+msgstr "speakup wordt niet gebruikt dus er zijn geen instellingen om op te slaan."
+
 # File: speakup-save, line: 26
 msgid "espeakup and speechd-up are both running, not saving settings."
-msgstr ""
-"espeakup en speechd-up zijn beide actief, instellingen worden niet "
-"opgeslagen."
-#
+msgstr "espeakup en speechd-up zijn beide actief, instellingen worden niet opgeslagen."
+
 # File: speakup-save, line: 30
 msgid "neither espeakup nor speechd-up is running, not saving settings."
-msgstr ""
-"espeakup en speechd-up zijn beide niet actief, instellingen worden niet "
-"opgeslagen."
-#
+msgstr "espeakup en speechd-up zijn beide niet actief, instellingen worden niet opgeslagen."
+
 # File: speakup-save, line: 51
 msgid "Current speakup settings have been saved in "
 msgstr "Huidige speakup-instellingen zijn opgeslagen in "
-#
+
 # File: switch-off, line: 12
 # File: switch-on, line: 13
 msgid "emacspeak (The Complete Audio Desktop, based on emacs)"
 msgstr "emacspeak (The Complete Audio Desktop, gebaseerd op emacs)"
-#
+
 # File: switch-off, line: 13
 # File: switch-on, line: 14
 msgid "speechd-el (Emacs client to speech synthesizers and Braille displays)"
-msgstr ""
-"speechd-el (Emacs client naar spraak synthesizers en Braille weergaven)"
-#
+msgstr "speechd-el (Emacs client naar spraak synthesizers en Braille weergaven)"
+
 # File: switch-off, line: 20
 # File: switch-on, line: 23
 msgid "Usage: "
 msgstr "Gebruik: "
-#
+
 # File: switch-off, line: 22
 # File: switch-on, line: 25
 msgid "or"
 msgstr "of"
-#
+
 # File: switch-off, line: 24
 msgid "This script allows to disable:"
 msgstr "Met dit script kun je het volgende uitschakelen:"
-#
+
 # File: switch-off, line: 31
 # File: switch-on, line: 34
 msgid "is an unknown feature."
 msgstr "is een onbekende functie."
-#
+
 # File: switch-off, line: 32
 # File: switch-on, line: 35
 msgid "Available features:"
 msgstr "Beschikbare functies:"
-#
+
 # File: switch-off, line: 40
 # File: switch-off, line: 54
 # File: switch-on, line: 43
 # File: switch-on, line: 81
 msgid "is not installed."
 msgstr "is niet geïnstalleerd."
-#
+
 # File: switch-off, line: 49
 msgid "emacspeak is disabled."
 msgstr "emacspeak is uitgeschakeld."
-#
+
 # File: switch-off, line: 63
 msgid "speechd-el is disabled."
 msgstr "speechd-el is uitgeschakeld."
-#
+
 # File: switch-on, line: 27
 msgid "This script allows to enable:"
 msgstr "Met dit script kun je het volgende inschakelen:"
-#
+
 # File: switch-on, line: 61
-msgid ""
-"emacspeak is enabled and speechd-el is disabled, as they are mutually "
-"exclusive."
-msgstr ""
-"emacspeak is ingeschakeld en speechd-el is uitgeschakeld omdat ze elkaar "
-"uitsluiten."
-#
+msgid "emacspeak is enabled and speechd-el is disabled, as they are mutually exclusive."
+msgstr "emacspeak is ingeschakeld en speechd-el is uitgeschakeld omdat ze elkaar uitsluiten."
+
 # File: switch-on, line: 67
 msgid "Do you want to use a voxin voice with emacspeak? [Y/n] "
 msgstr "Wil je in emacspeak een voxin-stem gebruiken? [ y/n] "
-#
+
 # File: switch-on, line: 98
-msgid ""
-"speechd-el is enabled and emacspeak is disabled, as they are mutually "
-"exclusive."
-msgstr ""
-"emacspeak is ingeschakeld en speechd-el is uitgeschakeld omdat ze elkaar "
-"uitsluiten."
-#
-# File: session-chooser, line: 65
-#~ msgid "is not part of the available sessions:"
-#~ msgstr "is geen beschikbare sessie:"
+msgid "speechd-el is enabled and emacspeak is disabled, as they are mutually exclusive."
+msgstr "emacspeak is ingeschakeld en speechd-el is uitgeschakeld omdat ze elkaar uitsluiten."
+

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2023-10-06 22:12+0200\n"
-"PO-Revision-Date: 2023-10-07 08:58\n"
+"PO-Revision-Date: 2025-05-09 10:14\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -1692,7 +1692,7 @@ msgstr "Pour choisir un autre environnement graphique, vous devez utiliser la co
 #. type: delimited block =
 #: HandBook.adoc:789
 msgid "if you want to use i3 and need speech we recommend that you login in text mode and run **i38** before **startx**."
-msgstr "si vous voulez utiliser i3 et que vous avez besoin de la parole, nous vous recommandons de vous connecter en mode texte et de lancer **i38** avant **startx**."
+msgstr ""
 
 #. type: Plain text
 #: HandBook.adoc:792

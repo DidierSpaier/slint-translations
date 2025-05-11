@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2024-06-21 18:58+0200\n"
-"PO-Revision-Date: 2024-06-22 20:42\n"
+"PO-Revision-Date: 2025-05-09 09:55\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -112,7 +112,7 @@ msgstr "O ambiente de trabalho MATE e o gestor de acesso gráfico"
 #. type: Plain text
 #: sources/news/news.adoc:37
 msgid "The Mate Control Center is customized for Slint."
-msgstr "O Centro de Controlo Mate é personalizado para o Slint."
+msgstr "O Centro de Controlo Mate foi personalizado para o Slint."
 
 #. type: Plain text
 #: sources/news/news.adoc:38

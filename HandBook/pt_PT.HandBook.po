@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2023-10-06 22:12+0200\n"
-"PO-Revision-Date: 2024-06-22 20:42\n"
+"PO-Revision-Date: 2025-05-09 09:55\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -207,7 +207,7 @@ msgstr "Mumble: servidor slint.fr (por nomeação tomada através de outro canal
 #. type: Plain text
 #: HandBook.adoc:74
 msgid "The https://forum.salixos.org/viewforum.php?f=44[Slint forum] kindly hosted by our friends at Salix (another Slackware derivative). Registration needed."
-msgstr "O https://forum.salixos.org/viewforum.php?f=44[Fórum do Slint] generosamente hospedado pelos nossos amigos do Salix (outro derivado de Slackware). O registo necessário."
+msgstr "O https://forum.salixos.org/viewforum.php?f=44[Fórum do Slint] generosamente hospedado pelos nossos amigos do Salix (outro derivado de Slackware). O registo é necessário."
 
 #. type: Plain text
 #: HandBook.adoc:77
