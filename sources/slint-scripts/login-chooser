@@ -76,10 +76,10 @@ speak() {
 				fi
 			)
 		fi
-		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]  &&
-		[ -f /etc/lightdm/slick-greeter.conf ]; then
+		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]; then
+			touch /etc/lightdm/slick-greeter.conf
 			sed /screen-reader/d /etc/lightdm/slick-greeter.conf > dummy
-			echo "screen-reader=yes" >> dummy
+			echo "screen-reader=true" >> dummy
 			mv dummy /etc/lightdm/slick-greeter.conf
 			(
 				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
@@ -88,7 +88,7 @@ speak() {
 				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
 				dbus-launch gsettings set x.dm.slick-greeter screen-reader true" gdm
 			)
-			kill -1 $(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)
+			kill -1 "$(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)"
 		fi
 		gettext "You will have speech at login."; echo
 	else
@@ -101,10 +101,10 @@ speak() {
 				mv dummy lightdm-gtk-greeter.conf
 			)
 		fi
-		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]  &&
-		[ -f /etc/lightdm/slick-greeter.conf ]; then
+		if [ -f /etc/lightdm/lightdm.conf.d/50-slick-greeter.conf ]; then
+			touch /etc/lightdm/slick-greeter.conf
 			sed /screen-reader/d /etc/lightdm/slick-greeter.conf > dummy
-			echo "screen-reader=yes" >> dummy
+			echo "screen-reader=false" >> dummy
 			mv dummy /etc/lightdm/slick-greeter.conf
 			(
 				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
@@ -113,7 +113,7 @@ speak() {
 				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
 				dbus-launch gsettings set x.dm.slick-greeter screen-reader false" gdm
 			)
-			kill -1 $(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)
+			kill -1 "$(ps -C dbus-launch -u gdm --no-headers -o pid|tail -n 1)"
 		fi
 		gettext "You won't have speech at login."; echo
 	fi
