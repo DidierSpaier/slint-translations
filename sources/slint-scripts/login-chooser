@@ -84,7 +84,6 @@ speak() {
 			(
 				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
 				unset DISPLAY
-				echo "screen-reader=yes" >> dummmy
 				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
 				dbus-launch gsettings set x.dm.slick-greeter screen-reader true" gdm
 			)
@@ -109,7 +108,6 @@ speak() {
 			(
 				# Unset DISPLAY so gsettings/dconf don't try to connect to Xorg:
 				unset DISPLAY
-				echo "screen-reader=yes" >> dummmy
 				su -s /bin/bash -l -c "XDG_CONFIG_HOME=/var/lib/gdm/.config \
 				dbus-launch gsettings set x.dm.slick-greeter screen-reader false" gdm
 			)
