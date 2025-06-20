@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-03 16:10+0000\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese, Brazilian\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: /rc.S/rc.S.pot\n"
+"X-Crowdin-File-ID: 8\n"
+
+# File: rc.S, line: 133
+msgid "This installer has speech and Braille device support in order\n"
+"to be accessible to visually impaired users. To have speech turned on\n"
+"during installation type S, then press [Enter]. Else, just press Enter.\n"
+msgstr "Este instalador tem suporte a fala e dispositivos Braille com o intuito de\n"
+"ser acessível para usuários deficientes visuais. Para ter a fala ativada\n"
+"durante a instalação, digite S, então pressione [Enter]. Caso contrário, apenas pressione [Enter].\n"
+
+# File: rc.S, line: 148
+msgid "To display keyboard shortcuts for reviewing the screen with speech\n"
+"press R, then press [Enter],\n"
+"Else, just press [Enter]: "
+msgstr "Para exibir atalhos de teclado para navegar pela tela com fala\n"
+"pressione R, então pressione [Enter],\n"
+"Caso contrário, apenas pressione [Enter]: "
+
+# File: rc.S, line: 160
+msgid "LANGUAGE TO USE DURING INSTALLATION"
+msgstr "IDIOMA PARA USAR DURANTE A INSTALAÇÃO"
+
+# File: rc.S, line: 162
+#, sh-format
+msgid "Please select the language to use for installation."
+msgstr ""
+
+# File: rc.S, line: 163
+msgid "English (USA)"
+msgstr "Inglês (Estados Unidos)"
+
+# File: rc.S, line: 164
+msgid "Dutch"
+msgstr "Holandês"
+
+# File: rc.S, line: 165
+msgid "French"
+msgstr "Francês"
+
+# File: rc.S, line: 166
+msgid "German"
+msgstr "Alemão"
+
+# File: rc.S, line: 167
+msgid "Greek"
+msgstr "Grego"
+
+# File: rc.S, line: 168
+msgid "Italian"
+msgstr "Italiano"
+
+# File: rc.S, line: 169
+msgid "Norwegian"
+msgstr "Norueguês"
+
+# File: rc.S, line: 170
+msgid "Polish"
+msgstr "Polonês"
+
+# File: rc.S, line: 171
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
+# File: rc.S, line: 172
+msgid "Portuguese (Portugal)"
+msgstr "Português (Portugal)"
+
+# File: rc.S, line: 173
+msgid "Russian"
+msgstr "Russo"
+
+# File: rc.S, line: 174
+msgid "Spanish (Latin America)"
+msgstr "Espanhol (América Latina)"
+
+# File: rc.S, line: 175
+msgid "Slovak"
+msgstr ""
+
+# File: rc.S, line: 176
+msgid "Swedish"
+msgstr "Sueco"
+
+# File: rc.S, line: 177
+msgid "Turkish"
+msgstr "Turco"
+
+# File: rc.S, line: 178
+msgid "Ukrainian"
+msgstr "Ucraniano"
+
+# File: rc.S, line: 200
+#, sh-format
+msgid "<OPTION TO LOAD SUPPORT FOR ANOTHER KEYBOARD>\n\n"
+"If you are not using a \"$kbd\" keyboard map, you may load another one now.\n"
+"To select a different keyboard map, please enter 1 now.\n"
+"To continue using the \"$kbd\" keyboard map, just hit [Enter]."
+msgstr "<OPÇÃO PARA CARREGAR SUPORTE A OUTRO TECLADO>\n\n"
+"Se não estiver usando um mapa de teclado \"$kbd\", você pode carregar outro\n"
+"agora.\n"
+"Para selecionar um mapa de teclado diferente, escreva 1 agora.\n"
+"Para continuar usando o mapa de teclado \"$kbd\", apenas pressione [Enter]."
+
+# File: rc.S, line: 207
+msgid "Enter 1 to select a keyboard map: "
+msgstr "Escreva 1 para selecionar um mapa de teclado:"
+
+# File: rc.S, line: 221
+#, sh-format
+msgid "Welcome to the Slint installer! (version ${Version})\n\n"
+"You may now type (without the quotes):\n\n"
+"'doc' to know the features and usage of the installer.\n"
+"'start' to start the installation.\n\n"
+"The installer can prepare the drive where Slint will be installed,\n"
+"creating the the needed partitions. If you prefer you can do it yourself\n"
+"using command line utilities available in the installer, then type 'start'\n"
+"when done. You can also leave the installer and use a tool like gparted\n"
+"to do that then start the installer again.\n\n"
+"We recommend that you type 'doc' first in this case, or if you want to\n"
+"encrypt the root Slint partition.\n"
+"When you finish reading this menu will be displayed again.\n"
+msgstr ""
+

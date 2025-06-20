@@ -1,0 +1,66 @@
+[.debut]
+== Om Slint
+
+Slint är en lättanvänd, mångsidig, blind-vänlig Linux-distribution för 64-bitars datorer. Slint är baserad på Slackware och lånar verktyg från Salix. Underhållare: Didier Spaier.
+
+== Funktioner
+
+* Slint är en stabil distribution. Programvara för tillgänglighet uppdateras dock regelbundet och andra kan uppdateras från fall till fall.
+
+* De inkluderade programvarorna, bland annat MATE och LXQt skrivbord (med XFCE installerat på begäran), täcker de flesta behoven. Många andra är tillgängliga i förråd som underhålls av Salix och Slackware som är helt kompatibla med Slint.
+
+* Slint kan användas i konsol- och grafiska lägen och kan växlas mellan dessa lägen utan att startas om. Det är även möjligt att starta flera grafiska miljöer och växla mellan dem.
+
+* Lättanvända verktyg underlättar hantering av systemadministration och programvarupaket. Uppdateringar är helt automatiska, under användarkontroll.
+
+* Instrumentpanelen Slint ger direkt tillgång till de viktigaste verktygen och användbar information och länkar.
+
+* Som standard kan ett komprimerat växlingsutrymme i RAM fördubbla det användbara minnet.
+
+* Slint kan installeras på en 64-bitarsmaskin med minst 2G minne, och 50G tillgängligt på alla typer av medier, inklusive USB-minnen, utan secure boot.
+
+* Om det är installerat på USB-mediet är Slint flyttbart från en dator till en annan. Medierna kan krypteras.
+
+== Installation
+
+Installationsprogrammet, i textläge, är tillgängligt för blinda med hjälp av en skärmläsare eller punktskrift, och fortsätter med frågor och svar med onlinehjälp och integrerad dokumentation. Två partitioneringslägen är tillgängliga:
+
+* Manuellt: användaren väljer filsystemet (btrfs, ext4 eller xfs) och mediet kan delas med andra system.
+
+* Automatiskt: Filsystemet är btrfs och mediet är dedikerat till Slint.
+
+Filsystemet btrfs konfigureras med undervolymer istället för separata partitioner. Det gör det möjligt att dela utrymme med 2 som på medierna, för att ta ögonblicksbilder och är väl anpassade till SSD, NVMe och USB-minnen.
+
+== Länkar
+
+* http://slackware.se/slint/x86_64/slint-15.0/[Huvudarkivet]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in the ISO]
+
+* http://slackware.se/slint/x86_64/slint-15.0/extra.txt[Paket som kan installeras på begäran]
+
+* link:../old/index.html[Arkiverad gammal hemsida]
+
+* link:../sv/oldHandBook.html[Dokumentation 14.2.1]
+
+== Bilder på lightDM och huvudskrivbordet i Slint 
+
+lightDM
+
+image::../doc/lightdm.png["lightDM"]
+
+LXQt
+
+image::../doc/lxqt.png["LXQt"]
+
+MATE
+
+image::../doc/mate.png["MATE"]
+
+XFCE (installerad på begäran)
+
+image::../doc/xfce.png["XFCE"]

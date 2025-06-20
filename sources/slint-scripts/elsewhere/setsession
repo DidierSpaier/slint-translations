@@ -1,0 +1,61 @@
+#!/bin/sh
+# This script sets the X default session for users who don't have one
+# yet. It should to work for all login managers (not tested with sddm).
+# It is sourced by usersetup with no argument (user being already set)
+# and by gtk usersetup with the username as argument.
+# It can also be run directly by root, in case a command like adduser or
+# useradd has been used.
+usage () {
+	echo "Usage: $0 username."
+	echo "This script should be run as root, for a regular user account that"
+	echo "has just been created. To set your default session as regular user,"
+	echo "use session-chooser instead."
+	echo "errors go to /tmp/setsession-errors"
+}
+if [ ! $(id -u) -eq 0 ]; then
+	usage
+elif [ ! $# -eq 0 ] && [ ! $# -eq 1 ];then
+	usage
+elif [ $# -eq  0 ] && [ "$user" = "" ]; then
+	usage
+elif [ ! -L /etc/X11/xinit/xinitrc ]; then
+	echo "No system wide default session has been set." >/tmp/setsessions_errors
+else
+	[ $# -eq  1 ] && user=$1
+	if [ ! -d /home/$user ]; then
+		echo "No home directory for user $user. Does it exist?" >/tmp/setsessions_errors
+	elif [ -f /home/$user/.dmrc ] || [ -f /home/$user/.xsession ]; then
+		echo "A default session has already been set for user $user." >/tmp/setsessions_errors
+	else
+		thissession=$(readlink -n /etc/X11/xinit/xinitrc|sed s/.*xinitrc.//)
+		# This is for xdm
+		case $thissession in
+			kde) session=/usr/bin/startkde;;
+			lxde) session=/usr/bin/lxsession;;
+			gnome) session=/usr/bin/gnome-session;;
+			xfce) session=/usr/bin/startxfce4;;
+			icewm) session=/usr/bin/icewm-session;;
+			mate) session=/usr/bin/mate-session;;
+			wmaker) session=/usr/bin/startwmaker;;
+			e16) session=/usr/share/e16/misc/starte16;;
+			enlightenment) session=/usr/bin/enlightenment_start;;
+			blackbox) session=/usr/bin/startblackbox;;
+			fluxbox) session=/usr/bin/startfluxbox;;
+			twm) session=/usr/bin/starttwm;;
+			awesome) session=/usr/bin/awesome;;
+			*) session=/usr/bin/mate-session;;
+		esac
+		echo $session > /home/$user/.xsession
+		xsession=$thissession
+		[ "$thissession" = "lxde" ] && xsession=LXDE
+		# This is for lxdm and gdm2.
+		echo '[Desktop]' > /home/$user/.dmrc
+		echo "Session=$xsession" >> /home/$user/.dmrc
+		# This is for lightdm
+		user_xsession.py --user-name $user set $xsession 2>/tmp/setsessions_errors
+		# This is mostly for startx , borrowed from xwmconfig.
+		cat /etc/X11/xinit/xinitrc.$thissession > /home/$user/.xinitrc
+		echo "A default session $xsession has been set for user $user."
+		chown $user: /home/$user/{.dmrc,.xsession,.xinitrc}
+	fi
+fi

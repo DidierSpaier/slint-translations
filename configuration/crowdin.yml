@@ -1,0 +1,83 @@
+#
+# Basic Crowdin CLI configuration
+# See https://crowdin.github.io/crowdin-cli/configuration for more information
+# See https://support.crowdin.com/developer/configuration-file/ for all available options
+#
+
+#
+# Your Crowdin credentials
+#
+"project_id": "442342"
+"api_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3UUVxdmhVM3ZMT2EyWGljbVV5VCIsImp0aSI6ImQ5MGFkMGU3M2FkNDBmZDQyYjdlMDQ1NTc4YjAyYmM4MGM5YmU4NTYwNDA3MzIyNTRjODY4ZTlmYjk0NzVlNWVlZjc2ZWU1MDZlZjNlMTYwIiwiaWF0IjoxNzQ2NzgzMzY4LjQzMDc4MywibmJmIjoxNzQ2NzgzMzY4LjQzMDc4NiwiZXhwIjoxNzc4MzE5MzY4LjM2NTUxNCwic3ViIjoiMTQ2MzAyODAiLCJzY29wZXMiOlsicHJvamVjdCJdLCJkb21haW4iOm51bGwsImFzc29jaWF0aW9ucyI6WyIqIl0sImxvZ2luX21ldGhvZCI6bnVsbCwic2Vzc2lvbiI6MH0.ZsnbmTGVen1tYa9NsaK24JnkwdYRWFm8TZlsfyHXNBrp_HN3XeQxFS-Hsj-L1XVENAlTcO23iOXnhJ3CJtoeYW10yYBuqapLDsC2CCTHJ3AqFRD_i80AiAQUd12af4JW1wyrd_JLob2g_KjPFKEJfngFfbdzlHwLHotMcnNeKr3ZMZixyzOVmLFWC3iNu4I03_IoY_u_MgzIunLPsKgrQ440U8AxmWitF4LIRfiUi_nNEEV8Ei6VZXAmdQG-l9GohKqjqkf6WsBI1ViU6PjCEDrrHRXKr3uhU8HdkjQV7NiO5lRcjRD0XmE-9L5XMpRZpSOLw6zXlVEuoKJyyOz0Telx8gN_h2fJhARAvW4lQoLiKNXcRoV31QXzu3p74kGqVsvHlIE6RPhZcGJlm9lvjvrp5qEj39E5BdXZv_u6u5OaINXv3JXdNzswTYDTjnuSycUJxOsslO7mr5ojtmPdtf4vdUxN5obwYacwNfddSV2yv250T8ZTpfSzJ1h-mBfJ3n2OXWVonAqsALYohsBVEicfrhTMWmLsNenuSar0YM44xMF2_BKGWiUzaWobNIc3crR4_rnbkX_GJlohuQcMu-4g_xU5Q27W313wYcAVqTde0q4py5ZrgFFJ3g_rGvyIHhGsmkLhMoN6L9iWPpjYgP_3yjYOUpC6fe6-7-wpuHg"
+"base_path": "../po"
+"base_url": "https://api.crowdin.com"
+
+#
+# Defines whether to preserve the original directory structure in the Crowdin project
+# Recommended to set to true
+#
+"preserve_hierarchy": true
+
+#
+# Files configuration.
+# See https://support.crowdin.com/developer/configuration-file/ for all available options
+#
+
+files: [
+  {
+  "source" : "/HandBook/HandBook.pot",
+  "translation" : "HandBook/%locale_with_underscore%.HandBook.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_files": false,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/homepage/homepage.pot",
+  "translation" : "homepage/%locale_with_underscore%.homepage.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/news/news.pot",
+  "translation" : "news/%locale_with_underscore%.news.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/auto/auto.pot",
+  "translation" : "auto/%locale_with_underscore%.auto.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/rc.S/rc.S.pot",
+  "translation" : "rc.S/%locale_with_underscore%.rc.S.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/slint-scripts/slint-scripts.pot",
+  "translation" : "/slint-scripts/%locale_with_underscore%.slint-scripts.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/wiki/a001/a001.pot",
+  "translation" : "wiki/a001/%locale_with_underscore%.a001.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  },
+  {
+  "source" : "/wiki/a002/a002.pot",
+  "translation" : "wiki/a002/%locale_with_underscore%.a002.po",
+  "update_option" : "update_as_unapproved",
+  "skip_untranslated_strings": true,
+  "escape_quotes" : 3
+  }
+]

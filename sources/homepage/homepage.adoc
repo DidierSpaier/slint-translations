@@ -1,9 +1,9 @@
 [.debut]
-=== About Slint
+== About Slint
 
 Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier.
 
-=== Features
+== Features
 
 * Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis.
 
@@ -21,7 +21,7 @@ Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit
 
 * If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted.
 
-=== Installation
+== Installation
 
 The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:
 
@@ -31,7 +31,7 @@ The installation program, in text mode, is fully accessible for blind people usi
 
 The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks.
 
-=== Links
+== Links
 
 * http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]
 
@@ -47,7 +47,7 @@ The btrfs file system is configured with subvolumes instead of separate partitio
 
 * link:../en/oldHandBook.html[Documentation 14.2.1]
 
-=== Pictures of lightDM and the main desktops in Slint 
+== Pictures of lightDM and the main desktops in Slint 
 
 lightDM
 

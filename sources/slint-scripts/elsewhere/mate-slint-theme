@@ -1,0 +1,7 @@
+#!/bin/sh
+# Set the theme for the mate desktop to my liking ;)
+# Didier Spaier <didier~at~slint~dot~fr>
+gsettings set org.mate.background picture-filename /usr/share/wallpapers/common/SlintBlue.png
+gsettings set org.mate.Marco.general theme Blue-Submarine
+gsettings set org.mate.interface gtk-theme Adwaita
+gsettings set org.mate.interface icon-theme mate-brave

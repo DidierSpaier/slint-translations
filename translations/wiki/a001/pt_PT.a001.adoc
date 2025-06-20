@@ -1,0 +1,82 @@
+== Slint com BTRFS
+
+Neste artigo delineamos as características únicas do sistema de ficheiros BTRFS e como um sistema Slint é configurado na instalação para tirar partido das mesmas.
+
+Para não sobrecarregar este documento com definições, encaminhamos o leitor para o https://slint.fr/en/HandBook.html#_glossary[glossário] incluído no Manual do Slint e mais especificamente para a "gíria" btrfs no https://btrfs.readthedocs.io/en/latest/Glossary.html[glossário] incluído na sua documentação.
+
+Um sistema de ficheiros BTRFS consiste num volume lógico que pode abranger vários dispositivos de blocos (partições ou discos). Inicialmente o Slint é instalado numa única partição.
+
+Um subvolume é uma sub-árvore de ficheiros dentro do volume, cuja raiz pode ser montada como se fosse um sistema de ficheiros independente. Contudo, o espaço atribuído a um volume é também atribuído a cada um dos seus subvolumes: não é portanto necessário distribuí-lo entre os subvolumes, como se se tratasse de partições distintas.
+
+Os subvolumes podem ser criados ao mesmo tempo que o volume (pelo comando mkfs.btrfs), mas também podem ser adicionados ou eliminados mais tarde usando as ferramentas do btrfs.
+
+Como exemplo, os comandos abaixo criam o volume "sistema" do Slint e os seus subvolumes, no caso de ser utilizado o BTRFS. No seguinte $ROOTNAME é o nome da partição em que o Slint será instalado e $SLINT o ponto de montagem do volume do sistema durante a instalação.
+----
+mkdir /SLINT
+SLINT="/SLINT"
+mkfs.btrfs -L root $ROOTNAME
+mount -o compress=zstd:3,noatime $ROOTNAME $SLINT
+btrfs subvolume create $SLINT/@
+btrfs subvolume create $SLINT/@home
+btrfs subvolume create $SLINT/@swap
+umount $SLINT
+mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT
+mkdir $SLINT/home
+mkdir $SLINT/swap 
+----
+A partição $ROOTNAME (denotada pelo seu UUID que chamaremos <uuid>) será então montada três vezes (uma por subvolume) cada vez que o Slint for iniciado, como indicado no ficheiro /etc/fstab:
+----
+UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0
+UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0
+UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 
+----
+O que dá por exemplo (retirado do resultado de lsblk /dev/sda5):
+----
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda5        50G   22G   28G  44% /
+/dev/sda5        50G   22G   28G  44% /home
+/dev/sda5        50G   22G   28G  44% /swap
+----
+Vemos que o espaço disponível para o volume (28G) também está disponível para cada um dos sub-volumes. Por outro lado, a opção de montagem "compress_zstd:3" significa que todos os ficheiros que serão armazenados serão comprimidos pelo utilitário zstd com nível de compressão 3. Assim, o tamanho do sistema é aproximadamente metade do que com o sistema de ficheiros ext4.
+
+Se montarmos o dispositivo na raiz do volume (sem menção de um subvolume), assim:
+----
+mount /dev/sda5 /mnt
+----
+vemos os subvolumes aparecerem como subdiretórios de /mnt:
+----
+ls /mnt
+@ @home @swap
+ls /mnt/@home/hugo
+Desktop Documents Images Templates Music Downloads Videos
+----
+Outra funcionalidade notável do BTRFS é o "copy-on-write". Ao editar um ficheiro, partes modificadas são gravadas noutro local, sendo os metadados (que registam o local de todas as partes do ficheiro) atualizados. Enquanto os dados anteriores continuarem a ser referidos, permanecerão intactos.
+
+Isto torna muito fácil criar cópias instantâneas "snapshots" do subvolume BTRFS: efetuar uma nova cópia é "livre", pois utiliza muito pouco espaço em disco: apenas os metadados da cópia são gravados, o que armazena a localização física de todas as partes dos ficheiros no subvolume, e isto é feito quase instantaneamente. O espaço utilizado pela cópia só irá aumentar quando o subvolume original e a cópia diferirem, pois então a cópia recuperará os dados removidos do original. Por outro lado, os dados adicionados ao original não serão incluídos na cópia: por outras palavras, uma modificação do subvolume original não modifica a cópia.
+
+O Slint inclui o utilitário `absm`, que efetua cópias instantâneas do subvolume @, permitindo regressar a um estado anterior do sistema se uma atualização correr mal, ao arrancar o sistema a partir desta cópia, selecionada no menu de arranque do GRUB. Para saber como o utilizar, basta escrever `absm` como root ou utilizando o sudo.
+
+O BTRFS também verifica a integridade de cada ficheiro quando este é aberto utilizando um checksum, tornando desnecessário verificar o sistema de ficheiros no arranque do sistema. Além disso, o comando "btrfs scrub" verifica a integridade de todos os ficheiros, incluindo aqueles que raramente são lidos. Por defeito, o utilitário "btrfsmaintenance" incluído no Slint executa o "btrtfs scrub" uma vez por semana.
+
+`btrfsmaintenance` também aciona o "btrfs balance" uma vez por semana, por defeito. Este comando permite distribuir os dados entre os dispositivos se o sistema de ficheiros se estender por vários, mas também reorganizar o espaço utilizado, em particular para libertar o espaço não alocado do sistema de ficheiros, o que melhora em particular o desempenho do BTRFS no caso de um disco rígido. Para saber mais sobre `btrfsmaintenance` leia /usr/doc/btrfsmaintenance*/README.html
+
+Outras ferramentas úteis e compatíveis com o BTRFS estão incluídas no Slint, todas têm uma opção --help e uma página man (manual):
+
+* `jdupes` detecta ficheiros duplicados e permite-lhe tomar medidas em conformidade, independentemente do sistema de ficheiros utilizado
+* `btdu` permite conhecer com precisão o local ocupado pelos sub-volumes e directórios BTRFS
+* `restic` é um software de cópias de segurança muito versátil que pode ser utilizado para qualquer sistema de ficheiros.
+
+Recomendações.
+
+* O BTRFS precisa de espaço para respirar e reorganizar-se. Manter sempre 10-20% de espaço livre.
+* Algumas opções de ferramentas incluídas no pacote btrfs-tools podem ser perigosas ou contraproducentes. Utilize apenas aqueles cujo efeito conhece perfeitamente bem e, em caso de dúvida, procure primeiro aconselhamento, na lista de correio do Slint ou pelo IRC no irc.libera.chat, canal #btrfs.
+* Em particular, evite usar o "btrfs filesystem defrag" e especialmente não usar o "btrfs check --repair".
+* Antes de utilizar um comando, leia cuidadosamente a página man correspondente (começando com "man btrtfs" que lista as outras).
+* Como com qualquer sistema de ficheiros: faça cópias de segurança regularmente! Esta é normalmente a única forma de recuperar os seus dados em caso de falha de hardware.
+
+Para mais:
+
+* A wiki do Forza: https://wiki.tnonline.net/w/Category:Btrfs
+* A documentação oficial: https://btrfs.readthedocs.io/en/latest/
+* Questões, problemas: no canal irc.libera.chat #btrfs
+

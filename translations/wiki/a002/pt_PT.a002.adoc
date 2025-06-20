@@ -1,0 +1,142 @@
+== Personalizar um esquema do sistema Slint
+
+=== Introdução
+
+Neste artigo, revemos como o instalador do Slint organiza os diretórios básicos do sistema (o seu esquema), e mostramos como personalizar este esquema após a instalação. O processo de instalação é detalhado no Capítulo 2: Instalação do Manual.
+
+O instalador coloca todos os diretórios listados abaixo, que constituem o núcleo do sistema, na mesma partição:
+
+ bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Se outras partições já formatadas estiverem acessíveis durante a instalação, o instalador propõe que sejam montadas no arranque do sistema, com um nome de diretório escolhido pelo utilizador como ponto de montagem, excepto as listadas acima.
+
+Além disso, se o particionamento automático tiver sido escolhido, o instalador propõe a criação de uma partição adicional no espaço restante disponível no dispositivo, com um ponto de montagem escolhido pelo utilizador, também fora das listadas acima.
+
+Em suma, o instalador:
+
+* coloca todos os diretórios que constituem o núcleo do sistema na mesma partição,
+* permite configurar outros diretórios em outras partições, previamente formatadas.
+
+Contudo, poderá querer instalar ficheiros ou diretórios que fazem parte do núcleo do sistema, tais como a /home, noutra partição, especialmente se o espaço for limitado no dispositivo. Por exemplo, se o computador estiver equipado com um dispositivo rápido (SSD ou NVMe) e também com um disco rígido mais lento mas de maior capacidade, poderá querer instalar o sistema no SSD ou NVMe e os ficheiros maiores no disco rígido.
+
+Também pode querer partilhar ficheiros grandes normalmente armazenados na /home com outro sistema, tais como imagens, vários documentos, ficheiros de áudio ou vídeo.
+
+=== Guia prático
+
+Como exemplo, mostramos como mover a /home para outro dispositivo, com algumas variações.
+
+==== Mover a /home inteiramente para outro dispositivo
+
+Assumimos que pretende mover o directório /home, inicialmente instalado num SSD ou NVMe, para um disco rígido. Isto pode ser feito logo após a instalação ou mais tarde. Tudo o que se segue deve ser feito como root.
+
+Primeiro, é necessária uma partição formatada no disco rígido, denominada /dev/sdb1 abaixo, para alojar a /home:
+
+* Criar, se ainda não tiver sido feito no disco rígido, a tabela de partições (tipo GPT) e a partição utilizando uma destas ferramentas: parted, gdisk, cgdisk ou gparted, todas incluídas no Slint, suficientemente grandes para o seu uso pretendido.
+* Formatar esta partição utilizando um dos tipos de ficheiro btrfs, ext4, ou xfs (comandos `mkfs.btrfs`, `mkfs.ext4` ou `mkfs.xfs`)
+
+Para poder copiar o diretório /home para esta partição é necessário montá-la, por exemplo em /mnt, com um dos seguintes comandos:
+
+ mount /dev/sdb1 /mnt -o compress=zstd:3 # se /dev/sdb1 tiver sido formatado com btrfs
+ mount /dev/sdb1 /mnt # se /dev/sdb1 foi formatado com xfs ou ext4
+
+Depois, copiar os ficheiros, por exemplo, desta forma:
+
+ cp -a /home/* /mnt
+
+ou assim:
+
+ rsync -aAXv /home/* /mnt
+
+Depois, verificar se a cópia foi feita correctamente:
+
+ diff -r /home /mnt
+
+Depois, modificar o ficheiro /etc/fstab para montar a /home na nova partição no próximo arranque.
+
+Se o sistema de ficheiros root for o btrfs, a /home é montada como subvolume. Neste caso, comentar a linha no ficheiro utilizado para montar a /home inserindo um carácter # no seu início. Por exemplo, editar esta linha (substituir <uuid1> pelo valor UUID especificado em /etc/fstab):
+
+ UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+que se torna:
+
+ #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+Depois, inserir no ficheiro uma linha para montar no momento do arranque a /home na nova partição. Iremos designar <uuid2> o valor da sua UUID, exibido por este comando:
+
+ lsblk -lno uuid /dev/sdb1
+
+A linha a inserir no ficheiro /etc/fstab depende do sistema de ficheiros escolhido de /dev/sdb1.
+
+Para btrfs:
+
+ UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0
+
+Para ext4 ou xfs:
+
+ UUID=<uuid2> /home ext4 noatime 1 2
+
+Depois, reiniciar a máquina. Em caso de problema, para voltar atrás:
+
+* Caso ocorra descomentar a linha comentada em /etc/fstb (remova o carácter # no início da linha)
+* Comente a nova (insira um carácter # no início da linha)
+* Depois reinicie.
+
+Uma vez verificada a nova partição para um funcionamento correto, a antiga pode ser eliminada. A forma de o fazer depende do sistema de ficheiros configurado pelo instalador. Uma vez reiniciada a máquina, certifique-se de que a /home está montada na nova partição, por exemplo com o comando
+
+findmnt -o /source
+
+Depois, elimine a antiga /home:
+
+* No caso de btrfs escrever estes comandos (assumimos que o sistema foi instalado em /dev/sda3):
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # este comando inicia a recuperação do espaço ocupado pela antiga /home 
+ btrfs filesystem sync # este comando termina a recuperação do espaço ocupado pela antiga /home
+ umount /mnt
+
+* No caso de ext4 ou xfs, precisamos que a nova /home não esteja a ser utilizada para remover a antiga. Por isso:
++
+ Primeiro, reinicie em modo texto.
+ Inicie sessão como root # Não como utilizador normal, caso contrário, não poderíamos desmontar a /home, pois estaria ocupada.
+ umount /home # Isto torna a anterior /home novamente acessível.
+ rm -r /home/* # Eliminamos o conteúdo da /home anterior, mas mantemos o diretório.
+ mount /home # Agora /dev/sdb1 é montado como /home 
+
+==== Mover apenas os ficheiros maiores da /home para o disco rígido
+
+No exemplo acima, o diretório /home foi completamente transferido do SSD para o disco rígido.
+
+Pode ser preferível armazenar apenas ficheiros grandes no disco rígido e deixar diretórios e ficheiros escondidos no SSD, que estão sujeitos a gravações frequentes, muito mais rapidamente num SSD.
+
+Para tal, pode nomear o ponto de montagem da partição /dev/sdb1 `/data` em /etc/fstab, por exemplo, depois de montada esta partição, copiar os diretórios a transferir da /home para /data, e finalmente substituir estes diretórios na /home por ligações simbólicas aos diretórios em /data. Por exemplo, assim que o diretório /data for criado e montado em /dev/sdb1:
+
+ chown -R hugo:users /data
+ mv /home/hugo/Images /data
+ ln -s /data/Images /home/hugo/Images
+
+Esta forma de fazer deve ser adaptada se o sistema for multi-utilizador, por exemplo criando um subdiretório por utilizador em /data.
+
+==== Mover a /home para o disco rígido mas armazenar ficheiros frequentemente alterados no SSD 
+
+Por outro lado, é possível armazenar seletivamente ficheiros frequentemente alterados no SSD, como os contidos em ~/.mozilla, ~/.thunderbird ou ~/.purple.
+
+Por exemplo, pode criar um diretório /data e um subdiretório /data/.thunderbird no SSD, mover ~/.thunderbird para o mesmo, e criar uma ligação simbólica /data/.thunderbird => ~/.thunderbird.
+
+Se o btrfs for utilizado para o núcleo do sistema, recomenda-se criar um subvolume para /data com os seguintes comandos, antes de mover ~/.mozilla ou ~/.thunderbird para lá, assim:
+
+ mount /dev/sda3 /mnt subvolid=0
+ btrfs subvolume create /mnt/@data
+ mkdir /data
+ umount /mnt
+
+Depois, inserir uma linha em /etc/fstab para montar /data no arranque do sistema (<uuid1> é o valor UUID de /dev/sda3):
+
+ UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Depois, reinicie e escreva os seguintes comandos:
+
+  chown -R hugo:users /data
+  mv /home/hugo/.thunderbird /data
+  ln -s /data/.thunderbird ~/.thunderbird

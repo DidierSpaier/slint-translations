@@ -1,0 +1,192 @@
+#!/bin/bash
+# Written by Didier Spaier this script is dedicated to the public domain.
+#
+# This script is called by slapt-get --upgrade like this:
+#
+# Its main purpose is to  perform specific actions when upgrading kernels
+# Rationale: we want to make sure that a working kernel be always installed, but
+# we don't want to keep more kernels than necessary, to save space on disk and
+# not clutter the GRUB boot menu. In that aim:
+# 1. When installing a new kernel, we will keep the running one.
+# 2. When the new kernel runs, we remove the one that was running when
+#    installing it.
+# Additionally, this script uses spkg -i then spkg -d for packages that ship
+# many files, namely kernel-modules and kernel-source, to save time removing
+# them as spkg -d is faster that removepkg. This could be used to upgrade other
+# packages with many files that do not need a pre-installation. In case of
+# packages kernel-generic or kernel-modules it calls update-portable that will
+# make a specific initrd and grub.cfg case occuring, else make an initrd and
+# update grub directly.
+# Incidentally, we plan to not upgrade the huge kernel anymore. As soon as a
+# generic one will be running we will remove the one initially installed upon
+# next upgrade of a generic kernel.
+LOG=/tmp/wrapupgradepkglog
+date >>$LOG
+FSTYPE=$(findmnt -no fstype /)
+RUNNINGVERSION=$(uname -r)
+# We are called with the patch to the new package as $2
+NEWKERNELPATH=$2
+NEWPKGNAME="$(basename $NEWKERNELPATH)"
+FRAG='[^-]\{1,\}'
+NEWSHORTNAME=$(echo $NEWPKGNAME|sed "s/\(.*\)-$FRAG-$FRAG-$FRAG$/\1/")
+NEWVERSION=$(echo $NEWPKGNAME|sed "s/.*-\($FRAG\)-$FRAG-$FRAG$/\1/")
+if lsblk -lno type,mountpoint|grep "/$"|grep -q "^crypt"; then
+	ENCRYPT=yes
+fi
+KEYFILE=crypto_keyfile.bin
+
+# We assume that only one kernel package at a given version is installed. As a
+# consequence, if we need to reconfigure a kernel, better wait for a new version
+# or at least do not do that twice in a row, else we won't know which kernel
+# package to remove short of checking the oldest installed according to
+# "stat -c %Y $i" that you could insert below, probably an overkill.
+usepkgtools() {
+	# This function is only called to upgrade kernel-generic or kernel-headers
+	if [ "$NEWSHORTNAME" = "kernel-generic" ]; then
+		INSTALLED=$(ls -1 /var/log/packages|grep -e "kernel-generic" -e "kernel-huge")
+	else
+		INSTALLED=$(ls -1 /var/log/packages|grep -e "$NEWSHORTNAME")
+	fi
+	installpkg $NEWKERNELPATH
+	echo "$INSTALLED"|while read i; do
+		iVERSION=$(echo $i|sed "s/.*-\($FRAG\)-$FRAG-$FRAG$/\1/")
+		if [ "$iVERSION" = "$RUNNINGVERSION" ]; then
+			echo "not removing $i" >>$LOG
+			continue
+		fi
+		echo "removepkg $i" >>$LOG
+		removepkg $i
+		if [ -f /boot/initrd-$iVERSION ]; then
+			rm /boot/initrd-$iVERSION
+		fi
+	done
+	# Remove the symlinks we won't use any more
+	( cd /boot
+	rm -f System.map config config-generic vmlinuz{,-generic,-huge}
+	)
+}
+usespkg() {
+	INSTALLED=$(ls -1 /var/log/packages|grep ${NEWSHORTNAME}-[[:digit:]])
+	installpkg $NEWKERNELPATH
+	echo "$INSTALLED"|while read i; do
+		iVERSION=$(echo $i|sed "s/.*-\($FRAG\)-$FRAG-$FRAG$/\1/")
+		if [ "$iVERSION" = "$RUNNINGVERSION" ]; then
+			echo "not removing $i" >>$LOG
+			continue
+		fi
+		echo "spkg -d /var/log/packages/$i"
+		spkg -d /var/log/packages/$i
+		[ "$NEWSHORTNAME" = "kernel-modules" ] && \
+		[ -f /boot/initrd-generic-$iVERSION ] && \
+		rm /boot/initrd-generic-$iVERSION
+	done
+}
+initrdandgrub() {
+	# Called to upgrade kernel-generic or kernel-headers, do something as soon
+	# as both are installed at the same version
+	MODULESINSTALLED=$(ls -1 /var/log/packages/|grep ^kernel-modules-$NEWVERSION)
+	KERNELINSTALLED=$(ls -1 /var/log/packages/|grep ^kernel-generic-$NEWVERSION)
+	# Remove the huge kernel and the symlinks we won't use, just in case a user
+	# upgraded from an previous version or migrated from Slackware
+	if ls -1 /boot|grep -q vmlinuz-huge; then
+		removepkg kernel-huge
+	fi
+	( cd /boot
+		rm -f System.map config config-generic vmlinuz{,-generic,-huge}
+	)
+	if  [ "$MODULESINSTALLED" ] && [ "$KERNELINSTALLED" ]; then
+			/usr/sbin/geninitrd >>$LOG
+			# change the way to know that the system should be portable as in
+			# this case we do not write a custom grub.cfg any more
+			if [ ! -f /boot/grub/grub.cfg ] && grep -q "# This grub.cfg is part of a portable Slint." /boot/grub/grub.cfg; then
+				echo "The presence of this file indicates that this system should be portable." > /etc/portable
+			fi
+			[ -f /etc/portable ] && PORTABLE=1
+			if [ "$PORTABLE" ]; then
+				updateportable
+			else
+				if [ $ENCRYPT ]; then
+					cp /etc/keys/root$KEYFILE /boot/initrd-tree/$KEYFILE
+					rootdelay=1
+					ROOT_UUID=$(findmnt -no UUID /)
+					CRYPT_NAME=$(lsblk -lo pkname,mountpoint|grep "/$"|cut -d" " -f1)
+					CRYPT_UUID=$(lsblk -lo uuid,name|grep " $CRYPT_NAME$"|cut -d" " -f1)
+						mkinitrd \
+						-k $NEWVERSION \
+						-K /$KEYFILE \
+						-C UUID=${CRYPT_UUID}:cryptroot  \
+						-w $rootdelay \
+						-r UUID=$ROOT_UUID \
+						-f $FSTYPE \
+						-o /boot/initrd-generic-$NEWVERSION
+				fi
+			fi
+			updategrub
+	fi
+}
+updateportable() {
+	rootdelay=10
+	HOST_AND_STORAGE=$(find /lib/modules/$NEWVERSION/kernel/drivers/ -name "*.ko"|grep -e "/storage/" -e "/host/" -e "/core/"|grep -v -e /staging/ -e /inifiniband/|sed "s,.*/,,;s/.ko//;s/$/:/"|tr -d '\n')
+	FS="btrfs:ext2:ext4:f2fs:jfs:reiserfs:xfs:crc32_generic:crc32_pclmul:"
+	USB_KBD="uhci-hcd:usbhid:"
+	ROOTUUID="$(findmnt -no uuid /)"
+	CRYPTNAME=$(lsblk -lno pkname,mountpoint|grep "/$"|cut -d" " -f 1)
+	CRYPTUUID=$(lsblk -lno uuid,name|grep " $CRYPTNAME$"|cut -d" " -f 1)
+	sed "/GRUB_DISABLE_OS_PROBER/s/.*/GRUB_DISABLE_OS_PROBER=true/" $SLINT/etc/default/grub >bof
+	mv bof $SLINT/etc/default/grub
+	if [ "$ENCRYPT" ]; then
+		MODENCRYPT="af_alg:algif_skcipher"
+		sed "/#GRUB_ENABLE_CRYPTODISK/s/.*/GRUB_ENABLE_CRYPTODISK=y/
+		/GRUB_PRELOAD_MODULES/s/.*/GRUB_PRELOAD_MODULES=\"luks cryptodisk\"/
+		/^GRUB_DISABLE_LINUX_PARTUUID/s/.*/GRUB_DISABLE_LINUX_PARTUUID=true/
+		/^GRUB_DISABLE_LINUX_UUID/s/.*/GRUB_DISABLE_LINUX_UUID=false/" $SLINT/etc/default/grub >bof
+		mv bof $SLINT/etc/default/grub
+	fi
+	MODULES="$HOST_AND_STORAGE$FS$USB_KBD$MODENCRYPT"
+	KERNELVERSION=$NEWVERSION
+	if [ "$ENCRYPT" ]; then
+		cp -a /etc/keys/root$KEYFILE /boot/initrd-tree/$KEYFILE
+		mkinitrd \
+		-k $KERNELVERSION \
+		-m $MODULES \
+		-K /$KEYFILE \
+		-C UUID=$CRYPTUUID:cryptroot  \
+		-w $rootdelay \
+		-r UUID=$ROOTUUID \
+		-o /boot/initrd-generic-$KERNELVERSION >>$LOG
+	else
+		# we run mkinitrd again (after geninitrd) to include the setting
+		# -w rootdelay and the modules
+		mkinitrd \
+		-k $KERNELVERSION \
+		-w $rootdelay \
+		-r UUID=$ROOTUUID \
+		-m $MODULES \
+		-o /boot/initrd-generic-$KERNELVERSION >>$LOG
+	fi
+	# Get rid of initrd.gz if still there
+	rm -f /boot/initrd.gz
+}
+updategrub() {
+	if [ ! -f /boot/grub/grub.cfg ]; then
+		echo
+		gettext "It seems that you didn't install grub in Slint. If you installed it from
+another distribution you should now run update-grub from this other
+distribution, else Slint won't boot from the grub menu. If you used
+another boot manager that grub we suggest that you install grub now."
+		echo
+	else
+		gettext "Updating GRUB..."
+		echo
+		update-grub
+		echo "update-grub" >>$LOG
+		echo
+	fi
+}
+case $NEWSHORTNAME in
+	kernel-generic) usepkgtools;initrdandgrub; echo "usespktools and initrdandgrub ran." >>$LOG;;
+	kernel-modules) usespkg;initrdandgrub; echo "usepkg and initrdandgrub ran." >>$LOG;;
+	kernel-headers) usepkgtools; echo "usespkgtools ran." >>$LOG;;
+	kernel-source|libreoffice|mozilla-firefox|mozilla-thunderbird) usespkg; echo "usespkg ran." >>$LOG;;
+	*)              upgradepkg --reinstall $NEWKERNELPATH; echo "upgradepkg --reinstall ran." >>$LOG;;
+esac

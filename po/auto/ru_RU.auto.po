@@ -1,0 +1,980 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-18 07:51+0200\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /auto/auto.pot\n"
+"X-Crowdin-File-ID: 22\n"
+
+# File: functions, line: 69
+#, sh-format
+msgid "There don't seem to be any partitions on this machine\n"
+"of type Linux and size at least ${GCOUNT}G. You need one to install Linux.\n\n"
+"For more information, choose 'doc' from the menu."
+msgstr "На этой машине нет разделов с типом Linux и размером не менее ${GCOUNT}G. \n"
+"Для установки Linux нужен один.\n\n"
+"Для дополнительной информации выберите 'doc' в меню."
+
+# File: functions, line: 73
+msgid "This machine booted in EFI mode but no big enough EFI System Partition found.\n\n"
+"For more information. choose 'doc' from the menu."
+msgstr "Этот компьютер был загружен в режиме EFI, однако обнаружить\n"
+"достаточно большой системный раздел EFI не удалось.\n\n"
+"Для получения дополнительной информации выберите 'doc' в меню."
+
+# File: functions, line: 76
+msgid "If the root partition is in a drive with a GPT, GRUB needs a BIOS boot\n"
+"partition on the same drive, of size at least 3M. We didn't find such a\n"
+"configuration."
+msgstr "Если корневой раздел находится на диске с GPT, GRUB требуется\n"
+"загрузочный раздел BIOS на том же диске, размером не менее 3M.\n"
+"Не удалось обнаружить подобную конфигурацию."
+
+# File: functions, line: 79
+#, sh-format
+msgid "We didn't find a drive of size at least ${GCOUNT}G and no mounted\n"
+"partition, so the automatic partitioning is not possible."
+msgstr "Не удалось найти диск размером не менее ${GCOUNT}G, не имеющий\n"
+"смонтированных разделов, поэтому автоматическая разметка невозможна."
+
+# File: functions, line: 81
+msgid "The machine booted in EFI mode but we did not find a potential root partition\n"
+"with an EFI system partition on the same drive so the manual partitioning\n"
+"mode is not possible."
+msgstr "Этот компьютер был загружен в режиме EFI, однако обнаружить\n"
+"потенциальный корневой раздел с системным разделом EFI на одном диске\n"
+"не удалось. Ручная разметка невозможна."
+
+# File: functions, line: 100
+msgid "Press Enter to go back to the menu "
+msgstr "Нажмите Enter для возврата в меню"
+
+# File: functions, line: 103
+msgid "Welcome back to the menu of the Slint installer.\n\n"
+"You may now type (without the quotes):\n\n"
+"'doc' to know the features and usage of the installer.\n"
+"'start' to start the installation.\n\n"
+"The installer can prepare the drive where Slint will be installed,\n"
+"creating the the needed partitions. If you prefer you can do it yourself\n"
+"using command line utilities available in the installer, then type 'start'\n"
+"when done. You can also leave the installer and use a tool like gparted\n"
+"to do that then start the installer again.\n\n"
+"We recommend that you type 'doc' first in this case, or if you want to\n"
+"encrypt the root Slint partition.\n"
+"When you finish reading this menu will be displayed again."
+msgstr "Добро пожаловать обратно в меню программы установки Slint.\n\n"
+"Вы можете ввести (без кавычек):\n\n"
+"'doc' для информации об особенностях и использовании установщика.\n"
+"'start' для запуска установки.\n\n"
+"Программа установки может подготовить накопитель для установки Slint,\n"
+"создав необходимые разделы. При желании вы можете сделать\n"
+"это самостоятельно с помощью утилит командной строки, доступных\n"
+"в программе установки, после чего ввести 'start'. Вы также можете покинуть\n"
+"программу установки и использовать инструмент наподобие gparted,\n"
+"после чего запустить программу установки еще раз.\n\n"
+"В этом случае, а также если вы хотите зашифровать корневой раздел Slint,\n"
+"рекомендуем сперва ввести 'doc'. По завершении чтения это меню будет\n"
+"показано снова."
+
+# File: functions, line: 154
+#. We are called by welcome
+msgid "In manual partitioning mode you partition and format the drive\n"
+"where you want to install Slint to your liking, using utilities it includes.\n"
+"This gives you more choices of partitions layout and file systems but needs\n"
+"to be acquainted to Linux and the command line (but you may also have used\n"
+"a tool like gparted live before starting the installer, or from another system)."
+msgstr "В режиме ручной разметки вы размечаете и форматируете диск,\n"
+"на который хотите установить Slint, в соответствии с вашими пожеланиями,\n"
+"используя для этого встроенные утилиты. Этот режим предлагает больший выбор\n"
+"вариантов разметки и файловых систем, но требует знакомства с Linux и командной\n"
+"строкой (вы также можете использовать инструмент наподобие gparted перед\n"
+"запуском программы установки или из другой системы)."
+
+# File: functions, line: 160
+msgid "In auto mode the installer do it for you, but chooses the\n"
+"partition layout and the file system."
+msgstr "В автоматическом режиме программа установки делает это за вас,\n"
+"но сама выбирает вариант разметки и файловую систему."
+
+# File: functions, line: 163
+msgid "In both modes you will be given a chance to indicate existing\n"
+"partitions (not needed by Slint) that you want to access from Slint."
+msgstr "В обоих режимах вам будет предоставлена возможность указать\n"
+"существующие разделы (не требуемые Slint),\n"
+"к которым вы хотите иметь доступ из Slint."
+
+# File: functions, line: 166
+# File: functions, line: 174
+# File: functions, line: 187
+# File: functions, line: 196
+# File: functions, line: 215
+# File: functions, line: 223
+# File: functions, line: 233
+msgid "Press Enter to continue"
+msgstr "Нажмите Enter для продолжения"
+
+# File: functions, line: 170
+#. We are called by setotherlinux or addpartition or setmountpoint
+#, sh-format
+msgid "These directories should not be mounted on separate partitions:\n"
+"$RESERVED\n"
+"or use arbitrary directory names, for instance to mount other Linux systems.\n"
+msgstr "В следующие каталоги не должны монтироваться разные разделы:\n"
+"$RESERVED\n"
+"используйте произвольные имена каталогов, например, для монтирования других систем Linux.\n"
+
+# File: functions, line: 180
+#, sh-format
+msgid "You may dedicate all the space available on the drive (${ARG2}G) to the root\n"
+"Slint partition, or make this partition smaller (at least ${ARG1}G) to reserve\n"
+"some space for a future use, like setting up a partition shared across OS or\n"
+"installing later another OS alongside Slint.\n\n"
+"To dedicate all the available space to the root Slint partition, set its size to\n"
+"${ARG2}G."
+msgstr "Вы можете выделить все доступное на диске пространство (${ARG2}G)\n"
+"под корневой раздел Slint или сделать этот раздел меньшим (не менее ${ARG1}G),\n"
+"чтобы оставить свободное пространство на будущее, например, для раздела,\n"
+"совместно используемого между ОС, или для установки другой ОС вместе с Slint.\n\n"
+"Чтобы выделить все доступное пространство под корневой раздел Slint,\n"
+"задайте его размер ${ARG2}G."
+
+# File: functions, line: 190
+msgid "brtfs is the most advanced and flexible linux file system, offering\n"
+"snapshots, subvolumes support, online check and repair, RAID. Using these\n"
+"features needs some learning.\n"
+"ex4 is the most common Linux file system and is very reliable.\n"
+"xfs can be preferred to ext if you have very large storage requirements with\n"
+"large files"
+msgstr "brtfs - это наиболее продвинутая и гибкая файловая система Linux,\n"
+"предлагающая снимки, поддержку подтомов, проверку и исправление\n"
+"ошибок без размонтирования, RAID. Использование этих возможностей\n"
+"требует некоторого изучения.\n"
+"ext4 - это наиболее распространенная файловая система Linux, она очень надежна.\n"
+"xfs может быть предпочтительна, если вам требуется очень большое\n"
+"хранилище для объемных файлов"
+
+# File: functions, line: 199
+msgid "Encrypt a drive prevents theft of the data it contains in case of loss\n"
+"or theft of the drive itself or of the machine where it is installed.\n"
+"If you decide to encrypt it, you will need to type a so called \"passphrase\"\n"
+"to unlock it every time you boot Slint.\n"
+"Be aware that if you forget the passphrase all data in the drive will be\n"
+"irrecoverably lost! So write it down carefully on a safe place.\n"
+"We will ask you to type the passphrase later using a \"us\" keyboard map."
+msgstr "Шифрование диска предотвращает кражу данных, которые он содержит,\n"
+"в случае потери или кражи самого диска или компьютера, в котором он\n"
+"установлен. Если вы решите использовать шифрование, вам нужно будет\n"
+"вводить пароль для разблокировки каждый раз, когда вы запускаете Slint.\n"
+"Обратите внимание, что если вы забудете пароль, все данные на диске будут\n"
+"безвозвратно утеряны! Запишите пароль и сохраните его в надежном месте.\n"
+"Мы попросим вас ввести пароль позже, используя раскладку клавиатуры \"us\"."
+
+# File: functions, line: 208
+#, sh-format
+msgid "\n"
+"As you are currently using a \"$KEYMAP\" keyboard map, we will spell each\n"
+"character of the passphrase you type, which may differ from the one engraved\n"
+"on the keyboard key.\n"
+msgstr "\n"
+"Поскольку в данный момент вы используете раскладку клавиатуры \"$KEYMAP\",\n"
+"мы будем озвучивать каждый введенный символ пароля, он может отличаться\n"
+"от нанесенного на клавишу клавиатуры.\n"
+
+# File: functions, line: 218
+msgid "The passphrase should have at least 8 characters. Only ASCII printable\n"
+"characters are allowed. This includes non accented lower case and capital\n"
+"letters, digits from 0 to 9, space and following punctuation characters:"
+msgstr "Пароль должен содержать не менее 8 символов. Допустимы только\n"
+"печатаемые символы ASCII. В них входят строчные и прописные латинские\n"
+"буквы (без диакритических знаков), цифры от 0 до 9, пробел и следующие\n"
+"знаки препинания:"
+
+# File: functions, line: 226
+msgid "If you choose C (Console) Slint will start in text mode, in a console\n"
+"where you type commands at the prompt. It will first ask your login name then\n"
+"your password. After that you can type commands or start a graphical\n"
+"environment just typing: 'startx' without the quotes.\n"
+"If instead you choose G (Graphical) you will type your login name then your\n"
+"password in a window, then the graphical environment will be displayed."
+msgstr "Если вы выберете C (консольный режим), Slint запустится в текстовом режиме,\n"
+"в консоли, где вы вводите команды в командной строке. Система сначала\n"
+"запросит ваше имя пользователя, затем пароль. После этого вы можете начать\n"
+"вводить команды или запустить графическую среду, просто введя 'startx' без кавычек.\n"
+"Если вместо этого вы выберете G (графический режим), вам нужно будет ввести\n"
+"свое имя пользователя и пароль в окне, после чего будет отображена графическая среда."
+
+# File: functions, line: 236
+msgid "In the links web browser you navigate with the keyboard:\n"
+"To go to the next or previous fields press the up or down arrow keys\n"
+"To quit press q then confirm pressing Enter\n"
+"To display the key bindings press F1\n"
+"to display the menu press Esc then navigate with the arrow keys"
+msgstr "В веб-браузере links вы выполняете действия с помощью клавиатуры:\n"
+"Для перехода к следующему или предыдущему полю нажмите клавиши\n"
+"со стрелками вверх или вниз\n"
+"Чтобы выйти, нажмите клавишу q, затем подтвердите нажатием Enter\n"
+"Для отображения сочетаний клавиш нажмите F1\n"
+"Для отображения меню нажмите Esc и перемещайтесь по меню с помощью\n"
+"клавиш со стрелками"
+
+# File: functions, line: 242
+msgid "Press Enter to continue."
+msgstr "Нажмите Enter для продолжения."
+
+# File: functions, line: 325
+#, sh-format
+msgid "Please choose mount point for $NAME.\n"
+"Use only lower case letters and do not choose a directory name reserved in Linux\n"
+"or in other OS from which this partition will be accessed."
+msgstr "Выберите точку монтирования для $NAME.\n"
+"Используйте только строчные буквы и не указывайте имя каталога, зарезервированное\n"
+"в Linux или других ОС, которые будут обращаться к данному разделу."
+
+# File: functions, line: 331
+msgid "Please choose a name for the new partition; like \"data\". Use only lower case\n"
+"letters and do not choose a reserved directory name in Linux or in other OS from\n"
+"which this partition will be accessed."
+msgstr "Выберите имя для нового раздела, например \"data\". Используйте только строчные\n"
+"буквы и не указывайте имя каталога, зарезервированное в Linux или других ОС,\n"
+"которые будут обращаться к данному разделу."
+
+# File: functions, line: 338
+msgid "Type the name of the new partition, or h for help: "
+msgstr "Введите имя нового раздела или h для справки: "
+
+# File: functions, line: 340
+#, sh-format
+msgid "Type the mount point for $NAME, or h for help: "
+msgstr "Введите точку монтирования для $NAME или h для справки: "
+
+# File: functions, line: 355
+#, sh-format
+msgid "$MOUNTPOINT is a reserved directory name."
+msgstr "$MOUNTPOINT - это зарезервированное имя каталога."
+
+# File: functions, line: 361
+msgid "This mount point is already in use."
+msgstr "Эта точка монтирования уже используется."
+
+# File: functions, line: 367
+msgid "in \"auto\" mode a partition for /home should be located in another drive."
+msgstr ""
+
+# File: functions, line: 369
+msgid "You will be allowed to select one later, already used or just created."
+msgstr ""
+
+# File: functions, line: 371
+msgid "If it already contains data you will choose to keep or erase them."
+msgstr ""
+
+# File: functions, line: 391
+msgid "Do you want to format this partition? If yes we will erase everything in it\n"
+"so all data it contains will be lost!"
+msgstr ""
+
+# File: functions, line: 396
+#, sh-format
+msgid "Do you want to delete all data on $NAME et re-format it?"
+msgstr "Вы хотите удалить все данные на $NAME и установить Slint на него?"
+
+# File: functions, line: 398
+# File: functions, line: 841
+# File: functions, line: 850
+msgid "Type yes or no: "
+msgstr "Введите yes (да) или no (нет): "
+
+# File: functions, line: 403
+# File: functions, line: 1070
+# File: functions, line: 1142
+msgid "Allowed file system types for linux partitions are:"
+msgstr "Допустимые варианты файловой системы для разделов Linux:"
+
+# File: functions, line: 408
+# File: functions, line: 1075
+# File: functions, line: 1147
+#, sh-format
+msgid "Type the file system type for $NAME or h for help: "
+msgstr "Введите название файловой системы для $NAME или h для справки: "
+
+# File: functions, line: 435
+msgid "No installation media found.\n"
+"Please restart leaving it inserted or plugged in."
+msgstr "Установочный носитель не найден.\n"
+"Вставьте или подключите его и перезагрузитесь."
+
+# File: functions, line: 438
+msgid "But if the installation ISO is in some disk partition, mount this partition like this:\n"
+"mount <partition /dev/something/> /floppy\n"
+"then type: mount <path to the ISO> /ISO\n"
+"then type start again."
+msgstr ""
+
+# File: functions, line: 449
+#, sh-format
+msgid "We could not mount the installer for this reason:\n"
+"$MOUNTSRCERROR"
+msgstr "Не удалось смонтировать установочный носитель по следующей причине:\n"
+"$MOUNTSRCERROR"
+
+# File: functions, line: 649
+msgid "The Slint installer proposes installation options and let you choose\n"
+"what you prefer, through question/answer dialogues, then it installs and\n"
+"configure Slint. After installation you may customize the system through\n"
+"simple commands listed in the included documentation."
+msgstr "Программа установки Slint предлагает параметры установки и позволяет\n"
+"настроить их в соответсвтии с вашими предпочтениями посредством диалогов\n"
+"в формате вопрос/ответ, затем она установит и настроит Slint. После установки\n"
+"вы можете настроить систему с помощью простых команд, перечисленных в документации."
+
+# File: functions, line: 654
+msgid "You can chose between a manual or auto partitioning."
+msgstr "Вы можете выбрать между ручной и автоматической разметкой диска."
+
+# File: functions, line: 656
+msgid "If you prefer manual (custom) partitioning but did not do the partitioning yet,\n"
+"press q to quit now. You will type 'start' again when ready."
+msgstr "Если вы предпочитаете ручную (пользовательскую) разметку, но еще не\n"
+"выполнили ее, введите q для выхода. Снова введите 'start', когда будете готовы."
+
+# File: functions, line: 661
+msgid "Press m for manual, a for auto, h for help or q to quit: "
+msgstr "Введите m для ручной, a для автоматической, h для справки или q для выхода: "
+
+# File: functions, line: 666
+# File: functions, line: 1217
+msgid "Type 'start' again when you will be ready."
+msgstr "Снова введите 'start', когда будете готовы."
+
+# File: functions, line: 668
+#, sh-format
+msgid "$ANSWER is not a valid answer."
+msgstr "$ANSWER не является допустимым ответом."
+
+# File: functions, line: 766
+msgid "Slint can be installed on this drive:"
+msgstr "Slint может быть установлен на следующий диск:"
+
+# File: functions, line: 771
+# File: functions, line: 791
+msgid "To install Slint on this drive we need to wipe all data in it"
+msgstr "Для установки Slint на этот диск необходимо стереть с него все данные"
+
+# File: functions, line: 780
+msgid "Slint can be installed on one of the drives listed below."
+msgstr "Slint может быть установлен на один из дисков, перечисленных ниже."
+
+# File: functions, line: 799
+#. Now let the user choose the drive and record it according
+#. to its serial number rather than to its name, which could
+#. change before we ask for confirmation, for instance if a
+#. drive is inserted or removed.
+msgid "Please type the chosen drive's number, or q to quit: "
+msgstr "Введите номер выбранного диска или q для выхода: "
+
+# File: functions, line: 826
+msgid "Slint would be installed on this drive:"
+msgstr "Slint будет установлен на следующий диск:"
+
+# File: functions, line: 831
+#, sh-format
+msgid "To dedicate $NAME, size ${SIZEG}G to Slint we need to delete all data\n"
+"stored on this drive, including existing OS case occurring.\n"
+"Here are its current partitions:"
+msgstr "Для того чтобы выделить $NAME объемом ${SIZEG}G под Slint, необходимо удалить\n"
+"все данные, хранящиеся на этом диске, включая существующие ОС при их наличии.\n"
+"Ниже представлены его текущие разделы:"
+
+# File: functions, line: 839
+#, sh-format
+msgid "Do you want to delete all data on $NAME then install Slint on it?"
+msgstr "Вы хотите удалить все данные на $NAME и установить Slint на него?"
+
+# File: functions, line: 848
+msgid "Do you want to install Slint on it?"
+msgstr "Вы хотите установить Slint на него?"
+
+# File: functions, line: 891
+#, sh-format
+msgid "You can dedicate all the available space: ${GAVAILABLE}G to Slint's root partition,\n"
+"or keep part of it for another usage.\n"
+"The size of the Slint root partition should be between ${GCOUNT}G and ${GAVAILABLE}G."
+msgstr "Вы можете выделить все доступное пространство - ${GAVAILABLE}G - под\n"
+"корневой раздел Slint или оставить его часть для других нужд.\n"
+"Размер корневого раздела Slint должен быть между ${GCOUNT}G и ${GAVAILABLE}G."
+
+# File: functions, line: 896
+msgid "Size of the Slint root partition (h for help): "
+msgstr "Размер корневого раздела Slint (h для справки): "
+
+# File: functions, line: 907
+#, sh-format
+msgid "$GROOTSIZE is not a number."
+msgstr "$GROOTSIZE не является числом."
+
+# File: functions, line: 913
+#, sh-format
+msgid "$GROOTSIZE is not a number between $GCOUNT and $GAVAILABLE."
+msgstr "$GROOTSIZE не является числом между $GCOUNT и $GAVAILABLE."
+
+# File: functions, line: 967
+#, sh-format
+msgid "There remains ${GREMAINING}G of free space in $DRIVEPATH. You may allocate all\n"
+"or part of it to an additional partition. If you want an additional partition\n"
+"type its size below (at most ${GREMAINING}G), else just press Enter."
+msgstr "Осталось ${GREMAINING}G свободного места на $DRIVEPATH. Вы можете выделить\n"
+"это пространство или его часть под дополнительный раздел. Если вы хотите создать\n"
+"дополнительный раздел, введите его размер ниже (максимум ${GREMAINING}G),\n"
+"иначе просто нажмите Enter."
+
+# File: functions, line: 972
+#, sh-format
+msgid "Size of the added partition (h for help): "
+msgstr "Размер дополнительного раздела (h для справки): "
+
+# File: functions, line: 988
+#, sh-format
+msgid "The size should be at most ${GREMAINING}G."
+msgstr "Размер не должен превышать ${GREMAINING}G."
+
+# File: functions, line: 1043
+# File: functions, line: 1114
+msgid "You have chosen the \"manual\" partitioning mode."
+msgstr "Вы выбрали \"ручной\" режим разметки."
+
+# File: functions, line: 1045
+# File: functions, line: 1116
+msgid "We need to identify the root Slint partition, to be mounted as \"/\".\n"
+"We will later format this partition, which will erase its content."
+msgstr "Необходимо определить корневой раздел Slint, который будет смонтирован как \"/\".\n"
+"Позже мы отформатируем этот раздел, что приведет к удалению его содержимого."
+
+# File: functions, line: 1048
+#, sh-format
+msgid "We have found only one Linux partition big enough to install Slint:\n"
+"${ROOTNAME}, size ${GSIZE}G."
+msgstr "Мы нашли только один раздел Linux, достаточно большой для установки Slint:\n"
+"${ROOTNAME}, размером ${GSIZE}G."
+
+# File: functions, line: 1052
+#, sh-format
+msgid "Do you want to install Slint on $ROOTNAME?"
+msgstr "Вы хотите установить Slint на $ROOTNAME?"
+
+# File: functions, line: 1054
+msgid "Please type yes to confirm or no to quit: "
+msgstr "Введите yes для подтверждения или no для выхода: "
+
+# File: functions, line: 1119
+msgid "You can select the root partition among these:"
+msgstr "Вы можете выбрать корневой раздел из следующих разделов:"
+
+# File: functions, line: 1126
+msgid "Please type the root partitions's number, or q to quit: "
+msgstr "Введите номер корневого раздела или q для выхода: "
+
+# File: functions, line: 1131
+# File: functions, line: 1226
+#, sh-format
+msgid "$ANSWER is not a listed partition number."
+msgstr "$ANSWER не является номером раздела из приведенного списка."
+
+# File: functions, line: 1202
+msgid "You can associate a mount point to each partition listed below.\n"
+"You will first select a partition typing its number, then its mount point.\n"
+"Type d when done, l to display the list again, or q to quit."
+msgstr "Вы можете определить точку монтирования для каждого из разделов,\n"
+"перечисленных ниже. Сначала выберите раздел, введя его номер,\n"
+"затем укажите точку монтирования.\n"
+"Введите d, когда закончите, l для повторного отображения списка или q для выхода."
+
+# File: functions, line: 1212
+msgid "Partition number? (or l to display the list, d when done, q to quit): "
+msgstr "Номер раздела? (или l для отображения списка, d по окончании, q для выхода): "
+
+# File: functions, line: 1257
+msgid "We will now list the partitions found on this machine with one of the file systems\n"
+"exfat, ntfs, vfat, used by Windows. You will now type the numbers of those you want\n"
+"to be automatically mounted at boot time, either read-only or read-write."
+msgstr "Ниже будут перечислены разделы, найденные на этом компьютере и содержащие\n"
+"одну из файловых систем (exfat, ntfs, vfat), используемых Windows. Введите номера тех,\n"
+"которые вы хотели бы автоматически монтировать во время загрузки в режиме\n"
+"\"только для чтения\" или \"для чтения и записи\"."
+
+# File: functions, line: 1265
+msgid "Partition number? (l to display the list, d when done, h for help):"
+msgstr "Номер раздела? (l для отображения списка, d по окончании, h для справки):"
+
+# File: functions, line: 1282
+#, sh-format
+msgid "$ANSWER is not a listed partition number"
+msgstr "$ANSWER не является номером раздела из приведенного списка"
+
+# File: functions, line: 1330
+#, sh-format
+msgid "The root Slint partition can be encrypted to prevent data\n"
+"steal in case of loss or theft of the machine or the drive where Slint is\n"
+"installed. Then you will type a so-called \"passphrase\" to unlock the Slint\n"
+"partition, giving access to the boot menu. We will record this passphrase"
+msgstr "Корневой раздел Slint может быть зашифрован для предотвращения кражи\n"
+"данных в случае потери или кражи устройства или накопителя, на котором\n"
+"установлен Slint. Вам понадобится ввести пароль, необходимый для разблокировки\n"
+"раздела Slint и получения доступа к меню загрузки. Этот пароль будет сохранен"
+
+# File: functions, line: 1335
+#, sh-format
+msgid " using a \"us\" keyboard map"
+msgstr ", используя раскладку клавиатуры \"us\""
+
+# File: functions, line: 1340
+#, sh-format
+msgid "Do you want to encrypt $NAME? type yes, no or h for help."
+msgstr "Вы хотите зашифровать $NAME? Введите yes (да), no (нет) или h для справки."
+
+# File: functions, line: 1361
+#, sh-format
+msgid "We are ready to do what you requested:\n"
+"Install Slint on this drive:\n"
+"$NAME $VEND $MOD size ${SIZEG}G"
+msgstr "Мы готовы выполнить запрошенные вами действия:\n"
+"Установить Slint на следующий диск:\n"
+"$NAME $VEND $MOD размером ${SIZEG}G"
+
+# File: functions, line: 1365
+msgid "All data previously stored on it will be deleted."
+msgstr "Все хранящиеся на нем данные будут удалены."
+
+# File: functions, line: 1371
+#, sh-format
+msgid "We are ready to do what you requested:\n"
+"Install Slint on this partition:\n"
+"$NAME, size ${SIZEG}G, file system $FSTYPE\n"
+"All data previously stored on it will be deleted but the contents of\n"
+"other partitions on $PKNAME will be preserved."
+msgstr "Мы готовы выполнить запрошенные вами действия:\n"
+"Установить Slint на следующий раздел:\n"
+"$NAME, размер ${SIZEG}G, файловая система $FSTYPE\n"
+"Все хранящиеся на нем данные будут удалены, но содержимое\n"
+"других разделов на $PKNAME будет сохранено."
+
+# File: functions, line: 1379
+msgid "The root partition will be encrypted."
+msgstr "Корневой раздел будет зашифрован."
+
+# File: functions, line: 1385
+#, sh-format
+msgid "The Slint system partition will have a size of ${ROOTSIZE}G."
+msgstr "Размер корневого раздела Slint составит ${ROOTSIZE}G."
+
+# File: functions, line: 1390
+#, sh-format
+msgid "A \"$ADDEDPARTNAME\" partition of size ${ADDEDPARTSIZE}G will be set up."
+msgstr "Будет создан раздел \"$ADDEDPARTNAME\" размером ${ADDEDPARTSIZE}G."
+
+# File: functions, line: 1396
+#, sh-format
+msgid "A space of size ${GAVAILABLE}G will stay free after the last partition."
+msgstr "Пространство размером ${GAVAILABLE}G останется свободным после последнего раздела."
+
+# File: functions, line: 1401
+msgid "Partitions listed below will be accessible:"
+msgstr "Перечисленные ниже разделы будут доступны:"
+
+# File: functions, line: 1431
+msgid "If you confirm these settings they will be applied,\n"
+"else you will go back to the greeting screen of the installer."
+msgstr "Если вы подтвердите эти настройки, они будут применены,\n"
+"иначе вы вернетесь на экран приветствия программы установки."
+
+# File: functions, line: 1435
+msgid "To confirm these settings type yes, else type no: "
+msgstr "Для подтверждения этих настроек введите yes (да), иначе введите no (нет): "
+
+# File: functions, line: 1442
+msgid "You can redo a configuration."
+msgstr "Вы можете повторить настройку заново."
+
+# File: functions, line: 1451
+#, sh-format
+msgid "We prepare $DRIVEPATH to install Slint..."
+msgstr "Подготовка $DRIVEPATH для установки Slint..."
+
+# File: functions, line: 1460
+#, sh-format
+msgid "We will now record the passphrase to use to unlock the drive $DRIVEPATH"
+msgstr "Сейчас будет создан пароль, необходимый для разблокировки диска $DRIVEPATH"
+
+# File: functions, line: 1462
+msgid "It should include at least one capital letter, one lower case letter,\n"
+"one digit and one punctuation sign and have at least 8 characters.\n"
+"Write it in a safe place first!"
+msgstr "Он должен включать в себя как минимум одну прописную букву, одну строчную\n"
+"букву, одну цифру и один знак препинания и содержать не менее 8 символов.\n"
+"Сохраните его в надежном месте!"
+
+# File: functions, line: 1471
+#, sh-format
+msgid "\n"
+"You are currently using a \"$KEYMAP\" keyboard map, but when you will type the\n"
+"passphrase to unlock the drive a \"us\" keyboard map will be set up. For this\n"
+"reason we will now display the typed characters using an \"us\" keyboard map.\n"
+msgstr "\n"
+"В данный момент вы используете раскладку клавиатуры \"$KEYMAP\", но при вводе\n"
+"пароля для разблокировки диска будет установлена раскладка \"us\". В связи с этим\n"
+"вводимые сейчас символы будут отображены с использованием раскладки \"us\".\n"
+
+# File: functions, line: 1479
+msgid "Passphrase (h for help): "
+msgstr "Пароль (h для справки): "
+
+# File: functions, line: 1487
+msgid "The passphrase may only contain ASCII characters"
+msgstr "Пароль может содержать только символы ASCII"
+
+# File: functions, line: 1494
+msgid "The passphrase should have at least 8 characters."
+msgstr "Пароль должен содержать не менее 8 символов."
+
+# File: functions, line: 1500
+msgid "The passphrase should include at least one lower case letter."
+msgstr "Пароль должен содержать хотя бы одну строчную букву."
+
+# File: functions, line: 1506
+msgid "The passphrase should include at least one capital letter."
+msgstr "Пароль должен содержать хотя бы одну прописную букву."
+
+# File: functions, line: 1512
+msgid "The passphrase should include at least one digit."
+msgstr "Пароль должен содержать хотя бы одну цифру."
+
+# File: functions, line: 1518
+msgid "The passphrase should include at least one punctuation character."
+msgstr "Пароль должен содержать хотя бы один знак препинания."
+
+# File: functions, line: 1523
+#, sh-format
+msgid "Please type again the passphrase, to check: "
+msgstr "Пожалуйста, повторно введите пароль для проверки: "
+
+# File: functions, line: 1530
+msgid "Passphrases do not match. please try again."
+msgstr "Пароли не совпадают. Попробуйте еще раз."
+
+# File: functions, line: 1537
+msgid "Encrypting the root Slint partition..."
+msgstr "Шифрование корневого раздела Slint..."
+
+# File: functions, line: 1697
+msgid "Installing the first software packages..."
+msgstr "Установка первых пакетов программного обеспечения..."
+
+# File: functions, line: 1712
+#. We will just use the passphrase as keyfile, thus if the keyfile is lost
+#. or damaged the user can still unlock the partition typing the passphrase.
+msgid "Generating a decryption keyfile..."
+msgstr "Создание файла ключа расшифровки..."
+
+# File: functions, line: 1845
+msgid "The user \"root\" has all rights on the system, including to wipe it.\n"
+"This status should be accessed only with a good password."
+msgstr "У пользователя \"root\" есть все права в системе, в том числе на ее удаление.\n"
+"Пользователь с таким статусом должен иметь хороший пароль."
+
+# File: functions, line: 1852
+#, sh-format
+msgid "Please type the password for $THISUSER: "
+msgstr "Введите пароль для $THISUSER: "
+
+# File: functions, line: 1860
+msgid "The password should have at least 6 characters."
+msgstr "Пароль должен содержать не менее 6 символов."
+
+# File: functions, line: 1864
+#, sh-format
+msgid "Please type again the password for $THISUSER, to check: "
+msgstr "Пожалуйста, повторно введите пароль для $THISUSER для проверки: "
+
+# File: functions, line: 1872
+msgid "Passwords do not match. please try again."
+msgstr "Пароли не совпадают. Попробуйте еще раз."
+
+# File: functions, line: 1886
+msgid "We will now set up an account for a regular user.\n"
+"Other user accounts can be set up after installation.\n"
+"We need to know under which name this user will log in to access Slint."
+msgstr "Сейчас будет создана учетная запись для обычного пользователя.\n"
+"Учетные записи других пользователей можно настроить после установки.\n"
+"Нам нужно знать, под каким именем этот пользователь будет входить в систему,\n"
+"чтобы получить доступ к Slint."
+
+# File: functions, line: 1894
+msgid "Login name of the first registered user: "
+msgstr "Имя учетной записи первого зарегистрированного пользователя: "
+
+# File: functions, line: 1899
+msgid "The username should not begin with a '_'"
+msgstr "Имя пользователя не должно начинаться с символа '_'"
+
+# File: functions, line: 1902
+msgid "The user name should only contains non accented lower case letters, digits\n"
+"from 0 to 9, '_' or '-'"
+msgstr "Имя пользователя должно содержать только строчные латинские буквы\n"
+"(без диакритических знаков), цифры от 0 до 9, символы '_' или '-'"
+
+# File: functions, line: 1916
+msgid "Blind users can run Slint with a Braille device or a screen reader."
+msgstr "Слепые пользователи могут использовать Slint с помощью\n"
+"дисплея Брайля или программы чтения с экрана."
+
+# File: functions, line: 1919
+msgid "Will you use a Braille device? Please answer yes or no: "
+msgstr "Вы будете использовать дисплей Брайля? Ответьте yes (да) или no (нет): "
+
+# File: functions, line: 1933
+#. Choose the startup mode
+msgid "Do you want to start Slint in a console or in graphical mode?"
+msgstr "Вы хотите запускать Slint в консольном или графическом режиме?"
+
+# File: functions, line: 1936
+msgid "Type c for console or g for graphical, or h for help then press Enter: "
+msgstr "Введите c для консольного режима, g для графического или h для справки,\n"
+"после чего нажмите Enter: "
+
+# File: functions, line: 1956
+msgid "In the next dialog, you will choose the language for your Slint System."
+msgstr "В следующем диалоговом окне вы выберите язык для вашей системы Slint."
+
+# File: functions, line: 1958
+msgid "Press Enter to continue:"
+msgstr "Нажмите Enter для продолжения:"
+
+# File: functions, line: 1962
+# File: functions, line: 2147
+msgid "Please wait..."
+msgstr "Пожалуйста, подождите..."
+
+# File: functions, line: 2016
+msgid "An internet connection would allow to get software packages newer than\n"
+"those shipped with the installer, but we couldn't get a wired connection."
+msgstr "Подключение к Интернету позволяет получить программные пакеты новее, чем те,\n"
+"что поставляются с установщиком, но установить проводное соединение не удалось."
+
+# File: functions, line: 2020
+msgid "Should we try to get a wifi connection? Please type yes or no: "
+msgstr "Попытаться установить соединение Wi-Fi? Введите yes (да) или no (нет): "
+
+# File: functions, line: 2034
+msgid "Scanning the wifi networks..."
+msgstr "Сканирование сетей Wi-Fi..."
+
+# File: functions, line: 2081
+msgid "No wifi network detected."
+msgstr "Сетей Wi-Fi не обнаружено."
+
+# File: functions, line: 2086
+msgid "SSID (network name) or l to get a list: "
+msgstr "SSID (имя сети) или l для получения списка: "
+
+# File: functions, line: 2099
+msgid "Wrong SSID."
+msgstr "Неверный SSID."
+
+# File: functions, line: 2101
+msgid "Press Enter to try again or type q to give up: "
+msgstr "Нажмите Enter, чтобы повторить попытку, или введите q для отмены: "
+
+# File: functions, line: 2111
+msgid "Passphrase: "
+msgstr "Пароль: "
+
+# File: functions, line: 2126
+msgid "A WPA passphrase should have between 8 and 63 characters"
+msgstr "Пароль WPA должен включать в себя от 8 до 63 символов"
+
+# File: functions, line: 2139
+msgid "Wrong passphrase. Press Enter to try again or type q to quit: "
+msgstr "Неверный пароль. Нажмите Enter, чтобы повторить попытку, или введите q для выхода: "
+
+# File: functions, line: 2152
+msgid "Wifi connection failed. Wrong passphrase?"
+msgstr "Не удалось установить соединение Wi-Fi. Неправильный пароль?"
+
+# File: functions, line: 2154
+#, sh-format
+msgid "Press Enter to try again or type q to quit: "
+msgstr "Нажмите Enter, чтобы повторить попытку, или введите q для выхода: "
+
+# File: functions, line: 2179
+#, sh-format
+msgid "Are credentials requested to use $SSID? Type yes or no: "
+msgstr "Требуются ли учетные данные для использования $SSID?\n"
+"Введите yes (да) или no (нет): "
+
+# File: functions, line: 2190
+msgid "Wifi connection failed."
+msgstr "Не удалось установить соединение Wi-Fi."
+
+# File: functions, line: 2197
+msgid "You will now type the credentials in a web browser."
+msgstr "Понадобится ввести учетные данные в веб-браузере."
+
+# File: functions, line: 2199
+msgid "When done press Q to quit the browser."
+msgstr "По завершении нажмите Q для выхода из браузера."
+
+# File: functions, line: 2202
+msgid "Press Enter to start the browser or type h for help on its usage: "
+msgstr "Нажмите Enter для запуска браузера или введите h для справки по его использованию: "
+
+# File: functions, line: 2222
+#, sh-format
+msgid "Please type the password for $SSID, or q to give up using wifi: "
+msgstr "Введите пароль для $SSID или q, чтобы отказаться от использования Wi-Fi: "
+
+# File: functions, line: 2240
+msgid "A password is requested."
+msgstr "Требуется пароль."
+
+# File: functions, line: 2248
+msgid "Wrong password. Try again."
+msgstr "Неверный пароль, попробуйте еще раз."
+
+# File: functions, line: 2272
+msgid "Setting of the time zone."
+msgstr "Настройка часового пояса."
+
+# File: functions, line: 2281
+#, sh-format
+msgid "Is $PROPOSEDTZ the current time zone? type yes or no: "
+msgstr "Является ли $PROPOSEDTZ текущим часовым поясом? Введите yes (да) или no (нет): "
+
+# File: functions, line: 2301
+msgid "You can set the time zone now, or accept the default value (UTC) and modify\n"
+"this setting after installation."
+msgstr "Вы можете настроить часовой пояс сейчас или принять значение\n"
+"по умолчанию (UTC) и изменить этот параметр после установки."
+
+# File: functions, line: 2305
+msgid "To set the time zone now type yes, else type no: "
+msgstr "Чтобы задать часовой пояс сейчас, введите yes (да), иначе введите no (нет): "
+
+# File: functions, line: 2449
+msgid "We will now install all packages. This takes about 10 to 40 minutes."
+msgstr "Сейчас будут установлены все пакеты. Это займёт от 10 до 40 минут."
+
+# File: functions, line: 2452
+msgid "Do you want a short description of each package during its installation?"
+msgstr "Вы хотите получать краткое описание каждого пакета во время его установки?"
+
+# File: functions, line: 2454
+msgid "Please type yes or no: "
+msgstr "Введите yes (да) или no (нет): "
+
+# File: functions, line: 2460
+msgid "Installing the packages. Please be patient."
+msgstr "Производится установка пакетов. Пожалуйста, подождите."
+
+# File: functions, line: 2494
+msgid "Preparing packages installation..."
+msgstr "Подготовка к установке пакетов..."
+
+# File: functions, line: 2613
+# File: functions, line: 2635
+# File: functions, line: 2696
+# File: functions, line: 2727
+# File: functions, line: 2748
+# File: functions, line: 2768
+# File: functions, line: 2788
+# File: functions, line: 2819
+# File: functions, line: 2840
+# File: functions, line: 2858
+# File: functions, line: 2876
+#, sh-format
+msgid "Installation of $PKG failed for this reason:"
+msgstr "Установка $PKG завершилась неудачей по следующей причине:"
+
+# File: functions, line: 2699
+# File: functions, line: 2730
+msgid "Slint installation can't continue"
+msgstr "Дальнейшая установка Slint не возможна"
+
+# File: functions, line: 2822
+msgid "Therefore, Slint installation is not possible."
+msgstr "В связи с этим установка Slint невозможна."
+
+# File: functions, line: 2824
+msgid "Check the integrity of the installation media."
+msgstr "Проверьте целостность установочного носителя."
+
+# File: functions, line: 2918
+msgid "Please type the machine name or \"hostname\" and press Enter or just\n"
+"press Enter to accept the default name \"slint\"."
+msgstr "Введите имя компьютера или \"hostname\" и нажмите Enter или просто\n"
+"нажмите Enter, чтобы принять имя по умолчанию \"slint\"."
+
+# File: functions, line: 2921
+msgid "Machine name[slint]: "
+msgstr "Имя компьютера[slint]: "
+
+# File: functions, line: 2943
+msgid "Please select a default desktop among those listed below.\n"
+"mate is the most accessible with a screen reader."
+msgstr "Выберите окружение рабочего стола по умолчанию среди перечисленных ниже.\n"
+"mate является самым доступным при использовании программы чтения с экрана."
+
+# File: functions, line: 2946
+msgid "i3 is also accessible. If you need speech, preferably type i38 before starting it."
+msgstr ""
+
+# File: functions, line: 2949
+msgid "Your choice: "
+msgstr "Ваш выбор: "
+
+# File: functions, line: 2956
+#, sh-format
+msgid "$session is not an available desktops."
+msgstr ""
+
+# File: functions, line: 2961
+#, sh-format
+msgid "$session has been chosen."
+msgstr ""
+
+# File: functions, line: 3041
+msgid "building an initramfs..."
+msgstr "Построение initramfs..."
+
+# File: functions, line: 3064
+msgid "Installing the GRUB bootloader..."
+msgstr "Установка системного загрузчика GRUB..."
+
+# File: functions, line: 3087
+msgid "Building the GRUB boot menu..."
+msgstr "Построение меню загрузки GRUB..."
+
+# File: functions, line: 3111
+msgid "Installation and initial configuration of Slint are complete.\n"
+"If you want a preview of the boot menu displayed after rebooting, type now:\n"
+"chroot /SLINT list_boot_entries\n"
+"To exit press q (not Alt+F4 in this context) then y.\n"
+"To quit the installer and start your new Slint remove the installation media\n"
+"then type 'reboot' or press Ctrl+Alt+Del."
+msgstr "Установка и начальная настройка Slint завершены.\n"
+"Если вы хотите ознакомиться с загрузочным меню, отображаемым после\n"
+"перезагрузки, введите:\n"
+"chroot /SLINT list_boot_entries\n"
+"После этого для выхода нажмите q (не Alt+F4 в этом контексте), затем y.\n"
+"Для выхода из программы установки и запуска Slint извлеките установочный\n"
+"носитель, затем введите 'reboot' или нажмите Ctrl+Alt+Del."
+

@@ -1,5 +1,5 @@
 #!/bin/sh
-export TEXTDOMAIN=slint-scripts
+export TEXTDOMAIN=plank
 if [ "$(id -u)" = "0" ]; then
     gettext "Please run this script as regular user."; echo
     exit
@@ -17,4 +17,4 @@ fi
 sed -i "s/Hidden.*/Hidden=false/" startplank.desktop
 )
 gettext "plank has been enabled."; echo
-gettext "To enable it type plank-off"; echo
+gettext "To disable it type plank-off"; echo

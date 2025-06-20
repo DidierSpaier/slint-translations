@@ -1,0 +1,142 @@
+== Anpassa slint systemlayout
+
+=== Introduktion
+
+I den här artikeln granskar vi hur Slint installationsprogrammet organiserar systemets grundläggande kataloger (dess layout), och visar hur man anpassar denna layout efter installationen. Installationsprocessen beskrivs i kapitel 2: Installera Slint i Handboken.
+
+Installationsprogrammet placerar alla kataloger som listas nedan, som utgör kärnan i systemet, på samma partition:
+
+ bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Om andra partitioner som redan är formaterade är tillgängliga under installationen, föreslår installeraren att de monteras vid systemstart, med ett katalognamn som användaren valt som monteringspunkt, utom de som anges ovan.
+
+Dessutom, om automatisk partitionering har valts, föreslår installationsprogrammet att skapa ytterligare en partition i det återstående utrymmet på enheten, med en monteringspunkt som valts av användaren, även utanför de som anges ovan.
+
+Sammanfattningsvis, installationsprogrammet:
+
+* placerar alla kataloger som utgör kärnan i systemet på samma partition,
+* gör det möjligt att konfigurera andra kataloger på andra partitioner, som tidigare är formaterade.
+
+Dock kanske vill du installera filer eller kataloger som är en del av kärnan i systemet som /home på en annan partition, särskilt om utrymmet är begränsat på enheten. Till exempel, om datorn är utrustad med en snabb enhet (SSD eller NVMe) och även med en långsammare men större hårddisk, kanske du vill installera systemet på SSD eller NVMe och de större filerna på hårddisken.
+
+Du kanske också vill dela stora filer som oftast lagras i /home med ett annat system, t. ex. bilder, olika dokument, ljudfiler eller videofiler.
+
+=== Praktisk guide
+
+Som ett exempel visar vi hur man flyttar /home till en annan enhet, med vissa variationer.
+
+==== Flytta /home helt till en annan enhet 
+
+Vi antar att du vill flytta katalogen /home, initialt installerat på en SSD eller NVMe, till en hårddisk. Detta kan göras direkt efter installation eller senare. Allt detta ska göras som root.
+
+Först behöver du en formaterad partition på hårddisken, som benämd /dev/sdb1 nedan, för att lagra /home:
+
+* Skapa om det inte redan gjorts på hårddisken med partitionstabellen (GPT-typ) och partition med hjälp av ett av dessa verktyg: parted, gdisk, cgdisk eller gparted, alla ingår i Slint, stort nog för dess avsedda användning.
+* Formatera den här partitionen med en av typerna btrfs, ext4 eller xfs (kommandon `mkfs.btrfs`, `mkfs.ext4` eller `mkfs.xfs`)
+
+För att kunna kopiera katalogen /home till denna partition måste du montera den, till exempel på /mnt, med något av följande kommandon:
+
+ mount /dev/sdb1 /mnt -o compress=zstd:3 # om /dev/sdb1 har formaterats med btrfs
+ mount /dev/sdb1 /mnt # om /dev/sdb1 har formaterats med xfs eller ext4
+
+Kopiera sedan filerna, till exempel så här:
+
+ cp -a /home/* /mnt
+
+eller så här:
+
+ rsync -aAXv /home/* /mnt
+
+Kontrollera sedan att kopieringen har gjorts korrekt:
+
+ diff -r /home /mnt
+
+Ändra sedan filen /etc/fstab för att montera /home på den nya partitionen vid nästa uppstart.
+
+Om rotfilsystemet är btrfs, är /home monterat som undervolym. I det här fallet kommenterar du den rad i filen som används för att montera /home genom att infoga ett #-tecken i början. Ändra till exempel den här raden (ersätt <uuid1> med UUID-värdet angivet i /etc/fstab):
+
+ UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+som blir:
+
+ #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+Infoga sedan i filen en rad för att montera /home vid uppstart på den nya partitionen. Vi kommer att ange <uuid2> värdet av dess UUID, som visas med detta kommando:
+
+ lsblk -lno uuid /dev/sdb1
+
+Raden att infoga i filen /etc/fstab beror på det valda filsystemet på /dev/sdb1.
+
+För btrfs:
+
+ UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0
+
+För ext4 eller xfs:
+
+ UUID=<uuid2> /home ext4 noatime 1 2
+
+Starta sedan om datorn. I händelse av problem, gå tillbaka:
+
+* Avkommenterar den kommenterade raden i /etc/fstab (ta bort #-tecknet i början på raden)
+* Kommentera den nya (sätt in ett # tecken i början på raden)
+* Starta sedan om.
+
+När den nya partitionen har kontrollerats att allt fungerar, kan den gamla tas bort. Hur du gör det beror på vilket filsystem som konfigurerats av installationsprogrammet. När datorn startas om, se till att /home är monterat på den nya partitionen, t.ex. med kommandot
+
+findmnt -o /source
+
+Ta sedan bort den gamla /home:
+
+* Med btrfs skriv dessa kommandon (vi utgår från att systemet installerades på /dev/sda3):
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # det här kommandot initierar återställningen av det utrymme som används av det gamla /home
+ btrfs filesystem sync # detta kommando avslutar återställningen av det utrymme som används av det gamla /home 
+ umount /mnt
+
+* Med ext4 eller xfs behöver vi se till att den nya /home inte används för att ta bort den gamla. Så:
++
+ Starta först om i textläge.
+ Logga in som root # Inte som vanlig användare, annars kan vi inte avmontera /home efter som den skulle vara upptaget.
+ umount /home # Detta gör föregående /home tillgängligt igen.
+ rm -r /home/* # Vi tar bort innehållet i föregående /home men behåller katalogen.
+ mount /home # Nu är /dev/sdb1 monterad som /home 
+
+==== Flytta endast de största filerna från /home till hårddisken
+
+I exemplet ovan har katalogen /home överförts helt från SSD till hårddisken.
+
+Det kan vara att föredra att lagra endast stora filer på hårddisken och att lämna dolda kataloger och filer på SSD-enheten, som är föremål för frekventa skrivningar, mycket snabbare på en SSD-enhet.
+
+För att göra det kan du namnge monteringspunkten för partitionen /dev/sdb1 som `/data` i /etc/fstab, till exempel, när denna partition är monterad, kopiera katalogerna som ska överföras från /home till /data, och slutligen ersätta dessa kataloger i /home med symboliska länkar till katalogerna i /data. Exempel: När katalogen /data skapas och monteras på /dev/sdb1:
+
+ chown -R didier:users /data
+ mv /home/didier/Images /data
+ ln -s /data/Images /home/didier/Images
+
+Detta sätt att anpassa systemet behöver anpassas om systemet har flera användare, till exempel genom att skapa en underkatalog per användare i /data.
+
+==== Flytta /home till hårddisken men lagra ofta ändrade filer på SSD-enheten 
+
+Å andra sidan är det möjligt att selektivt lagra ofta ändrade filer på SSD, som de som finns i ~/.mozilla, ~/.thunderbird eller ~/.purple.
+
+Till exempel kan du skapa en katalog /data och en underkatalog /data/.thunderbird på SSD, flytta ~/. thunderbird till den, och skapa en symbolisk länk /data/.thunderbird => ~/.thunderbird.
+
+Om btrf används för kärnsystemet, rekommenderas det att du skapar en undervolym för /data med följande kommandon, innan du flyttar ~ /.mozilla eller ~ /.thunderbird, så här:
+
+ mount /dev/sda3 /mnt subvolid=0
+ btrfs subvolume create /mnt/@data
+ mkdir /data
+ umount /mnt
+
+Infoga sen en rad i /etc/fstab för att montera /data vid systemuppstart (<uuid1> är UUID-värdet för /dev/sda3):
+
+ UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Starta sedan om och skriv följande kommandon:
+
+  chown -R didier:users /data
+  mv /home/didier/.thunderbird /data
+  ln -s /data/.thunderbird ~/.thunderbird

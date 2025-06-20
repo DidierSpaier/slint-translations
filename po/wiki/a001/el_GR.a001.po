@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2023-03-07 23:17+0100\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Greek\n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: el\n"
+"X-Crowdin-File: /wiki/a001/a001.pot\n"
+"X-Crowdin-File-ID: 115\n"
+
+#. type: Title ==
+#: a001.adoc:1
+#, no-wrap
+msgid "Slint with BTRFS"
+msgstr "Slint με BTRFS"
+
+#. type: Plain text
+#: a001.adoc:4
+msgid "In this article we outline the unique characteristics of the BTRFS file system and how a Slint system is configured at installation to take advantage of them."
+msgstr "Σε αυτό το άρθρο περιγράφουμε τα μοναδικά χαρακτηριστικά του συστήματος αρχείων BTRFS και πώς ένα σύστημα Slint έχει ρυθμιστεί κατά την εγκατάσταση για να επωφεληθεί από αυτά."
+
+#. type: Plain text
+#: a001.adoc:6
+msgid "In order not to overload this document with definitions, we refer the reader to the https://slint.fr/en/HandBook.html#_glossary[glossary] included in the Slint Manual and more specifically for btrfs \"jargon\" to the https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] included in its documentation."
+msgstr "Για να μην υπερφορτώσουμε αυτό το έγγραφο με ορισμούς, παραπέμπουμε τον αναγνώστη στο https://slint.fr/en/HandBook.html#_glossary[glossary] που περιλαμβάνεται στο εγχειρίδιο Slint και πιο συγκεκριμένα για btrfs \"jargon\" στο https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] που περιλαμβάνεται στην τεκμηρίωσή του."
+
+#. type: Plain text
+#: a001.adoc:8
+msgid "A BTRFS file system consists of a logical volume that can span multiple block devices (partitions or disks). Initially Slint is installed on a single partition."
+msgstr "Ένα σύστημα αρχείων BTRFS αποτελείται από έναν λογικό όγκο που μπορεί να καλύπτει πολλαπλές συσκευές (διαμερίσματα ή δίσκους). Αρχικά, το Slint εγκαθίσταται σε ένα ενιαίο διαμέρισμα."
+
+#. type: Plain text
+#: a001.adoc:10
+msgid "A subvolume is a subtree of files inside the volume, the root of which can be mounted as if it were an independent filesystem. However, the space allocated to a volume is also allocated to each of its sub-volumes: it is therefore not necessary to distribute it between the sub-volumes, as if they were in distinct partitions."
+msgstr "Ένας υποόγκος είναι ένα υποδέντρο αρχείων μέσα στον τόμο, η ρίζα του οποίου μπορεί να τοποθετηθεί σαν να ήταν ένα ανεξάρτητο σύστημα αρχείων. Ωστόσο, ο χώρος που κατανέμεται σε όγκο κατανέμεται επίσης σε καθέναν από τους επιμέρους όγκους του: δεν είναι επομένως αναγκαίο να κατανεμηθεί μεταξύ των υποόγκων, σαν να ήταν σε ξεχωριστά χωρίσματα."
+
+#. type: Plain text
+#: a001.adoc:12
+msgid "Subvolumes can be created at the same time as the volume (by the mkfs.btrfs command), but also added or deleted later using the btrfs tools."
+msgstr "Οι υποόγκοι μπορούν να δημιουργηθούν ταυτόχρονα με τον τόμο (από την εντολή mkfs.btrfs), αλλά και να προστεθούν ή να διαγραφούν αργότερα χρησιμοποιώντας τα εργαλεία btrfs."
+
+#. type: Plain text
+#: a001.adoc:14
+msgid "As an example the commands below create the Slint \"system\" volume and its subvolumes, in case BTRFS is used. In the following $ROOTNAME is the name of the partition in which Slint will be installed and $SLINT the mount point of the system volume during installation."
+msgstr "Για παράδειγμα, οι παρακάτω εντολές δημιουργούν τον τόμο Slint \"system\" και τους υποτόμους του, σε περίπτωση που χρησιμοποιείται BTRFS. Στο ακόλουθο $ROOTNAME είναι το όνομα του διαμερίσματος στο οποίο θα εγκατασταθεί το Slint και $SLINT το σημείο προσάρτησης του τόμου του συστήματος κατά την εγκατάσταση."
+
+#. type: delimited block -
+#: a001.adoc:26
+#, no-wrap
+msgid "mkdir /SLINT\n"
+"SLINT=\"/SLINT\"\n"
+"mkfs.btrfs -L root $ROOTNAME\n"
+"mount -o compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"btrfs subvolume create $SLINT/@\n"
+"btrfs subvolume create $SLINT/@home\n"
+"btrfs subvolume create $SLINT/@swap\n"
+"umount $SLINT\n"
+"mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"mkdir $SLINT/home\n"
+"mkdir $SLINT/swap \n"
+msgstr "mkdir /SLINT\n"
+"SLINT=\"/SLINT\"\n"
+"mkfs. trfs -L root $ROOTNAME\n"
+"mount -o compress=zstd:3, oatime $ROOTNAME $SLINT\n"
+"btrfs subvolume create $SLINT/@\n"
+"btrfs subvolume create $SLINT/@home\n"
+"btrfs subvolume create $SLINT/@swap\n"
+"umount $SLINT\n"
+"mount -o subvol=/@, ompress=zstd:3,noatime $ROOTNAME $SLINT\n"
+"mkdir $SLINT/home\n"
+"mkdir $SLINT/swap \n"
+
+#. type: Plain text
+#: a001.adoc:28
+msgid "The $ROOTNAME partition (denoted by its UUID which we will call <uuid>) will then be mounted three times (once per subvolume) each time Slint is started, as indicated in the /etc/fstab file:"
+msgstr "Το διαμέρισμα $ROOTNAME (υποδεικνύεται από το UUID το οποίο θα καλέσουμε <uuid>) θα τοποθετηθεί στη συνέχεια τρεις φορές (μία φορά ανά υποτόμο) κάθε φορά που ξεκινά το Slint, όπως αναφέρεται στο αρχείο /etc/fstab:"
+
+#. type: delimited block -
+#: a001.adoc:32
+#, no-wrap
+msgid "UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0\n"
+"UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 \n"
+msgstr "UUID=<uuid> / btrfs subvol=/@,compress=zstd:3,noatime 0\n"
+"UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0\n"
+"UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 \n"
+
+#. type: Plain text
+#: a001.adoc:34
+msgid "Which gives for example (taken from the output of lsblk /dev/sda5):"
+msgstr "Αυτό δίνει για παράδειγμα (λαμβάνεται από την έξοδο του lsblk /dev/sda5):"
+
+#. type: delimited block -
+#: a001.adoc:39
+#, no-wrap
+msgid "Filesystem      Size  Used Avail Use% Mounted on\n"
+"/dev/sda5        50G   22G   28G  44% /\n"
+"/dev/sda5        50G   22G   28G  44% /home\n"
+"/dev/sda5        50G   22G   28G  44% /swap\n"
+msgstr "Filesystem      Size  Used Avail Use% Mounted on\n"
+"/dev/sda5        50G   22G   28G  44% /\n"
+"/dev/sda5        50G   22G   28G  44% /home\n"
+"/dev/sda5        50G   22G   28G  44% /swap\n"
+
+#. type: Plain text
+#: a001.adoc:41
+msgid "We see that the space available for the volume (28G) is also available for each of the sub-volumes. On the other hand, the \"compress_zstd:3\" mount option means that all the files that will be stored will be compressed by the zstd utility with compression level 3. Thus the size of the system is approximately half that with the ext4 file system."
+msgstr "Βλέπουμε ότι ο διαθέσιμος χώρος για τον όγκο (28G) είναι επίσης διαθέσιμος για κάθε επιμέρους τόμο. Από την άλλη πλευρά, η επιλογή προσάρτησης \"compress_zstd:3\" σημαίνει ότι όλα τα αρχεία που θα αποθηκευτούν θα συμπιέζονται από το βοηθητικό πρόγραμμα zstd με το επίπεδο συμπίεσης 3. Έτσι, το μέγεθος του συστήματος είναι περίπου το μισό που θα ήταν με το σύστημα αρχείων ext4."
+
+#. type: Plain text
+#: a001.adoc:43
+msgid "If we mount the device at the root of the volume (without mention of a subvolume), like this:"
+msgstr "Εάν προσαρτήσουμε τη συσκευή στη ρίζα του όγκου (χωρίς να αναφέρουμε έναν υποόγκο), όπως αυτό:"
+
+#. type: delimited block -
+#: a001.adoc:45
+#, no-wrap
+msgid "mount /dev/sda5 /mnt\n"
+msgstr "mount /dev/sda5 /mnt\n"
+
+#. type: Plain text
+#: a001.adoc:47
+msgid "we see the subvolumes appear as subdirectories of /mnt:"
+msgstr "βλέπουμε τους υποτόμους να εμφανίζονται ως υποκατάλογοι του /mnt:"
+
+#. type: delimited block -
+#: a001.adoc:52
+#, no-wrap
+msgid "ls /mnt\n"
+"@ @home @swap\n"
+"ls /mnt/@home/didier\n"
+"Desktop Documents GNUstep Images Templates Music Audience Downloads Videos \n"
+msgstr "ls /mnt\n"
+"@ @home @swap\n"
+"ls /mnt/@home/didier\n"
+"Desktop Documents GNUstep Images Templates Music Audience Downloads Videos \n"
+
+#. type: Plain text
+#: a001.adoc:54
+msgid "Another remarkable feature of BTRFS is \"copy-on-write\". When editing a file, modified parts are written to another location, the metadata (which record the location of all parts of the file) being updated. As long as the previous data are still referenced, they will stay untouched."
+msgstr "Ένα άλλο αξιοσημείωτο χαρακτηριστικό του BTRFS είναι το \"copy-on-write\". Κατά την επεξεργασία ενός αρχείου, τα τροποποιημένα μέρη γράφονται σε άλλη τοποθεσία, τα μεταδεδομένα (που καταγράφουν τη θέση όλων των τμημάτων του αρχείου) που ενημερώνονται. Όσο τα προηγούμενα δεδομένα αναφέρονται ακόμη, θα παραμείνουν άθικτα."
+
+#. type: Plain text
+#: a001.adoc:56
+msgid "This makes it very easy to create snapshots of BTRFS subvolume: taking a new snapshot is \"free\", as it uses very few disk space: only the metadata of the snapshot are written, which stores the physical location of all parts of files in the subvolume, and this is done almost instantly. The space used by the snapshot will only grow when the original subvolume and the snapshot differ, as then the snapshot will retrieves data removed from the original. On the other hand data added to the original will not be included in he snapshot: in other words a modification of the original subvolume does not modify the snapshot."
+msgstr "Αυτό το καθιστά πολύ εύκολο να δημιουργήσετε στιγμιότυπα του υποτόμου BTRFS: λαμβάνοντας ένα νέο στιγμιότυπο είναι \"ελεύθερο\", καθώς χρησιμοποιεί πολύ λίγους χώρους στο δίσκο: μόνο τα μεταδεδομένα του στιγμιοτύπου γράφονται, το οποίο αποθηκεύει τη φυσική θέση όλων των τμημάτων των αρχείων στον υποτόμου, και αυτό γίνεται σχεδόν αμέσως. Ο χώρος που χρησιμοποιείται από το στιγμιότυπο θα αυξηθεί μόνο όταν ο αρχικός υποόγκος και το στιγμιότυπο διαφέρουν, καθώς το στιγμιότυπο θα ανακτά τα δεδομένα που αφαιρέθηκαν από το αρχικό. Από τα άλλα δεδομένα που προστίθενται στο αρχικό δεν θα συμπεριληφθούν στο στιγμιότυπο: με άλλα λόγια, η τροποποίηση του αρχικού υποτόμου δεν τροποποιεί το στιγμιότυπο."
+
+#. type: Plain text
+#: a001.adoc:58
+msgid "Slint includes the utility `absm`, which takes snapshots of the subvolume @, allowing to return to a previous state of the system if an update goes wrong, by booting the system on this snapshot, selected in the GRUB boot menu. To know its usage, just type `absm` as root or using sudo."
+msgstr "Το Slint περιλαμβάνει το βοηθητικό πρόγραμμα `absm`, το οποίο επιτρέπει τη λήψη στιγμιότυπων του υποτόμου @, επιτρέποντας την επιστροφή σε προηγούμενη κατάσταση του συστήματος εάν μια ενημέρωση πάει στραβά, εκκινώντας το σύστημα σε αυτό το στιγμιότυπο, επιλεγμένο στο μενού εκκίνησης GRUB. Για να γνωρίζετε τη χρήση του, απλά πληκτρολογήστε `absm` ως root ή χρησιμοποιώντας sudo."
+
+#. type: Plain text
+#: a001.adoc:60
+msgid "BTRFS also verifies the integrity of each file when it is opened using a checksum, making it unnecessary to check the file system at system startup. In addition, the \"btrfs scrub\" command verifies the integrity of all files, including those that are rarely read. By default, the utility `btrfsmaintenance` included in Slint runs \"btrtfs scrub\" once a week."
+msgstr "Το BTRFS επαληθεύει επίσης την ακεραιότητα κάθε αρχείου όταν ανοίγει με τη χρήση αθροίσματος ελέγχου, καθιστώντας περιττό να ελέγξετε το σύστημα αρχείων κατά την εκκίνηση του συστήματος. Επιπλέον, η εντολή \"btrfs scrub\" επαληθεύει την ακεραιότητα όλων των αρχείων, συμπεριλαμβανομένων εκείνων που σπάνια διαβάζονται. Από προεπιλογή, το βοηθητικό πρόγραμμα `btrfsmaintenance` που περιλαμβάνεται στο Slint τρέχει \"btrtfs scrub\" μία φορά την εβδομάδα."
+
+#. type: Plain text
+#: a001.adoc:62
+msgid "`btrfsmaintenance` also triggers \"btrfs balance\" once a week by default. This command allows you to distribute the data between the devices if the file system extends over several, but also to reorganize the space used, in particular to free the unallocated space of the file system, which improves in particular the performance of BTRFS in the case of a hard disk. To know more about `btrfsmaintenance` read /usr/doc/btrfsmaintenance*/README.html"
+msgstr "Το \"btrfsmaintenance\" ενεργοποιεί επίσης το \"btrfs balance\" μία φορά την εβδομάδα από προεπιλογή. Με αυτή την εντολή μπορείτε να κατανείμετε τα δεδομένα μεταξύ των συσκευών αν το σύστημα αρχείων εκτείνεται σε διάφορες, αλλά και να αναδιοργανώσετε το χρησιμοποιούμενο χώρο, ιδίως για να ελευθερώσετε τον αδιάθετο χώρο του συστήματος αρχείων, το οποίο βελτιώνει ιδιαίτερα την απόδοση του BTRFS στην περίπτωση ενός σκληρού δίσκου. Για να μάθετε περισσότερα για το ` btrfsmaintenance` διαβάστε το /usr/doc/btrfsmaintenance*/README.html"
+
+#. type: Plain text
+#: a001.adoc:64
+msgid "Other useful and BTRFS-compatible tools are included in Slint, all have a --help option and a man page:"
+msgstr "Άλλα χρήσιμα και BTRFS-συμβατά εργαλεία περιλαμβάνονται στο Slint, όλα έχουν μια επιλογή βοήθειας και μια σελίδα man:"
+
+#. type: Plain text
+#: a001.adoc:66
+msgid "`jdupes` detects duplicate files and allows you to take action accordingly, regardless of the file system used"
+msgstr "\"Jdupes\" ανιχνεύει τα διπλότυπα αρχεία και σας επιτρέπει να αναλάβετε δράση αναλόγως, ανεξάρτητα από το σύστημα αρχείων που χρησιμοποιείται"
+
+#. type: Plain text
+#: a001.adoc:67
+msgid "`btdu` allows to know with precision the place occupied by the BTRFS sub-volumes and directories"
+msgstr "`btdu` επιτρέπει να γνωρίζετε με ακρίβεια τη θέση που καταλαμβάνουν οι υπό-τόμοι και οι κατάλογοι BTRFS"
+
+#. type: Plain text
+#: a001.adoc:68
+msgid "`restic` is a very versatile backup software that can be used for any file system."
+msgstr "`restic` είναι ένα πολύ ευέλικτο λογισμικό δημιουργίας αντιγράφων ασφαλείας που μπορεί να χρησιμοποιηθεί για οποιοδήποτε σύστημα αρχείων."
+
+#. type: Plain text
+#: a001.adoc:70
+msgid "Recommendations."
+msgstr "Προτάσεις."
+
+#. type: Plain text
+#: a001.adoc:72
+msgid "BTRFS needs room to breathe and reorganize. Always keep 10-20% free space."
+msgstr "Το BTRFS χρειάζεται χώρο για να αναπνέει και να αναδιοργανώνεται. Να διατηρείτε πάντα 10-20 % ελεύθερο χώρο."
+
+#. type: Plain text
+#: a001.adoc:73
+msgid "Some tool options included in the btrfs-tools package can be dangerous or counterproductive. Use only those whose effect you know perfectly well and if in doubt seek advice first, on the Slint mailing list or by IRC on irc.libera.chat, channel #btrfs."
+msgstr "Ορισμένες επιλογές εργαλείων που περιλαμβάνονται στο πακέτο btrfs-tools μπορεί να είναι επικίνδυνες ή αντιπαραγωγικές. Χρησιμοποιήστε μόνο εκείνους των οποίων την επίδραση γνωρίζετε πολύ καλά και αν σε αμφιβολία αναζητούν συμβουλές πρώτα, στη λίστα αλληλογραφίας Slint ή από IRC για irc.libera.chat, κανάλι #btrfs."
+
+#. type: Plain text
+#: a001.adoc:74
+msgid "In particular, avoid using \"btrfs filesystem defrag\" and especially not \"btrfs check --repair\"."
+msgstr "Ειδικότερα, αποφύγετε τη χρήση του \"btrfs filesystem defrag\" και ειδικά όχι \"btrfs check --repair\"."
+
+#. type: Plain text
+#: a001.adoc:75
+msgid "Before using a command, carefully read the corresponding man page (starting with \"man btrtfs\" which lists the others)."
+msgstr "Πριν χρησιμοποιήσετε μια εντολή, διαβάστε προσεκτικά την αντίστοιχη man σελίδα (ξεκινώντας με το \"man btrtfs\" που αναφέρει τα άλλα)."
+
+#. type: Plain text
+#: a001.adoc:76
+msgid "As with any file system: make regular backups! This is usually the only way to recover your data in the event of hardware failure."
+msgstr "Όπως συμβαίνει με κάθε σύστημα αρχείων: κάντε κανονικά αντίγραφα ασφαλείας! Αυτός είναι συνήθως ο μόνος τρόπος για να ανακτήσετε τα δεδομένα σας σε περίπτωση βλάβης υλικού."
+
+#. type: Plain text
+#: a001.adoc:78
+msgid "For further:"
+msgstr "Περαιτέρω:"
+
+#. type: Plain text
+#: a001.adoc:80
+msgid "The Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
+msgstr "Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs"
+
+#. type: Plain text
+#: a001.adoc:81
+msgid "The official documentation: https://btrfs.readthedocs.io/en/latest/"
+msgstr "Η επίσημη τεκμηρίωση: https://btrfs.readthedocs.io/en/latest/"
+
+#. type: Plain text
+#: a001.adoc:82
+msgid "Questions, problems: on irc.libera.chat channel #btrfs"
+msgstr "Ερωτήσεις, προβλήματα: στο κανάλι irc.libera.chat #btrfs"
+

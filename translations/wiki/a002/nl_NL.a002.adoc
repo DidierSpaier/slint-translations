@@ -1,0 +1,142 @@
+== De indeling van een Slint-systeem aanpassen
+
+=== Introductie
+
+In dit artikel zien we hoe het Slint installatieprogramma de basisdirectory's van het systeem organiseert (indeelt) en hoe je die na de installatie kunt aanpassen. Het installatieproces zelf wordt beschreven in hoofdstuk 2: Installatie van het Handboek.
+
+Het installatieprogramma plaatst alle onderstaande directory's, welke de kern van het systeem vormen, op dezelfde partitie:
+
+ bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Als andere reeds geformatteerde partities tijdens de installatie worden gedetecteerd, stelt het installatieprogramma voor deze aan te koppelen bij het opstarten van het systeem met een door de gebruiker gekozen directory-naam als aankoppelpunt uitgezonderd de hierboven genoemde directory-namen.
+
+Als automatische partitionering werd gekozen, stelt het installatieprogramma bovendien voor om een extra partitie aan te maken in de op het apparaat resterende beschikbare ruimte met een door de gebruiker gekozen aankoppelpunt, wederom uitgezonderd de hierboven genoemde.
+
+Kortom, het installatieprogramma:
+
+* plaatst alle directory's die de kern van het systeem vormen op dezelfde partitie,
+* maakt het mogelijk andere directory's op andere eerder geformatteerde partities in te stellen.
+
+Het is mogelijk bestanden of directory's die geen deel uitmaken van de kern van het systeem, zoals /home, op een andere partitie te installeren, met name als de ruimte op het apparaat beperkt is. Als de computer bijvoorbeeld is uitgerust met een snelle SSD of NVMe en daarnaast met een langzamere gewone harde schijf met een grotere capaciteit, is het mogelijk het systeem op de SSD of NVMe te installeren en de grotere bestanden op de gewone harde schijf.
+
+Het is ook mogelijk grote, meestal in /home opgeslagen bestanden zoals afbeeldingen, verschillende documenten en audio- of videobestanden met een ander systeem te delen.
+
+=== Praktische handleiding
+
+De volgende voorbeelden laten zien hoe je /home in verschillende situaties naar een ander apparaat kunt verplaatsen.
+
+==== /home in zijn geheel naar een ander apparaat verplaatsen 
+
+We gaan er nu van uit dat je de aanvankelijk op een SSD of NVMe geïnstalleerde /home directory in zijn geheel naar een harde schijf wilt verplaatsen. Dit kan meteen na de installatie of op een later moment. Al het volgende wordt uitgevoerd als root.
+
+Als eerste heb je op de harde schijf, hieronder genoemd /dev/sdb1, een geformatteerde partitie nodig om /home naar toe te kunnen verplaatsen:
+
+* Maak op de harde schijf, indien nodig, de partitietabel (GPT type) en de partitie van de gewenste grootte met behulp van een van de met Slint meegeleverde tools: parted, gdisk, cgdisk of gparted.
+* Formatteer deze partitie met een van de bestandssystemen btrfs, ext4 of xfs (opdrachten `mkfs.btrfs`, `mkfs.ext4` of `mkfs.xfs`)
+
+Om de /home directory naar deze partitie te kunnen kopiëren, moet je die aankoppelen, bijvoorbeeld op /mnt, met een van de volgende commando's:
+
+ mount /dev/sdb1 /mnt -o compress=zstd: 3 # als /dev/sdb1 is geformatteerd met btrfs
+ mount /dev/sdb1 /mnt # als /dev/sdb1 is geformatteerd met xfs of ext4
+
+Kopieer vervolgens de bestanden bijvoorbeeld als volgt:
+
+ cp -a /home/* /mnt
+
+of zoals dit:
+
+ rsync -aAXv /home/* /mnt
+
+Controleer vervolgens of het kopiëren correct is uitgevoerd:
+
+ diff -r /home /mnt
+
+Wijzig daarna het bestand /etc/fstab om /home op de nieuwe partitie aan te koppelen bij de volgende systeemstart.
+
+Als het hoofdbestandssysteem btrfs is, wordt /home als subvolume aangekoppeld. Verander in dit geval de regel in /etc/fstab om /home aan te koppelen in commentaar door er een # karakter voor te zetten. Wijzig de regel (vervang <uuid1> door de UUID-waarde opgegeven in /etc/fstab):
+
+ UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+naar:
+
+ #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+Voeg vervolgens een regel in /etc/fstab toe om bij het opstarten /home op de nieuwe partitie aan te koppelen. We kennen <uuid2> de waarde van zijn UUID toe met de volgende opdracht:
+
+ lsblk -lno uuid /dev/sdb1
+
+De in /etc/fstab toe te voegen regel is afhankelijk van het gekozen bestandssysteem van /dev/sdb1.
+
+Voor btrfs:
+
+ UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0
+
+Voor ext4 of xfs:
+
+ UUID=<uuid2> /home ext4 noatime 1 2
+
+Start dan de machine opnieuw op. In het geval dat zich problemen voordoen ga je terug met:
+
+* Maak in voorkomend geval het veranderen van de regel in /etc/fstab in commentaar ongedaan (verwijder het #-teken aan het begin van de regel)
+* Verander de nieuwe regel in commentaar (zet er een #-teken voor)
+* Start dan opnieuw op.
+
+Als de nieuwe partitie is gecontroleerd op de juiste werking kan de oude partitie worden gewist. De manier om dit te doen is afhankelijk van het type bestandssysteem dat tijdens de installatie werd geconfigureerd. Als de machine opnieuw is opgestart, zorg er dan voor dat /home is aangekoppeld op de nieuwe partitie, bijvoorbeeld met de opdracht
+
+findmnt -o /source
+
+Verwijder dan de oude /home directory:
+
+* In het geval van btrfs met deze commando's (we gaan ervan uit dat het systeem is geïnstalleerd op /dev/sda3):
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # dit commando start het beschikbaar maken van de ruimte die werd ingenomen door de oude /home 
+ btrfs filesystem sync # dit commando eindigt het beschikbaar maken van de ruimte die werd ingenomen door de oude /home
+ umount /mnt
+
+* In geval van ext4 of xfs moeten we er voor zorgen dat de nieuwe /home niet in gebruik is voordat de oude kan worden verwijderd. Dus:
++
+ Herstart om te beginnen het systeem in tekstmodus.
+ Meld aan als root # Niet als gewone gebruiker, omdat anders /home niet ontkoppeld zou kunnen worden omdat deze dan in gebruik zou zijn.
+ umount /home # Dit maakt de oorspronkelijke /home directory weer toegankelijk.
+ rm -r /home/ * # De inhoud van de oorspronkelijke /home directory wordt gewist maar de directory zelf blijft behouden.
+ mount /home # Nu wordt /dev/sdb1 als /home aangekoppeld
+
+==== Verplaatsen van alleen de grootste bestanden van /home naar de harde schijf
+
+In het voorbeeld hierboven is de /home directory in zijn geheel overgezet van de SSD naar de harde schijf.
+
+Soms is het beter om alleen de grote bestanden naar de harde schijf te verplaatsen en verborgen directory's en bestanden op de SSD te laten staan omdat die veel vaker beschreven worden wat veel sneller gaat op een SSD.
+
+Om dit te bereiken noem je het aankoppelpunt van de /dev/sdb1 partitie in /etc/fstab bijvoorbeeld `/data' en kopieer je zodra deze partitie is aangekoppeld de te verplaatsen directory's van /home naar /data en vervang je deze directory's in /home door symbolische links naar de directory's in /data. Dus bijvoorbeeld zodra de /data directory op /dev/sdb1 is aangemaakt en geïnstalleerd:
+
+ chown -R didier: users /data
+ mv /home/didier/Images /data
+ ln -s /data/Images /home/didier/Images
+
+Bij een systeem met meerdere gebruikers is de werkwijze hiervoor enigszins anders, bijvoorbeeld het creëren van een subdirectory per gebruiker in /data.
+
+==== Verplaatsen van /home naar de harde schijf, maar houdt vaak gewijzigde bestanden op de SSD 
+
+Ook is het mogelijk om selectief vaak gewijzigde bestanden op de SSD te slaan, zoals die in ~/.mozilla, ~/.thunderbird of ~/.purple.
+
+Maak bijvoorbeeld op de SSD een directory /data met een subdirectory /data/.thunderbird en verplaats hier ~/. thunderbird naar toe en maak vervolgens een symbolische link /data/.thunderbird => ~/.thunderbird.
+
+Bij het gebruik van btrfs voor het basissysteem wordt het aanbevolen een subvolume te maken voor /data waarna ~/.mozilla of ~/.thunderbird hier naar toe kunnen worden verplaatst met de volgende commando's:
+
+ mount /dev/sda3 /mnt subvolid=0
+ btrfs subvolume create /mnt/@data
+ mkdir /data
+ umount /mnt
+
+Voeg vervolgens een regel toe aan /etc/fstab om /data tijdens het opstarten aan te koppelen (<uuid1> is de UUID waarde van /dev/sda3):
+
+ UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Start vervolgens opnieuw op en typ de volgende opdrachten:
+
+  chown -R didier:users /data
+  mv /home/didier/.thunderbird /data
+  ln -s /data/.thunderbird ~/.thunderbird

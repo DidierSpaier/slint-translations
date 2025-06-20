@@ -1,0 +1,66 @@
+[.debut]
+== Über Slint
+
+Slint ist eine einfach zu bedienende, vielseitige, blinden-freundliche Linux-Distribution für 64-Bit-Computer. Slint baut auf Slackware auf und leiht sich Werkzeug von Salix aus. Entwickler: Didier Spaier.
+
+== Eigenschaften
+
+* Slint ist eine stabile Distribution. Die Barrierefreiheitssoftware wird regelmäßig aktualisiert, andere können von Fall zu Fall aktualisiert werden.
+
+* Die mitgelieferte Software, unter denen die Desktops MATÉ und LXQt (mit XFCE auf Anfrage installiert), decken die meisten Bedürfnisse ab. Viele andere sind in den Repositories von Salix und Slackware verfügbar, die vollständig mit Slint kompatibel sind.
+
+* Slint kann in Konsolen- und Grafikmodi verwendet werden und kann ohne Neustart zwischen diesen Modi umgeschaltet werden. Es ist sogar möglich, mehrere grafische Umgebungen zu starten und zwischen ihnen zu wechseln.
+
+* Einfach zu bedienende Tools erleichtern die Systemadministration und die Verwaltung von Softwarepaketen. Aktualisierungen erfolgen automatisch, unter Kontrolle der Anwender.
+
+* Das Slint-Dashboard bietet direkten Zugriff auf die wichtigsten Tools und nützlichen Informationen und Links.
+
+* Standardmäßig erlaubt ein komprimierter Swap-Speicher das Verdoppeln des benutzbaren Speichers.
+
+* Slint kann auf jedem 64-Bit-Rechner mit dem x86-Befehlssatz und mindestens 2G Arbeitsspeicher installiert werden, und 50G auf jedem Datenträger inklusive USB-Keys, ohne sicheren Boot.
+
+* Wenn auf USB-Datenträgern installiert, kann Slint von einem Computer zum anderen transportiert werden. Die Medien können vollständig verschlüsselt werden.
+
+== Installation
+
+Das Installationsprogramm ist im Textmodus vollständig für blinde Personen zugänglich, die einen Screenreader oder eine Braillezeile verwenden und verläuft durch Fragen und Antworten mit Online-Hilfe und integrierter Dokumentation. Zwei Partitionierungsmodi sind verfügbar:
+
+* Manuell: Der Benutzer wählt das Dateisystem (btrfs, ext4 oder xfs) und die Medien können mit anderen Systemen geteilt werden.
+
+* Automatisch: Das Dateisystem ist dann btrfs und das Medium wird nur Slint gewidmet.
+
+Das btrfs Dateisystem ist mit Sub-Volumes anstelle von separaten Partitionen konfiguriert. Es ermöglicht, den Speicherplatz auf dem Medium durch 2 zu teilen, um Schnappschüsse zu machen und ist gut an SSD, NVMe und USB-Sticks angepasst.
+
+== Links
+
+* http://slackware.uk/slint/x86_64/slint-15.0/[Hauptrepository]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Pakete in der ISO enthalten]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Pakete bei Bedarf installierbar]
+
+* link:../old/de/slint.html[Archivierte alte Website]
+
+* link:../de/oldHandBook.html[Dokumentation 14.2.1]
+
+== Bilder von lightDM und den Haupt-Desktops in Slint 
+
+lightDM
+
+image::../doc/lightdm.png["lightDM"]
+
+LXQt
+
+image::../doc/lxqt.png["LXQt"]
+
+MATE
+
+image::../doc/mate.png["MATE"]
+
+XFCE (bei Bedarf installiert)
+
+image::../doc/xfce.png["XFCE"]

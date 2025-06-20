@@ -1,0 +1,143 @@
+
+[.debut]
+== Nieuws
+
+=== 20 June 2024: Updates preparing the release of a new ISO
+
+The batch of updates available today paves the way for a new ISO that will, beyond these updates and a few fixes of the installer, provide only one desktop: MATE.
+
+Other desktops will be available, either provided in other ISOs, or installable as packages sets provided by contributors, at least the XFCE and LXQt desktops.
+
+The current batch of updates provides mainly:
+
+* New versions of the MATE and LXQt desktops
+* An enhancement of the visual appearance of the MATE desktop, huge thanks to miss Tell for her many hints and suggestions!
+* An upgrade of several a11y applications to their latest stable versions
+* New and upraded packages in the main repository, /testing or /extra.
+
+The changes are detailed in the https://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Changelog]
+
+Before listing the major ones, here is how to make existing desktops look as if they had been installed after the upgrade.
+
+If you want to re-configure MATE to get its new appearance for a given user, just type as this user: `dconf reset -f /`
+
+Be aware that this will override the customization that you'd have previously done at the user level!
+
+If you want to reconfigure LXQt to get its new appearance for a given user, you need to first get out of LXQt. Either type as root `login-chooser text` then reboot, or log in another desktop like MATE. Then type as regular user:
+
+`rm ~/.config/lxqt/*.conf`
+
+`cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`
+
+Again, be aware that this will override the customization that you'd have previously done at the user level!
+
+==== The MATE desktop and the graphical login manager
+
+* The Mate Control Center is customized for Slint.
+* The Mate tweak application is customized for Slint. It includes several layouts of the panels, including Slint-legacy (the previous layout) and Slint (the new one).
+* The Slint layout provides a single panel including a Brisk menu giving a direct access to several utilities. 3 other menus are available: Advanced, Classic (the default for Slint-legacy) and Compact. In the Slint layout pressing alt-f1 now raises the Compact menu with a single column. In the Slint-legacy layout pressing alt-F1 still raises the Classical menu.
+* The Brisk menu includes at the bottom links to the Slint documentation and mate-tweak and a Favorite area, with by default the Caja file manager, the Mate terminal, Firefox, Thuderbird and the Mate Control Center
+* The default window manager for Mate is now Compiz whith an Emerald theme that can be changed using the custom script switch-emerald-theme. But Marco is still available. The change can be made in mate-tweak. In addition to the CCSM (compiz-config-settings-manager), simple-ccsm is provided in /extra.
+* The lightdm-gtk-greeter is replaced by the lightdm-slick-greeter.
+
+The file /usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override gathers customization of the Mate desktop and some other ones at the distribution level.
+
+==== The LXQt desktop
+
+This desktop is provided running build scripts provided by Frank Honolka aka snuk, and stored in the lxqt sub-directory, thanks Frank!
+
+This includes the desktop itself and associated applications.
+
+As for Mate the default window manager is compiz and the decorator emerald but openbox is also available. The window manager can be changed from the menu or typing `lxqt-config-session`
+
+==== Other upgrades and new software provided, sorted by category
+
+* Acessibility: at-spi2-core, orca, emacspeak, fenrir, liblouis, liblouisutdml and lios are upgraded.
+* Audio/video: vlc, mpv and yt-dlp are upgraded.
+* The semantic application launchers cerebro, synapse and ulauncher are provided in /testing. A short presentation of them can be found for instance in https://www.debugpoint.com/top-ubuntu-launcher-2022/ and https://softwarelibre166246735.wordpress.com/2020/06/18/10-best-application-launchers-for-linux-desktops/. These launchers allow to start applications but also to find files in your system, do calculations or search the web, for instance, often through plugs-ins.
+* Visual appearance: many themes are added or upgraded: Qogir-icon-theme, emerald-themes (the "overglossed" theme of the emerald decorator is associated with the Compiz window manager), kvantum-theme-qogir, breeze-blue-cursor-theme and breeze-icons for LXQt, papirus-icon-theme, yaru-gtk-theme. Newaita-reborn, posy-cursors and Tela-icon-theme are also available in /testing. Conversely, mate-colors-icon-teme, mate-backgrounds and murrine-themes are removed. Several desktop backgrounds or wallpapers are added.
+* System: btrtbk (backup tool for BTRFS subvolumes) and sof-firmware are added, absm (BTRFS snashot manager), amd-microcode, intel-microcode, kernel, kernel-firmware, and qemu (in /extra) are upgraded. The guake drop-down terminal is added
+* Development: vscode (Visual Studio Code) is added in /extra, nano and emacs are upgraded.
+* Office: LibreOffice and associated help files and dictionaries are upgraded, thanks to Eric Hameleers aka alienBOB and libreoffice-sdkdoc is available in /extra. Remind is also updated.
+
+==== Known issues
+
+* After upgrade LXQt can have a black background because the previous default wallpaper has been removed. You can choose another one typing `lxqt-config-appearance`, that can also be started form the menu or a left click on the desktop. Alternatively, as indicated above type after a text login: `cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`. This will display the new default wallpaper.
+* In MATE if started in text mode the date can't be set using the widget in the boottom panel. Use clocksetup or gtkclocksetup instead.
+* If you disable the display of the desktop icons in mate-tweak, a right click on the desktop becomes ineffective.
+
+
+=== 16 Mei 2023: Een nieuwe ISO is beschikbaar (ja, alweer!)
+
+Deze nieuwe ISO verschijnt met name om de bug te repareren beschreven in https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3].
+
+Andere fixes en verbeteringen:
+
+* De gebruiker die de voorgestelde tijdzone (via geoIP) weigert, krijgt de keuze om een andere tijdzone te kiezen of de standaard tijdzone te behouden (UTC), alsof er geen werd voorgesteld.
+
+* De EFI boot loader grub.x64.efi is geïnstalleerd in /boot/efi/EFI/slint-$SLINTVERSION, momenteel /boot/efi/EFI/slint-15.0, om je het opstartitem te kunnen laten kiezen als er meerdere versies zijn geïnstalleerd.
+
+In geval van handmatige partitionering:
+
+* Als de machine het installatieprogramma heeft opgestart in Legacy-modus wordt GRUB ook geïnstalleerd in de EFI-modus als er een EFI-systeempartitie (ESP) op het station van de rootpartitie wordt aangetroffen.
+
+* Als de machine het installatieprogramma heeft opgestart in de EFI-modus, wordt GRUB ook geïnstalleerd in Legacy-modus, tenzij de rootpartitie een station heeft met een GUID-partitietabel (GPT) maar zonder BIOS-opstartpartitie.
+
+Hierdoor zal het geïnstalleerde systeem meestal kunnen opstarten in zowel EFI- als Legacy-modus bij handmatig en automatisch partitioneren.
+
+=== 10 mei 2023: Er is een nieuwe Slint ISO beschikbaar
+
+* De lichtgewicht i3 desktop is toegevoegd naast de I38 utility die deze volledig toegankelijk maakt met een schermleesprogramma door slechts het uitvoeren van het i38 commando na installatie, met dank aan Storm Dragon.
+
+* De repository https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] is standaard ingesteld, waardoor een complete voorgeconfigureerde xfce-4.18 desktop kan worden geinstalleerd met de opdracht ` + slapt-get-get-install-set xfce + `, dit met dank aan George Vlahavas.
+
+* Bij 'handmatig' partitioneren is het niet meer nodig om een BIOS-opstartpartitie op te nemen in een GUID-partitietabel (GPT) als de machine wordt opgestart in EFI-modus of een EFI-systeempartitie als de machine wordt opgestart in Legacy-modus.
+
+* Bij `automatisch` partitioneren is het nu toegestaan om de /home directory een eigen partitie te geven, maar alleen als dit een ander station is dan waarop de hoofdpartitie staat aangekoppeld op /.
+
+* De gebruiker kan een bestaande partitie te selecteren voor /home zodat een al bestaande partitie kan worden hergebruikt.
+
+* Als /home op een al geformatteerde partitie staat (in het geval dat de gebruiker wil doorgaan met het gebruik van een bestaande partitie), biedt het installatieprogramma de keuze de inhoud ervan te behouden of opnieuw te formatteren, zoals bij elke andere linux partitie, behalve de hoofdpartitie aangekoppeld op /.
+
+* Alle hoofd desktops (MATE, LXQt en XFCE) hebben hetzelfde lightDM 'clouds in a blue sky' welkomstscherm.
+
+* Er zijn veel pakketten toegevoegd, geüpgraded en bugs opgelost sinds de publicatie van de vorige ISO, waaronder die al in de ISO zijn opgenomen: compsie, verwarring, fim, gpart nushell, Qogir-icon-theme, qogir-theme, salix-xfwwm4-theme, rost, testdisk en andere beschikbaar in de /extra repository: calibre, emacs-nativecomp, libgccjit, niets, soft.
+
+* Het opstartmenu van het geïnstalleerde systeem bevat nu een menuoptie voor EFI-modus instellingen.
+
+* Als GRUB is geïnstalleerd, is het nu mogelijk om de installatie ISO op een interne schijfpartitie opgeslagen op te starten: de ISO hoeft in dit geval niet meer naar een DVD of USB stick te worden geschreven. Hiervoor dient het bestand /etc/grub.d/40_custom op de volgende manier te worden aangepast:
+....
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries. Simply type the
+# menu entries you want to add after this comment. Be careful not to change
+# the 'exec tail' line above.
+    menuentry 'Slint ISO 15.0-3' {
+    insmod part_gpt
+    insmod part_msdos
+    search --no-floppy --fs-uuid --set=root <UUID>
+    set isofile='slint64-15.0-3.iso'
+    loopback loop /repo/x86_64/slint-15.0/iso/$isofile
+    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0
+    initrd (loop)/initrd
+    }
+....
+Vervang <UUID> door het UUID van de partitie waarop de ISO is opgeslagen. Als de ISO bijvoorbeeld op /dev/sda3 staat, zal deze opdracht dit UUID uitvoeren: `lsblk -lno uuid /dev/sda3`. Vervang ook `/repo/x86_64/slint-15.0/iso/ ` door het pad naar het ISO-bestand. Voer daarna grub-mkconfig of update-grub uit zodat deze boot entry in grub.cfg wordt opgenomen. Het installatieprogramma zal aangeven de ISO niet te kunnen vinden en hoe die aan te koppelen als deze op een interne schijfpartitie staat.
+
+==== Afbeeldingen van lightDM en de belangrijkste desktops in Slint 
+
+lightDM
+
+image::../doc/lightdm.png["lightDM"]
+
+LXQt
+
+image::../doc/lxqt.png["LXQt"]
+
+MATE
+
+image::../doc/mate.png["MATE"]
+
+XFCE (indien gewenst)
+
+image::../doc/xfce.png["XFCE"]

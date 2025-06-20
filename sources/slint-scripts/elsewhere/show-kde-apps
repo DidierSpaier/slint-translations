@@ -1,0 +1,57 @@
+#!/bin/sh
+if [ ! "$(id -u)" = "0" ];then
+	echo "Only root is allowed to run this program."
+	exit
+fi
+if [ ! -d /usr/share/applications/kde4 ]; then
+	echo "KDE is not installed."
+	exit
+fi
+echo
+echo "This script includes KDE applications in the menus of all graphical"
+echo "environments for all users, but the applications for personal"
+echo "information management, that however stay available from KDE."
+echo "This can be reverted with the command hide-kde-apps."
+read -p "To confirm press Y else press N: " answer
+if [ ! "$answer" = "y"  ] && [ ! "$answer" = "Y"  ]; then
+	echo "Nothing done."
+	exit
+fi
+( cd /usr/share/applications/kde4
+	for i in $(find -name "*.desktop"|grep -v \
+	-e Help.desktop \
+	-e Home.desktop \
+	-e kfind.desktop \
+	-e kinfocenter.desktop \
+	-e klipper.desktop \
+	-e kmenuedit.desktop \
+	-e kmix.desktop \
+	-e knetattach.desktop \
+	-e krandrtray.desktop \
+	-e superkaramba.desktop \
+	-e systemsettings.desktop \
+	-e lokalize);do
+		if grep -q OnlyShow $i; then
+			sed -i /OnlyShowIn/d $i
+		fi
+	done
+	for kde_app in \
+	$(grep "\.desktop" ../../../../var/log/packages/kdepim* \
+	| grep applications \
+	| sed "s,.*/,,"); do
+		if [ -f $kde_app ]; then
+			sed -i '/OnlyShow/d' $kde_app
+			echo 'OnlyShowIn=KDE;' >> $kde_app
+		fi
+	done
+	# There is no point showing in other menus these KDE applications
+	# that are shown in KDE's menus.
+	for hide in kdeconnect.desktop kdesystemsettings.desktop; do
+		if [ -f $hide ]; then
+			sed -i '/Hidden/d' $hide
+			echo 'Hidden=true' >> $hide
+		fi
+	done
+)
+echo "All done."
+

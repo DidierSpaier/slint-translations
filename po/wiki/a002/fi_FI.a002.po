@@ -1,0 +1,382 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2023-03-11 18:58+0100\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Finnish\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: fi\n"
+"X-Crowdin-File: /wiki/a002/a002.pot\n"
+"X-Crowdin-File-ID: 119\n"
+
+#. type: Title ==
+#: a002.adoc:1
+#, no-wrap
+msgid "Customize a Slint system layout"
+msgstr ""
+
+#. type: Title ===
+#: a002.adoc:3
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:6
+msgid "In this article, we review how the Slint installer organizes the system's basic directories (their layout), and show how to customize this layout after installation. The installation process is detailed in Chapter 2: Installation of the HandBook."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:8
+msgid "The installer places all the directories listed below, which constitute the core of the system, in the same partition:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:10
+#, no-wrap
+msgid " bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:12
+msgid "If other partitions already formatted are accessible during the installation, the installer proposes that they be mounted at system startup, with a directory name chosen by the user as mount point, except those listed above."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:14
+msgid "Furthermore, if automatic partitioning has been chosen, the installer proposes to create an additional partition in the remaining space available on the device, with a mount point chosen by the user, also outside those listed above."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:16
+msgid "In sum, the installer:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:18
+msgid "places all directories constituting the core of the system in the same partition,"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:19
+msgid "allows to set up other directories in other partitions, previously formatted."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:21
+msgid "However, you may want to install files or directories that are part of the core of the system such as /home in another partition, especially if space is limited on the device. For example, if the computer is equipped with a fast device (SSD or NVMe) and also with a slower but larger capacity hard disk, you might want to install the system on the SSD or NVMe and the larger files on the hard disk."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:23
+msgid "You may also want to share large files usually stored in /home with another system, such as images, various documents, audio or video files."
+msgstr ""
+
+#. type: Title ===
+#: a002.adoc:24
+#, no-wrap
+msgid "Practical guide"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:27
+msgid "As an example we show how to move /home to another device, with some variations."
+msgstr ""
+
+#. type: Title ====
+#: a002.adoc:28
+#, no-wrap
+msgid "Move /home entirely to another device "
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:31
+msgid "We assume that you want to move the /home directory, initially installed on an SSD or NVMe, to a hard disk. This can be done right after installation or later. All the following is to be done as root."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:33
+msgid "First, you need a formatted partition on the hard disk, named /dev/sdb1 below, to host /home:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:35
+msgid "Create if not already done on the hard disk the partition table (GPT type) and the partition using one of theses tools: parted, gdisk, cgdisk or gparted, all included in Slint, big enough for its intended use."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:36
+msgid "Format this partition using one of the btrfs, ext4, or xfs file types (commands `mkfs.btrfs`, `mkfs.ext4` or `mkfs.xfs`)"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:38
+msgid "To be able to copy the /home directory to this partition you need to mount it, for example on /mnt, with one of the following commands:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:41
+#, no-wrap
+msgid " mount /dev/sdb1 /mnt -o compress=zstd:3 # if /dev/sdb1 has been formatted with btrfs\n"
+" mount /dev/sdb1 /mnt # if /dev/sdb1 was formatted with xfs or ext4\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:43
+msgid "Then copy the files, for example like this:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:45
+#, no-wrap
+msgid " cp -a /home/* /mnt\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:47
+msgid "or like this:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:49
+#, no-wrap
+msgid " rsync -aAXv /home/* /mnt\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:51
+msgid "Then, check that the copy has been done correctly:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:53
+#, no-wrap
+msgid " diff -r /home /mnt\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:55
+msgid "Then modify the /etc/fstab file to mount /home on the new partition at the next boot."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:57
+msgid "If the root file system is btrfs, /home is mounted as subvolume. In this case comment out the line in the file used to mount /home by inserting a # character at its beginning. For example edit this line (replace <uuid1> with the UUID value specified in /etc/fstab):"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:59
+#, no-wrap
+msgid " UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:61
+msgid "which becomes:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:63
+#, no-wrap
+msgid " #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:65
+msgid "Then insert in the file a line to mount at boot time /home on the new partition. We will designate <uuid2> the value of its UUID, displayed by this command:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:67
+#, no-wrap
+msgid " lsblk -lno uuid /dev/sdb1\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:69
+msgid "The line to insert in the /etc/fstab file depends on the chosen file system of /dev/sdb1."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:71
+msgid "For btrfs:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:73
+#, no-wrap
+msgid " UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:75
+msgid "For ext4 or xfs:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:77
+#, no-wrap
+msgid " UUID=<uuid2> /home ext4 noatime 1 2\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:79
+msgid "Then, reboot the machine. In case of problem, to go back:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:81
+msgid "Case occurring uncomment the commented line in /etc/fstab (remove the # character at the beginning of the line)"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:82
+msgid "Comment the new one (insert a # character at the beginning of the line)"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:83
+msgid "Then reboot."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:85
+msgid "Once the new partition has been checked for correct operation, the old one can be deleted. The way to do this depends on the file system configured by the installer. Once the machine is rebooted, make sure that /home is mounted on the new partition, for example with the command"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:87
+msgid "findmnt -o /source"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:89
+msgid "Then delete the old /home:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:91
+msgid "In case of btrfs type these commands (we assume that the system was installed in /dev/sda3):"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:98
+#, no-wrap
+msgid "umount /mnt\n"
+"mount /dev/sda3 /mnt -o subvolid=0\n"
+"btrfs subvolume delete -c /mnt/@home\n"
+"btrfs subvolume sync /mnt # this command initiates the recovery of the space occupied by the old /home \n"
+"btrfs filesystem sync # this command ends the recovery of the space occupied by the old /home\n"
+"umount /mnt\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:100
+msgid "In case of ext4 or xfs, we need that the new /home be not in use to remove the old one. So:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:106
+#, no-wrap
+msgid "First, reboot in text mode.\n"
+"Login as root # Not as regular user, else we could not umount /home as it would be busy.\n"
+"umount /home # This makes the previous /home accessible again.\n"
+"rm -r /home/* # We delete the content of the previous /home but keep the directory.\n"
+"mount /home # Now /dev/sdb1 is mounted as /home \n"
+msgstr ""
+
+#. type: Title ====
+#: a002.adoc:107
+#, no-wrap
+msgid "Move only the largest files from /home to the hard disk"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:110
+msgid "In the example above the /home directory has been completely transferred from the SSD to the hard disk."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:112
+msgid "It may be preferable to store only large files on the hard disk and to leave hidden directories and files on the SSD, which are subject to frequent writes, much faster on an SSD."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:114
+msgid "To do this, you can name the mount point of the /dev/sdb1 partition `/data` in /etc/fstab, for example, then once this partition is mounted, copy the directories to be transferred from /home to /data, and finally replace these directories in /home with symbolic links to the directories in /data. For instance, once the /data directory is created and mounted on /dev/sdb1:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:118
+#, no-wrap
+msgid " chown -R didier:users /data\n"
+" mv /home/didier/Images /data\n"
+" ln -s /data/Images /home/didier/Images\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:120
+msgid "This way of doing is to be adapted if the system is multi-user, for example by creating a subdirectory per user in /data."
+msgstr ""
+
+#. type: Title ====
+#: a002.adoc:121
+#, no-wrap
+msgid "Move /home to the hard disk but store frequently changed files on the SSD "
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:124
+msgid "On the other hand it is possible to selectively store frequently changed files on the SSD, like those contained in ~/.mozilla, ~/.thunderbird or ~/.purple."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:126
+msgid "For example, you can create a directory /data and a subdirectory /data/.thunderbird on the SSD, move ~/.thunderbird to it, and create a symbolic link /data/.thunderbird => ~/.thunderbird."
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:128
+msgid "If btrfs is used for the core system it is recommended to create a subvolume for /data with the following commands, before moving ~/.mozilla or ~/.thunderbird there, like this:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:133
+#, no-wrap
+msgid " mount /dev/sda3 /mnt subvolid=0\n"
+" btrfs subvolume create /mnt/@data\n"
+" mkdir /data\n"
+" umount /mnt\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:135
+msgid "Then insert a line in /etc/fstab to mount /data at system boot (<uuid1> is the UUID value of /dev/sda3):"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:137
+#, no-wrap
+msgid " UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:139
+msgid "Then reboot and type the following commands:"
+msgstr ""
+
+#. type: Plain text
+#: a002.adoc:142
+#, no-wrap
+msgid "  chown -R didier:users /data\n"
+"  mv /home/didier/.thunderbird /data\n"
+"  ln -s /data/.thunderbird ~/.thunderbird\n"
+msgstr ""
+

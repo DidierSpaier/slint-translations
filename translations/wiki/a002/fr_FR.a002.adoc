@@ -1,0 +1,143 @@
+== Personnaliser la disposition d'un système Slint
+
+=== Introduction
+
+Dans cet article, nous examinons comment l'installateur Slint organise les répertoires de base du système (leur disposition) et nous montrons comment personnaliser cette disposition après l'installation. Le processus d'installation est détaillé dans le Chapitre 2 : Installation du manuel Slint.
+
+Le programme d'installation place tous les répertoires répertoriés ci-dessous, qui constituent le cœur du système, dans la même partition :
+
+ bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Si d'autres partitions déjà formatées sont accessibles pendant l'installation, le programme d'installation propose qu'elles soient montées au démarrage du système, avec un nom de répertoire choisi par l'utilisateur comme point de montage, à l'exception de ceux répertoriés ci-dessus.
+
+De plus, si le partitionnement automatique a été choisi, l'installateur propose de créer une partition supplémentaire dans l'espace disponible sur le périphérique, avec un point de montage choisi par l'utilisateur, également en dehors de ceux listés ci-dessus.
+
+En somme, l'installateur :
+
+* place tous les répertoires constituant le cœur du système dans la même partition,
+* permets de configurer d'autres répertoires dans d'autres partitions, préalablement formattées.
+
+Cependant, vous pouvez installer des fichiers ou des répertoires qui font partie du cœur du système, comme /home dans une autre partition, surtout si l'espace est limité sur le périphérique. Par exemple, si l'ordinateur est équipé d'un périphérique rapide (SSD ou NVMe) et d'un disque dur plus lent mais de plus grande capacité, vous pouvez installer le système sur le SSD ou NVMe et les fichiers plus gros sur le disque dur.
+
+Vous pouvez également partager des fichiers volumineux généralement stockés dans /home avec un autre système, tels que des images, des documents divers, des fichiers audio ou vidéo.
+
+=== Guide pratique
+
+À titre d'exemple nous montrons comment déplacer /home sur un autre périphériques avec quelques variantes.
+
+==== Déplacer / home entièrement vers un autre périphérique 
+
+Nous supposons que vous voulez déplacer le répertoire /home, initialement installé sur un SSD ou NVMe, sur un disque dur. Cela peut être fait juste après l'installation ou plus tard. Tout ce qui suit est à faire en tant que root.
+
+Tout d'abord, vous avez besoin d'une partition formatée sur le disque dur, nommée /dev/sdb1 ci-dessous, pour héberger /home:
+
+* Créer si ce n'est déjà fait sur le disque dur la table de partitions (de type GPT) et la partition en utilisant un de ces outils : parted, gdisk, cgdisk ou gparted, tous inclus dans Slint, assez grande pour son utilisation prévue.
+* Formatez cette partition en utilisant l'un des types de fichiers btrfs, ext4 ou xfs (commandes `mkfs.btrfs`, `mkfs.ext4` ou `mkfs.xfs`)
+
+Pour pouvoir copier le répertoire /home sur cette partition, vous devez le monter par exemple sur /mnt, avec l'une des commandes suivantes :
+
+ mount /dev/sdb1 /mnt -o compress=zstd:3 # si /dev/sdb1 a été formattée avec btrfs
+ mount /dev/sdb1 /mnt # si /dev/sdb1 a été formatée avec xfs ou ext4
+
+Copiez ensuite les fichiers, par exemple comme ceci :
+
+ cp -a /home/* /mnt
+
+ou comme ceci :
+
+ rsync -aAXv /home/* /mnt
+
+Vérifiez ensuite que la copie a été correctement effectuée :
+
+ diff -r /home /mnt
+
+Puis modifiez le fichier /etc/fstab pour monter /home sur la nouvelle partition au prochain démarrage.
+
+Si le système de fichiers racine est btrfs, /home est monté comme sous volume. Dans ce cas, commentez la ligne dans le fichier utilisé pour monter /home en insérant un caractère # au début. Par exemple, modifiez cette ligne (remplacez <uuid1> par la valeur UUID spécifiée dans /etc/fstab) :
+
+ UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+qui devient :
+
+ #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+Insérez ensuite dans le fichier une ligne pour monter au démarrage /home sur la nouvelle partition. Nous allons désigner <uuid2> la valeur de son UUID, affichée par cette commande :
+
+ lsblk -lno uuid /dev/sdb1
+
+La ligne à insérer dans le fichier /etc/fstab dépend du système de fichiers choisi pour /dev/sdb1.
+
+Pour btrf :
+
+ UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0
+
+Pour ext4 ou xfs :
+
+ UUID=<uuid2> /home ext4 noatime 1 2
+
+Ensuite, redémarrez la machine. En cas de problème, pour revenir en arrière :
+
+* Le cas échéant dé-commentez la ligne commentée de /etc/fstab (enlever le caractère # au début de la ligne
+* Commenter la nouvelle (insérer un caractère # au début de la ligne)
+* Puis redémarrez le système.
+
+Une fois que la nouvelle partition a été vérifiée come fonctionnnant correctement, l'ancienne peut être supprimée. La façon de faire dépend du système de fichiers configuré par l'installateur. Une fois la machine redémarrée, assurez-vous que /home est monté sur la nouvelle partition, par exemple avec la commande
+
+findmnt -o /source
+
+Supprimez ensuite l'ancien /home :
+
+* Dans le cas de btrfs tapez ces commandes (nous supposons que le système a été installé dans /dev/sda3) :
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # cette commande lance la récupération de l'espace occupé par l'ancien /home 
+ btrfs filesystem sync # cette commande termine la récupération de l'espace occupé par l'ancien /home
+ umount /mnt
+
+* Dans le cas de ext4 ou xfs, nous avons besoin que le nouveau /home ne soit pas en cours d'utilisation pour supprimer l'ancien. Donc :
++
+ First, reboot in text mode.
+ Connevtez vous comme root # Pas comme utilisateur ordinaire, sinon nous ne pourrions pas démonte /home car il serait occupé.
+ umount /home # Ceci rend le précédent  /home de nouveau accessible.
+ rm -r /home/* # Nous effaçons le pércebt /home mais conservons le répertoire
+ mount /home # Maintenant  /dev/sdb1 est montée comme /home 
+
+==== Déplacer uniquement les fichiers les plus volumineux de /home vers le disque dur
+
+Dans l'exemple ci-dessus, le répertoire /home a été complètement transféré du SSD vers le disque dur.
+
+Il peut être préférable de ne stocker que les gros fichiers sur le disque dur et de laisser les répertoires et fichiers cachés sur le SSD, lesquels sont sujets à des écritures fréquentes, beaucoup plus rapides sur un SSD.
+
+Pour ce faire, vous pouvez nommer le point de montage de la partition /dev/sdb1 `/data ` dans /etc/fstab, par exemple, une fois que cette partition est montée, copier les répertoires à transférer de /home vers /data, et enfin remplacer ces répertoires dans /home par des liens symboliques vers les répertoires dans /data. Par exemple, une fois le répertoire /data créé et monté sur /dev/sdb1:
+
+ chown -R didier:users /data
+ mv /home/didier/Images /data
+ ln -s /data/Images /home/didier/Images
+
+Cette façon de faire est adaptée si le système est multi-utilisateur, par exemple en créant un sous-répertoire par utilisateur dans /data.
+
+==== Déplacer /home sur le disque dur mais stocker les fichiers fréquemment modifiés sur le SSD 
+
+D'un autre côté, il est possible de stocker de manière sélective les fichiers fréquemment modifiés sur le SSD, comme ceux contenus dans ~/.mozilla, ~/.thunderbird ou ~/.purple.
+
+Par exemple, vous pouvez créer un répertoire /data et un sous-répertoire /data/.thunderbird sur le SSD, déplacer ~/. et créez un lien symbolique /data/.thunderbird => ~/.thunderbird.
+
+Si btrfs est utilisé pour le cœur du système, il est recommandé de créer un sous-volume pour /data avec les commandes suivantes, avant d'y déplacer ~/.mozilla ou ~/.thunderbird là, comme ceci :
+
+ mount /dev/sda3 /mnt subvolid=0
+ btrfs subvolume create /mnt/@data
+ mkdir /data
+ umount /mnt
+
+Insérez ensuite une ligne dans /etc/fstab pour monter /data au démarrage du système (<uuid1> est la valeur de l'UUID de /dev/sda3) :
+
+ UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Puis redémarrez et tapez les commandes suivantes :
+
+ chown -R didier:users /data
+ 
+mv /home/didier/.thunderbird /data
+  ln -s /data/.thunderbird ~/.thunderbird

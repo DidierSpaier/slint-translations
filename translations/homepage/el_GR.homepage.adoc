@@ -1,0 +1,66 @@
+[.debut]
+== Σχετικά με το Slint
+
+Το Slint είναι μια εύχρηστη, ευέλικτη, φιλική για χρήστες με προβλήματα όρασης διανομή Linux για υπολογιστές 64-bit. Το Slint βασίζεται σε εργαλεία Slackware και δανεισμένα από το Salix. Συντηρητής: Didier Spaier.
+
+== Χαρακτηριστικά
+
+* Το Slint είναι μια σταθερή διανομή. Ωστόσο, το λογισμικό προσβασιμότητας ενημερώνεται τακτικά, άλλα ενδέχεται να ενημερώνονται κατά περίπτωση.
+
+* The included software, among which the MATÉ and LXQt desktops (with XFCE installed on-demand), cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint.
+
+* Το Slint μπορεί να χρησιμοποιηθεί σε λειτουργίες κονσόλας και γραφικών και μπορεί να γίνει εναλλαγή μεταξύ αυτών των λειτουργιών χωρίς επανεκκίνηση. Είναι ακόμη δυνατό να ξεκινήσει διάφορα γραφικά περιβάλλοντα και να γίνει εναλλαγή μεταξύ τους.
+
+* Εύχρηστα εργαλεία διευκολύνουν τη διαχείριση του συστήματος και τη διαχείριση πακέτων λογισμικού. Οι ενημερώσεις είναι πλήρως αυτόματες, υπό τον έλεγχο του χρήστη.
+
+* Ο πίνακας ελέγχου Slint δίνει άμεση πρόσβαση στα κύρια εργαλεία και χρήσιμες πληροφορίες και συνδέσμους.
+
+* Από προεπιλογή, ένας συμπιεσμένος χώρος swap στη RAM επιτρέπει τον διπλασιασμό της χρησιμοποιήσιμης μνήμης.
+
+* Slint μπορεί να εγκατασταθεί σε οποιαδήποτε μηχανή 64-bit με τουλάχιστον 2G μνήμης, και 50G διαθέσιμα σε οποιοδήποτε μέσο, συμπεριλαμβανομένων των USB sticks, χωρίς ασφαλή εκκίνηση.
+
+* Εάν εγκατασταθεί σε USB media το Slint είναι φορητό από έναν υπολογιστή σε ένα άλλο. Τα μέσα μπορούν να κρυπτογραφηθούν πλήρως.
+
+== Εγκατάσταση
+
+Το πρόγραμμα εγκατάστασης, σε λειτουργία κειμένου, είναι πλήρως προσβάσιμο για τυφλούς που χρησιμοποιούν έναν αναγνώστη οθόνης ή οθόνη Braille, και προχωρά με ερωτήσεις και απαντήσεις με online βοήθεια και ολοκληρωμένη τεκμηρίωση. Δύο τρόποι διαμέρισης είναι διαθέσιμοι:
+
+* Οδηγός: ο χρήστης επιλέγει το σύστημα αρχείων (btrfs, ext4 ή xfs) και τα μέσα μπορούν να διατεθούν για κοινή χρήση με άλλα συστήματα.
+
+* Αυτόματο: Το σύστημα αρχείων είναι τότε btrfs και ο χώρος είναι αφιερωμένος στο Slint.
+
+Το σύστημα αρχείων btrfs έχει ρυθμιστεί με υπο-τόμους αντί για ξεχωριστές κατατμήσεις. Επιτρέπει να διαιρέσει με 2 το χώρο που καταλαμβάνεται στο μέσο ενημέρωσης, να λάβει στιγμιότυπα και είναι καλά προσαρμοσμένη σε SSD, NVMe και USB sticks.
+
+== Links
+
+* http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in the ISO]
+
+* http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable on demand]
+
+* link:../old/index.html[Archived old website]
+
+* link:../en/oldHandBook.html[Documentation 14.2.1]
+
+== Pictures of lightDM and the main desktops in Slint 
+
+lightDM
+
+image::../doc/lightdm.png["lightDM"]
+
+LXQt
+
+image::../doc/lxqt.png["LXQt"]
+
+MATE
+
+image::../doc/mate.png["MATE"]
+
+XFCE (installed on demand)
+
+image::../doc/xfce.png["XFCE"]

@@ -1,0 +1,142 @@
+== Das Layout eines Slint Systems anpassen
+
+=== Einführung
+
+In diesem Artikel zeigen wir, wie der Slint-Installer die grundlegenden Verzeichnisse des Systems (deren Layout) organisiert und wie man dieses Layout nach der Installation anpassen kann. Der Installationsprozess wird im Kapitel 2: Installation des Handbuchs detailliert beschrieben.
+
+Der Installer platziert alle unten aufgelisteten Verzeichnisse, die den Kern des Systems ausmachen, in derselben Partition:
+
+bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr
+
+Wenn andere bereits formatierte Partitionen während der Installation verfügbar sind, schlägt der Installer vor, dass sie beim Systemstart gemountet werden, mit einem Verzeichnisnamen, der vom Benutzer als Mount-Punkt zugewiesen wurde, außer denen, die oben aufgelistet sind.
+
+Wenn außerdem die automatische Partitionierung ausgewählt wurde, schlägt der Installer vor, eine zusätzliche Partition auf dem verbleibenden Platz auf dem Gerät zu erstellen, mit einem vom Benutzer gewählten Mount-Punkt, auch außerhalb der oben aufgelisteten Mount-Punkte.
+
+Kurz gesagt, der Installer:
+
+* platziert alle Verzeichnisse, die den Kern des Systems bilden, in derselben Partition,
+* erlaubt das Einrichten anderer Verzeichnisse in anderen Partitionen, die zuvor formatiert wurden.
+
+Allerdings möchten Sie möglicherweise Dateien oder Verzeichnisse installieren, die Teil des Kerns des Systems sind, wie /home in einer anderen Partition, insbesondere, wenn der Speicherplatz auf dem Gerät begrenzt ist. Zum Beispiel, wenn der Computer mit einem schnellen Gerät (SSD oder NVMe) und auch mit einer langsameren, aber größeren Festplatte ausgestattet ist, können Sie das System auf der SSD oder NVMe und die größeren Dateien auf der Festplatte installieren.
+
+Möglicherweise möchten Sie auch große Dateien, die normalerweise in /home gespeichert werden, mit einem anderen System teilen, wie z.B. Bilder, verschiedene Dokumente, Audio- oder Videodateien.
+
+=== Praktische Anleitung
+
+Als Beispiel zeigen wir, wie /home auf ein anderes Gerät verlagert wird, mit einigen Variationen.
+
+==== /home vollständig auf ein anderes Gerät verlagern
+
+Wir gehen davon aus, dass Sie das Verzeichnis /home, das ursprünglich auf einer SSD oder NVMe installiert wurde, auf eine Festplatte verschieben wollen. Dies kann direkt nach der Installation oder später erledigt werden.
+
+Zuerst benötigen Sie eine formatierte Partition auf der Festplatte, namens /dev/sdb1, auf der /home bereitgestellt wird:
+
+* Erstellen Sie die Partitionstabelle (vom Typ GPT) und die Partition mit einem der folgenden Werkzeuge: parted, gdisk, cgdisk oder gparted, alle in Slint, groß genug für den beabsichtigten Gebrauch.
+* Formatieren Sie diese Partition mit einem der Dateitypen btrfs, ext4 oder xfs (Befehle `mkfs.btrfs`, `mkfs.ext4` oder `mkfs.xfs`)
+
+Um das Verzeichnis /home auf diese Partition kopieren zu können, müssen Sie es mounten zum Beispiel auf /mnt, mit einem der folgenden Befehle:
+
+ mount /dev/sdb1 /mnt -o compress=zstd:3 # falls /dev/sdb1 mit btrfs formatiert wurde
+ mount /dev/sdb1 /mnt # falls /dev/sdb1 mit xfs oder ext4 formatiert wurde
+
+Kopieren Sie dann die Dateien, zum Beispiel wie folgt:
+
+ cp -a /home/* /mnt
+
+oder auch so:
+
+ rsync -aAXv /home/* /mnt
+
+Danach überprüfen Sie, ob die Kopie korrekt ausgeführt wurde:
+
+ diff -r /home /mnt
+
+Ändern Sie dann die /etc/fstab Datei, um /home auf der neuen Partition beim nächsten Booten zu mounten.
+
+Wenn das Root-Dateisystem btrfs ist, wird /home als Untervolumen eingebunden. In diesem Fall kommentieren Sie die Zeile in der Datei /etc/fstab aus, die verwendet wird, um /home einzubinden, indem Sie am Anfang ein # Zeichen einfügen. Zum Beispiel diese Zeile bearbeiten (ersetzen Sie <uuid1> mit der UUID in /etc/fstab):
+
+UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0
+
+die geändert wird in:
+
+#UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0
+
+Dann fügen Sie in die Datei eine Zeile ein, mit der Sie zur Bootzeit /home auf der neuen Partition einhängen. Wir nennen den Wert ihrer UUID <uuid2>, die durch diesen Befehl angezeigt wird:
+
+lsblk -lno uuid /dev/sdb1
+
+Die Zeile, die in die /etc/fstab Datei eingefügt werden soll, hängt vom gewählten Dateisystem auf /dev/sdb1 ab.
+
+Für btrfs:
+
+UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0 0
+
+Für ext4 oder xfs:
+
+UUID=<uuid2> /home ext4 noatime 1 2
+
+Dann starten Sie den Rechner neu. Im Falle eines Problems gehen Sie zurück:
+
+* Gegebenenfalls entfernen Sie das Kommentarzeichen aus der Zeile in der /etc/fstab (entfernen Sie das # Zeichen am Anfang der Zeile)
+* Kommentieren Sie die neue Zeile aus (fügen Sie ein # Zeichen am Zeilenanfang ein)
+* Dann starten Sie das System neu.
+
+Sobald die neue Partition auf korrekte Funktion überprüft wurde, kann die alte gelöscht werden. Die Art und Weise dies zu tun, hängt von dem vom Installer konfigurierten Dateisystem ab. Sobald der Rechner neu gestartet wurde, stellen Sie sicher, dass /home auf der neuen Partition gemountet ist, zum Beispiel mit dem Befehl:
+
+findmnt -o source
+
+Dann löschen Sie das alte /home:
+
+* Im Falle von btrfs geben Sie diese Befehle ein (wir gehen davon aus, dass das System in /dev/sda3 installiert wurde):
++
+ umount /mnt
+ mount /dev/sda3 /mnt -o subvolid=0
+ btrfs subvolume delete -c /mnt/@home
+ btrfs subvolume sync /mnt # dieser Befehl initiiert die Wiederherstellung des Speichers des alten /home 
+ btrfs filesystem sync # dieser Befehl beendet die Wiederherstellung des Speichers des alten /home
+ umount /mnt
+
+* Im Falle von ext4 oder xfs müssen wir das neue /home nicht verwenden, um das alte zu entfernen. Also:
++
+ Zuerst im Text-Modus neustarten.
+ Anmelden als root # Nicht als normaler Benutzer, sonst können wir /home nicht umkehren, da es benutzt werden würde.
+ umount /home # Dies macht das vorherige /home wieder zugänglich.
+ rm -r /home/* # Wir löschen den Inhalt des vorherigen /home, aber behalten das Verzeichnis.
+ mount /home # Jetzt wird /dev/sdb1 als /home eingebunden
+
+==== Das Verschieben nur der größten Dateien von /home auf die Festplatte
+
+Im obigen Beispiel wurde das Verzeichnis /home vollständig von der SSD auf die Festplatte übertragen.
+
+Möglicherweise ist es besser, nur große Dateien auf der Festplatte zu speichern und versteckte Verzeichnisse und Dateien, die häufig geschrieben, werden auf der SSD zu belassen, weil die SSD viel schneller ist.
+
+Um dies zu tun, können Sie zum Beispiel den Mount-Punkt der /dev/sdb1-Partition `/data` in /etc/fstab benennen. Sobald diese Partition gemountet ist, kopieren Sie die Verzeichnisse, die von /home nach /data übertragen werden sollen, und ersetzen Sie diese Verzeichnisse schließlich in /home mit symbolischen Links zu den Verzeichnissen in /data. Zum Beispiel, sobald das /data Verzeichnis erstellt und auf /dev/sdb1 gemountet wurde:
+
+chown -R didier:users /data
+mv /home/didier/Images /data
+ln -s /data/Images /home/didier/Images
+
+Diese Vorgehensweise muss angepasst werden, wenn das System mehrere Benutzer hat, zum Beispiel durch das Erstellen eines Unterverzeichnisses pro Benutzer in /data.
+
+==== Verschieben von /home auf die Festplatte, aber häufig geänderte Dateien auf der SSD speichern
+
+Andererseits ist es möglich, häufig veränderte Dateien auf der SSD selektiv zu speichern, wie etwa die in ~/.mozilla, ~/.thunderbird oder ~/.purple.
+
+Sie können zum Beispiel ein Verzeichnis /data und ein Unterverzeichnis /data/.thunderbird auf der SSD erstellen, ~/. hunderbird darauf verschieben und einen symbolischen Link /data/.thunderbird => ~/.thunderbird erstellen.
+
+Wenn btrfs für das Kernsystem verwendet wird, wird empfohlen, vor dem Verschieben von ~/ ein Untervolumen für /data mit den folgenden Befehlen zu erstellen, bevor ~/.mozilla oder ~/.thunderbird erstellt wird:
+
+mount /dev/sda3 /mnt subvolid=0
+btrfs subvolume create /mnt/@data
+mkdir /data
+umount /mnt
+
+Dann fügen Sie eine Zeile in /etc/fstab ein, um /data beim Systemstart einzubinden (<uuid1> ist der UUID-Wert von /dev/sda3):
+
+UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0
+
+Starten Sie dann neu und geben die folgenden Befehle ein:
+
+chown -R didier:users /data
+mv /home/didier/.thunderbird /data
+ln -s /data/.thunderbird ~/.thunderbird

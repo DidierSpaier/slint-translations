@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2023-03-11 18:58+0100\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: pt-PT\n"
+"X-Crowdin-File: /wiki/a002/a002.pot\n"
+"X-Crowdin-File-ID: 119\n"
+
+#. type: Title ==
+#: a002.adoc:1
+#, no-wrap
+msgid "Customize a Slint system layout"
+msgstr "Personalizar um esquema do sistema Slint"
+
+#. type: Title ===
+#: a002.adoc:3
+#, no-wrap
+msgid "Introduction"
+msgstr "Introdução"
+
+#. type: Plain text
+#: a002.adoc:6
+msgid "In this article, we review how the Slint installer organizes the system's basic directories (their layout), and show how to customize this layout after installation. The installation process is detailed in Chapter 2: Installation of the HandBook."
+msgstr "Neste artigo, revemos como o instalador do Slint organiza os diretórios básicos do sistema (o seu esquema), e mostramos como personalizar este esquema após a instalação. O processo de instalação é detalhado no Capítulo 2: Instalação do Manual."
+
+#. type: Plain text
+#: a002.adoc:8
+msgid "The installer places all the directories listed below, which constitute the core of the system, in the same partition:"
+msgstr "O instalador coloca todos os diretórios listados abaixo, que constituem o núcleo do sistema, na mesma partição:"
+
+#. type: Plain text
+#: a002.adoc:10
+#, no-wrap
+msgid " bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr\n"
+msgstr " bin boot dev etc home lib lib64 media mnt proc root run sbin srv sys usr\n"
+
+#. type: Plain text
+#: a002.adoc:12
+msgid "If other partitions already formatted are accessible during the installation, the installer proposes that they be mounted at system startup, with a directory name chosen by the user as mount point, except those listed above."
+msgstr "Se outras partições já formatadas estiverem acessíveis durante a instalação, o instalador propõe que sejam montadas no arranque do sistema, com um nome de diretório escolhido pelo utilizador como ponto de montagem, excepto as listadas acima."
+
+#. type: Plain text
+#: a002.adoc:14
+msgid "Furthermore, if automatic partitioning has been chosen, the installer proposes to create an additional partition in the remaining space available on the device, with a mount point chosen by the user, also outside those listed above."
+msgstr "Além disso, se o particionamento automático tiver sido escolhido, o instalador propõe a criação de uma partição adicional no espaço restante disponível no dispositivo, com um ponto de montagem escolhido pelo utilizador, também fora das listadas acima."
+
+#. type: Plain text
+#: a002.adoc:16
+msgid "In sum, the installer:"
+msgstr "Em suma, o instalador:"
+
+#. type: Plain text
+#: a002.adoc:18
+msgid "places all directories constituting the core of the system in the same partition,"
+msgstr "coloca todos os diretórios que constituem o núcleo do sistema na mesma partição,"
+
+#. type: Plain text
+#: a002.adoc:19
+msgid "allows to set up other directories in other partitions, previously formatted."
+msgstr "permite configurar outros diretórios em outras partições, previamente formatadas."
+
+#. type: Plain text
+#: a002.adoc:21
+msgid "However, you may want to install files or directories that are part of the core of the system such as /home in another partition, especially if space is limited on the device. For example, if the computer is equipped with a fast device (SSD or NVMe) and also with a slower but larger capacity hard disk, you might want to install the system on the SSD or NVMe and the larger files on the hard disk."
+msgstr "Contudo, poderá querer instalar ficheiros ou diretórios que fazem parte do núcleo do sistema, tais como a /home, noutra partição, especialmente se o espaço for limitado no dispositivo. Por exemplo, se o computador estiver equipado com um dispositivo rápido (SSD ou NVMe) e também com um disco rígido mais lento mas de maior capacidade, poderá querer instalar o sistema no SSD ou NVMe e os ficheiros maiores no disco rígido."
+
+#. type: Plain text
+#: a002.adoc:23
+msgid "You may also want to share large files usually stored in /home with another system, such as images, various documents, audio or video files."
+msgstr "Também pode querer partilhar ficheiros grandes normalmente armazenados na /home com outro sistema, tais como imagens, vários documentos, ficheiros de áudio ou vídeo."
+
+#. type: Title ===
+#: a002.adoc:24
+#, no-wrap
+msgid "Practical guide"
+msgstr "Guia prático"
+
+#. type: Plain text
+#: a002.adoc:27
+msgid "As an example we show how to move /home to another device, with some variations."
+msgstr "Como exemplo, mostramos como mover a /home para outro dispositivo, com algumas variações."
+
+#. type: Title ====
+#: a002.adoc:28
+#, no-wrap
+msgid "Move /home entirely to another device "
+msgstr "Mover a /home inteiramente para outro dispositivo"
+
+#. type: Plain text
+#: a002.adoc:31
+msgid "We assume that you want to move the /home directory, initially installed on an SSD or NVMe, to a hard disk. This can be done right after installation or later. All the following is to be done as root."
+msgstr "Assumimos que pretende mover o directório /home, inicialmente instalado num SSD ou NVMe, para um disco rígido. Isto pode ser feito logo após a instalação ou mais tarde. Tudo o que se segue deve ser feito como root."
+
+#. type: Plain text
+#: a002.adoc:33
+msgid "First, you need a formatted partition on the hard disk, named /dev/sdb1 below, to host /home:"
+msgstr "Primeiro, é necessária uma partição formatada no disco rígido, denominada /dev/sdb1 abaixo, para alojar a /home:"
+
+#. type: Plain text
+#: a002.adoc:35
+msgid "Create if not already done on the hard disk the partition table (GPT type) and the partition using one of theses tools: parted, gdisk, cgdisk or gparted, all included in Slint, big enough for its intended use."
+msgstr "Criar, se ainda não tiver sido feito no disco rígido, a tabela de partições (tipo GPT) e a partição utilizando uma destas ferramentas: parted, gdisk, cgdisk ou gparted, todas incluídas no Slint, suficientemente grandes para o seu uso pretendido."
+
+#. type: Plain text
+#: a002.adoc:36
+msgid "Format this partition using one of the btrfs, ext4, or xfs file types (commands `mkfs.btrfs`, `mkfs.ext4` or `mkfs.xfs`)"
+msgstr "Formatar esta partição utilizando um dos tipos de ficheiro btrfs, ext4, ou xfs (comandos `mkfs.btrfs`, `mkfs.ext4` ou `mkfs.xfs`)"
+
+#. type: Plain text
+#: a002.adoc:38
+msgid "To be able to copy the /home directory to this partition you need to mount it, for example on /mnt, with one of the following commands:"
+msgstr "Para poder copiar o diretório /home para esta partição é necessário montá-la, por exemplo em /mnt, com um dos seguintes comandos:"
+
+#. type: Plain text
+#: a002.adoc:41
+#, no-wrap
+msgid " mount /dev/sdb1 /mnt -o compress=zstd:3 # if /dev/sdb1 has been formatted with btrfs\n"
+" mount /dev/sdb1 /mnt # if /dev/sdb1 was formatted with xfs or ext4\n"
+msgstr " mount /dev/sdb1 /mnt -o compress=zstd:3 # se /dev/sdb1 tiver sido formatado com btrfs\n"
+" mount /dev/sdb1 /mnt # se /dev/sdb1 foi formatado com xfs ou ext4\n"
+
+#. type: Plain text
+#: a002.adoc:43
+msgid "Then copy the files, for example like this:"
+msgstr "Depois, copiar os ficheiros, por exemplo, desta forma:"
+
+#. type: Plain text
+#: a002.adoc:45
+#, no-wrap
+msgid " cp -a /home/* /mnt\n"
+msgstr " cp -a /home/* /mnt\n"
+
+#. type: Plain text
+#: a002.adoc:47
+msgid "or like this:"
+msgstr "ou assim:"
+
+#. type: Plain text
+#: a002.adoc:49
+#, no-wrap
+msgid " rsync -aAXv /home/* /mnt\n"
+msgstr " rsync -aAXv /home/* /mnt\n"
+
+#. type: Plain text
+#: a002.adoc:51
+msgid "Then, check that the copy has been done correctly:"
+msgstr "Depois, verificar se a cópia foi feita correctamente:"
+
+#. type: Plain text
+#: a002.adoc:53
+#, no-wrap
+msgid " diff -r /home /mnt\n"
+msgstr " diff -r /home /mnt\n"
+
+#. type: Plain text
+#: a002.adoc:55
+msgid "Then modify the /etc/fstab file to mount /home on the new partition at the next boot."
+msgstr "Depois, modificar o ficheiro /etc/fstab para montar a /home na nova partição no próximo arranque."
+
+#. type: Plain text
+#: a002.adoc:57
+msgid "If the root file system is btrfs, /home is mounted as subvolume. In this case comment out the line in the file used to mount /home by inserting a # character at its beginning. For example edit this line (replace <uuid1> with the UUID value specified in /etc/fstab):"
+msgstr "Se o sistema de ficheiros root for o btrfs, a /home é montada como subvolume. Neste caso, comentar a linha no ficheiro utilizado para montar a /home inserindo um carácter # no seu início. Por exemplo, editar esta linha (substituir <uuid1> pelo valor UUID especificado em /etc/fstab):"
+
+#. type: Plain text
+#: a002.adoc:59
+#, no-wrap
+msgid " UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr " UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+
+#. type: Plain text
+#: a002.adoc:61
+msgid "which becomes:"
+msgstr "que se torna:"
+
+#. type: Plain text
+#: a002.adoc:63
+#, no-wrap
+msgid " #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr " #UUID=<uuid1> /home btrfs subvol=/@home,discard=async,compress=zstd:3,noatime 0 0\n"
+
+#. type: Plain text
+#: a002.adoc:65
+msgid "Then insert in the file a line to mount at boot time /home on the new partition. We will designate <uuid2> the value of its UUID, displayed by this command:"
+msgstr "Depois, inserir no ficheiro uma linha para montar no momento do arranque a /home na nova partição. Iremos designar <uuid2> o valor da sua UUID, exibido por este comando:"
+
+#. type: Plain text
+#: a002.adoc:67
+#, no-wrap
+msgid " lsblk -lno uuid /dev/sdb1\n"
+msgstr " lsblk -lno uuid /dev/sdb1\n"
+
+#. type: Plain text
+#: a002.adoc:69
+msgid "The line to insert in the /etc/fstab file depends on the chosen file system of /dev/sdb1."
+msgstr "A linha a inserir no ficheiro /etc/fstab depende do sistema de ficheiros escolhido de /dev/sdb1."
+
+#. type: Plain text
+#: a002.adoc:71
+msgid "For btrfs:"
+msgstr "Para btrfs:"
+
+#. type: Plain text
+#: a002.adoc:73
+#, no-wrap
+msgid " UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0\n"
+msgstr " UUID=<uuid2> /home btrfs compress=zstd:3,discard=async,noatime 0\n"
+
+#. type: Plain text
+#: a002.adoc:75
+msgid "For ext4 or xfs:"
+msgstr "Para ext4 ou xfs:"
+
+#. type: Plain text
+#: a002.adoc:77
+#, no-wrap
+msgid " UUID=<uuid2> /home ext4 noatime 1 2\n"
+msgstr " UUID=<uuid2> /home ext4 noatime 1 2\n"
+
+#. type: Plain text
+#: a002.adoc:79
+msgid "Then, reboot the machine. In case of problem, to go back:"
+msgstr "Depois, reiniciar a máquina. Em caso de problema, para voltar atrás:"
+
+#. type: Plain text
+#: a002.adoc:81
+msgid "Case occurring uncomment the commented line in /etc/fstab (remove the # character at the beginning of the line)"
+msgstr "Caso ocorra descomentar a linha comentada em /etc/fstb (remova o carácter # no início da linha)"
+
+#. type: Plain text
+#: a002.adoc:82
+msgid "Comment the new one (insert a # character at the beginning of the line)"
+msgstr "Comente a nova (insira um carácter # no início da linha)"
+
+#. type: Plain text
+#: a002.adoc:83
+msgid "Then reboot."
+msgstr "Depois reinicie."
+
+#. type: Plain text
+#: a002.adoc:85
+msgid "Once the new partition has been checked for correct operation, the old one can be deleted. The way to do this depends on the file system configured by the installer. Once the machine is rebooted, make sure that /home is mounted on the new partition, for example with the command"
+msgstr "Uma vez verificada a nova partição para um funcionamento correto, a antiga pode ser eliminada. A forma de o fazer depende do sistema de ficheiros configurado pelo instalador. Uma vez reiniciada a máquina, certifique-se de que a /home está montada na nova partição, por exemplo com o comando"
+
+#. type: Plain text
+#: a002.adoc:87
+msgid "findmnt -o /source"
+msgstr "findmnt -o /source"
+
+#. type: Plain text
+#: a002.adoc:89
+msgid "Then delete the old /home:"
+msgstr "Depois, elimine a antiga /home:"
+
+#. type: Plain text
+#: a002.adoc:91
+msgid "In case of btrfs type these commands (we assume that the system was installed in /dev/sda3):"
+msgstr "No caso de btrfs escrever estes comandos (assumimos que o sistema foi instalado em /dev/sda3):"
+
+#. type: Plain text
+#: a002.adoc:98
+#, no-wrap
+msgid "umount /mnt\n"
+"mount /dev/sda3 /mnt -o subvolid=0\n"
+"btrfs subvolume delete -c /mnt/@home\n"
+"btrfs subvolume sync /mnt # this command initiates the recovery of the space occupied by the old /home \n"
+"btrfs filesystem sync # this command ends the recovery of the space occupied by the old /home\n"
+"umount /mnt\n"
+msgstr "umount /mnt\n"
+"mount /dev/sda3 /mnt -o subvolid=0\n"
+"btrfs subvolume delete -c /mnt/@home\n"
+"btrfs subvolume sync /mnt # este comando inicia a recuperação do espaço ocupado pela antiga /home \n"
+"btrfs filesystem sync # este comando termina a recuperação do espaço ocupado pela antiga /home\n"
+"umount /mnt\n"
+
+#. type: Plain text
+#: a002.adoc:100
+msgid "In case of ext4 or xfs, we need that the new /home be not in use to remove the old one. So:"
+msgstr "No caso de ext4 ou xfs, precisamos que a nova /home não esteja a ser utilizada para remover a antiga. Por isso:"
+
+#. type: Plain text
+#: a002.adoc:106
+#, no-wrap
+msgid "First, reboot in text mode.\n"
+"Login as root # Not as regular user, else we could not umount /home as it would be busy.\n"
+"umount /home # This makes the previous /home accessible again.\n"
+"rm -r /home/* # We delete the content of the previous /home but keep the directory.\n"
+"mount /home # Now /dev/sdb1 is mounted as /home \n"
+msgstr "Primeiro, reinicie em modo texto.\n"
+"Inicie sessão como root # Não como utilizador normal, caso contrário, não poderíamos desmontar a /home, pois estaria ocupada.\n"
+"umount /home # Isto torna a anterior /home novamente acessível.\n"
+"rm -r /home/* # Eliminamos o conteúdo da /home anterior, mas mantemos o diretório.\n"
+"mount /home # Agora /dev/sdb1 é montado como /home \n"
+
+#. type: Title ====
+#: a002.adoc:107
+#, no-wrap
+msgid "Move only the largest files from /home to the hard disk"
+msgstr "Mover apenas os ficheiros maiores da /home para o disco rígido"
+
+#. type: Plain text
+#: a002.adoc:110
+msgid "In the example above the /home directory has been completely transferred from the SSD to the hard disk."
+msgstr "No exemplo acima, o diretório /home foi completamente transferido do SSD para o disco rígido."
+
+#. type: Plain text
+#: a002.adoc:112
+msgid "It may be preferable to store only large files on the hard disk and to leave hidden directories and files on the SSD, which are subject to frequent writes, much faster on an SSD."
+msgstr "Pode ser preferível armazenar apenas ficheiros grandes no disco rígido e deixar diretórios e ficheiros escondidos no SSD, que estão sujeitos a gravações frequentes, muito mais rapidamente num SSD."
+
+#. type: Plain text
+#: a002.adoc:114
+msgid "To do this, you can name the mount point of the /dev/sdb1 partition `/data` in /etc/fstab, for example, then once this partition is mounted, copy the directories to be transferred from /home to /data, and finally replace these directories in /home with symbolic links to the directories in /data. For instance, once the /data directory is created and mounted on /dev/sdb1:"
+msgstr "Para tal, pode nomear o ponto de montagem da partição /dev/sdb1 `/data` em /etc/fstab, por exemplo, depois de montada esta partição, copiar os diretórios a transferir da /home para /data, e finalmente substituir estes diretórios na /home por ligações simbólicas aos diretórios em /data. Por exemplo, assim que o diretório /data for criado e montado em /dev/sdb1:"
+
+#. type: Plain text
+#: a002.adoc:118
+#, no-wrap
+msgid " chown -R didier:users /data\n"
+" mv /home/didier/Images /data\n"
+" ln -s /data/Images /home/didier/Images\n"
+msgstr " chown -R hugo:users /data\n"
+" mv /home/hugo/Images /data\n"
+" ln -s /data/Images /home/hugo/Images\n"
+
+#. type: Plain text
+#: a002.adoc:120
+msgid "This way of doing is to be adapted if the system is multi-user, for example by creating a subdirectory per user in /data."
+msgstr "Esta forma de fazer deve ser adaptada se o sistema for multi-utilizador, por exemplo criando um subdiretório por utilizador em /data."
+
+#. type: Title ====
+#: a002.adoc:121
+#, no-wrap
+msgid "Move /home to the hard disk but store frequently changed files on the SSD "
+msgstr "Mover a /home para o disco rígido mas armazenar ficheiros frequentemente alterados no SSD "
+
+#. type: Plain text
+#: a002.adoc:124
+msgid "On the other hand it is possible to selectively store frequently changed files on the SSD, like those contained in ~/.mozilla, ~/.thunderbird or ~/.purple."
+msgstr "Por outro lado, é possível armazenar seletivamente ficheiros frequentemente alterados no SSD, como os contidos em ~/.mozilla, ~/.thunderbird ou ~/.purple."
+
+#. type: Plain text
+#: a002.adoc:126
+msgid "For example, you can create a directory /data and a subdirectory /data/.thunderbird on the SSD, move ~/.thunderbird to it, and create a symbolic link /data/.thunderbird => ~/.thunderbird."
+msgstr "Por exemplo, pode criar um diretório /data e um subdiretório /data/.thunderbird no SSD, mover ~/.thunderbird para o mesmo, e criar uma ligação simbólica /data/.thunderbird => ~/.thunderbird."
+
+#. type: Plain text
+#: a002.adoc:128
+msgid "If btrfs is used for the core system it is recommended to create a subvolume for /data with the following commands, before moving ~/.mozilla or ~/.thunderbird there, like this:"
+msgstr "Se o btrfs for utilizado para o núcleo do sistema, recomenda-se criar um subvolume para /data com os seguintes comandos, antes de mover ~/.mozilla ou ~/.thunderbird para lá, assim:"
+
+#. type: Plain text
+#: a002.adoc:133
+#, no-wrap
+msgid " mount /dev/sda3 /mnt subvolid=0\n"
+" btrfs subvolume create /mnt/@data\n"
+" mkdir /data\n"
+" umount /mnt\n"
+msgstr " mount /dev/sda3 /mnt subvolid=0\n"
+" btrfs subvolume create /mnt/@data\n"
+" mkdir /data\n"
+" umount /mnt\n"
+
+#. type: Plain text
+#: a002.adoc:135
+msgid "Then insert a line in /etc/fstab to mount /data at system boot (<uuid1> is the UUID value of /dev/sda3):"
+msgstr "Depois, inserir uma linha em /etc/fstab para montar /data no arranque do sistema (<uuid1> é o valor UUID de /dev/sda3):"
+
+#. type: Plain text
+#: a002.adoc:137
+#, no-wrap
+msgid " UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0\n"
+msgstr " UUID=<uuid1> /data btrfs subvol=/@data,discard=async,compress=zstd:3,noatime 0 0\n"
+
+#. type: Plain text
+#: a002.adoc:139
+msgid "Then reboot and type the following commands:"
+msgstr "Depois, reinicie e escreva os seguintes comandos:"
+
+#. type: Plain text
+#: a002.adoc:142
+#, no-wrap
+msgid "  chown -R didier:users /data\n"
+"  mv /home/didier/.thunderbird /data\n"
+"  ln -s /data/.thunderbird ~/.thunderbird\n"
+msgstr "  chown -R hugo:users /data\n"
+"  mv /home/hugo/.thunderbird /data\n"
+"  ln -s /data/.thunderbird ~/.thunderbird\n"
+

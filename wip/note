@@ -1,7 +1,0 @@
-#!/bin/sh
-# beforeruning me, copy ../HandBook/HandBook.*po* here
-# and copy ../sources/HandBoo.po here
-# name=HandBook
-for name in  *.po*; do
-	po4a-updatepo -M UTF-8 -m HandBook.adoc -f asciidoc -p $name
-done

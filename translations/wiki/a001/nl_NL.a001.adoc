@@ -1,0 +1,82 @@
+== Slint met BTRFS
+
+In dit artikel schetsen we de unieke eigenschappen van het BTRFS bestandssysteem en hoe een Slint systeem tijdens de installatie wordt geconfigureerd om hiervan te profiteren.
+
+Om dit document niet te overladen met definities, verwijzen we de lezer naar https://slint.fr/en/HandBook.html#_glossary[glossary] opgenomen in de Slint Manual en specifiek voor btrfs "jargon" naar https://btrfs.readthedocs.io/en/latest/Glossary.html[glossary] opgenomen in de documentatie.
+
+Een BTRFS-bestandssysteem bestaat uit een logisch volume dat meerdere blokapparaten (partities of schijven) kan omvatten. Slint wordt in eerste instantie geïnstalleerd op een enkele partitie.
+
+Een subvolume is een onderliggende structuur van bestanden in een volume, waarvan de root kan worden aangekoppeld alsof het een opzichzelfstaand bestandssysteem is. De aan een volume toegewezen ruimte wordt echter ook aan elk van de subvolumes toegewezen: het is daarom niet nodig deze apart aan alle subvolumes toe te wijzen alsof het afzonderlijke partities waren.
+
+Subvolumes kunnen op hetzelfde moment worden gemaakt als het volume (met de opdracht mkfs.btrfs), maar ook later worden toegevoegd of verwijderd met behulp van de btrfs tools.
+
+Als voorbeeld maak je met onderstaande opdrachten het Slint "systeem"-volume en subvolumes in het geval dat BTRFS wordt gebruikt. Hierin is $ROOTNAME is de naam van de partitie waarin Slint wordt geïnstalleerd en $SLINT het aankoppelpunt van het systeemvolume tijdens de installatie.
+----
+mkdir /SLINT
+SLINT="/SLINT"
+mkfs.btrfs -L root $ROOTNAME
+mount -o compress=zstd:3,noatime $ROOTNAME $SLINT
+btrfs subvolume create $SLINT/@
+btrfs subvolume create $SLINT/@home
+btrfs subvolume create $SLINT/@swap
+umount $SLINT
+mount -o subvol=/@,compress=zstd:3,noatime $ROOTNAME $SLINT
+mkdir $SLINT/ home
+mkdir $SLINT/swap 
+----
+De $ROOTNAME partitie (aangeduid met het UUID dat we <uuid>noemen) zal dan steeds als Slint wordt gestart drie keer (eenmaal per subvolume) worden aangekoppeld, zoals aangegeven in het bestand /etc/fstab:
+----
+UUID=<uuid> /btrfs subvol=/@,compress=zstd:3,noatime 0 0
+UUID=<uuid> /home btrfs subvol=/@home,compress=zstd:3,noatime 0 0
+UUID=<uuid> /swap btrfs subvol=/@swap,compress=zstd:3,noatime 0 0 
+----
+Dat geeft bijvoorbeeld (volgens de uitvoer van lsblk /dev/sda5):
+----
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda5        50G   22G   28G  44% /
+/dev/sda5        50G   22G   28G  44% /home
+/dev/sda5        50G   22G   28G  44% /swap
+----
+We zien dat de ruimte beschikbaar voor het volume (28G) ook beschikbaar is voor elk van de subvolumes. Verder zien we dat met de aankoppel-optie "compress_zstd:3" alle opgeslagen bestanden worden gecomprimeerd door de zstd utility met compressieniveau 3. Dus de grootte van het systeem is ongeveer de helft van die van een ext4-bestandssysteem.
+
+Als we het apparaat aan de root van het volume aankoppelen (zonder vermelding van subvolume) zoals:
+----
+mount /dev/sda5 /mnt
+----
+we zien dat de subvolumes worden weergegeven als subdirectory's van /mnt:
+----
+ls /mnt
+@ @home @swap
+ls /mnt/@home/didier
+Desktop Documents GNUstep Images Templates Music Audience Downloads Videos 
+----
+Een ander opmerkelijk kenmerk van BTRFS is "copy-on-write". Bij het bewerken van een bestand worden de wijzigingen naar een andere locatie geschreven, waarbij de metagegevens (die de locatie van alle delen van het bestand) worden bijgewerkt. Zolang er nog steeds naar de vorige gegevens wordt verwezen, blijven deze onaangeroerd.
+
+Dit maakt het heel eenvoudig om snapshots van een BTRFS subvolume te maken: het maken van een nieuw snapshot is "vrij", omdat het heel weinig schijfruimte gebruikt: alleen de metadata - de fysieke locatie van alle delen van bestanden in het subvolume- wordt geschreven en gebeurt bijna direct. De ruimte die door het snapshot wordt gebruikt, zal alleen toenemen als het oorspronkelijke subvolume en het snapshot verschillen Dan zal de snapshot de gegevens ophalen die verwijderd zijn uit origineel. Aan de andere kant zullen de aan het origineel toegevoegde gegevens niet worden opgenomen in het snapshot: met andere woorden, een wijziging van het oorspronkelijke subvolume wijzigt het snapshot niet.
+
+Slint bevat het hulpprogramma `absm`, waarmee snapshots van het subvolume @ kunnen worden gemaakt. Hierdoor wordt het mogelijk terug te keren naar een eerdere status van het systeem als er een update fout gaat. Hiervoor start je het systeem met dit snapshot dat je selecteerd in het GRUB-opstartmenu. Voor informatie over het gebruik ervan typ je gewoon `absm` als root of via sudo.
+
+BTRFS controleert ook de integriteit van elk bestand wanneer het wordt geopend met een controlegetal, waardoor het niet nodig is om het bestandssysteem te controleren bij het opstarten van het systeem. Daarnaast controleert de opdracht "btrfs scrub" de integriteit van alle bestanden, met inbegrip van de bestanden die zelden worden gelezen. Standaard wordt door de utility `btrfsmaintenance`, die in Slint is opgenomen, een keer per week "btrtfs scrub" uitgevoerd.
+
+`btrfsmaintenance` activeert ook eenmaal per week "btrfs balance". Deze opdracht verdeelt de gegevens over de apparaten als het bestandssysteem zich over meerdere apparaten uitstrekt, maar maakt ook de niet toegewezen ruimte van het bestandssysteem vrij wat met name in het geval van een harde schijf de prestaties van BTRFS verbetert. Lees /usr/doc/btrfsmaintenance*/README.html voor meer informatie over 'btrfsmaintenance`.
+
+Andere nuttige en BTRFS-compatibele tools zijn opgenomen in Slint en hebben allemaal een -- help optie en een man page:
+
+* `jdupes` detecteert dubbele bestanden en stelt je ongeacht het gebruikte bestandssysteem in staat de vereiste actie te ondernemen
+* `btdu` maakt het mogelijk om met precisie de plaats van de BTRFS subvolumes en mappen te bepalen
+* 'restic' is een veelzijdig backupprogramma dat voor elk bestandssysteem kan worden gebruikt.
+
+Aanbevelingen.
+
+* BTRFS heeft ruimte nodig om te zijn werk te kunnen doen. Zorg altijd voor 10-20% vrije ruimte.
+* Sommige tools in het btrfs-tools pakket kunnen gevaarlijk of contraproductief zijn. Gebruik alleen die programma's waarvan je de werking kent en kijk wanneer je hierover twijfelt op de Slint mailinglijst of op IRC op irc.libera.chat, kanaal #btrfs.
+* Vermijd met name "btrfs filesystem defrag" en vooral niet "btrfs check --repair".
+* Lees voor het gebruik van een commando de bijbehorende man page zorgvuldig (te beginnen met "man btrtfs" die de anderen weergeeft).
+* Zoals met elk bestandssysteem: maak regelmatig back-ups! Dit is meestal de enige manier om je gegevens te herstellen in geval van een hardwarestoring.
+
+Verder:
+
+* De Forza wiki: https://wiki.tnonline.net/w/Category:Btrfs
+* De officiële documentatie: https://btrfs.readthedocs.io/en/latest/
+* Vragen en problemen: op irc.libera.chat channel #btrfs
+
