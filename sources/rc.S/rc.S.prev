@@ -5,7 +5,7 @@
 # http://ftp.slackware.com/pub/slackware/slackware-15.0/source/installer/sources/initrd/skeleton_initrd.tar.gz
 # heavily modified by Didier Spaier didieratslintdotfr for the Slint Linux distribution.
 
-# Version included in slint64-15.0-3.iso
+# Version included in slint64-15.0-6.iso
 
 # Any /etc/mtab that exists here is old, so we start with a new one:
 #/bin/rm -f /etc/mtab /etc/mtab~ /etc/mtab.tmp && /bin/touch /etc/mtab
@@ -34,7 +34,7 @@ if [ -x /sbin/ldconfig ]; then
 fi
 
 # We source /sbin/functions after having mounted /proc and /sys to avoid hamrless erreor messages
-# But before "export TEXTDOMAIN=rc.S" as the TEXTDOMAIN of /sbin/functions is "auto".
+# But before exporting TEXTDOMAIN as the TEXTDOMAIN of /sbin/functions is "auto"
 . /sbin/functions
 export TEXTDOMAIN=rc.S
 . gettext.sh
@@ -74,12 +74,68 @@ mkdir -p /ISO
 mkdir -p /INSTALLER
 mounttheiso
 sh /etc/rc.d/rc.swapinzram start
-
-sleep 3
-
-echo "installing kernel-firmware. Please wait..."
-spkg -i -qq "$ISO"/slint/kernel-firmware*txz
-
+echo "Adding some packages to the installer..."
+sleep 2
+	spkg -i -qq \
+	"$ISO"/slint/aaa_glibc-solibs-*.txz \
+	"$ISO"/slint/aaa_libraries-*.txz \
+	"$ISO"/slint/acl-*txz \
+	"$ISO"/slint/bluez-5*txz \
+	"$ISO"/slint/bluez-firmware*txz \
+	"$ISO"/slint/brotli*txz \
+	"$ISO"/slint/bzip2*txz \
+	"$ISO"/slint/c-ares*.t?z \
+	"$ISO"/slint/ca-certificates*.t?z \
+	"$ISO"/slint/coreutils*txz \
+	"$ISO"/slint/curl*.t?z \
+	"$ISO"/slint/cyrus-sasl*.t?z \
+	"$ISO"/slint/dbus-1*.t?z \
+	"$ISO"/slint/dialog-*.t?z \
+	"$ISO"/slint/dracut*txz \
+	"$ISO"/slint/efibootmgr*.txz \
+	"$ISO"/slint/expat*.t?z \
+	"$ISO"/slint/file*txz \
+	"$ISO"/slint/findutils*.t?z \
+	"$ISO"/slint/flac*.t?z \
+	"$ISO"/slint/gc-*txz \
+	"$ISO"/slint/gnupg-1*txz \
+	"$ISO"/slint/gpgme*txz \
+	"$ISO"/slint/gpm*txz \
+	"$ISO"/slint/json-c*txz \
+	"$ISO"/slint/kbd*.t?z \
+	"$ISO"/slint/libassuan*.t?z \
+	"$ISO"/slint/libgpg-error*.t?z \
+	"$ISO"/slint/liblouis-*.t?z \
+	"$ISO"/slint/libnl3*.t?z \
+	"$ISO"/slint/libogg-*.t?z \
+	"$ISO"/slint/libpsl-*.t?z \
+	"$ISO"/slint/libssh2-*.t?z \
+	"$ISO"/slint/libsndfile*.t?z \
+	"$ISO"/slint/libtirpc*.t?z \
+	"$ISO"/slint/libunistring*txz \
+	"$ISO"/slint/libvorbis*.t?z \
+	"$ISO"/slint/libyaml*.t?z \
+	"$ISO"/slint/most*.t?z \
+	"$ISO"/slint/nano*txz \
+	"$ISO"/slint/ncurses*txz \
+	"$ISO"/slint/net-tools*.t?z \
+	"$ISO"/slint/nghttp2*.t?z \
+	"$ISO"/slint/openldap*.t?z \
+	"$ISO"/slint/openssl-solibs-*txz \
+	"$ISO"/slint/orc-0*.t?z \
+	"$ISO"/slint/pam-1*.t?z \
+	"$ISO"/slint/pcaudiolib*txz \
+	"$ISO"/slint/pcre2*.t?z \
+	"$ISO"/slint/slang-*.t?z \
+	"$ISO"/slint/slapt-get*.t?z \
+	"$ISO"/slint/slint-scripts*txz \
+	"$ISO"/slint/sonic*txz \
+	"$ISO"/slint/tar*.t?z \
+	"$ISO"/slint/tree-1*.txz \
+	"$ISO"/slint/util-linux*txz \
+	"$ISO"/slint/wireless_tools*.t?z \
+	"$ISO"/slint/wpa_supplicant-nogui*.t?z \
+	"$ISO"/slint/zlib*.t?z
 # brltty is included in the initrd so that it be started by udev when applicable.
 # Start brltty if it has not yet been started by udev
 NBPROC="$(ps -C brltty --noheaders|wc -l)"
@@ -149,6 +205,12 @@ sleep 2
 # /tmp/alsacard, else /tmp/noespeakup has been written
 sleep 2
 clear
+# Get a network connection early, to allow ssh-ing into the installer.
+# wired
+# Start dropbear ssh server (only if a configured interface is present):
+# /etc/rc.d/rc.dropbear start
+# Fake login:  (fooled ya! ;^)
+#
 if [ ! -f /tmp/noespeakup ]; then
 	gettext  "This installer has speech and Braille device support in order
 to be accessible to visually impaired users. To have speech turned on
@@ -182,6 +244,7 @@ dialog --visit-items --no-tags --no-cancel --nook --title "$TITLE" --default-ite
 en_US.utf8 "$(gettext "English (USA)")" \
 nl_NL.utf8 "$(gettext "Dutch")" \
 fr_FR.utf8 "$(gettext "French")" \
+de_DE.utf8 "$(gettext "German")" \
 el_GR.utf8 "$(gettext "Greek")" \
 it_IT.utf8 "$(gettext "Italian")" \
 pt_PT.utf8 "$(gettext "Portuguese (Portugal)")" \
@@ -225,10 +288,7 @@ fi
 clear
 . /etc/profile
 
-
-# Fake login:  (fooled ya! ;^)
-#
-Version=15.0-5
+Version=15.0-6
 
 eval_gettext "Welcome to the Slint installer! (version \${Version})
 

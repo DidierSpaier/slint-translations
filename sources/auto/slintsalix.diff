@@ -1,0 +1,56 @@
+--- functions	2025-08-07 10:36:18.856062829 +0200
++++ functionssalix	2025-08-07 22:02:06.003355369 +0200
+@@ -1629,14 +1629,14 @@
+ 		mount -o subvol=@home,compress=zstd:3,noatime "$ROOTNAME" $SLINT/home
+ 		mount -o subvol=@,compress=zstd:3,noatime "$ROOTNAME" $SLINT
+ 		mkdir $SLINT/swap
+-		mount -o subvol=@swap,compress=zstd:3,noatime "$ROOTNAME" $SLINT/swap
+-		truncate -s 0 $SLINT/swap/swapfile
+-		# +C=no copy-on-write
+-		# +m=no compression
+-		chattr +C +m $SLINT/swap/swapfile
+-		dd if=/dev/zero of=$SLINT/swap/swapfile bs=${MEGA}c count=1024 status=none
+-		chmod 0600 $SLINT/swap/swapfile
+-		mkswap $SLINT/swap/swapfile 1>/dev/null 2>>$INSTALL/errors
++	#	mount -o subvol=@swap,compress=zstd:3,noatime "$ROOTNAME" $SLINT/swap
++	#	truncate -s 0 $SLINT/swap/swapfile
++	#	# +C=no copy-on-write
++	#	# +m=no compression
++	#	chattr +C +m $SLINT/swap/swapfile
++	#	dd if=/dev/zero of=$SLINT/swap/swapfile bs=${MEGA}c count=1024 status=none
++	#	chmod 0600 $SLINT/swap/swapfile
++	#	mkswap $SLINT/swap/swapfile 1>/dev/null 2>>$INSTALL/errors
+ 		if [ -f "$INSTALL/addedpartname" ]; then
+ 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
+ 			mkfs.btrfs -L added "$ADDEDPARTPATH" 1>/dev/null 2>>$INSTALL/errors
+@@ -1648,9 +1648,9 @@
+ 		mkfs."$FSTYPE" -q "$label" "$ROOTNAME" 1>/dev/null
+ 		lsblk -lno uuid "$ROOTNAME" > $INSTALL/rootuuid
+ 		mount -o noatime "$ROOTNAME" $SLINT
+-		dd if=/dev/zero of=$SLINT/swapfile bs=${MEGA}c count=1024 status=none
+-		chmod 600 $SLINT/swapfile
+-		mkswap $SLINT/swapfile 1>/dev/null 2>>$INSTALL/errors
++ #		dd if=/dev/zero of=$SLINT/swapfile bs=${MEGA}c count=1024 status=none
++#		chmod 600 $SLINT/swapfile
++#		mkswap $SLINT/swapfile 1>/dev/null 2>>$INSTALL/errors
+ 	fi
+ }
+ formatotherlinuxpartitions() {
+@@ -1781,7 +1781,7 @@
+ 		fi
+ 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
+ 		echo "UUID=$UUID /swap btrfs subvol=@swap,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
+-		echo "/swap/swapfile none swap pri=5 0 0" >>$FSTAB
++#		echo "/swap/swapfile none swap pri=5 0 0" >>$FSTAB
+ 		if [ -f $INSTALL/addedpartname ]; then
+ 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
+ 			UUID=$(blkid -s UUID -o value "$ADDEDPARTPATH") 
+@@ -1793,7 +1793,7 @@
+ 		FSTYPE=$(cat $INSTALL/rootfstype)
+ 		echo "# Initially $NAME" >>$FSTAB
+ 		echo "UUID=$UUID / $FSTYPE noatime 1 1" >>$FSTAB
+-		echo "/swapfile none swap pri=5 0 0" >>$FSTAB
++#		echo "/swapfile none swap pri=5 0 0" >>$FSTAB
+ 	fi
+ 	if [ -f $INSTALL/linuxusedparts ] \
+ 		&& [ "$(wc -l $INSTALL/linuxusedparts|cut -d" " -f1)" -ne 0 ]; then

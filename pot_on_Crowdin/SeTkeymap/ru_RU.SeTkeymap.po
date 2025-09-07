@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Serg Bormant <bormant@mail.ru>, 2019
+# Didier Spaier <didier@slint.fr>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint 20190222\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2019-02-22 12:22+0000\n"
+"Last-Translator: Didier Spaier <didier@slint.fr>, 2019\n"
+"Language-Team: Russian (https://www.transifex.com/didier_spaier/teams/15333/"
+"ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: SeTkeymap:24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "ВЫБОР РАСКЛАДКИ КЛАВИАТУРЫ"
+
+#: SeTkeymap:24
+#, sh-format
+msgid ""
+"You may select one of the following keyboard maps.  If you do not select a "
+"keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow "
+"keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr ""
+"Можете выбрать одну из следующих раскладок клавиатуры. Если ничего не "
+"выберите, будет использована $DefaultKeyMap. Для прокрутки списка "
+"используйте клавиши вверх/вниз и PageUp/PageDown."
+
+#: SeTkeymap:214
+msgid ""
+"\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr ""
+"\n"
+"    OK, новая раскладка установлена. Можете её протестировать,\n"
+"    напечатав что-нибудь. Для завершения тестирования введите в\n"
+"    строке 1, чтобы принять раскладку и продолжить, или 2, чтобы\n"
+"    отказаться от текущей раскладки и выбрать другую."

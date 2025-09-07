@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-07 19:03+0200\n"
-"PO-Revision-Date: 2025-06-11 12:11\n"
+"PO-Revision-Date: 2025-08-06 18:59\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -27,7 +27,7 @@ msgstr "Vänligen kör detta skript som root."
 # File: clean-kernels.sh, line: 37
 #, sh-format
 msgid "$i is not in use. Do you want to remove it?"
-msgstr ""
+msgstr "$i används inte. Vill du ta bort den?"
 
 # File: clean-kernels.sh, line: 39
 msgid "Type yes or no: "
@@ -37,17 +37,17 @@ msgstr "Skriv in yes eller no:"
 # File: clean-kernels.sh, line: 83
 #, sh-format
 msgid "The version of $i does not match that of an installed kernel package."
-msgstr ""
+msgstr "Versionen av $i matchar inte den för ett installerat kärnpaket."
 
 # File: clean-kernels.sh, line: 64
 # File: clean-kernels.sh, line: 85
 msgid "Do you want to remove it? Type yes or no: "
-msgstr ""
+msgstr "Vill du ta bort den? Skriv yes eller no: "
 
 # File: clean-kernels.sh, line: 100
 #, sh-format
 msgid "Stale initramfs $i removed."
-msgstr ""
+msgstr "Inaktuella $i initramfs togs bort."
 
 # File: list-espeak-ng-voices, line: 14
 # File: list-espeak-ng-voices, line: 44
@@ -128,7 +128,7 @@ msgstr "För att navigera i menyn använder du ned- och uppåt-piltangenterna oc
 
 # File: list_boot_entries, line: 41
 msgid "To display the boot entries inside a submenu, select it then press Enter."
-msgstr ""
+msgstr "För att visa startposterna i en undermeny, välj den och tryck sedan på Enter."
 
 # File: list_boot_entries, line: 43
 msgid "To boot directly the most recent snapshot (if any), just press 1."
@@ -259,23 +259,23 @@ msgstr "Orca har aktiverats för dig."
 # File: plank-off, line: 8
 # File: plank-on, line: 8
 msgid "You need to install plank-reloaded first."
-msgstr ""
+msgstr "Du måste installera plank-reloaded först."
 
 # File: plank-off, line: 19
 msgid "plank has been disabled."
-msgstr ""
+msgstr "plank har inaktiverats."
 
 # File: plank-off, line: 20
 msgid "To enable it type plank-on"
-msgstr ""
+msgstr "För att aktivera det skriv plank-on"
 
 # File: plank-on, line: 19
 msgid "plank has been enabled."
-msgstr ""
+msgstr "plank har inaktiverats."
 
 # File: plank-on, line: 20
 msgid "To disable it type plank-off"
-msgstr ""
+msgstr "För att aktivera det skriv plank-off"
 
 # File: rescuebootstick, line: 18
 msgid "Do you want to make a rescue boot stick of an USB flash drive? "
@@ -368,7 +368,7 @@ msgstr "Tillgängliga skrivbordssessioner:"
 # File: session-chooser, line: 46
 #, sh-format
 msgid "The session $session is not available"
-msgstr ""
+msgstr "Sessionen $session är inte tillgänglig"
 
 # File: session-chooser, line: 68
 #, sh-format
@@ -508,7 +508,7 @@ msgstr "fenrir har redan startats."
 
 # File: speak-with, line: 133
 msgid "Should fenrir be also started at next boot? [Y/n] "
-msgstr ""
+msgstr "Skall fenrir också startas vid nästa start? [Y/n] "
 
 # File: speak-with, line: 151
 msgid "Do you also want a mute console at next boot? [Y/n] "
@@ -562,23 +562,23 @@ msgstr "Nuvarande speakup inställningar har sparats i "
 
 # File: switch-emerald-theme, line: 10
 msgid "Running this script as root is not allowed."
-msgstr ""
+msgstr "Att köra en grafisk session som rot är inte tillåtet."
 
 # File: switch-emerald-theme, line: 15
 msgid "This script should be used in a graphical environment"
-msgstr ""
+msgstr "Detta skript bör användas i en grafisk miljö"
 
 # File: switch-emerald-theme, line: 20
 msgid "The compiz window manager should run to try Emerald themes"
-msgstr ""
+msgstr "Compiz fönsterhanteraren bör köras för att prova Emerald teman"
 
 # File: switch-emerald-theme, line: 22
 msgid "Do you want to start it? (y/N): "
-msgstr ""
+msgstr "Vill du starta den? (y/N): "
 
 # File: switch-emerald-theme, line: 34
 msgid "Try Emerald themes, Esc to exit."
-msgstr ""
+msgstr "Prova Emerald teman, Esc för att avsluta."
 
 # File: switch-off, line: 12
 # File: switch-on, line: 13

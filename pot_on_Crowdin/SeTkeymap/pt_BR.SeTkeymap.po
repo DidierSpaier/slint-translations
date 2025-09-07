@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Didier Spaier <didier@slint.fr>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint 20190222\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2019-02-22 12:22+0000\n"
+"Last-Translator: Didier Spaier <didier@slint.fr>, 2019\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/didier_spaier/"
+"teams/15333/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: SeTkeymap:24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "SELEÇÃO DO MAPA DE TECLADO"
+
+#: SeTkeymap:24
+#, sh-format
+msgid ""
+"You may select one of the following keyboard maps.  If you do not select a "
+"keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow "
+"keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr ""
+"Você pode selecionar um dos seguintes mapas de teclado. Se você não "
+"selecionar um mapa de teclado, $DefaultKeyMap é o valor atual. Use as teclas "
+"CIMA/BAIXO e PageUp/PageDown para navegar pela lista de opções."
+
+#: SeTkeymap:214
+msgid ""
+"\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr ""
+"\n"
+"    OK, o novo mapa está instalado. Você pode testá-lo agora escrevendo\n"
+"    qualquer coisa. Para sair do teste do teclado, escreva 1 numa linha\n"
+"    vazia para aceitar o mapa e ir em frente, ou 2 numa linha vazia para\n"
+"    rejeitar o mapa de teclado atual e selecionar um novo."

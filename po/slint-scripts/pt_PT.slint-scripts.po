@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: slint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-07 19:03+0200\n"
-"PO-Revision-Date: 2025-06-11 12:11\n"
+"PO-Revision-Date: 2025-08-06 18:59\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -27,7 +27,7 @@ msgstr "Execute este script como root."
 # File: clean-kernels.sh, line: 37
 #, sh-format
 msgid "$i is not in use. Do you want to remove it?"
-msgstr ""
+msgstr "$i não está em utilização. Pretende removê-lo?"
 
 # File: clean-kernels.sh, line: 39
 msgid "Type yes or no: "
@@ -37,17 +37,17 @@ msgstr "Escreva yes ou no: "
 # File: clean-kernels.sh, line: 83
 #, sh-format
 msgid "The version of $i does not match that of an installed kernel package."
-msgstr ""
+msgstr "A versão do $i não corresponde à de um pacote kernel instalado."
 
 # File: clean-kernels.sh, line: 64
 # File: clean-kernels.sh, line: 85
 msgid "Do you want to remove it? Type yes or no: "
-msgstr ""
+msgstr "Pretende removê-lo? Digite sim ou não: "
 
 # File: clean-kernels.sh, line: 100
 #, sh-format
 msgid "Stale initramfs $i removed."
-msgstr ""
+msgstr "Initramfs $i obsoleto removido."
 
 # File: list-espeak-ng-voices, line: 14
 # File: list-espeak-ng-voices, line: 44
@@ -127,7 +127,7 @@ msgstr "Para navegar no menu, utilizará as teclas de setas para baixo e para ci
 
 # File: list_boot_entries, line: 41
 msgid "To display the boot entries inside a submenu, select it then press Enter."
-msgstr ""
+msgstr "Para exibir as entradas de arranque dentro de um submenu, selecione-o e prima Enter."
 
 # File: list_boot_entries, line: 43
 msgid "To boot directly the most recent snapshot (if any), just press 1."
@@ -258,23 +258,23 @@ msgstr "O Orca foi ativado para si."
 # File: plank-off, line: 8
 # File: plank-on, line: 8
 msgid "You need to install plank-reloaded first."
-msgstr ""
+msgstr "Precisa de instalar a plank-reloaded primeiro."
 
 # File: plank-off, line: 19
 msgid "plank has been disabled."
-msgstr ""
+msgstr "a plank foi desativada."
 
 # File: plank-off, line: 20
 msgid "To enable it type plank-on"
-msgstr ""
+msgstr "Para a ativar, digite plank-on"
 
 # File: plank-on, line: 19
 msgid "plank has been enabled."
-msgstr ""
+msgstr "a plank foi ativada."
 
 # File: plank-on, line: 20
 msgid "To disable it type plank-off"
-msgstr ""
+msgstr "Para a desativar, digite plank-off"
 
 # File: rescuebootstick, line: 18
 msgid "Do you want to make a rescue boot stick of an USB flash drive? "
@@ -367,7 +367,7 @@ msgstr "Sessões disponíveis:"
 # File: session-chooser, line: 46
 #, sh-format
 msgid "The session $session is not available"
-msgstr ""
+msgstr "A sessão $session não está disponível"
 
 # File: session-chooser, line: 68
 #, sh-format
@@ -507,7 +507,7 @@ msgstr "fenrir já foi iniciado."
 
 # File: speak-with, line: 133
 msgid "Should fenrir be also started at next boot? [Y/n] "
-msgstr ""
+msgstr "O fenrir também deve ser iniciado no próximo arranque? [Y/n] "
 
 # File: speak-with, line: 151
 msgid "Do you also want a mute console at next boot? [Y/n] "
@@ -561,23 +561,23 @@ msgstr "As definições atuais do speakup foram guardadas em "
 
 # File: switch-emerald-theme, line: 10
 msgid "Running this script as root is not allowed."
-msgstr ""
+msgstr "A execução deste script como root não é permitida."
 
 # File: switch-emerald-theme, line: 15
 msgid "This script should be used in a graphical environment"
-msgstr ""
+msgstr "Este script deve ser utilizado num ambiente gráfico"
 
 # File: switch-emerald-theme, line: 20
 msgid "The compiz window manager should run to try Emerald themes"
-msgstr ""
+msgstr "O gestor de janelas compiz deve ser executado para experimentar os temas Emerald"
 
 # File: switch-emerald-theme, line: 22
 msgid "Do you want to start it? (y/N): "
-msgstr ""
+msgstr "Quer iniciá-lo? (y/N): "
 
 # File: switch-emerald-theme, line: 34
 msgid "Try Emerald themes, Esc to exit."
-msgstr ""
+msgstr "Experimentar os temas Emeral, Esc para sair."
 
 # File: switch-off, line: 12
 # File: switch-on, line: 13

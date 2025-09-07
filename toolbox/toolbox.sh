@@ -203,14 +203,13 @@ merge_all () {
 	fi
 	echo > "$TMP"/foutput
 	( cd "$ROOT"/po || exit
-	while read -r i; do
+	find . -name "*po"|sed 's#..##'|while read -r i; do
 	    {
-		echo "$i"
 		msgmerge --strict --no-fuzzy-matching -v -o "$ROOT"/wip/"$i" \
 		"$ROOT"/po/"$i" "${POT}"
 		} 2>>"$TMP"/foutput
 		echo "done" >>"$TMP"/foutput
-	done < "$(find . -name "*po")"
+	done
 	)
 }
 check_all () {
@@ -293,7 +292,7 @@ Use a mono-spaced font and an UTF-8 encoding for a proper display." 0 0 6 \
 	fi
 # check_xtract
 	if [ "$REPLY" = "check_xtract" ]; then
-		check_xtract
+		check_xtract 2>erreurs
 		rm -f "$TMP"/strings_to_be_extracted
 		dialog --title "Results of command $REPLY $SCRIPT" --msgbox \
 		"$Result"  0 0

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
-"POT-Creation-Date: 2025-06-17 19:20+0200\n"
-"PO-Revision-Date: 2025-06-11 10:13\n"
+"POT-Creation-Date: 2023-05-18 10:16+0200\n"
+"PO-Revision-Date: 2025-08-06 18:59\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -16,261 +16,186 @@ msgstr ""
 "X-Crowdin-File: /homepage/homepage.pot\n"
 "X-Crowdin-File-ID: 106\n"
 
-#. type: Title ==
-#: sources/homepage/homepage.adoc:2
+#. type: Title ===
+#: homepage.adoc:2
 #, no-wrap
 msgid "About Slint"
 msgstr "Acerca do Slint"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:5
-msgid ""
-"Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-"
-"bit computers. Slint is based on Slackware and borrows tools from Salix. "
-"Maintainer: Didier Spaier."
-msgstr ""
-"O Slint é uma distribuição Linux para computadores de 64 bits, que é fácil "
-"de usar, versátil e acessível a invisuais. O Slint é baseado no Slackware e "
-"usa algumas ferramentas do Salix. Criador e responsável: Didier Spaier."
+#: homepage.adoc:5
+msgid "Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier."
+msgstr "O Slint é uma distribuição Linux para computadores de 64 bits, que é fácil de usar, versátil e acessível a invisuais. O Slint é baseado no Slackware e usa algumas ferramentas do Salix. Criador e responsável: Didier Spaier."
 
-#. type: Title ==
-#: sources/homepage/homepage.adoc:6
+#. type: Title ===
+#: homepage.adoc:6
 #, no-wrap
 msgid "Features"
 msgstr "Funcionalidades"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:9
-msgid ""
-"Slint is a stable distribution. However, accessibility software is regularly "
-"updated, others may be updated on a case by case basis."
-msgstr ""
-"O Slint é uma distribuição estável. No entanto, o software de acessibilidade "
-"é atualizado regularmente, outros podem ser atualizados conforme o caso."
+#: homepage.adoc:9
+msgid "Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis."
+msgstr "O Slint é uma distribuição estável. No entanto, o software de acessibilidade é atualizado regularmente, outros podem ser atualizados conforme o caso."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:11
-msgid ""
-"The included software, among which the MATÉ and LXQt desktops (with XFCE "
-"installed on-demand), cover most needs. Many others are available in "
-"repositories maintained by Salix and Slackware that are fully compatible "
-"with Slint."
-msgstr ""
-"O software incluído, entre os quais os ambientes de trabalho MATE e LXQt "
-"(com o XFCE instalado a pedido), cobrem a maioria das necessidades. Muitos "
-"outros estão disponíveis em repositórios mantidos pelo Salix e Slackware que "
-"são totalmente compatíveis com o Slint."
+#: homepage.adoc:11
+msgid "The included software, among which the MATÉ and LXQt desktops (with XFCE installed on-demand), cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint."
+msgstr "O software incluído, entre os quais os ambientes de trabalho MATE e LXQt (com o XFCE instalado a pedido), cobrem a maioria das necessidades. Muitos outros estão disponíveis em repositórios mantidos pelo Salix e Slackware que são totalmente compatíveis com o Slint."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:13
-msgid ""
-"Slint can be used in console and graphical modes and can be switched between "
-"these modes without restarting. It is even possible to launch several "
-"graphical environments and switch between them."
-msgstr ""
-"O Slint pode ser usado nos modos de consola e gráfico e pode ser alternado "
-"entre estes modos sem reiniciar. É mesmo possível iniciar vários ambientes "
-"gráficos e alternar entre eles."
+#: homepage.adoc:13
+msgid "Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them."
+msgstr "O Slint pode ser usado nos modos de consola e gráfico e pode ser alternado entre estes modos sem reiniciar. É mesmo possível iniciar vários ambientes gráficos e alternar entre eles."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:15
-msgid ""
-"Easy-to-use tools facilitate system administration and software package "
-"management. Updates are fully automatic, under user control."
-msgstr ""
-"Ferramentas fáceis de usar facilitam a administração do sistema e a gestão "
-"de pacotes de software. As atualizações são totalmente automáticas, sob "
-"controlo do utilizador."
+#: homepage.adoc:15
+msgid "Easy-to-use tools facilitate system administration and software package management. Updates are fully automatic, under user control."
+msgstr "Ferramentas fáceis de usar facilitam a administração do sistema e a gestão de pacotes de software. As atualizações são totalmente automáticas, sob controlo do utilizador."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:17
-msgid ""
-"The Slint dashboard gives direct access to the main tools and useful "
-"information and links."
-msgstr ""
-"O painel de controlo do Slint dá acesso direto às principais ferramentas, "
-"informações e ligações úteis."
+#: homepage.adoc:17
+msgid "The Slint dashboard gives direct access to the main tools and useful information and links."
+msgstr "O painel de controlo do Slint dá acesso direto às principais ferramentas, informações e ligações úteis."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:19
-msgid ""
-"By default, a compressed swap space in RAM allows doubling the usable memory."
-msgstr ""
-"Por padrão, um espaço de swap comprimido na memória RAM permite duplicar a "
-"memória utilizável."
+#: homepage.adoc:19
+msgid "By default, a compressed swap space in RAM allows doubling the usable memory."
+msgstr "Por padrão, um espaço de swap comprimido na memória RAM permite duplicar a memória utilizável."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:21
-msgid ""
-"Slint can be installed on any 64-bit machine with at least 2G of memory, and "
-"50G available on any medium including USB keys, without secure boot."
-msgstr ""
-"O Slint pode ser instalado em qualquer máquina de 64 bits com pelo menos 2G "
-"de memória e 50G de espaço em disco disponível em qualquer tipo de suporte, "
-"incluindo Pens USB, sem arranque seguro."
+#: homepage.adoc:21
+msgid "Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot."
+msgstr "O Slint pode ser instalado em qualquer máquina de 64 bits com pelo menos 2G de memória e 50G de espaço em disco disponível em qualquer tipo de suporte, incluindo Pens USB, sem arranque seguro."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:23
-msgid ""
-"If installed on USB media Slint is portable from one computer to another. "
-"The media can be fully encrypted."
-msgstr ""
-"Se instalado numa pen USB o Slint é portátil de um computador para outro. O "
-"conteúdo pode ser totalmente encriptado."
+#: homepage.adoc:23
+msgid "If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted."
+msgstr "Se instalado numa pen USB o Slint é portátil de um computador para outro. O conteúdo pode ser totalmente encriptado."
 
-#. type: Title ==
-#: sources/homepage/homepage.adoc:24
+#. type: Title ===
+#: homepage.adoc:24
 #, no-wrap
 msgid "Installation"
 msgstr "Instalação"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:27
-msgid ""
-"The installation program, in text mode, is fully accessible for blind people "
-"using a screen reader or Braille display, and proceeds by questions and "
-"answers with online help and integrated documentation. Two partitioning "
-"modes are available:"
-msgstr ""
-"O programa de instalação, em modo texto, é totalmente acessível a pessoas "
-"cegas utilizando um leitor de ecrã ou ecrã Braille, e procede através de "
-"perguntas e respostas com ajuda online e documentação integrada. Estão "
-"disponíveis dois modos de particionamento:"
+#: homepage.adoc:27
+msgid "The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:"
+msgstr "O programa de instalação, em modo texto, é totalmente acessível a pessoas cegas utilizando um leitor de ecrã ou ecrã Braille, e procede através de perguntas e respostas com ajuda online e documentação integrada. Estão disponíveis dois modos de particionamento:"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:29
-msgid ""
-"Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media "
-"can be shared with other systems."
-msgstr ""
-"Manual: o utilizador escolhe o sistema de ficheiros (btrfs, ext4 ou xfs) e "
-"os suportes podem ser partilhados com outros sistemas."
+#: homepage.adoc:29
+msgid "Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media can be shared with other systems."
+msgstr "Manual: o utilizador escolhe o sistema de ficheiros (btrfs, ext4 ou xfs) e os suportes podem ser partilhados com outros sistemas."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:31
-msgid ""
-"Automatic: The file system is then btrfs and the media dedicated to Slint."
-msgstr ""
-"Automático: o sistema de ficheiros é então o btrfs e meio de suporte "
-"dedicado ao Slint."
+#: homepage.adoc:31
+msgid "Automatic: The file system is then btrfs and the media dedicated to Slint."
+msgstr "Automático: o sistema de ficheiros é então o btrfs e meio de suporte dedicado ao Slint."
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:33
-msgid ""
-"The btrfs file system is configured with subvolumes instead of separate "
-"partitions. It allows to divide by 2 the space occupied on the media, to "
-"take snapshots and is well adapted to SSD, NVMe and USB sticks."
-msgstr ""
-"O sistema de ficheiros btrfs é configurado com subvolumes em vez de "
-"partições separadas. Permite dividir por 2 o espaço ocupado nos suportes, "
-"fazer cópias do sistema e está bem adaptado a SSD, NVMe e pens USB."
+#: homepage.adoc:33
+msgid "The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks."
+msgstr "O sistema de ficheiros btrfs é configurado com subvolumes em vez de partições separadas. Permite dividir por 2 o espaço ocupado nos suportes, fazer cópias do sistema e está bem adaptado a SSD, NVMe e pens USB."
 
-#. type: Title ==
-#: sources/homepage/homepage.adoc:34
+#. type: Title ===
+#: homepage.adoc:34
 #, no-wrap
 msgid "Links"
 msgstr "Links"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:37
+#: homepage.adoc:37
 msgid "http://slackware.uk/slint/x86_64/slint-15.0/[Main repository]"
 msgstr "http://slackware.uk/slint/x86_64/slint-15.0/[Repositório principal]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:39
+#: homepage.adoc:39
 msgid "http://slackware.uk/slint/x86_64/slint-15.0/iso/[Download]"
 msgstr "http://slackware.uk/slint/x86_64/slint-15.0/iso/[Transferir]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:41
+#: homepage.adoc:41
 msgid "http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[ChangeLog]"
-msgstr ""
-"http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Registo de "
-"alterações]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Registo de alterações]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:43
-msgid ""
-"http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in "
-"the ISO]"
-msgstr ""
-"http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Pacotes incluídos na "
-"ISO]"
+#: homepage.adoc:43
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Packages included in the ISO]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/slint.txt[Pacotes incluídos na ISO]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:45
-msgid ""
-"http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable "
-"on demand]"
-msgstr ""
-"http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Pacotes instaláveis a "
-"pedido]"
+#: homepage.adoc:45
+msgid "http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Packages installable on demand]"
+msgstr "http://slackware.uk/slint/x86_64/slint-15.0/extra.txt[Pacotes instaláveis a pedido]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:47
+#: homepage.adoc:47
 msgid "link:../old/index.html[Archived old website]"
 msgstr "link:../old/index.html[Arquivo do antigo website]"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:49
+#: homepage.adoc:49
 msgid "link:../en/oldHandBook.html[Documentation 14.2.1]"
 msgstr "link:../en/oldHandBook.html[Documentação 14.2.1]"
 
-#. type: Title ==
-#: sources/homepage/homepage.adoc:50
+#. type: Title ===
+#: homepage.adoc:50
 #, no-wrap
 msgid "Pictures of lightDM and the main desktops in Slint "
 msgstr "Imagens do lightDM e dos principais ambientes de trabalho do Slint "
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
-#: sources/homepage/homepage.adoc:53 sources/homepage/homepage.adoc:54
+#: homepage.adoc:53 homepage.adoc:54
 #, no-wrap
 msgid "lightDM"
 msgstr "lightDM"
 
 #. type: Target for macro image
-#: sources/homepage/homepage.adoc:54
+#: homepage.adoc:54
 #, no-wrap
 msgid "../doc/lightdm.png"
 msgstr "../doc/lightdm.png"
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
-#: sources/homepage/homepage.adoc:57 sources/homepage/homepage.adoc:58
+#: homepage.adoc:57 homepage.adoc:58
 #, no-wrap
 msgid "LXQt"
 msgstr "LXQt"
 
 #. type: Target for macro image
-#: sources/homepage/homepage.adoc:58
+#: homepage.adoc:58
 #, no-wrap
 msgid "../doc/lxqt.png"
 msgstr "../doc/lxqt.png"
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
-#: sources/homepage/homepage.adoc:61 sources/homepage/homepage.adoc:62
+#: homepage.adoc:61 homepage.adoc:62
 #, no-wrap
 msgid "MATE"
 msgstr "MATE"
 
 #. type: Target for macro image
-#: sources/homepage/homepage.adoc:62
+#: homepage.adoc:62
 #, no-wrap
 msgid "../doc/mate.png"
 msgstr "../doc/mate.png"
 
 #. type: Plain text
-#: sources/homepage/homepage.adoc:65
+#: homepage.adoc:65
 msgid "XFCE (installed on demand)"
 msgstr "XFCE (instalado a pedido)"
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
-#: sources/homepage/homepage.adoc:66
+#: homepage.adoc:66
 #, no-wrap
 msgid "XFCE"
 msgstr "XFCE"
 
 #. type: Target for macro image
-#: sources/homepage/homepage.adoc:66
+#: homepage.adoc:66
 #, no-wrap
 msgid "../doc/xfce.png"
 msgstr "../doc/xfce.png"
+

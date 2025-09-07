@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>About Slint</title>
+<date>2025-06-17</date>
+</info>
+<section xml:id="_about_slint" role="debut">
+<title>About Slint</title>
+<simpara>Slint is an easy-to-use, versatile, blind-friendly Linux distribution for 64-bit computers. Slint is based on Slackware and borrows tools from Salix. Maintainer: Didier Spaier.</simpara>
+</section>
+<section xml:id="_features">
+<title>Features</title>
+<itemizedlist>
+<listitem>
+<simpara>Slint is a stable distribution. However, accessibility software is regularly updated, others may be updated on a case by case basis.</simpara>
+</listitem>
+<listitem>
+<simpara>The included software, among which the MATÉ and LXQt desktops (with XFCE installed on-demand), cover most needs. Many others are available in repositories maintained by Salix and Slackware that are fully compatible with Slint.</simpara>
+</listitem>
+<listitem>
+<simpara>Slint can be used in console and graphical modes and can be switched between these modes without restarting. It is even possible to launch several graphical environments and switch between them.</simpara>
+</listitem>
+<listitem>
+<simpara>Easy-to-use tools facilitate system administration and software package management. Updates are fully automatic, under user control.</simpara>
+</listitem>
+<listitem>
+<simpara>The Slint dashboard gives direct access to the main tools and useful information and links.</simpara>
+</listitem>
+<listitem>
+<simpara>By default, a compressed swap space in RAM allows doubling the usable memory.</simpara>
+</listitem>
+<listitem>
+<simpara>Slint can be installed on any 64-bit machine with at least 2G of memory, and 50G available on any medium including USB keys, without secure boot.</simpara>
+</listitem>
+<listitem>
+<simpara>If installed on USB media Slint is portable from one computer to another. The media can be fully encrypted.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_installation">
+<title>Installation</title>
+<simpara>The installation program, in text mode, is fully accessible for blind people using a screen reader or Braille display, and proceeds by questions and answers with online help and integrated documentation. Two partitioning modes are available:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Manual: the user chooses the file system (btrfs, ext4 or xfs) and the media can be shared with other systems.</simpara>
+</listitem>
+<listitem>
+<simpara>Automatic: The file system is then btrfs and the media dedicated to Slint.</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The btrfs file system is configured with subvolumes instead of separate partitions. It allows to divide by 2 the space occupied on the media, to take snapshots and is well adapted to SSD, NVMe and USB sticks.</simpara>
+</section>
+<section xml:id="_links">
+<title>Links</title>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="http://slackware.uk/slint/x86_64/slint-15.0/">Main repository</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://slackware.uk/slint/x86_64/slint-15.0/iso/">Download</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt">ChangeLog</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://slackware.uk/slint/x86_64/slint-15.0/slint.txt">Packages included in the ISO</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://slackware.uk/slint/x86_64/slint-15.0/extra.txt">Packages installable on demand</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="../old/index.html">Archived old website</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="../en/oldHandBook.html">Documentation 14.2.1</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_pictures_of_lightdm_and_the_main_desktops_in_slint">
+<title>Pictures of lightDM and the main desktops in Slint</title>
+<simpara>lightDM</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../doc/lightdm.png"/>
+</imageobject>
+<textobject><phrase>lightDM</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>LXQt</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../doc/lxqt.png"/>
+</imageobject>
+<textobject><phrase>LXQt</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>MATE</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../doc/mate.png"/>
+</imageobject>
+<textobject><phrase>MATE</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>XFCE (installed on demand)</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../doc/xfce.png"/>
+</imageobject>
+<textobject><phrase>XFCE</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</section>
+</article>

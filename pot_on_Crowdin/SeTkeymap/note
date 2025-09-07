@@ -1,0 +1,8 @@
+The files <ll_TT>.slint.po have been copied from:
+/storage/Traduction/Transifex/MYENV/slint/translations/slint.slint-14.2.1
+downloaded from the slint project on Transifex
+then converted to <ll_TT>.SeTkeymap.po running the script:
+extract_SetKeymap.sh
+Thre are only two text strings, already translated in 10 locales.
+Currently it is not in Crowdin; is it worth putting it here to get more
+translations? Or maybe rewrite it as in keyboardsetup from Salix?

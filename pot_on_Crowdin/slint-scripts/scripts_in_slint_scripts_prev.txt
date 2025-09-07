@@ -1,0 +1,16 @@
+display-desktop
+hide-desktop
+list-espeak-ng-voices
+list-espeak-ng-voices.save
+list_boot_entries
+login-chooser
+orca-off
+orca-on
+rescuebootstick
+session-chooser
+spd-list
+speak-with
+speakup-restore
+speakup-save
+switch-off
+switch-on

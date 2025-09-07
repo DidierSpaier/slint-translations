@@ -1,0 +1,5 @@
+dans po/auto et po/rc.S j'ai fait:
+sed -i 's#Slint#Salix#" *po
+pour revenir à slint taper:
+mv po po.salix
+mv po.salix po

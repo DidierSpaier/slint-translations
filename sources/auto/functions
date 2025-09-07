@@ -23,15 +23,17 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 # For more information, please refer to <http://unlicense.org/>
-
+# Last updated lun. 17 mars 2025 19:50:58 CET
 export TEXTDOMAIN=auto
 . gettext.sh
 SLINTREPO=http://slackware.uk/slint/x86_64/slint-15.0
-# Directory /patches of a Slackware repository
+SLACKREPO=http://slackware.uk/slackware/slackware64-15.0
+# Directory /patches of a Slint repository
 PATCHESREPO=http://slackware.uk/slackware/slackware64-15.0/patches
 export SLINTVERSION=15.0
-ISOVERSION=15.0-5
-ISOLABEL="SLINT$ISOVERSION"
+ISOVERSION="$(cat /tmp/isoversion)"
+ISOLABEL="$(cat /tmp/isolabel)"
+DISTRIBUTION="$(cat /tmp/distro)"
 # Installed RAM in kilobytes
 #KRAM=$(sed -n 1p /proc/meminfo|sed "s/[ ]\{1,\}/ /"|cut -d" " -f2)
 #BRAM=$((KRAM*1024))
@@ -43,7 +45,7 @@ BIOSBOOTMINDRIVESIZE=3000000
 # Name of the key file written if user wants an encrypted drive
 KEYFILE=crypto_keyfile.bin
 # minimum size in gigabytes of a drive allowed to install Slint in guided mode
-GCOUNT=50
+GCOUNT=30
 # minimum available room  in megabytes in a ESP in manual mode
 MINLINUXSIZE=$((MEGA*100))
 MINDRIVESIZE=$((GCOUNT*GIGA))
@@ -132,21 +134,34 @@ displaydescription() {
 	( cd "$SOURCEDIR" || exit
 	if [ -f "${package%t?z}"desc ]; then
 		sed -n "1p" "${package%t?z}"desc
-	elif [ -f "${package%t?z}"txt ]; then
-		sed -n "1{s/[^:]\{1,\}://;p}" "${package%t?z}"txt
-	else
-		echo "${package%.t?z} (no available description)"
 	fi
 	)
 }
+descriptioninstalled() {
+	package=$1
+#	find "$SLINT"/var/lib/pkgtools/packages -name "${package}*" -type f|while read -r i; do
+#		pkgshortname="$(printf "%b" "$i"|sed 's#.*/##;s#-[^-]*-[^-]*-[^-]*$##')"
+#		[ "$pkgshortname" = "$package" ] && sed -n 6p "$i"|sed 's#.*: ##'
+#	done
+echo "$i"
+}
 trytoget() {
 	rm -f "$(basename "$1")"
-	FAILED=""
+	rm -f /tmp/failed
 	MYFILE="$(basename "$1")"
 	wget -q "$1" 2>>$INSTALL/errors
 	if [ ! -f "$MYFILE" ]; then 
-		FAILED=1
+		echo yes > /tmp/failed
 	fi
+}
+displayspkgerror() {
+	echo
+	clear
+	eval_gettext "Installation of \$1 failed for this reason:"
+	echo
+	cat "$PKGLISTS"/spkgerror
+	gettext "Therefore, Slint installation is not possible."
+	echo
 }
 # Hints displayed when user types h for help.
 hintmode() {
@@ -165,6 +180,19 @@ partitions (not needed by Slint) that you want to access from Slint."
 	echo
 	echo && gettext "Press Enter to continue" && read -r && clear
 }
+# RFU
+#hintselectcontent() {
+#	# We are called by selectcontent
+#	gettext "The \"core\" set of packages provides a command line only system
+#that you can expand using slapt-get. in this ISO it is provided for testing,
+#we recommend that you do not use it to buid a production system (yet)."
+#	echo
+#	gettext "The \"full\" set of packages allows to build a system including
+#a desktop and many applications. More applications and desktop can be added
+#after installation."
+#	echo
+#	echo && gettext "Press Enter to continue" && read -r && clear
+#}
 hintpartname(){
 	# We are called by setotherlinux or addpartition or setmountpoint
 	eval_gettext "These directories should not be mounted on separate partitions:
@@ -430,7 +458,7 @@ mounttheiso() {
 		return
 	fi
 	echo mounttheiso >>$INSTALL/log
-	INSTALLMEDIAFOUND=$(blkid -L $ISOLABEL)
+	INSTALLMEDIAFOUND=$(blkid -L "$ISOLABEL")
 	if [ ! "$INSTALLMEDIAFOUND" ]; then
 		gettext "No installation media found.
 Please restart leaving it inserted or plugged in."
@@ -674,7 +702,7 @@ checkinstallationmodes() {
 	echo checkinstallationmodes >>$INSTALL/log
 	# We check that conditions are met to allow the manual installation or
 	# an auto installation selected by the user. We could do this checking
-	# before choosing emanual or auto instead but the user would then not
+	# before choosing manual or auto instead but the user would then not
 	# know why the choice between manual and auto is not proposed.
 	# we need in manual mode:
 	# A big enough ESP (al least 100M available in it) if booted in EFI mode
@@ -1349,6 +1377,25 @@ partition, giving access to the boot menu. We will record this passphrase"
 		esac
 	done
 }
+selectcontent() {
+	! grep -q slint /tmp/distro && return
+	gettext "You can choose to install or not each of these graphical environments:"
+	echo "i3, MATE, LXQt"
+	echo fullslint >/tmp/set
+	for DESKTOP in i3 MATE LXQt; do
+		while true; do
+			eval_gettext "Install \$DESKTOP? "
+			gettext "Please type yes or no: "
+			clear_stdin
+			read -r ANSWER
+			case $(to_lower "$ANSWER") in
+				yes) echo "$DESKTOP" >>/tmp/set;break;;
+				no) break;;
+				*) :
+			esac
+		done
+	done
+}
 confirm() {
 	echo confirm >>$INSTALL/log
 	if [ "$AUTO" ]; then
@@ -1425,6 +1472,16 @@ other partitions on \$PKNAME will be preserved."
 				fi
 			done < $INSTALL/"${KIND}"usedpart
 		done
+	fi
+	if [ "$(cat /tmp/set)"  = fullslint ]; then
+		gettext "No graphical environment will be initially installed."
+		echo
+	elif ! grep -q fullsalix /tmp/set ; then
+		sed "/fullslint/d" /tmp/set > /tmp/desktops
+		while read -r DESKTOP; do
+			eval_gettext "\$DESKTOP will be installed."
+			echo
+		done < /tmp/desktops
 	fi
 	rm -f $INSTALL/windowsusedpart $INSTALL/linuxusedpart
 	echo
@@ -1569,26 +1626,18 @@ formatrootpartitionandsetswapfile() {
 		sleep 1
 		lsblk -lno uuid "$ROOTNAME" > $INSTALL/rootuuid
 		mount -o compress=zstd:3,noatime "$ROOTNAME" $SLINT
-		btrfs subvolume create $SLINT/@
-		btrfs subvolume create $SLINT/@swap
+		btrfs subvolume create $SLINT/@ 1>/dev/null 2>>$INSTALL/errors
+		btrfs subvolume create $SLINT/@swap 1>/dev/null 2>>$INSTALL/errors
 		# We mount /home here if and only if it is not in a separate directory (which is
 		# only allowed in manual partitioning mode so far), else it will be mounted in
 		# formatotherlinuxpartitions and not as a subvolume.
-		! grep -q ' home ' $INSTALL/mountpoints && btrfs subvolume create $SLINT/@home
+		! grep -q ' home ' $INSTALL/mountpoints && btrfs subvolume create $SLINT/@home 1>/dev/null 2>>$INSTALL/errors
 		umount $SLINT
 		! grep -q ' home ' $INSTALL/mountpoints && mkdir $SLINT/home
 		! grep -q ' home ' $INSTALL/mountpoints && \
 		mount -o subvol=@home,compress=zstd:3,noatime "$ROOTNAME" $SLINT/home
 		mount -o subvol=@,compress=zstd:3,noatime "$ROOTNAME" $SLINT
 		mkdir $SLINT/swap
-		mount -o subvol=@swap,compress=zstd:3,noatime "$ROOTNAME" $SLINT/swap
-		truncate -s 0 $SLINT/swap/swapfile
-		# +C=no copy-on-write
-		# +m=no compression
-		chattr +C +m $SLINT/swap/swapfile
-		dd if=/dev/zero of=$SLINT/swap/swapfile bs=${MEGA}c count=1024 status=none
-		chmod 0600 $SLINT/swap/swapfile
-		mkswap $SLINT/swap/swapfile
 		if [ -f "$INSTALL/addedpartname" ]; then
 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
 			mkfs.btrfs -L added "$ADDEDPARTPATH" 1>/dev/null 2>>$INSTALL/errors
@@ -1600,9 +1649,6 @@ formatrootpartitionandsetswapfile() {
 		mkfs."$FSTYPE" -q "$label" "$ROOTNAME" 1>/dev/null
 		lsblk -lno uuid "$ROOTNAME" > $INSTALL/rootuuid
 		mount -o noatime "$ROOTNAME" $SLINT
-		dd if=/dev/zero of=$SLINT/swapfile bs=${MEGA}c count=1024 status=none
-		chmod 600 $SLINT/swapfile
-		mkswap $SLINT/swapfile 1>>$INSTALL/log
 	fi
 }
 formatotherlinuxpartitions() {
@@ -1633,7 +1679,7 @@ formatefimanual(){
 installaaabaseandfixperms() {
 	echo "installaaabaseandfixperms" >> $INSTALL/log
 	# Until I fix the perms in the aaa_base package...
-	spkg  --root=$SLINT -qq -i $ISO/slint/aaa_base*txz
+	spkg  --root=$SLINT -qq -i $ISO/slint/aaa_base*t?z
 	(cd $SLINT || exit
 	find $SLINT/* -prune -exec chown -R root:root {} +
 	chown root:mail var/spool/mail
@@ -1662,6 +1708,7 @@ setmountpoints() {
 	done < $INSTALL/linuxusedparts
 }
 installfirstpackages() {
+	BOOTSTRAP=bootstrap"$(cat /tmp/distro)"
 	echo "installfirtspackages" >>$INSTALL/log
 	echo
 	PKGLISTS="$SLINT"/PKGLISTS
@@ -1669,38 +1716,13 @@ installfirstpackages() {
 	echo "$0" >>$PKGLISTS/loginstall
 	SRCPATH=$ISO/slint || exit 1
 	(cd $SRCPATH || exit
-	Liste=" devs \
-	aaa_libraries \
-	aaa_terminfo \
-	coreutils \
-	etc \
-	bash \
-	glibc-solibs \
-	glibc-zoneinfo \
-	glibc \
-	glibc-i18n \
-	shadow \
-	brltty \
-	dhcpcd \
-	ncurses \
-	dialog \
-	findutils \
-	grep \
-	gettext \
-	gettext-tools \
-	sed \
-	salixtools \
-	slint-user-settings \
-	sysvinit-scripts \
-	pam \
-	pam-krb5 "
 	gettext "Installing the first software packages..."
 	echo
-	for i in $Liste;  do
-		PKG=$(find . |grep "${i}-[^-]*-[^-]*-[^-]*.t.z")
+	while read -r i;  do
+		PKG=$(find . -name "*t?z" |grep "/${i}-[^-]*-[^-]*-[^-]*$")
 		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKG"
 		spkg --root $SLINT -qq --no-gtk-update-icon-cache -i "$PKG" 1>>$PKGLISTS/loginstall 2>>$PKGLISTS/loginstall
-	done
+	done < /sets/"$BOOTSTRAP"
 	echo
 	)
 }
@@ -1757,7 +1779,6 @@ fstab() {
 		fi
 		echo "# Initially $ROOTPARTPATH" >>$FSTAB
 		echo "UUID=$UUID /swap btrfs subvol=@swap,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
-		echo "/swap/swapfile none swap pri=5 0 0" >>$FSTAB
 		if [ -f $INSTALL/addedpartname ]; then
 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
 			UUID=$(blkid -s UUID -o value "$ADDEDPARTPATH") 
@@ -1769,7 +1790,6 @@ fstab() {
 		FSTYPE=$(cat $INSTALL/rootfstype)
 		echo "# Initially $NAME" >>$FSTAB
 		echo "UUID=$UUID / $FSTYPE noatime 1 1" >>$FSTAB
-		echo "/swapfile none swap pri=5 0 0" >>$FSTAB
 	fi
 	if [ -f $INSTALL/linuxusedparts ] \
 		&& [ "$(wc -l $INSTALL/linuxusedparts|cut -d" " -f1)" -ne 0 ]; then
@@ -1824,16 +1844,17 @@ a11ysettings() {
 	# is installed (so can we run groupadd through chroot)
 	chroot $SLINT ldconfig
 	chroot $SLINT groupadd -fg 610 braille
-	# Create the group and user lightdm for lightdm.
-	chroot $SLINT groupadd -fg 620 lightdm
-	chroot $SLINT useradd -c "Light Display Manager" -d /var/lib/lightdm -u 620 -g lightdm -G audio,braille -s /sbin/nologin lightdm
-	# Make gdm a member of the audio and braille groups
-	chroot $SLINT usermod -a -G audio,braille gdm
 	# Set the sound card that was probed in rc.S
 	if [ -f /tmp/asound.conf ]; then
 		cp /tmp/asound.conf $SLINT/etc/
 		chroot $SLINT chmod 644 /etc/asound.conf
 	fi
+	! grep -q slint /tmp/distro && return
+	# Create the group and user lightdm for lightdm.
+	chroot $SLINT groupadd -fg 620 lightdm
+	chroot $SLINT useradd -c "Light Display Manager" -d /var/lib/lightdm -u 620 -g lightdm -G audio,braille -s /sbin/nologin lightdm
+	# Make gdm a member of the audio and braille groups
+	chroot $SLINT usermod -a -G audio,braille gdm
 }
 setpasswd() {
 	echo setpasswd >>$INSTALL/log
@@ -1928,9 +1949,14 @@ brlttyornot() {
 	echo
 }
 startupmode() {
+#	if grep -q slackware /tmp/set &&  [ "$(wc -l < /tmp/set)" -eq 1 ]; then
+#		sed "/:initdefault:/s/.*/id:3:initdefault:/" $SLINT/etc/inittab > bof
+#		mv bof $SLINT/etc/inittab
+#		return
+#	fi		
 	echo startupmode >>$INSTALL/log
 	# Choose the startup mode
-	gettext "Do you want to start Slint in a console or in graphical mode?"
+	gettext "Do you want to start the system in a console or in graphical mode?"
 	echo
 	while true; do
 		gettext "Type c for console or g for graphical, or h for help then press Enter: "
@@ -1998,23 +2024,30 @@ wired() {
 		done
 	fi
 	if [ ! -f  /tmp/connected ]; then
-		FAILED=1
+		echo yes > /tmp/failed
 		return
 	else
 		trytoget $SLINTREPO/GPG-KEY
-		if  [ "$FAILED" ]; then
+		if  [ -f /tmp/failed ]; then
 			rm -f /tmp/connected
 			echo "Wired connection failed" >> $INSTALL/errors
 		fi
+		rm -f GPG-KEY
 	fi
 }
 wireless() {
 	[ -f /tmp/connected ] && return
-	echo wireless >>$INSTALL/log
+	IFACELIST=$(for dir in /sys/class/net/*/wireless; do
+		if [ -d "$dir" ]; then
+			basename "$(dirname "$dir")"
+		fi
+	done)
+	# If no wireless interface has been found, bail out
+	[ ! "$IFACELIST" ] && echo "no wireless interface" >> $INSTALL/log && return
 	echo "wireless" >>$INSTALL/log
 	echo
 	gettext "An internet connection would allow to get software packages newer than
-those shipped with the installer, but we couldn't get a wired connection."
+those shipped in the ISO, but we couldn't get a wired connection."
 	echo
 	while true; do
 		gettext "Should we try to get a wifi connection? Please type yes or no: "
@@ -2022,7 +2055,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		read -r ANSWER
 		case $(to_lower "$ANSWER") in
 			yes) break ;;
-			no) return 1 ;;
+			no) return ;;
 			*) :
 		esac
 	done
@@ -2033,11 +2066,6 @@ those shipped with the installer, but we couldn't get a wired connection."
 	killall wpa_supplicant 2>/dev/null
 	gettext "Scanning the wifi networks..."
 	echo
-	IFACELIST=$(for dir in /sys/class/net/*/wireless; do
-		if [ -d "$dir" ]; then
-			basename "$(dirname "$dir")"
-		fi
-	done)
 	for IFACE in $IFACELIST; do
 		dhcpcd -k "$IFACE" 1>>$INSTALL/log 2>>$INSTALL/log
 		ifconfig "$IFACE" down
@@ -2048,7 +2076,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		iwlist "$IFACE" scanning 1>$INSTALL/raw
 		if grep -q "No scan results" $INSTALL/raw; then
 			echo "No wifi networks found" >>$INSTALL/raw
-			return 1
+			return
 		fi
 		echo "Scan of $IFACE done" >> $INSTALL/log
 		echo >> $INSTALL/log
@@ -2079,36 +2107,47 @@ those shipped with the installer, but we couldn't get a wired connection."
 	done
 	if [ ! -s $INSTALL/netlist ]; then
 		gettext "No wifi network detected."
-		return  1
+		return
 	fi
 	SSID=""
+	sort $INSTALL/netlist|uniq|cut -d'"' -f4 > /tmp/ssidlist
+	N=0
+	rm -f /tmp/ssidlistnumbered
+	while read -r i; do
+		N=$((N+1))
+		echo "$N $i" >> /tmp/ssidlistnumbered
+	done < /tmp/ssidlist
 	while true; do
-		gettext "SSID (network name) or l to get a list: "
-		# backspace works only in the current line of input.
+		gettext "Network number or name (SSID) or l to get a list: "
+		# Backspace works only in the current line of input.
 		setterm --linewrap off
 		clear_stdin
 		read -r ANSWER
 		setterm --linewrap on
+		# Convert the network number to the corresponding SSID
+		NUMBER=$(grep "^$ANSWER " /tmp/ssidlistnumbered)
+		[ "$NUMBER" ] && ANSWER=$(echo "$NUMBER"|sed 's#.* ##')
 		if [ "$(to_lower "$ANSWER")" = "l" ]; then
-			sort $INSTALL/netlist|uniq|cut -d'"' -f4
-		elif grep -q \""$ANSWER"\" $INSTALL/netlist; then
+			cat /tmp/ssidlistnumbered
+		elif grep -q "$ANSWER" $INSTALL/netlist; then
 			SSID="$ANSWER"
-			grep \""$SSID"\" $INSTALL/netlist|head -n 1 > $INSTALL/network
+			grep \""$SSID"\" $INSTALL/netlist|head -n 1 > "$INSTALL"/network
 			break
 		else
 			gettext "Wrong SSID."
 			echo
 			gettext "Press Enter to try again or type q to give up: "
 			read -r ANSWER
-			if [ "$(to_lower ANSWER)" = "q" ]; then
-				return 1
+			if [ "$(to_lower "$ANSWER")" = "q" ]; then
+				return
 			fi
 		fi
 	done
 	. $INSTALL/network
 	if [ $PSK -eq 1 ]; then
 		while true; do
-			gettext "Passphrase: "
+			NETWORK=$(cat "$INSTALL"/network)
+			eval_gettext "Passphrase for the network \$SSID: "
 			if [ "$DISPLAYPASS" = "no" ]; then
 				stty -echo
 				trap 'stty +echo' EXIT
@@ -2120,7 +2159,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				stty +echo
 			fi
 			if [ "$(to_lower "$ANSWER")" = "q" ]; then
-				return 1
+				return
 			fi
 			if [ ${#ANSWER} -lt 8 ] || [ ${#ANSWER} -gt 63 ]; then
 				gettext "A WPA passphrase should have between 8 and 63 characters"
@@ -2140,7 +2179,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				clear_stdin
 				read -r ANSWER
 				if [ "$(to_lower "$ANSWER")" = "q" ]; then
-					return 1
+					return
 				fi
 				clear
 			fi
@@ -2155,7 +2194,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 				clear_stdin
 				read -r ANSWER
 				if [ "$(to_lower "$ANSWER")" = "q" ]; then
-					return 1
+					return
 				else
 					killall wpa_supplicant 2>/dev/null
 					continue
@@ -2172,7 +2211,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 		mycmd="$?"
 		if [ "$mycmd" -ne 0 ]; then
 			echo "Wifi connection failed" >> $INSTALL/log
-			return 1
+			return
 		fi
 		unset ANSWER
 		while true; do
@@ -2234,7 +2273,7 @@ those shipped with the installer, but we couldn't get a wired connection."
 					stty +echo
 				fi
 				if [ "$(to_lower "$ANSWER")" = "q" ]; then
-					return 1
+					return
 				fi
 				if [ ! "$ANSWER" ]; then
 					gettext "A password is requested."
@@ -2465,339 +2504,80 @@ displaydescornot() {
 	done
 	echo
 }
-installfromweb() {
-	echo installfromweb >>$INSTALL/log
-	echo installfromweb >>$PKGLISTS/loginstall
-	FAILED=""
-	# The files whose name end in pkg contains paths to the packages in:
-	# isoslackpkg: the ISO (Slackware packages)
-	# isoslintpkg: the ISO (Slint packages)
-	# slintpkg: the Slint repository
-	# patchespkg: the Slackware repository in /patches
-	#
-	# If an internet connection is available we install:
-	# 1) from patchespkg packages with the same short name in isoslackpkg
-	# 2) from webslintpkg packages with the same shortname in isoslintpkg and
-	# packages added since the ISO was released (shortname not found in isoslint),
-	# 3) from isoslackpkg the packages not installed from patchespkg
-	# 4) from isoslintpkg the packages not installed from slintpkg, unless removed
-	# (short name not found in slintpkg)
-	# We will also upgrade already installed packages, case occurring.
-	# We won't handle removals and additions of packages in Slackware, as this
-	# occurs very rarely if ever in the life span of a Slackware release.
-	# If no internet connection is available we'll just install all packages from
-	# $ISO, but those already installed.
-	if [ ! -f /tmp/connected ]; then
-		FAILED=1
-		return
-	else
-		[ "$DISPLAYNAME" ] && gettext "Preparing packages installation..." && echo
-	fi
+install() {
+	echo install >>$INSTALL/log
+	echo install >>$PKGLISTS/loginstall
+	echo download >>$PKGLISTS/logdownload
+	# We assume that all packages in the ISO come from the Slint repository or
+	# or the Slint64-15.0 repository
+	# We will install packages from the ISO unless:
+	# 1. We find a package with a different full name in the Slint repo and the
+	# package name in the ISO ends in slint.txz
+	# 2 We find a package with a different full name in the patches sub-directory
+	# of the Slackwkare repo and the package name in the ISO does not end in slint.txz
+	# We check the packages names in
+	# the file CHECKSUMS.md5 in the patches sub-directory of the Slacwkare repo
+	# the file CHECKSUMS.md5 of the Slacwkare repo
+	# the file CHECKSUM.md5 of the ISO
+	
+	# We do do not handle removals from the repositories since the ISO was built,
+	# nor packages migrated from Slint to Slint since then.
+	# Packages are installed using spkg. If installed a package fails, abort the
+	# installation.
+	unset CONNECTED
+	[ -f /tmp/connected ] && CONNECTED=1
+	rm -f $PKGLISTS/spkgerror
+	[ "$DISPLAYNAME" ] && gettext "Preparing packages installation..." && echo
 	cd $PKGLISTS || exit
 	trytoget $SLINTREPO/CHECKSUMS.md5
-	[ "$FAILED" ] && return
+	[ -f /tmp/failed ] && return
 	mv CHECKSUMS.md5 SLINTREPO.md5
 	trytoget $PATCHESREPO/CHECKSUMS.md5
-	[ "$FAILED" ] && return
+	[ -f /tmp/failed ] && return
 	mv CHECKSUMS.md5 PATCHESREPO.md5
-	# Exclude the packages in /extra /voices and /locales not shipped in
-	# isoslintpkg below
-	grep "txz$" SLINTREPO.md5|grep -v -e "/extra/" -e "/voices/" -e "/locales/" |sed "s@[^.]*[.]@@" > reposlintpkg
-	while read -r PKG; do
-		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>reposlintbase
-	done <reposlintpkg
-	# List the packages in the /patches directory of the Slackware repository
-	grep "txz$" PATCHESREPO.md5|grep -v "/kernel-"|sed "s@[^.]*[.]@@" > patchespkg
-	while read -r PKG; do
-		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>patchesbase
-	done <patchespkg
-	# List the package from the ISO that come from Slint
-	ls $ISO/slint/*slint.txz > isoslintpkg
-	cp isoslintpkg isoslintpkg.orig
-	while read -r PKG; do
-		basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//" >>isoslintbase
-	done <isoslintpkg
-	# List the package from the ISO that come from Slackware
-	find $ISO/slint/*txz|grep -v "slint.txz$" >isoslackpkg
-	cp isoslackpkg isoslackpkg.orig
-	# list the Slackware packages in /patches at another version than in
-	# the ISO and remove them from the list isoslackpkg
-	while read -r PKG; do
-		BASE=$(basename "$PKG")
-		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if grep -q "^${SHORT}$" patchesbase && ! grep -q "$BASE" patchespkg; then
-			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" patchespkg >>webpatchespkg
-			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslackpkg >bof
-			mv bof isoslackpkg
-		fi
-	done <isoslackpkg
-	# List the packages of the Slint repository at another version than
-	# in the ISO and remove them from the list isoslintpkg
-	while read -r PKG; do
-		BASE=$(basename "$PKG")
-		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if grep -q "^${SHORT}$" reposlintbase && \
-		! grep -q "$BASE" reposlintpkg && \
-		! echo "$SHORT" | grep -q "[-]voice[-]"; then
-			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" reposlintpkg >>webslintpkg
-			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslintpkg >bof
-			mv bof isoslintpkg
-		fi
-	done <isoslintpkg
-	# List the packages added to the Slint repository since the ISO was built.
-	# But we won't add voices non shipped in the ISO
-	while read -r PKG; do
-		BASE=$(basename "$PKG")
-		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if ! grep -q "^${SHORT}$" isoslintbase; then
-			sed -n  "/${SHORT}-[^-]*-[^-]*-[^-]*$/p" reposlintpkg >>webslintpkg
-		fi
-	done <reposlintpkg
-	# Packages removed from the Slint repository since the release of the ISO
-	while read -r PKG; do
-		BASE=$(basename "$PKG")
-		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if ! grep -q "^${SHORT}$" reposlintbase; then
-			sed "/${SHORT}-[^-]*-[^-]*-[^-]*$/d" isoslintpkg >bof
-			mv bof isoslintpkg
-		fi
-	done < isoslintpkg
-	#
-	#echo "Done computing the packages lists, now install the packages"
-	# First the packages you will get from a remote repository
-	if [ -s webslintpkg ]; then
-		echo
-		while read -r PKG; do
-			PKGBASE=${PKG%.t?z}
-			if [ -f $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
-				echo "$PKG is already installed" >>$PKGLISTS/loginstall
-				continue
-			fi
-			if echo "$PKG"|grep  -q "libreoffice-l10n"; then
-				continue
-			fi
-	 		if echo "$PKG"|grep  -q "libreoffice-help"; then
-				continue
-			fi
-			echo "fetching $PKG" >>$PKGLISTS/loginstall
-			BASE=$(basename "$PKG")
-			trytoget $SLINTREPO/slint/"$BASE"
-			if [ "$FAILED" ]; then
-				rm -f -- *txz
-				return
-			fi
-			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$BASE"
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				FAILED=1
-				rm -f -- *txz
-				return
-			fi
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-			rm -f -- *txz
-		done <webslintpkg
-		PKG=$(grep "libreoffice-l10n_${lo}-*t?z" webslintpkg)
-		if [ "$PKG" ]; then
-			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			BASE=$(basename "$PKG")
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				SPKGERROR=$(cat $PKGLISTS/spkgerror)
-				echo
-				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-				echo >>$PKGLISTS/installerrors
-				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				rm -f -- *txz
-				FAILED=1
-				return
-			else
-				echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-				rm -f -- *txz
-			fi
-		fi
-		PKG=$(grep "libreoffice-help_${lo}-*t?z" webslintpkg)
-		if [ "$PKG" ]; then
-			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			BASE=$(basename "$PKG")
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-				mycmd="$?"
-				if [ "$mycmd" -ne 0 ]; then
-				SPKGERROR=$(cat $PKGLISTS/spkgerror)
-				echo
-				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-				echo >>$PKGLISTS/installerrors
-				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				rm -f -- *txz
-				FAILED=1
-				return
-			else
-				echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-			fi
-		fi
-	fi
-	if [ -s webpatchespkg ]; then
-		echo
-		while read -r PKG; do
-			BASE=$(basename "$PKG")
-			if  [ -f $SLINT/var/lib/pkgtools/packages/"$BASE" ]; then
-				echo "$PKG is already installed" >>$PKGLISTS/loginstall
-				continue
-			fi
-			echo "fetching $PKG" >>$PKGLISTS/loginstall
-			trytoget $PATCHESREPO/"$PKG"
-			if [ "$FAILED" ]; then
-				rm -f -- *txz
-				return
-			fi
-			SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-			PKGBASE=${PKG%.t?z}
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$BASE" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				FAILED=1
-				rm -f -- *txz
-				return
-			fi
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-			rm -f -- *txz
-		done <webpatchespkg
-	fi
-	# Then, the package from the installation media
-	while read -r PKG; do
-	# in isoslackpkg each record is like /slint/<package name>
-		BASE=$(basename "$PKG")
-		SHORT=$(echo "$BASE"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if [ "$SHORT" = "kernel-huge" ]; then
-			continue
-		fi
-		PKGBASE=${PKG%.t?z}
-		if [ -f $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
-			echo "$PKG is already installed" >>$PKGLISTS/loginstall
-			continue
-		fi
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+	SLAPT_NO_SSL_VERIFYPEER=1
+	ROOT=/SLINT
+	export ROOT
+	export SLAPT_NO_SSL_VERIFYPEER
+	gettext "Configuring slapt-get to fetch packages from a remote repository..." && echo  
+	CONFIGFILE="slapt-getrc.installation$(cat /tmp/distro)"
+	slapt-get --add-keys -c /"$CONFIGFILE" 1>/tmp/slapt-get_download 2>/slapt-get_errors
+	slapt-get -u -c /"$CONFIGFILE" 1>>/tmp/slapt-get_download 2>>/slapt-get_errors
+	slapt-get --clean 1>>/tmp/slapt-get_download 2>>/slapt-get_errors
+	while read -r DESKTOP; do
+		desktop=$(to_lower "$DESKTOP")
+		while read -r i; do
+			[ ! "$i" ] && continue
+			[ "$DISPLAYNAME" ] && echo "$i"
+			slapt-get -d --no-dep -c /"$CONFIGFILE" -i "$i" 1>>$PKGLISTS/logdownload 2>>$PKGLISTS/downloaderror
+			RET="$?"
+			[ "$RET" -ne 0 ]  && echo yes > /tmp/failed && return
+			find /SLINT/var/slapt-get -name "*t?z"|while read -r j; do
+				spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$j" 1>>$PKGLISTS/loginstall 2>>$PKGLISTS/spkgerror
+				RET="$?"
+				[ "$RET" -ne 0 ]  && echo yes > /tmp/failed && return
+			done
+		done </sets/"$desktop"
+	done < /tmp/set
+	! grep -q slint /tmp/distro && return
+	PKGISO=$(find "$ISO"|grep "libreoffice-l10n-${lo}"|grep txz$)
+	if [ "$PKGISO" ]; then
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
-		if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			eval_gettext "Installation of \$PKG failed for this reason:" >$PKGLISTS/installerror
-			echo >>$PKGLISTS/installerrors
-			echo "$SPKGERROR" >>$PKGLISTS/installerror
-			gettext "Slint installation can't continue" >>$PKGLISTS/installerror
-			echo >>$PKGLISTS/installerrors
-			backtomenu "$(cat $PKGLISTS/installerror)"
-		else
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-		fi
-	done <isoslackpkg
-	# in isoslintpkg each record is like /slint/<package name>
-	while read -r PKG; do
-		# the variable $lo is set according to the language/region by SeTlocales
-		if echo "$PKG"|grep -q locales/; then
-			continue
-		fi
-		PKGBASE=${PKG%.t?z}
-		if [ -g $SLINT/var/lib/pkgtools/packages/"$PKGBASE" ]; then
-			echo "$PKG is already installed" >>$PKGLISTS/loginstall
-			continue
-		fi
-		BASE=$(basename "$PKG")
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		PKGBASE=${PKG%.t?z}
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$BASE"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			eval_gettext "Installation of \$PKG failed for this reason:" >$PKGLISTS/installerror
-			echo >>$PKGLISTS/installerrors
-			echo "$SPKGERROR" >>$PKGLISTS/installerror
-			gettext "Slint installation can't continue" >>$PKGLISTS/installerror
-			echo >>$PKGLISTS/installerrors
-			backtomenu "$(cat $PKGLISTS/installerror)"
-		else
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-		fi
-	done <isoslintpkg
-	PKG=$(find $ISO/slint/locales -name "libreoffice-l10n-${lo}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename "$PKG")
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-			echo  >>$PKGLISTS/installerrors
-			echo "$SPKGERROR" >>$PKGLISTS/installerrors
-			FAILED=1
-			return
-		else
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-		fi
+		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
-	PKG=$(find $ISO/slint/locales -name "libreoffice-help-${lo}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename "$PKG")
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+	PKGISO=$(find "$ISO"|grep "aspell-${asp}"|grep txz$)
+	if [ "$PKGISO" ]; then
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
-		if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-			echo >>$PKGLISTS/installerrors
-			echo "$SPKGERROR" >>$PKGLISTS/installerrors
-			FAILED=1
-			return
-		else
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-		fi
-	fi
-	PKG=$(find $ISO/slint/locales -name "aspell-${asp}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		BASE=$(basename "$PKG")
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$BASE"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg -i --root $SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-		mycmd="$?"
-		if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-			echo >>$PKGLISTS/installerrors
-			echo "$SPKGERROR" >>$PKGLISTS/installerrors
-			FAILED=1
-			return
-		else
-			echo "Installation of $PKG succeeded." >>$PKGLISTS/loginstall
-		fi
+		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
 }
 installfromiso() {
 	cd / || exit
-	if [ ! "$FAILED" ]; then
+	if [ ! -f /tmp/failed ]; then
 		echo "no need to install from ISO" >>$INSTALL/log
 		return
 	fi
@@ -2807,78 +2587,38 @@ installfromiso() {
 	find $SLINT/var/lib/pkgtools/packages|while read -r i; do
 		basename "$i"|sed "s/-[^-]*-[^-]*-[^-]*$//" >> $PKGLISTS/installed;
 	done
-	find $ISO/slint/*txz|while read -r PKG; do
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKG"
-		echo "installing $PKG" >>$PKGLISTS/loginstall
-		spkg --root=$SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i --install-new --reinstall "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+	while read -r DESKTOP; do
+		desktop=$(to_lower "$DESKTOP")
+		while read -r i ; do
+		    [ ! "$i" ] && continue
+			PKGISO=$(find "$ISO"/slint -name "*t?z" |grep "/${i}-[^-]*-[^-]*-[^-]*$")
+			if [ ! "$PKGISO" ]; then
+				PKGISO=$(find "$ISO"/slint -name "*t?z" |grep "/${i}")
+			fi
+			if [ ! "$PKGISO" ]; then
+				echo "package not found in $ISO"
+				displayspkgerror "$i" && return
+			fi
+			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+			mycmd="$?"
+			[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
+		done < /sets/"$desktop"
+	done < /tmp/set
+	! grep -q slint /tmp/distro && return
+	PKGISO=$(find "$ISO"|grep "libreoffice-l10n-${lo}"|grep txz$)
+	if [ "$PKGISO" ]; then
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
-		if [ "$mycmd" -ne 0 ]; then
-			SPKGERROR=$(cat $PKGLISTS/spkgerror)
-			echo
-			clear
-			eval_gettext "Installation of \$PKG failed for this reason:"
-			echo
-			echo "$SPKGERROR"
-			gettext "Therefore, Slint installation is not possible."
-			echo
-			gettext "Check the integrity of the installation media."
-			echo
-			exit
-		fi
-	done
-	PKG=$(find $ISO/slint/locales -name "libreoffice-l10n-${lo}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				SPKGERROR=$(cat $PKGLISTS/spkgerror)
-				echo
-				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-				echo  >>$PKGLISTS/installerrors
-				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				return
-			fi
-		fi
+		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
-	PKG=$(find $ISO/slint/locales -name "libreoffice-help-${lo}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 2>$PKGLISTS/spkgerror
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				SPKGERROR=$(cat $PKGLISTS/spkgerror)
-				echo
-				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-				echo >>$PKGLISTS/installerrors
-				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				return
-			fi
-		fi
-	fi
-	PKG=$(find $ISO/slint/locales -name "aspell-${asp}-*t?z")
-	if [ "$PKG" ]; then
-		SHORT=$(basename "$PKG"|sed "s/-[^-]*-[^-]*-[^-]*$//")
-		if ! grep -q "^${SHORT}$" $PKGLISTS/installed; then
-			echo "installing $PKG" >>$PKGLISTS/loginstall
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint/locales "$PKG"
-			spkg -i --root=$SLINT -qq --no-ldconfig --no-gtk-update-icon-cache "$PKG" 2>$PKGLISTS/spkgerror
-			mycmd="$?"
-			if [ "$mycmd" -ne 0 ]; then
-				SPKGERROR=$(cat $PKGLISTS/spkgerror)
-				echo
-				eval_gettext "Installation of \$PKG failed for this reason:" >>$PKGLISTS/installerrors
-				echo  >>$PKGLISTS/installerrors
-				echo "$SPKGERROR" >>$PKGLISTS/installerrors
-				return
-			fi
-		fi
+	PKGISO=$(find "$ISO"|grep "aspell-${asp}"|grep txz$)
+	if [ "$PKGISO" ]; then
+		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
+		mycmd="$?"
+		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
 }
 bindrootslint() {
@@ -2894,20 +2634,23 @@ passwords() {
 	while read -r r; do echo "$r"|chpasswd -R $SLINT; done </tmp/u
 	rm -f /tmp/u
 }
-postconfigure(){
+
+postconfigureslint(){
 	echo postconfigure >>$INSTALL/log
     # If speech was used during installation, start orca for the registered user
     # in graphical desktops.
     LOGIN=$(cat $INSTALL/firstuserlogin)
 	if [ ! -f /tmp/noespeakup ]; then
-		(cd $SLINT/home/"$LOGIN"/.config/autostart || exit
-		sed s/Hidden=true/Hidden=false/ startorca.desktop > bof
-		mv bof startorca.desktop
-		cat $SLINT/usr/share/orca/orcaprofile >> $SLINT/home/"$LOGIN"/.profile
-		)
-		chroot $SLINT chown "${LOGIN}": \
-		/home/"$LOGIN"/.config/autostart/startorca.desktop
-		chroot $SLINT chown "${LOGIN}": /home/"$LOGIN"/.profile
+		if [ -f  $SLINT/usr/share/orca/orcaprofile ]; then
+			(cd $SLINT/home/"$LOGIN"/.config/autostart || exit
+			sed s/Hidden=true/Hidden=false/ startorca.desktop > bof
+			mv bof startorca.desktop
+			cat $SLINT/usr/share/orca/orcaprofile >> $SLINT/home/"$LOGIN"/.profile
+			)
+			chroot $SLINT chown "${LOGIN}": \
+			/home/"$LOGIN"/.config/autostart/startorca.desktop
+			chroot $SLINT chown "${LOGIN}": /home/"$LOGIN"/.profile
+		fi
 	fi
 	# console and Xkeybord settings
 	KMAP="$(cat /tmp/Pkeymap)"
@@ -2935,85 +2678,272 @@ press Enter to accept the default name \"slint\"."
 		# convey these settings in the installed system.
 		sh /usr/sbin/setup/bp2cf -u -p "$brltty" -f $SLINT/etc/brltty.conf
 	fi
-	# Set the graphical session
-	for filename in "$SLINT"/usr/share/xsessions/*; do
-		! grep -q safe "$filename" && echo "${filename%.*}"|sed "s@.*/@@"
-	done > listesessions
-	while true; do
-		gettext "Please select a default desktop among those listed below.
-mate is the most accessible with a screen reader."
+	NBSESSIONS=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -c -v -e safe -e xwmconfig)
+	if [ "$NBSESSIONS" -gt 1 ]; then
+		# Set the graphical session are several are available
+		for filename in "$SLINT"/usr/share/xsessions/*; do
+			! grep -q safe "$filename" && echo "${filename%.*}"|sed "s@.*/@@"
+		done > listesessions
+		while true; do
+			gettext "Please select a default desktop among those listed below."
+			echo
+			grep -q mate /tmp/set && gettext "mate is the most accessible with a screen reader."
+			echo
+			grep -q i3 /tmp/set && gettext "i3 is accessible. If you need speech, install I38 and run i38 before starting it."
+			echo
+			cat listesessions
+			gettext "Your choice: "
+			clear_stdin
+			read -r CHOICE
+			[ ! "$CHOICE" ] && clear && continue
+			session=$(echo "$CHOICE"|tr '[:upper:]' '[:lower:]')
+			grep -q "$session" listesessions && break
+			clear
+			eval_gettext "\$session is not an available desktop."
+			echo
+			sleep 1
+			clear
+		done
+		eval_gettext "\$session has been chosen."
 		echo
-		gettext "i3 is also accessible. If you need speech, preferably type i38 before starting it."
-		echo
-		cat listesessions
-		gettext "Your choice: "
-		clear_stdin
-		read -r CHOICE
-		[ ! "$CHOICE" ] && clear && continue
-		session=$(echo "$CHOICE"|tr '[:upper:]' '[:lower:]')
-		grep -q "$session" listesessions && break
-		clear
-		eval_gettext "\$session is not an available desktops."
-		echo
-		sleep 1
-		clear
-	done
-	eval_gettext "\$session has been chosen."
-	echo
-	echo '[Desktop]' > $SLINT/home/"$LOGIN"/.dmrc
-	echo "Session=$session" >> $SLINT/home/"$LOGIN"/.dmrc
-	case $session in
-		i3) xinit=i3;;
-		lxqt) xinit=lxqt;;
-		xfce) xinit=xfce;;
-		mate) xinit=mate;;
-		wmaker) xinit=wmaker;;
-		fvwm) xinit=fvwm2;;
-	esac
-	# This is for startx
-	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
-	cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
-
-	# We need to run setxkbmap just after having started X, so that $DISPLAY
-	# be set. But in some cases that is easier to do live than when building
-	# the window manager or desktop.
-	case $session in
-		lxqt|mate|i3|xfce) (cd $SLINT/home/"$LOGIN" || exit
-			sed '/exec/i \
-	/usr/bin/setxkbmap' .xinitrc > bof
-			mv bof .xinitrc);;
-		*) (cd $SLINT/home/"$LOGIN" || exit
-		sed '/DESKTOP_SESSION/i \
-	/usr/bin/setxkbmap' .xinitrc > bof
-			mv bof .xinitrc)
-	esac
-	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.dmrc
-	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xsession
-	chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xinitrc
+	fi
+	if [ "$NBSESSIONS" -eq 1 ]; then
+		# Only one DE has been installed, set session accordingly		
+		THESESSION=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -v -e safe -e xwmconfig|sed 's#.*/##')
+		session=${THESESSION%.*}
+	fi
+	if [ "$NBSESSIONS" -ge 1 ]; then
+		echo '[Desktop]' > $SLINT/home/"$LOGIN"/.dmrc
+		echo "Session=$session" >> $SLINT/home/"$LOGIN"/.dmrc
+		case $session in
+			i3) xinit=i3;;
+			lxqt) xinit=lxqt;;
+			xfce) xinit=xfce;;
+			mate) xinit=mate;;
+			wmaker) xinit=wmaker;;
+			fvwm) xinit=fvwm2;;
+		esac
+		# This is for startx
+		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
+		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
+	
+		# We need to run setxkbmap just after having started X, so that $DISPLAY
+		# be set. But in some cases that is easier to do live than when building
+		# the window manager or desktop.
+		case $session in
+			lxqt|mate|i3|xfce) (cd $SLINT/home/"$LOGIN" || exit
+				sed '/exec/i \
+		/usr/bin/setxkbmap' .xinitrc > bof
+				mv bof .xinitrc);;
+			*) (cd $SLINT/home/"$LOGIN" || exit
+			sed '/DESKTOP_SESSION/i \
+		/usr/bin/setxkbmap' .xinitrc > bof
+				mv bof .xinitrc)
+		esac
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.dmrc
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xsession
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xinitrc
+	fi
 	echo "Running update_all. Please be patient..."
+	chroot "$SLINT" ldconfig
 	cp /sbin/update-all $SLINT/sbin
 	chroot $SLINT chmod 0755 /usr/sbin/update-all
 	chroot $SLINT /sbin/update-all
 	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
-	# exists in the same drive as the rott partition its path is set in $INSTALL/path 
+	# exists in the same drive as the root partition its path is set in $INSTALL/path 
 	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
 		mkdir -p $SLINT/boot/efi
 		# grub will need to access the ESP
 		chroot $SLINT mount /boot/efi
 		mkdir -p $SLINT/boot/efi/EFI/BOOT
 	fi
-	# set lightdm by default as graphical login manager
-	chmod 755 $SLINT/usr/sbin/lightdm
-	echo \
-"if [ -x /usr/sbin/lightdm ]; then
-	if [ -f /var/log/lightdm/startlightdm.log ]; then
-		mv /var/log/lightdm/startlightdm.log /var/log/lightdm/startlightdm.log.old
-	fi
-	exec /usr/sbin/lightdm  2>/var/log/lightdm/startlightdm.log
-fi" > $SLINT/etc/rc.d/rc.4.local
+	if [ "$NBSESSIONS" -ge 1 ]; then
+		# set lightdm by default as graphical login manager
+		chmod 755 $SLINT/usr/sbin/lightdm
+		echo \
+	"if [ -x /usr/sbin/lightdm ]; then
+		if [ -f /var/log/lightdm/startlightdm.log ]; then
+			mv /var/log/lightdm/startlightdm.log /var/log/lightdm/startlightdm.log.old
+		fi
+		exec /usr/sbin/lightdm  2>/var/log/lightdm/startlightdm.log
+	fi" > $SLINT/etc/rc.d/rc.4.local
 		chmod 755 $SLINT/etc/rc.d/rc.4.local
-	echo
+	fi
+	# We assume that a user needing speech during intallation will need to use a
+	# screen reader to log in in lightdm 
+	if [ ! -f /tmp/noespeakup ] && [ -f $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override ]; then
+		sed 's#^screen-reader=false#screen-reader=true#' $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override > bof
+		mv bof $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override
+	fi
 }
+postconfigureslackware(){
+	echo postconfigure >>$INSTALL/log
+    # If speech was used during installation, start orca for the registered user
+    # in graphical desktops.
+    LOGIN=$(cat $INSTALL/firstuserlogin)
+	# console and Xkeybord settings
+	KMAP="$(cat /tmp/Pkeymap)"
+	chroot $SLINT keyboardsetup -k "${KMAP%.map}" 1>>/$INSTALL/log
+	# write the network configuration files, set Network Manager as connection
+	# method
+	echo
+	gettext "Please type the machine name or \"hostname\" and press Enter or just
+press Enter to accept the default name \"darkstar\"."
+	echo
+	gettext "Machine name[darkstar]: "
+	clear_stdin
+	read -r HOSTNM
+	export HOSTNM
+	cp /sbin/nmconfig $SLINT/sbin
+	chroot $SLINT chmod 0755 /sbin/nmconfig
+	chroot $SLINT /sbin/nmconfig
+	# Provide various initial settings
+	zzz-settingsslack
+	if [ ! -f /tmp/noespeakup ]; then
+		chmod 755 "$SLINT"/etc/rc.d/rc.espeakup
+	else
+		chmod 644 "$SLINT"/etc/rc.d/rc.espeakup
+	fi
+	# Braille settings
+	if grep -q "brltty=" /proc/cmdline ; then
+		# command line parameters are set system wide but not to anger checkshell
+		brltty=$(sed "s/.*brltty=/brltty=/" /proc/cmdline|cut -d" " -f1)
+		# If a Braille display was set up in the command line, lets'
+		# convey these settings in the installed system.
+		sh /usr/sbin/setup/bp2cf -u -p "$brltty" -f $SLINT/etc/brltty.conf
+	fi
+	echo "Running update_all. Please be patient..."
+	cp /sbin/update-all $SLINT/sbin
+	chroot $SLINT chmod 0755 /usr/sbin/update-all
+	chroot $SLINT /sbin/update-all
+	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
+	# exists in the same drive as the root partition its path is set in $INSTALL/path 
+	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
+		mkdir -p $SLINT/boot/efi
+		# grub will need to access the ESP
+		chroot $SLINT mount /boot/efi
+		mkdir -p $SLINT/boot/efi/EFI/BOOT
+	fi
+}
+
+postconfiguresalix(){
+	echo postconfiguresalix >>$INSTALL/log
+    LOGIN=$(cat $INSTALL/firstuserlogin)
+	# console and Xkeybord settings
+	KMAP="$(cat /tmp/Pkeymap)"
+	chroot $SLINT keyboardsetup -k "${KMAP%.map}" 1>>/$INSTALL/log
+	# write the network configuration files, set Network Manager as connection
+	# method
+	echo
+	gettext "Please type the machine name or \"hostname\" and press Enter or just
+press Enter to accept the default name \"darkstar\"."
+	echo
+	gettext "Machine name[darkstar]: "
+	clear_stdin
+	read -r HOSTNM
+	export HOSTNM
+	cp /sbin/nmconfig $SLINT/sbin
+	chroot $SLINT chmod 0755 /sbin/nmconfig
+	chroot $SLINT /sbin/nmconfig
+	# Make /etc/rc.d/rc.espeakup only if speech was used during installation
+	if [ ! -f /tmp/noespeakup ]; then
+		chmod 755 "$SLINT"/etc/rc.d/rc.espeakup
+	else
+		chmod 644 "$SLINT"/etc/rc.d/rc.espeakup
+	fi
+	# Braille settings
+	if grep -q "brltty=" /proc/cmdline ; then
+		# command line parameters are set system wide but not to anger checkshell
+		brltty=$(sed "s/.*brltty=/brltty=/" /proc/cmdline|cut -d" " -f1)
+		# If a Braille display was set up in the command line, lets'
+		# convey these settings in the installed system.
+		sh /usr/sbin/setup/bp2cf -u -p "$brltty" -f $SLINT/etc/brltty.conf
+	fi
+	NBSESSIONS=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -c -v -e safe -e xwmconfig)
+	if [ "$NBSESSIONS" -gt 1 ]; then
+		# Set the graphical session are several are available
+		for filename in "$SLINT"/usr/share/xsessions/ -name "*.desktop"; do
+			! grep -q safe "$filename" && echo "${filename%.*}"|sed "s@.*/@@"
+		done > listesessions
+		while true; do
+			gettext "Please select a default desktop among those listed below."
+			echo
+			grep -q mate /tmp/set && gettext "mate is the most accessible with a screen reader."
+			echo
+			grep -q i3 /tmp/set && gettext "i3 is accessible. If you need speech, install I38 and run i38 before starting it."
+			echo
+			cat listesessions
+			gettext "Your choice: "
+			clear_stdin
+			read -r CHOICE
+			[ ! "$CHOICE" ] && clear && continue
+			session=$(echo "$CHOICE"|tr '[:upper:]' '[:lower:]')
+			grep -q "$session" listesessions && break
+			clear
+			eval_gettext "\$session is not an available desktop."
+			echo
+			sleep 1
+			clear
+		done
+		eval_gettext "\$session has been chosen."
+		echo
+	fi
+	if [ "$NBSESSIONS" -eq 1 ]; then
+		# Only one DE has been installed, set session accordingly		
+		THESESSION=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -v -e safe -e xwmconfig|sed 's#.*/##')
+		session=${THESESSION%.*}
+	fi
+	if [ "$NBSESSIONS" -ge 1 ]; then
+		echo '[Desktop]' > $SLINT/home/"$LOGIN"/.dmrc
+		echo "Session=$session" >> $SLINT/home/"$LOGIN"/.dmrc
+		case $session in
+			i3) xinit=i3;;
+			lxqt) xinit=lxqt;;
+			xfce) xinit=xfce;;
+			mate) xinit=mate;;
+			wmaker) xinit=wmaker;;
+			fvwm) xinit=fvwm2;;
+		esac
+		# This is for startx
+		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
+		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
+	
+		# We need to run setxkbmap just after having started X, so that $DISPLAY
+		# be set. But in some cases that is easier to do live than when building
+		# the window manager or desktop.
+		case $session in
+			lxqt|mate|i3|xfce) (cd $SLINT/home/"$LOGIN" || exit
+				sed '/exec/i \
+		/usr/bin/setxkbmap' .xinitrc > bof
+				mv bof .xinitrc);;
+			*) (cd $SLINT/home/"$LOGIN" || exit
+			sed '/DESKTOP_SESSION/i \
+		/usr/bin/setxkbmap' .xinitrc > bof
+				mv bof .xinitrc)
+		esac
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.dmrc
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xsession
+		chroot $SLINT chown "$LOGIN": /home/"$LOGIN"/.xinitrc
+	fi
+	cp /sbin/update-all $SLINT/sbin
+	chroot $SLINT chmod 0755 /usr/sbin/update-all
+	chroot $SLINT /sbin/update-all
+	# Run /usr/sbin/btrfsmaintenance-refresh-cron.sh as it is not done
+	# by doinst.sh from btrfsmaintenance for an unknown yet reason.
+	chroot $SLINT /usr/sbin/btrfsmaintenance-refresh-cron.sh 1>"$INSTALL"/log 2>"$INSTALL"/log
+	# thinkfan is shipped in Slint but lacks /etc/thinkfan.conf.
+	# to avoid an error message at startup, make /etc/rc.d/rc.thinkfan 644
+	[ -x "$SLINT"/etc/rc.d/rc.thinkfan ] && chmod 644 "$SLINT"/etc/rc.d/rc.thinkfan
+	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
+	# exists in the same drive as the root partition its path is set in $INSTALL/path 
+	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
+		mkdir -p $SLINT/boot/efi
+		# grub will need to access the ESP
+		chroot $SLINT mount /boot/efi
+		mkdir -p $SLINT/boot/efi/EFI/BOOT
+	fi
+}
+
 mountefivarsandmovehome(){
 	[ -d /sys/firmware/efi/efivars ] && chroot $SLINT mount -t efivarfs none /sys/firmware/efi/efivars
 	# Until I understand why $HOME don't survive after reboot if /home is in a @home btrfs sub volume...
@@ -3055,10 +2985,10 @@ bootingsetup() {
 		/^GRUB_DISABLE_LINUX_PARTUUID/s/.*/GRUB_DISABLE_LINUX_PARTUUID=true/
 		/^GRUB_DISABLE_LINUX_UUID/s/.*/GRUB_DISABLE_LINUX_UUID=false/" $SLINT/etc/default/grub >bof
 		mv bof $SLINT/etc/default/grub
-		chroot $SLINT dracut --kver "$KVER" --zstd -q --install " /etc/keys/$KEYFILE " 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver "$KVER" --zstd -q --install " /etc/keys/$KEYFILE " /boot/initramfs-"${KVER}".img 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay rd.luks.key=/etc/keys/$KEYFILE:/ rd.luks.uuid=$(cat $INSTALL/rootcryptuuid)"
 	else
-		chroot $SLINT dracut --kver "$KVER"  --zstd -q 2>>$INSTALL/errors
+		chroot $SLINT dracut --kver "$KVER"  --zstd -q /boot/initramfs-"${KVER}".img 2>>$INSTALL/errors
 		args="rootdelay=$rootdelay"
 	fi
 	gettext "Installing the GRUB bootloader..."
@@ -3076,20 +3006,28 @@ bootingsetup() {
 	# Install with --target=x86_64-efi except if is no ESP in the same drive as the root one.
 	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
 		if [ "$EFI" ]; then
-			chroot $SLINT grub-install --target=x86_64-efi --bootloader-id=slint-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
+			chroot $SLINT grub-install --target=x86_64-efi --bootloader-id="${DISTRIBUTION}"-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
 		else
-			chroot $SLINT grub-install --target=x86_64-efi --no-nvram --bootloader-id=slint-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
+			chroot $SLINT grub-install --target=x86_64-efi --no-nvram --bootloader-id="${DISTRIBUTION}"-$SLINTVERSION "$DRIVEPATH" 1>>$INSTALL/log 2>>$INSTALL/errors
 		fi
-		cp  $SLINT/boot/efi/EFI/slint-$SLINTVERSION/grubx64.efi $SLINT/boot/efi/EFI/BOOT/BOOTx64.EFI
-		echo "EFI\slint-$SLINTVERSION\grubx64" > /SLINT/boot/efi/startup.nsh
+		cp  $SLINT/boot/efi/EFI/"${DISTRIBUTION}"-$SLINTVERSION/grubx64.efi $SLINT/boot/efi/EFI/BOOT/BOOTx64.EFI
+		echo "EFI\${DISTRIBUTION}-$SLINTVERSION\grubx64" > /SLINT/boot/efi/startup.nsh
 	fi
 	echo "GRUB_CMDLINE_LINUX=\"$args\"" >> $SLINT/etc/default/grub
 	gettext "Building the GRUB boot menu..."
 	echo
-	chroot $SLINT /usr/sbin/update-grub 1>>$INSTALL/log 2>>$INSTALL/errors
+	chroot $SLINT /usr/sbin/grub-mkconfig -o /boot/grub/grub.cfg 1>>$INSTALL/log 2>>$INSTALL/errors
+	# Do not clutter Slint's boot GRUB with symlinks
+	if [ -f /tmp/set ] && grep -q slackware /tmp/set; then
+		(cd $SLINT/boot || exit
+		find . -type l -maxdepth 1 -exec rm '{}' +
+		)
+	fi
 }
 byebye() {
 echo byebye >>$INSTALL/log
+	# Remove the huge slapt-get database only used during installation. 
+	rm -rf "$SLINT/var/slapt-get"
 	echo "store in $SLINT/var/log/$INSTALL stuff useful to investigate a booting issue..." >>$INSTALL/log
 	echo "running alsa-info.sh" >>$INSTALL/log
 	alsa-info.sh --no-upload --output $INSTALL/alsa-info.out --no-dialog 1>/dev/null 2>>$INSTALL/errors
@@ -3099,6 +3037,8 @@ echo byebye >>$INSTALL/log
 	rm -f /tmp/u
 	echo "coyping /tmp in $SLINT/var/log/$INSTALL" >>$INSTALL/log
 	cp -r /tmp $SLINT/var/log/$INSTALL/
+	echo "remove packages stored in $PKGLISTS" >>$INSTALL/log
+	rm -f "$PKGLISTS"/*.txz
 	mv $PKGLISTS $SLINT/var/log/$INSTALL/ 
 	echo "copying installation scripts in $SLINT/var/log/$INSTALL/installation-scripts"  >>$INSTALL/log
 	mkdir -p $SLINT/var/log/$INSTALL/installation-scripts

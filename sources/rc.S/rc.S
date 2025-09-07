@@ -34,7 +34,7 @@ if [ -x /sbin/ldconfig ]; then
 fi
 
 # We source /sbin/functions after having mounted /proc and /sys to avoid hamrless erreor messages
-# But before "export TEXTDOMAIN=rc.S" as the TEXTDOMAIN of /sbin/functions is "auto".
+# But before exporting TEXTDOMAIN as the TEXTDOMAIN of /sbin/functions is "auto"
 . /sbin/functions
 export TEXTDOMAIN=rc.S
 . gettext.sh
@@ -74,46 +74,86 @@ mkdir -p /ISO
 mkdir -p /INSTALLER
 mounttheiso
 sh /etc/rc.d/rc.swapinzram start
-
-sleep 3
-
-echo "installing some packages in the iniramfs. Please wait..."
-
-spkg -i -qq \
-"$ISO"/slint/kernel-firmware*txz \
-"ISO"/slint/acl-*txz \
-"ISO"/slint/dracut*txz \
-"ISO"/slint/file*txz \
-"ISO"/slint/gpm*txz \
-"ISO"/slint/gc-*txz \
-"ISO"/slint/dialog-*.t?z \
-"ISO"/slint/expat*.t?z \
-"ISO"/slint/pcre2*.t?z \
-"ISO"/slint/libsndfile*.t?z \
-"ISO"/slint/orc-0*.t?z \
-"ISO"/slint/flac*.t?z \
-"ISO"/slint/libogg-*.t?z \
-"ISO"/slint/libvorbis*.t?z \
-"ISO"/slint/libyaml*.t?z \
-"ISO"/slint/dbus-1*.t?z \
-"ISO"/slint/libnl3*.t?z \
-"ISO"/slint/wireless_tools*.t?z \
-"ISO"/slint/net-tools*.t?z \
-"ISO"/slint/wpa_supplicant*.t?z \
-"ISO"/slint/slang-*.t?z \
-"ISO"/slint/most*.t?z \
-"ISO"/slint/findutils*.t?z \
-"ISO"/slint/ca-certificates*.t?z \
-"ISO"/slint/openssl-solibs-*txz \
-"ISO"/slint/libunistring*txz \
-"ISO"/slint/nano*txz \
-"ISO"/slint/util-linux*txz \
-"ISO"/slint/json-c*txz \
-"ISO"/slint/ncurses*txz \
-"ISO"/slint/aaa_glibc-solibs-*.txz \
-"ISO"/slint/efibootmgr*.txz \
-"ISO"/slint/tree*.txz
-
+echo "Adding some packages to the installer..."
+SUBDIR=slint
+[ -d "$ISO"/installer ] && SUBDIR=installer
+sleep 2
+	spkg -i -qq \
+	"$ISO"/$SUBDIR/aaa_glibc-solibs-*.txz \
+	"$ISO"/$SUBDIR/aaa_libraries-*.txz \
+	"$ISO"/$SUBDIR/acl-*txz \
+    "$ISO"/$SUBDIR/alsa-lib*txz \
+	"$ISO"/$SUBDIR/brotli*txz \
+	"$ISO"/$SUBDIR/bzip2*txz \
+	"$ISO"/$SUBDIR/c-ares*.t?z \
+	"$ISO"/$SUBDIR/ca-certificates*.t?z \
+	"$ISO"/$SUBDIR/coreutils*txz \
+	"$ISO"/$SUBDIR/curl*.t?z \
+	"$ISO"/$SUBDIR/cyrus-sasl*.t?z \
+	"$ISO"/$SUBDIR/dialog-*.t?z \
+	"$ISO"/$SUBDIR/dracut*txz \
+	"$ISO"/$SUBDIR/efibootmgr*.txz \
+	"$ISO"/$SUBDIR/espeak-ng*.txz \
+	"$ISO"/$SUBDIR/expat*.t?z \
+	"$ISO"/$SUBDIR/file-*txz \
+	"$ISO"/$SUBDIR/findutils*.t?z \
+	"$ISO"/$SUBDIR/flac*.t?z \
+	"$ISO"/$SUBDIR/gc-*txz \
+	"$ISO"/$SUBDIR/gnupg-1*txz \
+	"$ISO"/$SUBDIR/gpm*txz \
+	"$ISO"/$SUBDIR/json-c*txz \
+	"$ISO"/$SUBDIR/kbd*.t?z \
+	"$ISO"/$SUBDIR/libassuan*.t?z \
+	"$ISO"/$SUBDIR/libgpg-error*.t?z \
+	"$ISO"/$SUBDIR/liblouis-*.t?z \
+	"$ISO"/$SUBDIR/libnl3*.t?z \
+	"$ISO"/$SUBDIR/libogg-*.t?z \
+	"$ISO"/$SUBDIR/libpsl-*.t?z \
+	"$ISO"/$SUBDIR/libsndfile*.t?z \
+	"$ISO"/$SUBDIR/libssh2-*.t?z \
+	"$ISO"/$SUBDIR/libtirpc*.t?z \
+	"$ISO"/$SUBDIR/libunistring*txz \
+	"$ISO"/$SUBDIR/libvorbis*.t?z \
+	"$ISO"/$SUBDIR/libyaml*.t?z \
+	"$ISO"/$SUBDIR/most*.t?z \
+	"$ISO"/$SUBDIR/nano*txz \
+	"$ISO"/$SUBDIR/ncurses*txz \
+	"$ISO"/$SUBDIR/net-tools*.t?z \
+	"$ISO"/$SUBDIR/nghttp2*.t?z \
+	"$ISO"/$SUBDIR/openssl-solibs-*txz \
+	"$ISO"/$SUBDIR/opus-1*txz \
+	"$ISO"/$SUBDIR/orc-0*.t?z \
+	"$ISO"/$SUBDIR/pam-1*.t?z \
+	"$ISO"/$SUBDIR/pcaudiolib*txz \
+	"$ISO"/$SUBDIR/pcre2*.t?z \
+	"$ISO"/$SUBDIR/slang-*.t?z \
+	"$ISO"/$SUBDIR/slapt-get*.t?z \
+	"$ISO"/$SUBDIR/slint-scripts*txz \
+	"$ISO"/$SUBDIR/sonic*txz \
+	"$ISO"/$SUBDIR/tar*.t?z \
+	"$ISO"/$SUBDIR/tree-1*.txz \
+	"$ISO"/$SUBDIR/util-linux*txz \
+	"$ISO"/$SUBDIR/wireless_tools*.t?z \
+	"$ISO"/$SUBDIR/wpa_supplicant-nogui*.t?z \
+	"$ISO"/$SUBDIR/zlib*.t?z
+# We need /usr/lib64/libgpgme.so.11.25.0 from the gpgme package to make
+# slapt-get happy
+tar -xJf "$ISO"/$SUBDIR/gpgme-1*.txz usr/lib64/libgpgme.so.11.25.0
+# We need libdbus-1.so.3 from the dbus package to make wpa_passphrase and
+# wpa_supplicat happy
+tar -xJf "$ISO"/$SUBDIR/dbus-1*.txz usr/lib64/libdbus-1.so.3.19.13	
+ldconfig
+# Remove from alsa-utils and util-linux the utilities that we do not need at
+# all least if they lack dependencies.
+rm -f \
+/usr/bin/alsabat \
+/usr/bin/alsaloop \
+/usr/bin/axfer \
+/usr/bin/setpriv \
+/usr/sbin/dnsmasq
+# We do not need the python lib pylibmount.so shipped in util-linux.
+# Actually we do not need /usr/lib/python2.7 at all.  
+rm -rf /usr/lib64/python2.7
 # brltty is included in the initrd so that it be started by udev when applicable.
 # Start brltty if it has not yet been started by udev
 NBPROC="$(ps -C brltty --noheaders|wc -l)"
@@ -183,6 +223,12 @@ sleep 2
 # /tmp/alsacard, else /tmp/noespeakup has been written
 sleep 2
 clear
+# Get a network connection early, to allow ssh-ing into the installer.
+# wired
+# Start dropbear ssh server (only if a configured interface is present):
+# /etc/rc.d/rc.dropbear start
+# Fake login:  (fooled ya! ;^)
+#
 if [ ! -f /tmp/noespeakup ]; then
 	gettext  "This installer has speech and Braille device support in order
 to be accessible to visually impaired users. To have speech turned on
@@ -216,6 +262,7 @@ dialog --visit-items --no-tags --no-cancel --nook --title "$TITLE" --default-ite
 en_US.utf8 "$(gettext "English (USA)")" \
 nl_NL.utf8 "$(gettext "Dutch")" \
 fr_FR.utf8 "$(gettext "French")" \
+de_DE.utf8 "$(gettext "German")" \
 el_GR.utf8 "$(gettext "Greek")" \
 it_IT.utf8 "$(gettext "Italian")" \
 pt_PT.utf8 "$(gettext "Portuguese (Portugal)")" \
@@ -259,10 +306,7 @@ fi
 clear
 . /etc/profile
 
-
-# Fake login:  (fooled ya! ;^)
-#
-Version=15.0-6
+Version="$(cat /tmp/isoversion)"
 
 eval_gettext "Welcome to the Slint installer! (version \${Version})
 

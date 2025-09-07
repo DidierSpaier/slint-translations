@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Didier Spaier <didier@slint.fr>, 2019
+# Dan-Simon Myrland <slack2thefuture@gmail.com>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint 20190222\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 23:09+0100\n"
+"PO-Revision-Date: 2019-02-22 12:22+0000\n"
+"Last-Translator: Dan-Simon Myrland <slack2thefuture@gmail.com>, 2019\n"
+"Language-Team: Norwegian (https://www.transifex.com/didier_spaier/"
+"teams/15333/no/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: SeTkeymap:24
+msgid "KEYBOARD MAP SELECTION"
+msgstr "VALG AV TASTATUR OPPSETT"
+
+#: SeTkeymap:24
+#, sh-format
+msgid ""
+"You may select one of the following keyboard maps.  If you do not select a "
+"keyboard map, $DefaultKeyMap is the current value.  Use the UP/DOWN arrow "
+"keys and PageUp/PageDown to scroll through the whole list of choices."
+msgstr ""
+"Du kan velge en av de følgende tastatur oppsettene. Hvis du ikke velger et "
+"tastatur oppsett blir $DefaultKeyMap brukt som standard. Bruk OPP/NED "
+"knappene og PageUp/PageDown for å navigere gjennom listen."
+
+#: SeTkeymap:214
+msgid ""
+"\n"
+"    OK, the new map is now installed.  You may now test it by typing\n"
+"    anything you want.  To quit testing the keyboard, enter 1 on a\n"
+"    line by itself to accept the map and go on, or 2 on a line by\n"
+"    itself to reject the current keyboard map and select a new one."
+msgstr ""
+"\n"
+"OK, det nye tastatur oppsettet er konfigurert. Du kan teste det ut ved\n"
+"å skrive et eller annet. For å avslutte testen skriv 1 på en linje for seg\n"
+"selv for å akseptere oppsettet og gå videre eller 2 på en linje for seg\n"
+"selv for å avvise tastatur oppsettet og velge et nytt."

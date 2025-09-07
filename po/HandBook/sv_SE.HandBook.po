@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slint\n"
 "POT-Creation-Date: 2023-10-06 22:12+0200\n"
-"PO-Revision-Date: 2025-06-11 10:12\n"
+"PO-Revision-Date: 2025-08-06 18:59\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
@@ -309,7 +309,7 @@ msgstr "En diskenhet med en storlek på minst 50G behövs i autopartitioneringsl
 #. type: Plain text
 #: HandBook.adoc:113
 msgid "In Manual partitioning mode a partition of type Linux of size at least 50G, an EFI system partition and/or a BIOS boot partition on the same disk drive. The EFI partition is mandatory if the machine boots in EFI mode, the BIOS boot partition if the machine boots in Legacy mode, having both is better to allow swictching between EFI and Legacy modes."
-msgstr ""
+msgstr "I manuellt partitioneringsläge en partition av typen Linux med en storlek på minst 50G, en EFI-systempartition och/eller en BIOS-uppstartspartition på samma diskenhet. EFI-partitionen är obligatorisk om maskinen startar i EFI-läge, BIOS boot partition om maskinen startar i äldre läge, att ha båda är bättre för att tillåta växling mellan EFI och Legacy lägen."
 
 #. type: Plain text
 #: HandBook.adoc:114
@@ -407,27 +407,27 @@ msgstr "Den senaste installations ISO-avbilden finns alltid i https://slackware.
 #. type: Plain text
 #: HandBook.adoc:143
 msgid "This ISO image can also be downloaded using a Torrent Client from this page:"
-msgstr ""
+msgstr "Denna ISO-avbild kan också laddas ner med en Torrent-klient:"
 
 #. type: Plain text
 #: HandBook.adoc:145
 msgid "https://seedbox.slackware.uk/"
-msgstr ""
+msgstr "https://seedbox.slackware.uk/"
 
 #. type: Plain text
 #: HandBook.adoc:147
 msgid "The link to the torrent, after the label \"Slint Torrents\", is:"
-msgstr ""
+msgstr "Länken till torrent, efter etiketten \"Slint Torrents\", är:"
 
 #. type: Plain text
 #: HandBook.adoc:149
 msgid "https://seedbox.slackware.uk/torrents/slint64-15.0-5-iso.torrent"
-msgstr ""
+msgstr "https://seedbox.slackware.uk/torrents/slint64-15.0-5-iso.torrent"
 
 #. type: Plain text
 #: HandBook.adoc:151
 msgid "A magnet is also provided."
-msgstr ""
+msgstr "En magnet tillhandahålls också."
 
 #. type: delimited block =
 #: HandBook.adoc:155
@@ -454,7 +454,8 @@ msgstr "Om du kör Linux kan du ladda ner ISO-avbildningen och dess sha256-kontr
 #, no-wrap
 msgid "wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso\n"
 "wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso.sha256\n"
-msgstr ""
+msgstr "wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso\n"
+"wget https://slackware.uk/slint/x86_64/slint-15.0/iso/slint64-15.0-5.iso.sha256\n"
 
 #. type: Plain text
 #: HandBook.adoc:168
@@ -465,7 +466,7 @@ msgstr "För att kontrollera integriteten för de nedladdade filerna skriv detta
 #: HandBook.adoc:170
 #, no-wrap
 msgid "sha256sum -c slint64-15.0-5.iso.sha256\n"
-msgstr ""
+msgstr "sha256sum -c slint64-15.0-5.iso.sha256\n"
 
 #. type: Plain text
 #: HandBook.adoc:174
@@ -489,12 +490,12 @@ msgstr "Du kan använda antingen en DVD eller ett USB-minne som installationsmed
 #. type: delimited block =
 #: HandBook.adoc:183
 msgid "You can just store the ISO image in the first partition of a Ventoy USB stick."
-msgstr ""
+msgstr "Du kan bara lagra ISO-bilden i den första partitionen på en Ventoy USB-minne."
 
 #. type: delimited block =
 #: HandBook.adoc:185
 msgid "In this case at the beginning of installation the installer will request that you mount this partition, then mount the ISO itself."
-msgstr ""
+msgstr "I det här fallet i början av installationen kommer installationsprogrammet att begära att du monterar denna partition och sedan monterar ISO själv."
 
 #. type: Title =====
 #: HandBook.adoc:188
@@ -527,7 +528,7 @@ msgstr "Låt oss anta att namnet på USB-minnet är /dev/sdb. Det kan namnges an
 #: HandBook.adoc:205
 #, no-wrap
 msgid "dd if=slint64-15.0-5.iso of=/dev/sdb bs=1M status=progress && sync\n"
-msgstr ""
+msgstr "dd if=slint64-15.0-5.iso of=/dev/sdb bs=1M status=progress && sync\n"
 
 #. type: delimited block =
 #: HandBook.adoc:210
@@ -554,7 +555,7 @@ msgstr "På ett ++Linux++-system sätt in en DVD och skriv följande kommando:"
 #: HandBook.adoc:221
 #, no-wrap
 msgid "xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0-5.iso\n"
-msgstr ""
+msgstr "xorriso -as cdrecord -v dev=/dev/sr0 -eject slint64-15.0-5.iso\n"
 
 #. type: Plain text
 #: HandBook.adoc:224
@@ -574,7 +575,7 @@ msgstr "På ++Microsoft Windows 7/8/10++ kan du använda verktyget som levereras
 #. type: Plain text
 #: HandBook.adoc:230
 msgid "Right-click the ISO file and select Burn disk image (if on Windows 11, select Show more options first (Shift+f10)"
-msgstr ""
+msgstr "Högerklicka på ISO-filen och välj Bränn disk avbild (på Windows 11, Visa mer options först (Shift+f10)"
 
 #. type: Plain text
 #: HandBook.adoc:231
@@ -616,22 +617,22 @@ msgstr "Dessutom krävs i manuell partitioneringsläge på samma enhet som rotsy
 #. type: Plain text
 #: HandBook.adoc:254
 msgid "A partition of type BIOS boot partition, of size at least 3M and not formatted if the machine boots in Legacy mode and the drive has a partition table of type GPT."
-msgstr ""
+msgstr "En partition av typen BIOS boot partition, med en storlek på minst 3M och inte formaterad om maskinen startar i äldre läge och enheten har en partitionstabell av typ GPT."
 
 #. type: Plain text
 #: HandBook.adoc:255
 msgid "A partition of type EFI system, with at least 32M free space in it, formatted with a 'fat' (or 'vfat') file system as required by the UEFI specification if the machine boots in EFI mode"
-msgstr ""
+msgstr "En partition av typen EFI-system, med minst 32M ledigt utrymme, formaterad med 'fat' (eller 'vfat')-filsystemet som krävs enligt UEFI-specifikationen om maskinen startar i EFI-läge"
 
 #. type: Plain text
 #: HandBook.adoc:257
 msgid "It is better to set up both partitions to allow switching between Legacy and EFI modes if the drive has a partition table of type GPT."
-msgstr ""
+msgstr "Det är bättre att ställa in båda partitionerna för att tillåta växling mellan Legacy och EFI lägen om enheten har en partitionstabell av typ GPT."
 
 #. type: Plain text
 #: HandBook.adoc:259
 msgid "Using for Slint existing partitions or creating them is up to the user. Already installed systems using the BIOS boot and the EFI partitions will not be affected, only the root partition will be (re)formatted, and an existing /home partition only if requested."
-msgstr ""
+msgstr "Använd befintliga partitioner för Slint eller skapa dem är upp till användaren. Redan installerade system som använder BIOS boot och EFI-partitionerna kommer inte att påverkas, endast rotpartitionen kommer att vara (re)formaterad, och en befintlig /home-partition endast om så önskas."
 
 #. type: Plain text
 #: HandBook.adoc:268
@@ -821,7 +822,7 @@ msgstr "Om du väljer \"auto\" visas de enheter där Slint kan installeras (stor
 #. type: Plain text
 #: HandBook.adoc:354
 msgid "In case of btrfs sub-volumes will created for \"/\" and \"/home\" with files compressed, and /swap to host a swap file. 'Copy on write' will ease making snapshots and possibly revert a faulty system update. Tools to manage the snapshots are included in Slint."
-msgstr ""
+msgstr "När det gäller btrfs, skapas undervolymer för \"/\" \"/home\" med filer komprimerade och /swap för att hålla en swap-fil. 'Copy on write' kommer att underlätta att göra statusbilder och eventuellt återställa en felaktig systemuppdatering. Verktyg för hantering av ögonblicksbilder ingår i Slint."
 
 #. type: Plain text
 #: HandBook.adoc:358
@@ -1509,7 +1510,7 @@ msgstr "För att välja att starta i text eller grafiskt läge och i det senare 
 #. type: Plain text
 #: HandBook.adoc:708
 msgid "To choose a desktop among FVWM, i3, LXQt, MATE and WindowMaker: session-chooser (as regular user)"
-msgstr ""
+msgstr "För att välja bland skrivborden FVWM, i3, LXQt, MATE och WindowMaker: session-chooser (som vanlig användare)"
 
 #. type: Plain text
 #: HandBook.adoc:709
@@ -1671,27 +1672,27 @@ msgstr "En fullfjädrad grafisk miljö innehåller flera komponenter, bland vilk
 #. type: Plain text
 #: HandBook.adoc:779
 msgid "Slint includes several graphical environments: BlackBox, Fluxbox, FVWM, i3, LXQt, MATE, TWM, and WindowMaker. It is a matter of preference which one you choose."
-msgstr ""
+msgstr "Slint innehåller flera grafiska miljöer: BlackBox, Fluxbox, FVWM, i3, LXQt, MATE, TWM och WindowMaker. Det är en fråga om preferens vilken du väljer."
 
 #. type: Plain text
 #: HandBook.adoc:781
 msgid "LXQt MATE and XFCE are are full featured desktops, FVWM and WindowMaker offer unique features and can be selected with the graphical lightdm login as well and also started from a console typing \"startx\". The other ones are mainly window managers that can only be started from a console. All allow you to access your documents and applications, generally opened in a window."
-msgstr ""
+msgstr "LXQt, MATE och XFCE är fullt utrustade skrivbord, FVWM och WindowMaker erbjuder unika funktioner och kan väljas med den grafiska lightdm-inloggningen och även startas från en konsol genom att skriver \"startx\". De andra är huvudsakligen fönsterhanterare som bara kan startas från en konsol. Alla tillåter dig att komma åt dina dokument och program, som i allmänhet öppnas i ett fönster."
 
 #. type: Plain text
 #: HandBook.adoc:783
 msgid "You can choose among FVWM, i3, LXQt, MATE and WindowMaker typing as regular user `session-chooser`. In Graphical mode you also can choose one when logging in."
-msgstr ""
+msgstr "Du kan välja bland FVWM, i3, LXQt, MATE och WindowMaker som vanlig användare genom att skriva `session-chooser`. I grafiskt läge kan du också välja en när du loggar in."
 
 #. type: Plain text
 #: HandBook.adoc:785
 msgid "To choose one of the other graphical environments you need to use the command \"xwmconfig\"."
-msgstr ""
+msgstr "För att välja en av de andra grafiska miljöerna måste du använda kommandot \"xwmconfig\"."
 
 #. type: delimited block =
 #: HandBook.adoc:789
 msgid "if you want to use i3 and need speech we recommend that you login in text mode and run **i38** before **startx**."
-msgstr ""
+msgstr "om du vill använda i3 och behöver tal rekommenderar vi att du loggar in i textläge och kör **i38** före **startx**."
 
 #. type: Plain text
 #: HandBook.adoc:792
@@ -2818,7 +2819,14 @@ msgid "Insert+Space: display the Orca Preferences dialog.\n"
 "   F2: list the keyboard shortcuts for Orca\n"
 "   F3: list the keyboard for the current application\n"
 "   Esc: end of the learning mode\n"
-msgstr ""
+msgstr "Insert+Mellanslag: Visar dialogrutan Orca-inställningar.\n"
+"Insert+S: aktivera eller avaktivera röstsyntes.\n"
+"Insert+H: aktivera inlärningsläget. I detta läge:\n"
+"   Tryck på en tangent för att höra dess funktion\n"
+"   F1: för att höra dokumentationen för skärmläsaren\n"
+"   F2: lista tangentbordskommandon för Orca\n"
+"   F3: lista tangentbordet för det aktuella programmet\n"
+"   Esc: avsluta inlärningsläget\n"
 
 #. type: Title ===
 #: HandBook.adoc:1283

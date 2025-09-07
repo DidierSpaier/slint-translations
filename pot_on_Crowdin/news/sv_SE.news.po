@@ -1,0 +1,427 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: slint\n"
+"POT-Creation-Date: 2024-06-21 18:58+0200\n"
+"PO-Revision-Date: 2025-06-11 10:13\n"
+"Last-Translator: \n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: slint\n"
+"X-Crowdin-Project-ID: 442342\n"
+"X-Crowdin-Language: sv-SE\n"
+"X-Crowdin-File: /news/news.pot\n"
+"X-Crowdin-File-ID: 123\n"
+
+#. type: Title ==
+#: sources/news/news.adoc:3
+#, no-wrap
+msgid "News"
+msgstr "Nyheter"
+
+#. type: Title ===
+#: sources/news/news.adoc:5
+#, no-wrap
+msgid "20 June 2024: Updates preparing the release of a new ISO"
+msgstr "20 juni 2024: Uppdateringar som förbereder lanseringen av en ny ISO"
+
+#. type: Plain text
+#: sources/news/news.adoc:8
+msgid "The batch of updates available today paves the way for a new ISO that will, beyond these updates and a few fixes of the installer, provide only one desktop: MATE."
+msgstr "De uppdateringar som finns tillgängliga i dag banar väg för en ny ISO som, utöver dessa uppdateringar och några fixar i installationsprogrammet, endast tillhandahåller ett skrivbord: MATE."
+
+#. type: Plain text
+#: sources/news/news.adoc:10
+msgid "Other desktops will be available, either provided in other ISOs, or installable as packages sets provided by contributors, at least the XFCE and LXQt desktops."
+msgstr "Andra skrivbord kommer att vara tillgängliga, antingen tillhandahållna i andra ISO:s, eller installerbara som paket som tillhandahålls av bidragsgivare, minst XFCE och LXQt skrivbord."
+
+#. type: Plain text
+#: sources/news/news.adoc:12
+msgid "The current batch of updates provides mainly:"
+msgstr "Den aktuella batchen av uppdateringar innehåller huvudsakligen följande:"
+
+#. type: Plain text
+#: sources/news/news.adoc:14
+msgid "New versions of the MATE and LXQt desktops"
+msgstr "Nya versioner av skrivbordsmiljöerna MATE och LXQt"
+
+#. type: Plain text
+#: sources/news/news.adoc:15
+msgid "An enhancement of the visual appearance of the MATE desktop, huge thanks to miss Tell for her many hints and suggestions!"
+msgstr "En förbättring av det visuella utseendet på MATE-skrivbordet, ett stort tack till miss Tell för hennes många tips och förslag!"
+
+#. type: Plain text
+#: sources/news/news.adoc:16
+msgid "An upgrade of several a11y applications to their latest stable versions"
+msgstr "En uppgradering av flera a11y-program till sina senaste stabila versioner"
+
+#. type: Plain text
+#: sources/news/news.adoc:17
+msgid "New and upraded packages in the main repository, /testing or /extra."
+msgstr "Nya och uppradade paket i huvudarkivet, /testing eller /extra."
+
+#. type: Plain text
+#: sources/news/news.adoc:19
+msgid "The changes are detailed in the https://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Changelog]"
+msgstr "Ändringarna beskrivs i detalj på https://slackware.uk/slint/x86_64/slint-15.0/ChangeLog.txt[Changelog]"
+
+#. type: Plain text
+#: sources/news/news.adoc:21
+msgid "Before listing the major ones, here is how to make existing desktops look as if they had been installed after the upgrade."
+msgstr "Innan du listar de viktigaste, så här får du befintliga skrivbord att se ut som om de hade installerats efter uppgraderingen."
+
+#. type: Plain text
+#: sources/news/news.adoc:23
+msgid "If you want to re-configure MATE to get its new appearance for a given user, just type as this user: `dconf reset -f /`"
+msgstr "Om du vill konfigurera om MATE för att få sitt nya utseende för en viss användare, skriv bara som den här användaren: `dconf reset -f /`"
+
+#. type: Plain text
+#: sources/news/news.adoc:25
+msgid "Be aware that this will override the customization that you'd have previously done at the user level!"
+msgstr "Var medveten om att det här åsidosätter den anpassning som du tidigare har gjort på användarnivå!"
+
+#. type: Plain text
+#: sources/news/news.adoc:27
+msgid "If you want to reconfigure LXQt to get its new appearance for a given user, you need to first get out of LXQt. Either type as root `login-chooser text` then reboot, or log in another desktop like MATE. Then type as regular user:"
+msgstr "Om du vill konfigurera om LXQt för att få sitt nya utseende för en viss användare, måste du först komma ut ur LXQt. Antingen skriver du in som root `login-chooser text` sedan starta om, eller logga in med ett annat skrivbord som MATE. Skriv sedan som vanlig användare:"
+
+#. type: Plain text
+#: sources/news/news.adoc:29
+msgid "`rm ~/.config/lxqt/*.conf`"
+msgstr "`rm ~/.config/lxqt/*.conf`"
+
+#. type: Plain text
+#: sources/news/news.adoc:31
+msgid "`cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`"
+msgstr "`cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`"
+
+#. type: Plain text
+#: sources/news/news.adoc:33
+msgid "Again, be aware that this will override the customization that you'd have previously done at the user level!"
+msgstr "Återigen, var medveten om att det här åsidosätter den anpassning som du tidigare har gjort på användarnivå!"
+
+#. type: Title ====
+#: sources/news/news.adoc:34
+#, no-wrap
+msgid "The MATE desktop and the graphical login manager"
+msgstr "MATE-skrivbordet och den grafiska inloggningshanteraren"
+
+#. type: Plain text
+#: sources/news/news.adoc:37
+msgid "The Mate Control Center is customized for Slint."
+msgstr "Mate Kontrollcenter har anpassats för Slint."
+
+#. type: Plain text
+#: sources/news/news.adoc:38
+msgid "The Mate tweak application is customized for Slint. It includes several layouts of the panels, including Slint-legacy (the previous layout) and Slint (the new one)."
+msgstr "Applikationen Mate tweak är anpassad för Slint. Den innehåller flera layouter av paneler, inklusive Slint-legacy (den tidigare layouten) och Slint (den nya)."
+
+#. type: Plain text
+#: sources/news/news.adoc:39
+msgid "The Slint layout provides a single panel including a Brisk menu giving a direct access to several utilities. 3 other menus are available: Advanced, Classic (the default for Slint-legacy) and Compact. In the Slint layout pressing alt-f1 now raises the Compact menu with a single column. In the Slint-legacy layout pressing alt-F1 still raises the Classical menu."
+msgstr "I slint-layouten finns en enda panel med en Brisk-meny som ger en direkt åtkomst till flera allmännyttiga tjänster. 3 andra menyer är tillgängliga: Avancerat, Classic (standard för Slint-arv) och Compact. I slint-layouten vid tryck på Alt-F1 tar nu upp menyn Kompact med en enda kolumn. I slint-legacy layouten vid tryck på alt-F1 tar du fortfarande upp den klassiska menyn."
+
+#. type: Plain text
+#: sources/news/news.adoc:40
+msgid "The Brisk menu includes at the bottom links to the Slint documentation and mate-tweak and a Favorite area, with by default the Caja file manager, the Mate terminal, Firefox, Thuderbird and the Mate Control Center"
+msgstr "I Brisk menyn finns längst ner länkarna till Slint dokumentation och mate-tweak och ett Favoritområde, med som standard Caja filhanterare, Mate terminalen, Firefox, Thuderbird och Mate Kontrollcenter"
+
+#. type: Plain text
+#: sources/news/news.adoc:41
+msgid "The default window manager for Mate is now Compiz whith an Emerald theme that can be changed using the custom script switch-emerald-theme. But Marco is still available. The change can be made in mate-tweak. In addition to the CCSM (compiz-config-settings-manager), simple-ccsm is provided in /extra."
+msgstr "Standardfönsterhanteraren för Mate är nu Compiz whith ett Emerald-tema som kan ändras med hjälp av det anpassade skriptet switch-emerald-theme. Men Marco är fortfarande tillgänglig. Förändringen kan göras i mate-tweak. Förutom CCM (compiz-config-inställningar-manager) tillhandahålls enkel-ccsm i /extra."
+
+#. type: Plain text
+#: sources/news/news.adoc:42
+msgid "The lightdm-gtk-greeter is replaced by the lightdm-slick-greeter."
+msgstr "Light-gtk-greeter ska ersättas av lightdm-slick-greeter."
+
+#. type: Plain text
+#: sources/news/news.adoc:44
+msgid "The file /usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override gathers customization of the Mate desktop and some other ones at the distribution level."
+msgstr "Filen /usr/share / glib-2.0/schemas/10.slint-appearance.gschema.override samlar anpassning av Mate-skrivbordet och några andra på distributionsnivå."
+
+#. type: Title ====
+#: sources/news/news.adoc:45
+#, no-wrap
+msgid "The LXQt desktop"
+msgstr "LXQt-skrivbordet"
+
+#. type: Plain text
+#: sources/news/news.adoc:48
+msgid "This desktop is provided running build scripts provided by Frank Honolka aka snuk, and stored in the lxqt sub-directory, thanks Frank!"
+msgstr "Det här skrivbordet tillhandahålls löpande byggskript som tillhandahålls av Frank Honolka alias smuk, och lagras i underkatalogen lxqt, tack Frank!"
+
+#. type: Plain text
+#: sources/news/news.adoc:50
+msgid "This includes the desktop itself and associated applications."
+msgstr "Det inkluderar själva skrivbordet och tillhörande program."
+
+#. type: Plain text
+#: sources/news/news.adoc:52
+msgid "As for Mate the default window manager is compiz and the decorator emerald but openbox is also available. The window manager can be changed from the menu or typing `lxqt-config-session`"
+msgstr "När det gäller Mate är standardfönsterhanteraren compiz och dekoreringsfunktionen smaragd, men openbox är också tillgänglig. Fönsterhanteraren kan ändras från menyn eller skriv \"lxqt-config-session\""
+
+#. type: Title ====
+#: sources/news/news.adoc:53
+#, no-wrap
+msgid "Other upgrades and new software provided, sorted by category"
+msgstr "Andra uppgraderingar och ny programvara som tillhandahålls, sorterade efter kategori"
+
+#. type: Plain text
+#: sources/news/news.adoc:56
+msgid "Acessibility: at-spi2-core, orca, emacspeak, fenrir, liblouis, liblouisutdml and lios are upgraded."
+msgstr "Tillgänglighet: at-spi2-core, orca, emacspeak, fenrir, liblouis, liblouisutdml och lios är uppdaterade."
+
+#. type: Plain text
+#: sources/news/news.adoc:57
+msgid "Audio/video: vlc, mpv and yt-dlp are upgraded."
+msgstr "Ljud/video: vlc, mpv och yt-dlp är uppdaterade."
+
+#. type: Plain text
+#: sources/news/news.adoc:58
+msgid "The semantic application launchers cerebro, synapse and ulauncher are provided in /testing. A short presentation of them can be found for instance in https://www.debugpoint.com/top-ubuntu-launcher-2022/ and https://softwarelibre166246735.wordpress.com/2020/06/18/10-best-application-launchers-for-linux-desktops/. These launchers allow to start applications but also to find files in your system, do calculations or search the web, for instance, often through plugs-ins."
+msgstr "Den semantiska programstartaren cerebro, synapse och ulauncher tillhandahålls i /testing. En kortfattad redogörelse för dem finns till exempel på https://www.debugpoint.com/top-ubuntu-launcher-2022/ och https://softwarelibre166246735.wordpress.com/2020/06/18/10-best-application-launchers-for-linux-desktops/. Med hjälp av startfunktionerna kan du starta program men även söka efter filer i systemet, göra beräkningar eller söka i webben, t.ex. ofta via pluggins."
+
+#. type: Plain text
+#: sources/news/news.adoc:59
+msgid "Visual appearance: many themes are added or upgraded: Qogir-icon-theme, emerald-themes (the \"overglossed\" theme of the emerald decorator is associated with the Compiz window manager), kvantum-theme-qogir, breeze-blue-cursor-theme and breeze-icons for LXQt, papirus-icon-theme, yaru-gtk-theme. Newaita-reborn, posy-cursors and Tela-icon-theme are also available in /testing. Conversely, mate-colors-icon-teme, mate-backgrounds and murrine-themes are removed. Several desktop backgrounds or wallpapers are added."
+msgstr "Visuellt utseende: många teman har laggts till eller uppgraderats: Qogir-icon-tema, emerald-tema (emerald-temat för emerald-dekoreringsfunktionen är associerat med Compiz fönsterhanteraren), kvantum-temat-qogir, breeze-blue-cursor-temat och breeze-ikoner för LXQt, papirus-icon-temat, yaru-gtk-temat. Nevänta-reborn, posy-cursors och Tela-icon-tema är också tillgängliga i /testing. Omvänt tas mate-colors-icon-teme, mate-bakgrunder och murrine-teman bort. Flera skrivbordsbakgrunder eller skrivbordsunderlägg läggs till."
+
+#. type: Plain text
+#: sources/news/news.adoc:60
+msgid "System: btrtbk (backup tool for BTRFS subvolumes) and sof-firmware are added, absm (BTRFS snashot manager), amd-microcode, intel-microcode, kernel, kernel-firmware, and qemu (in /extra) are upgraded. The guake drop-down terminal is added"
+msgstr "System: btrtbk (säkerhetskopieringsverktyg för BTRFS-undervolymer) och sof-firmware läggs till, absm (BTRFS-snashothanterare), amd-mikrokod, intel- mikrokod, kernel, kernel-firmware och qemu (i /extra) uppgraderas. guake terminal rullgardinsmeny läggs till"
+
+#. type: Plain text
+#: sources/news/news.adoc:61
+msgid "Development: vscode (Visual Studio Code) is added in /extra, nano and emacs are upgraded."
+msgstr "Utveckling: vs-kod (Visual Studio Code) läggs till i /extra, nano och Emacs uppgraderas."
+
+#. type: Plain text
+#: sources/news/news.adoc:62
+msgid "Office: LibreOffice and associated help files and dictionaries are upgraded, thanks to Eric Hameleers aka alienBOB and libreoffice-sdkdoc is available in /extra. Remind is also updated."
+msgstr "Kontor: LibreOffice och associerade hjälpfiler och ordlistor har uppgraderats, tack vare Eric Hameleers alias alienBOB och libreoffice-sdkdoc finns tillgängligt i /extra. Remind har också uppdaterats."
+
+#. type: Title ====
+#: sources/news/news.adoc:63
+#, no-wrap
+msgid "Known issues"
+msgstr "Kända problem"
+
+#. type: Plain text
+#: sources/news/news.adoc:66
+msgid "After upgrade LXQt can have a black background because the previous default wallpaper has been removed. You can choose another one typing `lxqt-config-appearance`, that can also be started form the menu or a left click on the desktop. Alternatively, as indicated above type after a text login: `cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/`. This will display the new default wallpaper."
+msgstr "Efter uppgraderingen kan LXQt ha en svart bakgrund eftersom föregående standardskrivbordsbakgrund har tagits bort. Du kan välja ett annat skriv: \"lxqt-config-appearance\", som också kan startas på menyn eller vänsterklicka på skrivbordet. Alternativt, som anges ovan, efter en textinloggning skriv: \" cp /usr/share/pcmanfm-qt/lxqt/settings.conf ~/.config/lxqt/\". Det här visar det nya standardskrivbordsbakgrund."
+
+#. type: Plain text
+#: sources/news/news.adoc:67
+msgid "In MATE if started in text mode the date can't be set using the widget in the boottom panel. Use clocksetup or gtkclocksetup instead."
+msgstr "I MATE om det startas i textläge kan datumet inte anges med hjälp av widgeten i den understa panelen. Använd clocksetup eller gtkclocksetup i stället."
+
+#. type: Plain text
+#: sources/news/news.adoc:68
+msgid "If you disable the display of the desktop icons in mate-tweak, a right click on the desktop becomes ineffective."
+msgstr "Om du avaktiverar visningen av skrivbordsikoner i mate-tweak, blir ett högerklick på skrivbordet verkningslös."
+
+#. type: Title ===
+#: sources/news/news.adoc:70
+#, no-wrap
+msgid "16 May 2023: A new ISO is available (yes, again!)"
+msgstr "16 maj 2023: En ny ISO är tillgänglig (ja, igen!)"
+
+#. type: Plain text
+#: sources/news/news.adoc:73
+msgid "This new ISO is provided mainly to fix the bug described in https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3]."
+msgstr "Denna nya ISO tillhandahålls huvudsakligen för att åtgärda felen som beskrivs i https://slackware.uk/slint/x86_64/slint-15.0/iso/previous_iso/BUG-15.0-3[BUG-15.0-3]."
+
+#. type: Plain text
+#: sources/news/news.adoc:75
+msgid "Other fixes and enhancements:"
+msgstr "Andra fixar och förbättringar:"
+
+#. type: Plain text
+#: sources/news/news.adoc:77
+msgid "The user who refuses the proposed (through geoIP) time zone is given the choice to select another one or keep the default one (UTC), as if none were proposed."
+msgstr "Den användare som nekar den föreslagna tidszonen (via geoIP) får välja en annan eller behålla standardvärdet (UTC), som om inget förslag har föreslagits."
+
+#. type: Plain text
+#: sources/news/news.adoc:79
+msgid "The EFI boot loader grub.x64.efi is installed in /boot/efi/EFI/slint-$SLINTVERSION, currently /boot/efi/EFI/slint-15.0, to help select the boot entry if several versions are installed."
+msgstr "EFI starthanteraren grub.x64.efi är installerad i /boot/efi/EFI/slint-$SLINTVERSION, för närvarande /boot/efi/EFI/slint-15.0, för att hjälpa till att välja startposten om flera versioner är installerade."
+
+#. type: Plain text
+#: sources/news/news.adoc:81
+msgid "In case of manual partitioning:"
+msgstr "I händelse av manuell partitionering:"
+
+#. type: Plain text
+#: sources/news/news.adoc:83
+msgid "If the machine booted the installer in Legacy mode GRUB is also installed in EFI mode if an EFI System Partition (ESP) is found on the drive of the root partition."
+msgstr "Om maskinen startade installationsprogrammet i Legacy-läget är GRUB också installerat i EFI-läge om en EFI-systempartition (ESP) hittas på enhetens rotpartition."
+
+#. type: Plain text
+#: sources/news/news.adoc:85
+msgid "If the machine booted the installer in EFI mode GRUB is also installed in Legacy mode unless the root partition be in a drive with a GUID partition table (GPT) but with no BIOS boot partition."
+msgstr "Om maskinen startade installationsprogrammet i EFI-läger är GRUB också installerat i Legacy-läge såvida inte rotpartitionen är i en enhet med en GUID-partitionstabell (GPT) men utan BIOS bootpartition."
+
+#. type: Plain text
+#: sources/news/news.adoc:87
+msgid "Thus, in most cases the installed system will be able to boot in both EFI and Legacy modes in manual as in auto partitioning modes."
+msgstr "Således, i de flesta fall kan det installerade systemet att kunna starta upp i både EFI och Legacy lägen i manuell som i automatisk partitioneringslägen."
+
+#. type: Title ===
+#: sources/news/news.adoc:88
+#, no-wrap
+msgid "10 May 2023: A new Slint ISO is available"
+msgstr "10 maj 2023: En ny slint ISO är tillgänglig"
+
+#. type: Plain text
+#: sources/news/news.adoc:91
+msgid "The lightweight i3 desktop is added as well as the I38 utility which make it fully accessible with a screen reader, just running the i38 command after installation, thanks to Storm Dragon."
+msgstr "Det lätta i3-skrivbordet läggs till samt I38-verktyget som gör det helt tillgängligt med en skärmläsare, bara kör i38-kommandot efter installationen, tack till Storm Dragon."
+
+#. type: Plain text
+#: sources/news/news.adoc:93
+msgid "The repository https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] is enabled by default, allowing to install a fully configured and featured xfce-4.18 desktop just typing `+slapt-get --install-set xfce+`, thanks to George Vlahavas."
+msgstr "Förrådet https://slackware.uk/salix/x86_64/xfce4.18-15.0/[xfce4.18-15.0] är aktiverat som standard, vilket tillåter att installera en fullt konfigurerad och utrustad xfce-4.18 skrivbord genom att skriver `+slapt-get --install-set xfce+`, tack till George Vlahavas."
+
+#. type: Plain text
+#: sources/news/news.adoc:95
+msgid "In `manual` partitioning mode it is no more required to include a BIOS Boot partition in a GUID partition table (GPT) if the machine booted in EFI mode, nor an EFI System partition if the machine booted in Legacy mode."
+msgstr "I `manual`-partitioneringsläge krävs det inte mer att inkludera en BIOS-start-partition i en GUID-partitionstabell (GPT) om maskinen startade i EFI-läge, inte heller en EFI System-partition om maskinen startas i Legacy-läge."
+
+#. type: Plain text
+#: sources/news/news.adoc:97
+msgid "In `auto` partitioning mode it is now allowed to put the /home directory in dedicated partition, only if it is in another drive than the one hosting the main partition mounted as /."
+msgstr "I `auto` partitioneringsläge är det nu tillåtet att sätta /home katalogen i dedikerad partition, bara om det är i en annan enhet än där huvudpartitionen monteras som /."
+
+#. type: Plain text
+#: sources/news/news.adoc:99
+msgid "The user is allowed to select an existing partition for /home, possibly to continue using an existing one."
+msgstr "Användaren får välja en befintlig partition för /home, eventuellt för att fortsätta att använda en befintlig."
+
+#. type: Plain text
+#: sources/news/news.adoc:101
+msgid "If /home is in an already formatted partition (in case the user wants to continue using an existing one), the installer will offer to keep its content or re-format it, as with any other linux partition except the main one mounted as /."
+msgstr "Om /home finns i en redan formaterad partition (om användaren vill fortsätta att använda en befintlig), kommer installationsprogrammet att erbjuda att behålla innehållet eller återformatera det, som med andra linux-partitioner, utom den som är monterad som /."
+
+#. type: Plain text
+#: sources/news/news.adoc:103
+msgid "All main desktops (MATE, LXQt, Xfce) as the lightDM greeting screen have the same background \"clouds in a blue sky\"."
+msgstr "Alla huvudskrivbord (MATE, LXQt, Xfce) har i lightDM välkomstskärm samma bakgrund \"moln i en blå himmel\"."
+
+#. type: Plain text
+#: sources/news/news.adoc:105
+msgid "A lot of packages have been added, upgraded or fixed since the release of the previous ISO, some of the added ones included in the ISO,among which: compsize, confuse, fim, gpart, nushell, Qogir-icon-theme, qogir-theme, salix-xfwm4-theme, rust, testdisk, others available in the /extra repository: calibre, emacs-nativecomp, libgccjit, notmuch, soft."
+msgstr "Många paket har lagts till, uppgraderats eller rättats sedan den tidigare ISO-filen släpptes, några av de tillagda som ingår i ISO, varav compsize, confuse, fim, gpart, nushell, Qogir-icon-theme, qogir-theme, salix-xfwm4-tema, rost, testdisk, andra finns i /extra förrådet: kaliber, emacs-nativecomp, libgccjit, notmuch, soft."
+
+#. type: Plain text
+#: sources/news/news.adoc:107
+msgid "The boot menu of the installed system include a menu entry to access the firmware's setup in EFI mode."
+msgstr "Startmenyn i det installerade systemet innehåller ett menyalternativ för att komma åt inbyggda programvarans konfiguration i EFI-läge."
+
+#. type: Plain text
+#: sources/news/news.adoc:109
+msgid "If GRUB is installed it is now possible to boot the installation ISO stored in an internal disk's partition: no need to write this ISO on a DVD or USB stick in this case. To do so, edit the file /etc/grub.d/40_custom so it contains:"
+msgstr "Om GRUB är installerat är det nu möjligt att starta installationen ISO-lagrad på en intern disk partition: du behöver inte skriva denna ISO på en DVD-eller USB-stav i det här fallet. Om du vill göra det ändrar du filen /etc/grub.d/40_custom så att den innehåller:"
+
+#. type: delimited block .
+#: sources/news/news.adoc:124
+#, no-wrap
+msgid "#!/bin/sh\n"
+"exec tail -n +3 $0\n"
+"# This file provides an easy way to add custom menu entries. Simply type the\n"
+"# menu entries you want to add after this comment. Be careful not to change\n"
+"# the 'exec tail' line above.\n"
+"    menuentry 'Slint ISO 15.0-3' {\n"
+"    insmod part_gpt\n"
+"    insmod part_msdos\n"
+"    search --no-floppy --fs-uuid --set=root <UUID>\n"
+"    set isofile='slint64-15.0-3.iso'\n"
+"    loopback loop /repo/x86_64/slint-15.0/iso/$isofile\n"
+"    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0\n"
+"    initrd (loop)/initrd\n"
+"    }\n"
+msgstr "#!/bin/sh\n"
+"exec tail -n +3 $0\n"
+"# Den här filen gör det enkelt att lägga till egna menyposter. Skriv helt enkelt de\n"
+"# menyposter som du vill lägga till efter denna kommentar. Var försiktig så att du inte ändrar\n"
+"# raden \"exec tail\" ovan.\n"
+"    menuentry 'Slint ISO 15.0-3' {\n"
+"    insmod part_gpt\n"
+"    insmod part_msdos\n"
+"    search --no-floppy --fs-uuid --set=root <UUID>\n"
+"    set isofile='slint64-15.0-3.iso'\n"
+"    loopback loop /repo/x86_64/slint-15.0/iso/$isofile\n"
+"    linux (loop)/linux quiet vga=normal load_ramdisk=1 prompt_ramdisk=0 ro printk.time=0\n"
+"    initrd (loop)/initrd\n"
+"    }\n"
+
+#. type: Plain text
+#: sources/news/news.adoc:126
+msgid "Just replace <UUID> by the UUID of the partition where the ISO is stored. For instance if the ISO is in /dev/sda3, this command will output this UUID: `lsblk -lno uuid /dev/sda3`. Also replace `/repo/x86_64/slint-15.0/iso/` by the path to the ISO file. After that, run grub-mkconfig or update-grub so that this boot entry be included in grub.cfg. The installer will tell you it can't find the ISO and how to mount it if it is in an internal disk's partition."
+msgstr "Ersätt bara <UUID> med UUID för den partition där ISO-filen är lagrad. Exempel: Om ISO-filen är i /dev/sda3, kommer det här kommandot att ge UUID: ` lsblk-lno uuid /dev/sda3 \". Ersätt också den kod / repo/x86_64/slint-15.0/iso/\" sökvägen till ISO-filen. Efter det kör du grub-mkconfig eller update-grub så att den här startposten inkluderas i grub.cfg. Installationsprogrammet talar om för dig att den inte kan hitta ISO-filen och hur man monterar den om den finns i en intern disk partition."
+
+#. type: Title ====
+#: sources/news/news.adoc:127
+#, no-wrap
+msgid "Pictures of lightDM and the main desktops in Slint "
+msgstr "Bilder på lightDM och huvudskrivbordet i Slint "
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: sources/news/news.adoc:130 sources/news/news.adoc:131
+#, no-wrap
+msgid "lightDM"
+msgstr "lightDM"
+
+#. type: Target for macro image
+#: sources/news/news.adoc:131
+#, no-wrap
+msgid "../doc/lightdm.png"
+msgstr "../doc/lightdm.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: sources/news/news.adoc:134 sources/news/news.adoc:135
+#, no-wrap
+msgid "LXQt"
+msgstr "LXQt"
+
+#. type: Target for macro image
+#: sources/news/news.adoc:135
+#, no-wrap
+msgid "../doc/lxqt.png"
+msgstr "../doc/lxqt.png"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: sources/news/news.adoc:138 sources/news/news.adoc:139
+#, no-wrap
+msgid "MATE"
+msgstr "MATE"
+
+#. type: Target for macro image
+#: sources/news/news.adoc:139
+#, no-wrap
+msgid "../doc/mate.png"
+msgstr "../doc/mate.png"
+
+#. type: Plain text
+#: sources/news/news.adoc:142
+msgid "XFCE (installed on demand)"
+msgstr "XFCE (installerad på begäran)"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: sources/news/news.adoc:143
+#, no-wrap
+msgid "XFCE"
+msgstr "XFCE"
+
+#. type: Target for macro image
+#: sources/news/news.adoc:143
+#, no-wrap
+msgid "../doc/xfce.png"
+msgstr "../doc/xfce.png"
+
