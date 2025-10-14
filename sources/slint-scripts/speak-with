@@ -77,7 +77,7 @@ case $ARGUMENT in
 	espeakup)
 		[ ! -x /usr/bin/espeakup ] && gettext "espeakup is not installed." && echo && exit
 		[ "$ESPEAKUP" = "y" ] && gettext "espeakup is already started." && echo && exit
-		[ "$FENRIR" = "y" ] && [ -f /etc/rc.d/rc.fenrir ] && sh /etc/rc.d/rc.fenrir stop
+		[ "$FENRIR" = "y" ] && sh /etc/rc.d/rc.fenrir stop
 		[ "$SPEECHDUP" = "y" ] && sh /etc/rc.d/rc.speechd-up stop
 		echo "$confnote" > /etc/speakup.conf
 		echo "hard=none" >> /etc/speakup.conf
@@ -88,7 +88,7 @@ case $ARGUMENT in
 		read -r ANSWER
 		if [ ! "$(to_lower "$ANSWER")" = "n" ]; then
 			chmod 755 /etc/rc.d/rc.espeakup
-			chmod 644 /etc/rc.d/rc.speechd-up
+			[ -f /etc/rc.d/rc.speechd-up ] && chmod 644 /etc/rc.d/rc.speechd-up
 			[ -f /etc/rc.d/rc.fenrir ] && chmod 644 /etc/rc.d/rc.fenrir
 			gettext "Done."
 			echo
@@ -100,7 +100,7 @@ case $ARGUMENT in
 	speechd-up)
 		[ ! -x /usr/bin/speechd-up ] && gettext "speechd-up is not installed." && echo && exit
 		[ "$SPEECHDUP" = "y" ] && gettext "speechd-up is already started." && echo && exit
-		[ "$FENRIR" = "y" ]  && [ -f /etc/rc.d/rc.fenrir ] && sh /etc/rc.d/rc.fenrir stop
+		[ "$FENRIR" = "y" ]  && sh /etc/rc.d/rc.fenrir stop
 		[ "$ESPEAKUP" = "y" ] && sh /etc/rc.d/rc.espeakup stop
 		echo "$confnote" > /etc/speakup.conf
 		echo "hard=none" >> /etc/speakup.conf
@@ -109,7 +109,7 @@ case $ARGUMENT in
 		gettext "Should speechd-up be also started at next boot? [Y/n] "
 		read -r ANSWER
 		if [ ! "$(to_lower "$ANSWER")" = "n" ]; then
-			chmod 644 /etc/rc.d/rc.espeakup
+			[ -f /etc/rc.d/rc.espeakup ] && chmod 644 /etc/rc.d/rc.espeakup
 			[ -f /etc/rc.d/rc.fenrir ] && chmod 644 /etc/rc.d/rc.fenrir
 			chmod 755 /etc/rc.d/rc.speechd-up
 			gettext "Done."
@@ -133,8 +133,8 @@ case $ARGUMENT in
 		gettext "Should fenrir be also started at next boot? [Y/n] "
 		read -r ANSWER
 		if [ ! "$(to_lower "$ANSWER")" = "n" ]; then
-			chmod 644 /etc/rc.d/rc.espeakup
-			chmod 644 /etc/rc.d/rc.speechd-up
+			[ -f /etc/rc.d/rc.espeakup ] && chmod 644 /etc/rc.d/rc.espeakup
+			[ -f /etc/rc.d/rc.speechd-up ] && chmod 644 /etc/rc.d/rc.speechd-up
 			chmod 755 /etc/rc.d/rc.fenrir
 			gettext "Done."
 			echo
@@ -151,8 +151,8 @@ case $ARGUMENT in
 		gettext "Do you also want a mute console at next boot? [Y/n] "
 		read -r ANSWER
 		if [ ! "$(to_lower "$ANSWER")" = "n" ]; then
-			chmod 644 /etc/rc.d/rc.espeakup
-			chmod 644 /etc/rc.d/rc.speechd-up
+			[ -f /etc/rc.d/rc.espeakup ] && chmod 644 /etc/rc.d/rc.espeakup
+			[ -f /etc/rc.d/rc.speechd-up ] && chmod 644 /etc/rc.d/rc.speechd-up
 			[ -f /etc/rc.d/rc.fenrir ] && chmod 644 /etc/rc.d/rc.fenrir
 			echo "$confnote" > /etc/speakup.conf
 			echo "hard=none" >> /etc/speakup.conf
@@ -173,9 +173,9 @@ case $ARGUMENT in
 		gettext "Do you also want to use this hard synthesizer at next boot? [Y/n] "
 		read -r ANSWER
 		if [ ! "$(to_lower "$ANSWER")" = "n" ]; then
-			chmod 644 /etc/rc.d/rc.speechd-up
+			[ -f /etc/rc.d/rc.speechd-up ] && chmod 644 /etc/rc.d/rc.speechd-up
 			[ -f /etc/rc.d/rc.fenrir ] && chmod 644 /etc/rc.d/rc.fenrir
-			chmod 755 /etc/rc.d/rc.espeakup
+			[ -f /etc/rc.d/rc.espeakup ] && chmod 644 /etc/rc.d/rc.espeakup
 			echo "$confnote" > /etc/speakup.conf
 			echo "hard=$ARGUMENT" >> /etc/speakup.conf
 			gettext "Done."; echo

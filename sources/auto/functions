@@ -137,14 +137,6 @@ displaydescription() {
 	fi
 	)
 }
-descriptioninstalled() {
-	package=$1
-#	find "$SLINT"/var/lib/pkgtools/packages -name "${package}*" -type f|while read -r i; do
-#		pkgshortname="$(printf "%b" "$i"|sed 's#.*/##;s#-[^-]*-[^-]*-[^-]*$##')"
-#		[ "$pkgshortname" = "$package" ] && sed -n 6p "$i"|sed 's#.*: ##'
-#	done
-echo "$i"
-}
 trytoget() {
 	rm -f "$(basename "$1")"
 	rm -f /tmp/failed
@@ -1953,7 +1945,13 @@ startupmode() {
 #		sed "/:initdefault:/s/.*/id:3:initdefault:/" $SLINT/etc/inittab > bof
 #		mv bof $SLINT/etc/inittab
 #		return
-#	fi		
+#	fi
+	# No need for a graphical login manager if no desktop is installed.
+	if [ "$(cat /tmp/set)"  = fullslint ]; then
+		sed "/:initdefault:/s/.*/id:3:initdefault:/" $SLINT/etc/inittab > bof
+		mv bof $SLINT/etc/inittab
+		return
+	fi
 	echo startupmode >>$INSTALL/log
 	# Choose the startup mode
 	gettext "Do you want to start the system in a console or in graphical mode?"
@@ -2548,7 +2546,12 @@ install() {
 		desktop=$(to_lower "$DESKTOP")
 		while read -r i; do
 			[ ! "$i" ] && continue
-			[ "$DISPLAYNAME" ] && echo "$i"
+			PKGISO=$(find "$ISO"/slint -name "*t?z" |grep "/${i}-[^-]*-[^-]*-[^-]*$")
+			if [ "$DISPLAYNAME" ]; then
+				displaydescription $ISO/slint "$PKGISO"
+			else
+				echo "$i"
+			fi
 			slapt-get -d --no-dep -c /"$CONFIGFILE" -i "$i" 1>>$PKGLISTS/logdownload 2>>$PKGLISTS/downloaderror
 			RET="$?"
 			[ "$RET" -ne 0 ]  && echo yes > /tmp/failed && return
@@ -2562,14 +2565,22 @@ install() {
 	! grep -q slint /tmp/distro && return
 	PKGISO=$(find "$ISO"|grep "libreoffice-l10n-${lo}"|grep txz$)
 	if [ "$PKGISO" ]; then
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		if [ "$DISPLAYNAME" ]; then
+			displaydescription $ISO/slint "$PKGISO"
+		else
+			echo "$i"
+		fi
 		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
 		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
 	PKGISO=$(find "$ISO"|grep "aspell-${asp}"|grep txz$)
 	if [ "$PKGISO" ]; then
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		if [ "$DISPLAYNAME" ]; then
+			displaydescription $ISO/slint "$PKGISO"
+		else
+			echo "$i"
+		fi
 		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
 		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
@@ -2599,7 +2610,11 @@ installfromiso() {
 				echo "package not found in $ISO"
 				displayspkgerror "$i" && return
 			fi
-			[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+			if [ "$DISPLAYNAME" ]; then
+				displaydescription $ISO/slint "$PKGISO"
+			else
+				echo "$i"
+			fi
 			spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 			mycmd="$?"
 			[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
@@ -2608,14 +2623,22 @@ installfromiso() {
 	! grep -q slint /tmp/distro && return
 	PKGISO=$(find "$ISO"|grep "libreoffice-l10n-${lo}"|grep txz$)
 	if [ "$PKGISO" ]; then
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		if [ "$DISPLAYNAME" ]; then
+			displaydescription $ISO/slint "$PKGISO"
+		else
+			echo "$i"
+		fi
 		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
 		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
 	fi
 	PKGISO=$(find "$ISO"|grep "aspell-${asp}"|grep txz$)
 	if [ "$PKGISO" ]; then
-		[ "$DISPLAYNAME" ] && displaydescription $ISO/slint "$PKGISO"
+		if [ "$DISPLAYNAME" ]; then
+			displaydescription $ISO/slint "$PKGISO"
+		else
+			echo "$i"
+		fi
 		spkg --root $SLINT -qq --no-gtk-update-icon-cache --no-ldconfig -i "$PKGISO" 1>>$PKGLISTS/loginstall 2>$PKGLISTS/spkgerror
 		mycmd="$?"
 		[ "$mycmd" -ne 0 ] && displayspkgerror "$PKGSLINT" && return
@@ -2778,6 +2801,10 @@ press Enter to accept the default name \"slint\"."
 }
 postconfigureslackware(){
 	echo postconfigure >>$INSTALL/log
+	# Remove the slint scripts not adapted to Slackware
+	( cd $SLINT/usr/bin || exit
+	rm list-espeak-ng-voices orca-off orca-on session-chooser switch-emerald-theme switch-off switch-on
+	)
     # If speech was used during installation, start orca for the registered user
     # in graphical desktops.
     LOGIN=$(cat $INSTALL/firstuserlogin)
@@ -2824,10 +2851,16 @@ press Enter to accept the default name \"darkstar\"."
 		chroot $SLINT mount /boot/efi
 		mkdir -p $SLINT/boot/efi/EFI/BOOT
 	fi
+    # Show Slackware Linux ... in the GRUB boot entries
+    echo  'GRUB_DISTRIBUTOR=Slackware' >> $SLINT/etc/default/grub
 }
 
 postconfiguresalix(){
 	echo postconfiguresalix >>$INSTALL/log
+	# Remove the slint scripts not adapted to Salix
+	( cd $SLINT/usr/bin || exit
+	rm list-espeak-ng-voices orca-off orca-on session-chooser switch-emerald-theme switch-off switch-on
+	)
     LOGIN=$(cat $INSTALL/firstuserlogin)
 	# console and Xkeybord settings
 	KMAP="$(cat /tmp/Pkeymap)"
@@ -2928,9 +2961,9 @@ press Enter to accept the default name \"darkstar\"."
 	cp /sbin/update-all $SLINT/sbin
 	chroot $SLINT chmod 0755 /usr/sbin/update-all
 	chroot $SLINT /sbin/update-all
-	# Run /usr/sbin/btrfsmaintenance-refresh-cron.sh as it is not done
-	# by doinst.sh from btrfsmaintenance for an unknown yet reason.
-	chroot $SLINT /usr/sbin/btrfsmaintenance-refresh-cron.sh 1>"$INSTALL"/log 2>"$INSTALL"/log
+	# enable btrfsmaintenance as long as the script doinst.sh does not do it during installation of
+	# btrfsmaintenance. And if it does, this won't hurt
+	chroot /SLINT usr/sbin/btrfsmaintenance-refresh-cron.sh 1>/zzz_btrfs.log 2>/zzz_btrfserr.log
 	# thinkfan is shipped in Slint but lacks /etc/thinkfan.conf.
 	# to avoid an error message at startup, make /etc/rc.d/rc.thinkfan 644
 	[ -x "$SLINT"/etc/rc.d/rc.thinkfan ] && chmod 644 "$SLINT"/etc/rc.d/rc.thinkfan
@@ -2942,6 +2975,8 @@ press Enter to accept the default name \"darkstar\"."
 		chroot $SLINT mount /boot/efi
 		mkdir -p $SLINT/boot/efi/EFI/BOOT
 	fi
+    # Show Slint Linux ... in the GRUB boot entries
+    echo  'GRUB_DISTRIBUTOR=Slint' >> $SLINT/etc/default/grub
 }
 
 mountefivarsandmovehome(){
