@@ -57,7 +57,7 @@ if grep -q speakup.synth /proc/cmdline; then
 fi
 sleep 1
 # espeakup initialization. This was done in previous versions just before running
-# /sbin/probe_sound_cards but there is no need to wait. 
+# /sbin/probe_sound_cards but there is no need to wait.
 # If a hard synth is set in the command line no need to start espeakup.
 # This could be done runnig "rc.espeakup start", but not knowing yet if espeakup will be really used,
 # instead case occuring espeakup will be started by /sbin/probe_sound_cards.
@@ -93,7 +93,6 @@ sleep 2
 	"$ISO"/$SUBDIR/dialog-*.t?z \
 	"$ISO"/$SUBDIR/dracut*txz \
 	"$ISO"/$SUBDIR/efibootmgr*.txz \
-	"$ISO"/$SUBDIR/espeak-ng*.txz \
 	"$ISO"/$SUBDIR/expat*.t?z \
 	"$ISO"/$SUBDIR/file-*txz \
 	"$ISO"/$SUBDIR/findutils*.t?z \
@@ -141,7 +140,7 @@ sleep 2
 tar -xJf "$ISO"/$SUBDIR/gpgme-1*.txz usr/lib64/libgpgme.so.11.25.0
 # We need libdbus-1.so.3 from the dbus package to make wpa_passphrase and
 # wpa_supplicat happy
-tar -xJf "$ISO"/$SUBDIR/dbus-1*.txz usr/lib64/libdbus-1.so.3.19.13	
+tar -xJf "$ISO"/$SUBDIR/dbus-1*.txz usr/lib64/libdbus-1.so.3.19.13
 ldconfig
 # Remove from alsa-utils and util-linux the utilities that we do not need at
 # all least if they lack dependencies.
@@ -152,7 +151,7 @@ rm -f \
 /usr/bin/setpriv \
 /usr/sbin/dnsmasq
 # We do not need the python lib pylibmount.so shipped in util-linux.
-# Actually we do not need /usr/lib/python2.7 at all.  
+# Actually we do not need /usr/lib/python2.7 at all.
 rm -rf /usr/lib64/python2.7
 # brltty is included in the initrd so that it be started by udev when applicable.
 # Start brltty if it has not yet been started by udev
