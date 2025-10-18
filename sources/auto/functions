@@ -94,7 +94,7 @@ to_lower() {
 clear_stdin() {
 	old_tty_settings=$(stty -g)
 	stty -icanon min 0 time 0
-	while read -r; do :; done 
+	while read -r; do :; done
 	stty "$old_tty_settings"
 }
 giveup() {
@@ -142,7 +142,7 @@ trytoget() {
 	rm -f /tmp/failed
 	MYFILE="$(basename "$1")"
 	wget -q "$1" 2>>$INSTALL/errors
-	if [ ! -f "$MYFILE" ]; then 
+	if [ ! -f "$MYFILE" ]; then
 		echo yes > /tmp/failed
 	fi
 }
@@ -413,7 +413,7 @@ so all data it contains will be lost!"
 			echo
 			unset FORMAT
 			while [ ! "$(to_lower "$FORMAT")" = "yes" ] && [ ! "$(to_lower "$FORMAT")" = "no" ]; do
-				eval_gettext "Do you want to delete all data on \$NAME et re-format it?" 
+				eval_gettext "Do you want to delete all data on \$NAME et re-format it?"
 				echo
 				gettext "Type yes or no: " && clear_stdin && read -r FORMAT
 			done
@@ -601,7 +601,7 @@ probepartitions() {
 	|grep -e 'FSTYPE="ntfs"' -e 'FSTYPE="exfat"' -e 'FSTYPE="vfat"' \
 	|grep -v -e 'PARTTYPE="c12a7328-f81f-11d2-ba4b-00a0c93ec93b"' -e 'PARTTYPE="0xef"' \
 	|while read -r partition; do
-	
+
 		i=$((i+1))
 		echo "PARTNUM=\"$i\" $partition" >>$INSTALL/windowspartitions
 	done
@@ -705,7 +705,7 @@ checkinstallationmodes() {
 	# The BIOS boot partition (if needed) and the ESP should be on the
 	# same drive as the root partition, else we will not propose the root
 	# partition so that SLINT be portable if connected through USB and
-	# 
+	#
 	# In auto mode we just need a big enough drive
 	touch $INSTALL/driveswithbiosboot
 	[ "$AUTO" ] && [ ! "$FITFORAUTO" ] && backtomenu "$MSGNOSUITABLEDRIVE"
@@ -733,7 +733,7 @@ checkinstallationmodes() {
 					fi
 				done <$INSTALL/efipartitions
 			done < $INSTALL/rootpartitions
-			cp $INSTALL/rootpartitions.new $INSTALL/rootpartitions 
+			cp $INSTALL/rootpartitions.new $INSTALL/rootpartitions
 			[ ! $EFIROOTSAMEDRIVE ]  && backtomenu "$MSGMISFITROOTEFI"
 		fi
 		# In case of a GPT we require that a BIOS boot partition on the
@@ -762,7 +762,7 @@ checkinstallationmodes() {
 				echo "$rootpart" >> $INSTALL/rootpartitions.new
 			fi
 		done < $INSTALL/rootpartitions
-		if [ -f $INSTALL/rootpartitions.new ]; then 
+		if [ -f $INSTALL/rootpartitions.new ]; then
 			mv $INSTALL/rootpartitions.new $INSTALL/rootpartitions
 		else
 			[ ! "$BIOSBOOTROOTSAMEDRIVE" ] && backtomenu "$MSGMISFITROOTBIOSBOOT"
@@ -875,7 +875,7 @@ Here are its current partitions:"
 	fi
 	echo 'SERIAL=$(cat $INSTALL/serial)' >>$INSTALL/preparedrive
 	echo 'grep "SERIAL=\"$SERIAL\"" $INSTALL/drives >$INSTALL/drive' >>$INSTALL/preparedrive
-	echo '. $INSTALL/drive' >>$INSTALL/preparedrive 
+	echo '. $INSTALL/drive' >>$INSTALL/preparedrive
 	echo 'DRIVEPATH=$NAME' >>$INSTALL/preparedrive
 	echo 'sgdisk --zap-all $DRIVEPATH >>$INSTALL/log' >>$INSTALL/preparedrive
 	echo 'wipefs --all --force $DRIVEPATH >>$INSTALL/log' >>$INSTALL/preparedrive
@@ -1334,9 +1334,9 @@ encryptornot() {
 	# only allow that in case of auto partitioning of a dedicated drive
 	# which seems too restrictive.
 	# In auto partitioning mode if an additional partition has been set up
-	# encrypt it too. 
+	# encrypt it too.
 	echo encryptornot >>$INSTALL/log
-	if [ "$AUTO" ]; then 
+	if [ "$AUTO" ]; then
 		SERIAL=$(cat $INSTALL/serial)
 		grep "SERIAL=\"$SERIAL\"" $INSTALL/drives > $INSTALL/drive
 		. $INSTALL/drive
@@ -1459,7 +1459,7 @@ other partitions on \$PKNAME will be preserved."
 					echo "linux $(cat $INSTALL/rootpartpath) (${GSIZE}G) / $(cat $INSTALL/rootfstype) formatted"
 				else
 					FORMATTED=""
-					[ "$FORMATME" = "yes" ] && FORMATTED="formatted"  
+					[ "$FORMATME" = "yes" ] && FORMATTED="formatted"
 					echo "$KIND $NAME (${GSIZE}G) $MOUNTPOINT $FSTYPE $FORMATTED"
 				fi
 			done < $INSTALL/"${KIND}"usedpart
@@ -1485,7 +1485,7 @@ else you will go back to the greeting screen of the installer."
 		clear_stdin
 		read -r ANSWER
 		case $(to_lower "$ANSWER") in
-			yes) 
+			yes)
 				echo "Version of ISO used for installation: $ISOVERSION"  >>$INSTALL/log
 				break 2;;
 			no) backtomenu "$(gettext "You can redo a configuration.")";;
@@ -1773,7 +1773,7 @@ fstab() {
 		echo "UUID=$UUID /swap btrfs subvol=@swap,compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
 		if [ -f $INSTALL/addedpartname ]; then
 			ADDEDPARTPATH=$(cat $INSTALL/addedpartpath)
-			UUID=$(blkid -s UUID -o value "$ADDEDPARTPATH") 
+			UUID=$(blkid -s UUID -o value "$ADDEDPARTPATH")
 			echo "# Initially $ADDEDPARTPATH" >>$FSTAB
 			echo "UUID=$UUID /$ADDEDPARTNAME btrfs compress=zstd:3,discard=async,noatime 0 0" >>$FSTAB
 			mkdir -p $SLINT/"$ADDEDPARTNAME"
@@ -2334,7 +2334,7 @@ settimezone() {
 			esac
 		done
 	fi
-	if [ ! "$ACCEPTEDTZ" ];then 
+	if [ ! "$ACCEPTEDTZ" ];then
 		gettext "You can set the time zone now, or accept the default value (UTC) and modify
 this setting after installation."
 		echo
@@ -2409,7 +2409,7 @@ setlocales () {
 		fy*) lo="";asp="fy";; # Frisian (Frysk)
 		ga*) lo="";asp="ga";; # Irish (Gaeilge)
 		gd*) lo="";asp="gd";; # Scottish Gaelic (Gàidhlig)
-		gl*) lo="gl";asp="gl";; # Galician (Galego) 
+		gl*) lo="gl";asp="gl";; # Galician (Galego)
 		grc*) lo="";asp=grc;; # Ancient Greek (but no matching locale in glibc)
 		gu*) lo="gu";asp="gu";; # Gujarati (ગુજરાતી)
 		gv*) lo="";asp="gv";; # Manx Gaelic
@@ -2517,7 +2517,7 @@ install() {
 	# the file CHECKSUMS.md5 in the patches sub-directory of the Slacwkare repo
 	# the file CHECKSUMS.md5 of the Slacwkare repo
 	# the file CHECKSUM.md5 of the ISO
-	
+
 	# We do do not handle removals from the repositories since the ISO was built,
 	# nor packages migrated from Slint to Slint since then.
 	# Packages are installed using spkg. If installed a package fails, abort the
@@ -2537,7 +2537,7 @@ install() {
 	ROOT=/SLINT
 	export ROOT
 	export SLAPT_NO_SSL_VERIFYPEER
-	gettext "Configuring slapt-get to fetch packages from a remote repository..." && echo  
+	gettext "Configuring slapt-get to fetch packages from a remote repository..." && echo
 	CONFIGFILE="slapt-getrc.installation$(cat /tmp/distro)"
 	slapt-get --add-keys -c /"$CONFIGFILE" 1>/tmp/slapt-get_download 2>/slapt-get_errors
 	slapt-get -u -c /"$CONFIGFILE" 1>>/tmp/slapt-get_download 2>>/slapt-get_errors
@@ -2702,6 +2702,7 @@ press Enter to accept the default name \"slint\"."
 		sh /usr/sbin/setup/bp2cf -u -p "$brltty" -f $SLINT/etc/brltty.conf
 	fi
 	NBSESSIONS=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -c -v -e safe -e xwmconfig)
+	[ "$NBSESSIONS" -eq 0 ] && rm -f $SLINT/home/"$LOGIN"/.xinitrc
 	if [ "$NBSESSIONS" -gt 1 ]; then
 		# Set the graphical session are several are available
 		for filename in "$SLINT"/usr/share/xsessions/*; do
@@ -2731,7 +2732,7 @@ press Enter to accept the default name \"slint\"."
 		echo
 	fi
 	if [ "$NBSESSIONS" -eq 1 ]; then
-		# Only one DE has been installed, set session accordingly		
+		# Only one DE has been installed, set session accordingly
 		THESESSION=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -v -e safe -e xwmconfig|sed 's#.*/##')
 		session=${THESESSION%.*}
 	fi
@@ -2749,7 +2750,7 @@ press Enter to accept the default name \"slint\"."
 		# This is for startx
 		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
 		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
-	
+
 		# We need to run setxkbmap just after having started X, so that $DISPLAY
 		# be set. But in some cases that is easier to do live than when building
 		# the window manager or desktop.
@@ -2773,7 +2774,7 @@ press Enter to accept the default name \"slint\"."
 	chroot $SLINT chmod 0755 /usr/sbin/update-all
 	chroot $SLINT /sbin/update-all
 	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
-	# exists in the same drive as the root partition its path is set in $INSTALL/path 
+	# exists in the same drive as the root partition its path is set in $INSTALL/path
 	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
 		mkdir -p $SLINT/boot/efi
 		# grub will need to access the ESP
@@ -2793,7 +2794,7 @@ press Enter to accept the default name \"slint\"."
 		chmod 755 $SLINT/etc/rc.d/rc.4.local
 	fi
 	# We assume that a user needing speech during intallation will need to use a
-	# screen reader to log in in lightdm 
+	# screen reader to log in in lightdm
 	if [ ! -f /tmp/noespeakup ] && [ -f $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override ]; then
 		sed 's#^screen-reader=false#screen-reader=true#' $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override > bof
 		mv bof $SLINT/usr/share/glib-2.0/schemas/10.slint-appearance.gschema.override
@@ -2844,7 +2845,7 @@ press Enter to accept the default name \"darkstar\"."
 	chroot $SLINT chmod 0755 /usr/sbin/update-all
 	chroot $SLINT /sbin/update-all
 	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
-	# exists in the same drive as the root partition its path is set in $INSTALL/path 
+	# exists in the same drive as the root partition its path is set in $INSTALL/path
 	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
 		mkdir -p $SLINT/boot/efi
 		# grub will need to access the ESP
@@ -2922,7 +2923,7 @@ press Enter to accept the default name \"darkstar\"."
 		echo
 	fi
 	if [ "$NBSESSIONS" -eq 1 ]; then
-		# Only one DE has been installed, set session accordingly		
+		# Only one DE has been installed, set session accordingly
 		THESESSION=$(find "$SLINT"/usr/share/xsessions -name "*.desktop"|grep -v -e safe -e xwmconfig|sed 's#.*/##')
 		session=${THESESSION%.*}
 	fi
@@ -2940,7 +2941,7 @@ press Enter to accept the default name \"darkstar\"."
 		# This is for startx
 		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xinitrc
 		cp $SLINT/etc/X11/xinit/xinitrc.$xinit $SLINT/home/"$LOGIN"/.xsession
-	
+
 		# We need to run setxkbmap just after having started X, so that $DISPLAY
 		# be set. But in some cases that is easier to do live than when building
 		# the window manager or desktop.
@@ -2968,7 +2969,7 @@ press Enter to accept the default name \"darkstar\"."
 	# to avoid an error message at startup, make /etc/rc.d/rc.thinkfan 644
 	[ -x "$SLINT"/etc/rc.d/rc.thinkfan ] && chmod 644 "$SLINT"/etc/rc.d/rc.thinkfan
 	# in auto partitioning mode an ESP is always created. In manual partitioning mode if an ESP
-	# exists in the same drive as the root partition its path is set in $INSTALL/path 
+	# exists in the same drive as the root partition its path is set in $INSTALL/path
 	if [ "$AUTO" ] || [ -f $INSTALL/esppath ]; then
 		mkdir -p $SLINT/boot/efi
 		# grub will need to access the ESP
@@ -2990,7 +2991,7 @@ mountefivarsandmovehome(){
 }
 bootingsetup() {
 	echo bootingsetup >>$INSTALL/log
-	if [ "$AUTO" ]; then 
+	if [ "$AUTO" ]; then
 		SERIAL=$(cat $INSTALL/serial)
 		grep "SERIAL=\"$SERIAL\"" $INSTALL/drives > $INSTALL/drive
 		. $INSTALL/drive
@@ -3061,7 +3062,7 @@ bootingsetup() {
 }
 byebye() {
 echo byebye >>$INSTALL/log
-	# Remove the huge slapt-get database only used during installation. 
+	# Remove the huge slapt-get database only used during installation.
 	rm -rf "$SLINT/var/slapt-get"
 	echo "store in $SLINT/var/log/$INSTALL stuff useful to investigate a booting issue..." >>$INSTALL/log
 	echo "running alsa-info.sh" >>$INSTALL/log
@@ -3074,7 +3075,7 @@ echo byebye >>$INSTALL/log
 	cp -r /tmp $SLINT/var/log/$INSTALL/
 	echo "remove packages stored in $PKGLISTS" >>$INSTALL/log
 	rm -f "$PKGLISTS"/*.txz
-	mv $PKGLISTS $SLINT/var/log/$INSTALL/ 
+	mv $PKGLISTS $SLINT/var/log/$INSTALL/
 	echo "copying installation scripts in $SLINT/var/log/$INSTALL/installation-scripts"  >>$INSTALL/log
 	mkdir -p $SLINT/var/log/$INSTALL/installation-scripts
 	cp  -f /sbin/functions /sbin/start $SLINT/var/log/$INSTALL/installation-scripts/
